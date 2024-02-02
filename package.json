@@ -6,8 +6,6 @@
     "start": "gatsby develop",
     "build": "gatsby build && rm -rf dist && mv public dist",
     "lint": "markdownlint 'content/docs/**/*.md'",
-    "copy:contribs": "cp ../.all-contributorsrc data/contributors.json",
-    "prepare": "npm run copy:contribs",
     "reset": "rm -rf .cache"
   },
   "author": "",

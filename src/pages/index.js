@@ -14,6 +14,7 @@ import Lead from '../components/lead';
 import Features from '../components/features';
 // import Awards from '../components/awards';
 import HomeSection from '../components/home-section';
+import Contributors from '../components/contributors';
 import Grid from '../components/grid';
 import theme from '../theme';
 import { mq } from '../utils';
@@ -44,29 +45,10 @@ const MarkdownButton = styled.span`
   }
 `;
 
-const ContribList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-
-  img {
-    height: 32px;
-    width: 32px;
-    border-radius: 10rem;
-    margin-right: ${theme.space[1]};
-    margin-bottom: ${theme.space[1]};
-    transition: 0.1s;
-
-    &:hover {
-      transform: scale(1.3);
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25), 0 4px 12px 0 rgba(0, 0, 0, 0.25);
-    }
-  }
-`;
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
   // const updates = data.updates.childDataYaml;
-  const contribs = data.contribs.childDataJson;
 
   return (
     <Layout hasPageHero>
@@ -207,13 +189,7 @@ function HomePage({ data }) {
             >
               {landing.community.contributors}
             </h3>
-            <ContribList>
-              {contribs.contributors.map(user => (
-                <a href={user.profile} title={user.name} key={user.login}>
-                  <img src={user.avatar_url.replace('v=4', 's=32')} alt={user.login} />
-                </a>
-              ))}
-            </ContribList>
+            <Contributors />
           </div>
         </Grid>
       </HomeSection>
@@ -295,16 +271,6 @@ export const pageQuery = graphql`
             description
           }
           contributors
-        }
-      }
-    }
-    contribs: file(relativePath: { regex: "/contributors/" }) {
-      childDataJson {
-        contributors {
-          name
-          profile
-          avatar_url
-          login
         }
       }
     }
