@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: decaporg/decap-cms
+  repo: decaporg/decap-website
   squash_merges: true
   open_authoring: true
 
@@ -10,11 +10,11 @@ site_url: https://www.decapcms.org
 
 publish_mode: editorial_workflow
 
-media_folder: website/static/img
+media_folder: static/img
 public_folder: /img
 
 docs_collection: &docs_collection
-  folder: website/content/docs
+  folder: content/docs
   create: true
   summary: '{{weight}} - {{title}}'
   preview_path: 'docs/{{slug}}'
@@ -65,7 +65,7 @@ collections:
     files:
       - label: Docs Sections
         name: docs_sections
-        file: website/site.yml
+        file: site.yml
         fields:
           - label: menu
             name: menu
@@ -142,7 +142,7 @@ collections:
       value: Contributing
   - name: widget_docs
     label: 'Docs: Widgets'
-    folder: website/content/docs/widgets
+    folder: content/docs/widgets
     preview_path: 'docs/widgets/{{title}}'
     create: true
     fields:
@@ -152,7 +152,7 @@ collections:
   - name: blog
     label: Blog
     label_singular: Post
-    folder: website/content/blog
+    folder: content/blog
     preview_path: 'blog/{{year}}/{{month}}/{{title}}'
     create: true
     fields:
@@ -173,7 +173,7 @@ collections:
     files:
       - name: community
         label: Community
-        file: website/content/pages/community.md
+        file: content/pages/community.md
         preview_path: community
         fields:
           - { label: Title, name: title }
@@ -196,7 +196,7 @@ collections:
     files:
       - name: releases
         label: Releases
-        file: website/data/updates.yml
+        file: data/updates.yml
         fields:
           - name: updates
             label: Releases
@@ -208,7 +208,7 @@ collections:
               - { name: url, label: Url, required: false }
       - name: notifications
         label: Notifications
-        file: website/data/notifications.yml
+        file: data/notifications.yml
         description: Site-top notifications - publish one at a time
         fields:
           - name: notifications
