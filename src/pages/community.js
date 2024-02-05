@@ -1,12 +1,13 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
 
-import Layout from '../components/layout';
-import Community from '../components/community';
+import Layout from "../components/layout";
+import Community from "../components/community";
 
 function CommunityPage({ data }) {
-  const { title, headline, subhead, sections } = data.markdownRemark.frontmatter;
+  const { title, headline, subhead, sections } =
+    data.markdownRemark.frontmatter;
 
   return (
     <Layout hasPageHero>
@@ -28,7 +29,10 @@ export const pageQuery = graphql`
           channels {
             title
             description
-            url
+            cta {
+              href
+              label
+            }
           }
         }
       }
