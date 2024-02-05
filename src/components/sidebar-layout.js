@@ -38,7 +38,7 @@ const CarbonPlaceholder = styled.div`
       line-height: initial;
     }
 
-    #carbonads > span {
+    > span {
       display: flex;
       flex-direction: column;
       min-inline-size: 130px;
