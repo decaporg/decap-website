@@ -8,6 +8,14 @@ import { mq } from '../utils';
 const Children = styled.div`
   overflow: hidden;
   padding-left: 2rem;
+
+  ${mq[1]} {
+    grid-column: 2;
+  }
+
+  ${mq[2]} {
+    grid-column: initial;
+  }
 `;
 
 const CarbonPlaceholder = styled.div`
@@ -24,7 +32,11 @@ const CarbonPlaceholder = styled.div`
     font-size: var(--carbon-font-size);
     font-family: var(--carbon-font-family);
     max-width: 240px;
-    margin-left: auto;
+    margin: 2rem auto 0;
+
+    ${mq[2]} {
+      margin-right: 0;
+    }
 
     * {
       margin: initial;
@@ -97,12 +109,12 @@ function SidebarLayout({ sidebar, children }) {
         ${mq[1]} {
           display: grid;
           grid-template-columns: ${sidebar ? 'clamp(160px, 20vw, 320px)' : ''} minmax(0, 1fr);
-          grid-gap: 2rem;
+          grid-column-gap: 1.5rem;
         }
         ${mq[2]} {
           display: grid;
           grid-template-columns: ${sidebar ? 'clamp(160px, 20vw, 320px)' : ''} minmax(0, 1fr) clamp(160px, 20vw, 320px);
-          grid-gap: 2rem;
+          grid-column-gap: 2rem;
         }
       `}
     >
