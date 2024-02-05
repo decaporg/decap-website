@@ -18,19 +18,13 @@ const CarbonPlaceholder = styled.div`
     --carbon-font-size: 14px;
     --carbon-padding: 1.5ch;
     --carbon-max-char: 20ch;
-    --carbon-bg-primary: hsl(0, 0%, 98%);
-    --carbon-bg-secondary: hsl(0, 0%, 92%);
-    --carbon-text-color: hsl(0, 0%, 20%);
-    z-index: 10;
+    --carbon-bg-primary: hsl(228 19% 98% / 1);
+    --carbon-bg-secondary: hsl(228 19% 95% / 1);
+    --carbon-text-color: inherit;
     font-size: var(--carbon-font-size);
     font-family: var(--carbon-font-family);
-    margin-top: 2rem;
-
-    @media (prefers-color-scheme: dark) {
-      --carbon-bg-primary: hsl(0, 0%, 12%);
-      --carbon-bg-secondary: hsl(0, 0%, 15%);
-      --carbon-text-color: hsl(0, 0%, 90%);
-    }
+    max-width: 240px;
+    margin-left: auto;
 
     * {
       margin: initial;
@@ -41,6 +35,7 @@ const CarbonPlaceholder = styled.div`
     > span {
       display: flex;
       flex-direction: column;
+      align-items: center;
       min-inline-size: 130px;
       max-inline-size: calc(
         130px + var(--carbon-max-char) + 8ch
@@ -48,10 +43,6 @@ const CarbonPlaceholder = styled.div`
       padding: var(--carbon-padding);
       gap: var(--carbon-padding);
       background-color: var(--carbon-bg-primary);
-      box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.085),
-        0 0 2px hsl(0deg 0% 0% / 0.085),
-        0 0 4px hsl(0deg 0% 0% / 0.085),
-        0 0 8px hsl(0deg 0% 0% / 0.085);
     }
 
     a {
@@ -67,6 +58,7 @@ const CarbonPlaceholder = styled.div`
       display: flex;
       flex-wrap: wrap;
       gap: 1.5ex;
+      justify-content: center;
     }
 
     .carbon-img {
@@ -81,7 +73,7 @@ const CarbonPlaceholder = styled.div`
       flex-grow: 1;
       flex-basis: var(--carbon-max-char);
       line-height: 1.4;
-      text-align: left;
+      text-align: center;
     }
 
     .carbon-poweredby {
