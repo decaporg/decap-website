@@ -8,7 +8,9 @@ import { mq } from '../utils';
 const Children = styled.div`
   overflow: hidden;
   padding-left: 2rem;
+`;
 
+const CarbonPlaceholder = styled.div`
   ${mq[1]} {
     grid-column: 2;
   }
@@ -16,9 +18,7 @@ const Children = styled.div`
   ${mq[2]} {
     grid-column: initial;
   }
-`;
 
-const CarbonPlaceholder = styled.div`
   #carbonads {
     --carbon-font-family: -apple-system, BlinkMacSystemFont,
       'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
