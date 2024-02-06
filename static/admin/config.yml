@@ -3,6 +3,7 @@ backend:
   repo: decaporg/decap-website
   squash_merges: true
   open_authoring: true
+  branch: main
 
 local_backend: true
 
