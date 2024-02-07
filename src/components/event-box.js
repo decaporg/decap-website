@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import styled from '@emotion/styled';
 
 import Markdownify from './markdownify';
@@ -89,13 +89,13 @@ function EventBox({ title, cta }) {
       });
   }, []);
 
-  const eventDateMoment = moment(eventDate);
+  const eventDateDayjs = dayjs(eventDate);
 
-  const offset = eventDateMoment.isDST() ? -7 : -8;
-  const month = eventDateMoment.format('MMMM');
-  const day = eventDateMoment.format('DD');
-  const datePrefix = eventDateMoment.format('dddd, MMMM Do');
-  const dateSuffix = eventDateMoment.utcOffset(offset).format('h a');
+  const offset = eventDateDayjs.isDST() ? -7 : -8;
+  const month = eventDateDayjs.format('MMMM');
+  const day = eventDateDayjs.format('DD');
+  const datePrefix = eventDateDayjs.format('dddd, MMMM Do');
+  const dateSuffix = eventDateDayjs.utcOffset(offset).format('h a');
 
   const ellip = <span>&hellip;</span>;
 

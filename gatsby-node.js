@@ -106,7 +106,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.json'],
       alias: {
-        moment$: 'moment/moment.js',
+        dayjs$: 'dayjs/dayjs.js',
       },
     },
   });
