@@ -27,7 +27,7 @@ module.exports = {
     bold: 700,
     black: 900,
   },
-  fontFamily: "'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif",
+  fontFamily: ['"IBM Plex Sans", sans-serif', '"Montserrat", sans-serif'],
   fontsize: ['10px', '12px', '14px', '16px', '18px', '24px', '32px', '42px', '64px'],
   lineHeight: [1, 1.3, 1.7],
   space: [0, '4px', '8px', '16px', '24px', '40px', '64px', '96px', '144px'],

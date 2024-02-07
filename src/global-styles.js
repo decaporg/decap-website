@@ -10,12 +10,14 @@ const globalStyles = css`
 
   body {
     color: ${theme.colors.gray};
-    font-family: ${theme.fontFamily};
+    font-family: ${theme.fontFamily[0]};
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 90;
     line-height: ${theme.lineHeight[2]};
     font-size: ${theme.fontsize[3]};
     background: ${theme.colors.shadeBlue};
     margin: 0;
-    -webkit-font-smoothing: antialiased;
   }
 
   img {
@@ -35,6 +37,7 @@ const globalStyles = css`
   h4,
   h5,
   h6 {
+    font-family: ${theme.fontFamily[1]};
     line-height: ${theme.lineHeight[1]};
     margin-top: 0;
     margin-bottom: 0.5em;

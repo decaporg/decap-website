@@ -53,15 +53,10 @@ function Layout({ hasPageHero, children }) {
           >
             <Helmet defaultTitle={title} titleTemplate={`%s | ${title}`}>
               <meta name="description" content={description} />
-              <meta
-                name="image"
-                property="og:image"
-                content="https://decapcms.org/img/og-image.jpg"
-              />
-              <link
-                rel="stylesheet"
-                href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,900|Roboto+Mono:400,700"
-              />
+              <meta name="image" property="og:image" content="https://decapcms.org/img/og-image.jpg" />
+              <link rel="preconnect" href="https://fonts.googleapis.com" />
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+              <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
             </Helmet>
             <Header hasHeroBelow={hasPageHero} />
             {children}
