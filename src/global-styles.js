@@ -16,7 +16,6 @@ const globalStyles = css`
     font-variation-settings: "wdth" 90;
     line-height: ${theme.lineHeight[2]};
     font-size: ${theme.fontsize[3]};
-    background: ${theme.colors.shadeBlue};
     margin: 0;
   }
 

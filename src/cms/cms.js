@@ -5,12 +5,11 @@ import Prism from 'prismjs';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 
-import BlogPostTemplate from '../components/blog-post-template';
+import BlogPostTemplate from '../components/blog-post-template'
 import { LayoutTemplate as Layout } from '../components/layout';
 import DocsTemplate from '../components/docs-template';
 import WidgetDoc from '../components/widget-doc';
 import WhatsNew from '../components/whats-new';
-import Notification from '../components/notification';
 import Community from '../components/community';
 import siteConfig from '../../site.yml';
 
@@ -115,26 +114,10 @@ function ReleasePreview({ entry }) {
   );
 }
 
-function NotificationPreview({ entry }) {
-  return (
-    <PreviewContainer>
-      {entry
-        .getIn(['data', 'notifications'])
-        .filter(notif => notif.get('published'))
-        .map((notif, idx) => (
-          <Notification key={idx} url={notif.get('url')} loud={notif.get('loud')}>
-            {notif.get('message')}
-          </Notification>
-        ))}
-    </PreviewContainer>
-  );
-}
-
 CMS.registerPreviewTemplate('blog', BlogPostPreview);
 siteConfig.menu.docs.forEach(group => {
   CMS.registerPreviewTemplate(`docs_${group.name}`, DocsPreview);
 });
 CMS.registerPreviewTemplate('widget_docs', WidgetDocPreview);
 CMS.registerPreviewTemplate('releases', ReleasePreview);
-CMS.registerPreviewTemplate('notifications', NotificationPreview);
 CMS.registerPreviewTemplate('community', CommunityPreview);

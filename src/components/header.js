@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { useState, useEffect } from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import GitHubButton from 'react-github-btn';
 
 import Container from './container';
-import Notifications from './notifications';
 import DocSearch from './docsearch';
 import searchIcon from '../img/search.svg';
 import theme from '../theme';
@@ -27,14 +26,8 @@ const StyledHeader = styled.header`
     ${p =>
       !p.collapsed &&
       css`
-        padding-top: ${theme.space[5]};
-        padding-bottom: ${theme.space[5]};
-      `};
-
-    ${p =>
-      p.hasNotifications &&
-      css`
-        padding-top: 0;
+        // padding-top: ${theme.space[5]};
+        // padding-bottom: ${theme.space[5]};
       `};
   }
 `;
@@ -142,21 +135,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-const NOTIFS_QUERY = graphql`
-  query notifs {
-    file(relativePath: { regex: "/notifications/" }) {
-      childDataYaml {
-        notifications {
-          published
-          loud
-          message
-          url
-        }
-      }
-    }
-  }
-`;
-
 function Header({ hasHeroBelow }) {
   const [scrolled, setScrolled] = useState(false);
   const [isNavOpen, setNavOpen] = useState(false);
@@ -190,80 +168,68 @@ function Header({ hasHeroBelow }) {
   }
 
   return (
-    <StaticQuery query={NOTIFS_QUERY}>
-      {data => {
-        const notifications = data.file.childDataYaml.notifications.filter(
-          notif => notif.published,
-        );
-        const collapsed = !hasHeroBelow || scrolled;
-        const hasNotifications = notifications.length > 0;
-        return (
-          <StyledHeader collapsed={collapsed} id="header" hasNotifications={hasNotifications}>
-            <Notifications notifications={notifications} />
-            <HeaderContainer>
-              <Logo>
-                <Link to="/">
-                  <img src="/img/decap-logo.svg" alt="Decap CMS logo" />
-                </Link>
-              </Logo>
-              <MenuActions>
-                <SearchBtn onClick={handleSearchBtnClick}>
-                  {isSearchOpen ? <span>&times;</span> : <img src={searchIcon} alt="search" />}
-                </SearchBtn>
-                <MenuBtn onClick={handleMenuBtnClick}>
-                  {isNavOpen ? <span>&times;</span> : <span>&#9776;</span>}
-                </MenuBtn>
-              </MenuActions>
-              <SearchBox open={isSearchOpen}>
-                <DocSearch />
-              </SearchBox>
-              <Menu open={isNavOpen}>
-                <MenuList>
-                  <MenuItem
-                    css={css`
-                      margin-top: 8px;
-                    `}
-                  >
-                    <GitHubButton
-                      href="https://github.com/decaporg/decap-cms"
-                      data-icon="octicon-star"
-                      data-show-count="true"
-                      aria-label="Star decaporg/decap-cms on GitHub"
-                    >
-                      Star
-                    </GitHubButton>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/docs/intro/">Docs</NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/services/" className="ga-menu">
-                      Pro Help
-                      <span
-                        css={css`
-                          font-size: ${theme.fontsize[1]};
-                          color: ${theme.colors.primaryLight};
-                          margin-left: ${theme.space[1]};
-                          vertical-align: top;
-                        `}
-                      >
-                        New
-                      </span>
-                    </NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/community/">Community</NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/blog/">Blog</NavLink>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-            </HeaderContainer>
-          </StyledHeader>
-        );
-      }}
-    </StaticQuery>
+    <StyledHeader collapsed={scrolled} id="header">
+      <HeaderContainer>
+        <Logo>
+          <Link to="/">
+            <img src="/img/decap-logo.svg" alt="Decap CMS logo" />
+          </Link>
+        </Logo>
+        <MenuActions>
+          <SearchBtn onClick={handleSearchBtnClick}>
+            {isSearchOpen ? <span>&times;</span> : <img src={searchIcon} alt="search" />}
+          </SearchBtn>
+          <MenuBtn onClick={handleMenuBtnClick}>
+            {isNavOpen ? <span>&times;</span> : <span>&#9776;</span>}
+          </MenuBtn>
+        </MenuActions>
+        <SearchBox open={isSearchOpen}>
+          <DocSearch />
+        </SearchBox>
+        <Menu open={isNavOpen}>
+          <MenuList>
+            <MenuItem
+              css={css`
+                margin-top: 8px;
+              `}
+            >
+              <GitHubButton
+                href="https://github.com/decaporg/decap-cms"
+                data-icon="octicon-star"
+                data-show-count="true"
+                aria-label="Star decaporg/decap-cms on GitHub"
+              >
+                Star
+              </GitHubButton>
+            </MenuItem>
+            <MenuItem>
+              <NavLink to="/docs/intro/">Docs</NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink to="/services/" className="ga-menu">
+                Pro Help
+                <span
+                  css={css`
+                    font-size: ${theme.fontsize[1]};
+                    color: ${theme.colors.primaryLight};
+                    margin-left: ${theme.space[1]};
+                    vertical-align: top;
+                  `}
+                >
+                  New
+                </span>
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink to="/community/">Community</NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink to="/blog/">Blog</NavLink>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+      </HeaderContainer>
+    </StyledHeader>
   );
 }
 
