@@ -6,13 +6,13 @@ This repository builds decapcms.org. If you'd like to propose changes to the sit
 
 The site is built with [GatsbyJS](https://gatsbyjs.org/).
 
-To run the site locally, you'll need to have [Node](https://nodejs.org) version 16 and [Yarn](https://yarnpkg.com/en/) installed on your computer.
+To run the site locally, you'll need to have [Node](https://nodejs.org) version 18 or above installed on your computer.
 
 To install dependencies and start the development server, run the following commands:
 
 ```bash
-yarn
-yarn start
+npm install
+npm run start
 ```
 
 Then visit http://localhost:8000/ - Gatsby will automatically reload CSS or
