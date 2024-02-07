@@ -99,7 +99,7 @@ function CarbonAds() {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "https://cdn.carbonads.com/carbon.js?serve=CWYIKK77&placement=decapcmsorg";
+    script.src = "https://cdn.carbonads.com/carbon.js?serve=CWYIK27J&placement=decapcmsorg";
     script.async = true;
     script.id = "_carbonads_js";
     ref.current.appendChild(script);
