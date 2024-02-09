@@ -1,6 +1,8 @@
 ---
 title: datetime
 label: "DateTime"
+group: "Fields"
+weight: 50
 ---
 
 The datetime widget translates a datetime picker to a datetime string.

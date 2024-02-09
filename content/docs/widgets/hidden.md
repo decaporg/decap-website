@@ -1,6 +1,8 @@
 ---
 label: "Hidden"
 title: hidden
+group: "Fields"
+weight: 60
 ---
 
 Hidden widgets do not display in the UI. In folder collections that allow users to create new items, you will often want to set a default for hidden fields, so they will be set without requiring an input.

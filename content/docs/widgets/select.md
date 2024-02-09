@@ -1,7 +1,10 @@
 ---
 title: select
 label: Select
+group: "Fields"
+weight: 140
 ---
+
 The select widget allows you to pick a string value from a dropdown menu.
 
 * **Name:** `select`

@@ -1,7 +1,10 @@
 ---
 title: markdown
 label: Markdown
+group: "Fields"
+weight: 100
 ---
+
 The markdown widget provides a full fledged text editor allowing users to format text with features such as headings and blockquotes. Users can change their editing view with a handy toggle button. 
 
 *Please note:* If you want to use your markdown editor to fill a markdown file contents after its frontmatter, you'll have to name the field `body` so the CMS recognizes it and saves the file accordingly.

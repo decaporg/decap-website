@@ -1,7 +1,10 @@
 ---
 title: map
 label: Map
+group: "Fields"
+weight: 90
 ---
+
 The map widget allows you to edit spatial data using an interactive map. Spatial data for a single piece of geometry saves as a GeoJSON string in WGS84 projection.
 
 * **Name:** `map`

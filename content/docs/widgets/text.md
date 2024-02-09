@@ -1,6 +1,8 @@
 ---
 label: "Text"
 title: text
+group: "Fields"
+weight: 160
 ---
 
 The text widget takes a multiline text field and saves it as a string. For shorter text inputs, use the string widget.

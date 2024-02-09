@@ -1,6 +1,8 @@
 ---
 label: "Number"
 title: number
+group: "Fields"
+weight: 110
 ---
 
 The number widget uses an HTML number input, saving the value as a string, integer, or floating point number.

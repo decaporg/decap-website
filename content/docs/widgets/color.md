@@ -1,6 +1,8 @@
 ---
 label: 'Color'
 title: color
+group: "Fields"
+weight: 40
 ---
 
 The color widget translates a color picker to a color string.
