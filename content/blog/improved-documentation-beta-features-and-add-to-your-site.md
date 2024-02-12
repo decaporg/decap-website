@@ -1,5 +1,5 @@
 ---
-title: "Improved documentation: beta features and add to your site"
+title: "Improved Documentation: Beta Features and Add to Your Site"
 author: Martin Jagodic
 description: Items in the Beta Features section were moved to their actual pace
   and Add to your site is now a series of connected pages that are easier to
