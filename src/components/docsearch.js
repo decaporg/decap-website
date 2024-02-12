@@ -13,6 +13,7 @@ const SearchForm = styled.form`
 const SearchField = styled.input`
   color: white;
   font-size: ${theme.fontsize[3]};
+  font-family: ${theme.fontFamily[1]};
   border-radius: ${theme.radii[1]};
   background-color: ${theme.colors.lightGray};
   color: ${theme.colors.darkerGray};

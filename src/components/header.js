@@ -3,6 +3,7 @@ import { jsx, css } from '@emotion/react';
 import { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import { SiGithub } from '@icons-pack/react-simple-icons';
 
 import Container from './container';
 import DocSearch from './docsearch';
@@ -15,6 +16,7 @@ const StyledHeader = styled.header`
   padding-top: ${theme.space[3]};
   padding-bottom: ${theme.space[3]};
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
+  font-family: ${theme.fontFamily[1]};
 
   ${mq[2]} {
     position: sticky;
@@ -34,16 +36,20 @@ const StyledHeader = styled.header`
 const HeaderContainer = styled(Container)`
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 `;
 
 const Logo = styled.div`
   ${mq[1]} {
     margin-right: ${theme.space[5]};
+
+    a {
+      display: flex;
+      align-items: center;
+    }
   }
 
   img {
-    height: clamp(32px, 3vw, 60px);
+    height: clamp(32px, 3vw, 40px);
     width: auto;
   }
 `;
@@ -101,33 +107,25 @@ const MenuList = styled.ul`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: ${theme.space[3]};
+  }
+
+  ${mq[2]} {
+    gap: ${theme.space[5]};
+  }
+
+  ${mq[4]} {
+    gap: ${theme.space[6]};
   }
 `;
 
 const MenuItem = styled.li`
-  margin-bottom: ${theme.space[3]};
-  ${mq[1]} {
-    margin-bottom: 0;
-
-    &:not(:last-child) {
-      margin-right: ${theme.space[3]};
-    }
-  }
-  ${mq[2]} {
-    &:not(:last-child) {
-      margin-right: ${theme.space[4]};
-    }
-  }
-  ${mq[4]} {
-    &:not(:last-child) {
-      margin-right: ${theme.space[5]};
-    }
-  }
+  line-height: 1;
 `;
 
 const NavLink = styled(Link)`
   text-decoration: none;
-  font-weight: 600;
+  color: inherit;
 
   ${mq[2]} {
     font-size: ${theme.fontsize[4]};
@@ -188,9 +186,6 @@ function Header({ hasHeroBelow }) {
         <Menu open={isNavOpen}>
           <MenuList>
             <MenuItem>
-              <NavLink to="https://github.com/decaporg/decap-cms">GitHub</NavLink>
-            </MenuItem>
-            <MenuItem>
               <NavLink to="/docs/intro/">Docs</NavLink>
             </MenuItem>
             <MenuItem>
@@ -213,6 +208,14 @@ function Header({ hasHeroBelow }) {
             </MenuItem>
             <MenuItem>
               <NavLink to="/blog/">Blog</NavLink>
+            </MenuItem>
+            <MenuItem css={css`
+              height: 28px;
+              padding-left: 8px;
+            `}>
+              <NavLink to="https://github.com/decaporg/decap-cms">
+                <SiGithub size={28} />
+              </NavLink>
             </MenuItem>
           </MenuList>
         </Menu>
