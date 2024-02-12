@@ -3,7 +3,6 @@ import { jsx, css } from '@emotion/react';
 import { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import GitHubButton from 'react-github-btn';
 
 import Container from './container';
 import DocSearch from './docsearch';
@@ -188,19 +187,8 @@ function Header({ hasHeroBelow }) {
         </SearchBox>
         <Menu open={isNavOpen}>
           <MenuList>
-            <MenuItem
-              css={css`
-                margin-top: 8px;
-              `}
-            >
-              <GitHubButton
-                href="https://github.com/decaporg/decap-cms"
-                data-icon="octicon-star"
-                data-show-count="true"
-                aria-label="Star decaporg/decap-cms on GitHub"
-              >
-                Star
-              </GitHubButton>
+            <MenuItem>
+              <NavLink to="https://github.com/decaporg/decap-cms">GitHub</NavLink>
             </MenuItem>
             <MenuItem>
               <NavLink to="/docs/intro/">Docs</NavLink>

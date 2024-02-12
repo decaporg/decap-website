@@ -42,7 +42,6 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-github-btn": "^1.4.0",
     "react-helmet": "^6.1.0",
     "react-markdown": "^8.0.7",
     "smooth-scroll": "^16.1.3"
