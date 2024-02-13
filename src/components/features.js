@@ -1,21 +1,14 @@
 import React from 'react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 
 import Markdownify from './markdownify';
 import theme from '../theme';
-
-const Box = styled.div`
-  margin-bottom: ${theme.space[5]};
-
-  img {
-    margin-bottom: ${theme.space[3]};
-    margin-left: -${theme.space[2]};
-  }
-`;
+import Button from './button';
+import Grid from './grid';
 
 const Title = styled.h3`
-  color: ${p => (p.kind === 'light' ? theme.colors.primaryLight : theme.colors.primaryLight)};
+  color: ${theme.colors.primaryLight};
   font-size: ${theme.fontsize[4]};
 `;
 
@@ -26,28 +19,60 @@ const Text = styled.p`
   }
 `;
 
-function FeatureItem({ feature, description, imgpath, kind, cta }) {
+function FeatureItem({ title, description, image, reverse }) {
   return (
-    <Box>
-      {imgpath && <img src={require(`../img/${imgpath}`).default} alt="" />}
-      <Title kind={kind}>
-        <Markdownify source={feature} />
-      </Title>
-      <Text>
-        <Markdownify source={description} />
-        <br />
-        {cta && (
-          <Link to={cta.href} className="ga-home">
-            {cta.label}
-          </Link>
-        )}
-      </Text>
-    </Box>
+    <Grid cols={2} css={css`
+      align-items: center;
+      margin: ${theme.space[6]} 0;
+    `}>
+      {image && <img
+        src={require(`../img/${image}`).default}
+        alt=""
+        css={css`
+          display: block;
+          margin-left: ${reverse ? 'auto' : '0'};
+        `}
+      />}
+
+      <div css={css`
+        order: ${reverse ? '1' : '-1'};
+      `}>
+        <Title>
+          <Markdownify source={title} />
+        </Title>
+        <Text>
+          <Markdownify source={description} />
+        </Text>
+      </div>
+    </Grid>
   );
 }
 
-function Features({ items, kind }) {
-  return items.map(item => <FeatureItem kind={kind} {...item} key={item.feature} />);
+function Features({ title, button, features }) {
+  return (
+    <div css={css`
+      margin: ${theme.space[6]};
+    `}>
+      <h2 css={css`
+        text-align: center;
+        margin: ${theme.space[6]};
+      `}>{title}</h2>
+
+      {features.map((feature, i) => <FeatureItem
+        {...feature}
+        reverse={i % 2 === 0}
+        key={feature.title}
+      />)}
+
+      <Button href={button.href} className='secondary' css={css`
+          display: block;
+          width: min-content;
+          margin: ${theme.space[5]} auto;
+        `}>
+        {button.text}
+      </Button>
+    </div>
+  );
 }
 
 export default Features;
