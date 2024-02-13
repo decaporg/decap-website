@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from '@emotion/styled';
 import { mq } from '../utils';
 
@@ -94,8 +94,15 @@ const CarbonWrapper = styled.div`
   }
 `;
 
+const BlockedMessage = styled.div`
+  background-color: hsl(228 19% 98% / 1);
+  padding: 1.5ch;
+  font-size: 14px;
+`;
+
 function CarbonAds() {
   const ref = useRef();
+  const [isBlocked, setBlocked] = useState(false);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -103,11 +110,18 @@ function CarbonAds() {
     script.async = true;
     script.id = "_carbonads_js";
     ref.current.appendChild(script);
+    script.onerror = (e) => {
+      setBlocked(true)
+    };
   }, []);
-  
+
   return (
     <CarbonWrapper>
       <div ref={ref} />
+      {isBlocked && <BlockedMessage>
+        <h4>You blocked an ad that keeps this project alive</h4>
+        <p>Please consider supporting Decap by disabling your ad-blocking software on decapcms.org. The ads shown here are relevant and do not collect your personal data.</p>
+      </BlockedMessage>}
     </CarbonWrapper>
   );
 }
