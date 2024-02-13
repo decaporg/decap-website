@@ -12,7 +12,7 @@ import theme from '../theme';
 import { mq } from '../utils';
 
 const StyledHeader = styled.header`
-  background: ${theme.colors.white};
+  background: ${theme.colors.lightestGray};
   padding-top: ${theme.space[3]};
   padding-bottom: ${theme.space[3]};
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
@@ -189,19 +189,7 @@ function Header({ hasHeroBelow }) {
               <NavLink to="/docs/intro/">Docs</NavLink>
             </MenuItem>
             <MenuItem>
-              <NavLink to="/services/" className="ga-menu">
-                Pro Help
-                <span
-                  css={css`
-                    font-size: ${theme.fontsize[1]};
-                    color: ${theme.colors.primaryLight};
-                    margin-left: ${theme.space[1]};
-                    vertical-align: top;
-                  `}
-                >
-                  New
-                </span>
-              </NavLink>
+              <NavLink to="/services/" className="ga-menu">Pro Help</NavLink>
             </MenuItem>
             <MenuItem>
               <NavLink to="/community/">Community</NavLink>

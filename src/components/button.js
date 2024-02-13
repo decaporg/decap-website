@@ -28,7 +28,7 @@ const Button = styled.a`
   }
 
   &.secondary {
-    background-color: transparent;
+    background-color: ${theme.colors.white};
     color: ${theme.colors.primaryLight};
   }
 
