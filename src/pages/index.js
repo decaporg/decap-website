@@ -19,32 +19,26 @@ import Grid from '../components/grid';
 import theme from '../theme';
 import { mq } from '../utils';
 
-const MarkdownButton = styled.span`
-  a {
-    white-space: nowrap;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: ${theme.fontsize[3]};
-    letter-spacing: 0.5px;
-    line-height: ${theme.lineHeight[1]};
-    background-color: ${theme.colors.primaryLight};
-    color: ${theme.colors.white};
-    border-radius: ${theme.radii[1]};
-    padding: ${theme.space[2]} ${theme.space[3]};
-    transition: all 0.2s ease-out;
-    text-decoration: none;
-    box-shadow: 0;
+const MarkdownButton = styled.a`
+  white-space: nowrap;
+  display: inline-block;
+  font-size: ${theme.fontsize[3]};
+  line-height: 1;
+  background-color: ${theme.colors.primaryLight};
+  color: ${theme.colors.white};
+  border-radius: ${theme.radii[3]};
+  padding: ${theme.space[3]} ${theme.space[4]};
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  box-shadow: 0;
 
-    &:hover {
-      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
-    }
-    &:active {
-      box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
-    }
+  &:hover {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+  }
+  &:active {
+    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
   }
 `;
-
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
@@ -53,48 +47,41 @@ function HomePage({ data }) {
   return (
     <Layout hasPageHero>
       <PageHero>
-        <div
-          css={css`
-            margin-bottom: ${theme.space[7]};
-          `}
-        >
-          <HeroTitle>
-            <Markdownify source={landing.hero.headline} />
-          </HeroTitle>
-          <Lead>
-            <Markdownify source={landing.hero.subhead} />
-          </Lead>
-          <Lead>
-            <MarkdownButton>
-              <Markdownify source={landing.cta.button} />
-            </MarkdownButton>
-          </Lead>
-        </div>
-        <Grid cols={2}>
-          <div>
-            <Features items={landing.hero.devfeatures} kind="light" />
-          </div>
-          <div>
-            <p
-              css={css`
-                margin-bottom: ${theme.space[2]};
-                font-weight: 700;
-              `}
-            >
-              Try it out in the{' '}
-              <a href="https://demo.decapcms.org/" target="_blank" rel="noreferrer">
-                Decap CMS Demo
-              </a>
-            </p>
-            <a href="https://demo.decapcms.org/" target="_blank" rel="noreferrer">
-              <img
-                src="/img/screenshot-editor-2.png"
-                alt="Screenshot of Decap CMS page editing view"
-              />
-            </a>
-          </div>
-        </Grid>
+        <HeroTitle>
+          <Markdownify source={landing.hero.headline} />
+        </HeroTitle>
+        <Lead>
+          <Markdownify source={landing.hero.subhead} />
+        </Lead>
+        <Lead>
+          {landing.hero.buttons.map(item => <MarkdownButton href={item.href}>{item.text}</MarkdownButton>)}
+        </Lead>
       </PageHero>
+
+      <Grid cols={2}>
+        <div>
+          <Features items={landing.features} kind="light" />
+        </div>
+        <div>
+          <p
+            css={css`
+              margin-bottom: ${theme.space[2]};
+              font-weight: 700;
+            `}
+          >
+            Try it out in the{' '}
+            <a href="https://demo.decapcms.org/" target="_blank" rel="noreferrer">
+              Decap CMS Demo
+            </a>
+          </p>
+          <a href="https://demo.decapcms.org/" target="_blank" rel="noreferrer">
+            <img
+              src="/img/screenshot-editor-2.png"
+              alt="Screenshot of Decap CMS page editing view"
+            />
+          </a>
+        </div>
+      </Grid>
 
       <section
         css={css`
@@ -224,10 +211,14 @@ export const pageQuery = graphql`
         hero {
           headline
           subhead
-          devfeatures {
-            feature
-            description
+          buttons {
+            text
+            href
           }
+        }
+        features {
+          feature
+          description
         }
         awards {
           title
