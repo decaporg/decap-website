@@ -41,11 +41,11 @@ const HeaderContainer = styled(Container)`
 const Logo = styled.div`
   ${mq[1]} {
     margin-right: ${theme.space[5]};
+  }
 
-    a {
-      display: flex;
-      align-items: center;
-    }
+  a {
+    display: flex;
+    align-items: center;
   }
 
   img {

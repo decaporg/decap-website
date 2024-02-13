@@ -3,18 +3,20 @@ import styled from '@emotion/styled';
 
 import theme from '../theme';
 
-// prettier-ignore
-const Button = styled.button`
+const Button = styled.a`
+  white-space: nowrap;
   display: inline-block;
-  background: ${theme.colors.primaryDark};
-  color: white;
-  border-radius: ${theme.radii[1]};
   font-size: ${theme.fontsize[3]};
-  font-weight: 700;
-  padding: ${theme.space[2]} ${theme.space[3]};
-  border: 2px solid ${theme.colors.primaryDark};
-  cursor: pointer;
+  line-height: 1;
+  background-color: ${theme.colors.primaryLight};
+  color: ${theme.colors.white};
+  border: 3px solid ${theme.colors.primaryLight};
+  font-weight: 600;
+  font-family: ${theme.fontFamily[1]};
+  border-radius: ${theme.radii[4]};
+  padding: ${theme.space[3]} ${theme.space[4]};
   transition: all 0.2s ease-out;
+  text-decoration: none;
   box-shadow: 0;
 
   &:hover {
@@ -23,6 +25,11 @@ const Button = styled.button`
 
   &:active {
     box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: ${theme.colors.primaryLight};
   }
 
   ${p => p.block && css`

@@ -3,12 +3,10 @@
 import React from 'react';
 import { jsx, css } from '@emotion/react';
 import { graphql } from 'gatsby';
-import styled from '@emotion/styled';
 
 import Layout from '../components/layout';
 import Markdownify from '../components/markdownify';
-import PageHero from '../components/page-hero';
-import HeroTitle from '../components/hero-title';
+import HomeHero from '../components/home-hero';
 // import WhatsNew from '../components/whats-new';
 import Lead from '../components/lead';
 import Features from '../components/features';
@@ -16,47 +14,17 @@ import Features from '../components/features';
 import HomeSection from '../components/home-section';
 import Contributors from '../components/contributors';
 import Grid from '../components/grid';
+import Button from '../components/button';
 import theme from '../theme';
 import { mq } from '../utils';
-
-const MarkdownButton = styled.a`
-  white-space: nowrap;
-  display: inline-block;
-  font-size: ${theme.fontsize[3]};
-  line-height: 1;
-  background-color: ${theme.colors.primaryLight};
-  color: ${theme.colors.white};
-  border-radius: ${theme.radii[3]};
-  padding: ${theme.space[3]} ${theme.space[4]};
-  transition: all 0.2s ease-out;
-  text-decoration: none;
-  box-shadow: 0;
-
-  &:hover {
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
-  }
-  &:active {
-    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
-  }
-`;
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
   // const updates = data.updates.childDataYaml;
 
   return (
-    <Layout hasPageHero>
-      <PageHero>
-        <HeroTitle>
-          <Markdownify source={landing.hero.headline} />
-        </HeroTitle>
-        <Lead>
-          <Markdownify source={landing.hero.subhead} />
-        </Lead>
-        <Lead>
-          {landing.hero.buttons.map(item => <MarkdownButton href={item.href}>{item.text}</MarkdownButton>)}
-        </Lead>
-      </PageHero>
+    <Layout hasHomeHero>
+      <HomeHero children={landing.hero} />
 
       <Grid cols={2}>
         <div>
@@ -118,9 +86,9 @@ function HomePage({ data }) {
             </strong>{' '}
             <Markdownify source={landing.cta.primary} />
           </Lead>
-          <MarkdownButton>
-            <Markdownify source={landing.cta.button} />
-          </MarkdownButton>
+          <Button href={landing.cta.button.href}>
+          {landing.cta.button.text}
+          </Button>
         </div>
       </section>
 
@@ -214,6 +182,7 @@ export const pageQuery = graphql`
           buttons {
             text
             href
+            class
           }
         }
         features {
@@ -232,7 +201,10 @@ export const pageQuery = graphql`
         cta {
           primary
           primaryhook
-          button
+          button {
+            text
+            href
+          }
         }
         editors {
           hook

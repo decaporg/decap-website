@@ -6,6 +6,7 @@ hero:
       href: "/docs"
     - text: "Try the interactive demo"
       href: "https://demo.decapcms.org"
+      class: "secondary"
 features:
   - feature: "Static + content management = ♥"
     description: "Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content."
@@ -23,7 +24,9 @@ awards:
 cta:
   primaryhook: "Getting started is simple and free."
   primary: "Choose a template that’s pre-configured with a static site generator and deploys to a global CDN in one&nbsp;click."
-  button: "[Get started](/docs/start-with-a-template/)"
+  button:
+    text: "Get started"
+    href: "/docs/start-with-a-template/"
 
 editors:
   hook: "A CMS that developers and content editors can&nbsp;agree&nbsp;on"
