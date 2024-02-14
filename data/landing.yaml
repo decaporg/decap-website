@@ -9,6 +9,10 @@ hero:
       class: "secondary"
 developers:
   title: "For Developers"
+  id: "developers"
+  link:
+    href: "#editors"
+    text: "For Editors"
   button:
     text: "All Developer Features"
     href: "/developer-features/"
@@ -30,8 +34,10 @@ templateBanner:
     href: "/docs/start-with-a-template/"
 editors:
   title: "For Editors"
-  hook: "A CMS that developers and content editors can agree on"
-  intro: "You get to implement modern front end tools to deliver a faster, safer, and more scalable site. Editors get a friendly UI and intuitive workflow that meets their content management requirements."
+  id: "editors"
+  link:
+    href: "#developers"
+    text: "For Developers"
   button:
     text: "All Editor Features"
     href: "/editor-features/"

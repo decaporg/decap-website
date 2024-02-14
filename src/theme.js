@@ -4,7 +4,7 @@ module.exports = {
     black: '#000',
     lightestGray: '#E6E6E6',
     lightGray: '#F6F6F6',
-    lightishGray: '#51555D',
+    lightishGray: '#D9D9D9',
     gray: '#313D3E',
     darkGray: '#2F3132',
     darkerGray: '#11081F',
@@ -26,7 +26,7 @@ module.exports = {
   fontsize: ['10px', '12px', '14px', '16px', '18px', '24px', '32px', '42px', '64px'],
   lineHeight: [1, 1.3, 1.7],
   space: [0, '4px', '8px', '16px', '24px', '40px', '64px', '96px', '144px'],
-  radii: [0, '4px', '8px', '16px', '54px'],
+  radii: [0, '4px', '8px', '16px', '24px'],
   breakpoints: [480, 768, 960, 1200, 1280],
   zIndexes: {
     header: 100,

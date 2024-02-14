@@ -11,7 +11,11 @@ function FeatureItem({ title, description, image, reverse }) {
   return (
     <Grid cols={2} css={css`
       align-items: center;
+      margin: ${theme.space[5]} 0;
+
+      ${mq[1]} {
       margin: ${theme.space[6]} 0;
+      }
     `}>
       <div css={css`
         ${mq[1]} {
@@ -31,35 +35,78 @@ function FeatureItem({ title, description, image, reverse }) {
         </p>
       </div>
 
-      {image && <img
-        src={require(`../img/${image}`).default}
-        alt=""
-        css={css`
-          display: block;
-          margin: ${theme.space[5]} auto 0;
+      {image && <div css={css`
+        position: relative;
+        transform: rotate(${reverse ? '-' : ''}2.8deg);
 
-          ${mq[2]} {
-            margin: 0 0 0 ${reverse ? 'auto' : '0'};
-          }
-        `}
-      />}
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(${reverse ? '-' : ''}4deg);
+          width: 50%;
+          height: 30%;
+          border-radius: 100%;
+          background: linear-gradient(90deg, #F50F1A 0%, #FB3CEE 100%);
+          filter: blur(70px);
+          z-index: -1;
+        }
+      `}>
+        <img
+          src={require(`../img/${image}`).default}
+          alt=""
+          css={css`
+            display: block;
+            margin: ${theme.space[5]} auto 0;
+            background: ${theme.colors.white};
+            border-radius: ${theme.radii[4]};
+
+            ${mq[2]} {
+              margin: 0 0 0 ${reverse ? 'auto' : '0'};
+            }
+          `}
+        />
+      </div>}
     </Grid>
   );
 }
 
-function Features({ title, button, features }) {
+function Features({ title, id, link, button, features }) {
   return (
-    <div css={css`
-      margin: ${theme.space[4]} 0;
-
-      ${mq[1]} {
-        margin: ${theme.space[6]} 0;
-      }
+    <div id={id} css={css`
+      margin: ${theme.space[2]} 0;
+      position: relative;
     `}>
       <h2 css={css`
         text-align: center;
-        color: ${theme.colors.primaryLight};
-      `}>{title}</h2>
+        color: ${theme.colors.lightishGray};
+        background: ${theme.colors.white};
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-direction: ${id === 'developers' ? 'row' : 'row-reverse'};
+        position: sticky;
+        padding: ${theme.space[2]} 0;
+        top: 0;
+
+        ${mq[1]} {
+          top: ${theme.space[6]};
+          padding: ${theme.space[4]} 0 ${theme.space[3]};
+        }
+      `}>
+        <a href={'#' + id} css={css`
+          color: ${theme.colors.primaryLight};
+        `}>
+          {title}
+        </a>
+        <span>/</span>
+        <a href={link.href} css={css`
+          color: ${theme.colors.lightishGray};
+        `}>
+          {link.text}
+        </a>
+      </h2>
 
       {features.map((feature, i) => <FeatureItem
         {...feature}

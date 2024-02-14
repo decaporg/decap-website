@@ -113,6 +113,11 @@ export const pageQuery = graphql`
         }
         developers {
           title
+          id
+          link {
+            text
+            href
+          }
           button {
             text
             href
@@ -133,6 +138,11 @@ export const pageQuery = graphql`
         }
         editors {
           title
+          id
+          link {
+            text
+            href
+          }
           button {
             text
             href

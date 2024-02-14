@@ -64,6 +64,7 @@ function HomeHero({ headline, subhead, buttons}) {
           <HeroButtons>
             {buttons.map(item => <Button
               href={item.href}
+              key={item.text}
               className={item.class}>
               {item.text}
             </Button>)}

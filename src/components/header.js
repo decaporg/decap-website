@@ -126,6 +126,7 @@ const MenuItem = styled.li`
 const NavLink = styled(Link)`
   text-decoration: none;
   color: inherit;
+  font-weight: 400;
 
   ${mq[2]} {
     font-size: ${theme.fontsize[4]};
