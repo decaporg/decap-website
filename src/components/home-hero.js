@@ -20,9 +20,11 @@ const HeroButtons = styled.div`
   margin-top: ${theme.space[4]};
 `;
 
-function HomeHero({ children }) {
+function HomeHero({ headline, subhead, buttons}) {
   return (
-    <>
+    <div css={css`
+      overflow: hidden;
+    `}>
       <div css={css`
         text-align: center;
         position: relative;
@@ -52,15 +54,15 @@ function HomeHero({ children }) {
           }
         `}>
           <HeroTitle>
-            <Markdownify source={children.headline} />
+            <Markdownify source={headline} />
           </HeroTitle>
 
           <Lead>
-            <Markdownify source={children.subhead} />
+            <Markdownify source={subhead} />
           </Lead>
 
           <HeroButtons>
-            {children.buttons.map(item => <Button
+            {buttons.map(item => <Button
               href={item.href}
               className={item.class}>
               {item.text}
@@ -81,7 +83,7 @@ function HomeHero({ children }) {
           margin-bottom: ${theme.space[7]};
         }
       `} />
-    </>
+    </div>
   );
 }
 

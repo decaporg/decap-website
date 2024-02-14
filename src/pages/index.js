@@ -22,7 +22,7 @@ function HomePage({ data }) {
 
   return (
     <Layout hasHomeHero>
-      <HomeHero children={landing.hero} />
+      <HomeHero {...landing.hero} />
 
       <HomeFeatures
         developers={landing.developers}

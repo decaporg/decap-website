@@ -1,23 +1,11 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 
 import Markdownify from './markdownify';
 import theme from '../theme';
 import Button from './button';
 import Grid from './grid';
-
-const Title = styled.h3`
-  color: ${theme.colors.primaryLight};
-  font-size: ${theme.fontsize[4]};
-`;
-
-const Text = styled.p`
-  font-size: 18px;
-  a {
-    font-weight: 700;
-  }
-`;
+import { mq } from '../utils';
 
 function FeatureItem({ title, description, image, reverse }) {
   return (
@@ -25,25 +13,36 @@ function FeatureItem({ title, description, image, reverse }) {
       align-items: center;
       margin: ${theme.space[6]} 0;
     `}>
+      <div css={css`
+        ${mq[1]} {
+          order: ${reverse ? '1' : '-1'};
+        }
+      `}>
+        <h3 css={css`
+          font-size: ${theme.fontsize[4]};
+        `}>
+          {title}
+        </h3>
+
+        <p css={css`
+          font-size: 18px;
+        `}>
+          <Markdownify source={description} />
+        </p>
+      </div>
+
       {image && <img
         src={require(`../img/${image}`).default}
         alt=""
         css={css`
           display: block;
-          margin-left: ${reverse ? 'auto' : '0'};
+          margin: ${theme.space[5]} auto 0;
+
+          ${mq[2]} {
+            margin: 0 0 0 ${reverse ? 'auto' : '0'};
+          }
         `}
       />}
-
-      <div css={css`
-        order: ${reverse ? '1' : '-1'};
-      `}>
-        <Title>
-          <Markdownify source={title} />
-        </Title>
-        <Text>
-          <Markdownify source={description} />
-        </Text>
-      </div>
     </Grid>
   );
 }
@@ -51,11 +50,15 @@ function FeatureItem({ title, description, image, reverse }) {
 function Features({ title, button, features }) {
   return (
     <div css={css`
-      margin: ${theme.space[6]};
+      margin: ${theme.space[4]} 0;
+
+      ${mq[1]} {
+        margin: ${theme.space[6]} 0;
+      }
     `}>
       <h2 css={css`
         text-align: center;
-        margin: ${theme.space[6]};
+        color: ${theme.colors.primaryLight};
       `}>{title}</h2>
 
       {features.map((feature, i) => <FeatureItem
