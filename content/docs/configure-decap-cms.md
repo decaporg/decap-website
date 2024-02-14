@@ -143,7 +143,7 @@ collections:
     <div class="pagination-nav__sublabel">Previous</div>
     <div class="pagination-nav__label">2. Choosing A Backend</div>
   </a>
-  <a href="/docs/access-your-content/" class="button right">
+  <a href="/docs/access-your-content/" class="button pagination-nav__next">
     <div class="pagination-nav__sublabel">Next</div>
     <div class="pagination-nav__label">4. Access Your Content</div>
   </a>

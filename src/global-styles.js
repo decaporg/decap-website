@@ -115,7 +115,10 @@ const globalStyles = css`
   }
 
   .pagination-nav {
-    margin-top: 2em;
+    margin: 2em 0 !important;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
 
     a {
       background: none;
@@ -138,8 +141,8 @@ const globalStyles = css`
       }
     }
 
-    .right {
-      float: right;
+    .pagination-nav__next {
+      grid-column: 2/3;
       text-align: right;
     }
   }

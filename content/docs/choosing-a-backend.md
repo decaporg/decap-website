@@ -61,7 +61,7 @@ When a user logs in with the Netlify Identity widget, an access token directs to
     <div class="pagination-nav__sublabel">Previous</div>
     <div class="pagination-nav__label">1. Install Decap CMS</div>
   </a>
-   <a href="/docs/configure-decap-cms/" class="button right">
+   <a href="/docs/configure-decap-cms/" class="button pagination-nav__next">
     <div class="pagination-nav__sublabel">Next</div>
     <div class="pagination-nav__label">3. Configure Decap CMS</div>
   </a>
