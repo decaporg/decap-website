@@ -1,7 +1,7 @@
 ---
 label: "Number"
 title: number
-group: "Fields"
+group: "Widgets"
 weight: 110
 ---
 

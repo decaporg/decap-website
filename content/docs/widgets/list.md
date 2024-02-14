@@ -1,7 +1,7 @@
 ---
 title: list
 label: List
-group: "Fields"
+group: "Widgets"
 weight: 80
 ---
 

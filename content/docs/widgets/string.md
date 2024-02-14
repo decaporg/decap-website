@@ -1,7 +1,7 @@
 ---
 label: "String"
 title: string
-group: "Fields"
+group: "Widgets"
 weight: 150
 ---
 

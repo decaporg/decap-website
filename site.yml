@@ -14,8 +14,8 @@ menu:
       title: Workflow
     - name: Collections
       title: Collections
-    - name: Fields
-      title: Fields
+    - name: Widgets
+      title: Widgets
     - name: Guides
       title: Platform Guides
     - name: Customization

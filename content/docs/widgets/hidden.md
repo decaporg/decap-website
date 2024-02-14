@@ -1,7 +1,7 @@
 ---
 label: "Hidden"
 title: hidden
-group: "Fields"
+group: "Widgets"
 weight: 60
 ---
 

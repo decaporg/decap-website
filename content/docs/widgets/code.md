@@ -1,7 +1,7 @@
 ---
 title: code
 label: 'Code'
-group: "Fields"
+group: "Widgets"
 weight: 30
 ---
 

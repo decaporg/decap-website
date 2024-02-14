@@ -1,7 +1,7 @@
 ---
 title: map
 label: Map
-group: "Fields"
+group: "Widgets"
 weight: 90
 ---
 

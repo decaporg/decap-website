@@ -1,7 +1,7 @@
 ---
 label: 'Color'
 title: color
-group: "Fields"
+group: "Widgets"
 weight: 40
 ---
 

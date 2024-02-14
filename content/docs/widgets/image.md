@@ -1,7 +1,7 @@
 ---
 title: image
 label: Image
-group: "Fields"
+group: "Widgets"
 weight: 70
 ---
 

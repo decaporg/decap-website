@@ -1,7 +1,7 @@
 ---
 title: boolean
 label: "Boolean"
-group: "Fields"
+group: "Widgets"
 weight: 20
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: select
 label: Select
-group: "Fields"
+group: "Widgets"
 weight: 140
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: file
 label: File
-group: "Fields"
+group: "Widgets"
 weight: 50
 ---
 

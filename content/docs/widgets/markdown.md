@@ -1,7 +1,7 @@
 ---
 title: markdown
 label: Markdown
-group: "Fields"
+group: "Widgets"
 weight: 100
 ---
 

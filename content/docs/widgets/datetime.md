@@ -1,7 +1,7 @@
 ---
 title: datetime
 label: DateTime
-group: "Fields"
+group: "Widgets"
 weight: 50
 ---
 
