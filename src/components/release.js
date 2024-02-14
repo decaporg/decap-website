@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import styled from '@emotion/styled';
 
 import Markdownify from '../components/markdownify';
@@ -27,7 +27,7 @@ const Version = styled.span`
 `;
 
 function Release({ version, versionPrevious, date, description, url }) {
-  const displayDate = moment(date).format('MMMM D, YYYY');
+  const displayDate = dayjs(date).format('MMMM D, YYYY');
   const defaultUrl = `https://github.com/decaporg/decap-cms/compare/decap-cms@${versionPrevious}...decap-cms@${version}`;
 
   return (
