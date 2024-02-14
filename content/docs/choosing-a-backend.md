@@ -34,7 +34,7 @@ When a user logs in with the Netlify Identity widget, an access token directs to
 ```html
 <script>
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
+    window.netlifyIdentity.on("init", (user) => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
           document.location.href = "/admin/";
@@ -47,12 +47,13 @@ When a user logs in with the Netlify Identity widget, an access token directs to
 
 **Note:** This example script requires modern JavaScript and does not work on IE11. For legacy browser support, use function expressions (`function () {}`) in place of the arrow functions (`() => {}`), or use a transpiler such as [Babel](https://babeljs.io/).
 
-
-<div class="content-bottom">
-    <div class="right">
-        <a href="/docs/configure-decap-cms/" class="button">3. Configure Decap CMS</a>
-    </div>
-    <p>
-        <strong>Once this is completed, proceed to step 3.</strong>
-    </p>
-</div>
+<nav class="pagination-nav">
+ <a href="/docs/install-decap-cms/" class="button">
+    <div class="pagination-nav__sublabel">Previous</div>
+    <div class="pagination-nav__label">1. Install Decap CMS</div>
+  </a>
+   <a href="/docs/configure-decap-cms/" class="button pagination-nav__next">
+    <div class="pagination-nav__sublabel">Next</div>
+    <div class="pagination-nav__label">3. Configure Decap CMS</div>
+  </a>
+</nav>

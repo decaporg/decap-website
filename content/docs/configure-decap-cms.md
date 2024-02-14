@@ -4,7 +4,7 @@ weight: 4
 title: 3. Configure Decap CMS
 ---
 
-Configuration is different for every site, so we'll break it down into parts.  Add all the code snippets in this section to your `admin/config.yml` file.
+Configuration is different for every site, so we'll break it down into parts. Add all the code snippets in this section to your `admin/config.yml` file.
 
 ### Backend
 
@@ -18,7 +18,7 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 ```
 
-*(For Bitbucket repositories, use the [Bitbucket backend](/docs/bitbucket-backend) instructions instead.)*
+_(For Bitbucket repositories, use the [Bitbucket backend](/docs/bitbucket-backend) instructions instead.)_
 
 The configuration above specifies your backend protocol and your publication branch. Git Gateway is an open source API that acts as a proxy between authenticated users of your site and your site repo. (We'll get to the details of that in the [Authentication section](#authentication) below.) If you leave out the `branch` declaration, it defaults to `master`.
 
@@ -43,7 +43,7 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 
 The configuration above adds a new setting: `public_folder`. Whereas `media_folder` specifies where uploaded files are saved in the repo, `public_folder` indicates where they are found in the published site. Image `src` attributes use this path, which is relative to the file where it's called. For this reason, we usually start the path at the site root, using the opening `/`.
 
-*__Note:__ If `public_folder` is not set, Decap CMS defaults to the same value as `media_folder`, adding an opening `/` if one is not included.*
+_**Note:** If `public_folder` is not set, Decap CMS defaults to the same value as `media_folder`, adding an opening `/` if one is not included._
 
 ### Collections
 
@@ -59,7 +59,6 @@ date: 1999-12-31 11:59:59 -0800
 thumbnail: "/images/prince.jpg"
 rating: 5
 ---
-
 This is the post body, where I write about our last chance to party before the Y2K bug destroys us all.
 ```
 
@@ -73,12 +72,12 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
 ```
 
 Let's break that down:
@@ -136,14 +135,16 @@ collections:
       field: language
       value: en
     fields:
-      - {label: "Language", name: "language"}
+      - { label: "Language", name: "language" }
 ```
 
-<div class="content-bottom">
-    <div class="right">
-        <a href="/docs/access-your-content/" class="button">4. Access Your Content</a>
-    </div>
-    <p>
-        <strong>Once this is completed, proceed to step 4.</strong>
-    </p>
-</div>
+<nav class="pagination-nav">
+  <a href="/docs/choosing-a-backend/" class="button">
+    <div class="pagination-nav__sublabel">Previous</div>
+    <div class="pagination-nav__label">2. Choosing A Backend</div>
+  </a>
+  <a href="/docs/access-your-content/" class="button pagination-nav__next">
+    <div class="pagination-nav__sublabel">Next</div>
+    <div class="pagination-nav__label">4. Access Your Content</div>
+  </a>
+</nav>
