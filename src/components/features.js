@@ -89,6 +89,7 @@ function Features({ title, id, link, button, features }) {
         position: sticky;
         padding: ${theme.space[2]} 0;
         top: 0;
+        z-index: 1;
 
         ${mq[1]} {
           top: ${theme.space[6]};

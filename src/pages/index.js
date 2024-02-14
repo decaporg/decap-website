@@ -13,8 +13,8 @@ import HomeHero from '../components/home-hero';
 import HomeSection from '../components/home-section';
 import Contributors from '../components/contributors';
 import Grid from '../components/grid';
-import theme from '../theme';
 import HomeFeatures from '../components/home-features';
+import HomeServices from '../components/home-services';
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
@@ -30,32 +30,10 @@ function HomePage({ data }) {
         editors={landing.editors}
       />
 
+      <HomeServices {...landing.services} />
+
       {/* Uncomment on when there are some recent updates */}
       {/* <WhatsNew updates={updates.updates} /> */}
-
-      <HomeSection
-        css={css`
-          background: ${theme.colors.lightestGray};
-        `}
-        title={
-          <>
-            <span
-              css={css`
-                color: ${theme.colors.primaryLight};
-                margin-right: ${theme.space[2]};
-              `}
-            >
-              New!
-            </span>
-            {landing.services?.hook}
-          </>
-        }
-        text={<Markdownify source={landing.services?.intro} />}
-      >
-        <Grid cols={4}>
-          {/* <Features items={landing.services?.features} /> */}
-        </Grid>
-      </HomeSection>
 
       <HomeSection title={<Markdownify source={landing.community.hook} />}>
         <Grid cols={2}>
@@ -163,14 +141,14 @@ export const pageQuery = graphql`
           }
         }
         services {
-          hook
-          intro
+          title
+          description
           features {
-            feature
+            title
             description
-            cta {
+            button {
               href
-              label
+              text
             }
           }
         }
