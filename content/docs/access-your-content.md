@@ -16,3 +16,10 @@ This means:
 
 - Content fetched in the admin UI matches the content in the repository, which may be different from your locally running site.
 - Content saved using the admin UI saves directly to the hosted repository, even if you're running the UI locally or in staging.
+
+<nav class="pagination-nav">
+   <a href="/docs/configure-decap-cms/" class="button">
+    <div class="pagination-nav__sublabel">Previous</div>
+    <div class="pagination-nav__label">3. Configure Decap CMS</div>
+  </a>
+</nav>

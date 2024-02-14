@@ -72,12 +72,14 @@ const globalStyles = css`
       line-height: 1;
       color: ${theme.colors.gray};
       background-color: ${theme.colors.primaryDark};
-      box-shadow: 0 2px 16px 0 rgba(68, 74, 87, 0.15), 0 1px 4px 0 rgba(68, 74, 87, 0.3);
+      box-shadow: 0 2px 16px 0 rgba(68, 74, 87, 0.15),
+        0 1px 4px 0 rgba(68, 74, 87, 0.3);
     }
 
     &:hover {
       background-color: ${theme.colors.primaryLight};
-      box-shadow: 0 2px 16px 0 rgba(68, 74, 87, 0.25), 0 1px 4px 0 rgba(68, 74, 87, 0.5);
+      box-shadow: 0 2px 16px 0 rgba(68, 74, 87, 0.25),
+        0 1px 4px 0 rgba(68, 74, 87, 0.5);
     }
 
     &:focus {
@@ -112,14 +114,35 @@ const globalStyles = css`
     }
   }
 
-  .content-bottom {
+  .pagination-nav {
     margin-top: 2em;
-  }
 
-  .right {
-    float: right;
-  }
+    a {
+      background: none;
+      border: 2px solid ${theme.colors.gray};
+      box-shadow: none;
 
+      &:hover,
+      &:focus {
+        border: 2px solid ${theme.colors.primaryDark};
+        text-decoration: none !important;
+      }
+
+      & .pagination-nav__sublabel {
+        color: ${theme.colors.gray};
+        font-size: ${theme.fontsize[2]};
+      }
+
+      & .pagination-nav__label {
+        color: ${theme.colors.primaryDark};
+      }
+    }
+
+    .right {
+      float: right;
+      text-align: right;
+    }
+  }
 `;
 
 function GlobalStyles() {

@@ -21,7 +21,7 @@ If you are experimenting with Decap CMS or developing, you can connect to it via
 **3. Configure Decap CMS**
 
 The basic configuration includes required information like Git backend provider, branch, and collections to save files to.
-It is recommended to start simple as possible. Once you've gotten the hang of it, you can edit your `config.yml` file to 
+It is recommended to start simple as possible. Once you've gotten the hang of it, you can edit your `config.yml` file to
 build whatever collections and content modeling you want.
 
 Check out the [Configuration Options](/docs/configuration-options/) page for full details about all available options.
@@ -30,11 +30,9 @@ Check out the [Configuration Options](/docs/configuration-options/) page for ful
 
 Decap CMS manages your content and provides editorial and admin features via a webpage in a browser, but it doesn't deliver content. Decap CMS only makes your content available through an API. It is up to developers to determine how to build the raw content into something useful and delightful on the frontend within your static site generator.
 
-<div class="content-bottom">
-    <div class="right">
-        <a href="/docs/install-decap-cms/" class="button">1. Install Decap CMS</a>
-    </div>
-    <p>
-        <strong>If you are ready to get started, proceed to step 1.</strong>
-    </p>
-</div>
+<nav class="pagination-nav">
+  <a href="/docs/install-decap-cms/" class="button right">
+    <div class="pagination-nav__sublabel">Next</div>
+    <div class="pagination-nav__label">1. Install Decap CMS</div>
+  </a>
+</nav>
