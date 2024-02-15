@@ -14,7 +14,7 @@ import Lead from '../components/lead';
 import Features from '../components/features';
 // import Awards from '../components/awards';
 import HomeSection from '../components/home-section';
-// import Contributors from '../components/contributors';
+import Contributors from '../components/contributors';
 import Grid from '../components/grid';
 import theme from '../theme';
 import { mq } from '../utils';
@@ -176,7 +176,7 @@ function HomePage({ data }) {
         </Grid>
       </HomeSection>
 
-      {/* <HomeSection title={<Markdownify source={landing.community.hook} />}>
+      <HomeSection title={<Markdownify source={landing.community.hook} />}>
         <Grid cols={2}>
           <div>
             <Features items={landing.community.features} />
@@ -192,7 +192,7 @@ function HomePage({ data }) {
             <Contributors />
           </div>
         </Grid>
-      </HomeSection> */}
+      </HomeSection>
 
       {/* <HomeSection
         css={css`
