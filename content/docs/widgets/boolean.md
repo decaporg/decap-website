@@ -11,9 +11,10 @@ The boolean widget translates a toggle switch input to a true/false value.
 **UI:** toggle switch
 **Data type:** boolean
 **Options:**
+
 - `default`: accepts `true` or `false`; defaults to `false` when `required` is set to `false`
 
-**Example:**
+**Example**
 
 ```yaml
 - {label: "Draft", name: "draft", widget: "boolean", default: true}

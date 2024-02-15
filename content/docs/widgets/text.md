@@ -11,9 +11,11 @@ The text widget takes a multiline text field and saves it as a string. For short
 **UI:** HTML textarea
 **Data type:** string
 **Options:**
+
 - `default`: accepts a string; defaults to an empty string
 
-**Example:**
+**Example**
+
 ```yaml
 - {label: "Description", name: "description", widget: "text"}
 ```

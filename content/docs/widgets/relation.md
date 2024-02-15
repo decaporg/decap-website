@@ -11,16 +11,17 @@ The relation widget allows you to reference items from another collection. It pr
 **UI:** text input with search result dropdown
 **Data type:** data type of the value pulled from the related collection item
 **Options:**
-* `collection`: (**required**) name of the referenced collection (string)
-* `value_field`: (**required**) name of the field from the referenced collection whose value will be stored for the relation. For nested fields, separate each subfield with a `.` (e.g. `name.first`). For list fields use a wildcard `*` to target all list items (e.g. `categories.*`).
-* `search_fields`: (**required**) list of one or more names of fields in the referenced collection to search for the typed value. Syntax to reference nested fields is similar to that of *value_field*.
-* `file`: allows referencing a specific file when the referenced collection is a files collection (string)
-* `display_fields`: list of one or more names of fields in the referenced collection that will render in the autocomplete menu of the control. Defaults to `value_field`. Syntax to reference nested fields is similar to that of *value_field*.
-* `default`: accepts any widget data type; defaults to an empty string
-* `multiple` : accepts a boolean, defaults to `false`
-* `min`: minimum number of items; ignored if **multiple** is  `false`
-* `max`: maximum number of items; ignored if **multiple** is  `false`
-* `options_length`: accepts integer to override number of options presented to user. Defaults to `20`.
+
+- `collection`: (**required**) name of the referenced collection (string)
+- `value_field`: (**required**) name of the field from the referenced collection whose value will be stored for the relation. For nested fields, separate each subfield with a `.` (e.g. `name.first`). For list fields use a wildcard `*` to target all list items (e.g. `categories.*`).
+- `search_fields`: (**required**) list of one or more names of fields in the referenced collection to search for the typed value. Syntax to reference nested fields is similar to that of *value_field*.
+- `file`: allows referencing a specific file when the referenced collection is a files collection (string)
+- `display_fields`: list of one or more names of fields in the referenced collection that will render in the autocomplete menu of the control. Defaults to `value_field`. Syntax to reference nested fields is similar to that of *value_field*.
+- `default`: accepts any widget data type; defaults to an empty string
+- `multiple` : accepts a boolean, defaults to `false`
+- `min`: minimum number of items; ignored if **multiple** is  `false`
+- `max`: maximum number of items; ignored if **multiple** is  `false`
+- `options_length`: accepts integer to override number of options presented to user. Defaults to `20`.
 
 **Referencing a folder collection example**
 
