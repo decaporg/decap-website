@@ -8,8 +8,11 @@ weight: 30
 The code widget provides a code editor (powered by [Codemirror](https://codemirror.net)) with optional syntax awareness. Can output the raw code value or an object with the selected language and the raw code value.
 
 **Name:** `code`
+
 **UI:** code editor
+
 **Data type:** string
+
 **Options:**
 
 - `default_language`: optional; default language to use

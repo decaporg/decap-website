@@ -8,8 +8,11 @@ weight: 110
 The number widget uses an HTML number input, saving the value as a string, integer, or floating point number.
 
 **Name:** `number`
+
 **UI:** HTML [number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number)
+
 **Data type:** string by default; configured by `value_type` option
+
 **Options**
 
 - `default`: accepts string or number value; defaults to empty string

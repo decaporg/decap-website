@@ -8,8 +8,11 @@ weight: 50
 The datetime widget translates a datetime picker to a datetime string.
 
 **Name:** `datetime`
+
 **UI:** datetime picker
+
 **Data type:** [Day.js](https://day.js.org/)-formatted datetime string
+
 **Options:**
 
 - `default`: accepts a datetime string, or an empty string to accept blank input; otherwise defaults to current datetime.

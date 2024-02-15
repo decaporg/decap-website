@@ -8,8 +8,11 @@ weight: 130
 The relation widget allows you to reference items from another collection. It provides a search input with a list of entries from the collection you're referencing, and the list automatically updates with matched entries based on what you've typed.
 
 **Name:** `relation`
+
 **UI:** text input with search result dropdown
+
 **Data type:** data type of the value pulled from the related collection item
+
 **Options:**
 
 - `collection`: (**required**) name of the referenced collection (string)

@@ -8,8 +8,11 @@ weight: 40
 The color widget translates a color picker to a color string.
 
 **Name:** `color`
+
 **UI:** color picker
+
 **Data type:** string
+
 **Options:**
 
 - `default`: accepts a string; defaults to an empty string. Sets the default value

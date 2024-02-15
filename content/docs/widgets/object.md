@@ -8,8 +8,11 @@ weight: 120
 The object widget allows you to group multiple widgets together, nested under a single field. You can choose any widget as a child of an object widget—even other objects.
 
 **Name:** `object`
+
 **UI:** a field containing one or more child widgets
+
 **Data type:** list of child widget values
+
 **Options**
 
 - `default`: you can set defaults within each sub-field's configuration

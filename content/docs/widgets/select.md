@@ -8,8 +8,11 @@ weight: 140
 The select widget allows you to pick a string value from a dropdown menu.
 
 **Name:** `select`
+
 **UI:** select input
+
 **Data type:** string or array
+
 **Options:**
 
 - `default`: `options` must contain any default values

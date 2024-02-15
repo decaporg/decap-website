@@ -10,8 +10,11 @@ The markdown widget provides a full fledged text editor allowing users to format
 *Please note:* If you want to use your markdown editor to fill a markdown file contents after its frontmatter, you'll have to name the field `body` so the CMS recognizes it and saves the file accordingly.
 
 **Name:** `markdown`
+
 **UI:** full text editor
+
 **Data type:** markdown
+
 **Options**
 
 - `default`: accepts markdown content
