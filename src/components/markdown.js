@@ -37,7 +37,7 @@ const StyledMarkdown = styled.div`
 
   ol,
   ul {
-    margin-left: ${theme.space[3]};
+    margin-left: ${theme.space[4]};
   }
 
   ul {

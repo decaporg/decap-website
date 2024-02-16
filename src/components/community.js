@@ -12,31 +12,29 @@ import CommunityChannelsList from "./community-channels-list";
 
 function Community({ headline, subhead, sections }) {
   return (
-    <Container size="md">
-      <PageHero>
-        <div
-          css={css`
-            margin-bottom: ${theme.space[7]};
-          `}
-        >
-          <HeroTitle>
-            <Markdownify source={headline} />
-          </HeroTitle>
-          <Lead light>
-            <Markdownify source={subhead} />
-          </Lead>
-        </div>
+    <PageHero>
+      <div
+        css={css`
+          margin-bottom: ${theme.space[7]};
+        `}
+      >
+        <HeroTitle>
+          <Markdownify source={headline} />
+        </HeroTitle>
+        <Lead light>
+          <Markdownify source={subhead} />
+        </Lead>
+      </div>
 
-        {sections.map(({ title: sectionTitle, channels }, channelIdx) => (
-          <React.Fragment key={channelIdx}>
-            <h2>
-              <Markdownify source={sectionTitle} />
-            </h2>
-            <CommunityChannelsList channels={channels} />
-          </React.Fragment>
-        ))}
-      </PageHero>
-    </Container>
+      {sections.map(({ title: sectionTitle, channels }, channelIdx) => (
+        <React.Fragment key={channelIdx}>
+          <h2>
+            <Markdownify source={sectionTitle} />
+          </h2>
+          <CommunityChannelsList channels={channels} />
+        </React.Fragment>
+      ))}
+    </PageHero>
   );
 }
 
