@@ -26,9 +26,13 @@ const Contributors = () => {
 
   useEffect(() => {
     const fetchContributors = async () => {
-      const response = await fetch('https://api.github.com/repos/decaporg/decap-cms/contributors?per_page=100');
-      const data = await response.json();
-      setContributors(data);
+      try {
+        const response = await fetch('https://api.github.com/repos/decaporg/decap-cms/contributors?per_page=100');
+        const data = await response.json();
+        setContributors(data);
+      } catch (error) {
+        setContributors([]);
+      }
     };
 
     fetchContributors();
@@ -36,7 +40,7 @@ const Contributors = () => {
 
   return (
     <StyledContributors>
-      {contributors.map((user) => (
+      {contributors.length > 0 && contributors.map((user) => (
         <a href={user.html_url} title={user.name} key={user.login}>
           <img src={user.avatar_url.replace('v=4', 's=32')} alt={user.login} />
         </a>
