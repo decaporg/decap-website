@@ -15,7 +15,7 @@ CMS.registerCustomFormat('json5', 'json5', {
 });
 ```
 
-Then include `format: json5` in your collection configuration. See the [Collection docs](https://www.netlifycms.org/docs/configuration-options/#collections) for more details.
+Then include `format: json5` in your collection configuration. See the [Collection docs](https://www.decapcms.org/docs/configuration-options/#collections) for more details.
 
 You can also override the in-built formatters. For example, to change the YAML serialization method from [`yaml`](https://npmjs.com/package/yaml) to [`js-yaml`](https://npmjs.com/package/js-yaml):
 
