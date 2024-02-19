@@ -6,7 +6,8 @@ import theme from '../theme';
 import { mq } from '../utils';
 
 const Root = styled.footer`
-  background: white;
+  background: ${theme.colors.primaryLight};
+  color: ${theme.colors.white};
   padding-top: ${theme.space[4]};
   padding-bottom: ${theme.space[5]};
 `;
@@ -31,8 +32,8 @@ const FooterButtons = styled.div`
 const SocialButton = styled.a`
   display: inline-block;
   padding: ${theme.space[1]} ${theme.space[3]};
-  background-color: ${theme.colors.lightishGray};
-  color: white;
+  background-color: ${theme.colors.gray};
+  color: ${theme.colors.white};
   font-weight: 700;
   font-size: ${theme.fontsize[2]};
   border-radius: ${theme.radii[1]};
@@ -46,7 +47,6 @@ const SocialButton = styled.a`
 
 const Info = styled.div`
   font-size: ${theme.fontsize[1]};
-  color: ${theme.colors.gray};
   opacity: 0.5;
 
   ${mq[2]} {
@@ -55,7 +55,7 @@ const Info = styled.div`
 
   a {
     font-weight: 700;
-    color: ${theme.colors.gray};
+    color: ${theme.colors.white};
   }
 `;
 

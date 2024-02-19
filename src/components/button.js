@@ -41,6 +41,12 @@ const Button = styled.a`
     }
   }
 
+  &.tertiary {
+    background: none;
+    color: ${theme.colors.primaryLight};
+    border-color: currentColor;
+  }
+
   ${p => p.block && css`
     display: block;
     width: 100%;

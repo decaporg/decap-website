@@ -5,20 +5,15 @@ import { jsx, css } from '@emotion/react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import Markdownify from '../components/markdownify';
 import HomeHero from '../components/home-hero';
-// import WhatsNew from '../components/whats-new';
-// import Features from '../components/features';
-// import Awards from '../components/awards';
-import HomeSection from '../components/home-section';
-import Contributors from '../components/contributors';
-import Grid from '../components/grid';
 import HomeFeatures from '../components/home-features';
 import HomeServices from '../components/home-services';
+import HomeSection from '../components/home-section';
+import theme from '../theme';
+import { mq } from '../utils';
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
-  // const updates = data.updates.childDataYaml;
 
   return (
     <Layout hasHomeHero>
@@ -32,52 +27,37 @@ function HomePage({ data }) {
 
       <HomeServices {...landing.services} />
 
-      {/* Uncomment on when there are some recent updates */}
-      {/* <WhatsNew updates={updates.updates} /> */}
+      <div css={css`
+        background: ${theme.colors.lightestGray};
+        position: relative;
+        margin-top: calc(6vw + ${theme.space[5]});
+        padding: ${theme.space[3]} 0;
 
-      <HomeSection title={<Markdownify source={landing.community.hook} />}>
-        <Grid cols={2}>
-          <div>
-            {/* <Features items={landing.community.features} /> */}
-          </div>
-          <div>
-            <h3
-              css={css`
-                font-size: 18px;
-              `}
-            >
-              {landing.community.contributors}
-            </h3>
-            <Contributors />
-          </div>
-        </Grid>
-      </HomeSection>
+        ${mq[3]} {
+          margin-top: calc(6vw + ${theme.space[7]});
+          padding: ${theme.space[4]} 0;
+        }
 
-      {/* <HomeSection
-        css={css`
-          background: white;
-        `}
-        title={<Markdownify source={landing.awards.title} />}
-        text={<Markdownify source={landing.awards.description} />}
-      >
-        <Awards items={landing.awards.items} />
-      </HomeSection> */}
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          border-style: solid;
+          border-width: 6vw 100vw 0 0;
+          border-color: transparent ${theme.colors.lightestGray} transparent transparent;
+          z-index: -1;
+        }
+      `}>
+        <HomeSection {...landing.blog} />
+        <HomeSection {...landing.community} reverse={true} />
+      </div>
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
   query homeQuery {
-    updates: file(relativePath: { regex: "/updates/" }) {
-      childDataYaml {
-        updates {
-          date
-          description
-          version
-          url
-        }
-      }
-    }
     landing: file(relativePath: { regex: "/landing/" }) {
       childDataYaml {
         hero {
@@ -154,13 +134,25 @@ export const pageQuery = graphql`
             }
           }
         }
-        community {
+        blog {
+          title
           hook
-          features {
-            feature
-            description
+          text
+          image
+          button {
+            href
+            text
           }
-          contributors
+        }
+        community {
+          title
+          hook
+          text
+          image
+          button {
+            href
+            text
+          }
         }
       }
     }

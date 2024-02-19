@@ -8,6 +8,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(${p => p.cols}, 1fr);
     grid-gap: ${theme.space[7]};
+    align-items: center;
   }
 `;
 

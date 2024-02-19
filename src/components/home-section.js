@@ -1,36 +1,44 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { jsx, css } from '@emotion/react';
 
 import Container from './container';
-import Page from './page';
+import Markdownify from '../components/markdownify';
+import Grid from '../components/grid';
+import Button from '../components/button';
 import theme from '../theme';
+import { mq } from '../utils';
 
-const Header = styled.header`
-  text-align: center;
-  padding-top: ${theme.space[6]};
-  padding-bottom: ${theme.space[6]};
-`;
-
-const Title = styled.h2`
-  font-size: ${theme.fontsize[6]};
-`;
-
-const Text = styled.div`
-  max-width: 710px;
-  margin: 0 auto;
-`;
-
-function HomeSection({ title, text, children, ...props }) {
+function HomeSection({ title, hook, text, button, image, reverse }) {
   return (
-    <Page as="section" {...props}>
-      <Container>
-        <Header>
-          <Title>{title}</Title>
-          {text && <Text>{text}</Text>}
-        </Header>
-        {children}
-      </Container>
-    </Page>
+    <Container css={css`
+      margin: ${theme.space[6]} 0;
+    `}>
+      <Grid cols={2} reverse={reverse}>
+        <div css={css`
+          ${mq[1]} {
+            order: ${reverse ? '1' : '-1'};
+          }
+        `}>
+          <h2 css={css`
+            color: ${theme.colors.primaryLight};
+          `}>{title}</h2>
+          <h3>{hook}</h3>
+          <Markdownify source={text} />
+          <Button href={button.href} className='tertiary' css={css`
+            margin-top: ${theme.space[4]};
+          `}>
+            {button.text}
+          </Button>
+        </div>
+        <div >
+          <img
+            src={require(`../img/${image}`).default}
+            alt=""
+          />
+        </div>
+      </Grid>
+    </Container>
   );
 }
 

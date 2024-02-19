@@ -83,15 +83,25 @@ services:
       button:
         href: "/services/"
         text: "Find out more"
+blog:
+  title: "From the Blog"
+  hook: "Why git-based CMS is the future of content management"
+  text: |-
+    * Utilize the power of Git versioning and history. No backup needed
 
+    * Work on the same branching and environments system as your code.
+
+    * No need for a database and server - get this from your existing Git provider.
+  image: "blog.png"
+  button:
+    text: "More on our blog"
+    href: "/blog/git-based-cms-future/"
 community:
-  hook: "Supported by a growing community"
-  features:
-    - feature: "Built on the Jamstack"
-      description: "Decap CMS is based on client-side JavaScript, reusable APIs and prebuilt Markup. Compared to server-side CMS like WordPress, this means better performance, higher security, lower cost of scaling, and a better developer experience. You can learn more about the Jamstack on [jamstack.org](https://jamstack.org)."
-    - feature: "Support when you need it"
-      description: "Get up and running with comprehensive [documentation](/docs) and templates or work through difficult problems in our [community chat](https://decapcms.org/chat)."
-    - feature: "A community-driven project you can help evolve"
-      description: "Decap CMS is built by a community of more than 100 contributors — and you can help. Read the [contributing guide](/docs/contributor-guide) to join in."
-  contributors: "Made possible by awesome contributors"
+  title: "Community"
+  hook: "A community-driven project you can help evolve"
+  text: "Decap CMS is built by a community of more than 100 contributors — and you can help. Read the [contributing guide](/docs/contributor-guide) to join in."
+  image: "community.png"
+  button:
+    text: "More on the community page"
+    href: "/blog/git-based-cms-future/"
 
