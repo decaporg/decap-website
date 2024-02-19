@@ -146,6 +146,8 @@ export const pageQuery = graphql`
           features {
             title
             description
+            className
+            image
             button {
               href
               text

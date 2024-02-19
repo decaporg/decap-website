@@ -4,15 +4,13 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 
 import Container from './container';
-import Button from './button';
 import theme from '../theme';
 import { mq } from '../utils';
+import HomeService from './home-service';
 
 function HomeServices({ title, description, features }) {
   return (
-    <Container css={css`
-      // overflow: hidden;
-    `}>
+    <Container>
       <h2 css={css`
         transform: rotate(-0.38deg);
         text-align: center;
@@ -36,39 +34,15 @@ function HomeServices({ title, description, features }) {
           margin-bottom: ${theme.space[6]};
         }
       `}>{description}</p>
-      {features.map((feature, i) => (
-        <div key={feature.title} css={css`
-          background: ${theme.colors.white};
-          padding: ${theme.space[5]} ${theme.space[4]};
-          border-radius: ${theme.radii[3]};
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-          margin-bottom: ${theme.space[5]};
-
-          ${mq[2]} {
-            padding: ${theme.space[6]};
-          }
-        `}>
-          <h3 css={css`
-            font-family: Montserrat;
-            font-size: clamp(24px, 2.4vw, 36px);
-            font-style: normal;
-            font-weight: 800;
-            line-height: 1.4
-            letter-spacing: -0.72px;
-            margin: 0 0 ${theme.space[2]};
-          `}>{feature.title}</h3>
-          <p>{feature.description}</p>
-          <Button
-            href={feature.button.href}
-            className={i === 0 ? 'primary' : 'secondary'}
-            css={css`
-              margin: ${theme.space[3]} 0 0;
-            `}
-          >
-            {feature.button.text}
-          </Button>
-        </div>
-      ))}
+      <div css={css`
+        display: grid;
+        grid-template-columns: 2, 1fr);
+        gap: 40px;
+      `}>
+        {features.map((feature, i) => (
+          <HomeService key={i} {...feature} />
+        ))}
+      </div>
     </Container>
   );
 }

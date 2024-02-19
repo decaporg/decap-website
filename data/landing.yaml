@@ -63,16 +63,22 @@ services:
   description: "The team of maintainers offers a range of professional services to help you get the most out of Decap CMS."
   features:
     - title: "Priority Support"
+      className: "support"
+      image: "support.png"
       description: "Benefit from a dedicated support line and priority ticket handling."
       button:
         href: "/services/"
         text: "Find out more"
     - title: "Onboarding"
+      className: "onboarding"
+      image: "onboarding.png"
       description: "Get up to speed quickly with a customized onboarding program tailored to your team and project."
       button:
         href: "/services/"
         text: "Find out more"
     - title: "Custom Features Development"
+      className: "development"
+      image: "development.png"
       description: "Sponsor the development of custom features or integrations to meet your specific needs."
       button:
         href: "/services/"
