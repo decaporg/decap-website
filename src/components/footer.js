@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 
 import Container from './container';
 import theme from '../theme';
