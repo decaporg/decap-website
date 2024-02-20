@@ -27,7 +27,8 @@ function HomeHero({ headline, subhead, buttons}) {
         text-align: center;
         position: relative;
         color: ${theme.colors.white};
-        background-color: ${theme.colors.darkerGray};
+        // background-color: ${theme.colors.primaryLight};
+        background: linear-gradient(180deg, ${theme.colors.primaryLight} 0%, ${theme.colors.primaryDark} 100%);
 
         &::before {
           content: '';
@@ -37,7 +38,7 @@ function HomeHero({ headline, subhead, buttons}) {
           transform: translate(-50%, -50%);
           width: 100vw;
           height: 100%;
-          background: radial-gradient(50% 50% at 50% 50%, #3B1234 0%, #11081F 64%);
+          // background: radial-gradient(50% 50% at 50% 50%, #3B1234 0%, #11081F 64%);
         }
       `}>
         <Container css={css`
@@ -77,7 +78,7 @@ function HomeHero({ headline, subhead, buttons}) {
       <div css={css`
         border-style: solid;
         border-width: 6vw 100vw 0 0;
-        border-color: ${theme.colors.darkerGray} transparent transparent transparent;
+        border-color: ${theme.colors.primaryDark} transparent transparent transparent;
         filter: drop-shadow(0px 20px 24px rgba(0, 0, 0, 0.25));
         position: relative;
         z-index: -1;

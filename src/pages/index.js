@@ -33,8 +33,8 @@ function HomePage({ data }) {
         <div css={css`
           border-style: solid;
           border-width: 6vw 100vw 0 0;
-          filter: drop-shadow(0 -12px 20px rgba(0, 0, 0, 0.25));
-          border-color: transparent ${theme.colors.darkerGray} transparent transparent;
+          // filter: drop-shadow(0 -12px 20px rgba(0, 0, 0, 0.25));
+          border-color: transparent ${theme.colors.primaryDark} transparent transparent;
           margin-top: ${theme.space[5]};
 
           ${mq[2]} {
@@ -42,7 +42,7 @@ function HomePage({ data }) {
           }
         `} />
         <div css={css`
-          background: ${theme.colors.darkerGray};
+          background: linear-gradient(180deg, ${theme.colors.primaryDark} 0%, ${theme.colors.darkerGray} 100%);
           color: ${theme.colors.white};
           padding: ${theme.space[3]} 0;
 

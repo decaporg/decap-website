@@ -15,8 +15,8 @@ const SearchField = styled.input`
   font-size: ${theme.fontsize[2]};
   font-family: ${theme.fontFamily[1]};
   border-radius: ${theme.radii[2]};
-  background-color: ${theme.colors.darkGray};
-  color: ${theme.colors.white};
+  background-color: ${theme.colors.lightGray};
+  color: ${theme.colors.grey};
   background-image: url(${searchIcon});
   background-repeat: no-repeat;
   background-position: 12px 50%;
@@ -28,7 +28,7 @@ const SearchField = styled.input`
   outline: 0;
 
   &::placeholder {
-    color: ${theme.colors.lightishGray};
+    color: ${theme.colors.grey};
   }
 `;
 

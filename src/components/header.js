@@ -12,7 +12,7 @@ import theme from '../theme';
 import { mq } from '../utils';
 
 const StyledHeader = styled.header`
-  background: ${theme.colors.darkerGray};
+  background: ${theme.colors.primaryLight};
   color: ${theme.colors.white};
   padding-top: ${theme.space[2]};
   padding-bottom: ${theme.space[2]};
@@ -183,7 +183,7 @@ function Header({ hasHeroBelow }) {
       <HeaderContainer>
         <Logo>
           <Link to="/">
-            <img src="/img/decap-logo.svg" alt="Decap CMS" />
+            <img src="/img/decap-logo-white.svg" alt="Decap CMS" />
           </Link>
         </Logo>
         <MenuActions>
