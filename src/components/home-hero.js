@@ -5,8 +5,6 @@ import { jsx, css } from '@emotion/react';
 
 import Container from './container';
 import HeroTitle from '../components/hero-title';
-import Markdownify from '../components/markdownify';
-import Lead from '../components/lead';
 import Button from './button';
 import theme from '../theme';
 import { mq } from '../utils';
