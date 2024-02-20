@@ -90,7 +90,7 @@ function Features({ title, id, link, button, features }) {
         top: 0;
         z-index: 1;
 
-        ${mq[1]} {
+        ${mq[2]} {
           top: ${theme.space[6]};
           padding: ${theme.space[4]} 0 ${theme.space[3]};
         }
@@ -100,12 +100,21 @@ function Features({ title, id, link, button, features }) {
         `}>
           {title}
         </a>
-        <span>/</span>
+        <span css={css`
+          display: none;
+
+          ${mq[1]} {
+            display: initial;
+          }
+        `}>/</span>
         <a href={link.href} css={css`
           color: ${theme.colors.lightishGray};
-        `}>
-          {link.text}
-        </a>
+          display: none;
+
+          ${mq[1]} {
+            display: initial;
+          }
+        `}>{link.text}</a>
       </h2>
 
       {features.map((feature, i) => <FeatureItem

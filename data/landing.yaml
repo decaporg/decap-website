@@ -102,6 +102,5 @@ community:
   text: "Decap CMS is built by a community of more than 100 contributors — and you can help. Read the [contributing guide](/docs/contributor-guide) to join in."
   image: "community.png"
   button:
-    text: "More on the community page"
+    text: "About the community"
     href: "/blog/git-based-cms-future/"
-

@@ -14,10 +14,15 @@ import { mq } from '../utils';
 const StyledHeader = styled.header`
   background: ${theme.colors.darkerGray};
   color: ${theme.colors.white};
-  padding-top: ${theme.space[3]};
-  padding-bottom: ${theme.space[3]};
+  padding-top: ${theme.space[2]};
+  padding-bottom: ${theme.space[2]};
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
   font-family: ${theme.fontFamily[1]};
+
+  ${mq[1]} {
+    padding-top: ${theme.space[3]};
+    padding-bottom: ${theme.space[3]};
+  }
 
   ${mq[2]} {
     position: sticky;
@@ -42,6 +47,9 @@ const HeaderContainer = styled(Container)`
 const Logo = styled.div`
   ${mq[1]} {
     margin-right: ${theme.space[5]};
+  }
+  ${mq[3]} {
+    margin-right: ${theme.space[6]};
   }
 
   a {
@@ -70,6 +78,7 @@ const MenuBtn = styled.button`
   padding: ${theme.space[2]};
   font-size: ${theme.fontsize[6]};
   line-height: 1;
+  color: inherit;
 `;
 
 const SearchBtn = styled(MenuBtn)``;
@@ -104,6 +113,9 @@ const Menu = styled(ToggleArea)`
 
 const MenuList = styled.ul`
   ${mq[1]} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -11,6 +11,16 @@ const Container = styled.div`
   padding-left: ${theme.space[4]};
   padding-right: ${theme.space[4]};
 
+  ${mq[1]} {
+    padding-left: ${theme.space[5]};
+    padding-right: ${theme.space[5]};
+  }
+
+  ${mq[2]} {
+    padding-left: ${theme.space[6]};
+    padding-right: ${theme.space[6]};
+  }
+
   ${p => p.size === 'sm' &&
     css`
       max-width: 800px;
@@ -25,11 +35,6 @@ const Container = styled.div`
     css`
       max-width: 1440px;
     `};
-
-  ${mq[3]} {
-    padding-left: ${theme.space[5]};
-    padding-right: ${theme.space[5]};
-  }
 `;
 
 export default Container;

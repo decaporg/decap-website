@@ -38,13 +38,16 @@ const SectionTitle = styled.h3`
   margin-bottom: ${theme.space[2]};
 `;
 
-const SectionList = styled.ul``;
+const SectionList = styled.ul`
+  list-style: none;
+  padding-left: ${theme.space[3]};
+`;
 
 const MenuItem = styled.li``;
 
 const NavLink = styled(Link)`
   display: block;
-  /* font-weight: $regular; */
+  font-weight: 400;
   font-size: ${theme.fontsize[3]};
   color: ${theme.colors.gray};
   line-height: ${theme.lineHeight[1]};

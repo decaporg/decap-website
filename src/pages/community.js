@@ -29,9 +29,9 @@ export const pageQuery = graphql`
           channels {
             title
             description
-            cta {
+            link {
               href
-              label
+              text
             }
           }
         }

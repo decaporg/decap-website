@@ -10,16 +10,12 @@ export default function BlogPostTemplate({ title, author, date, body, html }) {
   return (
     <Container size="sm">
       <Page as="article">
-        <h1
-          css={css`
-            margin-bottom: 0;
-          `}
-        >
-          {title}
-        </h1>
+        <h1>{title}</h1>
+
         <MetaInfo>
           by {author} on {date}
         </MetaInfo>
+
         <Markdown body={body} html={html} />
       </Page>
     </Container>
