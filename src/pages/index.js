@@ -28,29 +28,29 @@ function HomePage({ data }) {
       <HomeServices {...landing.services} />
 
       <div css={css`
-        background: ${theme.colors.lightestGray};
-        position: relative;
-        margin-top: calc(6vw + ${theme.space[5]});
-        padding: ${theme.space[3]} 0;
+        overflow: hidden;
+        margin-top: ${theme.space[5]};
 
-        ${mq[3]} {
-          margin-top: calc(6vw + ${theme.space[7]});
-          padding: ${theme.space[4]} 0;
+        ${mq[2]} {
+          margin-top: ${theme.space[7]};
         }
-
-        &:before {
-          content: '';
-          position: absolute;
-          bottom: 100%;
-          left: 0;
+      `}>
+        <div css={css`
           border-style: solid;
           border-width: 6vw 100vw 0 0;
           border-color: transparent ${theme.colors.lightestGray} transparent transparent;
-          z-index: -1;
-        }
-      `}>
-        <HomeSection {...landing.blog} />
-        <HomeSection {...landing.community} reverse={true} />
+        `} />
+        <div css={css`
+          background: ${theme.colors.lightestGray};
+          padding: ${theme.space[3]} 0;
+
+          ${mq[2]} {
+            padding: ${theme.space[4]} 0;
+          }
+        `}>
+          <HomeSection {...landing.blog} />
+          <HomeSection {...landing.community} reverse={true} />
+        </div>
       </div>
     </Layout>
   );

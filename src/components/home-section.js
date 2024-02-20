@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 
 import Container from './container';
 import Markdownify from '../components/markdownify';
@@ -12,7 +11,8 @@ import { mq } from '../utils';
 function HomeSection({ title, hook, text, button, image, reverse }) {
   return (
     <Container css={css`
-      margin: ${theme.space[6]} 0;
+      margin-top: ${theme.space[6]};
+      margin-bottom: ${theme.space[6]};
     `}>
       <Grid cols={2} reverse={reverse}>
         <div css={css`

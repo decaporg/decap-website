@@ -170,7 +170,7 @@ function Header({ hasHeroBelow }) {
       <HeaderContainer>
         <Logo>
           <Link to="/">
-            <img src="/img/decap-logo.svg" alt="Decap CMS logo" />
+            <img src="/img/decap-logo.svg" alt="Decap CMS" />
           </Link>
         </Logo>
         <MenuActions>

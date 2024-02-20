@@ -19,9 +19,15 @@ const LAYOUT_QUERY = graphql`
     footer: file(relativePath: { regex: "/global/" }) {
       childDataYaml {
         footer {
-          buttons {
-            url
-            name
+          logo
+          maintained
+          links {
+            text
+            href
+          }
+          socials {
+            text
+            href
           }
         }
       }
@@ -60,7 +66,7 @@ function Layout({ hasPageHero, children }) {
             </Helmet>
             <Header hasHeroBelow={hasPageHero} />
             {children}
-            <Footer buttons={data.footer.childDataYaml.footer.buttons} />
+            <Footer {...data.footer.childDataYaml.footer} />
           </LayoutTemplate>
         );
       }}
