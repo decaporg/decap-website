@@ -12,7 +12,8 @@ import theme from '../theme';
 import { mq } from '../utils';
 
 const StyledHeader = styled.header`
-  background: ${theme.colors.lightestGray};
+  background: ${theme.colors.darkerGray};
+  color: ${theme.colors.white};
   padding-top: ${theme.space[3]};
   padding-bottom: ${theme.space[3]};
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;

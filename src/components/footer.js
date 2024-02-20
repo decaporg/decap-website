@@ -49,11 +49,11 @@ function Footer({ logo, maintained, links, socials }) {
           </div>
 
           <Links>
-            {links.map((link, i) => <a href={link.href}>{link.text}</a>)}
+            {links.map((link, i) => <a href={link.href} key={i}>{link.text}</a>)}
           </Links>
 
           <Links>
-            {socials.map((link, i) => <a href={link.href}>{link.text}</a>)}
+            {socials.map((link, i) => <a href={link.href} key={i}>{link.text}</a>)}
           </Links>
         </div>
       </Container>

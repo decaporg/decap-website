@@ -75,7 +75,6 @@ function FeatureItem({ title, description, image, reverse }) {
 function Features({ title, id, link, button, features }) {
   return (
     <div id={id} css={css`
-      margin: ${theme.space[2]} 0;
       position: relative;
     `}>
       <h2 css={css`

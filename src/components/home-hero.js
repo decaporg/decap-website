@@ -28,7 +28,8 @@ function HomeHero({ headline, subhead, buttons}) {
       <div css={css`
         text-align: center;
         position: relative;
-        overflow: hidden;
+        color: ${theme.colors.white};
+        background-color: ${theme.colors.darkerGray};
 
         &::before {
           content: '';
@@ -38,28 +39,31 @@ function HomeHero({ headline, subhead, buttons}) {
           transform: translate(-50%, -50%);
           width: 100vw;
           height: 100%;
-          z-index: -1;
-          background: radial-gradient(55% 35% at 50% 77%, hsl(330deg 100% 50% / 40%) 0%, ${theme.colors.lightestGray} 50%);
-          filter: drop-shadow(0px 4px 43.7px rgba(0, 0, 0, 0.25));
+          background: radial-gradient(50% 50% at 50% 50%, #3B1234 0%, #11081F 64%);
         }
       `}>
         <Container css={css`
           max-width: 620px;
           padding-top: ${theme.space[3]};
           padding-bottom: ${theme.space[5]};
+          z-index: 1;
+          position: relative;
 
           ${mq[3]} {
-            padding-top: ${theme.space[6]};
+            padding-top: ${theme.space[7]};
             padding-bottom: ${theme.space[7]};
           }
         `}>
-          <HeroTitle>
-            <Markdownify source={headline} />
-          </HeroTitle>
+          <HeroTitle>{headline}</HeroTitle>
 
-          <Lead>
-            <Markdownify source={subhead} />
-          </Lead>
+          <p css={css`
+            margin: ${theme.space[4]} auto;
+            max-width: 400px;
+
+            ${mq[2]} {
+              margin: ${theme.space[5]} auto;
+            }
+          `}>{subhead}</p>
 
           <HeroButtons>
             {buttons.map(item => <Button
@@ -75,13 +79,14 @@ function HomeHero({ headline, subhead, buttons}) {
       <div css={css`
         border-style: solid;
         border-width: 6vw 100vw 0 0;
-        border-color: ${theme.colors.lightestGray} transparent transparent transparent;
+        border-color: ${theme.colors.darkerGray} transparent transparent transparent;
+        filter: drop-shadow(0px 20px 24px rgba(0, 0, 0, 0.25));
         position: relative;
         z-index: -1;
         margin-bottom: ${theme.space[5]};
 
         ${mq[3]} {
-          margin-bottom: ${theme.space[7]};
+          margin-bottom: ${theme.space[6]};
         }
       `} />
     </div>
