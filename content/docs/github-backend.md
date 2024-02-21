@@ -3,7 +3,7 @@ group: Accounts
 weight: 30
 title: GitHub
 ---
-For repositories stored on GitHub, the `github` backend allows CMS users to log in directly with their GitHub account. Note that all users must have push access to your content repository for this to work.
+For repositories stored on [GitHub](https://github.com), the `github` backend allows CMS users to log in directly with their GitHub account. Note that all users must have push access to your content repository for this to work.
 
 Because GitHub [requires a server](https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723) for authentication, Netlify facilitates basic GitHub authentication.
 

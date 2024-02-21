@@ -19,7 +19,7 @@ function Community({ headline, subhead, sections }) {
         <HeroTitle>
           <Markdownify source={headline} />
         </HeroTitle>
-        <Lead>
+        <Lead light>
           <Markdownify source={subhead} />
         </Lead>
       </div>

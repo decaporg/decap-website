@@ -67,10 +67,6 @@ const globalStyles = css`
     &:hover {
       text-decoration: underline;
     }
-
-    &:active {
-      color: ${theme.colors.primaryDark};
-    }
   }
 
   .button {
@@ -95,14 +91,38 @@ const globalStyles = css`
     }
   }
 
-  .content-bottom {
-    margin-top: 2em;
-  }
+  .pagination-nav {
+    margin: 2em 0 !important;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
 
-  .right {
-    float: right;
-  }
+    a {
+      background: none;
+      border: 2px solid ${theme.colors.gray};
+      box-shadow: none;
 
+      &:hover,
+      &:focus {
+        border: 2px solid ${theme.colors.primaryDark};
+        text-decoration: none !important;
+      }
+
+      & .pagination-nav__sublabel {
+        color: ${theme.colors.gray};
+        font-size: ${theme.fontsize[2]};
+      }
+
+      & .pagination-nav__label {
+        color: ${theme.colors.primaryDark};
+      }
+    }
+
+    .pagination-nav__next {
+      grid-column: 2/3;
+      text-align: right;
+    }
+  }
 `;
 
 function GlobalStyles() {
