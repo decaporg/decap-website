@@ -12,9 +12,9 @@ const CarbonWrapper = styled.div`
   }
 
   #carbonads {
-    --carbon-font-family: -apple-system, BlinkMacSystemFont,
-      'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-      'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --carbon-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial,
+      sans-serif;
     --carbon-font-size: 14px;
     --carbon-padding: 1.5ch;
     --carbon-max-char: 20ch;
@@ -41,9 +41,7 @@ const CarbonWrapper = styled.div`
       flex-direction: column;
       align-items: center;
       min-inline-size: 130px;
-      max-inline-size: calc(
-        130px + var(--carbon-max-char) + 8ch
-      );
+      max-inline-size: calc(130px + var(--carbon-max-char) + 8ch);
       padding: var(--carbon-padding);
       gap: var(--carbon-padding);
       background-color: var(--carbon-bg-primary);
@@ -98,6 +96,7 @@ const BlockedMessage = styled.div`
   background-color: hsl(228 19% 98% / 1);
   padding: 1.5ch;
   font-size: 14px;
+  margin: 2rem auto 0;
 `;
 
 function CarbonAds() {
@@ -106,22 +105,29 @@ function CarbonAds() {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "https://cdn.carbonads.com/carbon.js?serve=CWYIK27J&placement=decapcmsorg";
+    script.src =
+      'https://cdn.carbonads.com/carbon.js?serve=CWYIK27J&placement=decapcmsorg';
     script.async = true;
-    script.id = "_carbonads_js";
+    script.id = '_carbonads_js';
     ref.current.appendChild(script);
     script.onerror = (e) => {
-      setBlocked(true)
+      setBlocked(true);
     };
   }, []);
 
   return (
     <CarbonWrapper>
       <div ref={ref} />
-      {isBlocked && <BlockedMessage>
-        <h4>You blocked an ad that keeps this project alive</h4>
-        <p>Please consider supporting Decap by disabling your ad-blocking software on decapcms.org. The ads shown here are relevant and do not collect your personal data.</p>
-      </BlockedMessage>}
+      {isBlocked && (
+        <BlockedMessage>
+          <h4>You blocked an ad that keeps this project alive</h4>
+          <p>
+            Please consider supporting Decap by disabling your ad-blocking
+            software on decapcms.org. The ads shown here are relevant and do not
+            collect your personal data.
+          </p>
+        </BlockedMessage>
+      )}
     </CarbonWrapper>
   );
 }
