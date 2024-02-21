@@ -15,12 +15,12 @@ const SearchField = styled.input`
   font-size: ${theme.fontsize[2]};
   font-family: ${theme.fontFamily[1]};
   border-radius: ${theme.radii[2]};
-  background-color: ${theme.colors.lightGray};
-  color: ${theme.colors.grey};
+  background-color: rgba(0, 0, 0, 0.1);
+  color: ${theme.colors.white};
   background-image: url(${searchIcon});
   background-repeat: no-repeat;
   background-position: 12px 50%;
-  border: 2px solid ${theme.colors.lightishGray};
+  border: 2px solid ${theme.colors.primaryDark};
   appearance: none;
   width: 100%;
   padding: ${theme.space[2]};
@@ -28,7 +28,7 @@ const SearchField = styled.input`
   outline: 0;
 
   &::placeholder {
-    color: ${theme.colors.grey};
+    color: ${theme.colors.lightestGray};
   }
 `;
 
