@@ -46,6 +46,9 @@ const HeaderContainer = styled(Container)`
 
 const Logo = styled.div`
   ${mq[1]} {
+    margin-right: ${theme.space[4]};
+  }
+  ${mq[2]} {
     margin-right: ${theme.space[5]};
   }
   ${mq[3]} {
@@ -85,14 +88,23 @@ const SearchBtn = styled(MenuBtn)``;
 
 const ToggleArea = styled.div`
   display: ${p => (p.open ? 'block' : 'none')};
-  flex: 1 0 100px;
+  position: absolute;
+  top: ${theme.space[6]};
+  left: 0;
   width: 100%;
-  margin-top: ${theme.space[3]};
+  flex: 1 0 100px;
+  background: ${theme.colors.primaryLight};
+  padding: 0 ${theme.space[4]} ${theme.space[4]};
+  z-index: 2;
 
   ${mq[1]} {
+    position: relative;
     display: block;
     width: auto;
-    margin-top: 0;
+    top: initial;
+    left: initial;
+    background: none;
+    padding: 0;
   }
 `;
 
@@ -112,23 +124,27 @@ const Menu = styled(ToggleArea)`
 `;
 
 const MenuList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.space[3]};
+  align-items: flex-end;
+
   ${mq[1]} {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: ${theme.space[3]};
   }
 
   ${mq[2]} {
-    gap: ${theme.space[5]};
+    gap: ${theme.space[4]};
   }
 
-  ${mq[4]} {
-    gap: ${theme.space[6]};
+  ${mq[3]} {
+    gap: ${theme.space[5]};
   }
 `;
 
@@ -213,7 +229,6 @@ function Header({ hasHeroBelow }) {
             </MenuItem>
             <MenuItem css={css`
               height: 28px;
-              padding-left: 8px;
             `}>
               <NavLink to="https://github.com/decaporg/decap-cms">
                 <SiGithub size={28} />

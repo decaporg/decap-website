@@ -42,11 +42,20 @@ function HomeHero({ headline, subhead, buttons}) {
         }
       `}>
         <Container css={css`
-          max-width: 620px;
+          max-width: 660px;
           padding-top: ${theme.space[3]};
           padding-bottom: ${theme.space[5]};
           z-index: 1;
           position: relative;
+
+          ${mq[0]} {
+            padding-top: ${theme.space[5]};
+            padding-bottom: ${theme.space[6]};
+          }
+
+          ${mq[2]} {
+            padding-top: ${theme.space[6]};
+          }
 
           ${mq[3]} {
             padding-top: ${theme.space[7]};
