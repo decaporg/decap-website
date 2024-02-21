@@ -79,7 +79,6 @@ function HomeHero({ headline, subhead, buttons}) {
         border-style: solid;
         border-width: 6vw 100vw 0 0;
         border-color: ${theme.colors.primaryDark} transparent transparent transparent;
-        filter: drop-shadow(0px 20px 24px rgba(0, 0, 0, 0.25));
         position: relative;
         z-index: -1;
         margin-bottom: ${theme.space[5]};

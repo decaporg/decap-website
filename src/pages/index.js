@@ -33,7 +33,6 @@ function HomePage({ data }) {
         <div css={css`
           border-style: solid;
           border-width: 6vw 100vw 0 0;
-          // filter: drop-shadow(0 -12px 20px rgba(0, 0, 0, 0.25));
           border-color: transparent ${theme.colors.primaryDark} transparent transparent;
           margin-top: ${theme.space[5]};
 

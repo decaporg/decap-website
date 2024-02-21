@@ -9,10 +9,6 @@ function CommunityChannelsList({ channels }) {
 
       {channels.map(({ title, description, link }, channelIdx) => (
         <div key={channelIdx} css={css`
-          // background: ${theme.colors.white};
-          // padding: ${theme.space[4]};
-          // box-shadow: 0 0 0 1px ${theme.colors.lightGray};
-          // border-radius: ${theme.radii[2]};
           margin-bottom: ${theme.space[4]};
         `}>
           <h3 css={css`
