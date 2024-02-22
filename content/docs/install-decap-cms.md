@@ -35,7 +35,7 @@ admin
 
 The first file, `admin/index.html`, is the entry point for the Decap CMS admin interface. This means that users navigate to `yoursite.com/admin/` to access it. On the code side, it's a basic HTML starter page that loads the Decap CMS JavaScript file.
 
-The second file, `admin/config.yml`, is the heart of your Decap CMS installation, and a bit more complex. The [Configuration](#configuration) section covers the details.
+The second file, `admin/config.yml`, is the heart of your Decap CMS installation, and a bit more complex. The [Configuration](/docs/configuration-options) section covers the details.
 
 In this example, we pull the `admin/index.html` file from a public CDN.
 
