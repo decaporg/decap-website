@@ -15,7 +15,7 @@ developers:
     text: "For Editors"
   button:
     text: "All Developer Features"
-    href: "/developer-features/"
+    href: "/features/developer/"
   features:
     - title: "Integral part of the Jamstack "
       description: "Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content. Compared to server-side CMS like WordPress, this means better performance, higher security, lower cost of scaling, and a better developer experience. You can learn more about the Jamstack on [jamstack.org](https://jamstack.org)."
@@ -40,7 +40,7 @@ editors:
     text: "For Developers"
   button:
     text: "All Editor Features"
-    href: "/editor-features/"
+    href: "/features/editor/"
   features:
     - title: "Editor-friendly user interface"
       description: "The web-based app includes rich-text editing, real-time preview, and drag-and-drop media uploads."

@@ -90,10 +90,10 @@ function HomeHero({ headline, subhead, buttons}) {
         border-color: ${theme.colors.primaryDark} transparent transparent transparent;
         position: relative;
         z-index: -1;
-        margin-bottom: ${theme.space[5]};
+        margin-bottom: ${theme.space[4]};
 
         ${mq[3]} {
-          margin-bottom: ${theme.space[6]};
+          margin-bottom: ${theme.space[5]};
         }
       `} />
     </div>
