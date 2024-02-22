@@ -74,6 +74,8 @@ By default, all entries created or edited in the Decap CMS are committed directl
 publish_mode: editorial_workflow
 ```
 
+Allowed values for `publish_mode` are: `simple`, `editorial_workflow` or empty string (same as 'simple')
+
 ## Media and Public Folders
 
 Decap CMS users can upload files to your repository using the Media Gallery. The following settings specify where these files are saved, and where they can be accessed on your built site.
