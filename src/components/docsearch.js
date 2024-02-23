@@ -33,8 +33,9 @@ function DocSearch() {
   useEffect(() => {
     if (window.docsearch) {
       window.docsearch({
-        apiKey: '08d03dc80862e84c70c5a1e769b13019',
-        indexName: 'netlifycms',
+        appId: '633NBL2XMU',
+        apiKey: '2e154688e9f443d6d895c9f226f01833',
+        indexName: 'decapcms',
         inputSelector: '#algolia-search',
         debug: false, // Set debug to true if you want to inspect the dropdown
       });
