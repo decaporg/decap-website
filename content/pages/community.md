@@ -10,6 +10,16 @@ sections:
         cta:
           href: /docs/contributor-guide
           label: Read the guide
+      - title: Open Collective
+        description: Financially support Decap CMS on Open Collective
+        cta:
+          href: https://opencollective.com/decap
+          label: Support Us
+      - title: GitHub Sponsors
+        description: Financially support Decap CMS via GitHub Sponsors
+        cta:
+          href: https://github.com/sponsors/decaporg
+          label: Sponsor Us
   - title: Communication
     channels:
       - title: Decap CMS Discord
