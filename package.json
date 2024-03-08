@@ -34,6 +34,7 @@
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-prismjs": "7.13.0",
     "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-source-graphql": "^5.13.1",
     "gatsby-transformer-json": "5.13.1",
     "gatsby-transformer-remark": "6.13.0",
     "gatsby-transformer-yaml": "5.13.1",

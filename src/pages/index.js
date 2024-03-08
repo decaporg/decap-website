@@ -9,7 +9,7 @@ import Layout from '../components/layout';
 import Markdownify from '../components/markdownify';
 import PageHero from '../components/page-hero';
 import HeroTitle from '../components/hero-title';
-// import WhatsNew from '../components/whats-new';
+import WhatsNew from '../components/whats-new';
 import Lead from '../components/lead';
 import Features from '../components/features';
 // import Awards from '../components/awards';
@@ -48,7 +48,6 @@ const MarkdownButton = styled.span`
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
-  // const updates = data.updates.childDataYaml;
 
   return (
     <Layout hasPageHero>
@@ -137,8 +136,7 @@ function HomePage({ data }) {
         </div>
       </section>
 
-      {/* Uncomment on when there are some recent updates */}
-      {/* <WhatsNew updates={updates.updates} /> */}
+      <WhatsNew />
 
       <HomeSection
         css={css`
@@ -209,16 +207,6 @@ function HomePage({ data }) {
 
 export const pageQuery = graphql`
   query homeQuery {
-    updates: file(relativePath: { regex: "/updates/" }) {
-      childDataYaml {
-        updates {
-          date
-          description
-          version
-          url
-        }
-      }
-    }
     landing: file(relativePath: { regex: "/landing/" }) {
       childDataYaml {
         hero {
