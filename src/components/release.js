@@ -3,7 +3,6 @@ import { jsx, css } from '@emotion/react';
 import dayjs from 'dayjs';
 import styled from '@emotion/styled';
 
-import Markdownify from '../components/markdownify';
 import theme from '../theme';
 
 const ReleaseLink = styled.a`
@@ -34,8 +33,8 @@ const Version = styled.span`
   color: ${theme.colors.gray};
 `;
 
-function Release({ published_at, url, name, shortDescriptionHTML }) {
-  const displayDate = dayjs(published_at).format('MMMM D, YYYY');
+function Release({ publishedAt, url, name, shortDescriptionHTML }) {
+  const displayDate = dayjs(publishedAt).format('MMMM D, YYYY');
 
   return (
     <li css={css`
