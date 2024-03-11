@@ -9,7 +9,6 @@ import BlogPostTemplate from '../components/blog-post-template'
 import { LayoutTemplate as Layout } from '../components/layout';
 import DocsTemplate from '../components/docs-template';
 import WidgetDoc from '../components/widget-doc';
-import WhatsNew from '../components/whats-new';
 import Community from '../components/community';
 import siteConfig from '../../site.yml';
 
@@ -97,27 +96,9 @@ function WidgetDocPreview({ entry, widgetFor }) {
   );
 }
 
-function ReleasePreview({ entry }) {
-  return (
-    <PreviewContainer highlight={true}>
-      <WhatsNew
-        updates={entry
-          .getIn(['data', 'updates'])
-          .map(release => ({
-            version: release.get('version'),
-            date: dayjs(release.get('date')).format('MMMM D, YYYY'),
-            description: release.get('description'),
-          }))
-          .toJS()}
-      />
-    </PreviewContainer>
-  );
-}
-
 CMS.registerPreviewTemplate('blog', BlogPostPreview);
 siteConfig.menu.docs.forEach(group => {
   CMS.registerPreviewTemplate(`docs_${group.name}`, DocsPreview);
 });
 CMS.registerPreviewTemplate('widget_docs', WidgetDocPreview);
-CMS.registerPreviewTemplate('releases', ReleasePreview);
 CMS.registerPreviewTemplate('community', CommunityPreview);

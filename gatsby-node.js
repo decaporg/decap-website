@@ -109,9 +109,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.json'],
-      alias: {
-        dayjs$: 'dayjs/dayjs.js',
-      },
     },
   });
 };

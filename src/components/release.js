@@ -3,52 +3,53 @@ import { jsx, css } from '@emotion/react';
 import dayjs from 'dayjs';
 import styled from '@emotion/styled';
 
-import Markdownify from '../components/markdownify';
 import theme from '../theme';
 
 const ReleaseLink = styled.a`
   display: block;
-  padding: ${theme.space[2]} ${theme.space[3]};
+  padding: ${theme.space[4]} ${theme.space[3]};
   border-radius: ${theme.radii[1]};
+  background: ${theme.colors.lighterGray};
+  transition: background 0.2s ease;
+  color: ${theme.colors.gray};
   height: 100%;
+  margin-bottom: ${theme.space[3]};
+
+  h2,
+  h3 {
+    font-size: ${theme.fontsize[3]};
+  }
+
   &:hover {
-    background: ${theme.colors.darkGray};
+    background: ${theme.colors.white};
   }
 `;
 
 const Version = styled.span`
   background: ${theme.colors.shadeBlue};
-  font-size: ${theme.fontsize[1]};
-  padding: 0 ${theme.space[1]};
+  font-size: ${theme.fontsize[3]};
+  padding: ${theme.space[1]};
   border-radius: ${theme.radii[1]};
   font-weight: 700;
   margin-right: ${theme.space[2]};
   color: ${theme.colors.gray};
 `;
 
-function Release({ version, versionPrevious, date, description, url }) {
-  const displayDate = dayjs(date).format('MMMM D, YYYY');
-  const defaultUrl = `https://github.com/decaporg/decap-cms/compare/decap-cms@${versionPrevious}...decap-cms@${version}`;
+function Release({ publishedAt, url, name, shortDescriptionHTML }) {
+  const displayDate = dayjs(publishedAt).format('MMMM D, YYYY');
 
   return (
-    <li
-      css={css`
-        flex: 1;
-      `}
-    >
-      <ReleaseLink href={url || defaultUrl}>
-        <div
-          css={css`
-            margin-bottom: ${theme.space[1]};
-          `}
-        >
-          <Version>{version}</Version>
-          <span
-            css={css`
-              font-size: ${theme.fontsize[1]};
-              color: rgba(255, 255, 255, 0.6);
-            `}
-          >
+    <li css={css`
+      flex: 1;
+    `}>
+      <ReleaseLink href={url}>
+        <div css={css`
+          margin-bottom: ${theme.space[3]};
+        `}>
+          <Version>{name}</Version>
+          <span css={css`
+            font-size: ${theme.fontsize[1]};
+          `}>
             {displayDate}
           </span>
         </div>
@@ -57,7 +58,7 @@ function Release({ version, versionPrevious, date, description, url }) {
             font-size: ${theme.fontsize[2]};
           `}
         >
-          <Markdownify source={description} />
+          <div dangerouslySetInnerHTML={{__html: shortDescriptionHTML }} />
         </span>
       </ReleaseLink>
     </li>

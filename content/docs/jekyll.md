@@ -214,7 +214,7 @@ With that configuration added, you should be able to select the author for a pos
 
 ### About Page
 
-Our Jekyll blog includes an About page. It would nice to be able to edit that page just like we can edit our blog and author pages. Decap CMS provides [file collections](https://www.decapcms.org/docs/collection-types/#file-collections) to solve this problem.
+Our Jekyll blog includes an About page. It would nice to be able to edit that page just like we can edit our blog and author pages. Decap CMS provides [file collections](https://decapcms.org/docs/collection-file/) to solve this problem.
 
 Copy and paste the following into the collections array in `config.yml`
 

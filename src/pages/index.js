@@ -1,10 +1,9 @@
 /** @jsx jsx */
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
 import { jsx, css } from '@emotion/react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import WhatsNew from '../components/whats-new';
 import HomeHero from '../components/home-hero';
 import HomeFeatures from '../components/home-features';
 import HomeServices from '../components/home-services';
@@ -14,6 +13,7 @@ import { mq } from '../utils';
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
+  const releases = data.github?.repository?.releases?.nodes || [];
 
   return (
     <Layout hasHomeHero>
@@ -53,12 +53,26 @@ function HomePage({ data }) {
           <HomeSection {...landing.community} reverse={true} />
         </div>
       </div>
+
+      <WhatsNew releases={releases} />
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
   query homeQuery {
+    github {
+      repository(name: "decap-cms", owner: "decaporg") {
+        releases(first: 3) {
+          nodes {
+            publishedAt
+            url
+            name
+            shortDescriptionHTML
+          }
+        }
+      }
+    }
     landing: file(relativePath: { regex: "/landing/" }) {
       childDataYaml {
         hero {
