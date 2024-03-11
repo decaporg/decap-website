@@ -13,6 +13,7 @@ const ReleaseLink = styled.a`
   transition: background 0.2s ease;
   color: ${theme.colors.gray};
   height: 100%;
+  margin-bottom: ${theme.space[3]};
 
   h2,
   h3 {
