@@ -1,31 +1,12 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { useStaticQuery, graphql } from "gatsby"
 
 import Container from './container';
 import Release from './release';
 import Grid from './grid';
 import theme from '../theme';
 
-function WhatsNew() {
-  const query = useStaticQuery(graphql`
-    query {
-      github {
-        repository(name: "decap-cms", owner: "decaporg") {
-          releases(first: 3) {
-            nodes {
-              publishedAt
-              url
-              name
-              shortDescriptionHTML
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const releases = query.github.repository.releases.nodes;
+function WhatsNew({ releases }) {
 
   return (
     <section css={css`

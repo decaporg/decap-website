@@ -9,8 +9,6 @@ import BlogPostTemplate from '../components/blog-post-template';
 import { LayoutTemplate as Layout } from '../components/layout';
 import DocsTemplate from '../components/docs-template';
 import WidgetDoc from '../components/widget-doc';
-import WhatsNew from '../components/whats-new';
-import Notification from '../components/notification';
 import Community from '../components/community';
 import siteConfig from '../../site.yml';
 

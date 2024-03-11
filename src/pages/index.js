@@ -48,6 +48,7 @@ const MarkdownButton = styled.span`
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
+  const releases = data.github?.repository?.releases?.nodes || [];
 
   return (
     <Layout hasPageHero>
@@ -136,7 +137,7 @@ function HomePage({ data }) {
         </div>
       </section>
 
-      <WhatsNew />
+      <WhatsNew releases={releases} />
 
       <HomeSection
         css={css`
@@ -207,6 +208,18 @@ function HomePage({ data }) {
 
 export const pageQuery = graphql`
   query homeQuery {
+    github {
+      repository(name: "decap-cms", owner: "decaporg") {
+        releases(first: 3) {
+          nodes {
+            publishedAt
+            url
+            name
+            shortDescriptionHTML
+          }
+        }
+      }
+    }
     landing: file(relativePath: { regex: "/landing/" }) {
       childDataYaml {
         hero {

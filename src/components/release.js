@@ -12,6 +12,7 @@ const ReleaseLink = styled.a`
   background: ${theme.colors.lighterGray};
   transition: background 0.2s ease;
   color: ${theme.colors.gray};
+  height: 100%;
 
   h2,
   h3 {
