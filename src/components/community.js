@@ -7,7 +7,6 @@ import PageHero from "./page-hero";
 import HeroTitle from "./hero-title";
 import Lead from "./lead";
 import theme from "../theme";
-import Container from "./container";
 import CommunityChannelsList from "./community-channels-list";
 
 function Community({ headline, subhead, sections }) {
