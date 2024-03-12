@@ -1,7 +1,7 @@
 ---
-title: Hugo
 group: Guides
 weight: 20
+title: Hugo
 ---
 ## Introduction
 
@@ -138,7 +138,7 @@ Once you've added this, make sure to push your changes to GitHub!
 
 Back in your [Netlify dashboard](https://app.netlify.com/):
 
-1. Go to **Settings > Identity**, and select **Enable Identity service**.
+1. Go to **Configuration > Identity**, and select **Enable Identity service**.
 2. Once enabled, select **Settings and usage**, and scroll down to **Registration preferences**. You can set this to either **Open** or **Invite only**, but usually **Invite only** is your best bet for a personal site.
 3. If you don't want to create an account, or would like to use an external provider such as GitHub or Google, you can enable those services under **External providers**.
 4. Scroll down to **Services** and click **Enable Git Gateway**.
