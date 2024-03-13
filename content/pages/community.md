@@ -12,12 +12,12 @@ sections:
           text: Read the guide
       - title: Open Collective
         description: Financially support Decap CMS on Open Collective
-        cta:
+        link:
           href: https://opencollective.com/decap
           text: Support Us
       - title: GitHub Sponsors
         description: Financially support Decap CMS via GitHub Sponsors
-        cta:
+        link:
           href: https://github.com/sponsors/decaporg
           text: Sponsor Us
   - title: Communication
