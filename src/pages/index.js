@@ -13,7 +13,7 @@ import { mq } from '../utils';
 
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
-  const releases = data.github?.repository?.releases?.nodes || [];
+  const releases = data.releases.nodes[0].releases || [];
 
   return (
     <Layout hasHomeHero>
@@ -54,22 +54,19 @@ function HomePage({ data }) {
         </div>
       </div>
 
-      <WhatsNew releases={releases} />
+      {releases.length > 0 && <WhatsNew releases={releases} />}
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
   query homeQuery {
-    github {
-      repository(name: "decap-cms", owner: "decaporg") {
-        releases(first: 3) {
-          nodes {
-            publishedAt
-            url
-            name
-            shortDescriptionHTML
-          }
+    releases: allDecapReleases {
+      nodes {
+        releases {
+          published_at
+          url
+          name
         }
       }
     }
