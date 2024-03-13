@@ -1,44 +1,53 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
+import dayjs from 'dayjs';
+import styled from '@emotion/styled';
 
-import Container from './container';
-import Release from './release';
-import Grid from './grid';
 import theme from '../theme';
+
+const Releases = styled.div`
+`;
+
+const Release = styled.div`
+  margin-bottom: ${theme.space[2]};
+`;
+
+const Version = styled.a`
+`;
+
+const Date = styled.p`
+  font-size: ${theme.fontsize[1]};
+`;
 
 function WhatsNew({ releases }) {
 
   return (
     <section css={css`
-      background: ${theme.colors.lightestGray};
-      padding-top: ${theme.space[7]};
-      padding-bottom: ${theme.space[6]};
+      text-align: left;
+      position: absolute;
+      right: -20vw;
+      top: 50%;
+      width: 200px;
+      transform: translateY(-50%);
+      display: none;
+
+      a {
+        color: inherit;
+      }
     `}>
-      <Container>
-        <h2 css={css`
-          margin-bottom: ${theme.space[5]};
-          text-align: center;
-        `}>Latest Releases</h2>
+      <h3><a href="https://github.com/decaporg/decap-cms/releases/" css={css`
+      `}>Latest Releases</a></h3>
 
-        <Grid cols={3} css={css`
-          grid-gap: ${theme.space[5]} !important;
-        `}>
-          {releases.length > 0 && releases.map((item, idx) => (
-            <Release key={idx} {...item} />
-          ))}
-        </Grid>
-
-        <div css={css`
-          text-align: center;
-          margin-top: ${theme.space[6]};
-        `}>
-          <a
-            href="https://github.com/decaporg/decap-cms/releases/"
-            className="button">
-            See all releases on GitHub
-          </a>
-        </div>
-      </Container>
+      <Releases>
+        {releases.length > 0 && releases.map((item, idx) => (
+          <Release key={idx}>
+            <Version href={item.url}>{item.name}</Version>
+            <Date>
+              {dayjs(item.published_at).format('MMMM D, YYYY')}
+            </Date>
+          </Release>
+        ))}
+      </Releases>
     </section>
   );
 }

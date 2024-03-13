@@ -3,7 +3,6 @@ import { jsx, css } from '@emotion/react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import WhatsNew from '../components/whats-new';
 import HomeHero from '../components/home-hero';
 import HomeFeatures from '../components/home-features';
 import HomeServices from '../components/home-services';
@@ -17,7 +16,7 @@ function HomePage({ data }) {
 
   return (
     <Layout hasHomeHero>
-      <HomeHero {...landing.hero} />
+      <HomeHero {...landing.hero} releases={releases} />
 
       <HomeFeatures
         developers={landing.developers}
@@ -53,8 +52,6 @@ function HomePage({ data }) {
           <HomeSection {...landing.community} reverse={true} />
         </div>
       </div>
-
-      {releases.length > 0 && <WhatsNew releases={releases} />}
     </Layout>
   );
 }
