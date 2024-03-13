@@ -20,7 +20,7 @@ function WhatsNew({ releases }) {
           text-align: center;
         `}>Latest Releases</h2>
 
-        <Grid as="ol" cols={3} css={css`
+        <Grid cols={3} css={css`
           grid-gap: ${theme.space[5]} !important;
         `}>
           {releases.length > 0 && releases.map((item, idx) => (
