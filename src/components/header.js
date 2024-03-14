@@ -150,15 +150,15 @@ const MenuList = styled.ul`
 
 const MenuItem = styled.li`
   line-height: 1;
-`;
 
-const NavLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  font-weight: 400;
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
 
-  ${mq[2]} {
-    font-size: ${theme.fontsize[4]};
+    ${mq[2]} {
+      font-size: ${theme.fontsize[4]};
+    }
   }
 `;
 
@@ -216,23 +216,23 @@ function Header({ hasHeroBelow }) {
         <Menu open={isNavOpen}>
           <MenuList>
             <MenuItem>
-              <NavLink to="/docs/intro/">Docs</NavLink>
+              <Link to="/docs/intro/">Docs</Link>
             </MenuItem>
             <MenuItem>
-              <NavLink to="/services/" className="ga-menu">Pro Help</NavLink>
+              <Link to="/services/" className="ga-menu">Pro Help</Link>
             </MenuItem>
             <MenuItem>
-              <NavLink to="/community/">Community</NavLink>
+              <Link to="/community/">Community</Link>
             </MenuItem>
             <MenuItem>
-              <NavLink to="/blog/">Blog</NavLink>
+              <Link to="/blog/">Blog</Link>
             </MenuItem>
             <MenuItem css={css`
               height: 28px;
             `}>
-              <NavLink to="https://github.com/decaporg/decap-cms">
+              <a href="https://github.com/decaporg/decap-cms" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <SiGithub size={28} />
-              </NavLink>
+              </a>
             </MenuItem>
           </MenuList>
         </Menu>
