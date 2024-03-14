@@ -24,9 +24,7 @@ function HomeSection({ title, hook, text, button, image, reverse }) {
             color: ${theme.colors.primaryLight};
           `}>{title}</h2>
           <h3>{hook}</h3>
-          <p>
-            <Markdownify source={text} />
-          </p>
+          <Markdownify source={text} />
           <Button href={button.href} className='tertiary' css={css`
             margin-top: ${theme.space[4]};
           `}>
