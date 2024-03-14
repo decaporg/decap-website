@@ -1,6 +1,6 @@
 ---
 title: Developer features
-description: All Decap CMS features for developers.
+description: If you're a developer looking for a new CMS, these are the features of Decap that could be interesting to you.
 image: /img/og-image.png
 features:
   - title: Git Workflow

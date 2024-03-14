@@ -29,14 +29,27 @@ function BlogPost({ data }) {
       <Container size="sm">
         <Page as="article">
           <h1>{title}</h1>
-          <p>{description}</p>
+          <p css={css`
+            margin-bottom: ${theme.space[5]};
+          `}>{description}</p>
 
           {features.map((feature, index) => (
-            <div key={index}>
-              <h2  css={css`
-                margin-top: ${theme.space[3]};
-              `}>{feature.title}</h2>
-              <Markdown html={feature.description} />
+            <div key={index} css={css`
+              display: flex;
+              gap: ${theme.space[4]};
+              margin-bottom: ${theme.space[5]};
+              align-items: center;
+
+            `}>
+              {/* <img src={feature.image} alt={feature.title} css={css`
+                flex: 0 0 100px;
+              `} /> */}
+              <div>
+                <h3 css={css`
+                  margin-top: ${theme.space[3]};
+                `}>{feature.title}</h3>
+                <Markdown html={feature.description} />
+              </div>
             </div>
           ))}
         </Page>
