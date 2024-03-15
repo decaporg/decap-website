@@ -1,21 +1,22 @@
 ---
 title: You can now sponsor Decap CMS
 description: >-
-  Financially support Decap CMS via GitHub Sponsors or Open Collective
-date: 2023-08-23T08:00:00.000Z
+  If Decap brings value to your process, consider supporting the project financially via GitHub Sponsors or Open Collective
+date: 2024-03-15T08:00:00.000Z
 author: Martin Jagodic
 image: /img/sponsor.png
 ---
-In order to continue developing and maintaining Decap CMS, we rely on the generous support of our community. If you find value in Decap CMS and would like to contribute, there are two ways you can sponsor us:
+**If Decap brings value to your process, consider supporting the project financially via GitHub Sponsors or Open Collective.**
 
-1. **GitHub Sponsors**: You can become a GitHub Sponsor by visiting our [GitHub Sponsors page](https://github.com/sponsors/decap-cms). GitHub Sponsors allows you to make recurring monthly payments to support our work. As a sponsor, you will receive special benefits such as early access to new features and priority support.
+Decap is currently maintained by an independent team who believe in this project and want to see it grow. We are committed to keeping and improving Decap as a serious and reliable headless CMS for developers and content creators.
 
-2. **Open Collective**: If you prefer a one-time contribution or want to support us through your organization, you can do so via our [Open Collective page](https://opencollective.com/decap-cms). Open Collective allows you to make one-time or recurring donations, and it provides transparency by showing how funds are used.
+But we need your help. We are not backed by and of the large players, so community contributions are very important in insuring our future. If you find value in Decap CMS and would like to contribute, there are two ways you can do so:
 
-Your sponsorship will directly contribute to the ongoing development of Decap CMS, including bug fixes, feature enhancements, and community support. By sponsoring us, you are helping us make Decap CMS even better for everyone.
+1. **[Sponsor us on GitHub](https://github.com/sponsors/decaporg)**
+2. **[Donate on Open Collective](https://opencollective.com/decap)**
 
-We are incredibly grateful for any support you can provide. Together, we can continue to improve Decap CMS and empower developers to build amazing websites.
+Your sponsorship will directly contribute to the ongoing development of Decap CMS, including bug fixes, feature enhancements, and community support. All spending is transaprent on Open Collective, and we are committed to using your contributions responsibly.
 
-Thank you for considering sponsoring Decap CMS!
+If you are unable to contribute financially, there are other ways you can help. You can contribute to the project by reporting bugs, requesting features, and discussing ideas on GitHub. You can also contribute by writing documentation, creating tutorials, and helping others in the community.
 
-![Sponsor Decap CMS](/img/sponsor.png)
+We are grateful for all support that we already recieved, be it finacially or otherwise. Together, we can continue to improve Decap CMS and empower developers to build amazing websites.
