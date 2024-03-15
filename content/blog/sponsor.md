@@ -8,7 +8,7 @@ image: /img/sponsor.png
 ---
 **If Decap brings value to your process, consider supporting the project financially via GitHub Sponsors or Open Collective.**
 
-Decap is currently maintained by an independent team who believes in this project and want to see it grow. We are committed to keeping and improving Decap as a serious and reliable headless CMS for developers and content creators.
+Decap is currently maintained by an independent team that believes in this project and wants to see it grow. We are committed to keeping and improving Decap as a serious and reliable headless CMS for developers and content creators.
 
 But we need your help. We are not backed by any of the large players, so community contributions are very important in ensuring our future. If you find value in Decap CMS and would like to contribute, there are two ways you can do so:
 
