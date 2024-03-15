@@ -1,8 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
+require('dotenv').config({ path: '.env' })
 
 const pkg = require('./package.json');
-
 const staticConfig = yaml.load(fs.readFileSync('./site.yml', 'utf8'));
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
         fieldName: 'github',
         url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
       },
     },

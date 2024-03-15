@@ -1,5 +1,26 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const fetch = (...args) =>
+  import(`node-fetch`).then(({ default: fetch }) => fetch(...args))
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createContentDigest,
+}) => {
+  const result = await fetch(`https://api.github.com/repos/decaporg/decap-cms/releases?per_page=3`)
+  const resultData = await result.json()
+
+  createNode({
+    releases: resultData,
+    id: `decap-releases`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `DecapReleases`,
+      contentDigest: createContentDigest(resultData),
+    },
+  })
+}
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
