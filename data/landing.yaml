@@ -95,7 +95,7 @@ blog:
   image: "blog.png"
   button:
     text: "More on our blog"
-    href: "/blog/git-based-cms-future/"
+    href: "/blog/2023/11/git-based-cms-definition-features-best-practices/"
 community:
   title: "Community"
   hook: "A community-driven project you can help evolve"
@@ -103,4 +103,4 @@ community:
   image: "community.png"
   button:
     text: "About the community"
-    href: "/blog/git-based-cms-future/"
+    href: "/community/"
