@@ -122,9 +122,7 @@ function CarbonAds() {
         <BlockedMessage>
           <h4>You blocked an ad that keeps this project alive</h4>
           <p>
-            Please consider supporting Decap by disabling your ad-blocking
-            software on decapcms.org. The ads shown here are relevant and do not
-            collect your personal data.
+            Please consider supporting Decap by donating on <a href="https://opencollective.com/decap">Open Collective</a> or sponsoring on <a href="https://github.com/sponsors/decaporg/">GitHub</a>.
           </p>
         </BlockedMessage>
       )}

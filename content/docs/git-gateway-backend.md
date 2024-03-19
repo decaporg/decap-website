@@ -28,4 +28,4 @@ If you change ownership on your repository, or convert a repository from public 
 
 You can use [Git Gateway](https://github.com/netlify/git-gateway) without Netlify by setting up your own Git Gateway server and connecting it with your own instance of [GoTrue](https://www.gotrueapi.org) (the open source microservice that powers Netlify Identity), or with any other identity service that can issue JSON Web Tokens (JWT).
 
-To configure in Decap CMS, use the same `backend` settings in your Decap CMS `config.yml` file as described in Step 2 of the [Git Gateway with Netlify Identity](#git-gateway-with-netlify-identity) instructions above.
+To configure in Decap CMS, use the same `backend` settings in your Decap CMS `config.yml` file as described in Step 2 of the [Git Gateway with Netlify](#git-gateway-with-netlify) instructions above.
