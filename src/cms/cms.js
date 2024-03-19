@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 
-import BlogPostTemplate from '../components/blog-post-template'
+import BlogPostTemplate from '../components/blog-post-template';
 import { LayoutTemplate as Layout } from '../components/layout';
 import DocsTemplate from '../components/docs-template';
 import WidgetDoc from '../components/widget-doc';
