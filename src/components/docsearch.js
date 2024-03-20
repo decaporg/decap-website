@@ -20,15 +20,20 @@ const SearchField = styled.input`
   background-image: url(${searchIcon});
   background-repeat: no-repeat;
   background-position: 12px 50%;
-  border: 2px solid ${theme.colors.primaryDark};
+  border: 2px solid ${theme.colors.lightishGray};
   appearance: none;
   width: 100%;
   padding: ${theme.space[2]};
   padding-left: 36px;
   outline: 0;
+  transition: border-color 0.2s ease-in-out;
 
   &::placeholder {
     color: ${theme.colors.lightestGray};
+  }
+
+  &:focus {
+    border-color: ${theme.colors.primaryDark};
   }
 `;
 
