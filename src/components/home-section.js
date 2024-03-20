@@ -21,21 +21,27 @@ function HomeSection({ title, hook, text, button, image, reverse }) {
           }
         `}>
           <h2 css={css`
-            color: ${theme.colors.primaryLight};
+            margin-bottom: ${theme.space[4]};
+            font-size: ${theme.fontsize[6]};
+            text-shadow: ${theme.colors.primaryLight} 2px 1px 20px;
           `}>{title}</h2>
           <h3>{hook}</h3>
-          <Markdownify source={text} />
-          <Button href={button.href} className='tertiary' css={css`
-            margin-top: ${theme.space[4]};
+          <div css={css`
+            a {
+              color: inherit;
+              text-decoration: underline;
+            }
+          `} >
+            <Markdownify source={text} />
+          </div>
+          <Button href={button.href} className='secondary' css={css`
+            margin: ${theme.space[4]} 0;
           `}>
             {button.text}
           </Button>
         </div>
-        <div >
-          <img
-            src={require(`../img/${image}`).default}
-            alt=""
-          />
+        <div>
+          <img src={require(`../img/${image}`).default} alt="" />
         </div>
       </Grid>
     </Container>
