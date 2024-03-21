@@ -1,4 +1,17 @@
 footer:
-  buttons:
-    - name: "GitHub"
-      url: "https://github.com/decaporg/decap-cms"
+  logo: "/img/decap-logo-white.svg"
+  maintained: "Maintained with care by [PM TechHub](https://techhub.p-m.si/) and amazing contributors"
+  links:
+    - text: "Distributed under MIT License"
+      href: "https://github.com/decaporg/decap-cms/blob/master/LICENSE"
+    - text: "Contributing Guide"
+      href: "https://github.com/decaporg/decap-cms/blob/master/CONTRIBUTING.md"
+    - text: "Code of Conduct"
+      href: "https://github.com/decaporg/decap-cms/blob/master/CODE_OF_CONDUCT.md"
+  socials:
+    - text: "Join us on Discord"
+      href: "https://decapcms.org/chat"
+    - text: "Follow on X"
+      href: "https://twitter.com/Decap_CMS"
+    - text: "GitHub Repository"
+      href: "https://github.com/decaporg/decap-cms/"

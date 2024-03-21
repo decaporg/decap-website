@@ -36,23 +36,6 @@ const StyledMarkdown = styled.div`
   }
 
   ol,
-  ul {
-    margin-left: ${theme.space[3]};
-  }
-
-  ul {
-    list-style: disc;
-  }
-
-  ol {
-    list-style: decimal;
-  }
-
-  li {
-    margin-bottom: 0;
-  }
-
-  ol,
   ul,
   p {
     font-size: 18px;

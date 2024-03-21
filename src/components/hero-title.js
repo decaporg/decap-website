@@ -5,11 +5,11 @@ import { mq } from '../utils';
 
 const HeroTitle = styled.h1`
   font-size: ${theme.fontsize[6]};
-  margin-bottom: ${theme.space[1]};
+  margin-bottom: ${theme.space[3]};
 
   ${mq[2]} {
     font-size: ${theme.fontsize[7]};
-    margin-bottom: ${theme.space[2]};
+    margin-bottom: ${theme.space[4]};
   }
 `;
 

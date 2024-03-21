@@ -1,11 +1,33 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const fetch = (...args) =>
+  import(`node-fetch`).then(({ default: fetch }) => fetch(...args))
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createContentDigest,
+}) => {
+  const result = await fetch(`https://api.github.com/repos/decaporg/decap-cms/releases?per_page=3`)
+  const resultData = await result.json()
+
+  createNode({
+    releases: resultData,
+    id: `decap-releases`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `DecapReleases`,
+      contentDigest: createContentDigest(resultData),
+    },
+  })
+}
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const docPage = path.resolve('./src/templates/doc-page.js');
   const blogPost = path.resolve('./src/templates/blog-post.js');
+  const featurePage = path.resolve('./src/templates/feature-page.js');
 
   // get all markdown with a frontmatter path field and title
   const allMarkdown = await graphql(`
@@ -37,6 +59,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     if (slug.includes('blog/')) {
       template = blogPost;
+    }
+    if (slug.includes('features/')) {
+      template = featurePage;
     }
 
     createPage({
@@ -105,9 +130,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.json'],
-      alias: {
-        dayjs$: 'dayjs/dayjs.js',
-      },
     },
   });
 };

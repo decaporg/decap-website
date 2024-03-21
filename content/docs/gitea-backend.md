@@ -1,12 +1,15 @@
 ---
-title: Gitea
+title: Gitea / Forgejo
 group: Accounts
 weight: 25
 ---
 
-For repositories stored on Gitea, the `gitea` backend allows CMS users to log in directly with their Gitea account. Note that all users must have push access to your content repository for this to work.
+For repositories stored on [Gitea](https://gitea.com) or [Forgejo](https://forgejo.org) instances, the `gitea` backend allows CMS users to log in directly with their Gitea/Forgejo account. Note that all users must have push access to your content repository for this to work.
 
-Please note that only Gitea **1.20** and upwards is supported due to API limitations in previous versions.
+*Note on supported versions* 
+
+- Only Gitea **1.20** and upwards is supported due to API limitations in previous versions
+- Only Forgejo **1.21.4** and upwards is supported due to CORS functionality
 
 ## Authentication
 
@@ -22,6 +25,7 @@ backend:
   app_id: your-client-id # The Client ID provided by Gitea
   api_root: https://gitea.example.com/api/v1 # API URL of your Gitea instance
   base_url: https://gitea.example.com # Root URL of your Gitea instance
+  auth_endpoint: https://gitea.example.com/login/oauth/authorize
   # optional, defaults to master
   # branch: main
 ```

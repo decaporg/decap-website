@@ -1,221 +1,69 @@
 /** @jsx jsx */
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
 import { jsx, css } from '@emotion/react';
 import { graphql } from 'gatsby';
-import styled from '@emotion/styled';
 
 import Layout from '../components/layout';
-import Markdownify from '../components/markdownify';
-import PageHero from '../components/page-hero';
-import HeroTitle from '../components/hero-title';
-// import WhatsNew from '../components/whats-new';
-import Lead from '../components/lead';
-import Features from '../components/features';
-// import Awards from '../components/awards';
+import HomeHero from '../components/home-hero';
+import HomeFeatures from '../components/home-features';
+import HomeServices from '../components/home-services';
 import HomeSection from '../components/home-section';
-import Contributors from '../components/contributors';
-import Grid from '../components/grid';
 import theme from '../theme';
 import { mq } from '../utils';
 
-const MarkdownButton = styled.span`
-  a {
-    white-space: nowrap;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: ${theme.fontsize[3]};
-    letter-spacing: 0.5px;
-    line-height: ${theme.lineHeight[1]};
-    background-color: ${theme.colors.primaryLight};
-    color: ${theme.colors.white};
-    border-radius: ${theme.radii[1]};
-    padding: ${theme.space[2]} ${theme.space[3]};
-    transition: all 0.2s ease-out;
-    text-decoration: none;
-    box-shadow: 0;
-
-    &:hover {
-      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
-    }
-    &:active {
-      box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
-    }
-  }
-`;
-
-
 function HomePage({ data }) {
   const landing = data.landing.childDataYaml;
-  // const updates = data.updates.childDataYaml;
+  const releases = data.releases.nodes[0].releases || [];
 
   return (
-    <Layout hasPageHero>
-      <PageHero>
-        <div
-          css={css`
-            margin-bottom: ${theme.space[7]};
-          `}
-        >
-          <HeroTitle>
-            <Markdownify source={landing.hero.headline} />
-          </HeroTitle>
-          <Lead>
-            <Markdownify source={landing.hero.subhead} />
-          </Lead>
-          <Lead>
-            <MarkdownButton>
-              <Markdownify source={landing.cta.button} />
-            </MarkdownButton>
-          </Lead>
-        </div>
-        <Grid cols={2}>
-          <div>
-            <Features items={landing.hero.devfeatures} kind="light" />
-          </div>
-          <div>
-            <p
-              css={css`
-                margin-bottom: ${theme.space[2]};
-                font-weight: 700;
-              `}
-            >
-              Try it out in the{' '}
-              <a href="https://demo.decapcms.org/" target="_blank" rel="noreferrer">
-                Decap CMS Demo
-              </a>
-            </p>
-            <a href="https://demo.decapcms.org/" target="_blank" rel="noreferrer">
-              <img
-                src="/img/screenshot-editor-2.png"
-                alt="Screenshot of Decap CMS page editing view"
-              />
-            </a>
-          </div>
-        </Grid>
-      </PageHero>
+    <Layout hasHomeHero>
+      <HomeHero {...landing.hero} releases={releases} />
 
-      <section
-        css={css`
-          background: white;
+      <HomeFeatures
+        developers={landing.developers}
+        templateBanner={landing.templateBanner}
+        editors={landing.editors}
+      />
+
+      <HomeServices {...landing.services} />
+
+      <div css={css`
+        overflow: hidden;
+      `}>
+        <div css={css`
+          border-style: solid;
+          border-width: 6vw 100vw 0 0;
+          border-color: transparent ${theme.colors.primaryDark} transparent transparent;
+          margin-top: ${theme.space[5]};
+
           ${mq[2]} {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -75%);
-            width: 880px;
-            border-radius: 8px;
+            margin-top: ${theme.space[7]};
           }
-        `}
-      >
-        <div
-          css={css`
-            padding: ${theme.space[4]} ${theme.space[5]};
-            color: ${theme.colors.lightishGray};
-            ${mq[2]} {
-              display: flex;
-            }
-          `}
-        >
-          <Lead
-            css={css`
-              margin-right: 2rem;
-              font-size: 18px;
-              ${mq[2]} {
-                margin-bottom: 0;
-              }
-            `}
-          >
-            <strong>
-              <Markdownify source={landing.cta.primaryhook} />
-            </strong>{' '}
-            <Markdownify source={landing.cta.primary} />
-          </Lead>
-          <MarkdownButton>
-            <Markdownify source={landing.cta.button} />
-          </MarkdownButton>
+        `} />
+        <div css={css`
+          background: linear-gradient(180deg, ${theme.colors.primaryDark} 0%, ${theme.colors.darkerGray} 100%);
+          color: ${theme.colors.white};
+          padding: ${theme.space[3]} 0;
+
+          ${mq[2]} {
+            padding: ${theme.space[4]} 0;
+          }
+        `}>
+          <HomeSection {...landing.blog} />
+          <HomeSection {...landing.community} reverse={true} />
         </div>
-      </section>
-
-      {/* Uncomment on when there are some recent updates */}
-      {/* <WhatsNew updates={updates.updates} /> */}
-
-      <HomeSection
-        css={css`
-          background: white;
-        `}
-        title={<Markdownify source={landing.editors.hook} />}
-        text={<Markdownify source={landing.editors.intro} />}
-      >
-        <Grid cols={3}>
-          <Features items={landing.editors.features} />
-        </Grid>
-      </HomeSection>
-
-      <HomeSection
-        css={css`
-          background: ${theme.colors.lightestGray};
-        `}
-        title={
-          <>
-            <span
-              css={css`
-                color: ${theme.colors.primaryLight};
-                margin-right: ${theme.space[2]};
-              `}
-            >
-              New!
-            </span>
-            {landing.services?.hook}
-          </>
-        }
-        text={<Markdownify source={landing.services?.intro} />}
-      >
-        <Grid cols={4}>
-          <Features items={landing.services?.features} />
-        </Grid>
-      </HomeSection>
-
-      <HomeSection title={<Markdownify source={landing.community.hook} />}>
-        <Grid cols={2}>
-          <div>
-            <Features items={landing.community.features} />
-          </div>
-          <div>
-            <h3
-              css={css`
-                font-size: 18px;
-              `}
-            >
-              {landing.community.contributors}
-            </h3>
-            <Contributors />
-          </div>
-        </Grid>
-      </HomeSection>
-
-      {/* <HomeSection
-        css={css`
-          background: white;
-        `}
-        title={<Markdownify source={landing.awards.title} />}
-        text={<Markdownify source={landing.awards.description} />}
-      >
-        <Awards items={landing.awards.items} />
-      </HomeSection> */}
+      </div>
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
   query homeQuery {
-    updates: file(relativePath: { regex: "/updates/" }) {
-      childDataYaml {
-        updates {
-          date
-          description
-          version
+    releases: allDecapReleases {
+      nodes {
+        releases {
+          published_at
           url
+          name
         }
       }
     }
@@ -224,9 +72,52 @@ export const pageQuery = graphql`
         hero {
           headline
           subhead
-          devfeatures {
-            feature
+          buttons {
+            text
+            href
+            class
+          }
+        }
+        developers {
+          title
+          id
+          link {
+            text
+            href
+          }
+          button {
+            text
+            href
+          }
+          features {
+            title
             description
+            image
+          }
+        }
+        templateBanner {
+          title
+          hook
+          button {
+            text
+            href
+          }
+        }
+        editors {
+          title
+          id
+          link {
+            text
+            href
+          }
+          button {
+            text
+            href
+          }
+          features {
+            title
+            description
+            image
           }
         }
         awards {
@@ -238,39 +129,39 @@ export const pageQuery = graphql`
             image
           }
         }
-        cta {
-          primary
-          primaryhook
-          button
-        }
-        editors {
-          hook
-          intro
-          features {
-            feature
-            imgpath
-            description
-          }
-        }
         services {
-          hook
-          intro
+          title
+          description
           features {
-            feature
+            title
             description
-            cta {
+            className
+            image
+            button {
               href
-              label
+              text
             }
           }
         }
-        community {
+        blog {
+          title
           hook
-          features {
-            feature
-            description
+          text
+          image
+          button {
+            href
+            text
           }
-          contributors
+        }
+        community {
+          title
+          hook
+          text
+          image
+          button {
+            href
+            text
+          }
         }
       }
     }

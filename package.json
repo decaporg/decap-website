@@ -20,6 +20,7 @@
     "@emotion/cache": "^11.11.0",
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.11.0",
+    "@icons-pack/react-simple-icons": "^9.3.0",
     "dayjs": "^1.11.10",
     "decap-cms-app": "^3.0.0",
     "emotion-theming": "^11.0.0",
@@ -34,6 +35,7 @@
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-prismjs": "7.13.0",
     "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-source-graphql": "^5.13.1",
     "gatsby-transformer-json": "5.13.1",
     "gatsby-transformer-remark": "6.13.0",
     "gatsby-transformer-yaml": "5.13.1",
@@ -42,7 +44,6 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-github-btn": "^1.4.0",
     "react-helmet": "^6.1.0",
     "react-markdown": "^8.0.7",
     "smooth-scroll": "^16.1.3"

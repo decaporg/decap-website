@@ -10,7 +10,7 @@ We're hoping that Decap CMS will do for the [Jamstack](https://www.jamstack.org)
 Being a developer is not a requirement for contributing to Decap CMS, you only need the desire, a web browser, and a [GitHub account](https://github.com/join). The GitHub repo has a step-by-step [guide](https://github.com/decaporg/decap-cms/blob/master/CONTRIBUTING.md) to get started with the code.
 
 ## The basics of the Decap CMS docs
-The documentation for Decap CMS is written in [Markdown](http://daringfireball.net/projects/markdown/) (a good cheatsheet on Markdown is [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)), with the source residing on [GitHub](https://github.com/decaporg/decap-cms) in the `/website/content/docs` folder.
+The documentation for Decap CMS is written in [Markdown](http://daringfireball.net/projects/markdown/) (a good cheatsheet on Markdown is [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)), with the source residing on [GitHub](https://github.com/decaporg/decap-website).
 
 The GitHub website allows you to submit issues, work with files, search for content, and browse changes that have been submitted in the past and those that are being submitted now (aka Pull Requests). 
 
@@ -18,7 +18,7 @@ The GitHub website allows you to submit issues, work with files, search for cont
 A [style guide](/docs/writing-style-guide/) is available to help provide context around grammar, code styling, syntax, etc. 
 
 ## Filing issues
-If you have a GitHub account, you can file an [issue](https://github.com/decaporg/decap-cms/issues) (aka bug report) against the Decap CMS docs. Even if you're not able to, or don't know how to, fix the issue (see [Improve existing content](#improve-existing-content)), it helps to start the conversation. 
+If you have a GitHub account, you can file an [issue](https://github.com/decaporg/decap-website/issues) (aka bug report) against the Decap CMS docs. Even if you're not able to, or don't know how to, fix the issue (see [Improve existing content](#improve-existing-content)), it helps to start the conversation. 
 
 When filing an issue, it is important to remember the [Code of Conduct](https://github.com/decaporg/decap-cms/blob/master/CODE_OF_CONDUCT.md).
 

@@ -1,22 +1,28 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { useState, useEffect } from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import GitHubButton from 'react-github-btn';
+import { SiGithub } from '@icons-pack/react-simple-icons';
 
 import Container from './container';
-import Notifications from './notifications';
 import DocSearch from './docsearch';
 import searchIcon from '../img/search.svg';
 import theme from '../theme';
 import { mq } from '../utils';
 
 const StyledHeader = styled.header`
-  background: ${theme.colors.white};
-  padding-top: ${theme.space[3]};
-  padding-bottom: ${theme.space[3]};
+  background: ${theme.colors.primaryLight};
+  color: ${theme.colors.white};
+  padding-top: ${theme.space[2]};
+  padding-bottom: ${theme.space[2]};
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
+  font-family: ${theme.fontFamily[1]};
+
+  ${mq[1]} {
+    padding-top: ${theme.space[3]};
+    padding-bottom: ${theme.space[3]};
+  }
 
   ${mq[2]} {
     position: sticky;
@@ -27,14 +33,8 @@ const StyledHeader = styled.header`
     ${p =>
       !p.collapsed &&
       css`
-        padding-top: ${theme.space[5]};
-        padding-bottom: ${theme.space[5]};
-      `};
-
-    ${p =>
-      p.hasNotifications &&
-      css`
-        padding-top: 0;
+        // padding-top: ${theme.space[5]};
+        // padding-bottom: ${theme.space[5]};
       `};
   }
 `;
@@ -42,16 +42,26 @@ const StyledHeader = styled.header`
 const HeaderContainer = styled(Container)`
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 `;
 
 const Logo = styled.div`
   ${mq[1]} {
+    margin-right: ${theme.space[4]};
+  }
+  ${mq[2]} {
     margin-right: ${theme.space[5]};
+  }
+  ${mq[3]} {
+    margin-right: ${theme.space[6]};
+  }
+
+  a {
+    display: flex;
+    align-items: center;
   }
 
   img {
-    height: clamp(32px, 3vw, 60px);
+    height: clamp(32px, 3vw, 40px);
     width: auto;
   }
 `;
@@ -71,20 +81,30 @@ const MenuBtn = styled.button`
   padding: ${theme.space[2]};
   font-size: ${theme.fontsize[6]};
   line-height: 1;
+  color: inherit;
 `;
 
 const SearchBtn = styled(MenuBtn)``;
 
 const ToggleArea = styled.div`
   display: ${p => (p.open ? 'block' : 'none')};
-  flex: 1 0 100px;
+  position: absolute;
+  top: ${theme.space[6]};
+  left: 0;
   width: 100%;
-  margin-top: ${theme.space[3]};
+  flex: 1 0 100px;
+  background: ${theme.colors.primaryLight};
+  padding: 0 ${theme.space[4]} ${theme.space[4]};
+  z-index: 2;
 
   ${mq[1]} {
+    position: relative;
     display: block;
     width: auto;
-    margin-top: 0;
+    top: initial;
+    left: initial;
+    background: none;
+    padding: 0;
   }
 `;
 
@@ -104,55 +124,40 @@ const Menu = styled(ToggleArea)`
 `;
 
 const MenuList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.space[3]};
+  align-items: flex-end;
+
   ${mq[1]} {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
   }
+
+  ${mq[2]} {
+    gap: ${theme.space[4]};
+  }
+
+  ${mq[3]} {
+    gap: ${theme.space[5]};
+  }
 `;
 
 const MenuItem = styled.li`
-  margin-bottom: ${theme.space[3]};
-  ${mq[1]} {
-    margin-bottom: 0;
+  line-height: 1;
 
-    &:not(:last-child) {
-      margin-right: ${theme.space[3]};
-    }
-  }
-  ${mq[2]} {
-    &:not(:last-child) {
-      margin-right: ${theme.space[4]};
-    }
-  }
-  ${mq[4]} {
-    &:not(:last-child) {
-      margin-right: ${theme.space[5]};
-    }
-  }
-`;
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
 
-const NavLink = styled(Link)`
-  text-decoration: none;
-  font-weight: 600;
-
-  ${mq[2]} {
-    font-size: ${theme.fontsize[4]};
-  }
-`;
-
-const NOTIFS_QUERY = graphql`
-  query notifs {
-    file(relativePath: { regex: "/notifications/" }) {
-      childDataYaml {
-        notifications {
-          published
-          loud
-          message
-          url
-        }
-      }
+    ${mq[2]} {
+      font-size: ${theme.fontsize[4]};
     }
   }
 `;
@@ -190,80 +195,49 @@ function Header({ hasHeroBelow }) {
   }
 
   return (
-    <StaticQuery query={NOTIFS_QUERY}>
-      {data => {
-        const notifications = data.file.childDataYaml.notifications.filter(
-          notif => notif.published,
-        );
-        const collapsed = !hasHeroBelow || scrolled;
-        const hasNotifications = notifications.length > 0;
-        return (
-          <StyledHeader collapsed={collapsed} id="header" hasNotifications={hasNotifications}>
-            <Notifications notifications={notifications} />
-            <HeaderContainer>
-              <Logo>
-                <Link to="/">
-                  <img src="/img/decap-logo.svg" alt="Decap CMS logo" />
-                </Link>
-              </Logo>
-              <MenuActions>
-                <SearchBtn onClick={handleSearchBtnClick}>
-                  {isSearchOpen ? <span>&times;</span> : <img src={searchIcon} alt="search" />}
-                </SearchBtn>
-                <MenuBtn onClick={handleMenuBtnClick}>
-                  {isNavOpen ? <span>&times;</span> : <span>&#9776;</span>}
-                </MenuBtn>
-              </MenuActions>
-              <SearchBox open={isSearchOpen}>
-                <DocSearch />
-              </SearchBox>
-              <Menu open={isNavOpen}>
-                <MenuList>
-                  <MenuItem
-                    css={css`
-                      margin-top: 8px;
-                    `}
-                  >
-                    <GitHubButton
-                      href="https://github.com/decaporg/decap-cms"
-                      data-icon="octicon-star"
-                      data-show-count="true"
-                      aria-label="Star decaporg/decap-cms on GitHub"
-                    >
-                      Star
-                    </GitHubButton>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/docs/intro/">Docs</NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/services/" className="ga-menu">
-                      Pro Help
-                      <span
-                        css={css`
-                          font-size: ${theme.fontsize[1]};
-                          color: ${theme.colors.primaryLight};
-                          margin-left: ${theme.space[1]};
-                          vertical-align: top;
-                        `}
-                      >
-                        New
-                      </span>
-                    </NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/community/">Community</NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/blog/">Blog</NavLink>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-            </HeaderContainer>
-          </StyledHeader>
-        );
-      }}
-    </StaticQuery>
+    <StyledHeader collapsed={scrolled} id="header">
+      <HeaderContainer>
+        <Logo>
+          <Link to="/">
+            <img src="/img/decap-logo-white.svg" alt="Decap CMS" />
+          </Link>
+        </Logo>
+        <MenuActions>
+          <SearchBtn onClick={handleSearchBtnClick}>
+            {isSearchOpen ? <span>&times;</span> : <img src={searchIcon} alt="search" />}
+          </SearchBtn>
+          <MenuBtn onClick={handleMenuBtnClick}>
+            {isNavOpen ? <span>&times;</span> : <span>&#9776;</span>}
+          </MenuBtn>
+        </MenuActions>
+        <SearchBox open={isSearchOpen}>
+          <DocSearch />
+        </SearchBox>
+        <Menu open={isNavOpen}>
+          <MenuList>
+            <MenuItem>
+              <Link to="/docs/intro/">Docs</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/services/" className="ga-menu">Pro Help</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/community/">Community</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/blog/">Blog</Link>
+            </MenuItem>
+            <MenuItem css={css`
+              height: 28px;
+            `}>
+              <a href="https://github.com/decaporg/decap-cms" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <SiGithub size={28} />
+              </a>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+      </HeaderContainer>
+    </StyledHeader>
   );
 }
 

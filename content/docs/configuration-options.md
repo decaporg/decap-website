@@ -65,7 +65,6 @@ Template tags produce the following output:
 * `{{author-login}}`: the login/username of the author
 * `{{author-name}}`: the full name of the author (might be empty based on the user's profile)
 
-
 ## Publish Mode
 
 By default, all entries created or edited in the Decap CMS are committed directly into the main repository branch. The `publish_mode` option allows you to enable [Editorial Workflow](/docs/editorial-workflows/) mode for more control over the content publishing phases. You can enable the Editorial Workflow with the following line in your Decap CMS `config.yml` file:
@@ -75,6 +74,7 @@ By default, all entries created or edited in the Decap CMS are committed directl
 publish_mode: editorial_workflow
 ```
 
+Allowed values for `publish_mode` are: `simple`, `editorial_workflow` or empty string (same as 'simple')
 
 ## Media and Public Folders
 
@@ -235,8 +235,8 @@ The `collections` setting is the heart of your Decap CMS configuration, as it de
 * `label`: label for the collection in the editor UI; defaults to the value of `name`
 * `label_singular`: singular label for certain elements in the editor; defaults to the value of `label`
 * `description`: optional text, displayed below the label when viewing a collection
-* `files` or `folder` (requires one of these): specifies the collection type and location; details in [Collection Types](../collection-types)
-* `filter`: optional filter for `folder` collections; details in [Collection Types](../collection-types)
+* `files` or `folder` (requires one of these): specifies the collection type and location; details in [File Collections](https://decapcms.org/docs/collection-file) and [Folder Collections](https://decapcms.org/docs/collection-folder)
+* `filter`: optional filter for `folder` collections; details in [Folder Collections](https://decapcms.org/docs/collection-folder)
 * `create`: for `folder` collections only; `true` allows users to create new items in the collection; defaults to `false`
 * `publish`: for `publish_mode: editorial_workflow` only; `false` hides UI publishing controls for a collection; defaults to `true`
 * `hide`: `true` hides a collection in the CMS UI; defaults to `false`. Useful when using the relation widget to hide referenced collections.

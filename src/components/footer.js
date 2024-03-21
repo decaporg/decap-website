@@ -1,98 +1,61 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 import Container from './container';
 import theme from '../theme';
 import { mq } from '../utils';
+import Markdownify from './markdownify';
 
 const Root = styled.footer`
-  background: white;
-  padding-top: ${theme.space[4]};
-  padding-bottom: ${theme.space[5]};
-`;
-
-const FooterGrid = styled.div`
-  text-align: center;
-
-  ${mq[2]} {
-    display: flex;
-    align-items: center;
-    text-align: left;
-  }
-`;
-
-const FooterButtons = styled.div`
-  margin-bottom: ${theme.space[3]};
-  ${mq[2]} {
-    margin-bottom: 0;
-  }
-`;
-
-const SocialButton = styled.a`
-  display: inline-block;
-  padding: ${theme.space[1]} ${theme.space[3]};
-  background-color: ${theme.colors.lightishGray};
-  color: white;
-  font-weight: 700;
-  font-size: ${theme.fontsize[2]};
-  border-radius: ${theme.radii[1]};
-  margin-right: ${theme.space[2]};
-
-  &:active,
-  &:hover {
-    background-color: ${theme.colors.primaryDark};
-  }
-`;
-
-const Info = styled.div`
-  font-size: ${theme.fontsize[1]};
-  color: ${theme.colors.gray};
-  opacity: 0.5;
-
-  ${mq[2]} {
-    padding-left: ${theme.space[4]};
-  }
+  background: ${theme.colors.primaryLight};
+  color: ${theme.colors.white};
+  padding: ${theme.space[5]} 0;
 
   a {
-    font-weight: 700;
-    color: ${theme.colors.gray};
+    color: ${theme.colors.white};
+    font-weight: 400;
+    text-decoration: underline;
   }
 `;
 
-function Footer({ buttons }) {
+const Links = styled.footer`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.space[1]};
+`;
+
+function Footer({ logo, maintained, links, socials }) {
   return (
     <Root>
       <Container>
-        <FooterGrid>
-          <FooterButtons>
-            {buttons.map(btn => (
-              <SocialButton href={btn.url} key={btn.url}>
-                {btn.name}
-              </SocialButton>
-            ))}
-          </FooterButtons>
-          <Info>
-            <p>
-              <a
-                href="https://github.com/decaporg/decap-cms/blob/master/LICENSE"
-                className="text-link"
-              >
-                Distributed under MIT License
-              </a>{' '}
-              ·{' '}
-              <a href="https://techhub.p-m.si/" className="text-link">
-                Maintained by PM
-              </a>{' '}
-              ·{' '}
-              <a
-                href="https://github.com/decaporg/decap-cms/blob/master/CODE_OF_CONDUCT.md"
-                className="text-link"
-              >
-                Code of Conduct
-              </a>
-            </p>
-          </Info>
-        </FooterGrid>
+        <div css={css`
+          display: flex;
+          flex-direction: column;
+          gap: ${theme.space[4]};
+
+          ${mq[2]} {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        `}>
+          <div>
+            <img src={logo} alt="Decap CMS" css={css`
+              height: 40px;
+              width: auto;
+              margin-bottom: ${theme.space[2]};
+            `} />
+            <p><Markdownify source={maintained} /></p>
+          </div>
+
+          <Links>
+            {links.map((link, i) => <a href={link.href} key={i}>{link.text}</a>)}
+          </Links>
+
+          <Links>
+            {socials.map((link, i) => <a href={link.href} key={i}>{link.text}</a>)}
+          </Links>
+        </div>
       </Container>
     </Root>
   );
