@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import WidgetDoc from './widget-doc';
@@ -6,12 +7,7 @@ import Button from './button';
 import theme from '../theme';
 
 const WidgetsNav = styled.nav`
-  margin-bottom: 1rem;
-
-  > button {
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
+  margin: 1rem 0;
 `;
 
 const WidgetsContent = styled.div`
@@ -60,6 +56,11 @@ function Widgets({ widgets, location }) {
               active={currentWidget === title}
               onClick={event => handleWidgetChange(event, title)}
               outline
+              css={css`
+                margin-right: 8px;
+                margin-bottom: 8px;
+                padding: ${theme.space[2]} ${theme.space[3]} !important;
+              `}
             >
               {label}
             </Button>

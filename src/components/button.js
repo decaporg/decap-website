@@ -25,6 +25,10 @@ const Button = styled.a`
     font-weight: 600;
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &:active {
     background-color: ${theme.colors.primaryDark};
     border-color: ${theme.colors.primaryDark};
@@ -41,12 +45,6 @@ const Button = styled.a`
     }
   }
 
-  &.tertiary {
-    background: none;
-    color: ${theme.colors.primaryLight};
-    border-color: currentColor;
-  }
-
   ${p => p.block && css`
     display: block;
     width: 100%;
@@ -54,12 +52,13 @@ const Button = styled.a`
 
   ${p => p.outline && css`
     background: none;
-    color: ${theme.colors.primaryDark};
-    font-weight: 500;
+    color: ${theme.colors.primaryLight};
   `};
 
   ${p => p.active && css`
-    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
+    color: ${theme.colors.white};
+    background: ${theme.colors.primaryLight};
+    border-color: ${theme.colors.primaryLight};
   `};
 `;
 
