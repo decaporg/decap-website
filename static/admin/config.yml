@@ -62,6 +62,12 @@ collections:
       field: group
       value: Intro
   - <<: *docs_collection
+    name: docs_add_to_site
+    label: 'Docs: Add to Site'
+    filter:
+      field: group
+      value: Add
+  - <<: *docs_collection
     name: docs_accounts
     label: 'Docs: Account'
     filter:
