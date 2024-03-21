@@ -25,9 +25,8 @@ const globalStyles = css`
 
   ol,
   ul {
-    list-style-position: inside;
     margin: ${theme.space[1]} 0;
-    padding-left: 0;
+    padding-left: ${theme.space[4]};
   }
 
   h1,
