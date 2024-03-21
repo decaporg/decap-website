@@ -12,19 +12,29 @@ const SearchForm = styled.form`
 
 const SearchField = styled.input`
   color: white;
-  font-size: ${theme.fontsize[3]};
-  border-radius: ${theme.radii[1]};
-  background-color: ${theme.colors.lightGray};
-  color: ${theme.colors.darkerGray};
+  font-size: ${theme.fontsize[2]};
+  font-family: ${theme.fontFamily[1]};
+  border-radius: ${theme.radii[2]};
+  background-color: rgba(0, 0, 0, 0.1);
+  color: ${theme.colors.white};
   background-image: url(${searchIcon});
   background-repeat: no-repeat;
-  background-position: ${theme.space[2]} 50%;
-  border: 0;
+  background-position: 12px 50%;
+  border: 2px solid ${theme.colors.lightishGray};
   appearance: none;
   width: 100%;
   padding: ${theme.space[2]};
-  padding-left: 30px;
+  padding-left: 36px;
   outline: 0;
+  transition: border-color 0.2s ease-in-out;
+
+  &::placeholder {
+    color: ${theme.colors.lightestGray};
+  }
+
+  &:focus {
+    border-color: ${theme.colors.primaryDark};
+  }
 `;
 
 function DocSearch() {

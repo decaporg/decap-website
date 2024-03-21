@@ -27,6 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const docPage = path.resolve('./src/templates/doc-page.js');
   const blogPost = path.resolve('./src/templates/blog-post.js');
+  const featurePage = path.resolve('./src/templates/feature-page.js');
 
   // get all markdown with a frontmatter path field and title
   const allMarkdown = await graphql(`
@@ -58,6 +59,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     if (slug.includes('blog/')) {
       template = blogPost;
+    }
+    if (slug.includes('features/')) {
+      template = featurePage;
     }
 
     createPage({

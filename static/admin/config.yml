@@ -33,32 +33,6 @@ docs_collection: &docs_collection
     - { label: Title, name: title }
     - { label: Body, name: body, widget: markdown }
 
-word_list: &word_list
-  fields:
-    - label: Extends
-      name: extends
-      widget: hidden
-      default: 'existence'
-    - label: Output message
-      name: message
-      widget: string
-    - label: Ignore Case
-      name: ignorecase
-      widget: boolean
-      default: true
-      required: false
-    - label: Notification Level
-      name: level
-      widget: select
-      default: suggestion
-      options:
-        - { label: 'Suggestion', value: 'suggestion' }
-        - { label: 'Warning', value: 'warning' }
-        - { label: 'Error', value: 'error' }
-    - label: Entries
-      name: tokens
-      widget: list
-
 collections:
   - label: Settings
     name: settings
