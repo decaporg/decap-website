@@ -24,5 +24,3 @@ The following options are available on all fields:
     widget: "string"
     pattern: ['.{12,}', "Must have at least 12 characters"]
   ```
-
-## Default widgets
