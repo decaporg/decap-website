@@ -15,7 +15,7 @@ npx vitepress init
 
 ## Setting up Decap CMS
 
-In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-directory), create a new directory `admin/`. Inside that directory, you will have to create two files, `config.yml` and `index.html`. For this guide you can use the example `index.html` from the [Decap CMS installation):
+In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-directory), create a new directory `admin/`. Inside that directory, you will have to create two files, `config.yml` and `index.html`. For this guide you can use the example `index.html` from the [Decap CMS installation]():
 
 ```html
 <!DOCTYPE html>
@@ -33,4 +33,43 @@ In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-
   </body>
 </html>
 ```
+
+For your `config.yml` file, you can put in a starter config:
+
+```yml
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: 'guide'
+    label: 'Guide'
+    folder: 'guide'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+```
+
+This example only includes the frontmatter included in all themes. You can visit the [default theme reference](https://vitepress.dev/reference/frontmatter-config) for all frontmatter keys for the default theme.
+
+### Pushing to GitHub
+
+### Deploying with Netlify
+
+### Authenticating with Netlify Identity
+
+## Other Vite SSGs
+
+### VuePress v2
+
+### Vite applications
+
 
