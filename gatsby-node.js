@@ -81,6 +81,10 @@ exports.createPages = async ({ graphql, actions }) => {
     toPath: `/docs/basic-steps/`,
   })
 
+  createRedirect({
+    fromPath: `/chat`,
+    toPath: `https://discord.gg/KZRDXmTm9v`,
+  })
 };
 
 function pad(n) {
