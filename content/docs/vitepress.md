@@ -14,13 +14,13 @@ See [the VitePress prerequisites](https://vitepress.dev/guide/getting-started#pr
 
 Install VitePress using the package manager of your choice:
 
-```sh
+```bash
 npm install -D vitepress
 ```
 
 Follow the [VitePress documentation](https://vitepress.dev/guide/getting-started#installation) to configure VitePress or use the setup wizard:
 
-```sh
+```bash
 npx vitepress init
 ```
 
@@ -77,7 +77,7 @@ For VitePress you will need to [add `{target="_self}`](https://vitepress.dev/gui
 
 It's now time to commit your changes and push to GitHub. 
 
-```sh
+```bash
 git init
 git add .
 git commit -m "Initial Commit"
@@ -98,7 +98,7 @@ To simplify the configuration you can use the [`vite-plugin-decap-cms`](https://
 
 The following steps assume that you have only installed a Vite SSG, such as [VitePress](#setting-up-vitepress). You do not need to follow the steps of [setting up Decap CMS](#setting-up-decap-cms)! To install the plugin:
 
-```sh
+```bash
 npm install -D vite-plugin-decap-cms
 ```
 
