@@ -26,7 +26,7 @@ npx vitepress init
 
 ## Setting up Decap CMS
 
-In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-directory), create a new directory `admin/`. Inside that directory, you will have to create two files, `config.yml` and `index.html`. For this guide you can use the example `index.html` from the [Decap CMS installation]():
+In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-directory), create a new directory `admin/`. Inside that directory, you will have to create two files, `config.yml` and `index.html`. For this guide you can use the example `index.html` from the [Decap CMS installation](https://decapcms.org/docs/install-decap-cms/):
 
 ```html
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ collections:
 
 This example only includes the frontmatter included in all themes. You can visit the [default theme reference](https://vitepress.dev/reference/frontmatter-config) for all frontmatter keys for the default theme.
 
-For VitePress you will need to [add `{target="_self}`](https://vitepress.dev/guide/routing#linking-to-non-vitepress-pages) to all admin links since the Decap CMS page is a non-VitePress page. 
+For VitePress you will need to [add `{target="_self"}`](https://vitepress.dev/guide/routing#linking-to-non-vitepress-pages) to all admin links since the Decap CMS page is a non-VitePress page. 
 
 ### Pushing to GitHub
 
@@ -99,7 +99,7 @@ To simplify the configuration you can use the [`vite-plugin-decap-cms`](https://
 The following steps assume that you have only installed a Vite SSG, such as [VitePress](#setting-up-vitepress). You do not need to follow the steps of [setting up Decap CMS](#setting-up-decap-cms)! To install the plugin:
 
 ```bash
-npm install -D vite-plugin-decap-cms
+npm install --save-dev vite-plugin-decap-cms
 ```
 
 Instead of adding files to `/admin/`, you need to add the plugin to your Vite configuration and specify the Decap configuration in the plugin options.
