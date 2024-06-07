@@ -15,7 +15,7 @@ See [the VitePress prerequisites](https://vitepress.dev/guide/getting-started#pr
 Install VitePress using the package manager of your choice:
 
 ```bash
-npm install -D vitepress
+npm install --save-dev vitepress
 ```
 
 Follow the [VitePress documentation](https://vitepress.dev/guide/getting-started#installation) to configure VitePress or use the setup wizard:
@@ -26,7 +26,7 @@ npx vitepress init
 
 ## Setting up Decap CMS
 
-In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-directory), create a new directory `admin/`. Inside that directory, you will have to create two files, `config.yml` and `index.html`. For this guide you can use the example `index.html` from the [Decap CMS installation](https://decapcms.org/docs/install-decap-cms/):
+In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-directory), create a new directory `/admin/`. Inside that directory, you will have to create two files, `config.yml` and `index.html`. For this guide you can use the example `index.html` from the [Decap CMS installation](https://decapcms.org/docs/install-decap-cms/):
 
 ```html
 <!DOCTYPE html>
@@ -91,12 +91,12 @@ Go to Netlify and select 'New Site from Git'. Select GitHub and the repository y
 
 ## Vite plugin
 
-The steps above for VitePress will likely also work for any similar Vite-based SSG, such as VuePress.
-To simplify the configuration you can use the [`vite-plugin-decap-cms`](https://vite-plugin-decap-cms.pages.dev).
+The steps above for VitePress will likely also work for any similar Vite-based SSG (Static Site Generator), such as VuePress.
+To simplify the configuration you can use the [`vite-plugin-decap-cms`](https://vite-plugin-decap-cms.pages.dev) Vite plugin.
 
 ### Setting up the plugin
 
-The following steps assume that you have only installed a Vite SSG, such as [VitePress](#setting-up-vitepress). You do not need to follow the steps of [setting up Decap CMS](#setting-up-decap-cms)! To install the plugin:
+The following steps assume that you have only installed a Vite SSG, such as [VitePress](#setting-up-vitepress). You do not need to follow the steps of [setting up Decap CMS](#setting-up-decap-cms)! First, install the plugin:
 
 ```bash
 npm install --save-dev vite-plugin-decap-cms
