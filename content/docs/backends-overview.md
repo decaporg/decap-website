@@ -23,3 +23,18 @@ Individual backends should provide their own configuration documentation, but th
 ## Creating a New Backend
 
 Anyone can write a backend, but we don't yet have a finalized and documented API. If you would like to write your own backend for a service that does not have one currently, we recommend using the [GitHub backend](https://github.com/decaporg/decap-cms/tree/master/packages/decap-cms-backend-github) as a reference for API and best practices.
+
+## Using Github with an OAuth Proxy
+
+For a lightweight option to get running with Github as your CMS backend, you can setup an edge worker or serverless OAuth handler. The basic steps are:
+
+1. Create a Github OAuth Application
+1. Configure a separate domain you can use for the `backend.base_url` Decap configuration option (where you'll host your OAuth proxy)
+1. Deploy your proxy
+
+Your proxy should handle the following request paths:
+
+1. `/auth` - when you click "Login with Github", Decap opens a pop-up window directed at the base_url you configured, which handles redirecting the user into Github's Authorization flow for your repo
+1. `/callback` - when the user finishes the authorization flow, Github will callback to your OAuth handler with an authorization code that is sent to the Decap caller window from the pop-up using `window.postMessage`.
+
+For more detailed instructions and example code see this [Cloudflare Worker template](https://github.com/sterlingwes/decap-proxy).
