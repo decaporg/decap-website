@@ -122,6 +122,20 @@ const globalStyles = css`
       text-align: right;
     }
   }
+
+  .version-tag {
+    &:before {
+      content: 'New in v';
+    }
+    background: ${theme.colors.primaryDark};
+    color: white;
+    padding: 0.125em 0.5em;
+    border-radius: ${theme.radii[1]};
+    font-size: ${theme.fontsize[1]};
+    font-weight: 700;
+    display: inline-block;
+    margin: 0 0.5em;
+  }
 `;
 
 function GlobalStyles() {
