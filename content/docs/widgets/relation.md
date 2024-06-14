@@ -19,6 +19,7 @@ The relation widget allows you to reference items from another collection. It pr
   * `min`: minimum number of items; ignored if **multiple** is  `false`
   * `max`: maximum number of items; ignored if **multiple** is  `false`
   * `options_length`: accepts integer to override number of options presented to user. Defaults to `20`.
+  * `filters`: <a href="https://github.com/decaporg/decap-cms/releases/tag/decap-cms%403.1.5" class="version-tag">3.1.5</a> allows adding filters by which the available options are filtered. You can add filters which are a pair of `field` and the allowed `values`, where the widget will only show options (collection items) that satisfy all the filters. A collection item satisfies a filter if the value of `field` is one of the values in `values`.
 * **Referencing a folder collection example** (assuming a separate "authors" collection with "name" and "twitterHandle" fields with subfields "first" and "last" for the "name" field):
 
 ```yaml
@@ -61,3 +62,33 @@ The generated UI input will search the authors collection by name, and display e
 ```
 
 The generated UI input will search the cities file by city name, and display each city's name. On selection, the city id is saved for the field.
+
+* **Filters example**
+
+```yaml
+- label: Posts
+  name: posts
+  widget: relation
+  collection: posts
+  multiple: true
+  search_fields: [title]
+  display_fields: [title]
+  value_field: '{{slug}}'
+  filters: 
+    - field: draft
+      values: [false]
+```
+
+In this example, the relation widget will only show and allow posts that are not a draft (i.e. `draft` field is `false`). Say, we have 20 posts in the CMS of which 5 have `draft` set to true, then we will only see the other 15 posts as options in the relation widget.
+
+Multiple filters can be added:
+
+```yaml
+filters: 
+  - field: draft
+    values: [false]
+  - field: title
+     values: ['post about cats', 'post about dogs']
+```
+
+In this case only the posts with `draft` set to `false` and a title that is either 'posts about cats' or 'post about dogs' will be options seen in the relation widget.
