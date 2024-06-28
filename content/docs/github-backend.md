@@ -5,11 +5,13 @@ title: GitHub
 ---
 For repositories stored on [GitHub](https://github.com), the `github` backend allows CMS users to log in directly with their GitHub account. Note that all users must have push access to your content repository for this to work.
 
-Because GitHub [requires a server](https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723) for authentication, Netlify facilitates basic GitHub authentication.
+Because GitHub [requires a server](https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723) for authentication, Netlify facilitates basic GitHub authentication. If you don't use Netlify for hosting, check out the [community-maintained OAuth clients](/docs/external-oauth-clients) for alternatives.
 
 To enable basic GitHub authentication:
 
-1. Follow the authentication provider setup steps in the [Netlify docs](https://www.netlify.com/docs/authentication-providers/#using-an-authentication-provider).
+1. Follow the authentication provider setup steps in the [Netlify docs](https://www.netlify.com/docs/authentication-providers/#using-an-authentication-provider). You will have to register an API application with the OAuth provider
+and configure credentials in the Netlify UI.
+
 2. Add the following lines to your Decap CMS `config.yml` file:
 
 ```yaml
