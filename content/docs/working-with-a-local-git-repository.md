@@ -3,7 +3,14 @@ group: Accounts
 weight: 70
 title: Working with a Local Git Repository
 ---
-You can connect Decap CMS to a local Git repository, instead of working with a live repo.
+By default, no matter where you access Decap CMS — whether running locally, in a staging environment, or in your published site — it fetches and commits files in your hosted repository (for example, on GitHub), on the branch you configured in your `config.yml` file.
+
+This means:
+
+- Content fetched in the admin UI matches the content in the repository, which may be different from your locally running site.
+- Content saved using the admin UI saves directly to the hosted repository, even if you're running the UI locally or in staging.
+
+However, you can connect Decap CMS to a local Git repository instead of working with a live repo.
 
 1. Navigate to a local Git repository configured with the CMS.
 2. Add the top-level property `local_backend` configuration to your `config.yml`:
@@ -13,11 +20,10 @@ You can connect Decap CMS to a local Git repository, instead of working with a l
 local_backend: true
 
 backend:
-  name: git-gateway
+  name: github
 ```
 
 3. Run `npx decap-server` from the root directory of the above repository.
-
    * If the default port (8081) is in use, the proxy server won't start and you will see an error message. In this case, follow [these steps](#configure-the-decap-cms-proxy-server-port-number) before proceeding.
 4. Start your local development server (e.g. run `gatsby develop`).
 5. Open `http://localhost:<port>/admin` to verify that your can administer your content locally. Replace `<port>` with the port of your local development server. For example Gatsby's default port is `8000`
@@ -35,12 +41,12 @@ PORT=8082
 2. Update the `local_backend` object in `config.yml` and specify a `url` property to use your custom port number
 
 ```yaml
-backend:
-  name: git-gateway
-
 local_backend:
   # when using a custom proxy server port
   url: http://localhost:8082/api/v1
   # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
   allowed_hosts: ['192.168.0.1']
+
+backend:
+  name: github
 ```

@@ -75,16 +75,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // redirects from older URLs
   const { createRedirect } = actions
-
-  createRedirect({
-    fromPath: `/docs/add-to-your-site/`,
-    toPath: `/docs/basic-steps/`,
-  })
-
-  createRedirect({
-    fromPath: `/chat`,
-    toPath: `https://discord.gg/KZRDXmTm9v`,
-  })
+  createRedirect({ fromPath: `/docs/choosing-a-backend/`, toPath: `/docs/choose-a-backend/`})
+  createRedirect({ fromPath: `/docs/access-your-content/`, toPath: `/docs/login-to-your-cms/`})
+  createRedirect({ fromPath: `/docs/add-to-your-site/`, toPath: `/docs/basic-steps/`})
+  createRedirect({ fromPath: `/chat`, toPath: `https://discord.gg/KZRDXmTm9v`})
 };
 
 function pad(n) {
