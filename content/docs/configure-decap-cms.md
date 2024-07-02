@@ -8,19 +8,15 @@ Configuration is different for every site, so we'll break it down into parts. Ad
 
 ### Backend
 
-We're using [Netlify](https://www.netlify.com) for our hosting and authentication in this tutorial, so backend configuration is fairly straightforward.
-
-For GitHub and GitLab repositories, you can start your Decap CMS `config.yml` file with these lines:
+We covered this in [Choose a Backend](/docs/choose-a-backend/) but here's a quick reminder. If you're using GitHub, your `config.yml` file should look like this:
 
 ```yaml
 backend:
-  name: git-gateway
+  name: github
   branch: main # Branch to update (optional; defaults to master)
 ```
 
-_(For Bitbucket repositories, use the [Bitbucket backend](/docs/bitbucket-backend) instructions instead.)_
-
-The configuration above specifies your backend protocol and your publication branch. Git Gateway is an open source API that acts as a proxy between authenticated users of your site and your site repo. (We'll get to the details of that in the [Authentication section](#authentication) below.) If you leave out the `branch` declaration, it defaults to `master`.
+The configuration above specifies your backend protocol and your publication branch. If you leave out the `branch` declaration, it defaults to `master`.
 
 ### Media and Public Folders
 
@@ -139,12 +135,12 @@ collections:
 ```
 
 <nav class="pagination-nav">
-  <a href="/docs/choosing-a-backend/" class="button">
+  <a href="/docs/choose-a-backend/" class="button">
     <div class="pagination-nav__sublabel">Previous</div>
-    <div class="pagination-nav__label">2. Choosing A Backend</div>
+    <div class="pagination-nav__label">2. Choose A Backend</div>
   </a>
-  <a href="/docs/access-your-content/" class="button pagination-nav__next">
+  <a href="/docs/login-to-your-cms/" class="button pagination-nav__next">
     <div class="pagination-nav__sublabel">Next</div>
-    <div class="pagination-nav__label">4. Access Your Content</div>
+    <div class="pagination-nav__label">4. Login to Your CMS</div>
   </a>
 </nav>

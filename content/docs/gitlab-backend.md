@@ -1,7 +1,7 @@
 ---
 title: GitLab
 group: Accounts
-weight: 40
+weight: 20
 ---
 
 For repositories stored on [GitLab](https://gitlab.com), the `gitlab` backend allows CMS users to log in directly with their GitLab account. Note that all users must have push access to your content repository for this to work.
