@@ -11,7 +11,7 @@ Now that you have your Decap CMS files in place and configured, we have to enabl
 - [Bitbucket](/docs/bitbucket-backend)
 - [Azure](/docs/azure-backend)
 - [Gitea](/docs/gitea-backend)
-- [Git Gateway](/docs/git-gateway-backend) (deprecated)
+- [Git Gateway](/docs/git-gateway-backend)
 - [Local Git Repository](/docs/working-with-a-local-git-repository)
 
 If you would like to facilitate your own OAuth authentication rather than use Netlify's service or a client side flow like implicit or PKCE, you can use one of the community-maintained projects from the [External OAuth Clients](/docs/external-oauth-clients) list.

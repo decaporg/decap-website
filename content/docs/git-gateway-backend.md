@@ -1,10 +1,8 @@
 ---
-title: Git Gateway (Deprecated)
-weight: 60
+title: Git Gateway
+weight: 5
 group: Accounts
 ---
-*Notice: Netlify has deprecated their Netlify Identity service, so choosing this solution is not recommended for new sites. However, this is still a valid option for existing sites that are already using it.*
-
 [Git Gateway](https://github.com/netlify/git-gateway) is a Netlify open source project that allows you to add editors to your site CMS without giving them direct write access to your GitHub or GitLab repository. (For Bitbucket repositories, use the [Bitbucket backend](../bitbucket-backend/) instead.)
 
 ## Setup on Netlify
