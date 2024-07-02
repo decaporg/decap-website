@@ -5,7 +5,7 @@ menu:
     - name: Add
       title: Add To Your Site
     - name: Accounts
-      title: Account Settings
+      title: Backend Settings
     - name: Configuration
       title: Configuring your Site
     - name: Media
