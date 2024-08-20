@@ -11,9 +11,6 @@ const WidgetsNav = styled.nav`
 `;
 
 const WidgetsContent = styled.div`
-  background: ${theme.colors.lightGray};
-  padding: ${theme.space[3]};
-  border-radius: 4px;
 `;
 
 function Widgets({ widgets, location }) {

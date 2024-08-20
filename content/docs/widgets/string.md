@@ -22,3 +22,9 @@ The string widget translates a basic text input to a string value. For larger te
 ```yaml
 - {label: "Title", name: "title", widget: "string"}
 ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-string.png)

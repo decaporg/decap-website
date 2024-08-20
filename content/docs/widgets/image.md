@@ -47,3 +47,9 @@ You can set a limit to as what the maximum file size of a file is that users can
     config:
       max_file_size: 512000 # in bytes, only for default media library
 ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-image.png)

@@ -13,12 +13,17 @@ The boolean widget translates a toggle switch input to a true/false value.
 
 **Data type:** boolean
 
-**Options:**
+**Options**
 
 - `default`: accepts `true` or `false`; defaults to `false` when `required` is set to `false`
 
-**Example**
+**Example config**
 
 ```yaml
 - {label: "Draft", name: "draft", widget: "boolean", default: true}
 ```
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-boolean.png)
