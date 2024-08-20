@@ -17,6 +17,7 @@ const TocLink = styled.a`
   transition: color 0.2s;
   line-height: ${theme.lineHeight[1]};
   margin: ${theme.space[2]} 0;
+  font-weight: 400;
 
   &:hover {
     color: ${theme.colors.primaryDark};
