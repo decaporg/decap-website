@@ -1,7 +1,7 @@
 ---
-label: "Text"
-title: text
-group: "Widgets"
+label: Text
+title: Text
+group: Widgets
 weight: 160
 ---
 

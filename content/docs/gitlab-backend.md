@@ -1,6 +1,6 @@
 ---
 title: GitLab
-group: Accounts
+group: Backends
 weight: 40
 ---
 

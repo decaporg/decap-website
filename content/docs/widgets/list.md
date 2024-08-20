@@ -1,7 +1,7 @@
 ---
-title: list
+title: List
 label: List
-group: "Widgets"
+group: Widgets
 weight: 80
 ---
 

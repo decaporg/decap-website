@@ -1,6 +1,6 @@
 ---
 group: Workflow
-weight: 20
+weight: 30
 title: Open Authoring
 ---
 

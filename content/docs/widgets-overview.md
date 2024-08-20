@@ -1,5 +1,5 @@
 ---
-title: Widgets
+title: About Fields and Widgets
 group: Fields
 weight: 10
 ---
@@ -10,7 +10,7 @@ Widgets are specified as collection fields in the Decap CMS `config.yml` file. N
 
 To see working examples of all of the built-in widgets, try making a 'Kitchen Sink' collection item on the [CMS demo site](https://demo.decapcms.org). (No login required: click the login button and the CMS will open.) You can refer to the demo [configuration code](https://github.com/decaporg/decap-cms/blob/master/dev-test/config.yml) to see how each field was configured.
 
-## Common widget options
+## Common Widget Options
 
 The following options are available on all fields:
 

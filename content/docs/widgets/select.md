@@ -1,7 +1,7 @@
 ---
-title: select
+title: Select
 label: Select
-group: "Widgets"
+group: Widgets
 weight: 140
 ---
 

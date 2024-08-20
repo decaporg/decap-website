@@ -1,7 +1,7 @@
 ---
-title: map
+title: Map
 label: Map
-group: "Widgets"
+group: Widgets
 weight: 90
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Gitea / Forgejo
-group: Accounts
+group: Backends
 weight: 25
 ---
 

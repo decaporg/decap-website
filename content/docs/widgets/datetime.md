@@ -1,7 +1,7 @@
 ---
-title: datetime
+title: Datetime
 label: DateTime
-group: "Widgets"
+group: Widgets
 weight: 50
 ---
 

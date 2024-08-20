@@ -1,7 +1,7 @@
 ---
-title: object
+title: Object
 label: Object
-group: "Widgets"
+group: Widgets
 weight: 120
 ---
 

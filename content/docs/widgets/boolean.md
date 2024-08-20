@@ -1,7 +1,7 @@
 ---
-title: boolean
-label: "Boolean"
-group: "Widgets"
+title: Boolean
+label: Boolean
+group: Widgets
 weight: 20
 ---
 

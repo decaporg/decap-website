@@ -4,8 +4,8 @@ menu:
       title: Intro to Decap CMS
     - name: Add
       title: Add To Your Site
-    - name: Accounts
-      title: Account Settings
+    - name: Backends
+      title: Backend Settings
     - name: Configuration
       title: Configuring your Site
     - name: Media
@@ -14,8 +14,8 @@ menu:
       title: Workflow
     - name: Collections
       title: Collections
-    - name: Widgets
-      title: Widgets
+    - name: Fields
+      title: Fields
     - name: Guides
       title: Platform Guides
     - name: Customization

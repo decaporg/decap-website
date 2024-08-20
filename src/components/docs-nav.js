@@ -66,7 +66,6 @@ const NavLink = styled(Link)`
   font-size: ${theme.fontsize[3]};
   color: ${theme.colors.gray};
   line-height: ${theme.lineHeight[1]};
-  text-transform: capitalize;
   transition: color 0.2s ease;
   padding: ${theme.space[2]} 0;
 
@@ -88,7 +87,7 @@ function DocsNav({ items, location }) {
   }
 
   function isDetailsOpen(item) {
-    return item.group.edges.some(({ node }) => location.pathname === node.fields.slug);
+    return item.group?.edges.some(({ node }) => location.pathname === node.fields.slug);
   }
 
   return (
@@ -102,7 +101,7 @@ function DocsNav({ items, location }) {
           <MenuSection key={item.title} open={isDetailsOpen(item)}>
             <SectionTitle>{item.title}</SectionTitle>
             <SectionList>
-              {item.group.edges.map(({ node }) => (
+              {item.group?.edges.map(({ node }) => (
                 <MenuItem key={node.fields.slug}>
                   <NavLink to={node.fields.slug} activeClassName="active">
                     {node.frontmatter.title}

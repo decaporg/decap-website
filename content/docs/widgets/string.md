@@ -1,7 +1,7 @@
 ---
-label: "String"
-title: string
-group: "Widgets"
+label: String
+title: String
+group: Widgets
 weight: 150
 ---
 

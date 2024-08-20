@@ -1,7 +1,7 @@
 ---
-title: image
+title: Image
 label: Image
-group: "Widgets"
+group: Widgets
 weight: 70
 ---
 

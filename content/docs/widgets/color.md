@@ -1,7 +1,7 @@
 ---
-label: 'Color'
-title: color
-group: "Widgets"
+label: Color
+title: Color
+group: Widgets
 weight: 40
 ---
 

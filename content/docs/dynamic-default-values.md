@@ -1,6 +1,6 @@
 ---
 title: Dynamic Default Values
-group: Widgets
+group: Fields
 weight: 30
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: markdown
+title: Markdown
 label: Markdown
-group: "Widgets"
+group: Widgets
 weight: 100
 ---
 

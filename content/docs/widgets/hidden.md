@@ -1,7 +1,7 @@
 ---
-label: "Hidden"
-title: hidden
-group: "Widgets"
+label: Hidden
+title: Hidden
+group: Widgets
 weight: 60
 ---
 

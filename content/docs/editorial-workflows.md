@@ -1,10 +1,8 @@
 ---
 group: Workflow
-weight: 20
-title: Editorial Workflows
+weight: 10
+title: Editorial Workflow
 ---
-
-
 By default, saving a post in the CMS interface pushes a commit directly to the publication branch specified in `backend`. However, you also have the option to edit the [Publish Mode](../configuration-options/#publish-mode), which adds an interface for drafting, reviewing, and approving posts. To do this, add the following line to your Decap CMS `config.yml`:
 
 ```yaml

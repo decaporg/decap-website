@@ -1,7 +1,7 @@
 ---
-title: relation
+title: Relation
 label: Relation
-group: "Widgets"
+group: Widgets
 weight: 130
 ---
 
