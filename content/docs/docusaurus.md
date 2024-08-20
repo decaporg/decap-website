@@ -23,7 +23,7 @@ cd my-website
 npm run start
 ```
 
-A browser window opens at `http://localhost:3000`. 
+A browser window opens at `http://localhost:3000`.
 
 The development server now serves your website at `http://localhost:3000`. As you edit the source files in `/my-website/`, you can visit `http://localhost:3000` to preview your changes.
 
@@ -33,17 +33,17 @@ The development server now serves your website at `http://localhost:3000`. As yo
 
 ## Push your project to GitHub
 
-Decap CMS requires a [backend](https://www.decapcms.org/docs/backends-overview/) to store content. Decap CMS supports using Git hosts, like GitHub or GitLab, as backends. This guide uses GitHub. 
+Decap CMS requires a [backend](https://www.decapcms.org/docs/backends-overview/) to store content. Decap CMS supports using Git hosts, like GitHub or GitLab, as backends. This guide uses GitHub.
 
 ```bash
-# 1. Initialize your local Git repository.  
+# 1. Initialize your local Git repository.
 git init
 
 # 2. Rename your initial branch to match GitHub.
 git branch -m main
 
 # 3. Stage all your local files to your repository.
-git add . 
+git add .
 
 # 4. Commit your staged changes.
 git commit -m 'Initial commit'
@@ -57,7 +57,7 @@ Don't add a license or a .gitignore. Do add an "origin" git remote.
 ![](/img/screen-shot-2021-11-15-at-4.16.53-pm.png)
 
 ```bash
-# 6. Update your remote repository with your staged changes. 
+# 6. Update your remote repository with your staged changes.
 git push -u origin main
 ```
 
@@ -79,7 +79,7 @@ netlify init
 
 ![](/img/screen-shot-2021-11-16-at-1.34.18-PM.png)
 
-Choose the default option for everything else. 
+Choose the default option for everything else.
 
 Your website is now deployed. Netlify provides you with a randomly generated domain name. Run `netlify open --site` to view your deployed site.
 
@@ -91,7 +91,7 @@ Your website is now deployed. Netlify provides you with a randomly generated dom
 
 <li> Remove all existing posts from <code>/blog</code>.
 
-```bash 
+```bash
 rm -rf ./blog/*
 ```
 
@@ -138,7 +138,7 @@ cd static
 mkdir admin
 ```
 
-</li> 
+</li>
 
 <li> In the <code>admin</code> directory, create a <code>config.yml</code> file and an <code>index.html</code> file.
 
@@ -148,7 +148,7 @@ touch config.yml
 touch index.html
 ```
 
-</li> 
+</li>
 
 <li> Edit <code>index.html</code> to look like this:
 
@@ -169,14 +169,14 @@ touch index.html
 
 `index.html` displays the Decap CMS admin interface. You'll use the admin interface to edit your blog posts.
 
-</li> 
+</li>
 
-<li> Edit <code>config.yml</code> to look like this: 
+<li> Edit <code>config.yml</code> to look like this:
 
 ```yaml
 backend:
   name: github
-  branch: main 
+  branch: main
   repo: <your-github>/my-website
 
 # These lines should *not* be indented
@@ -200,35 +200,35 @@ collections:
       name: "tags"
       widget: "list"
     - label: "Authors"
-      name: "authors" 
+      name: "authors"
       widget: "list"
       fields:
         - { name: name, label: Name, widget: string }
-        - { name: title, label: Title, widget: string } 
-        - { name: url, label: URL, widget: string } 
-        - { name: imageUrl, label: ImageURL, widget: string } 
+        - { name: title, label: Title, widget: string }
+        - { name: url, label: URL, widget: string }
+        - { name: imageUrl, label: ImageURL, widget: string }
 ```
 
 `config.yml` specifies what kind of content your blog posts have. The content specification enables Decap CMS to edit existing posts and create new ones with the same format. To learn more, read about Decap CMS' [](https://www.decapcms.org/docs/configuration-options/)[Configuration options](https://www.decapcms.org/docs/configuration-options/).
-</li> 
+</li>
 
 <li>
 Visit <code>localhost:3000/admin</code>
 
-You can now view and edit `2021-11-15-first-blog-post.md` through the admin interface. You can also create new blog posts. 
+You can now view and edit `2021-11-15-first-blog-post.md` through the admin interface. You can also create new blog posts.
 
 **Warning:** Any changes you publish through the admin interface will only effect your *remote GitHub repository*. To retrieve these changes locally, `git pull` from your local repository.
 </li>
 
-<li> Commit and push your new changes to your remote repository. 
+<li> Commit and push your new changes to your remote repository.
 
 ```bash
-git add . 
+git add .
 git commit -m "Add Decap CMS"
 git push
 ```
 
-Netlify builds and deploys your new changes. 
+Netlify builds and deploys your new changes.
 
 </li>
 
@@ -236,20 +236,20 @@ Netlify builds and deploys your new changes.
 
 ## Add GitHub as an authentication provider
 
-Before you can access `/admin/` through your Netlify domain, you need to set up an authentication provider. The authentication provider allows Decap CMS to determine whether users have read and write access to `/admin/`. This guide uses GitHub credentials for authentication. 
+Before you can access `/admin/` through your Netlify domain, you need to set up an authentication provider. The authentication provider allows Decap CMS to determine whether users have read and write access to `/admin/`. This guide uses GitHub credentials for authentication.
 
-### Configure GitHub 
+### Configure GitHub
 
-1. Create a new [GitHub OAuth application](https://github.com/settings/applications/new). 
+1. Create a new [GitHub OAuth application](https://github.com/settings/applications/new).
 2. Enter your Netlify domain as the **Homepage URL**.
 3. Enter <code>https://api.netlify.com/auth/done</code> as the **Authorization callback URL**.
 4. Click **Register application.**
-5. Click **Generate a new client secret.** 
+5. Click **Generate a new client secret.**
 6. Copy the provided client secret and client ID.
 
 ### Configure Netlify
 
-1. On Netlify, under `Site Settings > Access control > OAuth > Authentication Providers`, click **Install provider**.
+1. On Netlify, under `Site configuration > Access & security > OAuth > Authentication providers`, click **Install provider**.
 2. Enter your client secret and client ID from GitHub.
 3. Click **Install**.
 

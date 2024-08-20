@@ -1,4 +1,5 @@
 ---
+title: Variable Type Widgets
 label: "Variable Type Widgets"
 group: Fields
 weight: 30
