@@ -37,7 +37,7 @@ const MenuSection = styled.details`
   margin-bottom: ${theme.space[3]};
 
   &[open] summary {
-    list-style-type: '↑  ';
+    list-style-type: '↓  ';
   }
 `;
 
@@ -49,7 +49,7 @@ const SectionTitle = styled.summary`
   list-style-position: outside;
 
   &:hover {
-    list-style-type: '↓  ';
+    list-style-type: '→  ';
   }
 `;
 
