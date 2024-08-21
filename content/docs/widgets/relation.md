@@ -14,6 +14,7 @@ The relation widget allows you to reference items from another collection. It pr
 **Data type:** data type of the value pulled from the related collection item
 
 **Options:**
+
 - `collection`: (**required**) name of the referenced collection (string)
 - `value_field`: (**required**) name of the field from the referenced collection whose value will be stored for the relation. For nested fields, separate each subfield with a `.` (e.g. `name.first`). For list fields use a wildcard `*` to target all list items (e.g. `categories.*`).
 - `search_fields`: (**required**) list of one or more names of fields in the referenced collection to search for the typed value. Syntax to reference nested fields is similar to that of *value_field*.
