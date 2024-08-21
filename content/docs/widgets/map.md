@@ -24,3 +24,9 @@ The map widget allows you to edit spatial data using an interactive map. Spatial
 ```yaml
 - {label: "Location", name: "location", widget: "map" }
   ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-map.png)

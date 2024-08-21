@@ -27,3 +27,9 @@ The code widget provides a code editor (powered by [Codemirror](https://codemirr
   name: 'code'
   widget: 'code'
 ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-code.png)

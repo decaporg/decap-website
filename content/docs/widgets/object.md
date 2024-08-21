@@ -44,3 +44,9 @@ The object widget allows you to group multiple widgets together, nested under a 
         - {label: "City", name: "city", widget: "string"}
         - {label: "Postal Code", name: "post-code", widget: "string"}
 ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-object.png)

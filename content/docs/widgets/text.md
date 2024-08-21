@@ -22,3 +22,9 @@ The text widget takes a multiline text field and saves it as a string. For short
 ```yaml
 - {label: "Description", name: "description", widget: "text"}
 ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-text.png)

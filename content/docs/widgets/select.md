@@ -81,3 +81,9 @@ airport-code: "ORD"
   options: ["Design", "UX", "Dev"]
   default: ["Design"]
 ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-select.png)

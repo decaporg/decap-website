@@ -101,3 +101,9 @@ filters:
 ```
 
 In this case only the posts with `draft` set to `false` and a title that is either 'posts about cats' or 'post about dogs' will be options seen in the relation widget.
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-relation.png)

@@ -133,3 +133,9 @@ The list widget allows you to create a repeatable item in the UI which saves as 
   widget: "list"
   add_to_top: true
 ```
+
+<br>
+
+**Result**
+
+![toggle switch](/img/widget-list.png)
