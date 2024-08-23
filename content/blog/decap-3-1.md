@@ -1,11 +1,11 @@
 ---
-title: Decap 3.1
-author: Martin Jagodic
-date: 2024-02-01T08:00:00.000Z
+title: Headless CMS
+author: Tirtha Gandhi
 description: This minor release brings several improvements, most notably React
   18 support. It was in development for quite a while, so it includes many minor
   patches as well.
 image: /img/version-3.1.png
+date: 2024-02-01T08:00:00.000Z
 ---
 With this release we bring you better performance and a more up-to-date product. Contributor experience and release pipeline is also improved.
 
