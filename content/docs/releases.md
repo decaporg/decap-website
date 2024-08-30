@@ -5,7 +5,7 @@ title: Releases
 ---
 ## Update the CMS Version
 
-The update procedure for your CMS depends upon the method you used to install Decap CMS.
+The way to update your CMS depends on how you installed Decap CMS.
 
 ### Package Manager
 
