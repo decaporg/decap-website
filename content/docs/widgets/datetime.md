@@ -12,6 +12,7 @@ The datetime widget translates a datetime picker to a datetime string.
 **Data type:** [Day.js](https://day.js.org/)-formatted datetime string
 
 **Options:**
+
   - `default`: accepts a datetime string, or `'{{now}}'` to fill in the current datetime; otherwise defaults to empty string.
     
     <small>Unitl 3.2.1 it defaults to current datetime. To get an empty field, set default to empty string.</small>
