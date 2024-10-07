@@ -2,27 +2,47 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import theme from '../theme';
+import { mq } from '../utils';
 
-// prettier-ignore
-const Button = styled.button`
+const Button = styled.a`
+  white-space: nowrap;
   display: inline-block;
-  background: ${theme.colors.primaryDark};
-  color: white;
-  border-radius: ${theme.radii[1]};
   font-size: ${theme.fontsize[3]};
-  font-weight: 700;
-  padding: ${theme.space[2]} ${theme.space[3]};
-  border: 2px solid ${theme.colors.primaryDark};
-  cursor: pointer;
+  line-height: 1;
+  background-color: ${theme.colors.primaryLight};
+  color: ${theme.colors.white};
+  border: 2px solid ${theme.colors.primaryLight};
+  font-weight: 500;
+  font-family: ${theme.fontFamily[1]};
+  border-radius: ${theme.radii[4]};
+  padding: 12px ${theme.space[3]};
   transition: all 0.2s ease-out;
   box-shadow: 0;
 
+  ${mq[0]} {
+    border-width: 3px;
+    padding: ${theme.space[3]} ${theme.space[4]};
+    font-weight: 600;
+  }
+
   &:hover {
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
   }
 
   &:active {
-    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: ${theme.colors.primaryDark};
+    border-color: ${theme.colors.primaryDark};
+    color: ${theme.colors.white};
+  }
+
+  &.secondary {
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.primaryLight};
+    border-color: currentColor;
+
+    &:active {
+      color: ${theme.colors.primaryDark};
+    }
   }
 
   ${p => p.block && css`
@@ -32,12 +52,13 @@ const Button = styled.button`
 
   ${p => p.outline && css`
     background: none;
-    color: ${theme.colors.primaryDark};
-    font-weight: 500;
+    color: ${theme.colors.primaryLight};
   `};
 
   ${p => p.active && css`
-    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
+    color: ${theme.colors.white};
+    background: ${theme.colors.primaryLight};
+    border-color: ${theme.colors.primaryLight};
   `};
 `;
 

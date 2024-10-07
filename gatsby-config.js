@@ -1,8 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
+require('dotenv').config({ path: '.env' })
 
 const pkg = require('./package.json');
-
 const staticConfig = yaml.load(fs.readFileSync('./site.yml', 'utf8'));
 
 module.exports = {
@@ -13,6 +13,17 @@ module.exports = {
     menu: staticConfig.menu,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'GitHub',
+        fieldName: 'github',
+        url: 'https://api.github.com/graphql',
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {

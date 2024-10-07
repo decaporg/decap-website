@@ -106,7 +106,7 @@ function CarbonAds() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      'https://cdn.carbonads.com/carbon.js?serve=CWYIK27J&placement=decapcmsorg';
+      'https://cdn.carbonads.com/carbon.js?serve=CWYIKK77&placement=decapcmsorg';
     script.async = true;
     script.id = '_carbonads_js';
     ref.current.appendChild(script);
@@ -122,9 +122,7 @@ function CarbonAds() {
         <BlockedMessage>
           <h4>You blocked an ad that keeps this project alive</h4>
           <p>
-            Please consider supporting Decap by disabling your ad-blocking
-            software on decapcms.org. The ads shown here are relevant and do not
-            collect your personal data.
+            Please consider supporting Decap by donating on <a href="https://opencollective.com/decap">Open Collective</a> or sponsoring on <a href="https://github.com/sponsors/decaporg/">GitHub</a>.
           </p>
         </BlockedMessage>
       )}

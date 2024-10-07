@@ -76,7 +76,7 @@ Registers a template for a folder collection or an individual file in a file col
 * name: The name of the collection (or file for file collections) which this preview component will be used for.
   * Folder collections: Use the name of the collection
   * File collections: Use the name of the file
-* react_component: A React component that renders the collection data. Six props will be passed to your component during render:
+* react_component: A React component that renders the collection data. Seven props will be passed to your component during render:
   * entry: Immutable collection containing the entry data.
   * widgetFor: Returns the appropriate widget preview component for a given field.
   * [widgetsFor](#lists-and-objects): Returns an array of objects with widgets and associated field data. For use with list and object type entries.
@@ -102,6 +102,29 @@ Registers a template for a folder collection or an individual file in a file col
       CMS.registerPreviewTemplate("posts", PostPreview);
     </script>
     ```
+  * getCollection: Returns a promise that resolves with the entries in a collection
+    **Params:**
+    * collection: The name of the collection - required
+    * slug: The slug of the entry - optional: if not supplied all entries will be returned
+
+    **Example:**
+    ```html
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      var PostPreview = createClass({
+        render: function() {
+          var posts = await getCollection('posts');
+          var arr = [];
+          posts.forEach((t) => {
+            const getingData = t.get('data');
+            console.log(getingData);
+          });
+          return null;
+        }
+      });
+
+      CMS.registerPreviewTemplate("posts", PostPreview);
+    </script>
   * document: The preview pane iframe's [document instance](https://github.com/ryanseddon/react-frame-component/tree/9f8f06e1d3fc40da7122f0a57c62f7dec306e6cb#accessing-the-iframes-window-and-document).
   * window: The preview pane iframe's [window instance](https://github.com/ryanseddon/react-frame-component/tree/9f8f06e1d3fc40da7122f0a57c62f7dec306e6cb#accessing-the-iframes-window-and-document).
 

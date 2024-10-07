@@ -27,11 +27,7 @@ function Blog({ data }) {
                 margin-bottom: ${theme.space[5]};
               `}
             >
-              <h2
-                css={css`
-                  margin-bottom: 0;
-                `}
-              >
+              <h2>
                 <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
               </h2>
               <MetaInfo>

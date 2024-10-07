@@ -1,53 +1,137 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import { css } from '@emotion/react';
 
 import Markdownify from './markdownify';
 import theme from '../theme';
+import Button from './button';
+import Grid from './grid';
+import { mq } from '../utils';
 
-const Box = styled.div`
-  margin-bottom: ${theme.space[5]};
-
-  img {
-    margin-bottom: ${theme.space[3]};
-    margin-left: -${theme.space[2]};
-  }
-`;
-
-const Title = styled.h3`
-  color: ${p => (p.kind === 'light' ? theme.colors.primaryLight : theme.colors.primaryLight)};
-  font-size: ${theme.fontsize[4]};
-`;
-
-const Text = styled.p`
-  font-size: 18px;
-  a {
-    font-weight: 700;
-  }
-`;
-
-function FeatureItem({ feature, description, imgpath, kind, cta }) {
+function FeatureItem({ title, description, image, reverse }) {
   return (
-    <Box>
-      {imgpath && <img src={require(`../img/${imgpath}`).default} alt="" />}
-      <Title kind={kind}>
-        <Markdownify source={feature} />
-      </Title>
-      <Text>
-        <Markdownify source={description} />
-        <br />
-        {cta && (
-          <Link to={cta.href} className="ga-home">
-            {cta.label}
-          </Link>
-        )}
-      </Text>
-    </Box>
+    <Grid cols={2} css={css`
+      align-items: center;
+      margin: ${theme.space[5]} 0;
+
+      ${mq[1]} {
+      margin: ${theme.space[6]} 0;
+      }
+    `}>
+      <div css={css`
+        ${mq[1]} {
+          order: ${reverse ? '1' : '-1'};
+        }
+      `}>
+        <h3 css={css`
+          font-size: ${theme.fontsize[4]};
+        `}>
+          {title}
+        </h3>
+
+        <p css={css`
+          font-size: 18px;
+        `}>
+          <Markdownify source={description} />
+        </p>
+      </div>
+
+      {image && <div css={css`
+        position: relative;
+        transform: rotate(${reverse ? '-' : ''}2.8deg);
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(${reverse ? '-' : ''}4deg);
+          width: 50%;
+          height: 30%;
+          border-radius: 100%;
+          background: linear-gradient(90deg, #F50F1A 0%, #FB3CEE 100%);
+          filter: blur(70px);
+          z-index: -1;
+        }
+      `}>
+        <img
+          src={require(`../img/${image}`).default}
+          alt=""
+          css={css`
+            display: block;
+            margin: ${theme.space[5]} auto 0;
+            background: ${theme.colors.white};
+            border-radius: ${theme.radii[4]};
+
+            ${mq[2]} {
+              margin: 0 0 0 ${reverse ? 'auto' : '0'};
+            }
+          `}
+        />
+      </div>}
+    </Grid>
   );
 }
 
-function Features({ items, kind }) {
-  return items.map(item => <FeatureItem kind={kind} {...item} key={item.feature} />);
+function Features({ title, id, link, button, features }) {
+  return (
+    <div id={id} css={css`
+      position: relative;
+    `}>
+      <h2 css={css`
+        text-align: center;
+        color: ${theme.colors.lightishGray};
+        background: ${theme.colors.white};
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-direction: ${id === 'developers' ? 'row' : 'row-reverse'};
+        position: sticky;
+        padding: ${theme.space[2]} 0;
+        top: 0;
+        z-index: 1;
+
+        ${mq[2]} {
+          top: ${theme.space[6]};
+          padding: ${theme.space[4]} 0 ${theme.space[3]};
+        }
+      `}>
+        <a href={'#' + id} css={css`
+          color: ${theme.colors.primaryLight};
+        `}>
+          {title}
+        </a>
+        <span css={css`
+          display: none;
+
+          ${mq[1]} {
+            display: initial;
+          }
+        `}>/</span>
+        <a href={link.href} css={css`
+          color: ${theme.colors.lightishGray};
+          display: none;
+
+          ${mq[1]} {
+            display: initial;
+          }
+        `}>{link.text}</a>
+      </h2>
+
+      {features.map((feature, i) => <FeatureItem
+        {...feature}
+        reverse={i % 2 === 0}
+        key={feature.title}
+      />)}
+
+      <Button href={button.href} className='secondary' css={css`
+          display: block;
+          width: min-content;
+          margin: ${theme.space[5]} auto;
+        `}>
+        {button.text}
+      </Button>
+    </div>
+  );
 }
 
 export default Features;

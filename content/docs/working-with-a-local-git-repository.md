@@ -18,7 +18,7 @@ backend:
 
 3. Run `npx decap-server` from the root directory of the above repository.
 
-   * If the default port (8081) is in use, the proxy server won't start and you will see an error message. In this case, follow [these steps](#configure-the-decap-server-port-number) before proceeding.
+   * If the default port (8081) is in use, the proxy server won't start and you will see an error message. In this case, follow [these steps](#configure-the-decap-cms-proxy-server-port-number) before proceeding.
 4. Start your local development server (e.g. run `gatsby develop`).
 5. Open `http://localhost:<port>/admin` to verify that your can administer your content locally. Replace `<port>` with the port of your local development server. For example Gatsby's default port is `8000`
 

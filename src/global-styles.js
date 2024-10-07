@@ -10,12 +10,13 @@ const globalStyles = css`
 
   body {
     color: ${theme.colors.gray};
-    font-family: ${theme.fontFamily};
+    font-family: ${theme.fontFamily[0]};
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 90;
     line-height: ${theme.lineHeight[2]};
     font-size: ${theme.fontsize[3]};
-    background: ${theme.colors.shadeBlue};
     margin: 0;
-    -webkit-font-smoothing: antialiased;
   }
 
   img {
@@ -24,9 +25,8 @@ const globalStyles = css`
 
   ol,
   ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: ${theme.space[1]} 0;
+    padding-left: ${theme.space[4]};
   }
 
   h1,
@@ -35,6 +35,7 @@ const globalStyles = css`
   h4,
   h5,
   h6 {
+    font-family: ${theme.fontFamily[1]};
     line-height: ${theme.lineHeight[1]};
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -58,37 +59,12 @@ const globalStyles = css`
   }
 
   a {
-    color: ${theme.colors.primaryDark};
+    color: ${theme.colors.primaryLight};
+    font-weight: 700;
     text-decoration: none;
-  }
-
-  .gitter-open-chat-button {
-    &,
-    &:visited {
-      padding: ${theme.space[3]} ${theme.space[4]};
-      font-family: ${theme.fontFamily};
-      font-size: ${theme.fontsize[3]};
-      letter-spacing: 0.5px;
-      line-height: 1;
-      color: ${theme.colors.gray};
-      background-color: ${theme.colors.primaryDark};
-      box-shadow: 0 2px 16px 0 rgba(68, 74, 87, 0.15),
-        0 1px 4px 0 rgba(68, 74, 87, 0.3);
-    }
 
     &:hover {
-      background-color: ${theme.colors.primaryLight};
-      box-shadow: 0 2px 16px 0 rgba(68, 74, 87, 0.25),
-        0 1px 4px 0 rgba(68, 74, 87, 0.5);
-    }
-
-    &:focus {
-      box-shadow: 0 0 6px 3px rgba(62, 160, 127, 0.6);
-      transition: none;
-    }
-
-    &:active {
-      color: ${theme.colors.lightGray};
+      text-decoration: underline;
     }
   }
 
@@ -145,6 +121,20 @@ const globalStyles = css`
       grid-column: 2/3;
       text-align: right;
     }
+  }
+
+  .version-tag {
+    &:before {
+      content: 'New in v';
+    }
+    background: ${theme.colors.primaryDark};
+    color: white;
+    padding: 0.125em 0.5em;
+    border-radius: ${theme.radii[1]};
+    font-size: ${theme.fontsize[1]};
+    font-weight: 700;
+    display: inline-block;
+    margin: 0 0.5em;
   }
 `;
 
