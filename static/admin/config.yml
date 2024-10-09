@@ -68,11 +68,11 @@ collections:
       field: group
       value: Add
   - <<: *docs_collection
-    name: docs_accounts
-    label: 'Docs: Account'
+    name: docs_backends
+    label: 'Docs: Backends'
     filter:
       field: group
-      value: Accounts
+      value: Backends
   - <<: *docs_collection
     name: docs_configuration
     label: 'Docs: Configuration'
