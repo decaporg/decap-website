@@ -1,10 +1,9 @@
 ---
-title: Overview
 group: Intro
 weight: 1
+title: Overview
 ---
-
-Decap CMS (formerly Netlify CMS) is an open source content management system for your Git workflow that enables you to provide editors with a friendly UI and intuitive workflows. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.
+Decap CMS (formerly Netlify CMS) is an open source content management system for your Git workflow that enables you to provide editors with a friendly UI and intuitive workflows. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git..
 
 At its core, Decap CMS is an open-source React app that acts as a wrapper for the Git workflow, using the GitHub, GitLab, or Bitbucket API. This provides many advantages, including:
 
@@ -19,7 +18,7 @@ At its core, Decap CMS is an open-source React app that acts as a wrapper for th
 
 [Netlify.com](https://www.netlify.com/) is a platform you can use to automatically build, deploy, serve, and manage your frontend sites and web apps. It also provides a variety of other features like form processing, serverless functions, and split testing. Not all Netlify sites use Decap CMS, and not all sites using Decap CMS are on Netlify.
 
-The folks at Netlify created Netlify CMS to fill a gap in the static site generation pipeline. There were some great proprietary headless CMS options, but no real contenders that were open source and extensible—that could turn into a community-built ecosystem like WordPress or Drupal. For that reason, Netlify CMS is _made_ to be community-driven, and has never been locked to the Netlify platform (despite the name). In February 2023 [Netlify CMS became Decap CMS](https://www.netlify.com/blog/netlify-cms-to-become-decap-cms/).
+The folks at Netlify created Netlify CMS to fill a gap in the static site generation pipeline. There were some great proprietary headless CMS options, but no real contenders that were open source and extensible—that could turn into a community-built ecosystem like WordPress or Drupal. For that reason, Netlify CMS is *made* to be community-driven, and has never been locked to the Netlify platform (despite the name). In February 2023 [Netlify CMS became Decap CMS](https://www.netlify.com/blog/netlify-cms-to-become-decap-cms/).
 
 With this in mind, you can:
 
@@ -31,8 +30,8 @@ If you hook up Decap CMS to your website, you're basically adding a tool for con
 
 ### Find out more
 
-- Get a feel for the UI in the [demo site](https://demo.decapcms.org). (No login required. Click the login button to go straight to the CMS editor UI.)
-- [Start with a template](../start-with-a-template/) to make a Decap CMS-enabled site of your own.
-- Configure your existing site by following a [tutorial](../add-to-your-site/) or checking [configuration options](../configuration-options).
-- Ask questions and share ideas in the Decap CMS [community chat](https://decapcms.org/chat).
-- Get involved in new developments and become a [contributor](../contributor-guide/).
+* Get a feel for the UI in the [demo site](https://demo.decapcms.org). (No login required. Click the login button to go straight to the CMS editor UI.)
+* [Start with a template](../start-with-a-template/) to make a Decap CMS-enabled site of your own.
+* Configure your existing site by following a [tutorial](../add-to-your-site/) or checking [configuration options](../configuration-options).
+* Ask questions and share ideas in the Decap CMS [community chat](https://decapcms.org/chat).
+* Get involved in new developments and become a [contributor](../contributor-guide/).
