@@ -27,7 +27,7 @@ function DocPage({ data, location }) {
   const { title, group } = frontmatter;
 
   const docsNav = toMenu(menu.siteMetadata.menu.docs, nav);
-  const showWidgets = location.pathname.indexOf('/docs/widgets') !== -1;
+  const showWidgets = location.pathname.indexOf('/docs/widgets-list') !== -1;
   const filename = filenameFromPath(fields.path);
 
   return (
@@ -95,7 +95,7 @@ export const pageQuery = graphql`
     }
     widgets: allMarkdownRemark(
       sort: { frontmatter: { label: ASC } }
-      filter: { frontmatter: { label: { ne: null } }, fields: { slug: { regex: "/widgets/" } } }
+      filter: { frontmatter: { label: { ne: null }, group: { regex: "/Widgets/" } } }
     ) {
       edges {
         node {

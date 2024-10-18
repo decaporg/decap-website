@@ -1,6 +1,6 @@
 ---
 group: Workflow
-weight: 10
+weight: 20
 title: Deploy Preview Links
 ---
 When using the editorial workflow, content editors can create and save content without publishing it
