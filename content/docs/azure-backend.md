@@ -1,6 +1,6 @@
 ---
 group: Accounts
-weight: 20
+weight: 40
 title: Azure
 ---
 
