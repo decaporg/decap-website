@@ -9,7 +9,13 @@ You can now provide your own element for Decap CMS to mount in by setting the ta
 
 This is useful if you want to create a wrapper around the CMS, like a custom header, footer, or sidebar.
 
+Make sure to load the Decap script after the DOM is ready so that it can detect existing elements with proper ID.
+
 **Example**
+
+Load the script with the `defer` attribute:
+
+`<script defer src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>`
 
 Adding the following div to `admin/index.html` will cause the CMS to load within it:
 
