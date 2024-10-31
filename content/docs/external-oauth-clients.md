@@ -23,6 +23,7 @@ If you would like to facilitate your own OAuth authentication rather than use Ne
 | [@njfamirm](https://github.com/njfamirm)                     | GitHub                            | Node.js, Typescript               | [Repo](https://github.com/njfamirm/decap-cms-github-backend), [Blog](https://www.njfamirm.ir/en/blog/self-hosting-decap-cms/)                                |
 | [@augustogunsch](https://github.com/augustogunsch)           | GitHub, GitHub Enterprise, GitLab | Rust                              | [Repo](https://github.com/augustogunsch/decap_oauth)                                                                                                         |
 | [@daisuke-awaji](https://github.com/daisuke-awaji)           | GitHub | TypeScript, AWS Lambda, Amazon APIGateway                              | [Repo](https://github.com/daisuke-awaji/decapcms-lambda-oauth2-backend)                                                                                                         |
+| [@alukovenko](https://github.com/alukovenko/)           | GitHub | Go                              | [Repo](https://github.com/alukovenko/decapcms-oauth2) |
 
 
 
