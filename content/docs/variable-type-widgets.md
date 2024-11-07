@@ -1,8 +1,8 @@
 ---
 title: Variable Type Widgets
-label: "Variable Type Widgets"
+label: Variable Type Widgets
 group: Fields
-weight: 30
+weight: 20
 ---
 
 Before this feature, the [list widget](/docs/widgets/#list) allowed a set of fields to be repeated, but every list item had the same set of fields available. With variable types, multiple named sets of fields can be defined, which opens the door to highly flexible content authoring (even page building) in Decap CMS.
@@ -15,13 +15,13 @@ To use variable types in the list widget, update your field configuration as fol
 2. Each field definition under `types` must use the `object` widget (this is the default value for
    `widget`).
 
-### Additional list widget options
+## Additional List Widget Options
 
 * `types`: a nested list of object widgets. All widgets must be of type `object`. Every object widget may define different set of fields.
 * `typeKey`: the name of the field that will be added to every item in list representing the name of the object widget that item belongs to. Ignored if `types` is not defined. Default is `type`.
 * `summary`: allows customization of a collapsed list item object in a similar way to a [collection summary](/docs/configuration-options/?#summary)
 
-### Example Configuration
+## Example Configuration
 
 The example configuration below imagines a scenario where the editor can add two "types" of content,
 either a "carousel" or a "spotlight". Each type has a unique name and set of fields.
@@ -51,7 +51,7 @@ either a "carousel" or a "spotlight". Each type has a unique name and set of fie
         - { label: Text, name: text, widget: text, default: 'Hello World' }
 ```
 
-### Example Output
+## Example Output
 
 The output for the list widget will be an array of objects, and each object will have a `type` key
 with the name of the type used for the list item. The `type` key name can be customized via the

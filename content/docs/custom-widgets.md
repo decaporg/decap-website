@@ -1,8 +1,9 @@
 ---
-group: Fields
+group: Customization
 weight: 20
 title: Creating Custom Widgets
 ---
+
 Decap CMS exposes a `window.CMS` global object that you can use to register custom widgets, previews, and editor plugins. The same object is also the default export if you import Decap CMS as an npm module. The available widget extension methods are:
 
 * **registerWidget:** registers a custom widget.
