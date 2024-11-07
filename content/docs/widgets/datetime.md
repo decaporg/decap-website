@@ -7,7 +7,7 @@ The datetime widget translates a datetime picker to a datetime string.
 
 **Name:** `datetime`
 
-**UI:** datetime-local input / date inupt / time input
+**UI:** datetime-local input / date input / time input
 
 **Data type:** [Day.js](https://day.js.org/)-formatted datetime string
 
@@ -15,7 +15,7 @@ The datetime widget translates a datetime picker to a datetime string.
 
   - `default`: accepts a datetime string, or `'{{now}}'` to fill in the current datetime; otherwise defaults to empty string.
     
-    <small>Unitl 3.2.1 it defaults to current datetime. To get an empty field, set default to empty string.</small>
+    <small>Until 3.2.1 it defaults to current datetime. To get an empty field, set default to empty string.</small>
   - `format`: sets storage format, displays the full date and time input in the UI. Accepts [Day.js formats](https://day.js.org/docs/en/display/format); defaults to ISO8601 (if supported by output format). If set, `date_format` and `time_format` are not used.
   - `date_format`: sets storage format and UI input type as date picker (without time). Boolean or [Day.js formats](https://day.js.org/docs/en/display/format). 
   - `time_format`: sets storage format and UI input type as time picker (without date). Boolean or [Day.js formats](https://day.js.org/docs/en/display/format). If used together with `date_format`, the UI input will be a full datetime picker.
