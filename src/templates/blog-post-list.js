@@ -9,8 +9,14 @@ import MetaInfo from '../components/meta-info';
 import Page from '../components/page';
 import Lead from '../components/lead';
 import theme from '../theme';
+import Button from '../components/button';
 
-function Blog({ data }) {
+function Blog({ data, pageContext }) {
+  const { currentPage, limit, numPages, skip } = pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
+  const nextPage = (currentPage + 1).toString()
   return (
     <Layout>
       <Helmet>
@@ -36,7 +42,25 @@ function Blog({ data }) {
               <Lead>{node.frontmatter.description}</Lead>
             </article>
           ))}
-          {/* TODO: pagination */}
+          <div css={css`
+            display: flex;
+            justify-content: space-between;
+          `}>
+          {!isFirst && (
+            <Button href={`/blog/${prevPage}`} rel="prev" className='primary' css={css`
+              margin: ${theme.space[4]} 0;
+            `}>
+              ← Previous Page
+            </Button>
+          )}
+          {!isLast && (
+            <Button href={`/blog/${nextPage}`} rel="next" className='primary' css={css`
+              margin: ${theme.space[4]} 0;
+            `}>
+              Next Page →
+            </Button>
+          )}
+          </div>
         </Container>
       </Page>
     </Layout>
