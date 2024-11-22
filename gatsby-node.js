@@ -85,6 +85,30 @@ exports.createPages = async ({ graphql, actions }) => {
     fromPath: `/chat`,
     toPath: `https://discord.gg/KZRDXmTm9v`,
   })
+
+  createRedirect({
+    fromPath: `/blog/1/`,
+    toPath: `/blog/`,
+  })
+
+  // Create blog-list pages
+  const blogPostListPage = path.resolve('./src/templates/blog-post-list.js');
+  const blogPosts = allMarkdown.data.allMarkdownRemark.edges.filter(({ node }) => node.fields.slug.includes('blog/'));
+  const blogPostsPerPage = 3
+  const numPages = Math.ceil(blogPosts.length / blogPostsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: blogPostListPage,
+      context: {
+        limit: blogPostsPerPage,
+        skip: i * blogPostsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
 };
 
 function pad(n) {

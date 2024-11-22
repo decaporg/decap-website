@@ -46,10 +46,12 @@ function Blog({ data }) {
 export default Blog;
 
 export const pageQuery = graphql`
-  query blogList {
+  query blogList ($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: { fields: { slug: { regex: "/blog/" } } }
       sort: { frontmatter: { date: DESC } }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {
