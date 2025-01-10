@@ -89,7 +89,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/feed.xml",
+            output: "/feed.rss",
             title: "Decap CMS RSS Feed",
           },
         ],
