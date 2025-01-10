@@ -56,6 +56,7 @@ function Layout({ hasPageHero, children }) {
     >
       <Helmet defaultTitle={title} titleTemplate={`%s | ${title}`}>
         <meta name="description" content={description} />
+        <link rel="alternate" type="application/rss+xml" title="DecapCMS RSS Feed" href="/feed.rss">
         <meta name="image" property="og:image" content="https://decapcms.org/img/og-image.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
