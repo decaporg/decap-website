@@ -1,7 +1,7 @@
 ---
 group: Intro
 weight: 2
-title: Start with a Template
+title: Start with a Template111111111
 ---
 You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the quickest way to get started is with a template.  Found below, our featured templates deploy a bare-bones site and Decap CMS to Netlify, giving you a fully working CMS-enabled site with just a few clicks.
 
