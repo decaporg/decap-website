@@ -8,7 +8,7 @@ For repositories stored on [Azure](https://portal.azure.com), the `azure` backen
 In order to get Decap CMS working with Azure DevOps, you need a Tenant Id and an Application Id.
 
 1. If you do not have an Azure account, [create one here](https://azure.microsoft.com/en-us/free/?WT.mc_id=A261C142F) and make sure to have a credit card linked to the account.
-2. If you do not have an Azure Active Directory Tenant Id, [set one up here](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant).
+2. If you do not have an Azure Entra ID Tenant Id, [set one up here](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant).
 3. [Register an application with Azure Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app). Configure it as a Single tenant Web application and add a redirect URI (e.g. `http://localhost:8080/`)
 4. Add the `Azure DevOps->user_impersonation` [permission](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-permissions-to-access-your-web-api) for the created application.
 5. [Grant admin consent](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#admin-consent-button) for the application.
