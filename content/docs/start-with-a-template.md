@@ -14,7 +14,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/decaporg/one-click-hugo-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/decaporg/one-click-hugo-cms">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/decaporg/one-click-hugo-cms)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/decaporg/one-click-hugo-cms">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -25,7 +25,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/decaporg/gatsby-starter-decap-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/decaporg/gatsby-starter-decap-cms">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/decaporg/gatsby-starter-decap-cms)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/decaporg/gatsby-starter-decap-cms">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -36,7 +36,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Sfolkerts89/Nuxt3-starter__Decap-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/Sfolkerts89/Nuxt3-starter__Decap-cms">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/Sfolkerts89/Nuxt3-starter__Decap-cms)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Sfolkerts89/Nuxt3-starter__Decap-cms">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -47,7 +47,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/wutali/nextjs-netlify-blog-template&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/wutali/nextjs-netlify-blog-template">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/wutali/nextjs-netlify-blog-template)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/wutali/nextjs-netlify-blog-template">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -58,7 +58,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/neat-starter&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/surjithctly/neat-starter">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/surjithctly/neat-starter)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/surjithctly/neat-starter">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -69,7 +69,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/NdagiStanley/VueDN"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/NdagiStanley/VueDN">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/NdagiStanley/VueDN)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/NdagiStanley/VueDN">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -80,7 +80,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/tomrutgers/middleman-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/tomrutgers/middleman-starter-netlify-cms">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/tomrutgers/middleman-starter-netlify-cms)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tomrutgers/middleman-starter-netlify-cms">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -91,7 +91,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/preactjs/preact-netlify&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/preactjs/preact-netlify">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/preactjs/preact-netlify)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/preactjs/preact-netlify">
     </div>
   </div>
   <div style="flex-basis: 33%">
@@ -102,7 +102,7 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/wernerglinka/metalsmith-netlify-starter"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
       <a href="https://github.com/wernerglinka/metalsmith-netlify-starter">GitHub Repository</a>
-      ![GitHub last commit](https://img.shields.io/github/last-commit/wernerglinka/metalsmith-netlify-starter)
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/wernerglinka/metalsmith-netlify-starter">
     </div>
   </div>
 </div>
