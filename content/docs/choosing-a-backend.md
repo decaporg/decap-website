@@ -3,12 +3,17 @@ group: Add
 weight: 3
 title: 2. Choosing a Backend
 ---
+Now that you have your Decap CMS files in place and configured, all that's left is to enable authentication.
 
-Now that you have your Decap CMS files in place and configured, all that's left is to enable authentication. We're using the [Netlify](https://www.netlify.com/) platform here because it's one of the quickest ways to get started, but you can learn about other authentication options in the [Backends](/docs/backends-overview) doc.
+To folow this guide, you need a [Netlify](https://app.netlify.com) account. If you don't have one, you can [sign up for free](https://app.netlify.com/signup).
+
+You can learn about other authentication options in the [Backends](/docs/backends-overview) doc.
 
 ## Setup on Netlify
 
 Netlify offers a built-in authentication service called [Identity](https://docs.netlify.com/security/secure-access-to-sites/identity/). In order to use it, connect your site repo with Netlify. Netlify has published a general [Step-by-Step Guide](https://www.netlify.com/blog/2016/10/27/a-step-by-step-guide-deploying-a-static-site-or-single-page-app/) for this, along with detailed guides for many popular static site generators.
+
+If you will use Netlify only for authentication, you can skip the above mentioned deployment step.
 
 ### Enable Identity and Git Gateway
 
@@ -49,7 +54,7 @@ When a user logs in with the Netlify Identity widget, an access token directs to
 
 ### Admin-only registration
 
-If you use the invite-only registration, you don't need to add the identity widget to the index page. Instead, you can invite users from the Netlify dashboard. To make this work you have to update email tempalates in the Netlify dashboard. Follow [this guide](https://docs.netlify.com/security/secure-access-to-sites/identity/identity-generated-emails/) to learn how to do it. The important part is to change the URLs from `{{ siteURL }}/#...` to `{{ siteURL }}/admin/#...`. That way all links in emails will point to the CMS page, which includes the identity widget. This method is good for performance of your frontend, because it doesn't load the identity widget on the main page.
+If you use the invite-only registration, you don't need to add the identity widget to the index page. Instead, you can invite users from the Netlify dashboard. To make this work you have to update email templates in the Netlify dashboard. Follow [this guide](https://docs.netlify.com/security/secure-access-to-sites/identity/identity-generated-emails/) to learn how to do it. The important part is to change the URLs from `{{ siteURL }}/#...` to `{{ siteURL }}/admin/#...`. That way all links in emails will point to the CMS page, which includes the identity widget. This method is good for performance of your frontend, because it doesn't load the identity widget on the main page.
 
 <nav class="pagination-nav">
  <a href="/docs/install-decap-cms/" class="button">
