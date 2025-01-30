@@ -10,6 +10,7 @@ The image widget allows editors to upload an image or select an existing one fro
 * **Options:**
 
   * `default`: accepts a file path string; defaults to null
+  * `required`: specify as `false` to make a field optional; defaults to `true`
   * `media_library`: settings to apply when a media library is opened by the
     current widget
   * `allow_multiple`: *(default: `true`)* when set to `false`, multiple selection will be disabled even if the media library extension supports it

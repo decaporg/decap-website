@@ -9,6 +9,7 @@ The code widget provides a code editor (powered by [Codemirror](https://codemirr
 - **UI:** code editor
 - **Data type:** string
 - **Options:**
+  - `required`: specify as `false` to make a field optional; defaults to `true`
   - `default_language`: optional; default language to use
   - `allow_language_selection`: optional; defaults to `false`: allows syntax to be changed
   - `keys`: optional; sets key names for code and lang if outputting an object; defaults to `{ code: 'code', lang: 'lang' }`
