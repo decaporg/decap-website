@@ -10,6 +10,7 @@ The color widget translates a color picker to a color string.
 - **Data type:** string
 - **Options:**
   - `default`: accepts a string; defaults to an empty string. Sets the default value
+  - `required`: specify as `false` to make a field optional; defaults to `true`
   - `allowInput`: accepts a boolean, defaults to `false`. Allows manual editing of the color input value
   - `enableAlpha`: accepts a boolean, defaults to `false`. Enables Alpha editing
 - **Example:**
