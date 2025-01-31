@@ -13,6 +13,7 @@ The list widget allows you to create a repeatable item in the UI which saves as 
     field, or an array of list items for lists using the `fields` option. If no
     default is declared when using `field` or `fields`, will default to a single
     list item using the defaults on the child widgets
+  * `required`: specify as `false` to ignore `min`, `max` setting; defaults to `true`. If `true` and `min`,`max` values are set, list widget validates number of items
   * `allow_add`: `false` hides the button to add additional items
   * `collapsed`: when `true`, the entries collapse by default
   * `summary`: specify the label displayed on collapsed entries
