@@ -5,7 +5,7 @@ title: 2. Choosing a Backend
 ---
 Now that you have your Decap CMS files in place and configured, all that's left is to enable authentication.
 
-To folow this guide, you need a [Netlify](https://app.netlify.com) account. If you don't have one, you can [sign up for free](https://app.netlify.com/signup).
+To follow this guide, you need a [Netlify](https://app.netlify.com) account. If you don't have one, you can [sign up for free](https://app.netlify.com/signup).
 
 You can learn about other authentication options in the [Backends](/docs/backends-overview) doc.
 
