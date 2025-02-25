@@ -59,7 +59,7 @@ Decap CMS generates the following commit types:
 Template tags produce the following output:
 
 * `{{slug}}`: the url-safe filename of the entry changed
-* `{{collection}}`: the name of the collection containing the entry changed
+* `{{collection}}`: the `label_singular` or `label` of the collection containing the entry changed
 * `{{path}}`: the full path to the file changed
 * `{{message}}`: the relevant message based on the current change (e.g. the `create` message when an entry is created)
 * `{{author-login}}`: the login/username of the author
