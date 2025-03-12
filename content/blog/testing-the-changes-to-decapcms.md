@@ -14,11 +14,11 @@ Some Blog content
 
 `Code`
 
+![random-learner-image](/img/dall·e-2025-03-09-11.47.48-a-futuristic-cyberpunk-style-character-named-random-learner-.-they-are-a-young-curious-individual-with-glowing-cybernetic-implants-on-their-temples.webp "Random Learner")
+
 ``
 
 ```
 country = "Laos"
 print(f"hello {country} people")
-
-
 ```
