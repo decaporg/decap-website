@@ -3,7 +3,6 @@ group: Collections
 weight: 10
 title: Folder Collections
 ---
-
 Collections with type `folder` displays in the left sidebar of the Content page of the editor UI along with other types.
 
 Folder collections represent one or more files with the same format, fields, and configuration options, all stored within the same folder in the repository. You might use a folder collection for blog posts, product pages, author data files, etc.
@@ -75,6 +74,19 @@ collections:
       - {label: "Contenido", name: "body", widget: "markdown"}
 ```
 
+The example below creates a collection with posts. For example, in Hugo, you can have an \`_index.md\` file with \`headless: true\`, which prevents publishing a collection folder to your website. If you want to hide this file from the CMS, you can omit the value field, which filters out all entries without this field.
+
+```yaml
+collections:
+  - label: "Posts"
+    name: "posts"
+    folder: "content/posts"
+    create: true
+    filter: {field: "headless"}
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+```
 
 ### Folder Collections Path
 
