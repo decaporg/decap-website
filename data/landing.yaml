@@ -24,7 +24,7 @@ developers:
       description: "You can add Decap CMS to any static site generator, meta-framework, or other tool that stores content in Git. "
       image: "frontend-tools.png"
     - title: "Install, configure, and extend with ease"
-      description: "Install Decap by adding to files to your site, then configure everything in a YAML file. Extend with ease with React: create custom-styled previews, UI widgets, and editor plugins or add backends to support different Git platform APIs. See Add to your site to get started."
+      description: "Install Decap by adding two files to your site, then configure everything in a YAML file. Extend with ease with React: create custom-styled previews, UI widgets, and editor plugins or add backends to support different Git platform APIs. See Add to your site to get started."
       image: "configure.png"
 templateBanner:
   title: "Getting started is *simple and free.*"

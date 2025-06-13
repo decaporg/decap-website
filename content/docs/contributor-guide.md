@@ -10,7 +10,7 @@ We're hoping that Decap CMS will do for the [Jamstack](https://www.jamstack.org)
 Being a developer is not a requirement for contributing to Decap CMS, you only need the desire, a web browser, and a [GitHub account](https://github.com/join). The GitHub repo has a step-by-step [guide](https://github.com/decaporg/decap-cms/blob/master/CONTRIBUTING.md) to get started with the code.
 
 ## The basics of the Decap CMS docs
-The documentation for Decap CMS is written in [Markdown](http://daringfireball.net/projects/markdown/) (a good cheatsheet on Markdown is [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)), with the source residing on [GitHub](https://github.com/decaporg/decap-website).
+The documentation for Decap CMS is written in [Markdown](https://daringfireball.net/projects/markdown/) (a good cheatsheet on Markdown is [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)), with the source residing on [GitHub](https://github.com/decaporg/decap-website).
 
 The GitHub website allows you to submit issues, work with files, search for content, and browse changes that have been submitted in the past and those that are being submitted now (aka Pull Requests). 
 
