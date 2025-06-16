@@ -106,6 +106,25 @@ collections:
 
 **Note:** You won't be able to access the CMS just yet — you still need to deploy the project with **Netlify** and authenticate with **Netlify Identity**. You'll handle this in the next few steps of this guide.
 
+### Configuring Netlify Build Settings
+To ensure consistent builds on Netlify, create a `netlify.toml` configuration file at your project's root with these settings:
+
+```toml
+[build]
+  command = "hugo"
+  publish = "public"
+[context.production.environment]
+  HUGO_VERSION = "0.128.0"
+```
+
+This configuration:
+
+1. Specifies the exact Hugo version Netlify should use (match this to your local Hugo version)
+2. Defines the build command that generates your site
+3. Sets the publish directory to Hugo's default output folder
+
+**Note:** Explicitly setting the Hugo version prevents unexpected build issues from version mismatches between your local environment and Netlify's auto-detected version.
+
 ### Pushing to GitHub
 
 It's now time to commit your changes and push to GitHub. You can run the following commands to initialize a git repository and push the changes so far.
