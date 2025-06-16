@@ -10,6 +10,7 @@ The file widget allows editors to upload a file or select an existing one from t
 * **Options:**
 
   * `default`: accepts a file path string; defaults to null
+  - `required`: specify as `false` to make a field optional; defaults to `true`
   * `media_library`: media library settings to apply when a media library is opened by the
     current widget
 
