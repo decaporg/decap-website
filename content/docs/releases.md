@@ -9,6 +9,12 @@ The way to update your CMS depends on how you installed Decap CMS.
 
 ### Package Manager
 
+
+
+
+
+
+
 If you are using a package manager like Yarn or NPM, use their standard procedure to update. This is how both the Hugo and Gatsby starters are set up.
 
 ### CDN
