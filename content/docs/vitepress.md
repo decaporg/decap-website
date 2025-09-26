@@ -81,6 +81,7 @@ It's now time to commit your changes and push to GitHub.
 git init
 git add .
 git commit -m "Initial Commit"
+git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/NEW_REPO_NAME.git
 git push -u origin main
 ```
