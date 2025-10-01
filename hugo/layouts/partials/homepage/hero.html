@@ -1,0 +1,11 @@
+<section class="hero">
+  <div class="hero__container">
+    <h1 class="hero__headline">{{ .headline }}</h1>
+    <p class="hero__subhead">{{ .subhead }}</p>
+    <div class="hero__buttons">
+      {{ range .buttons }}
+      <a href="{{ .href }}" class="btn {{ .class | default "primary" }}">{{ .text }}</a>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+{{ $search := resources.Get "/scripts/search.js" }}
+{{ $header := resources.Get "/scripts/header.js" }}
+
+{{ $bundleItems := slice $search $header }}
+
+{{ $options := dict
+  "sourcemap" "inline"
+  "minify" true
+}}
+
+{{ $bundleJs := $bundleItems | resources.Concat "scripts/bundle.js" | js.Build $options }}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+<script defer src="{{ $bundleJs.RelPermalink }}"></script>

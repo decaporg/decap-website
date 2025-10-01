@@ -1,0 +1,22 @@
+<section class="services">
+  <div class="services__container">
+    <h2 class="services__title">{{ .title }}</h2>
+    <p class="services__description">{{ .description }}</p>
+    <div class="services__grid">
+      {{ range .features }}
+      <div class="services__item{{ if .className }} services__item--{{ .className }}{{ end }}">
+        {{ if .image }}
+        <img src="{{ printf "img/%s" .image | relURL }}" alt="{{ .title }}" class="services__item-image" />
+        {{ end }}
+        <h3 class="services__item-title">{{ .title }}</h3>
+        <div class="services__item-description">{{ .description | markdownify }}</div>
+        {{ with .button }}
+        <div class="services__item-cta">
+          <a href="{{ .href }}" class="btn secondary">{{ .text }}</a>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

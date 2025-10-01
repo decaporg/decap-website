@@ -1,0 +1,21 @@
+<footer>
+  <div class="container">
+    {{ $footer := site.Data.footer }}
+    <div class="footer-logo">
+      <img src="{{ $footer.logo | relURL }}" alt="Decap CMS" />
+    </div>
+    <div class="footer-content">
+      <p>{{ $footer.maintained | markdownify }}</p>
+      <div class="footer-links">
+        {{ range $footer.links }}
+        <a href="{{ .href }}" target="_blank">{{ .text }}</a>
+        {{ end }}
+      </div>
+      <div class="footer-socials">
+        {{ range $footer.socials }}
+        <a href="{{ .href }}" target="_blank">{{ .text }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</footer>

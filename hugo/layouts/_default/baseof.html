@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ with .Title }}{{ . }} | {{ end }}{{ site.Title }}</title>
+  <meta name="description" content="{{ .Description | default site.Params.description }}">
+  <link rel="icon" href="{{ "img/favicon/favicon-32x32.png" | relURL }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:title" content="{{ .Title | default site.Title }}">
+  <meta property="og:description" content="{{ .Description | default site.Params.description }}">
+  <meta property="og:image" content="{{ (.Params.image | default "img/og-image.jpg") | absURL }}">
+
+  {{ partial "base/styles" . }}
+</head>
+
+<body>
+  {{ partial "header" . }}
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer" . }}
+
+  {{ partial "base/scripts" . }}
+</body>
+
+</html>

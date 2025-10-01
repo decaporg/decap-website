@@ -1,0 +1,21 @@
+<section class="developers" id="{{ .id }}">
+  <div class="developers__container">
+    <h2 class="developers__title">{{ .title }}</h2>
+    <div class="developers__grid">
+      {{ range .features }}
+      <div class="developers__feature">
+        {{ if .image }}
+        <img src="{{ printf "img/%s" .image | relURL }}" alt="{{ .title }}" class="developers__feature-image" />
+        {{ end }}
+        <h3 class="developers__feature-title">{{ .title }}</h3>
+        <div class="developers__feature-description">{{ .description | markdownify }}</div>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .button }}
+    <div class="developers__cta">
+      <a href="{{ .href }}" class="btn secondary">{{ .text }}</a>
+    </div>
+    {{ end }}
+  </div>
+</section>

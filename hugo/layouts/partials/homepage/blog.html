@@ -1,0 +1,17 @@
+<section class="blog">
+  <div class="blog__container">
+    <h2 class="blog__title">{{ .title }}</h2>
+    <p class="blog__hook">{{ .hook }}</p>
+    <div class="blog__content">
+      <div class="blog__text">{{ .text | markdownify }}</div>
+      {{ if .image }}
+      <img src="{{ printf "img/%s" .image | relURL }}" alt="Blog" class="blog__image" />
+      {{ end }}
+    </div>
+    {{ with .button }}
+    <div class="blog__cta">
+      <a href="{{ .href }}" class="btn primary">{{ .text }}</a>
+    </div>
+    {{ end }}
+  </div>
+</section>
