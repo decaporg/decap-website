@@ -1,0 +1,33 @@
+.docsearch {
+  width: 100%;
+
+  &__form {
+    width: 100%;
+  }
+
+  &__field {
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    font-family: var(--font-family-secondary);
+    border-radius: var(--radius-md);
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url('/img/search.svg');
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+    border: 2px solid var(--color-lightish-gray);
+    appearance: none;
+    width: 100%;
+    padding: var(--space-2);
+    padding-left: 36px;
+    outline: 0;
+    transition: border-color 0.2s ease-in-out;
+
+    &::placeholder {
+      color: var(--color-lightest-gray);
+    }
+
+    &:focus {
+      border-color: var(--color-primary-dark);
+    }
+  }
+}
