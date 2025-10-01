@@ -1,0 +1,10 @@
+public
+resources
+node_modules
+static/node_modules
+.idea
+design
+.DS_Store
+.netlify
+.env
+.hugo_build.lock

@@ -1,0 +1,41 @@
+{
+  "name": "decap-website",
+  "type": "module",
+  "description": "source code of decapcms.org",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server",
+    "build": "hugo",
+    "lint": "npx htmlhint 'layouts/**/*.html' && npx eslint . && npx stylelint **/*.scss",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decaporg/decap-website.git"
+  },
+  "author": "PM, poslovni mediji",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/decaporg/decap-website/issues"
+  },
+  "homepage": "https://github.com/decaporg/decap-website#readme",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.13.0",
+    "globals": "^16.3.0",
+    "htmlhint": "^1.1.4",
+    "husky": "^9.1.6",
+    "lint-staged": "^16.1.2",
+    "neostandard": "^0.12.2",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard-scss": "^15.0.1"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix"],
+    "*.{scss,css}": ["stylelint --fix"],
+    "*.html": "htmlhint"
+  }
+}
