@@ -1,31 +1,31 @@
 {{ define "main" }}
 
   {{ with .Params.hero }}
-    {{ partial "homepage/hero" . }}
+    {{ partial "home/hero" . }}
   {{ end }}
 
   {{ with .Params.developers }}
-    {{ partial "homepage/developers" . }}
+    {{ partial "home/developers" . }}
   {{ end }}
 
   {{ with .Params.templateBanner }}
-    {{ partial "homepage/template-banner" . }}
+    {{ partial "home/template-banner" . }}
   {{ end }}
 
   {{ with .Params.editors }}
-    {{ partial "homepage/editors" . }}
+    {{ partial "home/editors" . }}
   {{ end }}
 
   {{ with .Params.services }}
-    {{ partial "homepage/services" . }}
+    {{ partial "home/services" . }}
   {{ end }}
 
   {{ with .Params.blog }}
-    {{ partial "homepage/blog" . }}
+    {{ partial "home/blog" . }}
   {{ end }}
 
   {{ with .Params.community }}
-    {{ partial "homepage/community" . }}
+    {{ partial "home/community" . }}
   {{ end }}
 
 {{ end }}

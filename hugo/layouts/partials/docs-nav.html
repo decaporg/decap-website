@@ -1,0 +1,45 @@
+<nav class="docs-nav">
+  <button class="docs-nav__toggle button block" id="docs-nav-toggle">
+    <span class="docs-nav__icon">☰</span>
+    <span class="docs-nav__text">Show</span> Navigation
+  </button>
+
+  <div class="docs-nav__content" id="docs-nav-content">
+    {{ $currentPage := . }}
+    {{ $docsPages := where .Site.RegularPages "Section" "docs" }}
+    {{ $groups := slice }}
+    
+    {{/* Collect unique groups in order */}}
+    {{ range $docsPages }}
+      {{ if .Params.group }}
+        {{ $groups = $groups | append .Params.group }}
+      {{ end }}
+    {{ end }}
+    {{ $groups = $groups | uniq }}
+    
+    {{ range $groups }}
+      {{ $currentGroup := . }}
+      <div class="docs-nav__section">
+        <h3 class="docs-nav__section-title">{{ $currentGroup }}</h3>
+        <ul class="docs-nav__section-list">
+          {{ range where $docsPages "Params.group" $currentGroup | first 100 }}
+          <li class="docs-nav__item">
+            <a href="{{ .RelPermalink }}" class="docs-nav__link{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{end}}">
+              {{ .Title }}
+            </a>
+            
+            {{/* Table of Contents for active page */}}
+            {{ if eq $currentPage.RelPermalink .RelPermalink }}
+              {{ if .TableOfContents }}
+              <div class="docs-nav__toc">
+                {{ .TableOfContents }}
+              </div>
+              {{ end }}
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+  </div>
+</nav>

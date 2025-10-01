@@ -18,6 +18,7 @@
   --font-weight-thin: 100;
   --font-weight-light: 300;
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
   --font-weight-black: 900;
@@ -25,6 +26,9 @@
   // Font Families
   --font-family-primary: "IBM Plex Sans", sans-serif;
   --font-family-secondary: "Montserrat", sans-serif;
+
+  // Color Aliases
+  --color-primary: var(--color-primary-light);
 
   // Font Sizes
   --font-size-2xs: 10px;

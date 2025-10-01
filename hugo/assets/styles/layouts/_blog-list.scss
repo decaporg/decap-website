@@ -1,5 +1,7 @@
-// Blog List Styles
 .blog-list {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+
   &__item {
     margin-bottom: var(--space-5);
 
@@ -14,16 +16,5 @@
         }
       }
     }
-  }
-}
-
-// Page - content wrapper with padding
-.page {
-  padding-top: var(--space-5);
-  padding-bottom: var(--space-5);
-  
-  @include breakpoint-up(sm) {
-    padding-top: var(--space-6);
-    padding-bottom: var(--space-6);
   }
 }

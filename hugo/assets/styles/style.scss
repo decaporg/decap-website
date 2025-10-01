@@ -10,18 +10,15 @@
 @import 'theme';
 @import 'typography';
 @import 'table';
-
-// Layout components
 @import 'header';
 @import 'footer';
 
-// Page-specific styles
-@import 'home';
-@import 'docs';
-@import 'blog';
-@import 'pages';
+@import 'layouts/blog-list';
+@import 'layouts/blog-single';
+@import 'layouts/docs-single';
+@import 'layouts/docs-list';
+@import 'layouts/home';
 
-// Components
 @import 'components/search';
 @import 'components/alert';
 @import 'components/template-card';
@@ -32,12 +29,13 @@
 @import 'components/version-tag';
 @import 'components/page-layout';
 @import 'components/community';
+@import 'components/docs-nav';
+@import 'components/edit-link';
 
-// Homepage partials
-@import 'partials/hero';
-@import 'partials/developers';
-@import 'partials/template-banner';
-@import 'partials/editors';
-@import 'partials/services';
-@import 'partials/blog';
-@import 'partials/community';
+@import 'components/home/hero';
+@import 'components/home/developers';
+@import 'components/home/template-banner';
+@import 'components/home/editors';
+@import 'components/home/services';
+@import 'components/home/blog';
+@import 'components/home/community';
