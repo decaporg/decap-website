@@ -1,0 +1,21 @@
+.button {
+  display: inline-block;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-primary-dark);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  box-shadow: 0;
+
+  &:hover {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  }
+}

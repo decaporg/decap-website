@@ -1,0 +1,29 @@
+// Blog List Styles
+.blog-list {
+  &__item {
+    margin-bottom: var(--space-5);
+
+    h2 {
+      margin-bottom: var(--space-2);
+      
+      a {
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+// Page - content wrapper with padding
+.page {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+  
+  @include breakpoint-up(sm) {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+}

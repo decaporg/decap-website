@@ -17,160 +17,150 @@
     width: 100%;
     z-index: var(--z-index-header);
   }
-}
 
-// Header container
-.header__container {
-  display: flex;
-  align-items: center;
-}
-
-// Logo section
-.header__logo {
-  @include breakpoint-up(sm) {
-    margin-right: var(--space-4);
-  }
-
-  @include breakpoint-up(md) {
-    margin-right: var(--space-5);
-  }
-
-  @include breakpoint-up(lg) {
-    margin-right: var(--space-6);
-  }
-
-  a {
+  &__container {
     display: flex;
     align-items: center;
   }
 
-  img {
-    height: clamp(32px, 3vw, 40px);
-    width: auto;
-  }
-}
-
-// Mobile menu actions
-.header__menu-actions {
-  flex: 1 0 60px;
-  display: flex;
-  justify-content: flex-end;
-
-  @include breakpoint-up(sm) {
-    display: none;
-  }
-}
-
-// Menu buttons
-.header__menu-btn {
-  background: none;
-  border: 0;
-  padding: var(--space-2);
-  font-size: var(--font-size-2xl);
-  line-height: 1;
-  color: inherit;
-  cursor: pointer;
-}
-
-.header__search-btn {
-  @extend .header__menu-btn;
-}
-
-// Toggle areas (search and nav)
-.header__toggle-area {
-  display: none;
-  position: absolute;
-  top: var(--space-6);
-  left: 0;
-  width: 100%;
-  flex: 1 0 100px;
-  background: var(--color-primary-light);
-  padding: 0 var(--space-4) var(--space-4);
-  z-index: 2;
-
-  &.open {
-    display: block;
-  }
-
-  @include breakpoint-up(sm) {
-    position: relative;
-    display: block;
-    width: auto;
-    top: initial;
-    left: initial;
-    background: none;
-    padding: 0;
-  }
-}
-
-// Search box
-.header__search-box {
-  @extend .header__toggle-area;
-
-  @include breakpoint-up(sm) {
-    flex: 1;
-    max-width: 200px;
-    margin-right: var(--space-3);
-  }
-}
-
-// Menu
-.header__menu {
-  @extend .header__toggle-area;
-
-  @include breakpoint-up(sm) {
-    flex: 0 0 auto;
-    margin-left: auto;
-  }
-}
-
-// Menu list
-.header__menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  align-items: flex-end;
-
-  @include breakpoint-up(sm) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  @include breakpoint-up(md) {
-    gap: var(--space-4);
-  }
-
-  @include breakpoint-up(lg) {
-    gap: var(--space-5);
-  }
-}
-
-// Menu items
-.header__menu-item {
-  line-height: 1;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: var(--font-weight-regular);
+  &__logo {
+    @include breakpoint-up(sm) {
+      margin-right: var(--space-4);
+    }
 
     @include breakpoint-up(md) {
-      font-size: var(--font-size-lg);
+      margin-right: var(--space-5);
+    }
+
+    @include breakpoint-up(lg) {
+      margin-right: var(--space-6);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      height: clamp(32px, 3vw, 40px);
+      width: auto;
     }
   }
 
-  // GitHub icon styling
-  &.github-link {
-    height: 28px;
-    
-    a {
-      display: inline-flex;
+  &__menu-actions {
+    flex: 1 0 60px;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint-up(sm) {
+      display: none;
+    }
+  }
+
+  &__menu-btn {
+    background: none;
+    border: 0;
+    padding: var(--space-2);
+    font-size: var(--font-size-2xl);
+    line-height: 1;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  &__search-btn {
+    @extend .header__menu-btn;
+  }
+
+  &__toggle-area {
+    display: none;
+    position: absolute;
+    top: var(--space-6);
+    left: 0;
+    width: 100%;
+    flex: 1 0 100px;
+    background: var(--color-primary-light);
+    padding: 0 var(--space-4) var(--space-4);
+    z-index: 2;
+
+    &.open {
+      display: block;
+    }
+
+    @include breakpoint-up(sm) {
+      position: relative;
+      display: block;
+      width: auto;
+      top: initial;
+      left: initial;
+      background: none;
+      padding: 0;
+    }
+  }
+
+  &__search-box {
+    @extend .header__toggle-area;
+
+    @include breakpoint-up(sm) {
+      flex: 1;
+      max-width: 200px;
+      margin-right: var(--space-3);
+    }
+  }
+
+  &__menu {
+    @extend .header__toggle-area;
+
+    @include breakpoint-up(sm) {
+      flex: 0 0 auto;
+      margin-left: auto;
+    }
+  }
+
+  &__menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-end;
+
+    @include breakpoint-up(sm) {
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @include breakpoint-up(md) {
+      gap: var(--space-4);
+    }
+
+    @include breakpoint-up(lg) {
+      gap: var(--space-5);
+    }
+  }
+
+  &__menu-item {
+    line-height: 1;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: var(--font-weight-regular);
+
+      @include breakpoint-up(md) {
+        font-size: var(--font-size-lg);
+      }
+    }
+
+    &.github-link {
+      height: 28px;
+      
+      a {
+        display: inline-flex;
+        align-items: center;
+      }
     }
   }
 }
