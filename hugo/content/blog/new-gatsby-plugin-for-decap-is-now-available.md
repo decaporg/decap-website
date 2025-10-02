@@ -6,6 +6,8 @@ description: The deprecated gatsby-plugin-netlify-cms that corresponds to the
   gatsby-plugin-decap-cms
 image: /img/gatsby-plugin-decap-cms.png
 date: 2024-02-05T14:04:50.781Z
+aliases:
+  - /blog/2024/02/new-gatsby-plugin-for-decap-is-now-available/
 ---
 The deprecated [gatsby-plugin-netlify-cms](https://www.npmjs.com/package/gatsby-plugin-netlify-cms) that corresponds to the old Netlify CMS package is now deprecated and replaced by [gatsby-plugin-decap-cms](https://www.npmjs.com/package/gatsby-plugin-decap-cms).
 
