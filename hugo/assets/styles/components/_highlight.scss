@@ -11,3 +11,13 @@
     font-size: var(--font-size-sm);
  }
 }
+
+// Inline code
+code:not(pre code) {
+  color: inherit;
+  background: #e6e6e6;
+  border-radius: 2px;
+  padding: 2px 1px;
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+}

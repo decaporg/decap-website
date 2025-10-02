@@ -17,7 +17,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-secondary);
-  line-height: var(--line-height-min);
+  line-height: var(--line-height-mid);
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -56,28 +56,6 @@ a {
   &:hover {
     text-decoration: underline;
   }
-}
-
-// Code blocks
-pre {
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-4);
-  margin-top: var(--space-4);
-}
-
-pre > code {
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-min);
-}
-
-// Inline code
-*:not(pre) > code {
-  color: inherit;
-  background: #e6e6e6;
-  border-radius: 2px;
-  padding: 2px 6px;
-  white-space: nowrap;
-  font-size: var(--font-size-sm);
 }
 
 // Meta Info - small metadata text

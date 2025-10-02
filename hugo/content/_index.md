@@ -112,7 +112,7 @@ blog:
   image: "blog.png"
   button:
     text: "More on our blog"
-    href: "/blog/2023/11/git-based-cms-definition-features-best-practices/"
+    href: "/blog/git-based-cms-definition-features-best-practices/"
 
 # Community Section
 community:

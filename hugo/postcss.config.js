@@ -22,6 +22,7 @@ export default {
           /home-services/,
           /carbon/,
           /table/,
+          /code/,
         ],
       },
     }),
