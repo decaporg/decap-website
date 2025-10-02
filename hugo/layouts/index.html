@@ -20,12 +20,17 @@
     {{ partial "home/services" . }}
   {{ end }}
 
-  {{ with .Params.blog }}
-    {{ partial "home/blog" . }}
-  {{ end }}
+  <div class="home-dark-section-wrapper">
+    <div class="home-dark-section__border"></div>
+    <div class="home-dark-section">
+      {{ with .Params.blog }}
+        {{ partial "home/blog" . }}
+      {{ end }}
 
-  {{ with .Params.community }}
-    {{ partial "home/community" . }}
-  {{ end }}
+      {{ with .Params.community }}
+        {{ partial "home/community" . }}
+      {{ end }}
+    </div>
+  </div>
 
 {{ end }}

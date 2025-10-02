@@ -1,20 +1,21 @@
-<section class="community">
-  <div class="community__container">
-    <h2 class="community__title">{{ .title }}</h2>
-    <p class="community__hook">{{ .hook }}</p>
-
-    <div class="community__content">
-      <div class="community__text">{{ .text | markdownify }}</div>
-
-      {{ if .image }}
-        <img src="{{ printf "img/%s" .image | relURL }}" alt="Community" class="community__image" />
-      {{ end }}
-    </div>
-
-    {{ with .button }}
-      <div class="community__cta">
-        <a href="{{ .href }}" class="button primary">{{ .text }}</a>
+<section class="home-section home-section--reverse">
+  <div class="container home-section__container">
+    <div class="grid cols-2 grid--reverse">
+      <div class="home-section__content home-section__content--reverse">
+        <h2 class="home-section__title">{{ .title }}</h2>
+        <h3 class="home-section__hook">{{ .hook }}</h3>
+        <div class="home-section__text">{{ .text | markdownify }}</div>
+        
+        {{ with .button }}
+          <a href="{{ .href }}" class="button secondary home-section__button">{{ .text }}</a>
+        {{ end }}
       </div>
-    {{ end }}
+
+      <div class="home-section__image-wrapper">
+        {{ if .image }}
+          <img src="{{ printf "img/%s" .image | relURL }}" alt="" class="home-section__image" />
+        {{ end }}
+      </div>
+    </div>
   </div>
 </section>

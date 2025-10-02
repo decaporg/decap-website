@@ -18,5 +18,11 @@
     &.cols-4 {
       grid-template-columns: repeat(4, 1fr);
     }
+
+    &.grid--reverse {
+      > *:first-child {
+        order: 1;
+      }
+    }
   }
 }
