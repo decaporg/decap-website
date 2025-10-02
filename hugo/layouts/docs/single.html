@@ -1,13 +1,13 @@
 {{ define "main" }}
 <div class="container size-lg">
-  <div class="docs-single">
+  <div class="docs-single page">
     {{/* Sidebar Navigation */}}
     <aside class="docs-single__sidebar">
       {{ partial "docs-nav.html" . }}
     </aside>
 
     {{/* Main Content */}}
-    <article class="docs-single__content markdown" data-docs-content>
+    <article class="docs-single__content" data-docs-content>
       {{/* Edit Link */}}
       {{ if .Params.group }}
       <div class="edit-link">
@@ -22,7 +22,9 @@
 
       <h1>{{ .Title }}</h1>
       
-      {{ .Content }}
+      <div class="markdown">
+        {{ .Content }}
+      </div>
     </article>
 
     {{/* Carbon Ads - Right Column */}}

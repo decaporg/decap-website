@@ -1,9 +1,4 @@
 .page {
   padding-top: var(--space-5);
   padding-bottom: var(--space-5);
-
-  @include breakpoint-up('md') {
-    padding-top: var(--space-6);
-    padding-bottom: var(--space-6);
-  }
 }

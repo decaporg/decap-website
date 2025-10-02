@@ -1,8 +1,4 @@
 .docs-single {
-  display: block;
-  padding-top: var(--space-5);
-  padding-bottom: var(--space-5);
-  
   @include breakpoint-up(sm) {
     display: grid;
     grid-template-columns: clamp(160px, 20vw, 320px) minmax(0, 1fr);
