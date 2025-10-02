@@ -25,6 +25,10 @@
       <div class="markdown">
         {{ .Content }}
       </div>
+
+      {{ if .Params.show_widgets }}
+        {{ partial "widgets.html" . }}
+      {{ end }}
     </article>
 
     {{/* Carbon Ads - Right Column */}}
@@ -33,4 +37,11 @@
     </aside>
   </div>
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ if .Params.show_widgets }}
+    {{ $widgetsJs := resources.Get "/scripts/widgets.js" | js.Build (dict "minify" true) }}
+    <script defer src="{{ $widgetsJs.RelPermalink }}"></script>
+  {{ end }}
 {{ end }}

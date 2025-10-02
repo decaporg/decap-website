@@ -16,7 +16,6 @@
   text-decoration: none;
 
   @include breakpoint-up(xs) {
-    border-width: 3px;
     padding: var(--space-3) var(--space-4);
     font-weight: var(--font-weight-semibold);
   }

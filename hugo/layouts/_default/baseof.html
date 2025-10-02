@@ -33,6 +33,8 @@
   {{ partial "footer" . }}
 
   {{ partial "base/scripts" . }}
+  
+  {{ block "scripts" . }}{{ end }}
 </body>
 
 </html>
