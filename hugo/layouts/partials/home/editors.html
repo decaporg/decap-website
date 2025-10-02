@@ -1,21 +1,30 @@
-<section class="editors" id="{{ .id }}">
-  <div class="editors__container">
-    <h2 class="editors__title">{{ .title }}</h2>
-    <div class="editors__grid">
-      {{ range .features }}
-      <div class="editors__feature">
-        {{ if .image }}
-        <img src="{{ printf "img/%s" .image | relURL }}" alt="{{ .title }}" class="editors__feature-image" />
+<section class="features" id="{{ .id }}">
+  <div class="container">
+    <h2 class="features__title">
+      <a href="#{{ .id }}" class="features__title-link features__title-link--active">{{ .title }}</a>
+      <span class="features__title-separator">/</span>
+      <a href="{{ .link.href }}" class="features__title-link">{{ .link.text }}</a>
+    </h2>
+
+    {{ range $index, $feature := .features }}
+      <div class="features__item {{ if eq (mod $index 2) 0 }}features__item--reverse{{ end }}">
+        <div class="features__content">
+          <h3 class="features__item-title">{{ $feature.title }}</h3>
+          <div class="features__item-description">{{ $feature.description | markdownify }}</div>
+        </div>
+
+        {{ if $feature.image }}
+          <div class="features__image-wrapper">
+            <img src="/img/{{ $feature.image }}" alt="{{ $feature.title }}" class="features__image" />
+          </div>
         {{ end }}
-        <h3 class="editors__feature-title">{{ .title }}</h3>
-        <div class="editors__feature-description">{{ .description | markdownify }}</div>
       </div>
-      {{ end }}
-    </div>
+    {{ end }}
+
     {{ with .button }}
-    <div class="editors__cta">
-      <a href="{{ .href }}" class="btn secondary">{{ .text }}</a>
-    </div>
+      <div class="features__cta">
+        <a href="{{ .href }}" class="button secondary">{{ .text }}</a>
+      </div>
     {{ end }}
   </div>
 </section>

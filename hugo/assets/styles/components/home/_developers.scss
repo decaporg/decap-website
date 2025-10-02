@@ -1,0 +1,143 @@
+.features {
+  position: relative;
+
+  &__title {
+    text-align: center;
+    color: var(--color-lightish-gray);
+    background: var(--color-white);
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    position: sticky;
+    padding: var(--space-2) 0;
+    top: 0;
+    z-index: 1;
+
+    @include breakpoint-up(md) {
+      top: var(--space-6);
+      padding: var(--space-4) 0 var(--space-3);
+    }
+
+    // Flip order for editors section
+    #editors & {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__title-link {
+    color: var(--color-lightish-gray);
+    text-decoration: none;
+
+    &--active {
+      color: var(--color-primary-light);
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title-separator {
+    display: none;
+
+    @include breakpoint-up(sm) {
+      display: initial;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    margin: var(--space-5) 0;
+    gap: var(--space-5);
+
+    @include breakpoint-up(sm) {
+      margin: var(--space-6) 0;
+    }
+
+    @include breakpoint-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--reverse {
+      @include breakpoint-up(sm) {
+        .features__content {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  &__content {
+    @include breakpoint-up(sm) {
+      order: -1;
+    }
+  }
+
+  &__item-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  &__item-description {
+    font-size: 18px;
+    line-height: var(--line-height-max);
+
+    p {
+      margin-bottom: var(--space-3);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    transform: rotate(2.8deg);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(4deg);
+      width: 50%;
+      height: 30%;
+      border-radius: 100%;
+      background: linear-gradient(90deg, #F50F1A 0%, #FB3CEE 100%);
+      filter: blur(70px);
+      z-index: -1;
+    }
+
+    .features__item--reverse & {
+      transform: rotate(-2.8deg);
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(-4deg);
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: var(--space-5) auto 0;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    max-width: 100%;
+    height: auto;
+
+    @include breakpoint-up(md) {
+      margin: 0 0 0 0;
+    }
+
+    .features__item--reverse & {
+      @include breakpoint-up(md) {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    margin: var(--space-5) auto;
+  }
+}

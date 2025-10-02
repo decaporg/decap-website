@@ -3,9 +3,9 @@
   display: inline-block;
   font-size: var(--font-size-md);
   line-height: 1;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-light);
   color: var(--color-white);
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--color-primary-light);
   font-weight: var(--font-weight-medium);
   font-family: var(--font-family-secondary);
   border-radius: var(--radius-lg);
@@ -33,7 +33,7 @@
 
   &.secondary {
     background-color: var(--color-white);
-    color: var(--color-primary);
+    color: var(--color-primary-light);
     border-color: currentColor;
 
     &:active {
@@ -48,12 +48,12 @@
 
   &.outline {
     background: none;
-    color: var(--color-primary);
+    color: var(--color-primary-light);
   }
 
   &.active {
     color: var(--color-white);
-    background: var(--color-primary);
-    border-color: var(--color-primary);
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
   }
 }

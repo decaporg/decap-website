@@ -2,16 +2,19 @@
   <div class="community__container">
     <h2 class="community__title">{{ .title }}</h2>
     <p class="community__hook">{{ .hook }}</p>
+
     <div class="community__content">
       <div class="community__text">{{ .text | markdownify }}</div>
+
       {{ if .image }}
-      <img src="{{ printf "img/%s" .image | relURL }}" alt="Community" class="community__image" />
+        <img src="{{ printf "img/%s" .image | relURL }}" alt="Community" class="community__image" />
       {{ end }}
     </div>
+
     {{ with .button }}
-    <div class="community__cta">
-      <a href="{{ .href }}" class="btn primary">{{ .text }}</a>
-    </div>
+      <div class="community__cta">
+        <a href="{{ .href }}" class="button primary">{{ .text }}</a>
+      </div>
     {{ end }}
   </div>
 </section>
