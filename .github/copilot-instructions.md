@@ -171,7 +171,8 @@ features:
 ```
 
 ### Configuration Files
-- **Site config**: `hugo.toml` - Base URL, menus, markup settings
+- **Site config**: `config/_default/hugo.toml` - Base URL, markup settings
+- **Menus config**: `config/_default/menus.yaml` - Docs and main navigation structure
 - **CMS config**: `static/admin/config.yml` - Decap CMS collections
 
 ## Build & Deployment

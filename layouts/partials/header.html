@@ -25,18 +25,11 @@
 
     <nav class="header__menu" id="header-menu">
       <ul class="header__menu-list">
+        {{ range .Site.Menus.main }}
         <li class="header__menu-item">
-          <a href="{{ "/docs/intro/" | relURL }}">Docs</a>
+          <a href="{{ .URL | relURL }}"{{ if eq .Name "Pro Help" }} class="ga-menu"{{ end }}>{{ .Name }}</a>
         </li>
-        <li class="header__menu-item">
-          <a href="{{ "/services/" | relURL }}" class="ga-menu">Pro Help</a>
-        </li>
-        <li class="header__menu-item">
-          <a href="{{ "/community/" | relURL }}">Community</a>
-        </li>
-        <li class="header__menu-item">
-          <a href="{{ "/blog/" | relURL }}">Blog</a>
-        </li>
+        {{ end }}
         <li class="header__menu-item github-link">
           <a href="https://github.com/decaporg/decap-cms" target="_blank" rel="noreferrer" aria-label="GitHub">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">

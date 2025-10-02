@@ -7,22 +7,19 @@
   <div class="docs-nav__content" id="docs-nav-content">
     {{ $currentPage := . }}
     {{ $docsPages := where .Site.RegularPages "Section" "docs" }}
-    {{ $groups := slice }}
+    {{ $docsMenu := .Site.Menus.docs }}
     
-    {{/* Collect unique groups in order */}}
-    {{ range $docsPages }}
-      {{ if .Params.group }}
-        {{ $groups = $groups | append .Params.group }}
-      {{ end }}
-    {{ end }}
-    {{ $groups = $groups | uniq }}
-    
-    {{ range $groups }}
-      {{ $currentGroup := . }}
+    {{/* Loop through Hugo menu to maintain order and proper titles */}}
+    {{ range $docsMenu }}
+      {{ $groupIdentifier := .Identifier }}
+      {{ $groupTitle := .Name }}
+      {{ $groupPages := where $docsPages "Params.group" $groupIdentifier }}
+      
+      {{ if $groupPages }}
       <div class="docs-nav__section">
-        <h3 class="docs-nav__section-title">{{ $currentGroup }}</h3>
+        <h3 class="docs-nav__section-title">{{ $groupTitle }}</h3>
         <ul class="docs-nav__section-list">
-          {{ range where $docsPages "Params.group" $currentGroup | first 100 }}
+          {{ range $groupPages.ByWeight }}
           <li class="docs-nav__item">
             <a href="{{ .RelPermalink }}" class="docs-nav__link{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{end}}">
               {{ .Title }}
@@ -40,6 +37,7 @@
           {{ end }}
         </ul>
       </div>
+      {{ end }}
     {{ end }}
   </div>
 </nav>
