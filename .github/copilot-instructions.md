@@ -1,106 +1,51 @@
 # Decap CMS Website - AI Development Guide
 
-## Migration Project: Gatsby → Hugo
+## Project Overview
 
-This workspace is actively **migrating from Gatsby to Hugo**. The dual architecture exists temporarily during the conversion process:
+This is the **Decap CMS website** built with **Hugo 0.148.1**. The site was successfully migrated from Gatsby in October 2025.
 
-- **Hugo**: Target implementation (`hugo/`) - Hugo 0.148.1 with SCSS/PostCSS pipeline
-- **Gatsby**: Source implementation (`gatsby/`) - Gatsby 5.x with Emotion styling (reference only)
+- **Production**: Hugo implementation (root directory)
+- **Legacy**: Gatsby source code (`gatsby/`) - kept for reference only, not actively maintained
 
-**Primary Goal**: Convert Gatsby components, layouts, and styles to Hugo equivalents one by one.
+## Development Workflows
 
-### Migration Status (As of October 2025)
-
-#### ✅ Completed Components & Layouts
-
-**Core Infrastructure:**
-- Base layout system (`layouts/_default/baseof.html`)
-- Header navigation with responsive menu
-- Footer with social links and navigation
-- Search functionality (DocSearch integration)
-
-**Blog System:**
-- Blog list page
-- Single blog post template
-
-**Documentation System:**
-- Docs list page (category overview)
-- Single docs page with navigation
-- Sidebar navigation with nested groups
-- Table of contents
-- Edit on GitHub links
-- Version tags
-
-**Styling System:**
-- Complete SCSS architecture with partials
-- Responsive breakpoint system
-- Theme variables (colors, typography)
-- Component styles (buttons, containers, cards, alerts)
-- Layout styles (blog, docs, community)
-- Syntax highlighting (Prism Tomorrow theme)
-- Grid utility system
-
-**Page Templates:**
-- Community page with channels grid layout
-- Services page with markdown content
-- Hero sections with title and lead text
-
-**CMS Integration:**
-- Decap CMS admin UI (`static/admin/`)
-- CDN-based approach (no bundling required)
-- Configuration adapted for Hugo content structure
-- Collections for docs, blog, community, and widgets
-- Local backend support for development
-
-**Reusable Components:**
-- `.page` - Generic page wrapper with padding (`components/_page.scss` from `page.js`)
-- `.page-hero` - Page hero section wrapper (`components/_page-hero.scss` from `page-hero.js`)
-- `.hero-title` - Large hero title (`components/_hero-title.scss` from `hero-title.js`)
-- `.lead` - Large intro paragraph (`_typography.scss` from `lead.js`)
-- `.markdown` - Long-form content styles (`_typography.scss` from `markdown.js`)
-- `.grid` - Responsive grid system (`components/_grid.scss` from `grid.js`)
-- `.container` - Content width container (`components/_container.scss` from `container.js`)
-- `.btn` - Button component (`components/_button.scss` from `button.js`)
-
-#### 🚧 Remaining Work
-
-**Gatsby Components Not Yet Ported (~10 components):**
-- `awards.js` - Awards/recognition display
-- `carbon-ads.js` - Ad integration
-- `contributors.js` - Contributor listing
-- `docsearch.js` - Enhanced search features (if beyond basic)
-- `event-box.js` - Event display component
-- `meta-info.js` / `twitter-meta.js` - SEO meta tags (may exist in baseof)
-- `section-label.js` - Section heading component
-- `sidebar-layout.js` - Generic sidebar layout
-- `video-embed.js` - Video embedding
-- `whats-new.js` - Changelog/updates component
-- `widget-doc.js` / `widgets.js` - Widget documentation components
-
-**Additional Pages:**
-- Features page templates (content exists, needs templates)
-
-
-## Key Development Workflows
-
-### Hugo Development (Target)
+### Initial Setup
 ```bash
-cd hugo
-npm install && npx husky init  # First time setup
-hugo server                    # or npm run dev
-# Site runs at http://localhost:1313/
+npm install         # Install dependencies
+npx husky init      # Set up Git hooks (first time only)
 ```
 
-### Migration Workflow
-1. **Reference Gatsby**: Run `cd gatsby && npm start` to see current implementation
-2. **Develop Hugo**: Work in `hugo/` directory to recreate functionality
-3. **Compare**: Test both implementations side-by-side during conversion
+### Local Development
+```bash
+hugo server         # Start development server
+# or
+npm run dev         # Alternative command
+
+# Site runs at http://localhost:1313/
+# Live reload enabled by default
+```
+
+### Production Build
+```bash
+hugo --gc --minify  # Build optimized site
+# Output: public/ directory
+```
 
 ### Linting & Quality
-Hugo uses **ES modules** configuration with 3 linters:
+Project uses **ES modules** configuration with 3 linters:
 ```bash
-npm run lint  # Runs all: eslint, stylelint, htmlhint
+npm run lint        # Run all linters: eslint, stylelint, htmlhint
+
+# Individual linters:
+npx stylelint "**/*.scss"
+npx eslint .
+npx htmlhint 'layouts/**/*.html'
 ```
+
+**Auto-fixing:**
+- VS Code auto-fixes on save (with recommended extensions)
+- Pre-commit hook runs `lint-staged` on staged files
+- Command line: Use `--fix` flag with eslint/stylelint
 
 ### CMS Development
 Access the Decap CMS admin interface:
@@ -108,35 +53,52 @@ Access the Decap CMS admin interface:
 # Start Hugo server first
 hugo server
 
-# Access CMS at:
-# http://localhost:1313/admin/
+# Access CMS at: http://localhost:1313/admin/
 
-# For local backend (edit without GitHub):
-# Run: npx decap-server
+# For local backend (edit without committing to Git):
+npx decap-server
 # Then access: http://localhost:1313/admin/
 ```
 
 **CMS Architecture:**
 - **CDN-based**: No JavaScript bundling required
 - **Configuration**: `static/admin/config.yml`
-- **Collections**: Docs (by section), Blog, Community, Widgets
-- **Local backend**: Enabled for development without Git commits
+- **Collections**: Docs (organized by section), Blog, Community, Widgets
+- **Local backend**: Edit content without Git commits during development
+
+### Gatsby Reference (Legacy)
+The original Gatsby site is preserved in `gatsby/` for reference:
+```bash
+cd gatsby
+npm install
+npm start           # Runs on http://localhost:8000/
+```
 
 ## Styling Architecture
 
-### Hugo SCSS System
+### SCSS System
 - **Theme variables**: `assets/styles/_theme.scss` - defines color palette and design tokens
 - **Breakpoints**: `assets/styles/_breakpoints.scss` - responsive breakpoint mixins
 - **Base styles**: `assets/styles/_base.scss` - global resets and utilities
 - **Component imports**: `assets/styles/style.scss` - main import file with clear organization
 - **BEM methodology**: Follow BEM naming convention for CSS classes
 
-### Design System Consistency
-Both systems share identical color schemes:
-- Primary: `#ff0080` (hot pink)
-- Primary Dark: `#683bab` (purple)
-- Blue: `#3A69C7`
-- Typography: IBM Plex Sans + Montserrat
+### Design System
+**Color Palette:**
+- Primary: `#ff0080` (hot pink) - `var(--color-primary-light)`
+- Primary Dark: `#683bab` (purple) - `var(--color-primary-dark)`
+- Blue: `#3A69C7` - `var(--color-blue)`
+- Background: `#fafafa` - `var(--color-background)`
+- Dark: `#313d3e` - `var(--color-dark)`
+
+**Typography:**
+- Body: IBM Plex Sans (400, 500, 600 weights)
+- Headings: Montserrat (700 weight)
+- Code: IBM Plex Mono
+
+**Spacing System:**
+- Uses CSS custom properties: `--space-0` (0) through `--space-8` (4rem)
+- Example: `padding: var(--space-4)` = 1.5rem = 24px
 
 ### Naming Conventions
 
@@ -151,48 +113,80 @@ Both systems share identical color schemes:
 ### Key Style Patterns
 - **Responsive containers**: `.container` with size variants (`.size-sm`, `.size-md`, `.size-lg`)
 - **Grid system**: `.grid.cols-2`, `.grid.cols-3` with `@include breakpoint-up(md)`
-- **Button variants**: `.btn.primary`, `.btn.secondary`, `.btn.outline`, `.btn.block`
+- **Button variants**: `.button.primary`, `.button.secondary`, `.button.outline`, `.button.block`
+- **BEM components**: `.component__element--modifier` pattern throughout
 
 ## Content Management
 
-### Shared Content Structure
-Both systems use identical content organization:
+### Content Structure
 ```
 content/
-├── docs/          # Documentation pages
-├── blog/          # Blog posts  
-└── features/      # Feature descriptions
+├── _index.md          # Homepage content
+├── blog/              # Blog posts
+│   ├── _index.md      # Blog list page
+│   └── *.md           # Individual posts
+├── docs/              # Documentation
+│   ├── _index.md      # Docs landing
+│   └── *.md           # Doc pages
+├── features/          # Feature pages
+│   ├── developer.md   # Developer features
+│   └── editor.md      # Editor features
+├── community.md       # Community page
+└── services.md        # Services page
 ```
 
-### Hugo Front Matter
+### Front Matter Examples
+
+**Blog Post:**
 ```yaml
 ---
-title: "Page Title"
-group: "Navigation Group"  # For docs organization
+title: "Post Title"
+description: "Brief description"
+date: 2023-08-23T08:00:00.000Z
+author: "Author Name"
+image: /img/featured.png
+aliases:
+  - /blog/2023/08/old-url/  # Gatsby-style redirects
+---
+```
+
+**Documentation Page:**
+```yaml
+---
+title: "Doc Title"
+group: "Navigation Group"  # For sidebar organization
 weight: 1                  # Ordering within group
 ---
 ```
 
-### Data-Driven Configuration
-- **Hugo**: `hugo.toml` for site config, menu structure
-- **Gatsby**: `gatsby-config.js` + `data/global.yaml` for footer/metadata
+**Features Page:**
+```yaml
+---
+title: "Developer Features"
+lead: "Description text"
+features:
+  - title: "Feature Name"
+    description: "Feature description"
+---
+```
+
+### Configuration Files
+- **Site config**: `hugo.toml` - Base URL, menus, markup settings
+- **CMS config**: `static/admin/config.yml` - Decap CMS collections
 
 ## Build & Deployment
 
-### Hugo (Production)
+### Production Build
 ```bash
-hugo --gc --minify  # Production build
+hugo --gc --minify  # Build optimized site
 # Outputs to public/ directory
 ```
 
-### Gatsby (Legacy)
-```bash
-gatsby build && rm -rf dist && mv public dist
-# Outputs to dist/ directory
-```
-
 ### Netlify Configuration
-Each system has separate `netlify.toml` with different build commands and publish directories.
+- **File**: `netlify.toml` in root
+- **Build command**: `hugo --gc --minify`
+- **Publish directory**: `public`
+- **Hugo version**: 0.148.1 (extended)
 
 ## Migration Patterns
 
@@ -229,3 +223,90 @@ Each system has separate `netlify.toml` with different build commands and publis
 ### Migration Quality Checks
 - **Visual parity**: Compare rendered output between Gatsby and Hugo
 - **Responsive behavior**: Ensure breakpoints work identically
+
+## Migration History
+
+### Completed Migration (October 2025)
+
+The site was fully migrated from Gatsby 5.x to Hugo with the following achievements:
+
+#### ✅ **Core Infrastructure (100%)**
+- Base layout system (`layouts/_default/baseof.html`)
+- Header navigation with responsive menu and mobile hamburger
+- Footer with social links and sitemap navigation
+- DocSearch integration for site-wide search
+- Theme variables and breakpoint system
+- Syntax highlighting (Prism Tomorrow theme)
+- Page-specific script loading blocks
+
+#### ✅ **Homepage (100%)**
+All sections successfully ported:
+- Hero section with gradient background and decorative border
+- Developers features section (alternating grid layout)
+- Template banner (rotated border boxes with animated arrows)
+- Editors features section (reuses developers styles)
+- Services section (3 cards with unique gradients)
+- Blog section (2-column grid in dark background)
+- Community section (2-column grid, reversed layout)
+- Dark section wrapper with angled border transition
+
+#### ✅ **Documentation System (100%)**
+- Docs list page (category overview with group organization)
+- Single docs page with 2-column layout (sidebar + content + ads)
+- Sidebar navigation with nested groups and expand/collapse
+- Table of contents in right sidebar with smooth scrolling
+- Edit on GitHub links with SVG pencil icon
+- Version tags for beta features
+- **Widgets tabbed interface** - Special layout with JavaScript tabs and hash routing
+
+#### ✅ **Blog System (100%)**
+- Blog list page with metadata and lead paragraphs
+- Single blog post template with author, date, and featured images
+- **URL compatibility** - Old Gatsby URLs (`/blog/YYYY/MM/slug/`) redirect to new URLs (`/blog/slug/`)
+- 12 blog post aliases created for backward compatibility
+
+#### ✅ **Features Pages (100%)**
+- Features page templates (`layouts/features/single.html`)
+- Reusable features grid component
+- Developer features page (15 features)
+- Editor features page (7 features)
+
+#### ✅ **Other Pages (100%)**
+- Community page with channels grid layout
+- Services page with markdown content rendering
+- Custom 404 page
+
+#### ✅ **CMS Integration (100%)**
+- Decap CMS admin UI (`static/admin/`)
+- CDN-based approach (no JavaScript bundling required)
+- Configuration adapted for Hugo content structure
+- Collections: docs, blog, community, widgets
+- Local backend support for development (`npx decap-server`)
+
+#### ✅ **Styling System (100%)**
+Complete SCSS architecture using BEM methodology:
+- Theme variables: `assets/styles/_theme.scss`
+- Breakpoints: `assets/styles/_breakpoints.scss` 
+- Components: buttons, containers, cards, grids, alerts
+- Layouts: blog, docs, community, features, home sections
+- Typography: IBM Plex Sans + Montserrat
+- Spacing system: `--space-0` through `--space-8`
+
+#### ✅ **Third-Party Integrations**
+- **Carbon Ads** - CDN integration with fallback styling
+- **DocSearch** - Algolia-powered site search
+- **GitHub API** - Can be integrated for releases/contributors if needed
+
+### Components NOT Ported (Intentional)
+
+These Gatsby components were **not ported** because they were **unused in the original site**:
+
+- ❌ `awards.js` - Awards/recognition display (data exists but never rendered)
+- ❌ `contributors.js` - GitHub contributor listing (no references found)
+- ❌ `event-box.js` - Event display component (no usage found)
+- ❌ `video-embed.js` - YouTube embed (can use Hugo shortcode if needed)
+- ❌ `whats-new.js` - Releases widget (optional enhancement)
+
+These can be implemented in Hugo if needed in the future, but they were not part of the active Gatsby site.
+
+---
