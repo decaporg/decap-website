@@ -9,6 +9,66 @@ This workspace is actively **migrating from Gatsby to Hugo**. The dual architect
 
 **Primary Goal**: Convert Gatsby components, layouts, and styles to Hugo equivalents one by one.
 
+### Migration Status (As of October 2025)
+
+#### ✅ Completed Components & Layouts
+
+**Core Infrastructure:**
+- Base layout system (`layouts/_default/baseof.html`)
+- Header navigation with responsive menu
+- Footer with social links and navigation
+- Search functionality (DocSearch integration)
+
+**Blog System:**
+- Blog list page
+- Single blog post template
+
+**Documentation System:**
+- Docs list page (category overview)
+- Single docs page with navigation
+- Sidebar navigation with nested groups
+- Table of contents
+- Edit on GitHub links
+- Version tags
+
+**Styling System:**
+- Complete SCSS architecture with partials
+- Responsive breakpoint system
+- Theme variables (colors, typography)
+- Component styles (buttons, containers, cards, alerts)
+- Layout styles (blog, docs)
+
+#### 🚧 Remaining Work
+
+**Homepage**
+- HTML structure roughly done, but need review
+- all CSS and any JS interactions
+
+**Gatsby Components Not Yet Ported (~20 components):**
+- `awards.js` - Awards/recognition display
+- `carbon-ads.js` - Ad integration
+- `community-channels-list.js` - Community channels component
+- `contributors.js` - Contributor listing
+- `docsearch.js` - Enhanced search features (if beyond basic)
+- `event-box.js` - Event display component
+- `home-features.js` - Feature highlights (may be complete as developers section)
+- `lead.js` - Lead text styling
+- `markdown.js` / `markdownify.js` - Custom markdown rendering
+- `meta-info.js` / `twitter-meta.js` - SEO meta tags (may exist in baseof)
+- `page-hero.js` - Generic page hero component
+- `section-label.js` - Section heading component
+- `sidebar-layout.js` - Generic sidebar layout
+- `table-of-contents.js` - ToC component (may be complete)
+- `video-embed.js` - Video embedding
+- `whats-new.js` - Changelog/updates component
+- `widget-doc.js` / `widgets.js` - Widget documentation components
+
+**Additional Pages:**
+- Community page template (content exists, needs full styling verification)
+- Services page template (content exists, needs full styling verification)
+- Features page templates (content exists, needs templates)
+
+
 ## Key Development Workflows
 
 ### Hugo Development (Target)
