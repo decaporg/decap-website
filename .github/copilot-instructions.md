@@ -42,25 +42,27 @@ This workspace is actively **migrating from Gatsby to Hugo**. The dual architect
 
 **Page Templates:**
 - Community page with channels grid layout
+- Services page with markdown content
 - Hero sections with title and lead text
 
 **Reusable Components:**
+- `.page` - Generic page wrapper with padding (`components/_page.scss` from `page.js`)
 - `.page-hero` - Page hero section wrapper (`components/_page-hero.scss` from `page-hero.js`)
 - `.hero-title` - Large hero title (`components/_hero-title.scss` from `hero-title.js`)
 - `.lead` - Large intro paragraph (`_typography.scss` from `lead.js`)
+- `.markdown` - Long-form content styles (`_typography.scss` from `markdown.js`)
 - `.grid` - Responsive grid system (`components/_grid.scss` from `grid.js`)
 - `.container` - Content width container (`components/_container.scss` from `container.js`)
 - `.btn` - Button component (`components/_button.scss` from `button.js`)
 
 #### 🚧 Remaining Work
 
-**Gatsby Components Not Yet Ported (~12 components):**
+**Gatsby Components Not Yet Ported (~10 components):**
 - `awards.js` - Awards/recognition display
 - `carbon-ads.js` - Ad integration
 - `contributors.js` - Contributor listing
 - `docsearch.js` - Enhanced search features (if beyond basic)
 - `event-box.js` - Event display component
-- `markdown.js` / `markdownify.js` - Custom markdown rendering (Hugo uses built-in)
 - `meta-info.js` / `twitter-meta.js` - SEO meta tags (may exist in baseof)
 - `section-label.js` - Section heading component
 - `sidebar-layout.js` - Generic sidebar layout
@@ -69,7 +71,6 @@ This workspace is actively **migrating from Gatsby to Hugo**. The dual architect
 - `widget-doc.js` / `widgets.js` - Widget documentation components
 
 **Additional Pages:**
-- Services page template (content exists, needs template similar to community)
 - Features page templates (content exists, needs templates)
 
 
