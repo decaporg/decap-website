@@ -8,24 +8,25 @@ table {
   text-align: left;
   display: block;
   overflow: auto;
-}
-
-tbody tr {
-  &:nth-of-type(odd) {
-    background: #fdfdfd;
+  
+  tbody tr {
+    &:nth-of-type(odd) {
+      background: #fdfdfd;
+    }
+  }
+  
+  th,
+  td {
+    padding: 8px;
+  }
+  
+  th {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  td {
+    font-size: 14px;
   }
 }
 
-th,
-td {
-  padding: 8px;
-}
-
-th {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-td {
-  font-size: 14px;
-}

@@ -20,6 +20,8 @@ export default {
         deep: [
           /highlight/,
           /home-services/,
+          /carbon/,
+          /table/,
         ],
       },
     }),
