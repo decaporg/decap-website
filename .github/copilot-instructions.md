@@ -45,6 +45,13 @@ This workspace is actively **migrating from Gatsby to Hugo**. The dual architect
 - Services page with markdown content
 - Hero sections with title and lead text
 
+**CMS Integration:**
+- Decap CMS admin UI (`static/admin/`)
+- CDN-based approach (no bundling required)
+- Configuration adapted for Hugo content structure
+- Collections for docs, blog, community, and widgets
+- Local backend support for development
+
 **Reusable Components:**
 - `.page` - Generic page wrapper with padding (`components/_page.scss` from `page.js`)
 - `.page-hero` - Page hero section wrapper (`components/_page-hero.scss` from `page-hero.js`)
@@ -94,6 +101,26 @@ Hugo uses **ES modules** configuration with 3 linters:
 ```bash
 npm run lint  # Runs all: eslint, stylelint, htmlhint
 ```
+
+### CMS Development
+Access the Decap CMS admin interface:
+```bash
+# Start Hugo server first
+hugo server
+
+# Access CMS at:
+# http://localhost:1313/admin/
+
+# For local backend (edit without GitHub):
+# Run: npx decap-server
+# Then access: http://localhost:1313/admin/
+```
+
+**CMS Architecture:**
+- **CDN-based**: No JavaScript bundling required
+- **Configuration**: `static/admin/config.yml`
+- **Collections**: Docs (by section), Blog, Community, Widgets
+- **Local backend**: Enabled for development without Git commits
 
 ## Styling Architecture
 
