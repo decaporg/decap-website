@@ -7,6 +7,7 @@
 
 @import 'base';
 @import 'breakpoints';
+@import 'grid';
 @import 'theme';
 @import 'typography';
 @import 'table';
@@ -18,6 +19,7 @@
 @import 'layouts/docs-single';
 @import 'layouts/docs-list';
 @import 'layouts/home';
+@import 'layouts/community';
 
 @import 'components/search';
 @import 'components/alert';
@@ -25,6 +27,8 @@
 @import 'components/template-grid';
 @import 'components/button';
 @import 'components/container';
+@import 'components/page-hero';
+@import 'components/hero-title';
 @import 'components/pagination-nav';
 @import 'components/version-tag';
 @import 'components/page-layout';

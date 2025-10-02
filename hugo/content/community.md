@@ -1,5 +1,6 @@
 ---
 title: Community
+layout: community
 headline: Help us build the CMS of the future.
 subhead: Get help, help others, and find out what's new through the channels below.
 sections:

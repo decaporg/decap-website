@@ -36,36 +36,40 @@ This workspace is actively **migrating from Gatsby to Hugo**. The dual architect
 - Responsive breakpoint system
 - Theme variables (colors, typography)
 - Component styles (buttons, containers, cards, alerts)
-- Layout styles (blog, docs)
+- Layout styles (blog, docs, community)
+- Syntax highlighting (Prism Tomorrow theme)
+- Grid utility system
+
+**Page Templates:**
+- Community page with channels grid layout
+- Hero sections with title and lead text
+
+**Reusable Components:**
+- `.page-hero` - Page hero section wrapper (`components/_page-hero.scss` from `page-hero.js`)
+- `.hero-title` - Large hero title (`components/_hero-title.scss` from `hero-title.js`)
+- `.lead` - Large intro paragraph (`_typography.scss` from `lead.js`)
+- `.grid` - Responsive grid system (`components/_grid.scss` from `grid.js`)
+- `.container` - Content width container (`components/_container.scss` from `container.js`)
+- `.btn` - Button component (`components/_button.scss` from `button.js`)
 
 #### 🚧 Remaining Work
 
-**Homepage**
-- HTML structure roughly done, but need review
-- all CSS and any JS interactions
-
-**Gatsby Components Not Yet Ported (~20 components):**
+**Gatsby Components Not Yet Ported (~12 components):**
 - `awards.js` - Awards/recognition display
 - `carbon-ads.js` - Ad integration
-- `community-channels-list.js` - Community channels component
 - `contributors.js` - Contributor listing
 - `docsearch.js` - Enhanced search features (if beyond basic)
 - `event-box.js` - Event display component
-- `home-features.js` - Feature highlights (may be complete as developers section)
-- `lead.js` - Lead text styling
-- `markdown.js` / `markdownify.js` - Custom markdown rendering
+- `markdown.js` / `markdownify.js` - Custom markdown rendering (Hugo uses built-in)
 - `meta-info.js` / `twitter-meta.js` - SEO meta tags (may exist in baseof)
-- `page-hero.js` - Generic page hero component
 - `section-label.js` - Section heading component
 - `sidebar-layout.js` - Generic sidebar layout
-- `table-of-contents.js` - ToC component (may be complete)
 - `video-embed.js` - Video embedding
 - `whats-new.js` - Changelog/updates component
 - `widget-doc.js` / `widgets.js` - Widget documentation components
 
 **Additional Pages:**
-- Community page template (content exists, needs full styling verification)
-- Services page template (content exists, needs full styling verification)
+- Services page template (content exists, needs template similar to community)
 - Features page templates (content exists, needs templates)
 
 
@@ -94,7 +98,8 @@ npm run lint  # Runs all: eslint, stylelint, htmlhint
 
 ### Hugo SCSS System
 - **Theme variables**: `assets/styles/_theme.scss` - defines color palette and design tokens
-- **Global styles**: `assets/styles/_global.scss` - contains button styles, grid system, container classes
+- **Breakpoints**: `assets/styles/_breakpoints.scss` - responsive breakpoint mixins
+- **Base styles**: `assets/styles/_base.scss` - global resets and utilities
 - **Component imports**: `assets/styles/style.scss` - main import file with clear organization
 - **BEM methodology**: Follow BEM naming convention for CSS classes
 
@@ -105,9 +110,19 @@ Both systems share identical color schemes:
 - Blue: `#3A69C7`
 - Typography: IBM Plex Sans + Montserrat
 
+### Naming Conventions
+
+**Font Sizes** - Use semantic names, not numbers:
+- ✅ `var(--font-size-sm)`, `var(--font-size-lg)`, `var(--font-size-xl)`
+- ❌ `var(--font-size-2)`, `var(--font-size-4)`, `var(--font-size-6)`
+
+**Breakpoints** - Use full mixin names:
+- ✅ `@include breakpoint-up(md)`, `@include breakpoint-down(lg)`
+- ❌ `@include mq-md`, `@include mq-lg` (avoid shorthand aliases)
+
 ### Key Style Patterns
 - **Responsive containers**: `.container` with size variants (`.size-sm`, `.size-md`, `.size-lg`)
-- **Grid system**: `.grid.cols-2`, `.grid.cols-3` with `@include mq-md` breakpoint
+- **Grid system**: `.grid.cols-2`, `.grid.cols-3` with `@include breakpoint-up(md)`
 - **Button variants**: `.btn.primary`, `.btn.secondary`, `.btn.outline`, `.btn.block`
 
 ## Content Management
