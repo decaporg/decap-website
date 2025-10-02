@@ -15,9 +15,12 @@ export default {
         './themes/**/assets/scripts/*.js',
         './themes/**/assets/scripts/**/*.js',
       ],
-      safelist: [
-        // add classes found only in js
-      ],
+      safelist: {
+        standard: [],
+        deep: [
+          /highlight/,
+        ],
+      },
     }),
   ],
 }

@@ -8,6 +8,10 @@ title = 'Decap CMS | Open-Source Content Management System'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    style = "catppuccin-frappe"
+    tabWidth = 2
+    guessSyntax = true
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
