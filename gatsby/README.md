@@ -1,6 +1,13 @@
-# Decap CMS Website & Docs
+# Decap CMS Website & Docs (Legacy Gatsby Implementation)
 
-This repository builds decapcms.org. If you'd like to propose changes to the site or docs, you'll find the source files in here.
+> ⚠️ **This is legacy code.** The website has been migrated to Hugo (October 2025). 
+> This folder is kept for reference only and is no longer actively maintained.
+> 
+> For active development, see the root directory (Hugo implementation).
+
+---
+
+This folder contains the original Gatsby implementation that built decapcms.org.
 
 ## Local development
 
