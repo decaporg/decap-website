@@ -1,0 +1,21 @@
+<section class="home-section home-section--reverse">
+  <div class="container home-section__container">
+    <div class="grid cols-2 grid--reverse">
+      <div class="home-section__content home-section__content--reverse">
+        <h2 class="home-section__title">{{ .title }}</h2>
+        <h3 class="home-section__hook">{{ .hook }}</h3>
+        <div class="home-section__text">{{ .text | markdownify }}</div>
+        
+        {{ with .button }}
+          <a href="{{ .href }}" class="button secondary home-section__button">{{ .text }}</a>
+        {{ end }}
+      </div>
+
+      <div class="home-section__image-wrapper">
+        {{ if .image }}
+          <img src="{{ printf "img/%s" .image | relURL }}" alt="" class="home-section__image" />
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

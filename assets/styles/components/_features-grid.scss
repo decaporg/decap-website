@@ -1,0 +1,43 @@
+// Features Grid Component
+// Grid layout for feature items on features pages
+
+.features-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+
+  @include breakpoint-up(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-2);
+    color: var(--color-primary);
+  }
+
+  &__description {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    color: var(--color-text);
+
+    // Markdown content styling already handled by .markdown class
+    p {
+      margin-bottom: var(--space-3);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--color-primary-dark);
+      }
+    }
+  }
+}

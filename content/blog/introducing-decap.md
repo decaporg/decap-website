@@ -3,6 +3,8 @@ title: Introducing Decap CMS
 description: >-
   Decap CMS is a rebranded version of Netlify CMS, offering a simple, easy-to-use, open source, git-based CMS.
 date: 2023-02-23T10:30:00.000Z
+aliases:
+  - /blog/2023/02/introducing-decap/
 author: Martin Jagodic
 canonical_url: https://techhub.p-m.si/insights/introducing-decap-cms
 ---

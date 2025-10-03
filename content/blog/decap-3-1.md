@@ -2,6 +2,8 @@
 title: Decap 3.1
 author: Martin Jagodic
 date: 2024-02-01T08:00:00.000Z
+aliases:
+  - /blog/2024/02/decap-3-1/
 description: This minor release brings several improvements, most notably React
   18 support. It was in development for quite a while, so it includes many minor
   patches as well.

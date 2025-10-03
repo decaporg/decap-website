@@ -1,0 +1,118 @@
+.home-services {
+  &__title {
+    transform: rotate(-0.38deg);
+    text-align: center;
+    font-size: clamp(40px, 6vw, 92px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.92px;
+    margin: var(--space-6) 0 var(--space-2);
+
+    @include breakpoint-up(md) {
+      margin: var(--space-7) 0 var(--space-3);
+    }
+  }
+
+  &__description {
+    text-align: center;
+    letter-spacing: 0.24px;
+    margin-bottom: var(--space-5);
+
+    @include breakpoint-up(md) {
+      margin-bottom: var(--space-6);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include breakpoint-up(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    border-radius: var(--radius-xl);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    flex-direction: column-reverse;
+
+    @include breakpoint-up(sm) {
+      grid-column: span 2;
+    }
+
+    &--support {
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+      background: linear-gradient(180deg, #5620C8 6.75%, #9B50E7 22.45%, #FFF 54.54%);
+
+      @include breakpoint-up(sm) {
+        background: linear-gradient(270deg, #5620C8 6.75%, #9B50E7 22.45%, #FFF 54.54%);
+        text-align: left;
+        flex-direction: row;
+
+        .home-services__item-image {
+          padding-bottom: var(--space-6);
+        }
+      }
+    }
+
+    &--onboarding {
+      background: linear-gradient(359deg, #FFF 40.25%, #FF92CA 65.96%, #EE55DF 90.44%);
+      box-shadow: 0px 0px 37.6px 0px rgba(0, 0, 0, 0.05);
+
+      @include breakpoint-up(sm) {
+        grid-column: span 1;
+      }
+    }
+
+    &--development {
+      background: linear-gradient(180deg, #6027CD -78.64%, #11081F 99.97%);
+      color: var(--color-white);
+
+      @include breakpoint-up(sm) {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  &__item-content {
+    padding: var(--space-5) var(--space-4);
+    flex: 1;
+
+    @include breakpoint-up(md) {
+      padding: var(--space-6);
+    }
+  }
+
+  &__item-title {
+    font-family: var(--font-family-secondary);
+    font-size: clamp(24px, 2.4vw, 36px);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.72px;
+    margin: 0 0 var(--space-3);
+  }
+
+  &__item-description {
+    margin-bottom: var(--space-4);
+  }
+
+  &__item-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    padding-bottom: 0;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

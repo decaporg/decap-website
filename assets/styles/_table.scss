@@ -1,0 +1,32 @@
+table {
+  border: 0;
+  background: #f7f7f7;
+  border-radius: 4px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  text-align: left;
+  display: block;
+  overflow: auto;
+  
+  tbody tr {
+    &:nth-of-type(odd) {
+      background: #fdfdfd;
+    }
+  }
+  
+  th,
+  td {
+    padding: 8px;
+  }
+  
+  th {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  td {
+    font-size: 14px;
+  }
+}
+

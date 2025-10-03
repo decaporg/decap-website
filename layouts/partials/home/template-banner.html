@@ -1,0 +1,10 @@
+<section class="template-banner">
+  <h2 class="template-banner__title">{{ .title | markdownify }}</h2>
+  <p class="template-banner__hook">{{ .hook }}</p>
+
+  {{ with .button }}
+    <div class="template-banner__cta">
+      <a href="{{ .href }}" class="button primary">{{ .text }}</a>
+    </div>
+  {{ end }}
+</section>

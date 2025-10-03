@@ -1,0 +1,64 @@
+.template-banner {
+  margin: var(--space-7) auto;
+  max-width: 840px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  position: relative;
+
+  @include breakpoint-up(xs) {
+    padding: var(--space-5) var(--space-6);
+  }
+
+  @include breakpoint-up(md) {
+    padding: var(--space-6) var(--space-7);
+  }
+
+  // Decorative rotated border boxes
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 1px solid var(--color-primary-light);
+    border-radius: var(--radius-sm);
+    filter: blur(1px);
+    z-index: -1;
+    transform: rotate(-2.445deg);
+  }
+
+  &::after {
+    transform: rotate(2.445deg);
+    border-radius: var(--radius-md);
+  }
+
+  &__title {
+    font-size: clamp(28px, 2.8vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.72px;
+    margin: 0;
+
+    // Emphasized text within title (typically wrapped in <em> or <strong>)
+    em,
+    strong {
+      color: var(--color-primary-light);
+      font-style: normal;
+    }
+  }
+
+  &__hook {
+    font-family: var(--font-family-secondary);
+    max-width: 540px;
+    margin: 0;
+  }
+
+  &__cta {
+    margin: 0;
+  }
+}

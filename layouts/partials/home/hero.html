@@ -1,0 +1,16 @@
+<div class="hero-wrapper">
+  <div class="hero">
+    <div class="hero__container container">
+      <h1 class="hero-title">{{ .headline }}</h1>
+      <p class="hero__subhead">{{ .subhead }}</p>
+
+      <div class="hero__buttons">
+        {{ range .buttons }}
+          <a href="{{ .href }}" class="button {{ .class | default "primary" }}">{{ .text }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__border"></div>
+</div>

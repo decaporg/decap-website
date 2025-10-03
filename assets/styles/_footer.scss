@@ -1,0 +1,40 @@
+.footer {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+  padding: var(--space-5) 0;
+
+  a {
+    color: var(--color-white);
+    font-weight: var(--font-weight-regular);
+    text-decoration: underline;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+
+    @include breakpoint-up(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__branding {
+    img {
+      height: 40px;
+      width: auto;
+      margin-bottom: var(--space-2);
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+}

@@ -3,6 +3,8 @@ title: Decap 3.0 is now available
 description: >-
   First release as Decap CMS is now available
 date: 2023-08-23T08:00:00.000Z
+aliases:
+  - /blog/2023/08/decap-3/
 author: Martin Jagodic
 image: /img/decap-3.png
 ---

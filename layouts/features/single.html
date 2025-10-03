@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="page">
+  <div class="container size-md">
+    <h1>{{ .Title }}</h1>
+    
+    {{ if .Params.description }}
+      <p class="lead">{{ .Params.description }}</p>
+    {{ end }}
+    
+    {{ if .Content }}
+      <div class="markdown">
+        {{ .Content }}
+      </div>
+    {{ end }}
+    
+    {{/* Render features grid from frontmatter */}}
+    {{ partial "features-grid.html" . }}
+  </div>
+</div>
+{{ end }}

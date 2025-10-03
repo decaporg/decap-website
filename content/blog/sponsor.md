@@ -3,6 +3,8 @@ title: You can now sponsor Decap CMS
 description: >-
   If Decap brings value to your process, consider supporting the project financially via GitHub Sponsors or Open Collective
 date: 2024-03-15T08:00:00.000Z
+aliases:
+  - /blog/2024/03/sponsor/
 author: Martin Jagodic
 image: /img/sponsor.png
 ---

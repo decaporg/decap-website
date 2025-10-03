@@ -1,0 +1,28 @@
+<section class="home-services">
+  <div class="container">
+    <h2 class="home-services__title">{{ .title }}</h2>
+    <p class="home-services__description">{{ .description }}</p>
+
+    <div class="home-services__grid">
+      {{ range .features }}
+        <div class="home-services__item home-services__item--{{ .className }}">
+          <div class="home-services__item-content">
+            <h3 class="home-services__item-title">{{ .title }}</h3>
+            <p class="home-services__item-description">{{ .description }}</p>
+            {{ $className := .className }}
+
+            {{ with .button }}
+              <a href="{{ .href }}" class="button {{ if eq $className "support" }}primary{{ else }}secondary{{ end }}">{{ .text }}</a>
+            {{ end }}
+          </div>
+
+          {{ if .image }}
+            <div class="home-services__item-image">
+              <img src="{{ printf "img/%s" .image | relURL }}" alt="{{ .title }}" />
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

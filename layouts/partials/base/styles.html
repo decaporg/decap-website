@@ -1,0 +1,12 @@
+{{ $options := dict
+  "targetPath" "styles/style.css"
+  "enableSourceMap" true
+  "includePaths" (slice "node_modules")
+}}
+
+{{ $scss := resources.Get "styles/style.scss" }}
+{{ $style := $scss | resources.ExecuteAsTemplate "style-parsed.scss" . | toCSS $options }}
+
+{{- $style = $style | postCSS | minify -}}
+
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
