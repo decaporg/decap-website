@@ -1,0 +1,30 @@
+{{/*
+  Pagination navigation shortcode
+  
+  Usage:
+  {{< pagination-nav 
+    prevUrl="/docs/some-page/" 
+    prevLabel="Previous Page Title"
+    nextUrl="/docs/another-page/"
+    nextLabel="Next Page Title"
+  >}}
+  
+  You can also use only prev or only next:
+  {{< pagination-nav nextUrl="/docs/intro/" nextLabel="1. Install Decap CMS" >}}
+*/}}
+
+<nav class="pagination-nav">
+  {{ with .Get "prevUrl" }}
+    <a href="{{ . }}" class="button">
+      <div class="pagination-nav__sublabel">Previous</div>
+      <div class="pagination-nav__label">{{ $.Get "prevLabel" }}</div>
+    </a>
+  {{ end }}
+  
+  {{ with .Get "nextUrl" }}
+    <a href="{{ . }}" class="button pagination-nav__next">
+      <div class="pagination-nav__sublabel">Next</div>
+      <div class="pagination-nav__label">{{ $.Get "nextLabel" }}</div>
+    </a>
+  {{ end }}
+</nav>
