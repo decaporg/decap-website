@@ -7,6 +7,8 @@ description: Items in the Beta Features section were moved to their actual pace
 meta_description: ""
 image: /img/better-documentation.png
 date: 2024-02-12T08:33:25.010Z
+aliases:
+  - /blog/2024/02/improved-documentation-beta-features-and-add-to-your-site/
 ---
 Documentation was reorganized so that items in the Beta Features section were moved to their actual place - into sections where these features are supposed to be.
 

@@ -77,13 +77,9 @@ CMS.init();
 CMS.registerPreviewTemplate("my-template", MyTemplate);
 ```
 
-<nav class="pagination-nav">
- <a href="/docs/basic-steps/" class="button">
-    <div class="pagination-nav__sublabel">Previous</div>
-    <div class="pagination-nav__label">Basic Steps</div>
-  </a>
-  <a href="/docs/choosing-a-backend/" class="button pagination-nav__next">
-    <div class="pagination-nav__sublabel">Next</div>
-    <div class="pagination-nav__label">2. Choosing A Backend</div>
-  </a>
-</nav>
+{{< pagination-nav 
+  prevUrl="/docs/basic-steps/" 
+  prevLabel="Basic Steps"
+  nextUrl="/docs/choosing-a-backend/"
+  nextLabel="2. Choosing A Backend"
+>}}
