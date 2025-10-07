@@ -14,7 +14,7 @@ title = 'Decap CMS | Open-Source Content Management System'
     guessSyntax = true
   [markup.tableOfContents]
     startLevel = 2
-    endLevel = 4
+    endLevel = 2
 
 [params]
   description = 'Open source content management for your Git workflow'

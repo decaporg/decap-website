@@ -25,13 +25,8 @@
               {{ .Title }}
             </a>
             
-            {{/* Table of Contents for active page */}}
             {{ if eq $currentPage.RelPermalink .RelPermalink }}
-              {{ if .TableOfContents }}
-              <div class="docs-nav__toc">
-                {{ .TableOfContents }}
-              </div>
-              {{ end }}
+              {{ .TableOfContents }}
             {{ end }}
           </li>
           {{ end }}
