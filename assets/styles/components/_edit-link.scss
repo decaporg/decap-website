@@ -1,0 +1,16 @@
+.edit-link {
+  margin-bottom: var(--space-2);
+  
+  a {
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    margin-right: 4px;
+  }
+}

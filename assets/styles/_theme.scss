@@ -1,0 +1,69 @@
+:root {
+  // Colors
+  --color-white: #fff;
+  --color-black: #000;
+  --color-lightest-gray: #E6E6E6;
+  --color-light-gray: #F6F6F6;
+  --color-lightish-gray: #D9D9D9;
+  --color-gray: #313D3E;
+  --color-dark-gray: #2F3132;
+  --color-darker-gray: #11081F;
+  --color-darker-green: #628013;
+  --color-shade-blue: #EFF0F4;
+  --color-blue: #3A69C7;
+  --color-primary-light: #ff0080;
+  --color-primary-dark: #683bab;
+
+  // Font Weights
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  // Font Families
+  --font-family-primary: "IBM Plex Sans", sans-serif;
+  --font-family-secondary: "Montserrat", sans-serif;
+
+  // Color Aliases
+  --color-primary: var(--color-primary-light);
+
+  // Font Sizes
+  --font-size-2xs: 10px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 42px;
+  --font-size-4xl: 64px;
+
+  // Line Heights
+  --line-height-min: 1;
+  --line-height-mid: 1.3;
+  --line-height-max: 1.7;
+
+  // Spacing Scale
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 144px;
+
+  // Border Radius
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  // Z-Index
+  --z-index-header: 100;
+}

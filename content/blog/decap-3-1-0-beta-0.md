@@ -5,6 +5,8 @@ description: This beta release brings React 18
 meta_description: ""
 image: /img/decap-3.1.0-beta.0.png
 date: 2023-10-24T09:01:53.438Z
+aliases:
+  - /blog/2023/10/decap-3-1-0-beta-0/
 ---
 The main feature of this release is the upgrade to React 18. This is a large change with potential side effects, so we decided to release a beta version.
 

@@ -5,7 +5,7 @@ title: 2. Choosing a Backend
 ---
 Now that you have your Decap CMS files in place and configured, all that's left is to enable authentication.
 
-To folow this guide, you need a [Netlify](https://app.netlify.com) account. If you don't have one, you can [sign up for free](https://app.netlify.com/signup).
+To follow this guide, you need a [Netlify](https://app.netlify.com) account. If you don't have one, you can [sign up for free](https://app.netlify.com/signup).
 
 You can learn about other authentication options in the [Backends](/docs/backends-overview) doc.
 
@@ -56,13 +56,9 @@ When a user logs in with the Netlify Identity widget, an access token directs to
 
 If you use the invite-only registration, you don't need to add the identity widget to the index page. Instead, you can invite users from the Netlify dashboard. To make this work you have to update email templates in the Netlify dashboard. Follow [this guide](https://docs.netlify.com/security/secure-access-to-sites/identity/identity-generated-emails/) to learn how to do it. The important part is to change the URLs from `{{ siteURL }}/#...` to `{{ siteURL }}/admin/#...`. That way all links in emails will point to the CMS page, which includes the identity widget. This method is good for performance of your frontend, because it doesn't load the identity widget on the main page.
 
-<nav class="pagination-nav">
- <a href="/docs/install-decap-cms/" class="button">
-    <div class="pagination-nav__sublabel">Previous</div>
-    <div class="pagination-nav__label">1. Install Decap CMS</div>
-  </a>
-   <a href="/docs/configure-decap-cms/" class="button pagination-nav__next">
-    <div class="pagination-nav__sublabel">Next</div>
-    <div class="pagination-nav__label">3. Configure Decap CMS</div>
-  </a>
-</nav>
+{{< pagination-nav 
+  prevUrl="/docs/install-decap-cms/" 
+  prevLabel="1. Install Decap CMS"
+  nextUrl="/docs/configure-decap-cms/"
+  nextLabel="3. Configure Decap CMS"
+>}}

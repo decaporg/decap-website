@@ -1,0 +1,33 @@
+$breakpoints: (
+  "xs": 576px,
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1200px,
+  "xl": 1440px,
+  "xxl": 1680px,
+  "xxxl": 1920px
+);
+
+@mixin breakpoint-up($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "No value could be retrieved from `#{$breakpoint}`. Make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin breakpoint-down($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value {
+    @media (max-width: ($value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn "No value could be retrieved from `#{$breakpoint}`. Make sure it is defined in `$breakpoints` map.";
+  }
+}
