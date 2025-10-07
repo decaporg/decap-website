@@ -1,16 +1,16 @@
 # Main navigation menu
 main:
   - name: Docs
-    url: /docs/
+    url: /docs/intro
     weight: 10
-  - name: Blog
-    url: /blog/
+  - name: Pro Help
+    url: /services/
     weight: 20
   - name: Community
     url: /community/
     weight: 30
-  - name: Pro Help
-    url: /services/
+  - name: Blog
+    url: /blog/
     weight: 40
 
 # Docs navigation menu
