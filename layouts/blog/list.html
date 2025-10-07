@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="page">
+  <div class="container size-sm">
+    <h1>Blog</h1>
+    
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="blog-list__item">
+      <h2>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+      <p class="meta-info">
+        by {{ .Params.author }} on {{ .Date.Format "January 2, 2006" }}
+      </p>
+      <p class="lead">{{ .Params.description }}</p>
+    </article>
+    {{ end }}
+    
+    {{/* TODO: pagination */}}
+  </div>
+</div>
+{{ end }}
