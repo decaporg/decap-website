@@ -1,0 +1,55 @@
+.button {
+  display: inline-block;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-mid);
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary-light);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include breakpoint-up(sm) {
+    padding: var(--space-3) var(--space-4);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: var(--color-white);
+  }
+
+  &.secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary-light);
+    border-color: currentColor;
+
+    &:hover,
+    &:active {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &.outline {
+    background: none;
+    color: var(--color-primary-light);
+  }
+
+  &.active {
+    color: var(--color-white);
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+  }
+}

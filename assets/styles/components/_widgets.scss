@@ -1,0 +1,33 @@
+.widgets-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-5) 0 var(--space-4);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+
+  .button {
+    padding: var(--space-2) var(--space-3) !important;
+
+    &.active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-color: var(--color-primary);
+    }
+  }
+}
+
+.widgets-content {
+  margin-top: var(--space-4);
+  
+  h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-dark);
+  }
+
+  .markdown {
+    margin-top: var(--space-3);
+  }
+}
