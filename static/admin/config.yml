@@ -62,7 +62,7 @@ collections:
       field: group
       value: Intro
   - <<: *docs_collection
-    name: docs_add_to_site
+    name: docs_add
     label: 'Docs: Add to Site'
     filter:
       field: group
