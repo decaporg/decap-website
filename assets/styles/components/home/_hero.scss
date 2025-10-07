@@ -1,0 +1,71 @@
+.hero-wrapper {
+  overflow: hidden;
+}
+
+.hero {
+  text-align: center;
+  position: relative;
+  color: var(--color-white);
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100%;
+  }
+
+  &__container {
+    max-width: 660px;
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-5);
+    z-index: 1;
+    position: relative;
+
+    @include breakpoint-up(xs) {
+      padding-top: var(--space-5);
+      padding-bottom: var(--space-6);
+    }
+
+    @include breakpoint-up(md) {
+      padding-top: var(--space-6);
+    }
+
+    @include breakpoint-up(lg) {
+      padding-top: var(--space-7);
+    }
+  }
+
+  &__subhead {
+    margin: var(--space-4) auto;
+    max-width: 400px;
+
+    @include breakpoint-up(md) {
+      margin: var(--space-5) auto;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+  }
+
+  &__border {
+    border-style: solid;
+    border-width: 6vw 100vw 0 0;
+    border-color: var(--color-primary-dark) transparent transparent transparent;
+    position: relative;
+    z-index: -1;
+    margin-bottom: var(--space-4);
+
+    @include breakpoint-up(lg) {
+      margin-bottom: var(--space-5);
+    }
+  }
+}

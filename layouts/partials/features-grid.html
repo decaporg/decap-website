@@ -1,0 +1,15 @@
+{{/* Features Grid Partial */}}
+{{/* Renders a grid of features from frontmatter */}}
+
+{{ if .Params.features }}
+<div class="features-grid">
+  {{ range $index, $feature := .Params.features }}
+    <div class="features-grid__item">
+      <h3 class="features-grid__title">{{ $feature.title }}</h3>
+      <div class="features-grid__description markdown">
+        {{ $feature.description | markdownify }}
+      </div>
+    </div>
+  {{ end }}
+</div>
+{{ end }}
