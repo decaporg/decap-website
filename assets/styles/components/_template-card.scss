@@ -1,0 +1,29 @@
+.template-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > img {
+    display: block;
+    height: 80px;
+    width: 100%;
+    padding: 0 15%;
+    object-fit: contain;
+  }
+
+  h4 {
+    margin: var(--space-3) 0;
+    font-size: var(--font-size-lg);
+    color: var(--color-gray);
+  }
+
+  a {
+    margin-top: auto;
+    
+    img {
+      display: block;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}

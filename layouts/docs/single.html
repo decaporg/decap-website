@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="container size-lg">
+  <div class="docs-single page">
+    {{/* Sidebar Navigation */}}
+    <aside class="docs-single__sidebar">
+      {{ partial "docs-nav.html" . }}
+    </aside>
+
+    <article class="docs-single__content" data-docs-content>
+      {{ if .Params.group }}
+        {{ partial "edit-link" . }}
+      {{ end }}
+
+      <h1>{{ .Title }}</h1>
+      
+      <div class="markdown">
+        {{ .Content }}
+      </div>
+
+      {{ if .Params.show_widgets }}
+        {{ partial "widgets.html" . }}
+      {{ end }}
+    </article>
+
+    {{/* Carbon Ads - Right Column */}}
+    <aside class="docs-single__ads">
+      {{ partial "carbon-ads.html" . }}
+    </aside>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ if .Params.show_widgets }}
+    {{ $widgetsJs := resources.Get "/scripts/widgets.js" | js.Build (dict "minify" true) }}
+    <script defer src="{{ $widgetsJs.RelPermalink }}"></script>
+  {{ end }}
+{{ end }}

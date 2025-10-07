@@ -1,0 +1,42 @@
+.community-header {
+  margin-bottom: var(--space-6);
+}
+
+.community-section {
+  margin-bottom: var(--space-6);
+}
+
+.section-title {
+  margin: var(--space-2) 0 var(--space-3);
+
+  @include breakpoint-up(md) {
+    margin: var(--space-4) 0 var(--space-4);
+  }
+}
+
+.community-channels {
+  margin-bottom: var(--space-4);
+}
+
+.community-channel {
+  margin-bottom: var(--space-4);
+
+  .channel-title {
+    font-weight: 500;
+    margin-bottom: var(--space-2);
+  }
+
+  .channel-description {
+    margin-bottom: var(--space-3);
+  }
+
+  .channel-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
