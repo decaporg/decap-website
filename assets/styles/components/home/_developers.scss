@@ -6,12 +6,14 @@
     color: var(--color-lightish-gray);
     background: var(--color-white);
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 0 8px;
     justify-content: center;
     position: sticky;
     padding: var(--space-2) 0;
     top: 0;
     z-index: 1;
+    margin: var(--space-2) 0 var(--space-3);
 
     @include breakpoint-up(md) {
       top: var(--space-6);
@@ -27,6 +29,7 @@
   &__title-link {
     color: var(--color-lightish-gray);
     text-decoration: none;
+    font-size: clamp(20px, calc(14.2857px + 1.7857vw), 28px);
 
     &--active {
       color: var(--color-primary-light);
@@ -38,18 +41,14 @@
   }
 
   &__title-separator {
-    display: none;
-
-    @include breakpoint-up(sm) {
-      display: initial;
-    }
+    font-size: clamp(20px, calc(14.2857px + 1.7857vw), 28px);
   }
 
   &__item {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    margin: var(--space-5) 0;
+    margin: var(--space-3) 0;
     gap: var(--space-5);
 
     @include breakpoint-up(sm) {

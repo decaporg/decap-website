@@ -31,6 +31,7 @@
     color: var(--color-primary-light);
     border-color: currentColor;
 
+    &:hover,
     &:active {
       color: var(--color-primary-dark);
     }
