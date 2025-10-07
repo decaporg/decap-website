@@ -16,15 +16,15 @@
 <nav class="pagination-nav">
   {{ with .Get "prevUrl" }}
     <a href="{{ . }}" class="button">
-      <div class="pagination-nav__sublabel">Previous</div>
-      <div class="pagination-nav__label">{{ $.Get "prevLabel" }}</div>
+      <span class="pagination-nav__sublabel">Previous</span><br>
+      <span class="pagination-nav__label">{{ $.Get "prevLabel" }}</span>
     </a>
   {{ end }}
   
   {{ with .Get "nextUrl" }}
     <a href="{{ . }}" class="button pagination-nav__next">
-      <div class="pagination-nav__sublabel">Next</div>
-      <div class="pagination-nav__label">{{ $.Get "nextLabel" }}</div>
+      <span class="pagination-nav__sublabel">Next</span><br>
+      <span class="pagination-nav__label">{{ $.Get "nextLabel" }}</span>
     </a>
   {{ end }}
 </nav>

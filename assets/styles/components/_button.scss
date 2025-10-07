@@ -1,30 +1,26 @@
 .button {
-  white-space: nowrap;
   display: inline-block;
   font-size: var(--font-size-md);
-  line-height: 1;
+  line-height: var(--line-height-mid);
   background-color: var(--color-primary-light);
   color: var(--color-white);
   border: 2px solid var(--color-primary-light);
   font-weight: var(--font-weight-medium);
   font-family: var(--font-family-secondary);
   border-radius: var(--radius-lg);
-  padding: 12px var(--space-3);
+  padding: var(--space-2) var(--space-3);
   transition: all 0.2s ease-out;
-  box-shadow: 0;
   cursor: pointer;
   text-decoration: none;
 
-  @include breakpoint-up(xs) {
+  @include breakpoint-up(sm) {
     padding: var(--space-3) var(--space-4);
     font-weight: var(--font-weight-semibold);
   }
 
-  &:hover {
-    cursor: pointer;
-  }
-
+  &:hover,
   &:active {
+    text-decoration: none;
     background-color: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
     color: var(--color-white);
