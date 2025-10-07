@@ -1,0 +1,38 @@
+<nav class="docs-nav">
+  <button class="docs-nav__toggle button block" id="docs-nav-toggle">
+    <span class="docs-nav__icon">☰</span>
+    <span class="docs-nav__text">Show</span> Navigation
+  </button>
+
+  <div class="docs-nav__content" id="docs-nav-content">
+    {{ $currentPage := . }}
+    {{ $docsPages := where .Site.RegularPages "Section" "docs" }}
+    {{ $docsMenu := .Site.Menus.docs }}
+    
+    {{/* Loop through Hugo menu to maintain order and proper titles */}}
+    {{ range $docsMenu }}
+      {{ $groupIdentifier := .Identifier }}
+      {{ $groupTitle := .Name }}
+      {{ $groupPages := where $docsPages "Params.group" $groupIdentifier }}
+      
+      {{ if $groupPages }}
+      <div class="docs-nav__section">
+        <h3 class="docs-nav__section-title">{{ $groupTitle }}</h3>
+        <ul class="docs-nav__section-list">
+          {{ range $groupPages.ByWeight }}
+          <li class="docs-nav__item">
+            <a href="{{ .RelPermalink }}" class="docs-nav__link{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{end}}">
+              {{ .Title }}
+            </a>
+            
+            {{ if eq $currentPage.RelPermalink .RelPermalink }}
+              {{ .TableOfContents }}
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</nav>

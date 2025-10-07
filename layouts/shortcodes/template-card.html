@@ -1,0 +1,20 @@
+{{/*
+  Template card shortcode for "Start with a Template" page
+  
+  Usage:
+  {{< template-card 
+    logo="/img/hugo.svg"
+    title="Hugo Site Starter"
+    deployUrl="https://app.netlify.com/start/deploy?repository=https://github.com/decaporg/one-click-hugo-cms&stack=cms"
+  >}}
+*/}}
+
+<div class="template-card">
+  <img src="{{ .Get "logo" }}" alt="{{ .Get "title" }} logo" />
+
+  <h4>{{ .Get "title" }}</h4>
+
+  <a href="{{ .Get "deployUrl" }}">
+    <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+  </a>
+</div>

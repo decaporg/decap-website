@@ -6,6 +6,8 @@ description: A dive into the definition, main features, caveats, and best
   your next project.
 image: /img/definition-features-best-practices.png
 date: 2023-11-15T09:18:08.062Z
+aliases:
+  - /blog/2023/11/git-based-cms-definition-features-best-practices/
 ---
 In this post, we'll dive into the definition, main features, caveats, and best practices of Git-based CMS, helping you make an informed decision for your next project.
 

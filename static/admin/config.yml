@@ -121,6 +121,7 @@ collections:
     filter:
       field: group
       value: Contributing
+  
   - name: widget_docs
     label: 'Docs: Widgets'
     folder: content/docs/widgets
@@ -130,6 +131,7 @@ collections:
       - { label: Name, name: title }
       - { label: Label, name: label }
       - { label: Body, name: body, widget: markdown }
+  
   - name: blog
     label: Blog
     label_singular: Post
@@ -149,12 +151,13 @@ collections:
       - { label: Image, name: image, widget: image }
       - { label: Date, name: date, widget: datetime }
       - { label: Body, name: body, widget: markdown }
+  
   - name: community
     label: Community
     files:
       - name: community
         label: Community
-        file: content/pages/community.md
+        file: content/community.md
         preview_path: community
         fields:
           - { label: Title, name: title }
@@ -170,5 +173,10 @@ collections:
                 widget: list
                 fields:
                   - { name: title, label: Title }
-                  - { name: url, label: URL }
                   - { name: description, label: Description }
+                  - label: Link
+                    name: link
+                    widget: object
+                    fields:
+                      - { name: href, label: URL }
+                      - { name: text, label: Link Text }

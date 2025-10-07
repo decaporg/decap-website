@@ -1,0 +1,14 @@
+.version-tag {
+  &:before {
+    content: 'New in v';
+  }
+  
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 0.125em 0.5em;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  display: inline-block;
+  margin: 0 0.5em;
+}
