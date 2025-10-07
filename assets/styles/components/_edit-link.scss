@@ -1,22 +1,16 @@
 .edit-link {
-  float: right;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-2);
   
   a {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-sm);
     text-decoration: none;
-    color: inherit;
-    
-    &:hover {
-      text-decoration: none;
-    }
   }
 
   svg {
     width: 14px;
     height: 14px;
     fill: currentColor;
-    vertical-align: middle;
     margin-right: 4px;
   }
 }
