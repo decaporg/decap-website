@@ -10,8 +10,8 @@
 
     &:hover,
     &:focus {
-      border: 2px solid var(--color-primary-dark);
-      text-decoration: none !important;
+      border-color: var(--color-primary-dark);
+      background: none;
     }
   }
 
