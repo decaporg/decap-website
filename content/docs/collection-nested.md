@@ -15,7 +15,7 @@ To enable it:
 
   * `depth`**:** max depth to show in the collection tree
   * `summary`**:** optional summary for a tree node, defaults to the inferred title field
-  * `subfolders`**:** *(default: true)* if set to false, you don't need to have md files in subfolders
+  * `subfolders`**:** *(default: true)* if set to false, you don't need to have md files in subfolders. <span class="version-tag">3.6</span>
 * Add a **`meta`** object with a `path` property. It allows editing the path of entries. Moving an existing entry will move the entire sub tree of the entry to the new location.
 
 Example configuration:

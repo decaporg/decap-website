@@ -24,6 +24,7 @@ export default {
           /table/,
           /code/,
           /template-grid/,
+          /version-tag/,
         ],
       },
     }),
