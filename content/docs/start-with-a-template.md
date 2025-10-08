@@ -5,7 +5,8 @@ title: Start with a Template
 ---
 You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the quickest way to get started is with a template.  Found below, our featured templates deploy a bare-bones site and Decap CMS to Netlify, giving you a fully working CMS-enabled site with just a few clicks.
 
-{{< template-grid >}}
+<div class="template-grid">
+
 {{< template-card logo="/img/hugo.svg" title="Hugo Site Starter" repo="decaporg/one-click-hugo-cms" >}}
 
 {{< template-card logo="/img/gatsby.svg" title="Gatsby Site Starter" repo="decaporg/gatsby-starter-decap-cms" >}}
@@ -23,7 +24,8 @@ You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the qu
 {{< template-card logo="/img/preact.svg" title="Preact CLI" repo="preactjs/preact-netlify" >}}
 
 {{< template-card logo="/img/metalsmith.svg" title="Metalsmith Starter" repo="wernerglinka/metalsmith-netlify-starter" >}}
-{{< /template-grid >}}
+
+</div>
 
 After clicking one of those buttons, authenticate with GitHub or GitLab and choose a repository name. Netlify then automatically creates a clone of the repository in your GitHub or GitLab account. Next, it builds and deploys the new site on Netlify, bringing you to the site dashboard after completing the build.
 

@@ -1,3 +1,11 @@
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  text-align: center;
+  margin: var(--space-5) 0;
+}
+
 .template-card {
   display: flex;
   flex-direction: column;
