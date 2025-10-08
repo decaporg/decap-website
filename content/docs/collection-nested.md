@@ -3,10 +3,20 @@ group: Collections
 weight: 30
 title: Nested Collections (beta)
 ---
+This feature is in beta, please use with discretion.
 
-There is beta support for Folder Collections which can also handle `nested` folder structures.
+A nested collection allows a folder collection to show a nested structure of entries and edit the locations of the entries.
 
-Nested collections is a beta feature that allows a folder collection to show a nested structure of entries and edit the locations of the entries. This feature is useful when you have a complex folder structure and may not want to create separate collections for every directory. As it is in beta, please use with discretion.
+It is useful when you have a complex folder structure and may not want to create separate collections for every directory. 
+
+To enable it:
+
+* Add a **`nested`** object to the collection config. Then configure it with these properties:
+
+  * `depth`**:** max depth to show in the collection tree
+  * `summary`**:** optional summary for a tree node, defaults to the inferred title field
+  * `subfolders`**:** *(default: true)* if set to false, you don't need to have md files in subfolders
+* Add a **`meta`** object with a `path` property. It allows editing the path of entries. Moving an existing entry will move the entire sub tree of the entry to the new location.
 
 Example configuration:
 
@@ -14,37 +24,49 @@ Example configuration:
 collections:
   - name: pages
     label: Pages
-    label_singular: 'Page'
+    label_singular: Page
     folder: content/pages
     create: true
-    # adding a nested object will show the collection folder structure
+    fields: [
+      {name: title, label: Title, widget: string},
+      {name: body, label: Body, widget: markdown},
+    ]
+    # Add nested and meta objects
     nested:
-      depth: 100 # max depth to show in the collection tree
-      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
-    fields:
-      - label: Title
-        name: title
-        widget: string
-      - label: Body
-        name: body
-        widget: markdown
-    # adding a meta object with a path property allows editing the path of entries
-    # moving an existing entry will move the entire sub tree of the entry to the new location
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+      depth: 100
+      summary: '{{title}}'
+      subfolders: true
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
 ```
 
-Nested collections expect the following directory structure:
+## Directory structure
+
+Nested collections with `subfolders: true` (default) expect the following directory structure:
 
 ```bash
 content
 └── pages
+    ├── _index.md
     ├── authors
-    │   ├── author-1
-    │   │   └── index.md
-    │   └── index.md
-    ├── index.md
+    │   ├── _index.md
+    │   └── author-1
+    │       └── _index.md
     └── posts
-        ├── hello-world
-        │   └── index.md
-        └── index.md
+        ├── _index.md
+        └── hello-world
+            └── _index.md
+```
+
+With `subfolders: false`, you can do it like this:
+
+```bash
+content
+└── pages
+    ├── _index.md
+    ├── authors
+    │   ├── _index.md
+    │   └── author-1.md
+    └── posts
+        ├── _index.md
+        └── hello-world.md
 ```
