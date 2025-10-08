@@ -5,22 +5,18 @@ title: Nested Collections (beta)
 ---
 This feature is in beta, please use with discretion.
 
-A nested collection allows a folder collection to 
-
-* show a nested structure of entries, 
-* edit the locations of the entries.
+A nested collection allows a folder collection to show a nested structure of entries and edit the locations of the entries.
 
 It is useful when you have a complex folder structure and may not want to create separate collections for every directory. 
 
 To enable it:
 
-Add a **`nested`** object to the collection config. Then configure it with these properties:
+* Add a **`nested`** object to the collection config. Then configure it with these properties:
 
-* `depth`**:** max depth to show in the collection tree
-* `summary`**:** optional summary for a tree node, defaults to the inferred title field
-* `subfolders`**:** (*default: true*) if set to false, you don't need to have md files in subfolders
-
-Add a **`meta`** object with a `path` property. It allows editing the path of entries. Moving an existing entry will move the entire sub tree of the entry to the new location.
+  * `depth`**:** max depth to show in the collection tree
+  * `summary`**:** optional summary for a tree node, defaults to the inferred title field
+  * `subfolders`**:** *(default: true)* if set to false, you don't need to have md files in subfolders
+* Add a **`meta`** object with a `path` property. It allows editing the path of entries. Moving an existing entry will move the entire sub tree of the entry to the new location.
 
 Example configuration:
 
