@@ -398,18 +398,20 @@ fields:
 
 ### `editor`
 
-This setting changes options for the editor view of a collection or a file inside a files collection. It has one option so far:
+This setting changes options for the editor view of a collection or a file inside a files collection. It has these options:
 
 * `preview`: set to `false` to disable the preview pane for this collection or file; defaults to `true`
+* `visualEditing`: set to `true` to allow users to click directly on content in the preview pane to edit fields. This works for preview widgets as well as for custom full-page preview templates. This is an alternative to scroll sync, providing a more direct way to interact with content. When enabled, scroll sync is automatically disabled to prevent interference. <span class="version-tag">3.6</span>
 
 **Example:**
 
 ```yaml
   editor:
-     preview: false
+    preview: true # default is true
+    visualEditing: true  # default is false
 ```
 
-**Note**: Setting this as a top level configuration will set the default for all collections
+**Note**: Setting `preview` as a top level configuration will set the default for all collections.
 
 ### `summary`
 
