@@ -154,6 +154,8 @@ collections:
   
   - name: community
     label: Community
+    editor:
+      preview: false
     files:
       - name: community
         label: Community
