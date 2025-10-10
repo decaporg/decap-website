@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="container size-sm">
+  <article class="page">
+    <h1>{{ .Title }}</h1>
+    
+    <p class="meta-info">
+      By {{ .Params.author }} on {{ .Date.Format "January 2, 2006" }}
+    </p>
+    
+    <div class="markdown">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}

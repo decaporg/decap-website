@@ -14,9 +14,4 @@ If you set your registration preference in Netlify to "Invite only," invite your
 
 If you left your site registration open, or for return visits after confirming an email invitation, access your site's CMS at `yoursite.com/admin/`.
 
-<nav class="pagination-nav">
-   <a href="/docs/configure-decap-cms/" class="button">
-    <div class="pagination-nav__sublabel">Previous</div>
-    <div class="pagination-nav__label">3. Configure Decap CMS</div>
-  </a>
-</nav>
+{{< pagination-nav prevUrl="/docs/configure-decap-cms/" prevLabel="3. Configure Decap CMS" >}}

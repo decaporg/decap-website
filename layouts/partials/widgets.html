@@ -1,0 +1,29 @@
+{{ $widgets := slice }}
+{{ range where .Site.Pages "Section" "docs" }}
+  {{ if and .File (strings.Contains .File.Path "widgets/") (ne .File.LogicalName "widgets.md") }}
+    {{ $widgets = $widgets | append . }}
+  {{ end }}
+{{ end }}
+{{ $widgets = sort $widgets ".Params.label" }}
+
+<nav class="widgets-nav">
+  {{ range $widgets }}
+    <button 
+      class="button outline" 
+      data-widget="{{ .Params.title }}"
+    >
+      {{ .Params.label }}
+    </button>
+  {{ end }}
+</nav>
+
+<div class="widgets-content">
+  {{ range $widgets }}
+    <div class="widgets-content__item" id="widget-{{ .Params.title }}" style="display: none;">
+      <h3>{{ .Params.label }}</h3>
+      <div class="markdown">
+        {{ .Content }}
+      </div>
+    </div>
+  {{ end }}
+</div>

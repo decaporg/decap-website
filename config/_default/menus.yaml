@@ -1,0 +1,50 @@
+# Main navigation menu
+main:
+  - name: Docs
+    url: /docs/intro
+    weight: 10
+  - name: Pro Help
+    url: /services/
+    weight: 20
+  - name: Community
+    url: /community/
+    weight: 30
+  - name: Blog
+    url: /blog/
+    weight: 40
+
+# Docs navigation menu
+docs:
+  - name: Intro to Decap CMS
+    identifier: Intro
+    weight: 10
+  - name: Add To Your Site
+    identifier: Add
+    weight: 20
+  - name: Account Settings
+    identifier: Accounts
+    weight: 30
+  - name: Configuring your Site
+    identifier: Configuration
+    weight: 40
+  - name: Media
+    identifier: Media
+    weight: 50
+  - name: Workflow
+    identifier: Workflow
+    weight: 60
+  - name: Collections
+    identifier: Collections
+    weight: 70
+  - name: Fields
+    identifier: Fields
+    weight: 80
+  - name: Platform Guides
+    identifier: Guides
+    weight: 90
+  - name: Customizing Decap CMS
+    identifier: Customization
+    weight: 100
+  - name: Community
+    identifier: Contributing
+    weight: 110

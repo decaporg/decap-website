@@ -1,0 +1,44 @@
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  text-align: center;
+  margin: var(--space-5) 0;
+}
+
+.template-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-light-gray);
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-md);
+
+  > img {
+    display: block;
+    height: 80px;
+    width: 100%;
+    padding: 0 15%;
+    object-fit: contain;
+  }
+
+  h4 {
+    margin: var(--space-3) 0 var(--space-2);
+    font-size: var(--font-size-lg);
+    color: var(--color-gray);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    font-size: var(--font-size-sm);
+    margin-top: auto;
+  }
+
+  &__badge {
+    display: block;
+    margin: var(--space-1) auto 0;
+    height: 20px;
+  }
+}

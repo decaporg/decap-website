@@ -16,13 +16,9 @@ Now that you have your Decap CMS files in place and configured, we have to enabl
 
 If you would like to facilitate your own OAuth authentication rather than use Netlify's service or a client side flow like implicit or PKCE, you can use one of the community-maintained projects from the [External OAuth Clients](/docs/external-oauth-clients) list.
 
-<nav class="pagination-nav">
-  <a href="/docs/install-decap-cms/" class="button">
-    <div class="pagination-nav__sublabel">Previous</div>
-    <div class="pagination-nav__label">1. Install Decap CMS</div>
-  </a>
-  <a href="/docs/login-to-your-cms/" class="button pagination-nav__next">
-    <div class="pagination-nav__sublabel">Next</div>
-    <div class="pagination-nav__label">3. Configure Decap CMS</div>
-  </a>
-</nav>
+{{< pagination-nav 
+  prevUrl="/docs/install-decap-cms/" 
+  prevLabel="1. Install Decap CMS"
+  nextUrl="/docs/login-to-your-cms/"
+  nextLabel="3. Login to Your CMS"
+>}}

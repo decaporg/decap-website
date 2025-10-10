@@ -59,7 +59,7 @@ Decap CMS generates the following commit types:
 Template tags produce the following output:
 
 * `{{slug}}`: the url-safe filename of the entry changed
-* `{{collection}}`: the name of the collection containing the entry changed
+* `{{collection}}`: the `label_singular` or `label` of the collection containing the entry changed
 * `{{path}}`: the full path to the file changed
 * `{{message}}`: the relevant message based on the current change (e.g. the `create` message when an entry is created)
 * `{{author-login}}`: the login/username of the author
@@ -139,11 +139,20 @@ display_url: https://your-site.com
 
 ## Custom Logo
 
-When the `logo_url` setting is specified, the CMS UI will change the logo displayed at the top of the login page, allowing you to brand the CMS with your own logo. `logo_url` is assumed to be a URL to an image file.
+When **`logo`** setting is specified, the CMS UI will change the logo displayed at the top of the login page, allowing you to brand the CMS with your own logo. It accepts these properties:
+
+- **`src`**: (*required*) URL to an image file
+
+- **`show_in_header`**: (*optional*) if set to `true`, the logo will also be shown in the header of the CMS when logged in. <span class="version-tag">3.8</span>
 
 **Example:**
 
 ```yaml
+logo:
+  src: https://your-site.com/images/logo.svg
+  show_in_header: true
+
+# This also works, but it's deprecated. Same as logo.src
 logo_url: https://your-site.com/images/logo.svg
 ```
 
