@@ -90,6 +90,14 @@ const globalStyles = css`
     }
   }
 
+  details {
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      margin-bottom: ${theme.space[3]};
+    }
+  }
+
   .pagination-nav {
     margin: 2em 0 !important;
     display: grid;
