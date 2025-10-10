@@ -14,6 +14,8 @@ The list widget allows you to create a repeatable item in the UI which saves as 
     default is declared when using `field` or `fields`, will default to a single
     list item using the defaults on the child widgets
   * `allow_add`: `false` hides the button to add additional items
+  * `allow_remove`: `false` hides the button to remove items <span class="version-tag">3.8</span>
+  * `allow_reorder`: `false` hides the controls to reorder items <span class="version-tag">3.8</span>
   * `collapsed`: when `true`, the entries collapse by default
   * `summary`: specify the label displayed on collapsed entries
   * `minimize_collapsed`: when `true`, collapsing the list widget will hide all of its entries instead of showing summaries
