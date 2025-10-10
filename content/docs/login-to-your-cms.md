@@ -2,6 +2,8 @@
 group: Add
 weight: 5
 title: 4. Login to your CMS
+aliases:
+  - /docs/access-your-content/
 ---
 
 Your site CMS is now fully configured and ready for login!

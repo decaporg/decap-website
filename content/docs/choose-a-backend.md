@@ -2,6 +2,8 @@
 group: Add
 weight: 3
 title: 2. Choose a Backend
+aliases:
+  - /docs/choosing-a-backend/
 ---
 
 Now that you have your Decap CMS files in place and configured, we have to enable authentication. We will achieve this by connecting to a backend service that will handle user authentication and connecting to repository API. Choose one of the backend options supported by Decap:
