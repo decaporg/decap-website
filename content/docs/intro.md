@@ -17,7 +17,15 @@ At its core, Decap CMS is an open-source React app that acts as a wrapper for th
 * **Flexible content types:** Specify an unlimited number of content types with custom fields.
 * **Fully extensible:** Create custom-styled previews, UI widgets, and editor plugins.
 
-## How it started
+**Where to go from here**
+
+- Get a feel for the UI in the [demo site](https://demo.decapcms.org). No login required. Click the login button to go straight to the CMS editor UI.
+- [Start with a template](../start-with-a-template/) to make a Decap CMS-enabled site of your own.
+- Configure your existing site by following a [tutorial](../add-to-your-site/) or checking [configuration options](../configuration-options).
+- Ask questions and share ideas in the Decap CMS [community chat](https://decapcms.org/chat).
+- Get involved in new developments and become a [contributor](../contributor-guide/).
+
+## Decap CMS and Netlify
 
 The folks at Netlify created Netlify CMS to fill a gap in the static site generation pipeline. There were some great proprietary headless CMS options, but no real contenders that were open source and extensible—that could turn into a community-built ecosystem like WordPress or Drupal. For that reason, Netlify CMS was made to be community-driven, and has never been locked to the Netlify platform (despite the name). In February 2023 [Netlify CMS became Decap CMS](https://www.netlify.com/blog/netlify-cms-to-become-decap-cms/).
 
@@ -28,11 +36,3 @@ With this in mind, you can:
 * Or, use them together and have a fully-working CMS-enabled site with [one click](../start-with-a-template/)!
 
 If you hook up Decap CMS to your website, you're basically adding a tool for content editors to make commits to your site repository without touching code or learning Git.
-
-### Find out more
-
-- Get a feel for the UI in the [demo site](https://demo.decapcms.org). (No login required. Click the login button to go straight to the CMS editor UI.)
-- [Start with a template](../start-with-a-template/) to make a Decap CMS-enabled site of your own.
-- Configure your existing site by following a [tutorial](../add-to-your-site/) or checking [configuration options](../configuration-options).
-- Ask questions and share ideas in the Decap CMS [community chat](https://decapcms.org/chat).
-- Get involved in new developments and become a [contributor](../contributor-guide/).
