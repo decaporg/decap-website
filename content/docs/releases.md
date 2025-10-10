@@ -3,6 +3,8 @@ group: Intro
 weight: 4
 title: Releases
 ---
+{{< releases-info >}}
+
 ## Update the CMS Version
 
 The way to update your CMS depends on how you installed Decap CMS.
@@ -17,11 +19,11 @@ If you are using the CMS through a CDN like Unpkg, then that depends on the vers
 
 * (Recommended) If you use `^3.0.0`, the CMS does all updates except major versions automatically.
 
-  * It upgrades to 3`.0.1`, 3`.1.0`, 3`.1.2`.
-  * It does not upgrade to 4`.0.0` or higher.
+  * It upgrades to `3.0.1`, `3.1.0`, `3.1.2`.
+  * It does not upgrade to `4.0.0` or higher.
   * It does not upgrade to beta versions.
-* If you use `~3.0.0`, the CMS will do only patch updates automatically.
 
-  * It upgrades 3`.0.1`, 3`.0.2`.
-  * It does not upgrade to 3`.1.0` or higher.
+* If you use `~3.0.0`, the CMS will do only patch updates automatically.
+  * It upgrades to `3.0.1`, `3.0.2`.
+  * It does not upgrade to `3.1.0` or higher.
   * It does not upgrade beta versions.
