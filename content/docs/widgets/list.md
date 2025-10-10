@@ -20,14 +20,16 @@ The list widget allows you to create a repeatable item in the UI which saves as 
   default is declared when using `field` or `fields`, will default to a single
   list item using the defaults on the child widgets
 - `allow_add`: `false` hides the button to add additional items
+- `allow_remove`: `false` hides the button to remove items <span class="version-tag">3.8</span>
+- `allow_reorder`: `false` hides the controls to reorder items <span class="version-tag">3.8</span>
 - `collapsed`: when `true`, the entries collapse by default
 - `summary`: specify the label displayed on collapsed entries
 - `minimize_collapsed`: when `true`, collapsing the list widget will hide all of its entries instead of showing summaries
 - `label_singular`: the text to show on the add button
 - `field`: a single widget field to be repeated
 - `fields`: a nested list of multiple widget fields to be included in each repeatable iteration
-- `max`: maximum number of items in the list
-- `min`: minimum number of items in the list
+- `max`: maximum number of items in the list (works only if `min` is also specified)
+- `min`: minimum number of items in the list (works only if `max` is also specified)
 - `add_to_top`: when `true`, new entries will be added to the top of the list
 
 **Example** (`field`/`fields` not specified):
@@ -134,8 +136,7 @@ The list widget allows you to create a repeatable item in the UI which saves as 
   add_to_top: true
 ```
 
-<br>
-
 **Result**
 
 ![toggle switch](/img/widget-list.png)
+

@@ -1,8 +1,10 @@
-.cache
 public
-dist
+resources
 node_modules
-.env
-
-# Local Netlify folder
+static/node_modules
+.idea
+design
+.DS_Store
 .netlify
+.env
+.hugo_build.lock

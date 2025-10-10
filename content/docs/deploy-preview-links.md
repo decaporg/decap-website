@@ -15,6 +15,11 @@ Deploy preview links will work without configuration when all of the following r
 * Decap CMS version is 2.4.0+ for GitHub support and 2.10.6+ for GitLab/Bitbucket support
 * Using editorial workflow
 * Have a continuous deployment platform that builds every commit and provides statuses to your repo
+  * The build status must include the word "deploy"
+  * Backends implement specific methodd for finding statuses
+    * GitHub: commit status
+    * Azure/Bitbucket/GitLab: Pull Request status
+    * Other: implemented by `getStatuses` API function
 
 Any site created using one of the Deploy to Netlify options on our [starters
 page](../start-with-a-template) will automatically meet these criteria (barring any changes made to

@@ -1,15 +1,16 @@
 ---
-title: Gitea / Forgejo
 group: Backends
 weight: 25
+title: Gitea / Forgejo
 ---
-
 For repositories stored on [Gitea](https://gitea.com) or [Forgejo](https://forgejo.org) instances, the `gitea` backend allows CMS users to log in directly with their Gitea/Forgejo account. Note that all users must have push access to your content repository for this to work.
 
 *Note on supported versions* 
 
-- Only Gitea **1.20** and upwards is supported due to API limitations in previous versions
-- Only Forgejo **1.21.4** and upwards is supported due to CORS functionality
+* Only Gitea **1.20** and upwards is supported due to API limitations in previous versions
+* Only Forgejo **1.21.4** and upwards is supported due to CORS functionality
+
+  * [CORS](https://forgejo.org/docs/latest/admin/config-cheat-sheet/#cors-cors) must be enabled and configured
 
 ## Authentication
 

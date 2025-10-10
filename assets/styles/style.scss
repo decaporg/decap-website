@@ -1,0 +1,47 @@
+// Main SCSS file for Decap CMS Hugo site
+// Import all partial SCSS files
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'base';
+@import 'breakpoints';
+@import 'grid';
+@import 'theme';
+@import 'typography';
+@import 'table';
+@import 'header';
+@import 'footer';
+
+@import 'layouts/page';
+@import 'layouts/blog-list';
+@import 'layouts/docs-single';
+@import 'layouts/docs-list';
+@import 'layouts/home';
+@import 'layouts/community';
+
+@import 'components/search';
+@import 'components/alert';
+@import 'components/template-card';
+@import 'components/button';
+@import 'components/container';
+@import 'components/hero-title';
+@import 'components/pagination-nav';
+@import 'components/version-tag';
+@import 'components/page-layout';
+@import 'components/community';
+@import 'components/docs-nav';
+@import 'components/edit-link';
+@import 'components/highlight';
+@import 'components/carbon-ads';
+@import 'components/widgets';
+@import 'components/features-grid';
+
+@import 'components/home/hero';
+@import 'components/home/developers';
+@import 'components/home/template-banner';
+@import 'components/home/editors';
+@import 'components/home/services';
+@import 'components/home/blog';
+@import 'components/home/community';

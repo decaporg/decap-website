@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+  {{ with .Params.hero }}
+    {{ partial "home/hero" . }}
+  {{ end }}
+
+  {{ with .Params.developers }}
+    {{ partial "home/developers" . }}
+  {{ end }}
+
+  {{ with .Params.templateBanner }}
+    {{ partial "home/template-banner" . }}
+  {{ end }}
+
+  {{ with .Params.editors }}
+    {{ partial "home/editors" . }}
+  {{ end }}
+
+  {{ with .Params.services }}
+    {{ partial "home/services" . }}
+  {{ end }}
+
+  <div class="home-dark-section-wrapper">
+    <div class="home-dark-section__border"></div>
+    <div class="home-dark-section">
+      {{ with .Params.blog }}
+        {{ partial "home/blog" . }}
+      {{ end }}
+
+      {{ with .Params.community }}
+        {{ partial "home/community" . }}
+      {{ end }}
+    </div>
+  </div>
+
+{{ end }}

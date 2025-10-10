@@ -2,6 +2,7 @@
 title: About Fields and Widgets
 group: Fields
 weight: 10
+show_widgets: true
 ---
 
 Widgets define the data type and interface for entry fields. Decap CMS comes with several built-in widgets. Click the widget names in the sidebar to jump to specific widget details. We’re always adding new widgets, and you can also [create your own](../custom-widgets)!

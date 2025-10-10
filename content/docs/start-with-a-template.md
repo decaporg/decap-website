@@ -5,70 +5,26 @@ title: Start with a Template
 ---
 You can add Decap CMS [to an existing site](/docs/add-to-your-site/), but the quickest way to get started is with a template.  Found below, our featured templates deploy a bare-bones site and Decap CMS to Netlify, giving you a fully working CMS-enabled site with just a few clicks.
 
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; margin-bottom: 1.5em;">
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 15%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/hugo.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Hugo Site Starter</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/decaporg/one-click-hugo-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/gatsby.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Gatsby Site Starter</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/decaporg/gatsby-starter-decap-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/nuxt.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Nuxt 3 Starter</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/Sfolkerts89/Nuxt3-starter__Decap-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/nextjs.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Next.js Blog Template</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/wutali/nextjs-netlify-blog-template&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/11ty-logo.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Eleventy Starter</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/neat-starter&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/vuepress.png"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">VuePress Template</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/NdagiStanley/VueDN"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/middleman.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Middleman Site Starter</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/tomrutgers/middleman-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/preact.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Preact CLI</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/preactjs/preact-netlify&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
-  <div style="flex-basis: 33%">
-    <div style="padding: 0 30%; height: 100px; display: flex; justify-content: center;">
-      <img src="/img/metalsmith.svg"/>
-    </div>
-    <h4 style="margin: 1.25rem 0 0.75rem;">Metalsmith Starter</h4>
-    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/wernerglinka/metalsmith-netlify-starter"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
-  </div>
+<div class="template-grid">
+
+{{< template-card logo="/img/hugo.svg" title="Hugo Site Starter" repo="decaporg/one-click-hugo-cms" >}}
+
+{{< template-card logo="/img/gatsby.svg" title="Gatsby Site Starter" repo="decaporg/gatsby-starter-decap-cms" >}}
+
+{{< template-card logo="/img/nuxt.svg" title="Nuxt 3 Starter" repo="Sfolkerts89/Nuxt3-starter__Decap-cms" >}}
+
+{{< template-card logo="/img/nextjs.svg" title="Next.js Blog Template" repo="wutali/nextjs-netlify-blog-template" >}}
+
+{{< template-card logo="/img/11ty-logo.svg" title="Eleventy Starter" repo="surjithctly/neat-starter" >}}
+
+{{< template-card logo="/img/vuepress.png" title="VuePress Template" repo="NdagiStanley/VueDN" >}}
+
+{{< template-card logo="/img/middleman.svg" title="Middleman Site Starter" repo="tomrutgers/middleman-starter-netlify-cms" >}}
+
+{{< template-card logo="/img/preact.svg" title="Preact CLI" repo="preactjs/preact-netlify" >}}
+
+{{< template-card logo="/img/metalsmith.svg" title="Metalsmith Starter" repo="wernerglinka/metalsmith-netlify-starter" >}}
+
 </div>
 
 After clicking one of those buttons, authenticate with GitHub or GitLab and choose a repository name. Netlify then automatically creates a clone of the repository in your GitHub or GitLab account. Next, it builds and deploys the new site on Netlify, bringing you to the site dashboard after completing the build.
