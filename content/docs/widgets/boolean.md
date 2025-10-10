@@ -22,7 +22,6 @@ The boolean widget translates a toggle switch input to a true/false value.
 ```yaml
 - {label: "Draft", name: "draft", widget: "boolean", default: true}
 ```
-<br>
 
 **Result**
 

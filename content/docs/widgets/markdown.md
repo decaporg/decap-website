@@ -50,8 +50,6 @@ CMS.registerRemarkPlugin({ settings: { bullet: '-' } });
 
 Note that `netlify-widget-markdown` currently uses `remark@10`, so you should check a plugin's compatibility first.
 
-<br>
-
 **Result**
 
 ![toggle switch](/img/widget-markdown.png)

@@ -31,8 +31,6 @@ The color widget translates a color picker to a color string.
 - { label: 'Color', name: 'color', widget: 'color', enableAlpha: true, allowInput: true }
 ```
 
-<br>
-
 **Result**
 
 ![toggle switch](/img/widget-color.png)

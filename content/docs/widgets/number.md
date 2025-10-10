@@ -34,8 +34,6 @@ The number widget uses an HTML number input, saving the value as a string, integ
   step: 2
 ```
 
-<br>
-
 **Result**
 
 ![toggle switch](/img/widget-number.png)

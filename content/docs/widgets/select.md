@@ -82,8 +82,6 @@ airport-code: "ORD"
   default: ["Design"]
 ```
 
-<br>
-
 **Result**
 
 ![toggle switch](/img/widget-select.png)
