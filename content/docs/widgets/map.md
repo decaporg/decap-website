@@ -11,6 +11,7 @@ The map widget allows you to edit spatial data using an interactive map. Spatial
 
   * `decimals`: accepts a number to specify precision of saved coordinates; defaults to 7 decimals
   * `default`: accepts a GeoJSON string containing a single geometry; defaults to an empty string
+  * `required`: specify as `false` to make a field optional; defaults to `true`
   * `type`: accepts one string value of `Point`, `LineString` or `Polygon`; defaults to `Point`
 * **Example:**
 

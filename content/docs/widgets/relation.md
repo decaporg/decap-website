@@ -15,6 +15,7 @@ The relation widget allows you to reference items from another collection. It pr
   * `file`: allows referencing a specific file when the referenced collection is a files collection (string)
   * `display_fields`: list of one or more names of fields in the referenced collection that will render in the autocomplete menu of the control. Defaults to `value_field`. Syntax to reference nested fields is similar to that of *value_field*.
   * `default`: accepts any widget data type; defaults to an empty string
+  * `required`: specify as `false` to make a field optional; defaults to `true`
   * `multiple` : accepts a boolean, defaults to `false`
   * `min`: minimum number of items; ignored if **multiple** is  `false`
   * `max`: maximum number of items; ignored if **multiple** is  `false`
