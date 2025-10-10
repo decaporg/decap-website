@@ -1,5 +1,5 @@
 ---
-group: Accounts
+group: Backends
 weight: 60
 title: External OAuth Clients
 ---

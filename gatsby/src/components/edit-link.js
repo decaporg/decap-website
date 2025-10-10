@@ -7,10 +7,6 @@ function EditLink({ collection, filename }) {
       css={css`
         float: right;
 
-        a {
-          font-weight: 700;
-        }
-
         #pencil {
           fill: currentColor;
         }
