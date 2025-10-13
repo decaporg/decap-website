@@ -20,6 +20,10 @@
     {{ partial "home/services" . }}
   {{ end }}
 
+  {{ with .Params.support }}
+    {{ partial "home/support" . }}
+  {{ end }}
+
   <div class="home-dark-section-wrapper">
     <div class="home-dark-section__border"></div>
     <div class="home-dark-section">

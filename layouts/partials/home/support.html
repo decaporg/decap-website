@@ -1,0 +1,36 @@
+<section class="home-support container">
+  <h2 class="home-support__title">{{ .title }}</h2>
+  <p class="home-support__description">{{ .description }}</p>
+
+  <div class="home-support__grid">
+    {{ range .options }}
+      <div class="home-support__container">
+        <div class="home-support__item">
+          <div class="home-support__icon">
+            {{ partial "icon" .icon }}
+          </div>
+
+          <div class="home-support__text">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+
+            {{ with .button }}
+              <a href="{{ .href }}" class="button {{ .class | default "secondary" }}" {{ if .external }}target="_blank" rel="noopener"{{ end }}>
+                {{ .text }}
+                {{ if .external }}
+                  {{ partial "icon" "external-link" }}
+                {{ end }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  {{ with .footer }}
+    <div class="home-support__footer">
+      {{ .text | markdownify }}
+    </div>
+  {{ end }}
+</section>

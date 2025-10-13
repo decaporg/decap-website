@@ -99,6 +99,40 @@ services:
         href: "/services/"
         text: "Find out more"
 
+# Support Section
+support:
+  title: "Support Our Mission"
+  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation."
+  options:
+    - title: "GitHub Sponsors"
+      icon: "github-sponsors"
+      className: "github"
+      description: "Donate to us through GitHub's sponsorship program"
+      button:
+        text: "Sponsor on GitHub"
+        href: "https://github.com/sponsors/decaporg"
+        class: "primary"
+        external: true
+    - title: "Open Collective"
+      className: "opencollective"
+      icon: "opencollective"
+      description: "Support the project through Open Collective with transparent funding and expense tracking"
+      button:
+        text: "Support on Open Collective"
+        href: "https://opencollective.com/decap"
+        class: "secondary"
+        external: true
+    - title: "Enterprise Sponsorship"
+      className: "sponsor"
+      icon: "enterprise"
+      description: "Partner with us for an exclusive enterprise sponsorship"
+      button:
+        text: "Contact Us"
+        href: "mailto:decap@p-m.si"
+        class: "secondary"
+  footer:
+    text: "Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
+
 # Blog Section
 blog:
   title: "From the Blog"
