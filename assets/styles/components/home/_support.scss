@@ -5,10 +5,10 @@
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -0.92px;
-    margin: var(--space-6) 0 var(--space-3);
+    margin: var(--space-7) 0 var(--space-3);
 
     @include breakpoint-up(lg) {
-      margin: var(--space-7) 0 var(--space-4);
+      margin: var(--space-8) 0 var(--space-4);
       text-align: center;
     }
   }

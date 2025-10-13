@@ -106,7 +106,6 @@ support:
   options:
     - title: "GitHub Sponsors"
       icon: "github-sponsors"
-      className: "github"
       description: "Donate to us through GitHub's sponsorship program"
       button:
         text: "Sponsor on GitHub"
@@ -114,7 +113,6 @@ support:
         class: "primary"
         external: true
     - title: "Open Collective"
-      className: "opencollective"
       icon: "opencollective"
       description: "Support the project through Open Collective with transparent funding and expense tracking"
       button:
@@ -122,10 +120,9 @@ support:
         href: "https://opencollective.com/decap"
         class: "secondary"
         external: true
-    - title: "Enterprise Sponsorship"
-      className: "sponsor"
-      icon: "enterprise"
-      description: "Partner with us for an exclusive enterprise sponsorship"
+    - title: "Exclusive partnership"
+      icon: "partnership"
+      description: "We are looking for a strategic partner to help us take Decap CMS to the next level"
       button:
         text: "Contact Us"
         href: "mailto:decap@p-m.si"
