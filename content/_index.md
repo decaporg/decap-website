@@ -4,7 +4,7 @@ description: "Open source content management for your Git workflow"
 
 # Hero Section
 hero:
-  headline: "Open source content management for your Git workflow"
+  headline: "Open&nbsp;source content&nbsp;management for your Git&nbsp;workflow"
   subhead: "Use Decap CMS with any static site generator for a faster and more flexible web project"
   buttons:
     - text: "Get started in the docs"
