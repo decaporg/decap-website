@@ -72,12 +72,12 @@
 {{ if gt (len $sortedBackers) 0 }}
   <div class="home-backers">
     <h3>{{ .title }}</h3>
-    <p>{{ .description }}</p>
     
     <ul>
       {{ range $sortedBackers }}
         <li>
           <img src="{{ .image }}" alt="{{ .name }}" />
+          <span>{{ .name }}</span>
         </li>
       {{ end }}
     </ul>
