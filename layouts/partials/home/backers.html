@@ -1,0 +1,85 @@
+{{ $allBackers := slice }}
+
+{{ $ghUrl := "https://api.github.com/graphql" }}
+{{ $githubToken := getenv "GITHUB_TOKEN" }}
+{{ $ghQuery := `{
+  "query": "query { organization(login: \"decaporg\") { sponsorshipsAsMaintainer(includePrivate: false, first: 50) { nodes { sponsorEntity { ... on User { login avatarUrl name } ... on Organization { login avatarUrl name } } } } } }"
+}` }}
+{{ $ghOptions := (dict
+  "method" "POST"
+  "headers" (dict
+    "Content-Type" "application/json"
+    "Authorization" (printf "Bearer %s" $githubToken)
+    "User-Agent" "DecapCMS-Website"
+  )
+  "body" $ghQuery
+) }}
+
+{{ with try (resources.GetRemote $ghUrl $ghOptions) }}
+  {{ with .Err }}
+    {{ warnf "%s" . }}
+  {{ else with .Value }}
+    {{ $ghResponse := . | transform.Unmarshal }}
+    {{ range $ghResponse.data.organization.sponsorshipsAsMaintainer.nodes }}
+      {{ with .sponsorEntity }}
+        {{ $allBackers = $allBackers | append (dict
+          "image" .avatarUrl
+          "name" (.name | default .login)
+          "platform" "github"
+          "totalAmount" 0
+        ) }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ warnf "Unable to get remote resource %q" $ghUrl }}
+  {{ end }}
+{{ end }}
+
+{{ $ocUrl := "https://api.opencollective.com/graphql/v2" }}
+{{ $ocQuery := `{
+  "query": "query { account(slug: \"decap\") { members(role: BACKER) { nodes { totalDonations { value } account { name imageUrl } } } } }"
+}` }}
+{{ $ocOptions := (dict
+  "method" "POST"
+  "headers" (dict
+    "Content-Type" "application/json"
+    "User-Agent" "DecapCMS-Website"
+  )
+  "body" $ocQuery
+) }}
+
+{{ with try (resources.GetRemote $ocUrl $ocOptions) }}
+  {{ with .Err }}
+    {{ warnf "%s" . }}
+  {{ else with .Value }}
+    {{ $ocResponse := . | transform.Unmarshal }}
+    {{ range $ocResponse.data.account.members.nodes }}
+      {{ if ne .account.name "GitHub Sponsors" }}
+        {{ $allBackers = $allBackers | append (dict
+          "image" .account.imageUrl
+          "name" .account.name
+          "platform" "opencollective"
+          "totalAmount" (.totalDonations.value | default 0)
+        ) }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ warnf "Unable to get remote resource %q" $ocUrl }}
+  {{ end }}
+{{ end }}
+
+{{ $sortedBackers := sort $allBackers "totalAmount" "desc" }}
+{{ if gt (len $sortedBackers) 0 }}
+  <div class="home-backers">
+    <h3>{{ .title }}</h3>
+    <p>{{ .description }}</p>
+    
+    <ul>
+      {{ range $sortedBackers }}
+        <li>
+          <img src="{{ .image }}" alt="{{ .name }}" />
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

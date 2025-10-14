@@ -102,7 +102,7 @@ services:
 # Support Section
 support:
   title: "Support Our Mission"
-  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation."
+  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation. Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
   options:
     - title: "GitHub Sponsors"
       icon: "github-sponsors"
@@ -127,8 +127,10 @@ support:
         text: "Contact Us"
         href: "mailto:decap@p-m.si"
         class: "secondary"
-  footer:
-    text: "Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
+
+backers:
+  title: "Our Amazing Backers"
+  description: "Thanks to everyone who has supported Decap CMS!"
 
 # Blog Section
 blog:

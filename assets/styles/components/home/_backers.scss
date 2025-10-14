@@ -1,0 +1,20 @@
+.home-backers {
+  margin-top: var(--space-6);
+  text-align: center;
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: 0;
+    margin: var(--space-4) 0 0;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+}
