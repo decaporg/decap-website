@@ -3,14 +3,14 @@ main:
   - name: Docs
     url: /docs/intro
     weight: 10
-  - name: Pro Help
-    url: /services/
-    weight: 20
   - name: Community
     url: /community/
-    weight: 30
+    weight: 20
   - name: Blog
     url: /blog/
+    weight: 30
+  - name: Pro Help
+    url: /services/
     weight: 40
 
 # Docs navigation menu
