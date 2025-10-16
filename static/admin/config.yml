@@ -21,39 +21,38 @@ docs_collection: &docs_collection
   preview_path: 'docs/{{slug}}'
   sortable_fields: ['weight', 'title', 'group']
   fields:
+    - { label: Title, name: title, widget: string }
     - label: Section
       name: group
       widget: relation
       collection: settings
       file: docs_sections
-      search_fields: ['menu.docs.*.name', 'menu.docs.*.title']
-      display_fields: ['menu.docs.*.title']
-      value_field: 'menu.docs.*.name'
+      search_fields: ['docs.*.identifier', 'docs.*.name']
+      display_fields: ['docs.*.name']
+      value_field: 'docs.*.identifier'
     - { label: 'Order', name: weight, widget: number }
-    - { label: Title, name: title }
     - { label: Body, name: body, widget: markdown }
+    - { label: Slug, name: slug, widget: string, required: false }
+    - { label: Aliases, label_singular: alias, name: aliases, widget: list, required: false, summary: '{{fields.title}}', field: { name: title, widget: string } }
 
 collections:
   - label: Settings
     name: settings
-    hide: true
+    editor:
+      preview: false
     files:
       - label: Docs Sections
         name: docs_sections
-        file: site.yml
+        file: config/_default/menus.yaml
         fields:
-          - label: menu
-            name: menu
-            widget: object
+          - label: Sections
+            label_singular: Section
+            name: docs
+            widget: list
+            summary: '{{name}} ({{identifier}})'
             fields:
-              - label: Sections
-                label_singular: Section
-                name: docs
-                widget: list
-                summary: '{{title}} ({{name}})'
-                fields:
-                  - { label: 'Full Name', name: 'title', widget: 'string' }
-                  - { label: 'Summary Name', name: 'name', widget: 'string' }
+              - { label: 'Full Name', name: 'name', widget: 'string' }
+              - { label: 'Summary Name', name: 'identifier', widget: 'string' }
 
   - <<: *docs_collection
     name: docs_intro
