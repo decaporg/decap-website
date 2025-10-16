@@ -1,6 +1,6 @@
 ---
 group: Accounts
-weight: 20
+weight: 40
 title: Azure
 ---
 For repositories stored on [Azure](https://portal.azure.com), the `azure` backend allows CMS users to log in directly with their Azure account. Note that all users must have write access to your content repository for this to work.

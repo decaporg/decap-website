@@ -1,6 +1,6 @@
 ---
 group: Accounts
-weight: 25
+weight: 50
 title: Gitea / Forgejo
 ---
 For repositories stored on [Gitea](https://gitea.com) or [Forgejo](https://forgejo.org) instances, the `gitea` backend allows CMS users to log in directly with their Gitea/Forgejo account. Note that all users must have push access to your content repository for this to work.

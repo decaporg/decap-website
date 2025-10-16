@@ -1,6 +1,6 @@
 ---
 group: Accounts
-weight: 60
+weight: 65
 title: External OAuth Clients
 ---
 If you would like to facilitate your own OAuth authentication rather than use Netlify's service or a client side flow like implicit or PKCE, you can use one of the community-maintained projects below. Feel free to hit the "Edit this page" button if you'd like to add yours!
