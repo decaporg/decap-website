@@ -8,7 +8,11 @@ import { mq } from '../utils';
 import theme from '../theme';
 
 const Menu = styled.nav`
-  margin-bottom: ${theme.space[5]};
+  margin-bottom: ${theme.space[4]};
+
+  ${mq[1]} {
+    margin-bottom: ${theme.space[5]};
+  }
 `;
 
 const MenuBtn = styled(Button)`
@@ -29,13 +33,24 @@ const MenuContent = styled.div`
   }
 `;
 
-const MenuSection = styled.div`
+const MenuSection = styled.details`
   margin-bottom: ${theme.space[3]};
+
+  &[open] summary {
+    list-style-type: '↓  ';
+  }
 `;
 
-const SectionTitle = styled.h3`
-  font-size: ${theme.fontsize[4]};
-  margin-bottom: ${theme.space[2]};
+const SectionTitle = styled.summary`
+  margin-bottom: ${theme.space[1]};
+  font-weight: 700;
+  cursor: pointer;
+  list-style-type: none;
+  list-style-position: outside;
+
+  &:hover {
+    list-style-type: '→  ';
+  }
 `;
 
 const SectionList = styled.ul`
@@ -51,7 +66,6 @@ const NavLink = styled(Link)`
   font-size: ${theme.fontsize[3]};
   color: ${theme.colors.gray};
   line-height: ${theme.lineHeight[1]};
-  text-transform: capitalize;
   transition: color 0.2s ease;
   padding: ${theme.space[2]} 0;
 
@@ -72,6 +86,10 @@ function DocsNav({ items, location }) {
     setMenuOpen(isOpen => !isOpen);
   }
 
+  function isDetailsOpen(item) {
+    return item.group?.edges.some(({ node }) => location.pathname === node.fields.slug);
+  }
+
   return (
     <Menu>
       <MenuBtn onClick={toggleMenu} block>
@@ -80,10 +98,10 @@ function DocsNav({ items, location }) {
       </MenuBtn>
       <MenuContent isOpen={isMenuOpen}>
         {items.map(item => (
-          <MenuSection key={item.title}>
+          <MenuSection key={item.title} open={isDetailsOpen(item)}>
             <SectionTitle>{item.title}</SectionTitle>
             <SectionList>
-              {item.group.edges.map(({ node }) => (
+              {item.group?.edges.map(({ node }) => (
                 <MenuItem key={node.fields.slug}>
                   <NavLink to={node.fields.slug} activeClassName="active">
                     {node.frontmatter.title}
