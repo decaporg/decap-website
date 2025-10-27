@@ -2,6 +2,9 @@
 title: Basic Steps
 group: Add
 weight: 1
+aliases:
+  - /docs/add-to-your-site/
+  - /docs/quick-start/
 ---
 
 This tutorial guides you through the steps for adding Decap CMS to a site that's built with a common [static site generator](https://www.staticgen.com/), like Jekyll, Hugo, Hexo, or Gatsby.
