@@ -51,7 +51,7 @@ BIND_HOST=8082
 ORIGIN=https://my-local-site.com
 ```
 
-2. Set these variables before the bash command, for example:
+2. Set these variables before the shell command, for example:
 
 ```bash
 PORT=8082 npx decap-server
