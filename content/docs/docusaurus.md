@@ -1,13 +1,13 @@
 ---
+title: Docusaurus
 group: Guides
 weight: 80
-title: Docusaurus
 ---
 This guide instructs you on how to integrate Decap CMS with Docusaurus.
 
 ### Before you begin
 
-* Sign up for [GitHub](www.github.com) and [Netlify](www.netlify.com).
+* Sign up for [GitHub](https://www.github.com) and [Netlify](https://www.netlify.com).
 * Download [Node.js](https://nodejs.org/en/download/) version 14 or above.
 * Install the [GitHub CLI](https://cli.github.com/).
 * Install and authenticate the [Netlify CLI](https://docs.netlify.com/cli/get-started/).
