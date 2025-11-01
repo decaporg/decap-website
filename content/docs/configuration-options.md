@@ -231,6 +231,10 @@ slug:
   sanitize_replacement: "_"
 ```
 
+## Remove Empty Image Field
+
+The `remove_empty_image_field` option controls the handling of content for removed images. By default, removed image fields are saved as empty strings. When set to `true`, this option prevents the saving of fields for removed images.
+
 ## Collections
 
 *This setting is required.*
