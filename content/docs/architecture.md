@@ -44,7 +44,7 @@ For a file persisted online, the `AssetProxy` only keeps information about its U
 
 The `AssetProxy` object can be used directly inside a media tag (such as `<img>`), as it will always return something that can be used by the media tag to render correctly (either the URI for the online file or a single-use blob).
 
-## Components structure and Workflows
+## Components Structure and Workflows
 Components are separated into two main categories: **Container components** and **Presentational components**.
 
 ### Entry Editing
@@ -65,7 +65,7 @@ Both control and preview widgets receive a `getAsset` selector via props. Displa
 The actual persistence of the content and medias inserted into the control component is delegated to the backend implementation. The backend will be called with the updated values and a list of `assetProxy` objects for each field of the entry, and should return a promise that can resolve into the persisted entry object and the list of the persisted media URIs.
 
 
-## Editorial Workflow implementation
+## Editorial Workflow Implementation
 
 Instead of adding logic to `CollectionPage` and `EntryPage`, the Editorial Workflow is implemented as Higher Order Components, adding UI and dispatching additional actions.
 

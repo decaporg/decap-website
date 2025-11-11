@@ -1,5 +1,5 @@
 ---
-group: Accounts
+group: Backends
 weight: 20
 title: Bitbucket
 ---
