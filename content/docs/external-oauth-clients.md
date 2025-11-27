@@ -28,4 +28,5 @@ If you would like to facilitate your own OAuth authentication rather than use Ne
 | [@i40west](https://github.com/i40west)                       | GitHub                            | Cloudflare Pages                          | [Repo](https://github.com/i40west/netlify-cms-cloudflare-pages)                                                                                                |
 | [@nuzulul](https://github.com/nuzulul)                       | GitHub                            | Google Apps Script                        | [Repo](https://github.com/nuzulul/decap-cms-google-apps-script)                                                                                                |
 | [@loteoo](https://github.com/loteoo)                       | GitHub, Gitlab                            | Node.js                        | [Github](https://github.com/decapbridge),[Website](https://decapbridge.com/)                                                                                                |
+
 Check each project's documentation for instructions on installation and usage.
