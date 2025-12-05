@@ -251,7 +251,7 @@ Before you can access `/admin/` through your Netlify domain, you need to set up 
 
 ### Configure Netlify
 
-1. On Netlify, Select your Project then under `Project configuration > Access & security > OAuth > Authentication providers`, click **Install provider**.
+1. On Netlify, select your Project, then under `Project configuration > Access & security > OAuth > Authentication providers`, click **Install provider**.
 2. Enter your client secret and client ID from GitHub.
 3. Click **Install**.
 
