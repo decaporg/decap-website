@@ -197,7 +197,7 @@ show_preview_links: false
 
 ## Search
 
-The search functionality requires loading all collection(s) entries, which can exhaust rate limits on large repositories.
+The search functionally requires loading all collection(s) entries, which can exhaust rate limits on large repositories.
 It can be disabled by setting the top level `search` property to `false`.
 
 Defaults to `true`.
