@@ -21,7 +21,7 @@ The relation widget allows you to reference items from another collection. It pr
 - `file`: allows referencing a specific file when the referenced collection is a files collection (string)
 - `display_fields`: list of one or more names of fields in the referenced collection that will render in the autocomplete menu of the control. Defaults to `value_field`. Syntax to reference nested fields is similar to that of *value_field*.
 - `default`: accepts any widget data type; defaults to an empty string
-- `multiple` : accepts a boolean, defaults to `false`
+- `multiple`: accepts a boolean, defaults to `false`
 - `min`: minimum number of items; ignored if **multiple** is  `false`
 - `max`: maximum number of items; ignored if **multiple** is  `false`
 - `options_length`: accepts integer to override number of options presented to user. Defaults to `20`.
@@ -89,7 +89,7 @@ The generated UI input will search the cities file by city name, and display eac
       values: [false]
 ```
 
-In this example, the relation widget will only show and allow posts that are not a draft (i.e. `draft` field is `false`). Say, we have 20 posts in the CMS of which 5 have `draft` set to true, then we will only see the other 15 posts as options in the relation widget.
+In this example, the relation widget will only show and allow posts that are not a draft (i.e. `draft` field is `false`). For example, if we have 20 posts in the CMS of which 5 have `draft` set to `true`, then we will only see the other 15 posts as options in the relation widget.
 
 Multiple filters can be added:
 

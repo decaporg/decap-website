@@ -38,7 +38,7 @@ The image widget allows editors to upload an image or select an existing one fro
 
 ### Image Size Limit
 
-You can set a limit to as what the maximum file size of a file is that users can upload directly into a image field.
+You can set a limit on the maximum file size that users can upload directly into an image field.
 
 **Example**
 

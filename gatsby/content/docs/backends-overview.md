@@ -37,4 +37,4 @@ Your proxy should handle the following request paths:
 1. `/auth` - when you click "Login with Github", Decap opens a pop-up window directed at the base_url you configured, which handles redirecting the user into Github's Authorization flow for your repo
 1. `/callback` - when the user finishes the authorization flow, Github will callback to your OAuth handler with an authorization code that is sent to the Decap caller window from the pop-up using `window.postMessage`.
 
-For more detailed instructions and example code see this [Cloudflare Worker template](https://github.com/sterlingwes/decap-proxy).
+For more detailed instructions and example code, see the [Cloudflare Workers template](https://github.com/sterlingwes/decap-proxy).
