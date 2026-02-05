@@ -23,6 +23,8 @@ export default {
           /carbon/,
           /table/,
           /code/,
+          /template-grid/,
+          /version-tag/,
         ],
       },
     }),

@@ -127,10 +127,10 @@ This configuration:
 
 ### Pushing to GitHub
 
-It's now time to commit your changes and push to GitHub. You can run the following commands to initialize a git repository and push the changes so far.
+It's now time to commit your changes and push to GitHub. You can run the following commands to initialize a Git repository and push the changes so far.
 
 ```bash
-git init # Initialize a git repository
+git init # Initialize a Git repository
 git add . # Add every file
 git commit -m "Initial Commit" # Commit every file with the message 'Initial Commit'
 git remote add origin https://github.com/YOUR_USERNAME/NEW_REPO_NAME.git # Create a new repo on GitHub and add it to this project as a remote repository.

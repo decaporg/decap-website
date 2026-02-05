@@ -139,11 +139,20 @@ display_url: https://your-site.com
 
 ## Custom Logo
 
-When the `logo_url` setting is specified, the CMS UI will change the logo displayed at the top of the login page, allowing you to brand the CMS with your own logo. `logo_url` is assumed to be a URL to an image file.
+When **`logo`** setting is specified, the CMS UI will change the logo displayed at the top of the login page, allowing you to brand the CMS with your own logo. It accepts these properties:
+
+- **`src`**: (*required*) URL to an image file
+
+- **`show_in_header`**: (*optional*) if set to `true`, the logo will also be shown in the header of the CMS when logged in. <span class="version-tag">3.8</span>
 
 **Example:**
 
 ```yaml
+logo:
+  src: https://your-site.com/images/logo.svg
+  show_in_header: true
+
+# This also works, but it's deprecated. Same as logo.src
 logo_url: https://your-site.com/images/logo.svg
 ```
 
@@ -191,7 +200,7 @@ show_preview_links: false
 The search functionally requires loading all collection(s) entries, which can exhaust rate limits on large repositories.
 It can be disabled by setting the top level `search` property to `false`.
 
-Defaults to `true`
+Defaults to `true`.
 
 **Example:**
 
@@ -327,7 +336,7 @@ slug: "{{year}}-{{month}}-{{day}}_{{fields.slug}}"
 
 ### `preview_path`
 
-A string representing the path where content in this collection can be found on the live site. This allows deploy preview links to direct to lead to a specific piece of content rather than the site root of a deploy preview.
+A string representing the path where content in this collection can be found on the live site. This allows deploy preview links to direct to a specific piece of content rather than the site root of a deploy preview.
 
 **Available template tags:**
 
@@ -374,7 +383,7 @@ The `fields` option maps editor UI widgets to field-value pairs in the saved fil
 * `name` (required): unique identifier for the field, used as the key when referenced in other contexts (like the [relation widget](../widgets/#relation))
 * `label`: label for the field in the editor UI; defaults to the value of `name`
 * `widget`: defines editor UI and inputs and file field data types; details in [Widgets](../widgets)
-* `default`: specify a default value for a field; available for most widget types (see [Widgets](../widgets) for details on each widget type). Please note that field default value only works for folder collection type.
+* `default`: specify a default value for a field; available for most widget types (see [Widgets](../widgets) for details on each widget type). Please note that the field default value only works for folder collection type.
 * `required`: specify as `false` to make a field optional; defaults to `true`
 * `hint`: optionally add helper text directly below a widget. Useful for including instructions. Accepts markdown for bold, italic, strikethrough, and links.
 * `pattern`: add field validation by specifying a list with a regex pattern and an error message; more extensive validation can be achieved with [custom widgets](../custom-widgets/#advanced-field-validation)
@@ -422,8 +431,8 @@ Template tags are the same as those for [slug](#slug), with the following additi
 * `{{dirname}}` The path to the file's parent directory, relative to the collection's `folder`.
 * `{{filename}}` The file name without the extension part.
 * `{{extension}}` The file extension.
-* `{{commit_date}}` The file commit date on supported backends (git based backends).
-* `{{commit_author}}` The file author date on supported backends (git based backends).
+* `{{commit_date}}` The file commit date on supported backends (Git-based backends).
+* `{{commit_author}}` The file author date on supported backends (Git-based backends).
 
 **Example**
 
@@ -435,9 +444,9 @@ Template tags are the same as those for [slug](#slug), with the following additi
 
 An optional list of sort fields to show in the UI.
 
-Defaults to inferring `title`, `date`, `author` and `description` fields and will also show `Update On` sort field in git based backends.
+Defaults to inferring `title`, `date`, `author` and `description` fields and will also show `Update On` sort field in Git-based backends.
 
-When `author` field can't be inferred commit author will be used.
+When the `author` field can't be inferred, the commit author will be used.
 
 **Example**
 

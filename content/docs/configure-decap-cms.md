@@ -49,7 +49,7 @@ _**Note:** If `public_folder` is not set, Decap CMS defaults to the same value a
 
 Collections define the structure for the different content types on your static site. Since every site is different, the `collections` settings differ greatly from one site to the next.
 
-Let's say your site has a blog, with the posts stored in `_posts/blog`, and files saved in a date-title format, like `1999-12-31-lets-party.md`. Each post begins with settings in yaml-formatted front matter, like so:
+Let's say your site has a blog, with the posts stored in `_posts/blog`, and files saved in a date-title format, like `1999-12-31-lets-party.md`. Each post begins with settings in YAML-formatted front matter, like so:
 
 ```yaml
 ---

@@ -19,7 +19,8 @@ The relation widget allows you to reference items from another collection. It pr
   * `min`: minimum number of items; ignored if **multiple** is  `false`
   * `max`: maximum number of items; ignored if **multiple** is  `false`
   * `options_length`: accepts integer to override number of options presented to user. Defaults to `20`.
-  * `filters`: <a href="https://github.com/decaporg/decap-cms/releases/tag/decap-cms%403.1.5" class="version-tag">3.1.5</a> allows adding filters by which the available options are filtered. You can add filters which are a pair of `field` and the allowed `values`, where the widget will only show options (collection items) that satisfy all the filters. A collection item satisfies a filter if the value of `field` is one of the values in `values`.
+  * `filters`: <span class="version-tag">3.1.5</span> allows adding filters by which the available options are filtered. You can add filters which are a pair of `field` and the allowed `values`, where the widget will only show options (collection items) that satisfy all the filters. A collection item satisfies a filter if the value of `field` is one of the values in `values`. Value can be a string, boolean, or integer.
+
 * **Referencing a folder collection example** (assuming a separate "authors" collection with "name" and "twitterHandle" fields with subfields "first" and "last" for the "name" field):
 
 ```yaml
@@ -92,3 +93,11 @@ filters:
 ```
 
 In this case only the posts with `draft` set to `false` and a title that is either 'posts about cats' or 'post about dogs' will be options seen in the relation widget.
+
+**Nested fields**: It is possible to have a filter like this: 
+
+```yaml
+filters: 
+  - field: 'deeply.nested.field'
+    values: ['Some text']
+```

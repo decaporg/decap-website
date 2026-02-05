@@ -1,0 +1,29 @@
+.home-backers {
+  margin-top: var(--space-6);
+  text-align: center;
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-5);
+    padding: 0;
+    margin: var(--space-5) 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: var(--space-1);
+      font-size: var(--font-size-xs);
+    }
+
+    img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+    }
+  }
+}

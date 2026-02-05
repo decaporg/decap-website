@@ -3,7 +3,7 @@ title: Cloudinary
 group: Media
 weight: 10
 ---
-Cloudinary is a digital asset management platform with a broad feature set, including support for responsive image generation and url based image transformation. They also provide a powerful media library UI for managing assets, and tools for organizing your assets into a hierarchy.
+Cloudinary is a digital asset management platform with a broad feature set, including support for responsive image generation and URL-based image transformation. They also provide a powerful media library UI for managing assets, and tools for organizing your assets into a hierarchy.
 
 The Cloudinary media library integration for Decap CMS uses Cloudinary's own media library interface within Decap CMS. To get started, you'll need a Cloudinary account and Decap CMS 2.3.0 or greater.
 
@@ -30,6 +30,7 @@ media_library:
 **Note:** The Decap CMS media library extensions for Cloudinary are not included in `decap-cms-app`. If you're using `decap-cms-app`, you'll need to register the media libraries yourself.
 
 ### Security Considerations
+
 Although this setup exposes the `cloud_name` and `api_key` publicly via the `/admin/config.yml` endpoint, this information is not sensitive. Any integration of the Cloudinary media library requires this information to be exposed publicly. To use this library or use the restricted Cloudinary API endpoints, the user must have access to the Cloudinary account login details or the `api_secret` associated with the `cloud_name` and `api_key`.
 
 ## Decap CMS configuration options
@@ -37,9 +38,9 @@ Although this setup exposes the `cloud_name` and `api_key` publicly via the `/ad
 The following options are specific to the Decap CMS integration for Cloudinary:
 
 * **`output_filename_only`**: _(default: `false`)_\
-  By default, the value provided for a selected image is a complete URL for the asset on Cloudinary's CDN. Setting `output_filename_only` to `true` will instead produce just the filename (e.g. `image.jpg`). This should be `true` if you will be directly embedding cloudinary transformation urls in page templates. Refer to [Inserting Cloudinary URL in page templates](#inserting-cloudinary-url-in-page-templates).
+  By default, the value provided for a selected image is a complete URL for the asset on Cloudinary's CDN. Setting `output_filename_only` to `true` will instead produce just the filename (e.g. `image.jpg`). This should be `true` if you will be directly embedding Cloudinary transformation urls in page templates. Refer to [Inserting Cloudinary URL in page templates](#inserting-cloudinary-url-in-page-templates).
 * **`use_transformations`**: _(default: `true`)_\
-  If `true`, uses derived url when available (the url will have image transformation segments included). Has no effect if `output_filename_only` is set to `true`.
+  If `true`, uses derived URL when available (the URL will have image transformation segments included). Has no effect if `output_filename_only` is set to `true`.
 * **`use_secure_url`**: _(default: `true`)_\
   Controls whether an `http` or `https` URL is provided. Has no effect if `output_filename_only` is set to `true`.
 
@@ -60,11 +61,12 @@ The following options are used to configure the media library. All options are l
 
 ## Image transformations
 
-The Cloudinary integration allows images to be transformed in two ways: directly within Decap CMS via [Cloudinary's Media Library](#transforming-images-via-media-library), and separately from the CMS via Cloudinary's [dynamic URL's](https://cloudinary.com/documentation/image_transformations#delivering_media_assets_using_dynamic_urls) by [inserting cloudinary urls](#inserting-cloudinary-url-in-page-templates).
+The Cloudinary integration allows images to be transformed in two ways: directly within Decap CMS via [Cloudinary's Media Library](#transforming-images-via-media-library), and separately from the CMS via Cloudinary's [dynamic URLs](https://cloudinary.com/documentation/image_transformations#delivering_media_assets_using_dynamic_urls) by [inserting Cloudinary URLs](#inserting-cloudinary-url-in-page-templates).
 
 ### Transforming images via Media Library
-If you transform and insert images from within the Cloudinary media library, the transformed image URL will be output by default. This gives the editor complete freedom to make changes to the image output.
-There are two ways to configure image transformation via media library - [globally](#global-configuration) and per [field](#field-configuration). Global options will be overridden by field options.
+
+If you transform and insert images from within the Cloudinary Media Library, the transformed image URL will be output by default. This gives the editor complete freedom to make changes to the image output.
+There are two ways to configure image transformation via Media Library - [globally](#global-configuration) and per [field](#field-configuration). Global options will be overridden by field options.
 
 #### Global configuration
 
@@ -87,7 +89,7 @@ media_library:
 
 #### Field configuration
 
-Configuration can also be provided for individual fields that use the media library. The structure
+Configuration can also be provided for individual fields that use the Media Library. The structure
 is very similar to the global configuration, except the settings are added to an individual `field`.
 For example:
 

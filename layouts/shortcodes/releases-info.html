@@ -1,0 +1,56 @@
+{{- $githubRelease := dict -}}
+{{- $npmRelease := dict -}}
+
+{{- /* Fetch GitHub latest release */ -}}
+{{- $githubResource := try (resources.GetRemote "https://api.github.com/repos/decaporg/decap-cms/releases/latest") -}}
+{{- with $githubResource -}}
+  {{- with .Value -}}
+    {{- $data := . | transform.Unmarshal -}}
+    <script>console.log(JSON.parse({{ $data | jsonify }}))</script>
+    {{- $githubRelease = $data -}}
+  {{- end -}} 
+{{- else -}}
+  {{- warnf "Failed to fetch GitHub release data" -}}
+{{- end -}}
+
+{{- /* Fetch npm latest version */ -}}
+{{- $npmResource := try (resources.GetRemote "https://registry.npmjs.org/decap-cms-app/latest") -}}
+{{- with $npmResource -}}
+  {{- with .Value -}}
+    {{- $data := . | transform.Unmarshal -}}
+    {{- $npmRelease = $data -}}
+  {{- end -}}
+{{- else -}}
+  {{- warnf "Failed to fetch npm version data" -}}
+{{- end -}}
+
+{{- if or $githubRelease $npmRelease -}}
+  <div class="releases-info">
+    <p>
+      Our latest release is {{ $npmRelease.version | default $githubRelease.tag_name }}
+      {{ with $githubRelease.published_at }}
+        published on {{ . | time.Format "January 2, 2006" }}.
+      {{ end }}
+    </p>
+
+    <ul>
+      {{- with $githubRelease -}}
+        <li>
+          <a href="{{ .html_url }}" target="_blank" rel="noopener noreferrer">
+            {{ .tag_name }}
+          </a> on GitHub
+        </li>
+      {{- end -}}
+  
+      {{- with $npmRelease -}}
+        <li>
+          <a href="https://www.npmjs.com/package/decap-cms/v/{{ .version }}" target="_blank" rel="noopener noreferrer">
+            {{ .version }}
+          </a> on npm
+        </li>
+      {{- end -}}
+    </ul>
+  </div>
+{{- end -}}
+  
+<p>Check <a href="https://github.com/decaporg/decap-cms/releases">GitHub Releases</a> or the <a href="https://www.npmjs.com/package/decap-cms">npm package</a> for info on all releases.</p>

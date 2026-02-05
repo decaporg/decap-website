@@ -29,3 +29,31 @@ If you change ownership on your repository, or convert a repository from public 
 You can use [Git Gateway](https://github.com/netlify/git-gateway) without Netlify by setting up your own Git Gateway server and connecting it with your own instance of [GoTrue](https://www.gotrueapi.org) (the open source microservice that powers Netlify Identity), or with any other identity service that can issue JSON Web Tokens (JWT).
 
 To configure in Decap CMS, use the same `backend` settings in your Decap CMS `config.yml` file as described in Step 2 of the [Git Gateway with Netlify](#git-gateway-with-netlify) instructions above.
+
+## PKCE with custom Git-Gateway
+
+<span class="version-tag">3.8.3</span>
+
+To use a custom Git-Gateway implementation with PKCE authentication, use a configuration similar to the following:
+```yaml
+backend:
+    name: git-gateway
+    # Enables PKCE authentication with the git-gateway backend. After auth,
+    # sends the access_token for all requests to the git-gateway host.
+    auth_type: pkce
+    # The base OAuth2 URL. Here is an obfuscated AWS Cognito example.
+    base_url: https://your-cognito-instance.auth.us-east-1.amazoncognito.com
+    # If you need to customize the authorize or token endpoints for PKCE, do that here
+    #auth_endpoint: oauth2/authorize
+    #auth_token_endpoint: oauth2/token
+    # The OAuth2 client ID
+    app_id: your-oauth2-client-id
+    # The base URL of your custom git-gateway. Note that the last part of the path
+    # should be "bitbucket", "gitlab", or "github", so the implementation can automatically
+    # determine which backend API to use when making requests.
+    gateway_url: https://your.gitgateway.host/git-gateway/bitbucket/
+    # Override the Netlify git-gateway status check
+    status_endpoint: https://your.gitgateway.host/api/v2/components.json
+    # Optional: defaults to "master"
+    branch: main
+```

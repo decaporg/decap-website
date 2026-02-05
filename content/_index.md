@@ -4,7 +4,7 @@ description: "Open source content management for your Git workflow"
 
 # Hero Section
 hero:
-  headline: "Open source content management for your Git workflow"
+  headline: "Open&nbsp;source content&nbsp;management for your Git&nbsp;workflow"
   subhead: "Use Decap CMS with any static site generator for a faster and more flexible web project"
   buttons:
     - text: "Get started in the docs"
@@ -99,10 +99,43 @@ services:
         href: "/services/"
         text: "Find out more"
 
+# Support Section
+support:
+  title: "Support Our Mission"
+  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation. Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
+  options:
+    - title: "GitHub Sponsors"
+      icon: "github-sponsors"
+      description: "Donate to us through GitHub's sponsorship program"
+      button:
+        text: "Sponsor on GitHub"
+        href: "https://github.com/sponsors/decaporg"
+        class: "primary"
+        external: true
+    - title: "Open Collective"
+      icon: "opencollective"
+      description: "Support the project through Open Collective with transparent funding and expense tracking"
+      button:
+        text: "Support on Open Collective"
+        href: "https://opencollective.com/decap"
+        class: "secondary"
+        external: true
+    - title: "Exclusive partnership"
+      icon: "partnership"
+      description: "We are looking for a strategic partner to help us take Decap CMS to the next level"
+      button:
+        text: "Contact Us"
+        href: "mailto:decap@p-m.si"
+        class: "secondary"
+
+backers:
+  title: "Our Amazing Backers"
+  description: "Thanks to everyone who has supported Decap CMS!"
+
 # Blog Section
 blog:
   title: "From the Blog"
-  hook: "Why git-based CMS is the future of content management"
+  hook: "Why Git-based CMS is the future of content management"
   text: |
     * Utilize the power of Git versioning and history. No backup needed
 
