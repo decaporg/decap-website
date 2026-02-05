@@ -20,17 +20,17 @@ From a technical perspective, the workflow translates editor UI actions into com
 | Edit draft                | Pushes another commit to the draft branch/pull request                                                            |
 | Approve and publish draft | Merges pull request and deletes branch                                                                            |
 
-**Note:** Editorial workflow works with GitHub repositories, and support for [GitLab](/docs/gitlab-backend/) and [Bitbucket](/docs/bitbucket-backend/).
+**Note:** Editorial workflow works with GitHub repositories, and supports [GitLab](/docs/gitlab-backend/) and [Bitbucket](/docs/bitbucket-backend/).
 
 
 ### Bitbucket Support
 
-In order to track unpublished entries statuses the Bitbucket implementation uses
+In order to track unpublished entries statuses, the Bitbucket implementation uses
 [pull requests comments](https://confluence.atlassian.com/bitbucketserver/commenting-on-a-pull-request-1027119882.html).
 
 ### GitLab Support
 
-In order to track unpublished entries statuses the GitLab implementation uses
+In order to track unpublished entries statuses, the GitLab implementation uses
 [merge requests labels](https://docs.gitlab.com/ee/user/project/labels.html).
 
 

@@ -210,6 +210,7 @@ collections:
 ```
 
 `config.yml` specifies what kind of content your blog posts have. The content specification enables Decap CMS to edit existing posts and create new ones with the same format. To learn more, read about Decap CMS' [](https://www.decapcms.org/docs/configuration-options/)[Configuration options](https://www.decapcms.org/docs/configuration-options/).
+
 </li>
 
 <li>
@@ -218,6 +219,7 @@ Visit <code>localhost:3000/admin</code>
 You can now view and edit `2021-11-15-first-blog-post.md` through the admin interface. You can also create new blog posts.
 
 **Warning:** Any changes you publish through the admin interface will only effect your *remote GitHub repository*. To retrieve these changes locally, `git pull` from your local repository.
+
 </li>
 
 <li> Commit and push your new changes to your remote repository.
@@ -249,7 +251,7 @@ Before you can access `/admin/` through your Netlify domain, you need to set up 
 
 ### Configure Netlify
 
-1. On Netlify, under `Site configuration > Access & security > OAuth > Authentication providers`, click **Install provider**.
+1. On Netlify, select your Project, then under `Project configuration > Access & security > OAuth > Authentication providers`, click **Install provider**.
 2. Enter your client secret and client ID from GitHub.
 3. Click **Install**.
 

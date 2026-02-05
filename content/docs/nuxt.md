@@ -101,7 +101,7 @@ git push -u origin main
 
 ### Deploying With Netlify
 
-Now you can go ahead and deploy to Netlify. Go to your Netlify dashboard and click **[New site from Git](https://app.netlify.com/start)**. Select the repo you just created. Under **Basic build settings**, you can set the build command to  `npm run generate` . Set the publish directory to `dist`. Click **Deploy site** to get the process going.
+Now you can go ahead and deploy to Netlify. Go to your Netlify dashboard and click **[New site from Git](https://app.netlify.com/start)**. Select the repo you just created. Under **Basic build settings**, you can set the build command to `npm run generate`. Set the publish directory to `dist`. Click **Deploy site** to get the process going.
 
 ### Authenticating with Netlify Identity
 
@@ -137,7 +137,7 @@ useHead({
 
 Once you've added this, make sure to push your changes to GitHub!
 
-*More on adding `<script>` tags to `<head>` [here](https://nuxtjs.org/faq/#local-settings).*
+*See [how to add script tags to `<head>`](https://nuxtjs.org/faq/#local-settings).*
 
 **Enable Identity & Git Gateway in Netlify**
 
@@ -208,7 +208,7 @@ export default {
 
 ### Example Blog Post
 
-To generate blog posts create a `_slug.vue` file in the pages folder. By using `$content` you would get a json which you can use to display. But if you are using `markdown` to write and store your posts you can use `<nuxt-content>` module which gives you option to edit content on page in dev mode and many more [features](https://content.nuxtjs.org/).
+To generate blog posts create a `_slug.vue` file in the pages folder. By using `$content` you would get a JSON object which you can use to display. But if you are using Markdown to write and store your posts, you can use the [Nuxt Content module](https://content.nuxtjs.org/) which gives you option to edit content on page in dev mode and many more features.
 
 ```javascript
 <template>

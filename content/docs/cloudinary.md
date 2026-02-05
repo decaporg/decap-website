@@ -3,7 +3,7 @@ title: Cloudinary
 group: Media
 weight: 10
 ---
-Cloudinary is a digital asset management platform with a broad feature set, including support for responsive image generation and url based image transformation. They also provide a powerful media library UI for managing assets, and tools for organizing your assets into a hierarchy.
+Cloudinary is a digital asset management platform with a broad feature set, including support for responsive image generation and URL-based image transformation. They also provide a powerful media library UI for managing assets, and tools for organizing your assets into a hierarchy.
 
 The Cloudinary media library integration for Decap CMS uses Cloudinary's own media library interface within Decap CMS. To get started, you'll need a Cloudinary account and Decap CMS 2.3.0 or greater.
 
@@ -39,13 +39,13 @@ The following options are specific to the Decap CMS integration for Cloudinary:
 * **`output_filename_only`**: _(default: `false`)_\
   By default, the value provided for a selected image is a complete URL for the asset on Cloudinary's CDN. Setting `output_filename_only` to `true` will instead produce just the filename (e.g. `image.jpg`). This should be `true` if you will be directly embedding cloudinary transformation urls in page templates. Refer to [Inserting Cloudinary URL in page templates](#inserting-cloudinary-url-in-page-templates).
 * **`use_transformations`**: _(default: `true`)_\
-  If `true`, uses derived url when available (the url will have image transformation segments included). Has no effect if `output_filename_only` is set to `true`.
+  If `true`, uses derived URL when available (the url will have image transformation segments included). Has no effect if `output_filename_only` is set to `true`.
 * **`use_secure_url`**: _(default: `true`)_\
   Controls whether an `http` or `https` URL is provided. Has no effect if `output_filename_only` is set to `true`.
 
 ## Cloudinary configuration options
 
-The following options are used to configure the media library. All options are listed in Cloudinary's [media library documentation](https://cloudinary.com/documentation/media_library_widget#3_set_the_configuration_options), but only options listed below are available or recommended for the Decap CMS integration:
+The following options are used to configure the Media Library. All options are listed in Cloudinary's [Media Library documentation](https://cloudinary.com/documentation/media_library_widget#3_set_the_configuration_options), but only options listed below are available or recommended for the Decap CMS integration:
 
 ### Authentication
 
@@ -55,16 +55,16 @@ The following options are used to configure the media library. All options are l
 ### Media library behavior
 
 * `default_transformations` _\- only the first [image transformation](#image-transformations) is used, be sure to use the `SDK Parameter` column transformation names from the_ [_transformation reference_](https://cloudinary.com/documentation/image_transformation_reference)
-* `max_files` _\- has no impact on images inside the [markdown widget](/docs/widgets/#markdown)_. Refer to [media library documentation](https://cloudinary.com/documentation/media_library_widget#3_set_the_configuration_options) for details on this property
-* `multiple` _\- has no impact on images inside the [markdown widget](/docs/widgets/#markdown)_. Refer to [media library documentation](https://cloudinary.com/documentation/media_library_widget#3_set_the_configuration_options) for details on this property
+* `max_files` _\- has no impact on images inside the [Markdown widget](/docs/widgets/#markdown)_. Refer to [Media Library documentation](https://cloudinary.com/documentation/media_library_widget#3_set_the_configuration_options) for details on this property
+* `multiple` _\- has no impact on images inside the [Markdown widget](/docs/widgets/#markdown)_. Refer to [Media Library documentation](https://cloudinary.com/documentation/media_library_widget#3_set_the_configuration_options) for details on this property
 
 ## Image transformations
 
-The Cloudinary integration allows images to be transformed in two ways: directly within Decap CMS via [Cloudinary's Media Library](#transforming-images-via-media-library), and separately from the CMS via Cloudinary's [dynamic URL's](https://cloudinary.com/documentation/image_transformations#delivering_media_assets_using_dynamic_urls) by [inserting cloudinary urls](#inserting-cloudinary-url-in-page-templates).
+The Cloudinary integration allows images to be transformed in two ways: directly within Decap CMS via [Cloudinary's Media Library](#transforming-images-via-media-library), and separately from the CMS via Cloudinary's [dynamic URLs](https://cloudinary.com/documentation/image_transformations#delivering_media_assets_using_dynamic_urls) by [inserting Cloudinary URLs](#inserting-cloudinary-url-in-page-templates).
 
 ### Transforming images via Media Library
-If you transform and insert images from within the Cloudinary media library, the transformed image URL will be output by default. This gives the editor complete freedom to make changes to the image output.
-There are two ways to configure image transformation via media library - [globally](#global-configuration) and per [field](#field-configuration). Global options will be overridden by field options.
+If you transform and insert images from within the Cloudinary Media Library, the transformed image URL will be output by default. This gives the editor complete freedom to make changes to the image output.
+There are two ways to configure image transformation via Media Library - [globally](#global-configuration) and per [field](#field-configuration). Global options will be overridden by field options.
 
 #### Global configuration
 
