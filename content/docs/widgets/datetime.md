@@ -1,6 +1,8 @@
 ---
-title: datetime
+title: Datetime
 label: DateTime
+group: Widgets
+weight: 50
 ---
 
 The datetime widget translates a datetime picker to a datetime string.
@@ -34,3 +36,7 @@ The datetime widget translates a datetime picker to a datetime string.
     format: "LLL"
     picker_utc: false
   ```
+
+**Result**
+
+![toggle switch](/img/widget-datetime.png)

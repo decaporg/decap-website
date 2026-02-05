@@ -1,27 +1,31 @@
 ---
-title: select
+title: Select
 label: Select
+group: Widgets
+weight: 140
 ---
+
 The select widget allows you to pick a string value from a dropdown menu.
 
-* **Name:** `select`
-* **UI:** select input
-* **Data type:** string or array
-* **Options:**
+**Name:** `select`
 
-  * `default`: `options` must contain any default values
+**UI:** select input
 
-    * string values: accepts a string; defaults to an empty string. Accepts an array of strings and defaults to an empty array  with `multiple: true` enabled.
-    * object with `label` and `value` fields: accepts an object with `label` and `value` field or an array of such objects when `multiple: true` is enable. Defaults to no value
-  * `options`: (**required**) there are two ways to list of options for the dropdown menu:
+**Data type:** string or array
 
-    * string values: the dropdown displays the value directly
-    * object with `label` and `value` fields: the label displays in the dropdown; the value saves in the file
-  * `multiple`: accepts a boolean; defaults to `false`
-  * `min`: minimum number of items; ignored if **multiple** is  `false`
-  * `max`: maximum number of items; ignored if **multiple** is  `false`
+**Options:**
 
-* **Example** (options as strings):
+- `default`: `options` must contain any default values
+  - string values: accepts a string; defaults to an empty string. Accepts an array of strings and defaults to an empty array  with `multiple: true` enabled.
+  - object with `label` and `value` fields: accepts an object with `label` and `value` field or an array of such objects when `multiple: true` is enable. Defaults to no value
+- `options`: (**required**) there are two ways to list of options for the dropdown menu:
+  - string values: the dropdown displays the value directly
+  - object with `label` and `value` fields: the label displays in the dropdown; the value saves in the file
+- `multiple`: accepts a boolean; defaults to `false`
+- `min`: minimum number of items; ignored if **multiple** is  `false`
+- `max`: maximum number of items; ignored if **multiple** is  `false`
+
+**Example** (options as strings):
 
 ```yaml
 - label: "Align Content"
@@ -36,7 +40,7 @@ Selecting the `center` option, will save the value as:
 align: "center"
 ```
 
-* **Example** (options as objects):
+**Example** (options as objects):
 
 ```yaml
 - label: "City"
@@ -54,7 +58,7 @@ Selecting the `Chicago` option, will save the value as:
 airport-code: "ORD"
 ```
 
-* **Example** (multiple):
+**Example** (multiple):
 
 ```yaml
 - label: "Tags"
@@ -65,7 +69,7 @@ airport-code: "ORD"
   default: ["Design"]
 ```
 
-* **Example** (min/max):
+**Example** (min/max):
 
 ```yaml
 - label: "Tags"
@@ -77,3 +81,7 @@ airport-code: "ORD"
   options: ["Design", "UX", "Dev"]
   default: ["Design"]
 ```
+
+**Result**
+
+![toggle switch](/img/widget-select.png)

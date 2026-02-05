@@ -4,14 +4,14 @@ weight: 50
 group: Customization
 ---
 
-The Decap CMS exposes a `window.CMS` global object that you can use to register custom widgets, previews and editor plugins. The available customization methods are:
+Decap CMS exposes a `window.CMS` global object that you can use to register custom widgets, previews and editor plugins. The available customization methods are:
 
 * **registerPreviewStyle:** Register a custom stylesheet to use on the preview pane.
-* **registerPreviewTemplate:** Registers a template for a collection.
+* **registerPreviewTemplate:** Register a template for a collection.
 
 ### React Components inline interaction
 
-Decap CMS is a collection of React components and exposes two constructs globally to allow you to create components inline: ‘createClass’ and ‘h’ (alias for React.createElement).
+Decap CMS is a collection of React components and exposes two constructs globally to allow you to create components inline: `createClass` and `h` (alias for React.createElement).
 
 ## `registerPreviewStyle`
 

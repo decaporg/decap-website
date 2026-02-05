@@ -5,6 +5,8 @@ title: Working with a Local Git Repository
 ---
 You can connect Decap CMS to a local Git repository, instead of working with a live repo.
 
+This feature will only run in a localhost environment (`localhost` or `127.0.0.1` or a custom `allowed_hosts` value). You can use local_backend mode while doing local development, while your live site that is not on localhost can use your non-local-backend setup, with the same `config.yml`.
+
 1. Navigate to a local Git repository configured with the CMS.
 2. Add the top-level property `local_backend` configuration to your `config.yml`:
 
