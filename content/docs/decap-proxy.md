@@ -6,7 +6,7 @@ slug: decap-proxy
 aliases:
   - /docs/working-with-a-local-git-repository
 ---
-You can connect Decap CMS to a local folder, instead of working with a live git repository.
+You can connect Decap CMS to a local directory, instead of working with a remote Git repository.
 
 1. Navigate to a local directory configured with the CMS.
 2. Add the top-level property `local_backend` configuration to your `config.yml`:
