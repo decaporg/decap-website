@@ -21,25 +21,25 @@ backend:
 
 3. Run `npx decap-server` from the root directory of the above repository.
 
-  * If the default port (8081) is in use, the proxy server won't start and you will see an error message. In this case, configure the port number.
+  * If the default port (8081) is in use, the proxy server won't start, and you will see an error message. In this case, configure the port number.
 
 4. Start your local development server (e.g. run `gatsby develop`).
 
-5. Open `http://localhost:<port>/admin` to verify that your can administer your content locally. Replace `<port>` with the port of your local development server. For example Gatsby's default port is `8000`.
+5. Open `http://localhost:<port>/admin` to verify that you can administer your content locally. Replace `<port>` with the port of your local development server. For example, Gatsby's default port is `8000`.
 
 **Limitation:** `editorial_workflow` is not supported in this environment.
 
-### Options
+## Options
 
 By default, the proxy server runs on port `8081` and allows CORS requests from any origin. You can customize these settings with these options.
 
 #### Environment Variables
 
-* **`PORT`** define the port you'd like the proxy server to use. Running `PORT=8082 npm run start` starts the server on port `8082` rather than the default `8081`.
+* **`PORT`** defines the port you'd like the proxy server to use. Running `PORT=8082 npm run start` starts the server on port `8082` rather than the default `8081`.
 
 * **`BIND_HOST`** variable allows binding to 127.0.0.1 rather than all IP addresses. Running `BIND_HOST=localhost npm run start` allows connecting to `http://localhost:8081/` but connections to `http://<public_ip>:8081/` are no longer possible. <span class="version-tag">3.9</span>
 
-* **`ORIGIN`** allows restricting CORS responses to a specific origin rather that allowing the API to be accessed from any server. Running `ORIGIN=https://example.com npm run start` changes the HTTP header in responses to `Access-Content-Allow-Origin: https://example.com`. The server can no longer be accessed by arbitrary websites. <span class="version-tag">3.9</span>
+* **`ORIGIN`** allows restricting CORS responses to a specific origin rather than allowing the API to be accessed from any server. Running `ORIGIN=https://example.com npm run start` changes the HTTP header in responses to `Access-Content-Allow-Origin: https://example.com`. The server can no longer be accessed by arbitrary websites. <span class="version-tag">3.9</span>
 
 You can define them in 2 ways:
 
@@ -57,9 +57,9 @@ ORIGIN=https://my-local-site.com
 PORT=8082 npx decap-server
 ```
 
-#### Custom Port and Host for the Backend URL
+### Custom Port and Host for the Backend URL
 
-Update the `local_backend` object in `config.yml` and specify a `url` property to use your custom port number
+Update the `local_backend` object in `config.yml` and specify a `url` property to use your custom port number.
 
 ```yaml
 backend:
