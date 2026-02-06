@@ -4,13 +4,22 @@ weight: 20
 title: Editorial Workflows
 ---
 
-
 By default, saving a post in the CMS interface pushes a commit directly to the publication branch specified in `backend`. However, you also have the option to edit the [Publish Mode](../configuration-options/#publish-mode), which adds an interface for drafting, reviewing, and approving posts. To do this, add the following line to your Decap CMS `config.yml`:
 
 ```yaml
 # This line should *not* be indented
 publish_mode: editorial_workflow
 ```
+
+You can select the initial status <a href="https://github.com/decaporg/decap-cms/releases/tag/decap-cms%403.1.6" class="version-tag">3.1.6</a> with the following line in your config file:
+
+```yaml
+default_workflow_status: 'draft'
+```
+
+There are the 3 available options: `'draft' | 'pending_review' | 'pending_publish'`.
+
+### Git operations under the hood
 
 From a technical perspective, the workflow translates editor UI actions into common Git commands:
 
