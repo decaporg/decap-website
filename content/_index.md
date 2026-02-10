@@ -135,7 +135,7 @@ backers:
 # Blog Section
 blog:
   title: "From the Blog"
-  hook: "Why git-based CMS is the future of content management"
+  hook: "Why Git-based CMS is the future of content management"
   text: |
     * Utilize the power of Git versioning and history. No backup needed
 

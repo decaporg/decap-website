@@ -14,7 +14,7 @@ Check out the [general overview](/docs/intro/) to see what the installation proc
 
 **2. Choosing a Backend**
 
-The most common backends are GitHub, GitLab, Bitbucket, and Azure. The backend serves two purpose: Secure access to your website's Decap CMS and allows it to read and update content files in your git repo. More information about configuring the backend can be found [here](/docs/backends-overview/).
+The most common backends are GitHub, GitLab, Bitbucket, and Azure. The backend serves two purpose: Secure access to your website's Decap CMS and allows it to read and update content files in your git repo. See the ["Backends Overview" guide](/docs/backends-overview/) to learn more.
 
 If you are experimenting with Decap CMS or developing, you can connect to it via a [local Git repository instead](/docs/working-with-a-local-git-repository/) of a remote backend.
 
@@ -24,7 +24,7 @@ The basic configuration includes required information like Git backend provider,
 It is recommended to start simple as possible. Once you've gotten the hang of it, you can edit your `config.yml` file to
 build whatever collections and content modeling you want.
 
-Check out the [Configuration Options](/docs/configuration-options/) page for full details about all available options.
+Check out the ["Configuration Options" reference](/docs/configuration-options/) for full details about all available options.
 
 **4. Access Your Content**
 
