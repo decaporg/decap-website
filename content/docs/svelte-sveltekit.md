@@ -8,59 +8,10 @@ This guide will help you get started using Decap CMS with SvelteKit.
 ## Creating a new project
 
 Let's create a simple Svelte/SvelteKit project.
-Just run the sv command with npm and answer a few interactive questions.
-If you want to skip the interactive prompts,
-`npx sv create --template minimal --types jsdoc --add tailwindcss="plugins:typography" mdsvex sveltekit-adapter="adapter:static" --install npm ./` 
-you can pass everything as options like this.
+Just run the below `sv` command via `npx`.
 
-```sh
-$ npx sv create  
-
-┌  Welcome to the Svelte CLI! (v0.11.2)
-│
-◇  Where would you like your project to be created?
-│  ./
-│
-◇  Which template would you like?
-│  SvelteKit minimal
-│
-◇  Add type checking with TypeScript?
-│  Yes, using JavaScript with JSDoc comments
-│
-◇  What would you like to add to your project? (use arrow keys / space bar)
-│  tailwindcss, sveltekit-adapter, mdsvex
-│
-◇  tailwindcss: Which plugins would you like to add?
-│  typography
-│
-◇  sveltekit-adapter: Which SvelteKit adapter would you like to use?
-│  static
-│
-◆  Project created
-│
-◆  Successfully setup add-ons: tailwindcss, mdsvex, sveltekit-adapter
-│
-◇  Which package manager do you want to install dependencies with?
-│  npm
-│
-│  npx sv create --template minimal --types jsdoc --add tailwindcss="plugins:typography" mdsvex sveltekit-adapter="adapter:static" --install npm ./
-│
-│
-◆  Successfully installed dependencies with npm
-│
-◇  What's next? ───────────────────────────────╮
-│                                              │
-│  📁 Project steps                            │
-│                                              │
-│    1: npm run dev -- --open                  │
-│                                              │
-│  To close the dev server, hit Ctrl-C         │
-│                                              │
-│  Stuck? Visit us at https://svelte.dev/chat  │
-│                                              │
-├──────────────────────────────────────────────╯
-│
-└  You're all set!
+```
+npx sv create --template minimal --types jsdoc --add tailwindcss="plugins:typography" mdsvex sveltekit-adapter="adapter:static" --install npm ./
 ```
 
 The `sv` command above also adds a tool called `mdsvex`.
@@ -70,14 +21,14 @@ Rewrite `svelte.config.js` to the following.
 
 ```js
 // svelte.config.js
-import { mdsvex } from 'mdsvex';                            // Import mdsvex for markdown support
+import { mdsvex } from 'mdsvex';                          // Import mdsvex for markdown support
 import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		adapter: adapter(),
-		prerender: { handleUnseenRoutes: 'warn'}            // Only warn about unseen routes during prerendering
+		prerender: { handleUnseenRoutes: 'warn'}              // Only warn about unseen routes during prerendering
 	},
 	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],  // Configure mdsvex with .svx and .md extensions
 	extensions: ['.svelte', '.svx', '.md']                  // Add .md to the list of recognized file extensions
@@ -306,16 +257,56 @@ To verify it works, start the proxy server that lets Decap CMS edit local files 
 If the dev server is stopped, start it again with `npm run dev`, then open `http://localhost:5173/admin/index.html`.
 You'll see the Decap CMS login screen. Since the local proxy is running, you can enter the CMS by clicking the Log in button.
 
+### Another way to install DecapCMS by npm
 
+You can also use Decap CMS as an npm module.
 
+First install the package and save it to your project:
 
-## Add GitHub as an authentication provider
+```sh
+npm install decap-cms-app --save
+```
+
+Then initialize it on client-side.
+
+`src/routes/admin/+page.svelte`
+
+```html
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		const CMS = await import('decap-cms-app');
+		CMS.default.init();
+	});
+</script>
+
+<svelte:head>
+	<meta name="robots" content="noindex" />
+	<title>Content Manager</title>
+</svelte:head>
+```
+
+`src/routes/admin/+page.ts`
+
+```typescript
+export const prerender = false;
+export const ssr = false;
+```
+
+Also, you shold set client-side redering fallback:
+e.g.
+
+- Cloudflare: add `adapter: adapter({ fallback: '200.html'}),` to `svelte.config.js`
+- Netlify: same as above and also create `static/_redirects` file and add `/admin/*  /200.html` to it.
+
+## Introducing authentication providers
 
 To access this Decap CMS via a Netlify domain instead of a local server, you need to configure an authentication provider.
 The provider lets Decap CMS determine whether a user has read and write access.
-In this section, we'll use GitHub credentials for authentication.
+This section provides a brief explanation of how to implement GitHub and Netlify as an Authentication Provider, respectively.
 
-### Configure GitHub
+### Configure GitHub as authentication provider
 
 1. Create a new [GitHub OAuth application](https://github.com/settings/applications/new).
 2. Enter your Netlify domain as the **Homepage URL**.
@@ -324,7 +315,7 @@ In this section, we'll use GitHub credentials for authentication.
 5. Click **Generate a new client secret**.
 6. Copy the provided client secret and client ID.
 
-### Configure Netlify
+### Configure Netlify as authentication providers
 
 1. On Netlify, select your Project, then under Project configuration > Access & security > OAuth > Authentication providers, click **Install provider**.
 2. Enter your client secret and client ID from GitHub.
