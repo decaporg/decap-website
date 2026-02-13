@@ -1,8 +1,8 @@
 ---
-title: Community
+linkTitle: Community
 layout: community
-headline: Help us build the CMS of the future.
-subhead: Get help, help others, and find out what's new through the channels below.
+title: Help us build the CMS of the future.
+description: Get help, help others, and find out what's new through the channels below.
 sections:
   - title: Contributing
     channels:
