@@ -52,4 +52,12 @@
     background: var(--color-primary-light);
     border-color: var(--color-primary-light);
   }
+
+  &[disabled] {
+    background-color: var(--color-light-gray);
+    border-color: var(--color-light-gray);
+    color: var(--color-gray);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
 }
