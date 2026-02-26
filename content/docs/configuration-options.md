@@ -231,6 +231,17 @@ slug:
   sanitize_replacement: "_"
 ```
 
+## Issue Reports
+
+When an error occurs in the CMS, users are presented with an option to report the issue. By default, this links to the Decap CMS GitHub repository. You can customize this URL to point to your own issue tracker using the `issue_reports` setting. If you are using a non-Github url, you may want to [create a custom locale](#locale) and update following translation key: `ui.errorBoundary.reportIt`.
+
+**Example:**
+
+```yaml
+issue_reports:
+  url: https://github.com/your-org/your-repo/issues/new
+```
+
 ## Collections
 
 *This setting is required.*
