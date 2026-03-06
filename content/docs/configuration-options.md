@@ -240,6 +240,8 @@ When an error occurs in the CMS, users are presented with an option to report th
 ```yaml
 issue_reports:
   url: https://github.com/your-org/your-repo/issues/new
+  # or
+  url: https://example.com/contact-support
 ```
 
 ## Collections
