@@ -1,12 +1,15 @@
 ---
+title: 3. Configure Decap CMS
 group: Add
 weight: 4
-title: 3. Configure Decap CMS
 ---
-
 Configuration is different for every site, so we'll break it down into parts. Add all the code snippets in this section to your `admin/config.yml` file.
 
 ### Backend
+
+
+
+This is another edit made by Yash
 
 We're using [Netlify](https://www.netlify.com) for our hosting and authentication in this tutorial, so backend configuration is fairly straightforward.
 
@@ -18,7 +21,7 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 ```
 
-_(For Bitbucket repositories, use the [Bitbucket backend](/docs/bitbucket-backend) instructions instead.)_
+*(For Bitbucket repositories, use the [Bitbucket backend](/docs/bitbucket-backend) instructions instead.)*
 
 The configuration above specifies your backend protocol and your publication branch. Git Gateway is an open source API that acts as a proxy between authenticated users of your site and your site repo. (We'll get to the details of that in the [Authentication section](#authentication) below.) If you leave out the `branch` declaration, it defaults to `master`.
 
@@ -43,7 +46,7 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 
 The configuration above adds a new setting: `public_folder`. Whereas `media_folder` specifies where uploaded files are saved in the repo, `public_folder` indicates where they are found in the published site. Image `src` attributes use this path, which is relative to the file where it's called. For this reason, we usually start the path at the site root, using the opening `/`.
 
-_**Note:** If `public_folder` is not set, Decap CMS defaults to the same value as `media_folder`, adding an opening `/` if one is not included._
+***Note:** If `public_folder` is not set, Decap CMS defaults to the same value as `media_folder`, adding an opening `/` if one is not included.*
 
 ### Collections
 
@@ -138,9 +141,4 @@ collections:
       - { label: "Language", name: "language" }
 ```
 
-{{< pagination-nav 
-  prevUrl="/docs/choosing-a-backend/" 
-  prevLabel="2. Choosing A Backend"
-  nextUrl="/docs/access-your-content/"
-  nextLabel="4. Access Your Content"
->}}
+{{< pagination-nav prevUrl="/docs/choosing-a-backend/" prevLabel="2. Choosing A Backend" nextUrl="/docs/access-your-content/" nextLabel="4. Access Your Content" >}}
