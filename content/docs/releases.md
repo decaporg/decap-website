@@ -7,6 +7,10 @@ title: Releases and Updating
 
 {{< releases-info >}}
 
+## Node.js support
+
+DecapCMS supports all [currently stable Node.js versions](https://nodejs.org/en/about/previous-releases) at the time of a version release.
+
 ## Update Methods
 
 ### Semantic Versioning
