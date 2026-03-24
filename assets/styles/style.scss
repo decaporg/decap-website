@@ -13,6 +13,7 @@
 @import 'table';
 @import 'header';
 @import 'footer';
+@import 'forms';
 
 @import 'layouts/page';
 @import 'layouts/blog-list';
@@ -24,9 +25,11 @@
 @import 'components/search';
 @import 'components/alert';
 @import 'components/template-card';
+
 @import 'components/button';
 @import 'components/container';
 @import 'components/hero-title';
+@import 'components/page-hero';
 @import 'components/pagination-nav';
 @import 'components/version-tag';
 @import 'components/page-layout';

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is the **Decap CMS website** built with **Hugo 0.148.1**. The site was successfully migrated from Gatsby in October 2025.
+This is the **Decap CMS website** built with **Hugo**. The site was successfully migrated from Gatsby in October 2025.
 
 - **Production**: Hugo implementation (root directory)
 - **Legacy**: Gatsby source code (`gatsby/`) - kept for reference only, not actively maintained
@@ -187,7 +187,7 @@ hugo --gc --minify  # Build optimized site
 - **File**: `netlify.toml` in root
 - **Build command**: `hugo --gc --minify`
 - **Publish directory**: `public`
-- **Hugo version**: 0.148.1 (extended)
+- **Hugo version**: 0.155.3 (extended)
 
 ## Migration Patterns
 

@@ -161,9 +161,9 @@ collections:
         file: content/community.md
         preview_path: community
         fields:
+          - { label: Link Title, name: linkTitle }
           - { label: Title, name: title }
-          - { label: Headline, name: headline }
-          - { label: Subheading, name: subhead }
+          - { label: Description, name: description }
           - label: Sections
             name: sections
             widget: list

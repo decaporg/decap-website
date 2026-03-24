@@ -1,11 +1,7 @@
 {{ define "main" }}
 <div class="page">
   <div class="container size-md">
-    <h1>{{ .Title }}</h1>
-    
-    {{ if .Params.description }}
-      <p class="lead">{{ .Params.description }}</p>
-    {{ end }}
+    {{ partial "page-hero" . }}
     
     {{ if .Content }}
       <div class="markdown">
