@@ -6,27 +6,19 @@
   border-style: solid;
   border-width: 6vw 100vw 0 0;
   border-color: transparent var(--color-dark-gray) transparent transparent;
-  margin-top: var(--space-5);
-
-  @include breakpoint-up(md) {
-    margin-top: var(--space-7);
-  }
+  margin-top: var(--space-fluid-5-9);
 }
 
 .home-dark-section {
   background: var(--color-darker-gray);
   color: var(--color-white);
-  padding: var(--space-3) 0;
-
-  @include breakpoint-up(md) {
-    padding: var(--space-4) 0;
-  }
+  padding: var(--space-fluid-4-5) 0;
 }
 
 .home-section {
   &__container {
-    margin-top: var(--space-6);
-    margin-bottom: var(--space-6);
+    margin-top: var(--space-fixed-8);
+    margin-bottom: var(--space-fixed-8);
   }
 
   &__content {
@@ -42,18 +34,18 @@
   }
 
   &__title {
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-fixed-5);
     font-size: var(--font-size-3xl);
     text-shadow: rgba(255, 255, 255, 0.18) 2px 1px 18px;
   }
 
   &__hook {
     font-size: var(--font-size-lg);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-fixed-4);
   }
 
   &__text {
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-fixed-5);
 
     a {
       color: inherit;
@@ -62,7 +54,7 @@
   }
 
   &__button {
-    margin: var(--space-4) 0;
+    margin: var(--space-fixed-5) 0;
   }
 
   &__image-wrapper {

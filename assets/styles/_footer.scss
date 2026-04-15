@@ -1,7 +1,7 @@
 .footer {
   background: var(--color-gray);
   color: var(--color-white);
-  padding: var(--space-5) 0;
+  padding: var(--space-fluid-5-7) 0;
 
   a {
     color: var(--color-white);
@@ -18,8 +18,8 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(4, minmax(150px, 1fr));
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
+    gap: var(--space-fixed-5);
+    margin-bottom: var(--space-fixed-5);
 
     @include breakpoint-down(md) {
       grid-template-columns: 1fr;
@@ -30,7 +30,7 @@
     img {
       height: 40px;
       width: auto;
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-fixed-4);
     }
 
     p {
@@ -48,7 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: var(--space-4);
+    padding-top: var(--space-fixed-5);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     min-height: 54px;
 
@@ -64,7 +64,7 @@
   &__links {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: var(--space-fixed-1);
     list-style: none;
     padding: 0;
     margin: 0;

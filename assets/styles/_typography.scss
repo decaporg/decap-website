@@ -44,8 +44,8 @@ p {
 // Lists
 ol,
 ul {
-  margin: var(--space-1) 0;
-  padding-left: var(--space-4);
+  margin: var(--space-fixed-1) 0;
+  padding-left: var(--space-fixed-5);
 }
 
 // Links
@@ -62,18 +62,18 @@ a {
 // Meta Info - small metadata text
 .meta-info {
   font-size: var(--font-size-sm);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-fixed-5);
   color: var(--color-gray);
 }
 
 // Lead - larger intro paragraph
 .lead {
   font-size: var(--font-size-lg);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-fixed-2);
   
   @include breakpoint-up(md) {
     font-size: var(--font-size-xl);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-fluid-5-7);
   }
 }
 

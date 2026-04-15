@@ -1,5 +1,5 @@
 .home-backers {
-  margin-top: var(--space-6);
+  margin-top: var(--space-fixed-8);
   text-align: center;
 
   ul {
@@ -7,16 +7,16 @@
     list-style: none;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-5);
+    gap: var(--space-fluid-5-7);
     padding: 0;
-    margin: var(--space-5) 0;
+    margin: var(--space-fluid-5-7) 0;
 
     li {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: var(--space-1);
+      gap: var(--space-fixed-1);
       font-size: var(--font-size-xs);
     }
 

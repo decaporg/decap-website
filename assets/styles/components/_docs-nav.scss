@@ -1,5 +1,5 @@
 .docs-nav {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-fluid-5-7);
 
   &__toggle {
     @include breakpoint-up(sm) {
@@ -20,7 +20,7 @@
   &__content {
     display: none;
     background: var(--color-white);
-    padding: var(--space-3);
+    padding: var(--space-fixed-4);
 
     @include breakpoint-up(sm) {
       display: block;
@@ -34,12 +34,12 @@
   }
 
   &__section {
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-fixed-4);
   }
 
   &__section-title {
     font-size: var(--font-size-lg);
-    margin: 0 0 var(--space-2);
+    margin: 0 0 var(--space-fixed-2);
     color: var(--color-gray);
   }
 
@@ -57,7 +57,7 @@
     line-height: var(--line-height-mid);
     text-transform: capitalize;
     transition: color 0.2s ease;
-    padding: var(--space-2) 0;
+    padding: var(--space-fixed-2) 0;
     text-decoration: none;
 
     &.active {
@@ -75,7 +75,7 @@
     ul {
       list-style: none;
       margin: 0;
-      padding-left: var(--space-3);
+      padding-left: var(--space-fixed-4);
       border-left: 2px solid var(--color-lightest-gray);
     }
 
@@ -85,7 +85,7 @@
       font-weight: var(--font-weight-bold);
       font-size: var(--font-size-sm);
       line-height: var(--line-height-mid);
-      margin: var(--space-2) 0;
+      margin: var(--space-fixed-2) 0;
       transition: color 0.2s;
       text-decoration: none;
       

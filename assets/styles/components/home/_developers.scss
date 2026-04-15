@@ -10,14 +10,14 @@
     gap: 0 8px;
     justify-content: center;
     position: sticky;
-    padding: var(--space-2) 0;
+    padding: var(--space-fixed-2) 0;
     top: 0;
     z-index: 1;
-    margin: var(--space-2) 0 var(--space-3);
+    margin: var(--space-fixed-2) 0 var(--space-fixed-4);
 
     @include breakpoint-up(md) {
-      top: var(--space-6);
-      padding: var(--space-4) 0 var(--space-3);
+      top: var(--space-fixed-8);
+      padding: var(--space-fixed-5) 0 var(--space-fixed-4);
     }
 
     // Flip order for editors section
@@ -48,11 +48,11 @@
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    margin: var(--space-3) 0;
-    gap: var(--space-5);
+    margin: var(--space-fixed-4) 0;
+    gap: var(--space-fluid-5-7);
 
     @include breakpoint-up(sm) {
-      margin: var(--space-6) 0;
+      margin: var(--space-fixed-8) 0;
     }
 
     @include breakpoint-up(md) {
@@ -76,7 +76,7 @@
 
   &__item-title {
     font-size: var(--font-size-lg);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-fixed-4);
   }
 
   &__item-description {
@@ -84,7 +84,7 @@
     line-height: var(--line-height-max);
 
     p {
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-fixed-4);
     }
   }
 
@@ -117,14 +117,14 @@
 
   &__image {
     display: block;
-    margin: var(--space-5) auto 0;
+    margin: var(--space-fluid-5-7) auto 0;
     background: var(--color-white);
     border-radius: var(--radius-xl);
     max-width: 100%;
     height: auto;
 
     @include breakpoint-up(md) {
-      margin: 0 0 0 0;
+      margin: 0;
     }
 
     .features__item--reverse & {
@@ -137,6 +137,6 @@
   &__cta {
     display: flex;
     justify-content: center;
-    margin: var(--space-5) auto;
+    margin: var(--space-fluid-5-7) auto;
   }
 }

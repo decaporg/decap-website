@@ -5,34 +5,30 @@
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -0.92px;
-    margin: var(--space-7) 0 var(--space-3);
+    margin: var(--space-fluid-7-9) 0 var(--space-fluid-4-5);
 
     @include breakpoint-up(lg) {
-      margin: var(--space-8) 0 var(--space-4);
       text-align: center;
     }
   }
 
   &__description {
     font-size: var(--font-size-lg);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-fluid-5-8);
 
     @include breakpoint-up(lg) {
-      margin-bottom: var(--space-6);
       text-align: center;
     }
   }
 
   &__grid {
     display: grid;
-    gap: var(--space-4);
-    margin-bottom: var(--space-5);
+    gap: var(--space-fluid-5-7);
+    margin-bottom: var(--space-fluid-5-8);
 
     @include breakpoint-up(lg) {
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-5);
       align-items: center;
-    margin-bottom: var(--space-6);
     }
   }
 
@@ -42,17 +38,13 @@
 
   &__item {
     border-radius: var(--radius-lg);
-    padding: var(--space-4);
+    padding: var(--space-fluid-5-7);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--color-light-gray);
 
-    @include breakpoint-up('md') {
-      padding: var(--space-5);
-    }
-
     @container (width > 400px) {
       display: flex;
-      gap: var(--space-5);
+      gap: var(--space-fluid-5-6);
     }
 
     @container (width <= 400px) {
@@ -67,7 +59,7 @@
   
     p {
       font-size: var(--font-size-lg);
-      margin-bottom: var(--space-4);
+      margin-bottom: var(--space-fixed-5);
     }
   }
   
@@ -87,6 +79,6 @@
 
 // Button icon styling for external links
 .button-icon {
-  margin-left: var(--space-1);
+  margin-left: var(--space-fixed-1);
   vertical-align: middle;
 }

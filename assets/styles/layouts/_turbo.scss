@@ -1,19 +1,15 @@
 .turbo-hero {
   background: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
   color: var(--color-white);
-  padding: var(--space-6) 0;
+  padding: var(--space-fluid-6-9) 0;
   text-align: center;
 
-  @include breakpoint-up(md) {
-    padding: var(--space-7) 0;
-  }
-
   h1 {
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-fixed-4);
   }
 
   p {
-    margin: 0 auto var(--space-4);
+    margin: 0 auto var(--space-fixed-5);
     max-width: 640px;
     font-size: var(--font-size-lg);
   }

@@ -52,16 +52,33 @@
   --line-height-mid: 1.3;
   --line-height-max: 1.7;
 
-  // Spacing Scale
-  --space-0: 0;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 40px;
-  --space-6: 64px;
-  --space-7: 96px;
-  --space-8: 144px;
+  // Spacing Scale: fixed (viewport-independent)
+  --space-fixed-0: 0;
+  --space-fixed-1: 4px;
+  --space-fixed-2: 8px;
+  --space-fixed-3: 12px;
+  --space-fixed-4: 16px;
+  --space-fixed-5: 24px;
+  --space-fixed-6: 32px;
+  --space-fixed-7: 48px;
+  --space-fixed-8: 64px;
+  --space-fixed-9: 96px;
+
+  // Spacing Scale: fluid (clamp-based)
+  --space-fluid-2-3: clamp(var(--space-fixed-2), 1.1vw, var(--space-fixed-3));
+  --space-fluid-2-4: clamp(var(--space-fixed-2), 1.5vw, var(--space-fixed-4));
+  --space-fluid-2-5: clamp(var(--space-fixed-2), 2vw, var(--space-fixed-5));
+  --space-fluid-3-4: clamp(var(--space-fixed-3), 1.4vw, var(--space-fixed-4));
+  --space-fluid-4-5: clamp(var(--space-fixed-4), 2vw, var(--space-fixed-5));
+  --space-fluid-4-6: clamp(var(--space-fixed-4), 2.4vw, var(--space-fixed-6));
+  --space-fluid-4-9: clamp(var(--space-fixed-4), 6.2vw, var(--space-fixed-9));
+  --space-fluid-5-6: clamp(var(--space-fixed-5), 2.6vw, var(--space-fixed-6));
+  --space-fluid-5-7: clamp(var(--space-fixed-5), 3.2vw, var(--space-fixed-7));
+  --space-fluid-5-8: clamp(var(--space-fixed-5), 4.2vw, var(--space-fixed-8));
+  --space-fluid-5-9: clamp(var(--space-fixed-5), 5.6vw, var(--space-fixed-9));
+  --space-fluid-6-8: clamp(var(--space-fixed-6), 4.6vw, var(--space-fixed-8));
+  --space-fluid-6-9: clamp(var(--space-fixed-6), 5.2vw, var(--space-fixed-9));
+  --space-fluid-7-9: clamp(var(--space-fixed-7), 5.8vw, var(--space-fixed-9));
 
   // Border Radius
   --radius-none: 0;

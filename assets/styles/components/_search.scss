@@ -17,8 +17,8 @@
     border: 2px solid var(--color-gray-600);
     appearance: none;
     width: 100%;
-    padding: var(--space-2);
-    padding-left: 36px;
+    padding: var(--space-fixed-2);
+    padding-left: calc(var(--space-fixed-6) + var(--space-fixed-1));
     outline: 0;
     transition: border-color 0.2s ease-in-out;
 

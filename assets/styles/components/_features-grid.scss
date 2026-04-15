@@ -3,8 +3,8 @@
 
 .features-grid {
   display: grid;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
+  gap: var(--space-fixed-5);
+  margin-bottom: var(--space-fixed-5);
 
   @include breakpoint-up(md) {
     grid-template-columns: repeat(2, 1fr);
@@ -13,7 +13,7 @@
   &__title {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-fixed-2);
     color: var(--color-primary);
   }
 
@@ -24,7 +24,7 @@
 
     // Markdown content styling already handled by .markdown class
     p {
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-fixed-4);
 
       &:last-child {
         margin-bottom: 0;

@@ -20,40 +20,23 @@
 
   &__container {
     max-width: 660px;
-    padding-top: var(--space-3);
-    padding-bottom: var(--space-5);
+    padding-top: var(--space-fluid-4-9);
+    padding-bottom: var(--space-fluid-5-8);
     z-index: 1;
     position: relative;
-
-    @include breakpoint-up(xs) {
-      padding-top: var(--space-5);
-      padding-bottom: var(--space-6);
-    }
-
-    @include breakpoint-up(md) {
-      padding-top: var(--space-6);
-    }
-
-    @include breakpoint-up(lg) {
-      padding-top: var(--space-7);
-    }
   }
 
   &__subhead {
-    margin: var(--space-4) auto;
+    margin: var(--space-fluid-5-6) auto;
     max-width: 400px;
-
-    @include breakpoint-up(md) {
-      margin: var(--space-5) auto;
-    }
   }
 
   &__buttons {
     display: flex;
-    gap: var(--space-3);
+    gap: var(--space-fixed-4);
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: var(--space-4);
+    margin-top: var(--space-fixed-5);
   }
 
   &__border {
@@ -62,10 +45,6 @@
     border-color: var(--color-dark-gray) transparent transparent transparent;
     position: relative;
     z-index: -1;
-    margin-bottom: var(--space-4);
-
-    @include breakpoint-up(lg) {
-      margin-bottom: var(--space-5);
-    }
+    margin-bottom: var(--space-fluid-5-6);
   }
 }
