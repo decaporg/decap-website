@@ -2,9 +2,9 @@
   display: inline-block;
   font-size: var(--font-size-md);
   line-height: var(--line-height-mid);
-  background-color: var(--color-primary-light);
-  color: var(--color-white);
-  border: 2px solid var(--color-primary-light);
+  background-color: var(--color-white);
+  color: var(--color-gray);
+  border: 2px solid var(--color-lightish-gray);
   font-weight: var(--font-weight-medium);
   font-family: var(--font-family-secondary);
   border-radius: var(--radius-lg);
@@ -21,19 +21,31 @@
   &:hover,
   &:active {
     text-decoration: none;
-    background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
+    background-color: var(--color-dark-gray);
+    border-color: var(--color-dark-gray);
     color: var(--color-white);
+  }
+
+  &.primary {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    border-color: var(--color-primary-light);
+
+    &:hover,
+    &:active {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+    }
   }
 
   &.secondary {
     background-color: var(--color-white);
-    color: var(--color-primary-light);
-    border-color: currentColor;
+    color: var(--color-gray);
+    border-color: var(--color-gray);
 
     &:hover,
     &:active {
-      color: var(--color-primary-dark);
+      color: var(--color-white);
     }
   }
 
@@ -44,7 +56,8 @@
 
   &.outline {
     background: none;
-    color: var(--color-primary-light);
+    color: var(--color-gray);
+    border-color: var(--color-gray);
   }
 
   &.active {

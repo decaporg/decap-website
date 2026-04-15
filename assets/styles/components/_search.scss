@@ -6,15 +6,15 @@
   }
 
   &__field {
-    color: var(--color-white);
+    color: var(--color-gray);
     font-size: var(--font-size-sm);
     font-family: var(--font-family-secondary);
     border-radius: var(--radius-md);
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
     background-image: url('/img/search.svg');
     background-repeat: no-repeat;
     background-position: 12px 50%;
-    border: 2px solid var(--color-lightish-gray);
+    border: 2px solid var(--color-gray-600);
     appearance: none;
     width: 100%;
     padding: var(--space-2);
@@ -23,7 +23,7 @@
     transition: border-color 0.2s ease-in-out;
 
     &::placeholder {
-      color: var(--color-lightest-gray);
+      color: var(--color-gray-800);
     }
 
     &:focus {

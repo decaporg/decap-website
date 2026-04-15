@@ -6,6 +6,23 @@ This is the **Decap CMS website** built with **Hugo 0.148.1**.
 
 - **Production**: Hugo implementation (root directory)
 
+## Current Campaign Context
+
+### Decap Turbo Positioning
+- **Decap CMS** remains the open source, self-installed product.
+- **Decap Turbo** is a SaaS upgrade for advanced Decap users.
+- Turbo messaging should focus on:
+  - Authentication handling
+  - User roles and permissions
+  - Database proxy performance improvements for a faster CMS experience
+
+### Visual Direction For Turbo Campaign
+- Pink and purple gradients are reserved for **Turbo-related content and visuals only**.
+- Non-Turbo Decap content should avoid pink-purple gradients.
+- Default Decap pages should be mostly neutral in tone.
+- Pink and purple should appear as accent colors on non-Turbo pages, not as dominant backgrounds.
+- When adding new styles, prefer neutral foundations first, then add accent usage intentionally.
+
 ## Development Workflows
 
 ### Initial Setup
@@ -76,11 +93,16 @@ npx decap-server
 
 ### Design System
 **Color Palette:**
-- Primary: `#ff0080` (hot pink) - `var(--color-primary-light)`
-- Primary Dark: `#683bab` (purple) - `var(--color-primary-dark)`
+- Accent Pink: `#ff0080` - `var(--color-primary-light)`
+- Accent Purple: `#683bab` - `var(--color-primary-dark)`
 - Blue: `#3A69C7` - `var(--color-blue)`
 - Background: `#fafafa` - `var(--color-background)`
 - Dark: `#313d3e` - `var(--color-dark)`
+
+**Color Usage Rules:**
+- For regular Decap pages, use neutral backgrounds and surfaces.
+- Use pink/purple primarily for accents (highlights, small emphasis, selective CTAs).
+- Reserve pink-purple gradients for Turbo pages, sections, and campaign assets.
 
 **Typography:**
 - Body: IBM Plex Sans (400, 500, 600 weights)
