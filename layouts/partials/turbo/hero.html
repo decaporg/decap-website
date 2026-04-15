@@ -1,0 +1,12 @@
+<div class="turbo-hero">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+
+    {{ with .Params.hero }}
+      {{ with .cta }}
+        <a href="{{ .href }}" class="btn btn-primary">{{ .text }}</a>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ partial "turbo/hero" . }}
+
+  <div class="page">
+    <div class="container size-sm">
+      <div class="markdown">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+{{ end }}
