@@ -16,6 +16,10 @@
     {{ partial "home/editors" . }}
   {{ end }}
 
+  {{ with .Params.turboBanner }}
+    {{ partial "home/turbo-banner" . }}
+  {{ end }}
+
   {{ with .Params.services }}
     {{ partial "home/services" . }}
   {{ end }}

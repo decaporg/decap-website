@@ -13,6 +13,46 @@ hero:
       href: "https://demo.decapcms.org"
       class: "secondary"
 
+# Turbo Banner
+turboBanner:
+  label: "NEW"
+  title: "Introducing Decap Turbo"
+  description: "Decap CMS stays free forever. Decap Turbo adds premium capabilities for teams that need more speed, collaboration, control, and support."
+  benefits:
+    - text: "Faster CMS performance with database proxy"
+      icon: "turbo-speed"
+    - text: "Advanced user roles & permissions"
+      icon: "turbo-shield"
+    - text: "Real-time collaboration"
+      icon: "turbo-collaboration"
+    - text: "Priority support"
+      icon: "turbo-support"
+  button:
+    text: "Learn more about Turbo"
+    href: "/turbo/"
+  preview:
+    editors:
+      title: "Active editors"
+      status: "8 team members online"
+      icon: "turbo-team"
+      avatars:
+        - initials: "JD"
+          tone: "pink"
+        - initials: "SM"
+          tone: "purple"
+        - initials: "AL"
+          tone: "blue"
+        - initials: "+5"
+          tone: "rose"
+    collaboration:
+      title: "Real-time collaboration"
+      description: "See who is editing, avoid conflicts, and work together seamlessly"
+    performance:
+      title: "CMS performance"
+      value: "Up to 60% faster"
+      description: "vs. standard Decap CMS"
+      icon: "turbo-performance"
+
 # Developers Section
 developers:
   title: "For Developers"

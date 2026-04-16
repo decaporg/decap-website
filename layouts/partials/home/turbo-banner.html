@@ -1,0 +1,77 @@
+<section class="turbo-banner-section">
+  <div class="container">
+    <div class="turbo-banner">
+      <div class="turbo-banner__content">
+        {{ with .label }}
+          <div class="turbo-banner__eyebrow">
+            <span class="turbo-banner__eyebrow-icon" aria-hidden="true">{{ partial "icon" "turbo-star" }}</span>
+            <span>{{ . }}</span>
+          </div>
+        {{ end }}
+
+        <h2>{{ .title | markdownify }}</h2>
+        <div class="turbo-banner__description">{{ .description | markdownify }}</div>
+
+        {{ with .benefits }}
+          <ul class="turbo-banner__benefits">
+            {{ range . }}
+              <li class="turbo-banner__benefit">
+                <span class="turbo-banner__benefit-icon" aria-hidden="true">{{ partial "icon" .icon }}</span>
+                <span>{{ .text }}</span>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+
+        {{ with .button }}
+          <a href="{{ .href }}" class="button button--icon button--secondary">
+            <span>{{ .text }}</span>
+            {{ partial "icon" "turbo-arrow-right" }}
+          </a>
+        {{ end }}
+      </div>
+
+      {{ with .preview }}
+        <div class="turbo-banner__preview" aria-hidden="true">
+          {{ with .editors }}
+            <div class="turbo-banner__card turbo-banner__card--editors">
+              <div class="turbo-banner__card-header">
+                <span>{{ .title }}</span>
+                <span class="turbo-banner__card-header-icon">{{ partial "icon" .icon }}</span>
+              </div>
+
+              <div class="turbo-banner__avatars">
+                {{ range .avatars }}
+                  <span class="turbo-banner__avatar turbo-banner__avatar--{{ .tone }}">{{ .initials }}</span>
+                {{ end }}
+              </div>
+
+              <p class="turbo-banner__card-note">{{ .status }}</p>
+            </div>
+          {{ end }}
+
+          {{ with .collaboration }}
+            <div class="turbo-banner__card turbo-banner__card--collaboration">
+              <div class="turbo-banner__live-label">
+                <span class="turbo-banner__live-dot"></span>
+                <span>{{ .title }}</span>
+              </div>
+              <p class="turbo-banner__card-note turbo-banner__card-note--muted">{{ .description }}</p>
+            </div>
+          {{ end }}
+
+          {{ with .performance }}
+            <div class="turbo-banner__card turbo-banner__card--performance">
+              <div class="turbo-banner__card-header">
+                <span>{{ .title }}</span>
+                <span class="turbo-banner__card-header-icon">{{ partial "icon" .icon }}</span>
+              </div>
+              <p class="turbo-banner__metric">{{ .value }}</p>
+              <p class="turbo-banner__card-note turbo-banner__card-note--muted">{{ .description }}</p>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

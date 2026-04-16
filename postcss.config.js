@@ -25,6 +25,7 @@ export default {
           /code/,
           /template-grid/,
           /version-tag/,
+          /turbo-banner__avatar/,
         ],
       },
     }),

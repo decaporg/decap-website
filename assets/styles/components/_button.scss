@@ -37,14 +37,17 @@
     }
   }
 
-  &.secondary {
+  &.secondary,
+  &--secondary {
     background-color: var(--color-white);
-    color: var(--color-gray);
-    border-color: var(--color-gray);
+    color: var(--color-accent-pink);
+    border-color: var(--color-white);
 
     &:hover,
     &:active {
-      color: var(--color-white);
+      background-color: var(--color-white);
+      color: var(--color-accent-pink);
+      border-color: var(--color-pink);
     }
   }
 
@@ -63,5 +66,12 @@
     color: var(--color-white);
     background: var(--color-primary-light);
     border-color: var(--color-primary-light);
+  }
+
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-fixed-2);
   }
 }
