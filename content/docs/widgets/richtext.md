@@ -1,16 +1,17 @@
 ---
-title: Markdown (deprecated)
-label: Markdown (deprecated)
+title: Richtext (Beta)
+label: Richtext (Beta)
 group: Widgets
-weight: 100
+weight: 95
 ---
-*Markdown widget is being deprecated in favor of the richtext widget, which provides all the same features and more. We recommend switching to the richtext widget for a better editing experience and continued support.*
 
-The markdown widget provides a full-fledged text editor allowing users to format text with features such as headings and blockquotes. Users can change their editing view with a handy toggle button. 
+*<span class="version-tag">3.12.0</span> Richtext widget is a new and improved version of the markdown widget.*
 
-*Please note:* If you want to use your markdown editor to fill a markdown file's contents after its frontmatter, you'll have to name the field `body` so the CMS recognizes it and saves the file accordingly.
+The richtext widget provides a full-fledged text editor allowing users to format text with features such as headings and blockquotes. Users can change their editing view with a handy toggle button. 
 
-**Name:** `markdown`
+*Please note:* If you want to use your richtext editor to fill a markdown file's contents after its frontmatter, you'll have to name the field `body` so the CMS recognizes it and saves the file accordingly.
+
+**Name:** `richtext`
 
 **UI:** full text editor
 
@@ -28,14 +29,14 @@ The markdown widget provides a full-fledged text editor allowing users to format
 **Example**
 
 ```yaml
-- { label: 'Blog post content', name: 'body', widget: 'markdown' }
+- { label: 'Blog post content', name: 'body', widget: 'richtext' }
 ```
 
 This would render as:
 
-![Markdown widget example](/img/widgets-markdown.png)
+![Richtext widget example](/img/widget-richtext.png)
 
-*Please note:* The markdown widget outputs a raw markdown string. Your static site generator may or may not render the markdown to HTML automatically. Consult with your static site generator's documentation for more information about rendering markdown.
+*Please note:* The richtext widget outputs a raw markdown string. Your static site generator may or may not render the markdown to HTML automatically. Consult with your static site generator's documentation for more information about rendering markdown.
 
 ### Remark plugins
 
@@ -49,8 +50,4 @@ CMS.registerRemarkPlugin(plugin);
 CMS.registerRemarkPlugin({ settings: { bullet: '-' } });
 ```
 
-Note that `decap-cms-widget-markdown` currently uses `remark@10`, so you should check a plugin's compatibility first.
-
-**Result**
-
-![toggle switch](/img/widget-markdown.png)
+Note that `decap-cms-widget-richtext` currently uses `remark@10`, so you should check a plugin's compatibility first.
