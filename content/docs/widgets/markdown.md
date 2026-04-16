@@ -6,7 +6,7 @@ weight: 100
 ---
 *Markdown widget is being deprecated in favor of the richtext widget, which provides all the same features and more. We recommend switching to the richtext widget for a better editing experience and continued support.*
 
-The markdown widget provides a full-fledged text editor allowing users to format text with features such as headings and blockquotes. Users can change their editing view with a handy toggle button. 
+The markdown widget provides a full-fledged text editor, allowing users to format text with features such as headings and blockquotes. Users can change their editing view with a handy toggle button. 
 
 *Please note:* If you want to use your markdown editor to fill a markdown file's contents after its frontmatter, you'll have to name the field `body` so the CMS recognizes it and saves the file accordingly.
 

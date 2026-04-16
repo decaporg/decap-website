@@ -9,7 +9,7 @@ aliases:
 ---
 We are introducing a new `richtext` widget in Decap CMS as a replacement for the `markdown` widget. The `markdown` widget is still available for existing projects, but it is now deprecated and will not be actively maintained.
 
-This is great news for everyone that experienced problems with the markdown widget. Your experience will now be much smoother.
+This is great news for everyone who experienced problems with the markdown widget. Your experience will now be much smoother.
 
 **Why a new widget?**
 
