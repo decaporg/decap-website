@@ -4,7 +4,7 @@ weight: 10
 title: Folder Collections
 ---
 
-Collections with type `folder` displays in the left sidebar of the Content page of the editor UI along with other types.
+Collections with type `folder` display in the left sidebar of the Content page of the editor UI along with other types.
 
 Folder collections represent one or more files with the same format, fields, and configuration options, all stored within the same folder in the repository. You might use a folder collection for blog posts, product pages, author data files, etc.
 

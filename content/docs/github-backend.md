@@ -34,7 +34,7 @@ backend:
   preview_context: my-provider/deployment
 ```
 
-The above configuration would look for the status who's `"context"` is `"my-provider/deployment"`.
+The above configuration would look for the status whose `"context"` is `"my-provider/deployment"`.
 
 ## Git Large File Storage (LFS)
 

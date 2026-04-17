@@ -27,4 +27,4 @@ backend:
 ### Limitations
 
 1. Pagination is not supported so some endpoints might return missing data
-2. Nested collection are partially supported as Azure doesn't allow [renaming and editing](https://docs.microsoft.com/en-us/rest/api/azure/devops/git/pushes/create?view=azure-devops-rest-6.1&source=docs#rename-a-file) in a single operation
+2. Nested collections are partially supported as Azure doesn't allow [renaming and editing](https://docs.microsoft.com/en-us/rest/api/azure/devops/git/pushes/create?view=azure-devops-rest-6.1&source=docs#rename-a-file) in a single operation

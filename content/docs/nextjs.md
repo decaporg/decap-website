@@ -189,13 +189,13 @@ collections:
             - { label: "Description", name: "description", widget: "text"}
 ```
 
-Awesome! Decap CMS should now be available at `localhost:3000/admin/index.html`. Unfortunately we can't edit our content just yet. First we need to move our code into a git repository, and create a new Netlify site.
+Awesome! Decap CMS should now be available at `localhost:3000/admin/index.html`. Unfortunately we can't edit our content just yet. First we need to move our code into a Git repository, and create a new Netlify site.
 
 **Tip:** If you want to test changes made to your config.yml file locally, swap out "git-gateway" with "test-repo" and navigate to `localhost:3000/admin/index.html` to view Decap CMS locally (you can't make changes or read actual content from Git this way, but it's great to verify how things will look).
 
 ## Publishing to GitHub and Netlify
 
-Create a new repository at GitHub (or one of the other supported git services) and follow the instructions on how to push existing files into your new repository.
+Create a new repository at GitHub (or one of the other supported Git services) and follow the instructions on how to push existing files into your new repository.
 
 Now is probably also a good time to add a `.gitignore` file:
 

@@ -200,7 +200,7 @@ show_preview_links: false
 The search functionally requires loading all collection(s) entries, which can exhaust rate limits on large repositories.
 It can be disabled by setting the top level `search` property to `false`.
 
-Defaults to `true`
+Defaults to `true`.
 
 **Example:**
 
@@ -229,6 +229,19 @@ slug:
   encoding: "ascii"
   clean_accents: true
   sanitize_replacement: "_"
+```
+
+## Issue Reports
+
+When an error occurs in the CMS, users are presented with an option to report the issue. By default, this links to the Decap CMS GitHub repository. You can customize this URL to point to your own issue tracker using the `issue_reports` setting. If you are using a non-GitHub URL, you may want to [create a custom locale](#locale) and update the following translation key: `ui.errorBoundary.reportIt`.
+
+**Example:**
+
+```yaml
+issue_reports:
+  url: https://github.com/your-org/your-repo/issues/new
+  # or
+  # url: https://example.com/contact-support
 ```
 
 ## Collections
@@ -336,7 +349,7 @@ slug: "{{year}}-{{month}}-{{day}}_{{fields.slug}}"
 
 ### `preview_path`
 
-A string representing the path where content in this collection can be found on the live site. This allows deploy preview links to direct to lead to a specific piece of content rather than the site root of a deploy preview.
+A string representing the path where content in this collection can be found on the live site. This allows deploy preview links to direct to a specific piece of content rather than the site root of a deploy preview.
 
 **Available template tags:**
 
@@ -383,7 +396,7 @@ The `fields` option maps editor UI widgets to field-value pairs in the saved fil
 * `name` (required): unique identifier for the field, used as the key when referenced in other contexts (like the [relation widget](../widgets/#relation))
 * `label`: label for the field in the editor UI; defaults to the value of `name`
 * `widget`: defines editor UI and inputs and file field data types; details in [Widgets](../widgets)
-* `default`: specify a default value for a field; available for most widget types (see [Widgets](../widgets) for details on each widget type). Please note that field default value only works for folder collection type.
+* `default`: specify a default value for a field; available for most widget types (see [Widgets](../widgets) for details on each widget type). Please note that the field default value only works for folder collection type.
 * `required`: specify as `false` to make a field optional; defaults to `true`
 * `hint`: optionally add helper text directly below a widget. Useful for including instructions. Accepts markdown for bold, italic, strikethrough, and links.
 * `pattern`: add field validation by specifying a list with a regex pattern and an error message; more extensive validation can be achieved with [custom widgets](../custom-widgets/#advanced-field-validation)
@@ -431,8 +444,8 @@ Template tags are the same as those for [slug](#slug), with the following additi
 * `{{dirname}}` The path to the file's parent directory, relative to the collection's `folder`.
 * `{{filename}}` The file name without the extension part.
 * `{{extension}}` The file extension.
-* `{{commit_date}}` The file commit date on supported backends (git based backends).
-* `{{commit_author}}` The file author date on supported backends (git based backends).
+* `{{commit_date}}` The file commit date on supported backends (Git-based backends).
+* `{{commit_author}}` The file author date on supported backends (Git-based backends).
 
 **Example**
 
@@ -444,9 +457,9 @@ Template tags are the same as those for [slug](#slug), with the following additi
 
 An optional list of sort fields to show in the UI.
 
-Defaults to inferring `title`, `date`, `author` and `description` fields and will also show `Update On` sort field in git based backends.
+Defaults to inferring `title`, `date`, `author` and `description` fields and will also show `Update On` sort field in Git-based backends.
 
-When `author` field can't be inferred commit author will be used.
+When the `author` field can't be inferred, the commit author will be used.
 
 **Example**
 

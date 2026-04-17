@@ -12,7 +12,7 @@ Decap CMS exposes a `window.CMS` global object that you can use to register cust
 
 The `registerWidget` requires you to provide a React component. If you have a build process in place for your project, it is possible to integrate with this build process.
 
-However, although possible, it may be cumbersome or even impractical to add a React build phase. For this reason, Decap CMS exposes two constructs globally to allow you to create components inline: ‘createClass’ and ‘h’ (alias for React.createElement).
+However, although possible, it may be cumbersome or even impractical to add a React build phase. For this reason, Decap CMS exposes two constructs globally to allow you to create components inline: `createClass` and `h` (alias for React.createElement).
 
 ## `registerWidget`
 

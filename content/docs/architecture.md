@@ -13,7 +13,7 @@ The core abstractions for content editing are `collections`, `entries`, and `wid
 * The structure of an `entry` is defined as a series of fields, each with a `name`, a `label`, and a `widget`.
 * The `widget` determines the UI widget that the content editor will use when editing this field of an entry, as well as how the content of the field is presented in the editing preview.
 
-Entries are loaded and persisted through a `backend` that will typically represent a `git` repository.
+Entries are loaded and persisted through a `backend` that will typically represent a Git repository.
 
 ## State shape / reducers
 
@@ -75,4 +75,4 @@ Furthermore, all editorial workflow state is managed in Redux; there's an `actio
 
 Decap CMS embraces the idea of Git-as-backend for storing metadata. The first time it runs with the `editorial_workflow` setup, it creates a new ref called `meta/_decap_cms`, pointing to an empty, orphan tree.
 
-Actual data are stored in individual `json` files committed to this tree.
+Actual data is stored in individual JSON files committed to this tree.

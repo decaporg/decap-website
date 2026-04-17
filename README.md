@@ -9,7 +9,6 @@ This repository builds decapcms.org. If you'd like to propose changes to the sit
 **October 2025**: This site has been migrated from Gatsby to Hugo for improved performance and maintainability.
 
 - **Production site**: Built with Hugo (root directory)
-- **Legacy code**: Gatsby implementation preserved in `gatsby/` folder for reference (not actively maintained)
 
 ## Installing
 

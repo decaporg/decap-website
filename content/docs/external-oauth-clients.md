@@ -1,7 +1,7 @@
 ---
+title: External OAuth Clients
 group: Accounts
 weight: 60
-title: External OAuth Clients
 ---
 If you would like to facilitate your own OAuth authentication rather than use Netlify's service or a client side flow like implicit or PKCE, you can use one of the community-maintained projects below. Feel free to hit the "Edit this page" button if you'd like to add yours!
 
@@ -27,5 +27,6 @@ If you would like to facilitate your own OAuth authentication rather than use Ne
 | [@BTx123](https://github.com/BTx123)                         | GitHub, GitHub Enterprise, GitLab | Firebase V2 Cloud Function                | [Repo](https://github.com/BTx123/decap-cms-oauth-firebase)                                                                                                     |
 | [@i40west](https://github.com/i40west)                       | GitHub                            | Cloudflare Pages                          | [Repo](https://github.com/i40west/netlify-cms-cloudflare-pages)                                                                                                |
 | [@nuzulul](https://github.com/nuzulul)                       | GitHub                            | Google Apps Script                        | [Repo](https://github.com/nuzulul/decap-cms-google-apps-script)                                                                                                |
+| [@loteoo](https://github.com/loteoo)                       | GitHub, Gitlab                            | Node.js                        | [Github](https://github.com/decapbridge),[Website](https://decapbridge.com/)                                                                                                |
 
 Check each project's documentation for instructions on installation and usage.
