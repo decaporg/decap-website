@@ -15,6 +15,16 @@
   "body" $ghQuery
 ) }}
 
+{{ with .partner }}
+  <div class="home-backers">
+    <h3>{{ .title }}</h3>
+    
+    <a href="{{ .href }}" target="_blank" rel="noreferrer" title="{{ .text }}">
+      <img src="{{ .logo }}" alt="{{ .text }} logo" height="80" />
+    </a>
+  </div>
+{{ end }}
+
 {{ with try (resources.GetRemote $ghUrl $ghOptions) }}
   {{ with .Err }}
     {{ warnf "%s" . }}
@@ -71,7 +81,7 @@
 {{ $sortedBackers := sort $allBackers "totalAmount" "desc" }}
 {{ if gt (len $sortedBackers) 0 }}
   <div class="home-backers">
-    <h3>{{ .title }}</h3>
+    <h3>{{ .backers.title }}</h3>
     
     <ul>
       {{ range $sortedBackers }}

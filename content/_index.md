@@ -103,6 +103,24 @@ editors:
       description: "With [Git Gateway](/docs/git-gateway-backend/#git-gateway-with-netlify-identity), you can add CMS access for any team member — even if they don't have a GitHub account."
       image: "feature-access.svg"
 
+# Values Section
+values:
+  title: "Built on principles that matter"
+  description: "Decap CMS is an independent open-source project. We are maintained in the EU with the help of contributors from around the world."
+  items:
+    - title: "Free & Open Source, Forever"
+      description: "Decap CMS is MIT-licensed. It is free today and will remain free for everyone, always."
+      icon: "heart"
+    - title: "Own Your Content"
+      description: "Your content lives in your own Git repository — not locked to any provider's database. You are always in control."
+      icon: "feature-access"
+    - title: "Independent & EU-Maintained"
+      description: "No big tech ownership. Decap is maintained in the EU with contributors from across the world."
+      icon: "bow"
+    - title: "Privacy & the Open Web"
+      description: "We believe in privacy, democracy, and the open internet. We build tools that help editors and publishers launch and maintain their independent platforms."
+      icon: "feature-workflow"
+
 # Awards Section
 awards:
   title: "Awards"
@@ -169,8 +187,13 @@ support:
         class: "secondary"
 
 backers:
-  title: "Our Amazing Backers"
-  description: "Thanks to everyone who has supported Decap CMS!"
+  partner:
+    title: "Main partner"
+    text: "PM, poslovni mediji"
+    href: "https://p-m.si"
+    logo: "/img/pm_logo.png"
+  backers:
+    title: "Backers"
 
 # Blog Section
 blog:

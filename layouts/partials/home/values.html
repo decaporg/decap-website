@@ -1,0 +1,22 @@
+<section class="home-values">
+  <div class="container size-lg">
+    <h2>{{ .title }}</h2>
+    
+    {{ with .description }}
+      <p>{{ . }}</p>
+    {{ end }}
+
+    <div class="home-values__grid">
+      {{ range .items }}
+        <div class="home-values__item">
+          {{ with .icon }}
+            {{ partial "icon" . }}
+          {{ end }}
+
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -16,12 +16,8 @@
     {{ partial "home/editors" . }}
   {{ end }}
 
-  {{ with .Params.turboBanner }}
-    {{ partial "home/turbo-banner" . }}
-  {{ end }}
-
-  {{ with .Params.services }}
-    {{ partial "home/services" . }}
+  {{ with .Params.values }}
+    {{ partial "home/values" . }}
   {{ end }}
 
   {{ with .Params.support }}
@@ -30,6 +26,14 @@
 
   {{ with .Params.backers }}
     {{ partial "home/backers" . }}
+  {{ end }}
+
+  {{ with .Params.turboBanner }}
+    {{ partial "home/turbo-banner" . }}
+  {{ end }}
+
+  {{ with .Params.services }}
+    {{ partial "home/services" . }}
   {{ end }}
 
   <div class="home-dark-section-wrapper">
