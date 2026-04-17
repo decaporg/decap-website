@@ -1,8 +1,11 @@
 ---
 title: Community
+description: Decap CMS is a free, independent, open-source project maintained in the EU with contributors from around the world.
 layout: community
 headline: Help us build the CMS of the future.
-subhead: Get help, help others, and find out what's new through the channels below.
+subhead: Decap CMS is a free, independent, open-source project — maintained in the EU with contributors from around the world. We believe in privacy, democracy, and the open internet. Help us keep it that way.
+intro: |
+  Independent publishers and editors deserve tools they can trust and own. Decap CMS is not backed by any tech company — it depends on its community. Whether you contribute code, report bugs, help others, or support us financially, you are helping keep the open web alive.
 sections:
   - title: Contributing
     channels:

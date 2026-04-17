@@ -1,9 +1,12 @@
 {{ define "main" }}
 <section class="page">
+  {{ partial "page-hero" . }}
+
   <div class="container">
     <div class="community-header">
-      <h1 class="hero-title">{{ .Params.headline | markdownify }}</h1>
-      <p class="lead">{{ .Params.subhead | markdownify }}</p>
+      {{ with .Params.intro }}
+        <p class="community-intro">{{ . | markdownify }}</p>
+      {{ end }}
     </div>
 
     {{ range .Params.sections }}

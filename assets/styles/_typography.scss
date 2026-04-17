@@ -69,11 +69,10 @@ a {
 // Lead - larger intro paragraph
 .lead {
   font-size: var(--font-size-lg);
-  margin-bottom: var(--space-fixed-2);
+  margin-bottom: var(--space-fluid-2-5);
   
   @include breakpoint-up(md) {
     font-size: var(--font-size-xl);
-    margin-bottom: var(--space-fluid-5-7);
   }
 }
 
