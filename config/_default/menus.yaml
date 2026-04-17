@@ -9,12 +9,15 @@ main:
   - name: Blog
     url: /blog/
     weight: 30
-  - name: Github
-    url: https://github.com/decaporg/decap-cms
+  - name: Services
+    url: /services/
     weight: 40
-  - name: Turbo
+  - name: Decap Turbo
     url: /turbo/
     weight: 50
+  - name: Github
+    url: https://github.com/decaporg/decap-cms
+    weight: 60
 
 # Docs navigation menu
 docs:

@@ -1,11 +1,9 @@
 {{ define "main" }}
   <div class="page">
-    <div class="container size-sm">
-      <h1>{{ .Title }}</h1>
+    {{ partial "page-hero" . }}
 
-      <div class="markdown">
-        {{ .Content }}
-      </div>
+    <div class="container size-sm markdown">
+      {{ .Content }}
     </div>
   </div>
 {{ end }}

@@ -108,7 +108,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-fluid-4-6);
+    gap: var(--space-fluid-4-7);
     align-items: flex-end;
 
     @include breakpoint-up(sm) {
@@ -128,7 +128,7 @@
       font-weight: var(--font-weight-regular);
 
       @include breakpoint-up(md) {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-md);
       }
     }
 
