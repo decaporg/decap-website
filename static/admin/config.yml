@@ -6,11 +6,8 @@ backend:
   branch: main
 
 local_backend: true
-
 site_url: https://www.decapcms.org
-
 publish_mode: editorial_workflow
-
 media_folder: static/img
 public_folder: /img
 
@@ -20,6 +17,8 @@ docs_collection: &docs_collection
   summary: '{{weight}} - {{title}}'
   preview_path: 'docs/{{slug}}'
   sortable_fields: ['weight', 'title', 'group']
+  preview:
+    visualEditing: true
   fields:
     - { label: Title, name: title, widget: string }
     - label: Section
