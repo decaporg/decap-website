@@ -44,7 +44,7 @@ sections:
   - title: Help
     channels:
       - title: Professional help
-        description: The team of maintainers offers a range of professional services to help you get the most out of Decap CMS. Find onboarding, priority support, and development of custom features.
+        description: The maintainers offer onboarding and custom feature development services. Standalone monthly support remains available during the Decap Turbo rollout and will transition to Turbo support plans as Turbo becomes available.
         link:
           href: /services
           text: Find out more

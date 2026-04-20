@@ -1,11 +1,199 @@
 {{ define "main" }}
   {{ partial "turbo/hero" . }}
 
-  <div class="page">
-    <div class="container size-sm">
-      <div class="markdown">
-        {{ .Content }}
+  {{/* Intro */}}
+  {{ with .Params.intro }}
+  <section class="turbo-intro">
+    <div class="container size-md">
+      <p class="turbo-intro__text">{{ . }}</p>
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Features */}}
+  {{ with .Params.features }}
+  <section class="turbo-features">
+    <div class="container size-md">
+      <div class="grid cols-2">
+        {{ range . }}
+        <div class="turbo-feature-card">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+        {{ end }}
       </div>
     </div>
+  </section>
+  {{ end }}
+
+  {{/* Pricing disclaimer */}}
+  {{ with .Params.pricing_disclaimer }}
+  <div class="container size-md">
+    <div class="turbo-disclaimer">
+      <p>{{ . }}</p>
+    </div>
   </div>
+  {{ end }}
+
+  {{/* Plans */}}
+  {{ with .Params.plans }}
+  <section class="turbo-plans" id="plans">
+    <div class="container size-lg">
+      <h2 class="turbo-plans__title">{{ .title }}</h2>
+      <p class="turbo-plans__description">{{ .description }}</p>
+      <div class="grid cols-4">
+        {{ range .items }}
+        <div class="turbo-plan{{ if .featured }} turbo-plan--featured{{ end }}">
+          <div class="turbo-plan__header">
+            <h3 class="turbo-plan__name">{{ .name }}</h3>
+            <div class="turbo-plan__price">
+              {{ if .price }}
+              <span class="turbo-plan__amount">{{ .price }}</span>
+              {{ with .period }}<span class="turbo-plan__period">{{ . }}</span>{{ end }}
+              {{ else }}
+              <span class="turbo-plan__amount">{{ .price_label }}</span>
+              {{ end }}
+            </div>
+          </div>
+          <a href="{{ .cta_href }}" class="button{{ if .featured }} primary{{ end }} block">{{ .cta_text }}</a>
+          <ul class="turbo-plan__features">
+            {{ range .features }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* FAQ */}}
+  {{ with .Params.faq }}
+  <section class="turbo-faq">
+    <div class="container size-sm">
+      <h2>{{ .title }}</h2>
+      {{ range .items }}
+      <details class="turbo-faq__item">
+        <summary class="turbo-faq__question">{{ .q }}</summary>
+        <div class="turbo-faq__answer">{{ .a | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Feature Comparison */}}
+  <section class="turbo-comparison" id="feature-comparison">
+    <div class="container size-lg">
+      <h2>Feature Comparison</h2>
+      <p>Decap CMS is and will always remain free and open source. Decap Turbo is an optional extension for advanced teams, and you can always downgrade back to the free Decap CMS workflow.</p>
+      <div class="turbo-table-wrapper">
+        <table class="turbo-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Core</th>
+              <th>Starter<br><small>$37 / month</small></th>
+              <th>Team<br><small>$112 / month</small></th>
+              <th>Business<br><small>$374 / month</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Open source CMS</td>
+              <td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Git-based workflow</td>
+              <td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Editorial workflow</td>
+              <td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr class="turbo-table__group-header">
+              <td colspan="5">PERFORMANCE</td>
+            </tr>
+            <tr>
+              <td>Database-proxy performance boost</td>
+              <td>—</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Faster collection loading for large projects</td>
+              <td>—</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr class="turbo-table__group-header">
+              <td colspan="5">USERS &amp; COLLABORATION</td>
+            </tr>
+            <tr>
+              <td>User seats</td>
+              <td>—</td><td>Up to 3</td><td>Up to 9</td><td>Up to 30</td>
+            </tr>
+            <tr>
+              <td>Additional user seat</td>
+              <td>—</td><td>€9/seat/month</td><td>€9/seat/month</td><td>€9/seat/month</td>
+            </tr>
+            <tr>
+              <td>Centralized authentication</td>
+              <td>—</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>User roles &amp; permissions</td>
+              <td>—</td><td>—</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Real-time editing visibility</td>
+              <td>—</td><td>—</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Secrets storage</td>
+              <td>—</td><td>—</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr class="turbo-table__group-header">
+              <td colspan="5">PROJECTS</td>
+            </tr>
+            <tr>
+              <td>Number of projects</td>
+              <td>—</td><td>1</td><td>Up to 3</td><td>Up to 10</td>
+            </tr>
+            <tr>
+              <td>Additional project</td>
+              <td>—</td><td>€19/project/month</td><td>€19/project/month</td><td>€19/project/month</td>
+            </tr>
+            <tr class="turbo-table__group-header">
+              <td colspan="5">SUPPORT</td>
+            </tr>
+            <tr>
+              <td>Community support</td>
+              <td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Expedited bug triage</td>
+              <td>—</td><td>✓</td><td>✓</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Priority support</td>
+              <td>—</td><td>—</td><td>—</td><td>✓</td>
+            </tr>
+            <tr>
+              <td>Dedicated account manager</td>
+              <td>—</td><td>—</td><td>—</td><td>✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {{/* CTA */}}
+  {{ with .Params.cta_section }}
+  <section class="turbo-cta" id="early-access">
+    <div class="container">
+      <h2>{{ .title }}</h2>
+      <p>{{ .description }}</p>
+      <a href="{{ .button_href }}" class="button secondary">{{ .button_text }}</a>
+    </div>
+  </section>
+  {{ end }}
 {{ end }}

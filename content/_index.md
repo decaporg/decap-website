@@ -17,16 +17,16 @@ hero:
 turboBanner:
   label: "NEW"
   title: "Introducing Decap Turbo"
-  description: "Decap CMS stays free forever. Decap Turbo adds premium capabilities for teams that need more speed, collaboration, control, and support."
+  description: "Decap CMS stays free and open source forever. Decap Turbo is an optional extension for advanced teams that need faster CMS performance, centralized access control, and additional collaboration and support capabilities."
   benefits:
-    - text: "Faster CMS performance with database proxy"
+    - text: "Faster CMS performance with a database proxy"
       icon: "turbo-speed"
-    - text: "Advanced user roles & permissions"
+    - text: "Centralized authentication, user management, and roles"
       icon: "turbo-shield"
-    - text: "Real-time collaboration"
+    - text: "Real-time editing visibility"
       icon: "turbo-collaboration"
-    - text: "Priority support"
-      icon: "turbo-support"
+    - text: "Secrets storage for advanced workflows"
+      icon: "turbo-shield"
   button:
     text: "Learn more about Turbo"
     href: "/turbo/"
@@ -132,13 +132,13 @@ awards:
 
 # Services Section
 services:
-  title: "Professional Help?"
-  description: "The team of maintainers offers a range of professional services to help you get the most out of Decap CMS."
+  title: "Need implementation support?"
+  description: "Decap Turbo is our main offering for advanced support and team workflows. Professional services remain available for onboarding and custom feature development, and standalone monthly support remains available during the Turbo transition."
   features:
-    - title: "Priority Support"
+    - title: "Priority Support (Transition)"
       className: "support"
       image: "support.png"
-      description: "Benefit from a dedicated support line and priority ticket handling."
+      description: "Standalone monthly support is still available now and will move to Decap Turbo support plans as Turbo becomes available."
       button:
         href: "/services/"
         text: "Find out more"

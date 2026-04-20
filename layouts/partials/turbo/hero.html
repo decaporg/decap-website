@@ -1,12 +1,16 @@
+{{ $hero := .Params.hero }}
+
 <div class="turbo-hero">
   <div class="container">
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Description }}</p>
+    {{ with $hero.badge }}
+      <div class="turbo-hero__badge">{{ partial "icon" "turbo-star" }} {{ . }}</div>
+    {{ end }}
 
-    {{ with .Params.hero }}
-      {{ with .cta }}
-        <a href="{{ .href }}" class="button primary turbo-hero__cta">{{ .text }}</a>
-      {{ end }}
+    <h1 class="hero-title">{{ .Title }}</h1>
+    <p class="lead">{{ .Description }}</p>
+
+    {{ with $hero.cta }}
+      <a href="{{ .href }}" class="button button--secondary">{{ .text }}</a>
     {{ end }}
   </div>
 </div>

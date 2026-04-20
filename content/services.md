@@ -1,6 +1,6 @@
 ---
 title: Professional help
-description: Our partners offer a range of services that can help you get the most out of Decap CMS. Find onboarding, priority support, and development of custom features.
+description: Expert services for Decap CMS, with a transition from standalone monthly support toward Decap Turbo support plans.
 image: /img/pro-help.png
 ---
 ## Onboarding
@@ -11,9 +11,13 @@ This service is provided by PM TechHub, the maintainers of Decap CMS.
 
 <a href="https://techhub.p-m.si/services/decap/" class="button ga-onboarding">Learn more about Onboarding</a>
 
-## Monthly Priority Support
+## Monthly Priority Support (Transition)
 
-Get continuous support for Decap CMS with priority response times.
+Standalone monthly priority support remains available during the Decap Turbo rollout period.
+
+As Decap Turbo becomes available, Turbo support tiers will replace this standalone monthly support path.
+
+If you need ongoing support now, this remains the best option until Turbo preview access is open for your team.
 
 This service is provided by PM TechHub, the maintainers of Decap CMS.
 
@@ -22,6 +26,8 @@ This service is provided by PM TechHub, the maintainers of Decap CMS.
 ## Development of Custom Features
 
 Sponsor the development of a custom feature tailored to your needs. The expert team of maintainers is ready to bring your vision to life.
+
+Custom feature development is an independent offering and is not bundled into Decap Turbo plans.
 
 This service is provided by PM TechHub, the maintainers of Decap CMS.
 
