@@ -1,8 +1,9 @@
 {{ $search := resources.Get "/scripts/search.js" }}
 {{ $header := resources.Get "/scripts/header.js" }}
 {{ $docsNav := resources.Get "/scripts/docs-nav.js" }}
+{{ $externalLinks := resources.Get "/scripts/external-links.js" }}
 
-{{ $bundleItems := slice $search $header $docsNav }}
+{{ $bundleItems := slice $search $header $docsNav $externalLinks }}
 
 {{ $options := dict
   "sourcemap" "inline"

@@ -54,6 +54,14 @@ a {
   font-weight: var(--font-weight-bold);
   text-decoration: none;
 
+  &.external::after {
+    content: "↗";
+    margin-left: 0.3em;
+    font-size: 0.6em;
+    position: relative;
+    top: -0.2em;
+  }
+
   &:hover {
     text-decoration: underline;
   }
