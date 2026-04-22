@@ -1,11 +1,13 @@
 ---
+title: NextJS
 group: Guides
 weight: 40
-title: NextJS
 ---
 This guide will help you get started using Decap CMS with NextJS.
 
-## Creating a new project
+## Creating a 
+
+## new project
 
 Let's repeat some of the basics of setting up a simple NextJS project (check out [nextjs.org/learn](http://nextjs.org/learn) for a more detailed version).
 
@@ -195,7 +197,10 @@ Awesome! Decap CMS should now be available at `localhost:3000/admin/index.html`.
 
 ## Publishing to GitHub and Netlify
 
-Create a new repository at GitHub (or one of the other supported Git services) and follow the instructions on how to push existing files into your new repository.
+Create a new repository
+
+\
+ at GitHub (or one of the other supported Git services) and follow the instructions on how to push existing files into your new repository.
 
 Now is probably also a good time to add a `.gitignore` file:
 
