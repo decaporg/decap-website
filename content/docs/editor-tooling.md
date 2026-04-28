@@ -2,6 +2,8 @@
 title: Editor Tooling
 weight: 60
 group: Customization
+aliases:
+  - custom-formatters
 ---
 
 ## Linting via remark
