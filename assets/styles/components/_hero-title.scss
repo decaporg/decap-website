@@ -1,6 +1,10 @@
 .hero-title {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-xl);
   margin-bottom: var(--space-fluid-4-5);
+
+  @include breakpoint-up('xs') {
+    font-size: var(--font-size-3xl);
+  }
 
   @include breakpoint-up(md) {
     font-size: var(--font-size-4xl);

@@ -1,16 +1,40 @@
 <div class="hero-wrapper">
-  <div class="hero">
+  <section class="hero hero--dark">
     <div class="hero__container container">
-      <h1 class="hero-title">{{ .headline | markdownify }}</h1>
-      <p class="hero__subhead">{{ .subhead }}</p>
+      <div class="hero__content">
+        <h1 class="hero-title">{{ .headline | markdownify }}</h1>
+        <p class="hero__subhead">{{ .subhead }}</p>
 
-      <div class="hero__buttons">
-        {{ range .buttons }}
-          <a href="{{ .href }}" class="button {{ .class | default "primary" }}">{{ .text }}</a>
+        {{ with .benefits }}
+          <ul class="hero__benefits">
+            {{ range . }}
+              <li class="hero__benefit-item">
+                <span class="hero__benefit-icon" aria-hidden="true">&check;</span>
+                <span>{{ . }}</span>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+
+        <div class="hero__buttons">
+          {{ range .buttons }}
+            <a href="{{ .href }}" class="button {{ .class | default "primary" }}">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img
+          src="{{ .image | default "/img/hero-scheme.svg" }}"
+          class="hero__image"
+          alt="{{ .imageAlt | default "Decap CMS interface illustration" }}"
+          loading="eager"
+          decoding="async"
+        >
+        {{ with .disclaimer }}
+          <p class="hero__disclaimer">{{ . }}</p>
         {{ end }}
       </div>
     </div>
-  </div>
-
-  {{/*  <div class="hero__border"></div>  */}}
+  </section>
 </div>

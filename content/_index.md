@@ -5,13 +5,21 @@ description: "Open source content management for your Git workflow"
 # Hero Section
 hero:
   headline: "Open&nbsp;source content&nbsp;management for your Git&nbsp;workflow"
-  subhead: "Use Decap CMS with any static site generator for a faster and more flexible web project"
+  subhead: "Use Decap CMS with any static site generator for faster, more flexible web projects."
+  benefits:
+    - "Built for static sites and modern frontend workflows"
+    - "Open source and self-hosted"
+    - "The core CMS is free forever"
   buttons:
-    - text: "Get started in the docs"
-      href: "/docs"
-    - text: "Try the interactive demo"
+    - text: "Go to Docs"
+      href: "/docs/"
+      class: "primary"
+    - text: "Try the demo"
       href: "https://demo.decapcms.org"
-      class: "secondary"
+      class: "hero-outline"
+  image: "/img/hero-scheme.svg"
+  imageAlt: "Decap CMS editor interface illustration"
+  disclaimer: "Image is a representation and not how the actual Decap CMS looks like."
 
 # Turbo Banner
 turboBanner:
