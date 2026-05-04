@@ -19,7 +19,7 @@
   <div class="home-backers">
     <h3>{{ .title }}</h3>
     
-    <a href="{{ .href }}" target="_blank" rel="noreferrer" title="{{ .text }}">
+    <a href="{{ .href }}" target="_blank" rel="noreferrer" title="{{ .text }}" class="hide-external">
       <img src="{{ .logo }}" alt="{{ .text }} logo" height="80" />
     </a>
   </div>
@@ -88,6 +88,20 @@
         <li>
           <img src="{{ .image }}" alt="{{ .name }}" />
           <span>{{ .name }}</span>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
+
+{{ with .fundedBy }}
+  <div class="home-funded-by">
+    <p>{{ .text }}</p>
+    
+    <ul>
+      {{ range .logos }}
+        <li>
+          <img src="{{ .src }}" alt="{{ .alt }}" />
         </li>
       {{ end }}
     </ul>

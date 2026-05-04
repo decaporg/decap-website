@@ -192,6 +192,17 @@ backers:
     logo: "/img/pm_logo.png"
   backers:
     title: "Backers"
+  fundedBy:
+    text: "The investment is co-financed by the Republic of Slovenia and the European Union under the European Regional Development Fund."
+    logos:
+      - src: "/img/EN_Co-fundedbytheEU_RGB_POS.png"
+        alt: "Co-funded by the EU"
+      - src: "/img/i_feel_slo.png"
+        alt: "I Feel Slovenia"
+      - src: "/img/MK_EN.png"
+        alt: "Republic of Slovenia - Ministry of Culture"
+      - src: "/img/czk-logo.svg"
+        alt: "Center za kreativnost"
 
 # Blog Section
 blog:
