@@ -1,56 +1,29 @@
 ---
 title: Community
-description: Decap CMS is a free, independent, open-source project maintained in the EU with contributors from around the world.
+description: Get help with Decap CMS through Discord, GitHub Issues, and GitHub Discussions.
 layout: community
-headline: Help us build the CMS of the future.
-subhead: Decap CMS is a free, independent, open-source project — maintained in the EU with contributors from around the world. We believe in privacy, democracy, and the open internet. Help us keep it that way.
+headline: Get help with Decap CMS.
+subhead: Start with the community support channel that fits your problem, whether you need quick guidance, bug reporting, or a place to discuss ideas.
 intro: |
-  Independent publishers and editors deserve tools they can trust and own. Decap CMS is not backed by any tech company — it depends on its community. Whether you contribute code, report bugs, help others, or support us financially, you are helping keep the open web alive.
+  The Community page is focused on help. Use Discord for quick back-and-forth support, GitHub Issues to report bugs and request features, and GitHub Discussions for questions and longer-form product conversations.
 sections:
-  - title: Contributing
-    channels:
-      - title: Contributor guide
-        description: Instructions for contributing to the project
-        link:
-          href: /docs/contributor-guide
-          text: Read the guide
-      - title: Open Collective
-        description: Financially support Decap CMS on Open Collective
-        link:
-          href: https://opencollective.com/decap
-          text: Support Us
-      - title: GitHub Sponsors
-        description: Financially support Decap CMS via GitHub Sponsors
-        link:
-          href: https://github.com/sponsors/decaporg
-          text: Sponsor Us
-  - title: Communication
+  - title: Live help
     channels:
       - title: Decap CMS Discord
-        description: Live community chat for all things Decap CMS.
+        description: Join the community help channel for quick questions, implementation advice, and troubleshooting.
         link:
           href: /chat
-          text: Join the chat
+          text: Join Discord
+  - title: GitHub support channels
+    channels:
       - title: GitHub Issues
-        description: Report bugs, request features, and comment on existing issues.
+        description: Report reproducible bugs, request product improvements, and follow maintainer triage.
         link:
           href: https://github.com/decaporg/decap-cms/issues
           text: View issues
       - title: GitHub Discussions
-        description: Ask questions and discuss ideas.
+        description: Ask questions, share implementation patterns, and discuss ideas with maintainers and other users.
         link:
           href: https://github.com/decaporg/decap-cms/discussions
           text: View discussions
-  - title: Help
-    channels:
-      - title: Professional help
-        description: The maintainers offer onboarding and custom feature development services. Standalone monthly support remains available during the Decap Turbo rollout and will transition to Turbo support plans as Turbo becomes available.
-        link:
-          href: /services
-          text: Find out more
-      - title: Community help
-        description: Get help from the community on our Discord server's help channel.
-        link:
-          href: /chat
-          text: Join the chat
 ---

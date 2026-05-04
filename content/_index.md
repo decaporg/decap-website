@@ -133,57 +133,55 @@ awards:
 # Services Section
 services:
   title: "Need implementation support?"
-  description: "Decap Turbo is our main offering for advanced support and team workflows. Professional services remain available for onboarding and custom feature development, and standalone monthly support remains available during the Turbo transition."
+  description: "Decap Turbo is the main path for advanced support and team workflows. Services remain available for onboarding, custom feature development, delivery work, and implementation help."
   features:
-    - title: "Priority Support (Transition)"
-      className: "support"
-      image: "support.png"
-      description: "Standalone monthly support is still available now and will move to Decap Turbo support plans as Turbo becomes available."
-      button:
-        href: "/services/"
-        text: "Find out more"
     - title: "Onboarding"
       className: "onboarding"
       image: "onboarding.png"
       description: "Get up to speed quickly with a customized onboarding program tailored to your team and project."
       button:
         href: "/services/"
-        text: "Find out more"
+        text: "View services"
     - title: "Custom Features Development"
       className: "development"
       image: "development.png"
       description: "Sponsor the development of custom features or integrations to meet your specific needs."
       button:
         href: "/services/"
-        text: "Find out more"
+        text: "View services"
+    - title: "Website Delivery"
+      className: "support"
+      image: "support.png"
+      description: "Work with a partner that can build, launch, and maintain your Decap CMS implementation."
+      button:
+        href: "/services/"
+        text: "View services"
 
 # Support Section
 support:
-  title: "Support Our Mission"
-  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation. Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
+  title: "Assess project trust"
+  description: "Decap CMS is independent, open source, and maintained in the EU. Learn how the project is funded, who supports it, and how to contribute to its future."
   options:
     - title: "GitHub Sponsors"
       icon: "github-sponsors"
-      description: "Donate to us through GitHub's sponsorship program"
+      description: "Support ongoing maintenance through GitHub's sponsorship program"
       button:
-        text: "Sponsor on GitHub"
-        href: "https://github.com/sponsors/decaporg"
+        text: "See how to support"
+        href: "/about/"
         class: "primary"
-        external: true
     - title: "Open Collective"
       icon: "opencollective"
-      description: "Support the project through Open Collective with transparent funding and expense tracking"
+      description: "Review funding options, governance signals, and transparent backing for the project"
       button:
-        text: "Support on Open Collective"
-        href: "https://opencollective.com/decap"
+        text: "Read about Decap"
+        href: "/about/"
         class: "secondary"
-        external: true
     - title: "Exclusive partnership"
       icon: "partnership"
-      description: "We are looking for a strategic partner to help us take Decap CMS to the next level"
+      description: "See how commercial partners and maintainers help sustain long-term development"
       button:
-        text: "Contact Us"
-        href: "mailto:decap@p-m.si"
+        text: "View About page"
+        href: "/about/"
         class: "secondary"
 
 backers:
@@ -212,12 +210,12 @@ blog:
 
 # Community Section
 community:
-  title: "Community"
-  hook: "A community-driven project you can help evolve"
-  text: "Decap CMS is built by a community of more than 100 contributors — and you can help. Read the [contributing guide](/docs/contributor-guide) to join in."
+  title: "Get help"
+  hook: "Choose the support channel that matches your question"
+  text: "Use the Community page to find the right help path: Discord for quick support, GitHub Issues for bugs and feature requests, and GitHub Discussions for questions and ideas."
   image: "community.png"
   button:
-    text: "About the community"
+    text: "Get support"
     href: "/community/"
 ---
 

@@ -5,9 +5,8 @@
   padding-top: var(--space-fluid-2-4);
   padding-bottom: var(--space-fluid-2-4);
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
-  font-family: var(--font-family-secondary);
 
-  @include breakpoint-up(md) {
+  @include breakpoint-up(lg) {
     position: sticky;
     top: 0;
     width: 100%;
@@ -38,7 +37,7 @@
     display: flex;
     justify-content: flex-end;
 
-    @include breakpoint-up(sm) {
+    @include breakpoint-up(lg) {
       display: none;
     }
   }
@@ -72,7 +71,7 @@
       display: block;
     }
 
-    @include breakpoint-up(sm) {
+    @include breakpoint-up(lg) {
       position: relative;
       display: block;
       width: auto;
@@ -86,7 +85,7 @@
   &__search-box {
     @extend .header__toggle-area;
 
-    @include breakpoint-up(sm) {
+    @include breakpoint-up(lg) {
       flex: 1;
       max-width: 200px;
       margin-right: var(--space-fixed-4);
@@ -96,7 +95,7 @@
   &__menu {
     @extend .header__toggle-area;
 
-    @include breakpoint-up(sm) {
+    @include breakpoint-up(lg) {
       flex: 0 0 auto;
       margin-left: auto;
     }
@@ -111,33 +110,158 @@
     gap: var(--space-fluid-4-7);
     align-items: flex-end;
 
-    @include breakpoint-up(sm) {
+    @include breakpoint-up(lg) {
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
     }
 
+    @include breakpoint-down(lg) {
+      gap: var(--space-fixed-5);
+    }
   }
 
   &__menu-item {
     line-height: 1;
+    position: relative;
+    width: 100%;
 
-    a {
+    @include breakpoint-up(lg) {
+      width: auto;
+    }
+
+    a,
+    button {
       text-decoration: none;
       color: inherit;
       font-weight: var(--font-weight-regular);
+      font-family: inherit;
+      font-size: var(--font-size-md);
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--color-dark);
+      }
 
       @include breakpoint-up(md) {
         font-size: var(--font-size-md);
       }
     }
 
-    &.github-link {
-      height: 28px;
-      
-      a {
-        display: inline-flex;
-        align-items: center;
+    &.has-children {
+      @include breakpoint-up(lg) {
+        &:hover,
+        &:focus-within,
+        &.submenu-open {
+          .header__submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+
+          .header__menu-trigger {
+            color: var(--color-dark);
+          }
+
+          .header__menu-caret {
+            transform: rotate(225deg) translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+
+  &__menu-link,
+  &__menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-fixed-2);
+    width: 100%;
+
+    @include breakpoint-up(lg) {
+      justify-content: flex-start;
+      width: auto;
+      min-height: 40px;
+      padding: 0 var(--space-fixed-2);
+    }
+  }
+
+  &__menu-trigger {
+    @include breakpoint-up(lg) {
+      border-radius: var(--rounded-sm);
+    }
+  }
+
+  &__menu-caret {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-1px);
+    transition: transform 0.2s ease;
+  }
+
+  &__submenu {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-fixed-3) 0 0;
+    display: none;
+    gap: var(--space-fixed-4);
+
+    @include breakpoint-up(lg) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 210px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      pointer-events: none;
+      padding: var(--space-fixed-4) var(--space-fixed-3);
+      border: 1px solid var(--color-light-gray);
+      border-radius: var(--radius-sm);
+      background: var(--color-white);
+      box-shadow: 0 25px 50px -12px #11081f59;
+      transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
+      z-index: 3;
+    }
+  }
+
+  &__submenu-link {
+    display: block;
+    padding: var(--space-fixed-2) 0;
+    font-size: var(--font-size-sm);
+
+    @include breakpoint-up(lg) {
+      padding: var(--space-fixed-2) var(--space-fixed-3);
+      border-radius: var(--rounded-sm);
+      white-space: nowrap;
+
+      &:hover,
+      &:focus-visible {
+        background: var(--color-background);
+      }
+    }
+  }
+
+  @include breakpoint-down(xs) {
+    &__menu-item.submenu-open {
+      .header__submenu {
+        display: block;
+      }
+
+      .header__menu-caret {
+        transform: rotate(225deg) translateY(-1px);
       }
     }
   }

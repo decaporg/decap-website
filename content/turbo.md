@@ -92,7 +92,7 @@ faq:
     - q: Is custom feature development included in Decap Turbo plans?
       a: "No. Custom feature development remains a separate offering. Turbo plans include product features and support tiers, while custom builds are handled independently through our services offering."
     - q: What about standalone monthly support?
-      a: "During this transition period, standalone monthly support remains available through our services page. As Decap Turbo reaches general availability, Turbo support plans will become the primary monthly support path."
+      a: "Decap Turbo is the primary path for ongoing monthly support and advanced team capabilities. Our services page remains available for onboarding, custom feature development, implementation work, and partner-led delivery."
     - q: What happens if I exceed my user or project limit?
       a: "For Starter and Team plans, you can add additional seats and additional projects (pricing based on seat/project). Alternatively, you can upgrade to a higher tier plan for better per-user pricing and additional features."
 cta_section:

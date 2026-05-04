@@ -1,27 +1,19 @@
 ---
-title: Professional help
-description: Expert services for Decap CMS, with a transition from standalone monthly support toward Decap Turbo support plans.
+title: Services
+description: Onboarding, implementation and custom development services for teams building with Decap CMS.
 image: /img/pro-help.png
 ---
+Decap CMS Services are focused on implementation work for teams that want expert help getting a project launched, extended, or handed off cleanly.
+
+If you are evaluating ongoing product support plans, see [Decap Turbo](/turbo/) first. Turbo is the primary path for advanced support and team-oriented upgrades. Services remain separate for onboarding, implementation, and custom work.
+
 ## Onboarding
 
-Get started with Decap CMS with onboarding sessions provided by experts.
+Get your team up and running faster with onboarding sessions led by the Decap maintainers.
 
-This service is provided by PM TechHub, the maintainers of Decap CMS.
+This service is provided by partner agency PM.
 
-<a href="https://techhub.p-m.si/services/decap/" class="button ga-onboarding">Learn more about Onboarding</a>
-
-## Monthly Priority Support (Transition)
-
-Standalone monthly priority support remains available during the Decap Turbo rollout period.
-
-As Decap Turbo becomes available, Turbo support tiers will replace this standalone monthly support path.
-
-If you need ongoing support now, this remains the best option until Turbo preview access is open for your team.
-
-This service is provided by PM TechHub, the maintainers of Decap CMS.
-
-<a href="https://techhub.p-m.si/services/decap/" class="ga-support button">Learn more about Priority Support</a>
+<a href="https://www.p-m.si/en/code/decap/#onboarding" class="button ga-onboarding">Learn more about Onboarding</a>
 
 ## Development of Custom Features
 
@@ -29,15 +21,15 @@ Sponsor the development of a custom feature tailored to your needs. The expert t
 
 Custom feature development is an independent offering and is not bundled into Decap Turbo plans.
 
-This service is provided by PM TechHub, the maintainers of Decap CMS.
+This service is provided by partner agency PM.
 
-<a href="https://techhub.p-m.si/services/decap/" class="ga-features button">Learn more about Custom Features</a>
+<a href="https://www.p-m.si/en/code/decap/#feature" class="ga-features button">Learn more about Custom Features</a>
 
 ## Building Websites with Decap CMS
 
-Work with experts and agencies that build websites with Decap CMS.
+Work with experts and agencies that design and build production websites on top of Decap CMS.
 
-- <a href="https://techhub.p-m.si/services/web-development/" class="ga-webdev">PM TechHub</a>
+- <a href="https://www.p-m.si/en/code/" class="ga-webdev">PM Agency</a>
 
 <br>
 
@@ -45,6 +37,6 @@ Work with experts and agencies that build websites with Decap CMS.
 
 ## Become a Partner
 
-If you offer support for Decap CMS, you can become a partner. Partners are listed on this page and can use the Decap Partner logo on their website.
+If you offer implementation or delivery services for Decap CMS, you can become a partner. Partners are listed on this page and can use the Decap Partner logo on their website.
 
 <a href="mailto:decap@p-m.si" class="ga-partner">Contact us</a> to find out more how to become a partner and how the partnership works.

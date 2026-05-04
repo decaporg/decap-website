@@ -54,12 +54,13 @@ a {
   font-weight: var(--font-weight-bold);
   text-decoration: none;
 
-  &.external::after {
+  &.external:not(.hide-external)::after {
     content: "↗";
-    margin-left: 0.3em;
-    font-size: 0.6em;
+    margin-left: 0.4em;
+    font-size: 0.9em;
     position: relative;
-    top: -0.2em;
+    font-family: system-ui;
+    opacity: 0.7;
   }
 
   &:hover {
