@@ -35,19 +35,27 @@ main:
     identifier: features
     weight: 30
   - name: For Content Teams
-    url: /features/?persona=editor
+    url: /features/
+    params:
+      href: /features/?persona=editor
     parent: features
     weight: 31
   - name: For Developers
-    url: /features/?persona=developer
+    url: /features/
+    params:
+      href: /features/?persona=developer
     parent: features
     weight: 32
   - name: For Team Leads
-    url: /features/?persona=team
+    url: /features/
+    params:
+      href: /features/?persona=team
     parent: features
     weight: 33
   - name: For Agencies
-    url: /features/?persona=agency
+    url: /features/
+    params:
+      href: /features/?persona=agency
     parent: features
     weight: 34
   - name: All Features

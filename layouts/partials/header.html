@@ -49,7 +49,16 @@
         {{ range $topLevelItems }}
           {{ $children := .Children }}
           {{ $hasChildren := gt (len $children) 0 }}
-          {{ $isExternal := or (hasPrefix .URL "http://") (hasPrefix .URL "https://") }}
+          {{ $configuredMenuHref := .Params.href | default .URL }}
+          {{ $isExternal := or (hasPrefix $configuredMenuHref "http://") (hasPrefix $configuredMenuHref "https://") }}
+          {{ $menuHref := $configuredMenuHref }}
+          {{ if not $isExternal }}
+            {{ $urlParts := split $configuredMenuHref "?" }}
+            {{ $menuHref = index $urlParts 0 | relURL }}
+            {{ if gt (len $urlParts) 1 }}
+              {{ $menuHref = printf "%s?%s" $menuHref (delimit (after 1 $urlParts) "?") }}
+            {{ end }}
+          {{ end }}
           <li class="header__menu-item{{ if $hasChildren }} has-children{{ end }}">
             {{ if $hasChildren }}
             <button
@@ -63,11 +72,20 @@
             </button>
             <ul class="header__submenu" aria-label="{{ .Name }}">
               {{ range $children }}
-              {{ $childExternal := or (hasPrefix .URL "http://") (hasPrefix .URL "https://") }}
+              {{ $configuredChildHref := .Params.href | default .URL }}
+              {{ $childExternal := or (hasPrefix $configuredChildHref "http://") (hasPrefix $configuredChildHref "https://") }}
+              {{ $childHref := $configuredChildHref }}
+              {{ if not $childExternal }}
+                {{ $childUrlParts := split $configuredChildHref "?" }}
+                {{ $childHref = index $childUrlParts 0 | relURL }}
+                {{ if gt (len $childUrlParts) 1 }}
+                  {{ $childHref = printf "%s?%s" $childHref (delimit (after 1 $childUrlParts) "?") }}
+                {{ end }}
+              {{ end }}
               <li>
                 <a
                   class="header__submenu-link"
-                  href="{{ if $childExternal }}{{ .URL }}{{ else }}{{ .URL | relURL }}{{ end }}"
+                  href="{{ $childHref }}"
                   {{ if $childExternal }}target="_blank" rel="noreferrer"{{ end }}
                 >
                   {{ .Name }}
@@ -76,7 +94,7 @@
               {{ end }}
             </ul>
             {{ else }}
-              <a class="header__menu-link" href="{{ if $isExternal }}{{ .URL }}{{ else }}{{ .URL | relURL }}{{ end }}">
+              <a class="header__menu-link" href="{{ $menuHref }}">
                 <span>{{ .Name }}</span>
                 {{ if eq .URL "/turbo/" }}
                   <span class="header__badge">new</span>
