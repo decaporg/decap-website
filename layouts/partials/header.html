@@ -77,7 +77,10 @@
             </ul>
             {{ else }}
               <a class="header__menu-link" href="{{ if $isExternal }}{{ .URL }}{{ else }}{{ .URL | relURL }}{{ end }}">
-                {{ .Name }}
+                <span>{{ .Name }}</span>
+                {{ if eq .URL "/turbo/" }}
+                  <span class="header__badge">new</span>
+                {{ end }}
               </a>
             {{ end }}
           </li>

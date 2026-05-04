@@ -120,7 +120,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-fluid-4-7);
+    gap: var(--space-fluid-4-6);
     align-items: flex-end;
 
     @include breakpoint-up(lg) {
@@ -210,6 +210,20 @@
     &:focus-visible {
       color: var(--color-black);
     }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.45rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
+    color: var(--color-white);
+    font-size: var(--font-size-2xs);
+    position: relative;
+    top: -8px;
+    left: -4px;
   }
 
   &__menu-trigger {
