@@ -31,16 +31,29 @@ main:
     parent: support
     weight: 22
   - name: Features
+    url: /features/
     identifier: features
     weight: 30
-  - name: For Developers
-    url: /features/developer
+  - name: For Content Teams
+    url: /features/?persona=editor
     parent: features
     weight: 31
-  - name: For Editors
-    url: /features/editor
+  - name: For Developers
+    url: /features/?persona=developer
     parent: features
     weight: 32
+  - name: For Team Leads
+    url: /features/?persona=team
+    parent: features
+    weight: 33
+  - name: For Agencies
+    url: /features/?persona=agency
+    parent: features
+    weight: 34
+  - name: All Features
+    url: /features/
+    parent: features
+    weight: 35
   - name: Decap Turbo
     url: /turbo/
     weight: 40

@@ -1,0 +1,111 @@
+.features-card {
+  background: var(--color-white);
+  // border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 24px #27323b14;
+  display: flex;
+  gap: var(--space-fluid-4-7);
+  padding: var(--space-fluid-4-6);
+
+  @include breakpoint-down('lg') {
+    flex-direction: column;
+  }
+
+  &--reverse {
+    @include breakpoint-up('lg') {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.is-deprioritized {
+    opacity: 0.78;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-fixed-3);
+    
+    @include breakpoint-up('lg') {
+      justify-content: center;
+    }
+  }
+
+  &__header {
+    align-items: flex-start;
+    display: flex;
+    gap: var(--space-fluid-3-5);
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: var(--font-size-lg);
+    margin: var(--space-fixed-1) 0;
+  }
+
+  &__visual {
+    border-left: 3px solid var(--color-primary-light);
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+    margin: 0;
+    padding-left: var(--space-fixed-3);
+  }
+
+  &__badges {
+    flex-shrink: 0;
+  }
+
+  &__badge {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-pill);
+    color: var(--color-gray-700);
+    display: inline-block;
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    text-transform: uppercase;
+
+    &--turbo {
+      background: #f4ecff;
+      color: #5d2f98;
+    }
+  }
+
+  &__personas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-fixed-2);
+    list-style: none;
+    padding: 0;
+
+    li {
+      background: var(--color-background);
+      border-radius: var(--radius-pill);
+      color: var(--color-gray-700);
+      font-size: var(--font-size-2xs);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__image {
+    margin-top: auto;
+
+    @include breakpoint-up('lg') {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+  }
+
+  &__image-media {
+    border-radius: var(--radius-lg);
+    display: block;
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+  }
+}

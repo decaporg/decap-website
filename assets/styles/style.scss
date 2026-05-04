@@ -18,6 +18,7 @@
 @import 'layouts/blog-list';
 @import 'layouts/docs-single';
 @import 'layouts/docs-list';
+@import 'layouts/features-list';
 @import 'layouts/home';
 @import 'layouts/community';
 @import 'layouts/turbo';
@@ -38,13 +39,12 @@
 @import 'components/highlight';
 @import 'components/carbon-ads';
 @import 'components/widgets';
-@import 'components/features-grid';
+@import 'components/features-card';
 
 @import 'components/home/hero';
 @import 'components/home/turbo-banner';
-@import 'components/home/developers';
+@import 'components/home/features';
 @import 'components/home/template-banner';
-@import 'components/home/editors';
 @import 'components/home/services';
 @import 'components/home/support';
 @import 'components/home/backers';

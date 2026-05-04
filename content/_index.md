@@ -61,26 +61,45 @@ turboBanner:
       description: "vs. standard Decap CMS"
       icon: "turbo-performance"
 
-# Developers Section
-developers:
-  title: "For Developers"
-  id: "developers"
-  link:
-    href: "#editors"
-    text: "For Editors"
+# Homepage Features
+features:
+  title: "Why teams choose Decap CMS"
+  description: "Decap CMS is strongest when you want a friendly editorial experience, a Git-native implementation, and content that stays in your own stack. These are the capabilities most likely to decide whether Decap is the right fit."
   button:
-    text: "All Developer Features"
-    href: "/features/developer/"
+    text: "All Decap CMS Features"
+    href: "/features/"
+    class: "primary"
   features:
-    - title: "Integral part of the Jamstack"
-      description: "Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content. Compared to server-side CMS like WordPress, this means better performance, higher security, lower cost of scaling, and a better developer experience. You can learn more about the Jamstack on [jamstack.org](https://jamstack.org)."
-      image: "jamstack-scheme.png"
-    - title: "Works with most frontend tools"
-      description: "You can add Decap CMS to any static site generator, meta-framework, or other tool that stores content in Git."
+    - title: "Friendly editor experience with live preview"
+      description: "Decap gives editors a clean web UI with structured fields, rich-text editing, drag-and-drop media handling, and real-time preview. That makes it easier to hand off content updates without turning every change into a developer task."
+      visual: "Show a real editing session with form fields on the left and the page preview on the right."
+      image: "screenshot-editor.png"
+      imageAlt: "Decap CMS editing interface with fields and preview"
+    - title: "Editorial workflow that fits review and publishing"
+      description: "Teams can move entries from draft to review to publish using Decap's editorial workflow. It works well for marketing sites, documentation, and other projects where content needs review before it goes live."
+      visual: "Show a simple status flow from draft to review to publish, with one entry moving through the pipeline."
+      image: "screenshot-editorial.png"
+      imageAlt: "Editorial workflow view in Decap CMS"
+    - title: "Flexible content models for real projects"
+      description: "You can define your own collections, fields, nested structures, and relationships instead of forcing content into a rigid template. This is one of Decap's strongest advantages for teams with custom page types or structured editorial content."
+      visual: "Show linked content blocks, repeatable sections, and related entries to make the schema flexibility obvious."
+      image: "widget-relation.png"
+      imageAlt: "Relation widget example in Decap CMS"
+    - title: "Works with most static-site stacks"
+      description: "Decap works with Hugo, Next.js, Jekyll, Gatsby, and other static-site generators or Git-backed frontend stacks. If your content already lives in Git, Decap usually fits without forcing a platform migration."
+      visual: "Show a stack collage with popular frameworks and generators around the CMS."
       image: "frontend-tools.png"
-    - title: "Install, configure, and extend with ease"
-      description: "Install Decap by adding two files to your site, then configure everything in a YAML file. Extend with ease with React: create custom-styled previews, UI widgets, and editor plugins or add backends to support different Git platform APIs. See Add to your site to get started."
-      image: "configure.png"
+      imageAlt: "Static site tools supported by Decap CMS"
+    - title: "Git-native history and content ownership"
+      description: "Content lives in your own repository alongside your code, so version history, rollback, branching, and deployment workflows stay in one place. That matters to teams that want visibility and control instead of moving content into a separate vendor database."
+      visual: "Show commit history, deployment checks, or a repo timeline to reinforce ownership and traceability."
+      image: "github-statuses-deploy-previews.png"
+      imageAlt: "GitHub deployment status and preview workflow"
+    - title: "Open source core with room to extend"
+      description: "Decap CMS is open source, self-hosted, and extensible. Teams can start with a lightweight install, then add custom widgets, previews, plugins, media integrations, or backend variations as their requirements grow."
+      visual: "Show the CMS interface surrounded by modular extensions or media integrations plugging into it."
+      image: "decap-cms-external-media-library.png"
+      imageAlt: "Decap CMS external media library integration"
 
 # Template Banner
 templateBanner:
@@ -89,27 +108,6 @@ templateBanner:
   button:
     text: "Start with a template"
     href: "/docs/start-with-a-template/"
-
-# Editors Section
-editors:
-  title: "For Editors"
-  id: "editors"
-  link:
-    href: "#developers"
-    text: "For Developers"
-  button:
-    text: "All Editor Features"
-    href: "/features/editor/"
-  features:
-    - title: "Editor-friendly user interface"
-      description: "The web-based app includes rich-text editing, real-time preview, and drag-and-drop media uploads."
-      image: "feature-editor.svg"
-    - title: "Intuitive workflow for content teams"
-      description: "Writers and editors can easily manage content from draft to review to publish across any number of custom content types."
-      image: "feature-workflow.svg"
-    - title: "Instant access without GitHub account"
-      description: "With [Git Gateway](/docs/git-gateway-backend/#git-gateway-with-netlify-identity), you can add CMS access for any team member — even if they don't have a GitHub account."
-      image: "feature-access.svg"
 
 # Values Section
 values:

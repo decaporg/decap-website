@@ -1,0 +1,47 @@
+{{ $feature := .feature }}
+{{ $extraClass := .class | default "" }}
+{{ $showBadge := .showBadge | default false }}
+{{ $showPersonas := .showPersonas | default false }}
+{{ $showVisual := .showVisual | default false }}
+
+<article
+  class="features-card{{ if $extraClass }} {{ $extraClass }}{{ end }}"
+  {{ with .dataPersonas }}data-personas="{{ . }}"{{ end }}
+  {{ with .dataDefaultOrder }}data-default-order="{{ . }}"{{ end }}
+>
+  <div class="features-card__body">
+    <header class="features-card__header">
+      <h3 class="features-card__title">{{ $feature.title }}</h3>
+
+      {{ if $showBadge }}
+        <div class="features-card__badges">
+          {{ if eq $feature.product "turbo" }}
+            <span class="features-card__badge features-card__badge--turbo">Decap Turbo</span>
+          {{ else }}
+            <span class="features-card__badge">Decap CMS</span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </header>
+
+    <div class="markdown">
+      {{ $feature.description | markdownify }}
+    </div>
+
+    {{ if $showPersonas }}
+      {{ with $feature.personas }}
+        <ul class="features-card__personas" aria-label="Relevant for personas">
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  {{ with $feature.image }}
+    <div class="features-card__image">
+      <img src="/img/{{ . }}" alt="{{ or $feature.imageAlt $feature.title }}" class="features-card__image-media" />
+    </div>
+  {{ end }}
+</article>

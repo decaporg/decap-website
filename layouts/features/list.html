@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="page">
+  {{ partial "page-hero" . }}
+
+  <div class="container size-lg">
+    <section class="features-prioritizer" data-features-filter>
+      <p class="lead">Prioritize by role</p>
+      <p class="meta-info">Choose your perspective and matching features will move to the top.</p>
+
+      <div class="features-prioritizer__controls" role="group" aria-label="Feature prioritization">
+        <button type="button" class="features-prioritizer__pill is-active" data-persona="all">All</button>
+
+        {{ range .Params.personas }}
+          <button type="button" class="features-prioritizer__pill" data-persona="{{ .id }}">{{ .label }}</button>
+        {{ end }}
+      </div>
+    </section>
+
+    <section class="features-grid" data-features-grid>
+      {{ range $index, $feature := .Params.features }}
+        {{ $personas := delimit $feature.personas "," }}
+        {{ partial "feature-card" (dict
+          "feature" $feature
+          "dataPersonas" $personas
+          "dataDefaultOrder" $index
+          "showBadge" true
+          "showPersonas" true
+        ) }}
+      {{ end }}
+    </section>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ $featuresFilter := resources.Get "/scripts/features-filter.js" | js.Build (dict "minify" true) }}
+  <script defer src="{{ $featuresFilter.RelPermalink }}"></script>
+{{ end }}

@@ -1,0 +1,26 @@
+<section class="home-features" id="{{ .id }}">
+  <div class="container">
+    <div class="home-features__intro">
+      <h2>{{ .title }}</h2>
+
+      {{ with .description }}
+        <div class="lead">{{ . | markdownify }}</div>
+      {{ end }}
+    </div>
+
+    <div class="home-features__cards">
+      {{ range $index, $feature := .features }}
+        {{ partial "feature-card" (dict
+          "feature" $feature
+          "class" (cond (eq (mod $index 2) 0) "features-card--reverse" "")
+        ) }}
+      {{ end }}
+    </div>
+
+    {{ with .button }}
+      <div class="home-features__button">
+        <a href="{{ .href }}" class="button {{ .class }}">{{ .text }}</a>
+      </div>
+    {{ end }}
+  </div>
+</section>

@@ -1,0 +1,51 @@
+.home-features {
+  position: relative;
+
+  &__intro {
+    margin: var(--space-fluid-5-7) auto;
+    max-width: 780px;
+    text-align: center;
+  }
+
+  &__cards {
+    display: grid;
+    gap: var(--space-fluid-4-6);
+  }
+
+  &__button {
+    text-align: center;
+    margin: var(--space-fluid-5-7) auto;
+  }
+
+  // .features-card__image {
+  //   position: relative;
+  //   transform: rotate(2.8deg);
+
+  //   &::after {
+  //     background: rgba(58, 105, 199, 0.45);
+  //     border-radius: 100%;
+  //     content: '';
+  //     filter: blur(70px);
+  //     height: 30%;
+  //     left: 50%;
+  //     position: absolute;
+  //     top: 50%;
+  //     transform: translate(-50%, -50%) rotate(4deg);
+  //     width: 50%;
+  //     z-index: -1;
+  //   }
+  // }
+
+  // .features-card--reverse .features-card__image {
+  //   transform: rotate(-2.8deg);
+
+  //   &::after {
+  //     transform: translate(-50%, -50%) rotate(-4deg);
+  //   }
+  // }
+
+  // .features-card__image-media {
+  //   background: var(--color-white);
+  //   border-radius: var(--radius-xl);
+  // }
+}

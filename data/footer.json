@@ -6,12 +6,8 @@
       "title": "Product",
       "links": [
         {
-          "text": "Features for developers",
-          "href": "/features/developer"
-        },
-        {
-          "text": "Features for editors",
-          "href": "/features/editor"
+          "text": "All features",
+          "href": "/features/"
         },
         {
           "text": "Decap Turbo",

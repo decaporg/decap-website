@@ -4,16 +4,12 @@
     {{ partial "home/hero" . }}
   {{ end }}
 
-  {{ with .Params.developers }}
-    {{ partial "home/developers" . }}
+  {{ with .Params.features }}
+    {{ partial "home/features" . }}
   {{ end }}
 
   {{ with .Params.templateBanner }}
     {{ partial "home/template-banner" . }}
-  {{ end }}
-
-  {{ with .Params.editors }}
-    {{ partial "home/editors" . }}
   {{ end }}
 
   {{ with .Params.values }}
