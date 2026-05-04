@@ -251,6 +251,7 @@
     gap: var(--space-fixed-3);
 
     @include breakpoint-up(lg) {
+      display: flex;
       position: absolute;
       top: 100%;
       left: 0;
