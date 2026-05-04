@@ -40,7 +40,7 @@
   &__section-title {
     font-size: var(--font-size-lg);
     margin: 0 0 var(--space-fixed-2);
-    color: var(--color-gray);
+    color: var(--color-gray-800);
   }
 
   &__section-list {
@@ -53,7 +53,7 @@
     display: block;
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-md);
-    color: var(--color-gray);
+    color: var(--color-gray-800);
     line-height: var(--line-height-mid);
     text-transform: capitalize;
     transition: color 0.2s ease;
@@ -76,12 +76,12 @@
       list-style: none;
       margin: 0;
       padding-left: var(--space-fixed-4);
-      border-left: 2px solid var(--color-lightest-gray);
+      border-left: 2px solid var(--color-gray-200);
     }
 
     a {
       display: block;
-      color: var(--color-gray);
+      color: var(--color-gray-800);
       font-weight: var(--font-weight-bold);
       font-size: var(--font-size-sm);
       line-height: var(--line-height-mid);

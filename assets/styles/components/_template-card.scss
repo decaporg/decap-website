@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--color-light-gray);
+  background: var(--color-gray-100);
   padding: var(--space-fixed-4) var(--space-fixed-2);
   border-radius: var(--radius-md);
 
@@ -25,7 +25,7 @@
   h4 {
     margin: var(--space-fixed-4) 0 var(--space-fixed-2);
     font-size: var(--font-size-lg);
-    color: var(--color-gray);
+    color: var(--color-gray-800);
   }
 
   &__links {

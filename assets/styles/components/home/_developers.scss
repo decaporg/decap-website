@@ -3,7 +3,7 @@
 
   &__title {
     text-align: center;
-    color: var(--color-lightish-gray);
+    color: var(--color-gray-300);
     background: var(--color-white);
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +27,7 @@
   }
 
   &__title-link {
-    color: var(--color-lightish-gray);
+    color: var(--color-gray-300);
     text-decoration: none;
     font-size: clamp(20px, calc(14.2857px + 1.7857vw), 28px);
 

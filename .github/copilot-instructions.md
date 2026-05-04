@@ -97,7 +97,7 @@ npx decap-server
 - Accent Purple: `#683bab` - `var(--color-primary-dark)`
 - Blue: `#3A69C7` - `var(--color-blue)`
 - Background: `#fafafa` - `var(--color-background)`
-- Dark: `#313d3e` - `var(--color-dark)`
+- Dark: `#27323b` - `var(--color-gray-900)`
 
 **Color Usage Rules:**
 - For regular Decap pages, use neutral backgrounds and surfaces.

@@ -1,6 +1,6 @@
 // Body text
 body {
-  color: var(--color-gray);
+  color: var(--color-gray-800);
   font-family: var(--font-family-primary);
   font-optical-sizing: auto;
   font-style: normal;
@@ -72,7 +72,7 @@ a {
 .meta-info {
   font-size: var(--font-size-sm);
   margin-bottom: var(--space-fixed-5);
-  color: var(--color-gray);
+  color: var(--color-gray-800);
 }
 
 // Lead - larger intro paragraph

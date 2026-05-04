@@ -16,7 +16,7 @@
 
   &__item {
     padding: var(--space-fixed-4);
-    border: 1px solid var(--color-lightish-gray);
+    border: 1px solid var(--color-gray-300);
     border-radius: var(--radius-sm);
     transition: border-color 0.2s ease;
 
@@ -38,7 +38,7 @@
     p {
       margin-top: var(--space-fixed-2);
       margin-bottom: 0;
-      color: var(--color-gray);
+      color: var(--color-gray-800);
       font-size: var(--font-size-sm);
     }
   }

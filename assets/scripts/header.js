@@ -33,13 +33,13 @@ function toggleMenu () {
   const closeIcon = mobileMenuBtn.querySelector('.close-icon')
 
   if (isOpen) {
-    menuIcon.style.display = 'inline'
+    menuIcon.style.display = 'inline-block'
     closeIcon.style.display = 'none'
     mobileMenuBtn.setAttribute('aria-expanded', 'false')
     closeSubmenus()
   } else {
     menuIcon.style.display = 'none'
-    closeIcon.style.display = 'inline'
+    closeIcon.style.display = 'inline-block'
     mobileMenuBtn.setAttribute('aria-expanded', 'true')
 
     // Close search and reset its button

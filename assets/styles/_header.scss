@@ -1,7 +1,7 @@
 .header {
   background: var(--color-white);
-  color: var(--color-gray);
-  border-bottom: 1px solid var(--color-lightest-gray);
+  color: var(--color-gray-800);
+  border-bottom: 1px solid var(--color-gray-200);
   padding-top: var(--space-fluid-2-4);
   padding-bottom: var(--space-fluid-2-4);
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
@@ -36,6 +36,7 @@
     flex: 1 0 60px;
     display: flex;
     justify-content: flex-end;
+    gap: var(--space-fixed-2);
 
     @include breakpoint-up(lg) {
       display: none;
@@ -45,11 +46,23 @@
   &__menu-btn {
     background: none;
     border: 0;
-    padding: var(--space-fixed-2);
-    font-size: var(--font-size-2xl);
+    padding: 0;
+    font-size: 32px;
     line-height: 1;
     color: inherit;
     cursor: pointer;
+    min-width: 32px;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+
+    span {
+      min-width: 32px;
+      min-height: 32px;
+      display: inline-block;
+    }
   }
 
   &__search-btn {
@@ -59,12 +72,12 @@
   &__toggle-area {
     display: none;
     position: absolute;
-    top: var(--space-fixed-8);
+    top: calc(2 * var(--space-fluid-2-4) + 32px);
     left: 0;
     width: 100%;
     flex: 1 0 100px;
     background: var(--color-white);
-    padding: 0 var(--space-fixed-5) var(--space-fixed-5);
+    padding: var(--space-fixed-2) var(--space-fluid-5-9) var(--space-fixed-5);
     z-index: 2;
 
     &.open {
@@ -134,7 +147,7 @@
     button {
       text-decoration: none;
       color: inherit;
-      font-weight: var(--font-weight-regular);
+      // font-weight: var(--font-weight-regular);
       font-family: inherit;
       font-size: var(--font-size-md);
       background: none;
@@ -145,7 +158,7 @@
 
       &:hover,
       &:focus-visible {
-        color: var(--color-dark);
+        color: var(--color-gray-900);
       }
 
       @include breakpoint-up(md) {
@@ -166,7 +179,7 @@
           }
 
           .header__menu-trigger {
-            color: var(--color-dark);
+            color: var(--color-gray-900);
           }
 
           .header__menu-caret {
@@ -181,15 +194,21 @@
   &__menu-trigger {
     display: inline-flex;
     align-items: center;
-    justify-content: flex-end;
     gap: var(--space-fixed-2);
     width: 100%;
+    color: var(--color-gray-700);
+    font-weight: 700;
+    justify-content: flex-start;
 
     @include breakpoint-up(lg) {
-      justify-content: flex-start;
       width: auto;
       min-height: 40px;
       padding: 0 var(--space-fixed-2);
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-black);
     }
   }
 
@@ -212,23 +231,23 @@
   &__submenu {
     list-style: none;
     margin: 0;
-    padding: var(--space-fixed-3) 0 0;
+    padding: var(--space-fixed-3) 0 0 var(--space-fixed-2);
     display: none;
-    gap: var(--space-fixed-4);
+    flex-direction: column;
+    gap: var(--space-fixed-3);
 
     @include breakpoint-up(lg) {
       position: absolute;
       top: 100%;
       left: 0;
       min-width: 210px;
-      display: flex;
-      flex-direction: column;
       opacity: 0;
       visibility: hidden;
       transform: translateY(8px);
       pointer-events: none;
       padding: var(--space-fixed-4) var(--space-fixed-3);
-      border: 1px solid var(--color-light-gray);
+      gap: var(--space-fixed-4);
+      border: 1px solid var(--color-gray-100);
       border-radius: var(--radius-sm);
       background: var(--color-white);
       box-shadow: 0 25px 50px -12px #11081f59;
@@ -241,6 +260,7 @@
     display: block;
     padding: var(--space-fixed-2) 0;
     font-size: var(--font-size-sm);
+    font-weight: 400;
 
     @include breakpoint-up(lg) {
       padding: var(--space-fixed-2) var(--space-fixed-3);
@@ -254,10 +274,10 @@
     }
   }
 
-  @include breakpoint-down(xs) {
+  @include breakpoint-down(lg) {
     &__menu-item.submenu-open {
       .header__submenu {
-        display: block;
+        display: flex;
       }
 
       .header__menu-caret {

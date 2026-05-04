@@ -7,11 +7,11 @@
     gap: var(--space-fluid-4-6);
     align-items: center;
     padding: var(--space-fluid-5-7);
-    border: 1px solid var(--color-lightish-gray);
+    border: 1px solid var(--color-gray-300);
     border-radius: var(--radius-lg);
     background:
       radial-gradient(100% 120% at 100% 0%, rgba(58, 105, 199, 0.09) 0%, rgba(58, 105, 199, 0) 70%),
-      linear-gradient(180deg, var(--color-white) 0%, var(--color-light-gray) 100%);
+      linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-100) 100%);
 
     &::before {
       content: '';
@@ -50,7 +50,7 @@
     gap: var(--space-fixed-2);
     align-items: center;
     margin: 0 0 var(--space-fixed-3);
-    color: var(--color-gray-800);
+    color: var(--color-gray-700);
     font-size: var(--font-size-sm);
     text-transform: uppercase;
     letter-spacing: 0.04em;

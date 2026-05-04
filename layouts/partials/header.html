@@ -64,7 +64,7 @@
             <ul class="header__submenu" aria-label="{{ .Name }}">
               {{ range $children }}
               {{ $childExternal := or (hasPrefix .URL "http://") (hasPrefix .URL "https://") }}
-              <li class="header__submenu-item">
+              <li>
                 <a
                   class="header__submenu-link"
                   href="{{ if $childExternal }}{{ .URL }}{{ else }}{{ .URL | relURL }}{{ end }}"

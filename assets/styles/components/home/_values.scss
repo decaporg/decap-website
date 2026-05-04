@@ -1,6 +1,6 @@
 .home-values {
   padding: var(--space-fluid-7-9) 0;
-  background-color: var(--color-light-gray);
+  background-color: var(--color-gray-100);
 
   p {
     max-width: 80ch;
@@ -23,7 +23,7 @@
   &__item {
     background: var(--color-white);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-lightish-gray);
+    border: 1px solid var(--color-gray-300);
     padding: var(--space-fixed-5) var(--space-fixed-5) var(--space-fixed-6);
   }
 
