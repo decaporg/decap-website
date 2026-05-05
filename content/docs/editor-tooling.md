@@ -8,9 +8,9 @@ aliases:
 
 ## Linting via remark
 
-If you want to lint your markdown files as part of your development workflow (in editors, in a pre-commit hook, and/or via CI), then we suggest you use `remark`. Remark is the library used by the Decap markdown widget.
+If you want to lint your Markdown files as part of your development workflow through your code editor, pre-commit hooks, and/or CI, we recommend using the Remark ecosystem.
 
-If you were to use a different linter than `remark` (such as `prettier`, etc), then you would end up with formatting conflicts between files. Files edited via the Decap web interface would be formatted differently than files edited via your development workflow.
+Since Decap CMS uses `remark` internally for Markdown processing, using it in your development workflow will help avoid formatting/style differences between files edited through Decap and files edited locally.
 
 To set this up, you will need to install and set up both of these npm packages in your project:
 
