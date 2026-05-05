@@ -32,7 +32,8 @@
       {{ with $feature.personas }}
         <ul class="features-card__personas" aria-label="Relevant for personas">
           {{ range . }}
-            <li>{{ . }}</li>
+            {{ $term := site.GetPage (printf "/personas/%s" .) }}
+            <li>{{ if $term }}{{ $term.LinkTitle }}{{ else }}{{ humanize . }}{{ end }}</li>
           {{ end }}
         </ul>
       {{ end }}

@@ -46,3 +46,8 @@
   </div>
 
 {{ end }}
+
+{{ define "scripts" }}
+  {{ $featuresFilter := resources.Get "/scripts/features-filter.js" | js.Build (dict "minify" true) }}
+  <script defer src="{{ $featuresFilter.RelPermalink }}"></script>
+{{ end }}

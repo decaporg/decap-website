@@ -1,4 +1,27 @@
 <section class="home-features" id="{{ .id }}">
+  {{ $featuresSection := site.GetPage "section" "features" }}
+  {{ $homeFeatures := where $featuresSection.RegularPages "Params.homepage" true }}
+  {{ $personasPage := site.GetPage "/personas" }}
+  {{ $featurePersonas := slice }}
+  {{ $personaOrderByWeight := slice }}
+  {{ $personaLabels := dict }}
+  {{ range $homeFeatures }}
+    {{ range .Params.personas }}
+      {{ if not (in $featurePersonas .) }}
+        {{ $featurePersonas = $featurePersonas | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ with $personasPage }}
+    {{ range .Pages.ByWeight }}
+      {{ $slug := .Params.slug | default .File.ContentBaseName }}
+      {{ if in $featurePersonas $slug }}
+        {{ $personaOrderByWeight = $personaOrderByWeight | append $slug }}
+        {{ $personaLabels = merge $personaLabels (dict $slug .LinkTitle) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
   <div class="container">
     <div class="home-features__intro">
       <h2>{{ .title }}</h2>
@@ -8,10 +31,26 @@
       {{ end }}
     </div>
 
-    <div class="home-features__cards">
-      {{ range $index, $feature := .features }}
+    <section class="features-prioritizer" data-features-filter>
+      <p class="lead">Prioritize by role</p>
+      <p class="meta-info">Choose your perspective and matching features will move to the top.</p>
+
+      <div class="features-prioritizer__controls" role="group" aria-label="Homepage feature prioritization">
+        <button type="button" class="features-prioritizer__pill is-active" data-persona="all">All</button>
+
+        {{ range $personaOrderByWeight }}
+          <button type="button" class="features-prioritizer__pill" data-persona="{{ . }}">{{ index $personaLabels . }}</button>
+        {{ end }}
+      </div>
+    </section>
+
+    <div class="home-features__cards" data-features-grid>
+      {{ range $index, $feature := $homeFeatures }}
+        {{ $personas := delimit $feature.Params.personas "," }}
         {{ partial "feature-card" (dict
-          "feature" $feature
+          "feature" $feature.Params
+          "dataPersonas" $personas
+          "dataDefaultOrder" $index
           "class" (cond (eq (mod $index 2) 0) "features-card--reverse" "")
         ) }}
       {{ end }}

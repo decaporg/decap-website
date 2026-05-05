@@ -1,6 +1,27 @@
 {{ define "main" }}
 <div class="page">
   {{ partial "page-hero" . }}
+  {{ $features := .RegularPages.ByWeight }}
+  {{ $personasPage := site.GetPage "/personas" }}
+  {{ $featurePersonas := slice }}
+  {{ $personaLabels := dict }}
+  {{ range $features }}
+    {{ range .Params.personas }}
+      {{ if not (in $featurePersonas .) }}
+        {{ $featurePersonas = $featurePersonas | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $personaOrderByWeight := slice }}
+  {{ with $personasPage }}
+    {{ range .Pages.ByWeight }}
+      {{ $slug := .Params.slug | default .File.ContentBaseName }}
+      {{ if in $featurePersonas $slug }}
+        {{ $personaOrderByWeight = $personaOrderByWeight | append $slug }}
+        {{ $personaLabels = merge $personaLabels (dict $slug .LinkTitle) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 
   <div class="container size-lg">
     <section class="features-prioritizer" data-features-filter>
@@ -10,17 +31,17 @@
       <div class="features-prioritizer__controls" role="group" aria-label="Feature prioritization">
         <button type="button" class="features-prioritizer__pill is-active" data-persona="all">All</button>
 
-        {{ range .Params.personas }}
-          <button type="button" class="features-prioritizer__pill" data-persona="{{ .id }}">{{ .label }}</button>
+        {{ range $personaOrderByWeight }}
+          <button type="button" class="features-prioritizer__pill" data-persona="{{ . }}">{{ index $personaLabels . }}</button>
         {{ end }}
       </div>
     </section>
 
     <section class="features-grid" data-features-grid>
-      {{ range $index, $feature := .Params.features }}
-        {{ $personas := delimit $feature.personas "," }}
+      {{ range $index, $feature := $features }}
+        {{ $personas := delimit $feature.Params.personas "," }}
         {{ partial "feature-card" (dict
-          "feature" $feature
+          "feature" $feature.Params
           "dataPersonas" $personas
           "dataDefaultOrder" $index
           "class" "features-card--filterable"

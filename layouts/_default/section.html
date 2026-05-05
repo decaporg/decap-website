@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="page">
+  {{ partial "page-hero" . }}
+
+  <div class="container size-lg">
+    {{ with .Content }}
+      <section class="markdown">
+        {{ . }}
+      </section>
+    {{ end }}
+
+    <section class="grid cols-2">
+      {{ range .RegularPages.ByWeight }}
+        <article class="card">
+          <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+          {{ with .Description }}
+            <p>{{ . }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </section>
+  </div>
+</div>
+{{ end }}

@@ -22,7 +22,7 @@ main:
   - name: Support
     identifier: support
     weight: 20
-  - name: Services
+  - name: Expert Services
     url: /services/
     parent: support
     weight: 21
@@ -30,23 +30,27 @@ main:
     url: /community/
     parent: support
     weight: 22
+  - name: Contact Support
+    url: /pro-support/
+    parent: support
+    weight: 23
   - name: Features
     url: /features/
     identifier: features
-    weight: 30
-  - name: For Content Teams
-    url: /features/
-    params:
-      href: /features/?persona=editor
-    parent: features
-    weight: 31
+    weight: 5
   - name: For Developers
     url: /features/
     params:
       href: /features/?persona=developer
     parent: features
+    weight: 31
+  - name: For Editors
+    url: /features/
+    params:
+      href: /features/?persona=editor
+    parent: features
     weight: 32
-  - name: For Team Leads
+  - name: For Teams
     url: /features/
     params:
       href: /features/?persona=team

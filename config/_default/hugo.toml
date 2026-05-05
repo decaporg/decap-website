@@ -22,3 +22,8 @@ title = 'Decap CMS | Open-Source Content Management System'
 
 [params]
   description = 'Open source content management for your Git workflow'
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  persona = 'personas'
