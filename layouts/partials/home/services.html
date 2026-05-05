@@ -1,4 +1,11 @@
 <section class="home-services">
+  {{ $button := .button }}
+  {{ if not $button }}
+    {{ with index .features 0 }}
+      {{ $button = .button }}
+    {{ end }}
+  {{ end }}
+
   <div class="container">
     <h2 class="home-services__title">{{ .title }}</h2>
     <p class="home-services__description">{{ .description }}</p>
@@ -10,10 +17,6 @@
             <div class="home-services__item-content">
               <h3 class="home-services__item-title">{{ .title }}</h3>
               <p class="home-services__item-description">{{ .description }}</p>
-
-              {{ with .button }}
-                <a href="{{ .href }}" class="button secondary">{{ .text }}</a>
-              {{ end }}
             </div>
 
             {{ if .image }}
@@ -25,5 +28,11 @@
         </div>
       {{ end }}
     </div>
+
+    {{ with $button }}
+      <div class="home-services__button">
+        <a href="{{ .href }}" class="button secondary">{{ .text }}</a>
+      </div>
+    {{ end }}
   </div>
 </section>

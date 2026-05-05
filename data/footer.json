@@ -11,7 +11,15 @@
         },
         {
           "text": "Decap Turbo",
-          "href": "/turbo"
+          "href": "/turbo/"
+        },
+        {
+          "text": "About",
+          "href": "/about/"
+        },
+        {
+          "text": "Releases",
+          "href": "https://github.com/decaporg/decap-cms/releases/"
         }
       ]
     },
@@ -19,20 +27,20 @@
       "title": "Resources",
       "links": [
         {
+          "text": "Documentation",
+          "href": "/docs/"
+        },
+        {
+          "text": "Blog",
+          "href": "/blog/"
+        },
+        {
           "text": "Distributed under MIT License",
           "href": "https://github.com/decaporg/decap-cms/blob/master/LICENSE"
         },
         {
           "text": "Contributing Guide",
           "href": "https://github.com/decaporg/decap-cms/blob/master/CONTRIBUTING.md"
-        },
-        {
-          "text": "Code of Conduct",
-          "href": "https://github.com/decaporg/decap-cms/blob/master/CODE_OF_CONDUCT.md"
-        },
-        {
-          "text": "Documentation",
-          "href": "/docs"
         }
       ]
     },
@@ -46,6 +54,10 @@
         {
           "text": "GitHub",
           "href": "https://github.com/decaporg/decap-cms/"
+        },
+        {
+          "text": "All channels",
+          "href": "/community/"
         }
       ]
     }

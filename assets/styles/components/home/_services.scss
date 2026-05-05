@@ -104,4 +104,9 @@
       object-fit: contain;
     }
   }
+
+  &__button {
+    margin-top: var(--space-fluid-4-6);
+    text-align: center;
+  }
 }
