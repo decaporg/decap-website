@@ -1,11 +1,7 @@
 .features-card {
   background: var(--color-white);
-  // border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
-  box-shadow: 0 10px 24px #27323b14;
   display: flex;
   gap: var(--space-fluid-4-7);
-  padding: var(--space-fluid-4-6);
 
   @include breakpoint-down('lg') {
     flex-direction: column;
@@ -15,6 +11,13 @@
     @include breakpoint-up('lg') {
       flex-direction: row-reverse;
     }
+  }
+
+  &--filterable {
+    padding: var(--space-fluid-4-6);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 24px #27323b14;
   }
 
   &.is-deprioritized {
@@ -102,7 +105,7 @@
   }
 
   &__image-media {
-    border-radius: var(--radius-lg);
+    // border-radius: var(--radius-sm);
     display: block;
     height: auto;
     object-fit: contain;
