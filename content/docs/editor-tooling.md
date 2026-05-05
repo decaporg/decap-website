@@ -14,8 +14,26 @@ Since Decap CMS uses `remark` internally for Markdown processing, using it in yo
 
 To set this up, you will need to install and set up both of these npm packages in your project:
 
-- remark: https://remark.js.org/
+- remark-cli: https://github.com/remarkjs/remark/tree/main/packages/remark-cli
 - remark-frontmatter: https://github.com/remarkjs/remark-frontmatter
+
+Example installation command:
+
+`npm install --save-dev remark-cli remark-frontmatter`
+
+Example remark setup in `package.json`:
+
+```json
+{
+  "scripts": {
+    "remark:check": "remark .",
+    "remark:write": "remark . --output"
+  },
+  "remarkConfig": {
+    "plugins": ["remark-frontmatter"]
+  }
+}
+```
 
 ## Custom Formatters
 
