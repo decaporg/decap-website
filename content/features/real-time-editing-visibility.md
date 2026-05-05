@@ -1,7 +1,10 @@
 ---
 title: Real-time editing visibility
 product: turbo
-personas: [team, editor, agency]
+personas: 
+  - team
+  - editor
+  - agency
 weight: 11
 homepage: false
 description: |-

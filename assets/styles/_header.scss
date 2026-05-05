@@ -1,10 +1,10 @@
 .header {
   background: var(--color-white);
   color: var(--color-gray-800);
-  border-bottom: 1px solid var(--color-gray-200);
-  padding-top: var(--space-fluid-2-4);
-  padding-bottom: var(--space-fluid-2-4);
+  padding-top: var(--space-fluid-2-3);
+  padding-bottom: var(--space-fluid-2-3);
   transition: background 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 20px -5px var(--color-gray-200);
 
   @include breakpoint-up(lg) {
     position: sticky;
@@ -27,7 +27,7 @@
     }
 
     img {
-      height: clamp(32px, 3vw, 40px);
+      height: clamp(32px, 3vw, 36px);
       width: auto;
     }
   }
@@ -265,7 +265,7 @@
       border: 1px solid var(--color-gray-100);
       border-radius: var(--radius-sm);
       background: var(--color-white);
-      box-shadow: 0 25px 50px -12px #11081f59;
+      box-shadow: 0 25px 50px -12px var(--color-gray-200);
       transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
       z-index: 3;
     }

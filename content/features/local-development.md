@@ -1,7 +1,8 @@
 ---
 title: Local development with decap-server
 product: core
-personas: [developer, agency]
+personas: 
+  - developer
 weight: 8
 homepage: false
 description: |-

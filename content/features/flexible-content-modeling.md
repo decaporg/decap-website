@@ -1,7 +1,8 @@
 ---
 title: Flexible content modeling
 product: core
-personas: [developer, team, agency]
+personas:
+  - developer
 weight: 4
 homepage: true
 description: |-

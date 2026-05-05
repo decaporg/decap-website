@@ -1,7 +1,8 @@
 ---
 title: Simple configuration in a single YAML file
 product: core
-personas: [developer]
+personas: 
+  - developer
 weight: 13
 homepage: true
 description: |-

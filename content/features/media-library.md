@@ -1,7 +1,9 @@
 ---
 title: Media library plus external DAM integrations
 product: core
-personas: [editor, developer, agency]
+personas: 
+  - developer
+  - editor
 weight: 3
 homepage: false
 description: |-

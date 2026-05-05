@@ -1,7 +1,8 @@
 ---
 title: Secrets storage for advanced workflows
 product: turbo
-personas: [developer, team, agency]
+personas: 
+  - developer
 weight: 12
 homepage: false
 description: |-

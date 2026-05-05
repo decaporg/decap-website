@@ -1,7 +1,10 @@
 ---
 title: Performance database proxy for large content sets
 product: turbo
-personas: [team, developer, agency]
+personas: 
+  - team
+  - developer
+  - agency
 weight: 10
 homepage: false
 description: |-

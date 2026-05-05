@@ -39,7 +39,7 @@
   &__item {
     border-radius: var(--radius-lg);
     padding: var(--space-fluid-5-7);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px var(--color-gray-100);
     border: 1px solid var(--color-gray-100);
 
     @container (width > 400px) {

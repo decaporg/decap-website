@@ -1,7 +1,10 @@
 ---
 title: Role-based access and centralized auth
 product: turbo
-personas: [team, agency, editor]
+personas: 
+  - team
+  - agency
+  - developer
 weight: 9
 homepage: false
 description: |-

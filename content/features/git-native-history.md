@@ -1,7 +1,8 @@
 ---
 title: Git-native history and ownership
 product: core
-personas: [developer, team, agency]
+personas: 
+  - developer
 weight: 6
 homepage: true
 description: |-

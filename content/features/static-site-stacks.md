@@ -1,7 +1,8 @@
 ---
 title: Works with most static site stacks
 product: core
-personas: [developer, agency, team]
+personas: 
+  - developer
 weight: 5
 homepage: true
 description: |-

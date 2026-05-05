@@ -6,6 +6,7 @@
   position: relative;
   background: linear-gradient(155deg, var(--color-light-purple) 0%, var(--color-light-pink) 100%);
   isolation: isolate;
+  color: var(--color-gray-900);
 
   &::before {
     content: '';
@@ -40,8 +41,8 @@
     z-index: 1;
     display: grid;
     gap: var(--space-fluid-5-8);
-    padding-top: var(--space-fluid-4-9);
-    padding-bottom: var(--space-fluid-5-8);
+    padding-top: var(--space-fluid-4-8);
+    padding-bottom: var(--space-fluid-4-8);
 
     @include breakpoint-up(lg) {
       grid-template-columns: minmax(0, 1fr) minmax(0, 552px);
@@ -130,7 +131,7 @@
     display: block;
     width: 100%;
     height: auto;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 25px 50px -12px var(--color-gray-200);
     border-radius: 3.5%;
   }
 

@@ -1,7 +1,9 @@
 ---
 title: Extensible with custom widgets and previews
 product: core
-personas: [developer, agency]
+personas:
+  - developer
+  - agency
 weight: 7
 homepage: true
 description: |-
