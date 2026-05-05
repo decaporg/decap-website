@@ -9,3 +9,12 @@
 
 [dev]
   framework = "hugo"
+
+[functions]
+  directory = "functions/"
+  node_bundler = "esbuild"
+
+[[plugins]]
+  package = "netlify-plugin-inline-functions-env"
+  [plugins.inputs]
+  include = ["BREVO_API_KEY", "BREVO_LIST_ID"]

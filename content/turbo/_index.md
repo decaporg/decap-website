@@ -2,7 +2,6 @@
 linkTitle: Decap Turbo
 title: Decap Turbo — made for content teams
 description: Advanced capabilities for Decap CMS teams that need more speed, control, and support.
-layout: turbo
 hero:
   badge: Just announced
   cta:
@@ -38,7 +37,7 @@ plans:
       price: "$37"
       period: "/ month"
       cta_text: Join early access
-      cta_href: '#early-access'
+      cta_href: '/turbo/join-early-access/?plan=starter'
       features:
         - Up to 3 users
         - 1 project
@@ -52,7 +51,7 @@ plans:
       price: "$112"
       period: "/ month"
       cta_text: Join early access
-      cta_href: '#early-access'
+      cta_href: '/turbo/join-early-access/?plan=team'
       features:
         - Up to 9 users
         - Up to 3 projects
@@ -65,7 +64,7 @@ plans:
       price: "$374"
       period: "/ month"
       cta_text: Join early access
-      cta_href: '#early-access'
+      cta_href: '/turbo/join-early-access/?plan=business'
       features:
         - Up to 30 users
         - Up to 10 projects
@@ -99,5 +98,5 @@ cta_section:
   title: Join the Decap Turbo early-access waitlist
   description: Pick the plan that fits your team and join early access. Early users help us prioritize rollout and will be first to access preview releases.
   button_text: Join early access waitlist
-  button_href: '#early-access'
+  button_href: '/turbo/join-early-access/'
 ---

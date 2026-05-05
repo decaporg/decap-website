@@ -1,3 +1,21 @@
+@property --turbo-gradient-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 135deg;
+}
+
+@property --turbo-gradient-start-stop {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --turbo-gradient-end-stop {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
 .button {
   display: inline-block;
   font-size: var(--font-size-md);
@@ -12,6 +30,8 @@
   transition: all 0.2s ease-out;
   cursor: pointer;
   text-decoration: none;
+  min-width: 160px;
+  text-align: center;
 
   @include breakpoint-up(sm) {
     font-weight: var(--font-weight-semibold);
@@ -66,6 +86,33 @@
     color: var(--color-white);
     background: var(--color-primary-light);
     border-color: var(--color-primary-light);
+  }
+
+  &--turbo,
+  &.turbo {
+    --turbo-gradient-angle: 135deg;
+    --turbo-gradient-start-stop: 0%;
+    --turbo-gradient-end-stop: 100%;
+    transition:
+      --turbo-gradient-angle 0.2s ease-out,
+      --turbo-gradient-start-stop 0.2s ease-out,
+      --turbo-gradient-end-stop 0.2s ease-out,
+      color 0.2s ease-out;
+    background: linear-gradient(
+      var(--turbo-gradient-angle),
+      var(--color-turbo-gradient-start) var(--turbo-gradient-start-stop),
+      var(--color-turbo-gradient-end) var(--turbo-gradient-end-stop)
+    );
+    color: var(--color-white);
+    border: none;
+    padding: calc(var(--space-fluid-2-4) + 2px) calc(var(--space-fluid-4-5) + 2px);
+
+    &:hover,
+    &:active {
+      --turbo-gradient-angle: 90deg;
+      --turbo-gradient-start-stop: 8%;
+      --turbo-gradient-end-stop: 92%;
+    }
   }
 
   &--icon {
