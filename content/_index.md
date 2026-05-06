@@ -85,16 +85,16 @@ values:
   items:
     - title: "Free & Open Source, Forever"
       description: "Decap CMS is MIT-licensed. It is free today and will remain free for everyone, always."
-      icon: "heart"
+      icon: "heart-outline"
     - title: "Own Your Content"
       description: "Your content lives in your own Git repository — not locked to any provider's database. You are always in control."
-      icon: "feature-access"
+      icon: "book"
     - title: "Independent & EU-Maintained"
       description: "No big tech ownership. Decap is maintained in the EU with contributors from across the world."
-      icon: "bow"
+      icon: "pin"
     - title: "Privacy & the Open Web"
       description: "We believe in privacy, democracy, and the open internet. We build tools that help editors and publishers launch and maintain their independent platforms."
-      icon: "feature-workflow"
+      icon: "world-mesh"
 
 # Awards Section
 awards:
