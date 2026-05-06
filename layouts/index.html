@@ -16,20 +16,20 @@
     {{ partial "home/values" . }}
   {{ end }}
 
-  {{ with .Params.support }}
-    {{ partial "home/support" . }}
-  {{ end }}
-
-  {{ with .Params.backers }}
-    {{ partial "home/backers" . }}
-  {{ end }}
-
   {{ with .Params.turboBanner }}
     {{ partial "home/turbo-banner" . }}
   {{ end }}
 
+  {{ with .Params.support }}
+    {{ partial "home/support" . }}
+  {{ end }}
+
   {{ with .Params.services }}
     {{ partial "home/services" . }}
+  {{ end }}
+
+  {{ with .Params.backers }}
+    {{ partial "home/backers" . }}
   {{ end }}
 
   {{/*  <div class="home-dark-section-wrapper">
@@ -47,6 +47,8 @@
 {{ end }}
 
 {{ define "scripts" }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   {{ $featuresFilter := resources.Get "/scripts/features-filter.js" | js.Build (dict "minify" true) }}
   <script defer src="{{ $featuresFilter.RelPermalink }}"></script>
 {{ end }}

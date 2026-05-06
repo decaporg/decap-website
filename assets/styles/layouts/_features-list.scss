@@ -11,6 +11,16 @@
     gap: var(--space-fixed-2);
     margin-top: var(--space-fixed-3);
   }
+
+  &--home {
+    @include breakpoint-up('lg') {
+      text-align: center;
+      
+      .features-prioritizer__controls {
+        justify-content: center;
+      }
+    }
+  }
 }
 
 .features-grid {

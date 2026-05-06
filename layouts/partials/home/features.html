@@ -22,7 +22,7 @@
     {{ end }}
   {{ end }}
 
-  <div class="container">
+  <div class="container size-lg">
     <div class="home-features__intro">
       <h2>{{ .title }}</h2>
 
@@ -35,18 +35,32 @@
       "personaOrderByWeight" $personaOrderByWeight
       "personaLabels" $personaLabels
       "ariaLabel" "Homepage feature prioritization"
+      "class" "features-prioritizer--home"
     ) }}
 
-    <div class="home-features__cards" data-features-grid>
-      {{ range $index, $feature := $homeFeatures }}
-        {{ $personas := delimit $feature.Params.personas "," }}
-        {{ partial "feature-card" (dict
-          "feature" $feature.Params
-          "dataPersonas" $personas
-          "dataDefaultOrder" $index
-          "class" (cond (eq (mod $index 2) 0) "features-card--reverse" "")
-        ) }}
-      {{ end }}
+    <div class="home-features__cards swiper" data-features-swiper>
+      <div class="swiper-wrapper" data-features-grid>
+        {{ range $index, $feature := $homeFeatures }}
+          {{ $personas := delimit $feature.Params.personas "," }}
+          {{ partial "feature-card" (dict
+            "feature" $feature.Params
+            "dataPersonas" $personas
+            "dataDefaultOrder" $index
+            "class" "swiper-slide"
+          ) }}
+        {{ end }}
+      </div>
+      <div class="home-features__controls">
+        <div class="home-features__pagination swiper-pagination" aria-hidden="true"></div>
+        <div class="home-features__nav">
+            <button class="home-features__nav-btn home-features__nav-btn--prev" aria-label="Previous">
+              {{ partial "icon" "turbo-arrow-left" }}
+            </button>
+            <button class="home-features__nav-btn home-features__nav-btn--next" aria-label="Next">
+              {{ partial "icon" "turbo-arrow-right" }}
+            </button>
+        </div>
+    </div>
     </div>
 
     {{ with .button }}
