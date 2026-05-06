@@ -9,7 +9,8 @@ function showWidget (widgetTitle) {
 
   // Remove active class from all buttons
   document.querySelectorAll('.widgets-nav .button').forEach(btn => {
-    btn.classList.remove('active')
+    btn.classList.remove('button--active', 'button--primary')
+    btn.classList.add('button--grey')
   })
 
   // Show selected widget
@@ -21,7 +22,8 @@ function showWidget (widgetTitle) {
   // Add active class to selected button
   const selectedButton = document.querySelector(`[data-widget="${widgetTitle}"]`)
   if (selectedButton) {
-    selectedButton.classList.add('active')
+    selectedButton.classList.add('button--active', 'button--primary')
+    selectedButton.classList.remove('button--grey')
   }
 
   // Update URL hash

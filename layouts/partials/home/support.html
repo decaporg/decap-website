@@ -15,7 +15,7 @@
             <p>{{ .description }}</p>
 
             {{ with .button }}
-              <a href="{{ .href }}" class="button {{ .class | default "secondary" }}" {{ if .external }}target="_blank" rel="noopener"{{ end }}>
+              <a href="{{ .href }}" class="button {{ .class | default "button--secondary" }}" {{ if .external }}target="_blank" rel="noopener"{{ end }}>
                 {{ .text }}
                 {{ if .external }}
                   {{ partial "icon" "external-link" }}

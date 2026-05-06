@@ -55,7 +55,7 @@
               {{ end }}
             </div>
           </div>
-          <a href="{{ .cta_href }}" class="button{{ if .featured }} primary{{ end }} block">{{ .cta_text }}</a>
+          <a href="{{ .cta_href }}" class="button button--block{{ if .featured }} button--primary{{ end }}">{{ .cta_text }}</a>
           <ul class="turbo-plan__features">
             {{ range .features }}
             <li>{{ . }}</li>
@@ -192,7 +192,7 @@
     <div class="container">
       <h2>{{ .title }}</h2>
       <p>{{ .description }}</p>
-      <a href="{{ .button_href }}" class="button secondary">{{ .button_text }}</a>
+      <a href="{{ .button_href }}" class="button button--secondary-white-bg">{{ .button_text }}</a>
     </div>
   </section>
   {{ end }}

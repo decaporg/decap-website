@@ -57,8 +57,12 @@ const setupFeaturesFilter = () => {
     button.addEventListener('click', () => {
       const persona = button.dataset.persona || 'all'
 
-      buttons.forEach((btn) => btn.classList.remove('is-active'))
-      button.classList.add('is-active')
+      buttons.forEach((btn) => {
+        btn.classList.remove('button--primary', 'button--active')
+        btn.classList.add('button--grey')
+      })
+      button.classList.remove('button--grey')
+      button.classList.add('button--primary', 'button--active')
 
       sortCards(persona)
       updateLabel(persona, button.textContent || 'selected')

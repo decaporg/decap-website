@@ -4,6 +4,7 @@ export default {
     'alpha-value-notation': 'number',
     'at-rule-empty-line-before': null,
     'at-rule-no-unknown': null,
+    'color-function-alias-notation': null,
     'color-function-notation': 'legacy',
     'media-feature-range-notation': 'prefix',
     'scss/no-global-function-names': null,

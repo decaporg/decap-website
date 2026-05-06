@@ -11,28 +11,6 @@
     gap: var(--space-fixed-2);
     margin-top: var(--space-fixed-3);
   }
-
-  &__pill {
-    background: var(--color-white);
-    border: 1px solid var(--color-gray-300);
-    border-radius: var(--radius-pill);
-    color: var(--color-gray-800);
-    cursor: pointer;
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    padding: var(--space-fixed-2) var(--space-fixed-3);
-
-    &:hover {
-      border-color: var(--color-primary-light);
-      color: var(--color-primary-dark);
-    }
-
-    &.is-active {
-      background: var(--color-primary-light);
-      border-color: var(--color-primary-light);
-      color: var(--color-white);
-    }
-  }
 }
 
 .features-grid {

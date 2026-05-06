@@ -13,10 +13,10 @@ hero:
   buttons:
     - text: "Go to Docs"
       href: "/docs/"
-      class: "primary"
+      class: "button--primary"
     - text: "Try the demo"
       href: "https://demo.decapcms.org"
-      class: "hero-outline"
+      class: "button--secondary"
   image: "/img/hero-scheme.svg"
   imageAlt: "Decap CMS editor interface illustration"
   disclaimer: "Image is a representation and not how the actual Decap CMS looks like."
@@ -68,7 +68,7 @@ features:
   button:
     text: "All Decap CMS Features"
     href: "/features/"
-    class: "primary"
+    class: "button--primary"
 
 # Template Banner
 templateBanner:
@@ -137,21 +137,21 @@ support:
       button:
         text: "See how to support"
         href: "/about/"
-        class: "primary"
+        class: "button--primary"
     - title: "Open Collective"
       icon: "opencollective"
       description: "Review funding options, governance signals, and transparent backing for the project"
       button:
         text: "Read about Decap"
         href: "/about/"
-        class: "secondary"
+        class: "button--secondary"
     - title: "Exclusive partnership"
       icon: "partnership"
       description: "See how commercial partners and maintainers help sustain long-term development"
       button:
         text: "View About page"
         href: "/about/"
-        class: "secondary"
+        class: "button--secondary"
 
 backers:
   partner:

@@ -126,7 +126,7 @@ npx decap-server
 ### Key Style Patterns
 - **Responsive containers**: `.container` with size variants (`.size-sm`, `.size-md`, `.size-lg`)
 - **Grid system**: `.grid.cols-2`, `.grid.cols-3` with `@include breakpoint-up(md)`
-- **Button variants**: `.button.primary`, `.button.secondary`, `.button.outline`, `.button.block`
+- **Button variants**: `.button--primary`, `.button--secondary`, `.button--outline`, `.button--block`
 - **BEM components**: `.component__element--modifier` pattern throughout
 
 ## Content Management

@@ -5,16 +5,6 @@
   margin: var(--space-fluid-5-7) 0 var(--space-fixed-5);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-
-  .button {
-    padding: var(--space-fixed-2) var(--space-fixed-4) !important;
-
-    &.active {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      border-color: var(--color-primary);
-    }
-  }
 }
 
 .widgets-content {

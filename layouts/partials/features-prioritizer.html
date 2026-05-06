@@ -3,10 +3,10 @@
   <p class="meta-info">Choose your perspective and matching features will move to the top.</p>
 
   <div class="features-prioritizer__controls" role="group" aria-label="{{ .ariaLabel | default "Feature prioritization" }}">
-    <button type="button" class="features-prioritizer__pill is-active" data-persona="all">All</button>
+    <button type="button" class="button button--pill button--primary" data-persona="all">All</button>
 
     {{ range .personaOrderByWeight }}
-      <button type="button" class="features-prioritizer__pill" data-persona="{{ . }}">{{ index $.personaLabels . }}</button>
+      <button type="button" class="button button--pill button--grey" data-persona="{{ . }}">{{ index $.personaLabels . }}</button>
     {{ end }}
   </div>
 </section>
