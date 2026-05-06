@@ -53,8 +53,8 @@ turboBanner:
         - initials: "+5"
           tone: "rose"
     collaboration:
-      title: "Real-time collaboration"
-      description: "See who is editing, avoid conflicts, and work together seamlessly"
+      title: "Real-time editing visibility"
+      description: "See who is currently editing and coordinate to avoid conflicts"
     performance:
       title: "CMS performance"
       value: "Up to 60% faster"
@@ -87,10 +87,10 @@ comparison:
         class: "button--secondary-white-bg"
       features:
         - "Database proxy for faster CMS performance"
-        - "Authentication handling"
-        - "User roles and permissions"
-        - "More scalable team workflows"
-        - "Additional onboarding and support options"
+        - "Centralized authentication handling"
+        - "User roles and permissions (Team and above)"
+        - "Real-time editing visibility (Team and above)"
+        - "Priority support on Business plan"
 
 # Homepage Features
 features:

@@ -14,17 +14,14 @@ features:
     description: A Turbo database proxy sits between the editor and your Git provider API to reduce bottlenecks and improve loading speed.
   - title: Centralized authentication and roles
     icon: shield
-    description: Manage access, authentication, and role-based permissions in one place without setting up separate provider-specific auth apps.
+    description: Manage access and authentication in one place without setting up separate provider-specific auth apps. User roles and permissions are available from the Team plan.
   - title: Real-time editing visibility
     icon: users
-    description: See who is editing at the same time so teams can avoid conflicts.
-  # - title: Secrets storage
-  #   icon: lock
-  #   description: Store integration secrets securely for advanced workflows.
-  - title: Priority support
-    icon: support
-    description: Get faster response times and dedicated support for critical issues.
-pricing_disclaimer: "Important: Prices shown are part of an early validation test and are not yet final. We are sharing them to validate interest and may adjust based on feedback."
+    description: See who is editing at the same time so teams can avoid conflicts. Available on Team and above.
+  - title: Secrets storage
+    icon: lock
+    description: Store API keys and integration credentials inside Decap CMS instead of exposing them in environment files or your codebase. Available on Team and above.
+pricing_disclaimer: "No payment is required now. Selecting a plan reserves your spot on the early access waitlist. Prices shown are part of an early validation and may be adjusted based on feedback before launch."
 plans:
   title: Choose Your Plan
   description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional extension for advanced teams. Choose the plan that best fits your team so we can prioritize early access and preview rollout." 
@@ -46,7 +43,7 @@ plans:
     - id: starter
       icon: rocket
       name: Starter
-      description: For solo creators
+      description: For freelancers and small projects
       price: "$37"
       price_monthly: "$37"
       price_yearly: "$29"
@@ -102,11 +99,11 @@ faq:
     - q: What is Decap Turbo?
       a: "Decap Turbo is an official extension for Decap CMS. It is designed for advanced use cases where teams need centralized authentication and role management, better performance on large content sets, collaboration visibility, and premium support options."
     - q: Can I upgrade or downgrade my plan later?
-      a: "Yes! You can upgrade or downgrade between Turbo plans at any time. Changes will be prorated and reflected in your next billing cycle. You can also downgrade to the free Core Decap CMS whenever you choose."
+      a: "Yes. Once Turbo is generally available, you will be able to upgrade or downgrade between plans at any time. Changes will be prorated and reflected in your next billing cycle. You can also switch back to free Decap CMS at any time."
     - q: When will Decap Turbo be available?
       a: "Decap Turbo has just been announced and is currently in preview preparation. Users joining early access now will be first in line when the preview version becomes available."
-    - q: How does real-time collaboration work?
-      a: "Real-time collaboration (available in Team and Business plans) helps teams avoid editing conflicts. You'll see live presence indicators showing who is currently editing content so people can coordinate in real time."
+    - q: How does real-time editing visibility work?
+      a: "Real-time editing visibility (available in Team and Business plans) shows which team members are currently active in the CMS so you can coordinate and avoid working on the same entry at the same time. This is a presence indicator — you will not see others' changes in real time like in a shared editor such as Google Docs."
     - q: Why does Decap Turbo offer better performance?
       a: "When a project contains many entries, direct calls from the editor to a Git provider API can become a bottleneck. Decap Turbo introduces a database proxy between the editor and the provider API, which reduces request overhead and speeds up collection loading for larger projects."
     - q: Does Decap Turbo replace Decap CMS?
@@ -156,8 +153,8 @@ comparison:
           values: ["€9/seat/month", "€9/seat/month", "€9/seat/month"]
         - feature: "User roles & permissions"
           values: [false, true, true]
-        - feature: Real-time collaboration
-          tooltip: "See who is currently editing an article to avoid conflicts and be notified about new article versions. Team members can also leave comments directly within the editor."
+        - feature: Real-time editing visibility
+          tooltip: "See who is currently active in the CMS to avoid working on the same content at the same time. This is a presence indicator — you will not see others' changes in real time."
           values: [false, true, true]
     - title: PROJECTS
       rows:
