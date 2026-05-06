@@ -1,8 +1,8 @@
 .grid {
-  @include breakpoint-up(md) {
-    display: grid;
-    grid-gap: var(--space-fluid-5-7);
+  display: grid;
+  grid-gap: var(--space-fluid-5-6);
 
+  @include breakpoint-up(md) {
     &.cols-1 {
       grid-template-columns: repeat(1, 1fr);
     }

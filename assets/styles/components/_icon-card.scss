@@ -1,0 +1,60 @@
+.icon-card__container {
+  container: iconcard / inline-size;
+}
+
+.icon-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-fluid-4-5);
+  height: 100%;
+  padding: var(--space-fluid-5-6) var(--space-fluid-4-5);
+  box-shadow: 0 4px 6px -1px var(--color-gray-100);
+
+  @container iconcard (width > 400px) {
+    flex-direction: row;
+  }
+
+  &__icon {
+    align-items: center;
+    background: var(--color-light-pink);
+    border-radius: var(--radius-lg);
+    color: var(--color-accent-pink);
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: 64px;
+    justify-content: center;
+    width: 64px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__text {
+    h3 {
+      color: var(--color-gray-900);
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: var(--space-fixed-3);
+      margin-top: 0;
+    }
+
+    p {
+      color: var(--color-gray-700);
+      font-size: 15px;
+      line-height: 1.625;
+      margin: 0;
+    }
+  }
+
+  &--turbo {
+    .icon-card__icon {
+      background: linear-gradient(135deg, var(--color-accent-pink) 0%, var(--color-accent-purple) 100%);
+      color: var(--color-white);
+    }
+  }
+}

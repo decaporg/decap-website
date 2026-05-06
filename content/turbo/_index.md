@@ -10,13 +10,20 @@ hero:
 intro: "Decap Turbo is an optional extension for Decap CMS, built for advanced use cases. Decap CMS remains free and open source forever. Turbo adds centralized authentication and user management, a database proxy for faster CMS loading on larger projects, and additional team features and support options."
 features:
   - title: Faster CMS performance
+    icon: lightning
     description: A Turbo database proxy sits between the editor and your Git provider API to reduce bottlenecks and improve loading speed.
   - title: Centralized authentication and roles
+    icon: shield
     description: Manage access, authentication, and role-based permissions in one place without setting up separate provider-specific auth apps.
   - title: Real-time editing visibility
+    icon: users
     description: See who is editing at the same time so teams can avoid conflicts.
-  - title: Secrets storage
-    description: Store integration secrets securely for advanced workflows.
+  # - title: Secrets storage
+  #   icon: lock
+  #   description: Store integration secrets securely for advanced workflows.
+  - title: Priority support
+    icon: support
+    description: Get faster response times and dedicated support for critical issues.
 pricing_disclaimer: "Important: Prices shown are part of an early validation test and are not yet final. We are sharing them to validate interest and may adjust based on feedback."
 plans:
   title: Choose Your Plan

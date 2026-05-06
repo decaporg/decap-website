@@ -16,10 +16,7 @@
     <div class="container size-md">
       <div class="grid cols-2">
         {{ range . }}
-        <div class="turbo-feature-card">
-          <h3>{{ .title }}</h3>
-          <p>{{ .description }}</p>
-        </div>
+        {{ partial "icon-card" (merge . (dict "class" "icon-card--turbo")) }}
         {{ end }}
       </div>
     </div>

@@ -45,28 +45,6 @@
   padding: var(--space-fluid-5-8) 0;
 }
 
-.turbo-feature-card {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: var(--space-fluid-4-5);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: var(--space-fixed-4);
-
-  @include breakpoint-up(md) {
-    margin-bottom: 0;
-  }
-
-  h3 {
-    color: var(--color-gray-900);
-    margin-bottom: var(--space-fixed-3);
-  }
-
-  p {
-    color: var(--color-gray-800);
-    margin: 0;
-  }
-}
-
 .turbo-disclaimer {
   padding: var(--space-fixed-4) var(--space-fixed-5);
   border-radius: var(--radius-lg);

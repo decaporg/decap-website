@@ -27,6 +27,7 @@ export default {
           /version-tag/,
           /turbo-banner__avatar/,
           /home-comparison__card/,
+          /icon-card__icon/,
         ],
       },
     }),

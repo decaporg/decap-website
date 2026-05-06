@@ -10,20 +10,7 @@
 
     <div class="home-values__grid">
       {{ range .items }}
-        <div class="home-values__container">
-          <div class="home-values__item">
-            {{ with .icon }}
-              <span class="home-values__icon" aria-hidden="true">
-                {{ partial "icon" . }}
-              </span>
-            {{ end }}
-
-            <div class="home-values__text">
-              <h3>{{ .title }}</h3>
-              <p>{{ .description }}</p>
-            </div>
-          </div>
-        </div>
+        {{ partial "icon-card" . }}
       {{ end }}
     </div>
   </div>
