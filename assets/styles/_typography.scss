@@ -24,15 +24,19 @@ h6 {
 
 h1 {
   margin-top: 0.25em;
-  font-size: 36px;
+  font-size: var(--font-size-3xl);
 }
 
 h2 {
-  font-size: 28px;
+  font-size: var(--font-size-2xl);
 }
 
 h3 {
-  font-size: 24px;
+  font-size: var(--font-size-xl);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
 }
 
 // Paragraphs
@@ -79,10 +83,6 @@ a {
 .lead {
   font-size: var(--font-size-lg);
   margin-bottom: var(--space-fluid-2-5);
-  
-  @include breakpoint-up(md) {
-    font-size: var(--font-size-xl);
-  }
 }
 
 // Markdown - long-form content styles (blog posts, documentation)

@@ -2,9 +2,12 @@
   position: relative;
 
   &__intro {
-    margin: var(--space-fluid-5-7) auto;
+    margin: var(--space-fluid-6-9) auto var(--space-fluid-5-7);
     max-width: 780px;
-    text-align: center;
+    
+    @include breakpoint-up('lg') {
+      text-align: center;
+    }
   }
 
   &__cards {
