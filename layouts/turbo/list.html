@@ -23,47 +23,7 @@
   </section>
   {{ end }}
 
-  {{/* Pricing disclaimer */}}
-  {{ with .Params.pricing_disclaimer }}
-  <div class="container size-md">
-    <div class="turbo-disclaimer">
-      <p>{{ . }}</p>
-    </div>
-  </div>
-  {{ end }}
-
-  {{/* Plans */}}
-  {{ with .Params.plans }}
-  <section class="turbo-plans" id="plans">
-    <div class="container size-lg">
-      <h2 class="turbo-plans__title">{{ .title }}</h2>
-      <p class="turbo-plans__description">{{ .description }}</p>
-      <div class="grid cols-4">
-        {{ range .items }}
-        <div class="turbo-plan{{ if .featured }} turbo-plan--featured{{ end }}">
-          <div class="turbo-plan__header">
-            <h3 class="turbo-plan__name">{{ .name }}</h3>
-            <div class="turbo-plan__price">
-              {{ if .price }}
-              <span class="turbo-plan__amount">{{ .price }}</span>
-              {{ with .period }}<span class="turbo-plan__period">{{ . }}</span>{{ end }}
-              {{ else }}
-              <span class="turbo-plan__amount">{{ .price_label }}</span>
-              {{ end }}
-            </div>
-          </div>
-          <a href="{{ .cta_href }}" class="button button--block{{ if .featured }} button--primary{{ end }}">{{ .cta_text }}</a>
-          <ul class="turbo-plan__features">
-            {{ range .features }}
-            <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-  </section>
-  {{ end }}
+  {{ partial "turbo/plans" . }}
 
   {{/* FAQ */}}
   {{ with .Params.faq }}
@@ -193,4 +153,9 @@
     </div>
   </section>
   {{ end }}
+{{ end }}
+
+{{ define "scripts" }}
+  {{ $turboPlans := resources.Get "/scripts/turbo-plans.js" | js.Build (dict "minify" true) }}
+  <script defer src="{{ $turboPlans.RelPermalink }}"></script>
 {{ end }}

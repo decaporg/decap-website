@@ -1,0 +1,68 @@
+{{ with .Params.plans }}
+<section class="turbo-plans" id="plans" data-turbo-plans data-billing-cycle="yearly">
+  <div class="container size-lg">
+    <h2 class="turbo-plans__title">{{ .title }}</h2>
+    <p class="turbo-plans__description">{{ .description }}</p>
+
+    <div class="turbo-plans__toggle" role="group" aria-label="Billing cycle">
+      <button data-billing-cycle="monthly" aria-pressed="false">Monthly</button>
+      <button class="active" data-billing-cycle="yearly" aria-pressed="true">Yearly (Save 20%)</button>
+    </div>
+
+    <div class="turbo-plans__grid">
+      {{ range .items }}
+      {{ $isFree := .free }}
+      {{ $monthly := .price_monthly | default .price }}
+      {{ $yearly := .price_yearly | default .price }}
+      {{ $yearlyTotal := .yearly_total }}
+      <article class="turbo-plan {{ if .featured }}turbo-plan--featured{{ end }} {{ if $isFree }}turbo-plan--free{{ end }}" data-plan-card>
+        {{ if .featured }}
+        <p class="turbo-plan__badge">Most Popular</p>
+        {{ end }}
+
+        <header class="turbo-plan__header">
+          <div class="turbo-plan__title-row">
+            <span class="turbo-plan__icon" aria-hidden="true">
+              {{ partial "icon" .icon }}
+            </span>
+            <h3 class="turbo-plan__name">{{ .name }}</h3>
+          </div>
+          {{ with .description }}<p class="turbo-plan__summary">{{ . }}</p>{{ end }}
+
+          <div class="turbo-plan__price">
+            {{ if $isFree }}
+            <span class="turbo-plan__amount">{{ .price_label }}</span>
+            {{ else }}
+            <span class="turbo-plan__amount" data-price-monthly>{{ $monthly }}</span>
+            <span class="turbo-plan__amount" data-price-yearly hidden>{{ $yearly }}</span>
+            <span class="turbo-plan__period">/ month</span>
+            {{ end }}
+          </div>
+
+          {{ if and (not $isFree) $yearlyTotal }}
+          <p class="turbo-plan__billing-note" data-billing-note hidden>
+            {{ $yearlyTotal }}
+            <span>billed yearly</span>
+          </p>
+          {{ else }}
+          {{ with .subtext }}<p class="turbo-plan__billing-note">{{ . }}</p>{{ end }}
+          {{ end }}
+        </header>
+
+        <a href="{{ .cta_href }}" class="button button--block{{ if not $isFree }} button--turbo{{ end }}">{{ .cta_text }}</a>
+
+        <ul class="turbo-plan__features">
+          {{ range .features }}
+          <li>{{ partial "icon" "check-circle" }} {{ . }}</li>
+          {{ end }}
+        </ul>
+      </article>
+      {{ end }}
+    </div>
+
+    {{ with $.Params.pricing_disclaimer }}
+    <p class="turbo-plans__disclaimer">{{ . }}</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

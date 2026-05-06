@@ -30,19 +30,27 @@ plans:
   description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional extension for advanced teams. Choose the plan that best fits your team so we can prioritize early access and preview rollout." 
   items:
     - id: free
+      icon: check-circle
       name: Decap CMS
+      description: The current Decap CMS
       price_label: Free
+      subtext: Free forever
       cta_text: Get started
       cta_href: /docs/intro/
+      free: true
       features:
         - Open source CMS
         - Git-based workflow
         - Editorial workflow
         - Community support
     - id: starter
+      icon: rocket
       name: Starter
+      description: For solo creators
       price: "$37"
-      period: "/ month"
+      price_monthly: "$37"
+      price_yearly: "$29"
+      yearly_total: "$348 / year"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=starter'
       features:
@@ -53,10 +61,14 @@ plans:
         - Community support
         - Expedited bug triage
     - id: team
+      icon: users
       name: Team
       featured: true
       price: "$112"
-      period: "/ month"
+      description: For small teams
+      price_monthly: "$112"
+      price_yearly: "$89"
+      yearly_total: "$1.068 / year"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=team'
       features:
@@ -67,9 +79,13 @@ plans:
         - Secrets storage
         - Everything in Starter
     - id: business
+      icon: business
       name: Business
       price: "$374"
-      period: "/ month"
+      description: For agencies and larger teams
+      price_monthly: "$374"
+      price_yearly: "$299"
+      yearly_total: "$3.588 / year"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=business'
       features:
