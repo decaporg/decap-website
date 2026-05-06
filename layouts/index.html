@@ -8,24 +8,24 @@
     {{ partial "home/features" . }}
   {{ end }}
 
-  {{ with .Params.templateBanner }}
-    {{ partial "home/template-banner" . }}
-  {{ end }}
-
   {{ with .Params.values }}
     {{ partial "home/values" . }}
+  {{ end }}
+
+  {{ with .Params.templateBanner }}
+    {{ partial "home/template-banner" . }}
   {{ end }}
 
   {{ with .Params.turboBanner }}
     {{ partial "home/turbo-banner" . }}
   {{ end }}
 
-  {{ with .Params.support }}
-    {{ partial "home/support" . }}
-  {{ end }}
-
   {{ with .Params.services }}
     {{ partial "home/services" . }}
+  {{ end }}
+
+  {{ with .Params.support }}
+    {{ partial "home/support" . }}
   {{ end }}
 
   {{ with .Params.backers }}

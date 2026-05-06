@@ -26,7 +26,7 @@
   font-weight: var(--font-weight-medium);
   font-family: var(--font-family-secondary);
   border-radius: var(--radius-md);
-  padding: var(--space-fluid-2-4) var(--space-fluid-4-5);
+  padding: var(--space-fluid-2-3) var(--space-fluid-4-5);
   transition:
     background-color 0.2s ease-out,
     border-color 0.2s ease-out,
@@ -34,7 +34,7 @@
     box-shadow 0.2s ease-out;
   cursor: pointer;
   text-decoration: none;
-  min-width: 140px;
+  min-width: 160px;
   text-align: center;
 
   @include breakpoint-up(sm) {

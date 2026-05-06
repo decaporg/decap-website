@@ -1,7 +1,7 @@
 .home-support {
   &__title {
     transform: rotate(0.4deg);
-    font-size: clamp(var(--font-size-2xl), 6vw, var(--font-size-4xl));
+    font-size: var(--font-size-3xl);
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -0.92px;

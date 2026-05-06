@@ -72,11 +72,15 @@ features:
 
 # Template Banner
 templateBanner:
-  title: "Getting started is *simple and free.*"
-  hook: "Choose a template that's pre-configured with a static site generator and deploys to a global CDN in one click."
-  button:
-    text: "Start with a template"
-    href: "/docs/start-with-a-template/"
+  title: "Getting started is simple and free"
+  description: "Start with a template or add Decap CMS to an existing project. It's a flexible way to bring content editing into modern web workflows without changing the foundations of your site."
+  buttons:
+    - text: "Go to Docs"
+      href: "/docs/"
+      class: "button--primary"
+    - text: "Start with a template"
+      href: "/docs/start-with-a-template/"
+      class: "button--secondary-white-bg"
 
 # Values Section
 values:
@@ -128,29 +132,29 @@ services:
 
 # Support Section
 support:
-  title: "Assess project trust"
-  description: "Decap CMS is independent, open source, and maintained in the EU. Learn how the project is funded, who supports it, and how to contribute to its future."
+  title: "Support Our Mission"
+  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation. Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
   options:
     - title: "GitHub Sponsors"
       icon: "github-sponsors"
       description: "Support ongoing maintenance through GitHub's sponsorship program"
       button:
-        text: "See how to support"
-        href: "/about/"
+        text: "Sponsor on GitHub"
+        href: "https://github.com/sponsors/decaporg"
         class: "button--primary"
     - title: "Open Collective"
       icon: "opencollective"
-      description: "Review funding options, governance signals, and transparent backing for the project"
+      description: "Support the project through Open Collective with transparent funding and expense tracking"
       button:
-        text: "Read about Decap"
-        href: "/about/"
+        text: "Support on OC"
+        href: "https://opencollective.com/decap"
         class: "button--secondary"
     - title: "Exclusive partnership"
       icon: "partnership"
-      description: "See how commercial partners and maintainers help sustain long-term development"
+      description: "We are looking for a strategic partner to help us take Decap CMS to the next level"
       button:
-        text: "View About page"
-        href: "/about/"
+        text: "Contact Us"
+        href: "mailto:decap@p-m.si"
         class: "button--secondary"
 
 backers:

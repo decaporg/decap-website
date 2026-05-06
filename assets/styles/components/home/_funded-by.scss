@@ -2,6 +2,11 @@
   margin-top: var(--space-fixed-8);
   text-align: center;
 
+  p {
+    max-width: 56ch;
+    margin: 0 auto;
+  }
+
   ul {
     display: flex;
     list-style: none;
