@@ -26,7 +26,9 @@
             </a>
             
             {{ if eq $currentPage.RelPermalink .RelPermalink }}
-              {{ .TableOfContents }}
+              <nav class="docs-nav__toc" aria-label="On this page">
+                {{ .TableOfContents }}
+              </nav>
             {{ end }}
           </li>
           {{ end }}

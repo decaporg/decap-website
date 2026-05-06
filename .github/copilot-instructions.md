@@ -79,8 +79,12 @@ npx decap-server
 **CMS Architecture:**
 - **CDN-based**: No JavaScript bundling required
 - **Configuration**: `static/admin/config.yml`
-- **Collections**: Docs (organized by section), Blog, Community, Widgets
+- **Collections**: Docs (organized by section), Docs widgets, Blog, Community, Features, Personas, Settings (docs sections)
 - **Local backend**: Edit content without Git commits during development
+
+**Current content ownership notes:**
+- CMS-editable: docs, widget docs, blog, community, features, personas, docs section settings
+- Git-managed: homepage (`content/_index.md`), about (`content/about.md`), services (`content/services.md`), turbo landing (`content/turbo/_index.md`), footer data (`data/footer.json`)
 
 ## Styling Architecture
 

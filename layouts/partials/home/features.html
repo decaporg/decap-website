@@ -1,26 +1,7 @@
 <section class="home-features" id="{{ .id }}">
   {{ $featuresSection := site.GetPage "section" "features" }}
   {{ $homeFeatures := where $featuresSection.RegularPages "Params.homepage" true }}
-  {{ $personasPage := site.GetPage "/personas" }}
-  {{ $featurePersonas := slice }}
-  {{ $personaOrderByWeight := slice }}
-  {{ $personaLabels := dict }}
-  {{ range $homeFeatures }}
-    {{ range .Params.personas }}
-      {{ if not (in $featurePersonas .) }}
-        {{ $featurePersonas = $featurePersonas | append . }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-  {{ with $personasPage }}
-    {{ range .Pages.ByWeight }}
-      {{ $slug := .Params.slug | default .File.ContentBaseName }}
-      {{ if in $featurePersonas $slug }}
-        {{ $personaOrderByWeight = $personaOrderByWeight | append $slug }}
-        {{ $personaLabels = merge $personaLabels (dict $slug .LinkTitle) }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
+  {{ $personaContext := partial "features/persona-context" (dict "features" $homeFeatures) }}
 
   <div class="container size-lg">
     <div class="home-features__intro">
@@ -32,8 +13,8 @@
     </div>
 
     {{ partial "features-prioritizer" (dict
-      "personaOrderByWeight" $personaOrderByWeight
-      "personaLabels" $personaLabels
+      "personaOrderByWeight" $personaContext.personaOrderByWeight
+      "personaLabels" $personaContext.personaLabels
       "ariaLabel" "Homepage feature prioritization"
       "class" "features-prioritizer--home"
     ) }}

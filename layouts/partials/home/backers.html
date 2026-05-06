@@ -20,7 +20,7 @@
     <h3>{{ .title }}</h3>
     
     <a href="{{ .href }}" target="_blank" rel="noreferrer" title="{{ .text }}" class="hide-external">
-      <img src="{{ .logo }}" alt="{{ .text }} logo" height="80" />
+      <img src="{{ .logo }}" alt="{{ .text }} logo" height="80" loading="lazy" decoding="async" />
     </a>
   </div>
 {{ end }}
@@ -86,7 +86,7 @@
     <ul>
       {{ range $sortedBackers }}
         <li>
-          <img src="{{ .image }}" alt="{{ .name }}" />
+          <img src="{{ .image }}" alt="{{ .name }}" loading="lazy" decoding="async" />
           <span>{{ .name }}</span>
         </li>
       {{ end }}
@@ -101,7 +101,7 @@
     <ul>
       {{ range .logos }}
         <li>
-          <img src="{{ .src }}" alt="{{ .alt }}" />
+          <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy" decoding="async" />
         </li>
       {{ end }}
     </ul>

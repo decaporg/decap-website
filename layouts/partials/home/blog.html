@@ -13,7 +13,7 @@
 
       <div class="home-section__image-wrapper">
         {{ if .image }}
-          <img src="{{ printf "img/%s" .image | relURL }}" alt="" class="home-section__image" />
+          <img src="{{ printf "img/%s" .image | relURL }}" alt="Illustration for {{ .title }}" class="home-section__image" loading="lazy" decoding="async" />
         {{ end }}
       </div>
     </div>

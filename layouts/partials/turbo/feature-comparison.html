@@ -12,9 +12,9 @@
         </colgroup>
         <thead>
           <tr class="turbo-comparison-table__head-row">
-            <th class="turbo-comparison-table__th turbo-comparison-table__th--feature">Feature</th>
+            <th class="turbo-comparison-table__th turbo-comparison-table__th--feature" scope="col">Feature</th>
             {{ range .columns }}
-            <th class="turbo-comparison-table__th turbo-comparison-table__th--plan">
+            <th class="turbo-comparison-table__th turbo-comparison-table__th--plan" scope="col">
               <span class="turbo-comparison-table__plan-name">{{ .name }}</span>
               <span class="turbo-comparison-table__plan-price"><strong>{{ .price }}</strong>&nbsp;/ month</span>
             </th>
@@ -26,13 +26,13 @@
           {{ $totalCols := add 1 (len $c.columns) }}
           {{ with .title }}
           <tr class="turbo-comparison-table__group-header">
-            <td colspan="{{ $totalCols }}">{{ . }}</td>
+            <th colspan="{{ $totalCols }}" scope="colgroup">{{ . }}</th>
           </tr>
           {{ end }}
           {{ range .rows }}
           {{ $feature := .feature }}
           <tr class="turbo-comparison-table__row">
-            <td class="turbo-comparison-table__td">
+            <th class="turbo-comparison-table__td" scope="row">
               {{ $feature }}
               {{ with .tooltip }}
               <span class="turbo-comparison-table__info-wrap">
@@ -42,7 +42,7 @@
                 <span class="turbo-comparison-table__tooltip" role="tooltip">{{ . }}</span>
               </span>
               {{ end }}
-            </td>
+            </th>
             {{ range .values }}
             <td class="turbo-comparison-table__td turbo-comparison-table__td--center">
               {{ if eq . true }}

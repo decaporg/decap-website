@@ -21,7 +21,7 @@
 
             {{ if .image }}
               <div class="home-services__item-image">
-                <img src="{{ printf "img/%s" .image | relURL }}" alt="{{ .title }}" />
+                <img src="{{ printf "img/%s" .image | relURL }}" alt="{{ .title }}" loading="lazy" decoding="async" />
               </div>
             {{ end }}
           </div>

@@ -51,7 +51,8 @@
 {{ end }}
 
 {{ define "scripts" }}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   {{ $featuresFilter := resources.Get "/scripts/features-filter.js" | js.Build (dict "minify" true) }}
   <script defer src="{{ $featuresFilter.RelPermalink }}"></script>
