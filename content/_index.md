@@ -61,6 +61,37 @@ turboBanner:
       description: "vs. standard Decap CMS"
       icon: "turbo-performance"
 
+# Homepage Comparison
+comparison:
+  title: "Choose the setup that fits your team"
+  options:
+    - title: "Decap CMS - free forever"
+      description: "Best for teams that want an open-source, self-hosted CMS with full control over their workflow and infrastructure."
+      theme: "core"
+      button:
+        text: "View docs"
+        href: "/docs/"
+        class: "button--secondary"
+      features:
+        - "Open-source and self-hosted"
+        - "Git-based editorial workflow"
+        - "Bring your own auth and backend"
+        - "Community-driven roadmap"
+        - "Free forever under the MIT license"
+    - title: "Decap Turbo"
+      description: "Best for organizations that need faster CMS performance, centralized access control, and a smoother setup for larger editorial teams."
+      theme: "turbo"
+      button:
+        text: "Check plans"
+        href: "/turbo/#plans"
+        class: "button--secondary-white-bg"
+      features:
+        - "Database proxy for faster CMS performance"
+        - "Authentication handling"
+        - "User roles and permissions"
+        - "More scalable team workflows"
+        - "Additional onboarding and support options"
+
 # Homepage Features
 features:
   title: "Why teams choose Decap CMS"

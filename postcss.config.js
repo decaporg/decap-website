@@ -26,6 +26,7 @@ export default {
           /template-grid/,
           /version-tag/,
           /turbo-banner__avatar/,
+          /home-comparison__card/,
         ],
       },
     }),

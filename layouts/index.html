@@ -24,6 +24,10 @@
     {{ partial "home/services" . }}
   {{ end }}
 
+  {{ with .Params.comparison }}
+    {{ partial "home/comparison" . }}
+  {{ end }}
+
   {{ with .Params.support }}
     {{ partial "home/support" . }}
   {{ end }}
