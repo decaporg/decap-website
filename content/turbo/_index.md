@@ -122,4 +122,58 @@ cta_section:
   description: Pick the plan that fits your team and join early access. Early users help us prioritize rollout and will be first to access preview releases.
   button_text: Join early access waitlist
   button_href: '/turbo/join-early-access/'
+comparison:
+  title: Feature Comparison
+  description: "Decap CMS is and will always remain free. Core Decap CMS includes Open source CMS, Git-based workflow and editorial workflow. You can always downgrade from Decap Turbo plans back to the free version."
+  columns:
+    - name: Starter
+      price: "$37"
+    - name: Team
+      price: "$112"
+    - name: Business
+      price: "$374"
+  sections:
+    - rows:
+        - feature: Open source CMS
+          values: [true, true, true]
+        - feature: Git-based workflow
+          values: [true, true, true]
+        - feature: Editorial workflow
+          values: [true, true, true]
+    - title: PERFORMANCE
+      rows:
+        - feature: Enhanced speed
+          tooltip: "Projects with many entries require multiple GitHub API requests, which can slow down loading. Decap Turbo optimizes these requests for faster content loading and smoother editing."
+          values: [true, true, true]
+        - feature: Optimized infrastructure
+          values: [true, true, true]
+    - title: "USERS & COLLABORATION"
+      rows:
+        - feature: User seats
+          tooltip: "User seats define how many people can be managed directly within Decap CMS. With Decap Turbo, users and roles can be managed inside the CMS instead through external providers."
+          values: ["Up to 3", "Up to 9", "Up to 30"]
+        - feature: Additional user seat
+          values: ["€9/seat/month", "€9/seat/month", "€9/seat/month"]
+        - feature: "User roles & permissions"
+          values: [false, true, true]
+        - feature: Real-time collaboration
+          tooltip: "See who is currently editing an article to avoid conflicts and be notified about new article versions. Team members can also leave comments directly within the editor."
+          values: [false, true, true]
+    - title: PROJECTS
+      rows:
+        - feature: Number of projects
+          tooltip: "Each plan includes a limited number of projects. Additional projects can be added for an extra monthly fee per project."
+          values: ["1", "Up to 3", "Up to 10"]
+        - feature: Additional project
+          values: ["€19/project/month", "€19/project/month", "€19/project/month"]
+    - title: SUPPORT
+      rows:
+        - feature: Community support
+          values: [true, true, true]
+        - feature: Priority bug fixes
+          values: [true, true, true]
+        - feature: Priority support
+          values: [false, false, true]
+        - feature: Dedicated account manager
+          values: [false, false, true]
 ---

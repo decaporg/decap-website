@@ -1,0 +1,208 @@
+.turbo-comparison {
+  padding: var(--space-fluid-4-7) 0;
+
+  &__title {
+    margin-bottom: var(--space-fixed-3);
+    text-align: center;
+  }
+
+  &__description {
+    max-width: 58ch;
+    margin: 0 auto var(--space-fluid-4-6);
+    font-size: var(--font-size-lg);
+    text-align: center;
+    color: var(--color-gray-900);
+    line-height: 1.6;
+  }
+
+  &__table-wrapper {
+    overflow-x: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+  }
+}
+
+.turbo-comparison-table {
+  display: table; // override global `display: block` that breaks column widths
+  width: 100%;
+  margin: 0; // override global table margin that misaligns the shadow
+  border-collapse: collapse;
+  background: var(--color-white);
+  overflow: visible; // wrapper handles overflow, not the table itself
+
+  &__col--feature {
+    width: 35%;
+  }
+
+  &__col--plan {
+    width: 21.67%;
+  }
+
+  // ── Header ──────────────────────────────────────────────────────────
+
+  &__head-row {
+    background-image: linear-gradient(176deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+  }
+
+  &__th {
+    padding: var(--space-fixed-4);
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    vertical-align: bottom;
+
+    &--feature {
+      text-align: left;
+    }
+
+    &--plan {
+      text-align: center;
+    }
+  }
+
+  &__plan-name {
+    display: block;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  &__plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+
+    strong {
+      font-family: var(--font-family-secondary);
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  // ── Group header rows ────────────────────────────────────────────────
+
+  &__group-header td {
+    padding: 12px var(--space-fixed-3);
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    color: var(--color-gray-900);
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  // ── Regular rows ─────────────────────────────────────────────────────
+
+  &__row {
+    border-bottom: 1px solid #e5e7eb;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__td {
+    padding: 14px var(--space-fixed-4);
+    color: var(--color-gray-900);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &--center {
+      text-align: center;
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        color: var(--color-accent-pink);
+      }
+    }
+  }
+
+  &__unavailable {
+    color: #99a1af;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+  }
+
+  // ── Info button + tooltip ─────────────────────────────────────────────
+
+  &__tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 272px;
+    padding: 8px;
+    background-color: #313d3e;
+    border-radius: 5px;
+    color: var(--color-white);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: normal;
+    text-align: left;
+    z-index: 100;
+    pointer-events: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #313d3e;
+    }
+  }
+
+  &__info-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 4px;
+
+    &:hover .turbo-comparison-table__tooltip,
+    &:focus-within .turbo-comparison-table__tooltip {
+      display: block;
+    }
+  }
+
+  &__info-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-gray-500);
+    line-height: 1;
+
+    svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-gray-900);
+      outline: none;
+    }
+  }
+}
