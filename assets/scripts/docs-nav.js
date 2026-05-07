@@ -6,18 +6,20 @@ function initDocsNav () {
 
   if (!toggle || !content) return
 
-  toggle.addEventListener('click', function () {
-    const isOpen = content.classList.contains('open')
+  const updateToggleState = (isOpen) => {
+    content.classList.toggle('open', isOpen)
 
-    if (isOpen) {
-      content.classList.remove('open')
-      icon.textContent = '☰'
-      text.textContent = 'Show'
-    } else {
-      content.classList.add('open')
-      icon.textContent = '×'
-      text.textContent = 'Hide'
+    if (icon) {
+      icon.textContent = isOpen ? '×' : '☰'
     }
+
+    if (text) {
+      text.textContent = isOpen ? 'Hide' : 'Show'
+    }
+  }
+
+  toggle.addEventListener('click', function () {
+    updateToggleState(!content.classList.contains('open'))
   })
 }
 

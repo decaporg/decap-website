@@ -145,9 +145,9 @@
   }
 
   &--pill {
-    font-size: 15px;
+    font-size: var(--font-size-sm);
     line-height: 1.5;
-    padding: var(--space-fixed-2) var(--space-fixed-6);
+    padding: var(--space-fluid-1-2) var(--space-fluid-3-5);
     border-radius: 30px;
     min-width: auto;
   }

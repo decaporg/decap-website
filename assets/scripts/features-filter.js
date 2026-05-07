@@ -7,7 +7,16 @@ const setupFeaturesFilter = () => {
   }
 
   const buttons = Array.from(filterRoot.querySelectorAll('[data-persona]'))
-  const cards = Array.from(cardsContainer.querySelectorAll('[data-personas]'))
+  const cardEntries = Array.from(cardsContainer.querySelectorAll('[data-personas]'), (card) => ({
+    card,
+    personas: new Set(
+      (card.dataset.personas || '')
+        .split(',')
+        .map((value) => value.trim())
+        .filter(Boolean)
+    ),
+    defaultOrder: Number(card.dataset.defaultOrder || 0),
+  }))
   const filterLabel = filterRoot.querySelector('[data-features-filter-label]')
   const swiperRoot = document.querySelector('[data-features-swiper]')
   const controlsEl = swiperRoot?.parentElement?.querySelector('.home-features__controls')
@@ -44,35 +53,40 @@ const setupFeaturesFilter = () => {
       },
     })
     : null
+  let activeButton = null
+
+  const setActiveButton = (button) => {
+    if (activeButton && activeButton !== button) {
+      activeButton.classList.remove('button--primary', 'button--active')
+      activeButton.classList.add('button--grey')
+    }
+
+    button.classList.remove('button--grey')
+    button.classList.add('button--primary', 'button--active')
+    activeButton = button
+  }
 
   const sortCards = (persona) => {
-    const scoredCards = cards.map((card) => {
-      const personas = (card.dataset.personas || '')
-        .split(',')
-        .map((value) => value.trim())
-        .filter(Boolean)
-
-      const defaultOrder = Number(card.dataset.defaultOrder || 0)
-      const matches = persona === 'all' || personas.includes(persona)
-
-      card.classList.toggle('is-deprioritized', persona !== 'all' && !matches)
-
-      return {
-        card,
-        group: matches ? 0 : 1,
-        defaultOrder,
-      }
-    })
-
-    scoredCards
+    cardEntries
       .sort((a, b) => {
-        if (a.group !== b.group) {
-          return a.group - b.group
+        const aMatches = persona === 'all' || a.personas.has(persona)
+        const bMatches = persona === 'all' || b.personas.has(persona)
+
+        a.card.classList.toggle('is-deprioritized', persona !== 'all' && !aMatches)
+        b.card.classList.toggle('is-deprioritized', persona !== 'all' && !bMatches)
+
+        if (aMatches !== bMatches) {
+          return aMatches ? -1 : 1
         }
 
         return a.defaultOrder - b.defaultOrder
       })
-      .forEach((entry) => cardsContainer.appendChild(entry.card))
+      .forEach(({ card, personas }) => {
+        const matches = persona === 'all' || personas.has(persona)
+
+        card.classList.toggle('is-deprioritized', persona !== 'all' && !matches)
+        cardsContainer.appendChild(card)
+      })
 
     if (swiper) {
       swiper.update()
@@ -97,13 +111,7 @@ const setupFeaturesFilter = () => {
     button.addEventListener('click', () => {
       const persona = button.dataset.persona || 'all'
 
-      buttons.forEach((btn) => {
-        btn.classList.remove('button--primary', 'button--active')
-        btn.classList.add('button--grey')
-      })
-      button.classList.remove('button--grey')
-      button.classList.add('button--primary', 'button--active')
-
+      setActiveButton(button)
       sortCards(persona)
       updateLabel(persona, button.textContent || 'selected')
     })

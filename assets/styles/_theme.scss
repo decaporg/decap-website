@@ -68,6 +68,7 @@
   --space-fixed-9: 96px;
 
   // Spacing Scale: fluid (clamp-based)
+  --space-fluid-1-2: clamp(var(--space-fixed-1), 0.5vw, var(--space-fixed-2));
   --space-fluid-2-3: clamp(var(--space-fixed-2), 1.1vw, var(--space-fixed-3));
   --space-fluid-2-4: clamp(var(--space-fixed-2), 1.5vw, var(--space-fixed-4));
   --space-fluid-2-5: clamp(var(--space-fixed-2), 2vw, var(--space-fixed-5));

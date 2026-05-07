@@ -1,70 +1,64 @@
 // Widgets Navigation Script
 // Handles tabbed widget interface with hash-based navigation
 
-function showWidget (widgetTitle) {
-  // Hide all widgets
-  document.querySelectorAll('.widgets-content__item').forEach(widget => {
-    widget.style.display = 'none'
-  })
-
-  // Remove active class from all buttons
-  document.querySelectorAll('.widgets-nav .button').forEach(btn => {
-    btn.classList.remove('button--active', 'button--primary')
-    btn.classList.add('button--grey')
-  })
-
-  // Show selected widget
-  const selectedWidget = document.getElementById('widget-' + widgetTitle)
-  if (selectedWidget) {
-    selectedWidget.style.display = 'block'
-  }
-
-  // Add active class to selected button
-  const selectedButton = document.querySelector(`[data-widget="${widgetTitle}"]`)
-  if (selectedButton) {
-    selectedButton.classList.add('button--active', 'button--primary')
-    selectedButton.classList.remove('button--grey')
-  }
-
-  // Update URL hash
-  window.history.pushState(null, null, '#' + widgetTitle)
-}
-
-// Initialize on page load
 document.addEventListener('DOMContentLoaded', function () {
-  const hash = window.location.hash.replace('#', '')
-  const firstWidget = document.querySelector('.widgets-nav .button')
+  const nav = document.querySelector('.widgets-nav')
+  const buttons = Array.from(document.querySelectorAll('.widgets-nav .button'))
+  const widgets = Array.from(document.querySelectorAll('.widgets-content__item'))
 
-  // Attach click event listeners to all widget buttons
-  document.querySelectorAll('.widgets-nav .button').forEach(button => {
+  if (!buttons.length || !widgets.length) {
+    return
+  }
+
+  const showWidget = (widgetTitle) => {
+    widgets.forEach((widget) => {
+      widget.style.display = widget.id === `widget-${widgetTitle}` ? 'block' : 'none'
+    })
+
+    buttons.forEach((button) => {
+      const isActive = button.getAttribute('data-widget') === widgetTitle
+
+      button.classList.toggle('button--active', isActive)
+      button.classList.toggle('button--primary', isActive)
+      button.classList.toggle('button--grey', !isActive)
+    })
+
+    window.history.pushState(null, null, `#${widgetTitle}`)
+  }
+
+  const activateHashWidget = (shouldScroll = false) => {
+    const hash = window.location.hash.replace('#', '')
+    const firstWidget = buttons[0]?.getAttribute('data-widget')
+    const targetWidget = hash && document.getElementById(`widget-${hash}`)
+      ? hash
+      : firstWidget
+
+    if (!targetWidget) {
+      return
+    }
+
+    showWidget(targetWidget)
+
+    if (shouldScroll && hash && nav) {
+      nav.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  buttons.forEach((button) => {
     button.addEventListener('click', function () {
       const widgetTitle = this.getAttribute('data-widget')
+
       if (widgetTitle) {
         showWidget(widgetTitle)
       }
     })
   })
 
-  // Show initial widget (from hash or first widget)
-  if (hash && document.getElementById('widget-' + hash)) {
-    showWidget(hash)
-  } else if (firstWidget) {
-    showWidget(firstWidget.getAttribute('data-widget'))
-  }
+  activateHashWidget(true)
 
-  // Scroll to nav on hash change if needed
-  if (hash) {
-    const nav = document.querySelector('.widgets-nav')
-    if (nav) {
-      nav.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  window.addEventListener('hashchange', function () {
+    if (window.location.hash) {
+      activateHashWidget()
     }
-  }
-})
-
-// Handle hash changes
-window.addEventListener('hashchange', function () {
-  const hash = window.location.hash.replace('#', '')
-  if (hash) {
-    showWidget(hash)
-  }
+  })
 })
