@@ -31,9 +31,11 @@ main:
     parent: support
     weight: 22
   - name: Contact Support
-    url: /pro-support/
+    url: /contact/
     parent: support
     weight: 23
+    params:
+      href: /contact/?topic=support
   - name: Features
     url: /features/
     identifier: features

@@ -1,0 +1,92 @@
+{{ define "main" }}
+  <div class="page contact-page" data-contact-page>
+    {{ partial "page-hero" . }}
+
+    <div class="container size-sm markdown">
+      {{ .Content }}
+
+      {{ with .Params.form }}
+        <form
+          class="form"
+          name="contact"
+          method="POST"
+          action="/contact/"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          data-contact-form
+        >
+          <input type="hidden" name="form-name" value="contact">
+
+          <p hidden>
+            <label>
+              Do not fill this out if you're human:
+              <input name="bot-field" autocomplete="off">
+            </label>
+          </p>
+
+          {{ with .email }}
+            <label class="form-field" for="contact-email">
+              <span class="form-label">{{ .label }}</span>
+              <input
+                id="contact-email"
+                name="email"
+                class="form-input"
+                type="email"
+                autocomplete="email"
+                placeholder="{{ .placeholder }}"
+                required
+              >
+            </label>
+          {{ end }}
+
+          {{ with .topic }}
+            <label class="form-field" for="contact-topic">
+              <span class="form-label">{{ .label }}</span>
+              <select id="contact-topic" name="topic" class="form-select" data-contact-topic required>
+                <option value="" selected disabled>{{ .placeholder }}</option>
+                {{ range .options }}
+                  <option value="{{ .value }}">{{ .label }}</option>
+                {{ end }}
+              </select>
+            </label>
+          {{ end }}
+
+          {{ with .message }}
+            <label class="form-field" for="contact-message">
+              <span class="form-label">{{ .label }}</span>
+              <textarea
+                id="contact-message"
+                name="message"
+                class="form-textarea"
+                placeholder="{{ .placeholder }}"
+                minlength="10"
+                required
+              ></textarea>
+            </label>
+          {{ end }}
+
+          {{ with .terms }}
+            <label class="form-choice form-choice--terms" for="contact-terms">
+              <input id="contact-terms" type="checkbox" name="terms" value="agreed" required>
+              <span>
+                {{ .prefix }}
+                <a href="{{ .url }}">{{ .linkText }}</a>.
+              </span>
+            </label>
+          {{ end }}
+
+          <p class="form-status" aria-live="polite" data-contact-status></p>
+
+          <div class="form-actions">
+            <button type="submit" class="button button--primary" data-contact-submit>{{ .submitText }}</button>
+          </div>
+        </form>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ $contactForm := resources.Get "/scripts/contact-form.js" | js.Build (dict "minify" true) }}
+  <script defer src="{{ $contactForm.RelPermalink }}"></script>
+{{ end }}

@@ -10,7 +10,7 @@ Sponsor the development of a custom Decap feature or priority bug fix tailored t
 
 Custom feature development and priority bug-fix work are independent offerings and are not bundled into Decap Turbo plans.
 
-To discuss scope and fit, contact the Decap maintainers at <a href="mailto:decap@p-m.si">decap@p-m.si</a>.
+To discuss scope and fit, [contact the Decap maintainers](/contact/?topic=services).
 
 <!-- <a href="https://www.p-m.si/en/code/decap/#feature" class="ga-features button">Learn more about Custom Features</a> -->
 
@@ -30,7 +30,7 @@ Work with experts and agencies that design and build production websites with De
 
 ## Support
 
-If you are evaluating ongoing priority support, see [Decap Turbo](/turbo/) first. Turbo is the primary path for support and team-oriented upgrades. If you only need premium support, <a href="mailto:decap@p-m.si">contact us</a>.
+If you are evaluating ongoing priority support, see [Decap Turbo](/turbo/) first. Turbo is the primary path for support and team-oriented upgrades. If you only need premium support, [contact us](/contact/?topic=support).
 
 <br>
 
@@ -40,4 +40,4 @@ If you are evaluating ongoing priority support, see [Decap Turbo](/turbo/) first
 
 If you offer implementation or delivery services for Decap CMS, you can become a partner. Partners can be listed as web agencies and/or onboarding and training providers, and can use the Decap Partner logo on their website.
 
-<a href="mailto:decap@p-m.si" class="ga-partner">Contact us</a> to find out more how to become a partner and how the partnership works.
+<a href="/contact/?topic=partner" class="ga-partner">Contact us</a> to find out more how to become a partner and how the partnership works.

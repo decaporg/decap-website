@@ -185,7 +185,7 @@ support:
       description: "We are looking for a strategic partner to help us take Decap CMS to the next level"
       button:
         text: "Contact Us"
-        href: "mailto:decap@p-m.si"
+        href: "/contact/?topic=partner"
         class: "button--secondary"
 
 backers:

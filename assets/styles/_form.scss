@@ -107,6 +107,30 @@
   font-size: var(--font-size-sm);
 }
 
+.form-status {
+  min-height: 24px;
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+
+  &.is-success {
+    color: #1f6d3a;
+  }
+
+  &.is-error {
+    color: rgba(178, 42, 42, 1);
+  }
+}
+
+.form-choice--terms {
+  margin-top: var(--space-fixed-1);
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
 .form-note {
   color: var(--color-gray-700);
   font-size: var(--font-size-sm);
