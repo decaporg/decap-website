@@ -1,40 +1,70 @@
-.community-header {
-  margin-bottom: var(--space-fixed-8);
-}
-
-.community-intro {
-  font-size: var(--font-size-base);
-  color: var(--color-gray-700);
-  max-width: 48rem;
-  line-height: 1.7;
-  margin-top: var(--space-4);
-}
-
-.community-section {
-  margin-bottom: var(--space-fixed-8);
-}
-
-.section-title {
-  margin: var(--space-fluid-2-5) 0 var(--space-fluid-4-5);
-}
-
-.community-channels {
-  margin-bottom: var(--space-fixed-5);
-}
-
-.community-channel {
-  margin-bottom: var(--space-fixed-5);
-
-  .channel-title {
-    font-weight: 500;
-    margin-bottom: var(--space-fixed-2);
+.community {
+  &__header {
+    margin-bottom: var(--space-fixed-8);
   }
 
-  .channel-description {
+  &__intro {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    max-width: 48rem;
+    line-height: 1.7;
+    margin-top: var(--space-4);
+  }
+
+  &__section {
+    margin-bottom: var(--space-fixed-8);
+  }
+
+  &__section-title {
+    margin: var(--space-fluid-2-5) 0 var(--space-fluid-2-5);
+  }
+
+  &__section-intro {
+    max-width: 50rem;
+    color: var(--color-gray-700);
+    margin-bottom: var(--space-fluid-4-5);
+  }
+
+  &__channels {
+    display: grid;
+    gap: var(--space-fixed-3);
+    margin-bottom: var(--space-fluid-4-5);
+
+    @include breakpoint-up(xs) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-fluid-4-5);
+    }
+
+    @include breakpoint-up(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__channel {
+    padding: var(--space-fluid-4-6) var(--space-fluid-3-5);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    box-shadow: var(--shadow-xs);
+  }
+
+  &__channel-meta {
+    margin-bottom: var(--space-fixed-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-blue);
+  }
+
+  &__channel-title {
+    font-weight: 500;
+    margin: 0 0 var(--space-fixed-2);
+  }
+
+  &__channel-description {
     margin-bottom: var(--space-fixed-4);
   }
 
-  .channel-link {
+  &__channel-link {
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;

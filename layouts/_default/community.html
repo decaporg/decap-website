@@ -1,23 +1,31 @@
 {{ define "main" }}
-<section class="page">
+<section class="page community">
   {{ partial "page-hero" . }}
 
   <div class="container">
-    <div class="community-header">
+    <div class="community__header">
       {{ with .Params.intro }}
-        <p class="community-intro">{{ . | markdownify }}</p>
+        <p class="community__intro">{{ . | markdownify }}</p>
       {{ end }}
     </div>
 
     {{ range .Params.sections }}
-    <div class="community-section">
-      <h2 class="section-title">{{ .title | markdownify }}</h2>
-      <div class="community-channels grid cols-3">
+    <div class="community__section">
+      <h2 class="community__section-title">{{ .title | markdownify }}</h2>
+      {{ with .description }}
+        <p class="community__section-intro">{{ . | markdownify }}</p>
+      {{ end }}
+      <div class="community__channels">
         {{ range .channels }}
-        <div class="community-channel">
-          <h3 class="channel-title">{{ .title }}</h3>
-          <p class="channel-description">{{ .description }}</p>
-          <a href="{{ .link.href }}" class="channel-link">{{ .link.text }}</a>
+        <div class="community__channel">
+          <h3 class="community__channel-title">{{ .title }}</h3>
+          {{ with .meta }}
+            <p class="community__channel-meta">{{ . }}</p>
+          {{ end }}
+          <p class="community__channel-description">{{ .description }}</p>
+          {{ with .link }}
+            <a href="{{ .href }}" class="community__channel-link">{{ .text }}</a>
+          {{ end }}
         </div>
         {{ end }}
       </div>
