@@ -4,7 +4,7 @@
 
 .hero {
   position: relative;
-  background: linear-gradient(155deg, var(--color-light-purple) 0%, var(--color-light-pink) 100%);
+  background: var(--gradient-hero);
   isolation: isolate;
   color: var(--color-gray-900);
 
@@ -126,7 +126,7 @@
     display: block;
     width: 100%;
     height: auto;
-    box-shadow: 0 25px 50px -12px var(--color-gray-200);
+    box-shadow: var(--shadow-xl);
     border-radius: 3.5%;
   }
 
@@ -139,6 +139,6 @@
 
   &--dark {
     color: var(--color-white);
-    background: linear-gradient(155deg, var(--color-gray-800) 0%, var(--color-gray-700) 100%);
+    background: var(--gradient-dark);
   }
 }

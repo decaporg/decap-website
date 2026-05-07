@@ -53,7 +53,7 @@
 
   &--turbo {
     .icon-card__icon {
-      background: linear-gradient(135deg, var(--color-accent-pink) 0%, var(--color-accent-purple) 100%);
+      background: var(--gradient-turbo);
       color: var(--color-white);
     }
   }

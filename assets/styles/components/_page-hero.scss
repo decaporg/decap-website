@@ -9,9 +9,7 @@
     padding: var(--space-fluid-5-7);
     border: 1px solid var(--color-gray-300);
     border-radius: var(--radius-lg);
-    background:
-      radial-gradient(100% 120% at 100% 0%, rgba(58, 105, 199, 0.09) 0%, rgba(58, 105, 199, 0) 70%),
-      linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-100) 100%);
+    background: var(--gradient-hero);
 
     &::before {
       content: '';

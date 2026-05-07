@@ -1,6 +1,6 @@
 .home-values {
   padding: var(--space-fluid-7-9) 0;
-  background: linear-gradient(156deg, #f7f8f9 0%, #fafafb 33%, #fcfdfd 66%, var(--color-white) 100%);
+  background: var(--gradient-section);
 
   &__intro {
     margin: 0 auto;

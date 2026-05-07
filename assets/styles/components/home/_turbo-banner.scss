@@ -9,8 +9,8 @@
   padding: var(--space-fluid-5-6);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: linear-gradient(150deg, var(--color-primary-light) 0%, #c43a95 52%, var(--color-primary-dark) 100%);
-  box-shadow: 0 25px 50px -12px var(--color-gray-200);
+  background: var(--gradient-turbo);
+  box-shadow: var(--shadow-xl);
   color: var(--color-white);
 
   @include breakpoint-up(lg) {

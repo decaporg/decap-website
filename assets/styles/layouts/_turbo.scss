@@ -1,5 +1,5 @@
 .turbo-hero {
-  background: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
+  background: var(--gradient-turbo);
   color: var(--color-white);
   padding: var(--space-fluid-6-8) 0;
   text-align: center;
@@ -97,7 +97,7 @@
 }
 
 .turbo-cta {
-  background: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
+  background: var(--gradient-turbo);
   color: var(--color-white);
   padding: var(--space-fluid-6-9) 0;
   text-align: center;
@@ -143,7 +143,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
   thead tr {
-    background: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
+    background: var(--gradient-turbo);
     color: var(--color-white);
   }
 

@@ -29,7 +29,7 @@
       background:
         linear-gradient(180deg, #fff 0%, #fff7fb 100%);
       border: 1px solid #f2d7e5;
-      box-shadow: 0 4px 6px -4px #0000001a, 0 10px 15px -3px #0000001a;
+      box-shadow: var(--shadow-lg);
       color: var(--color-gray-900);
 
       .home-comparison__feature::before {
@@ -39,8 +39,8 @@
     }
 
     &--turbo {
-      background: linear-gradient(135deg, var(--color-accent-pink) 0%, var(--color-accent-purple) 100%);
-      box-shadow: 0 4px 6px -4px #0000001a, 0 10px 15px -3px #0000001a;
+      background: var(--gradient-turbo);
+      box-shadow: var(--shadow-lg);
       color: var(--color-white);
 
       .home-comparison__feature::before {

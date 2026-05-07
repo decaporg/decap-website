@@ -218,7 +218,7 @@
     justify-content: center;
     padding: 0.25rem 0.45rem;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
+    background: var(--gradient-turbo);
     color: var(--color-white);
     font-size: var(--font-size-2xs);
     position: relative;
@@ -265,7 +265,7 @@
       border: 1px solid var(--color-gray-100);
       border-radius: var(--radius-sm);
       background: var(--color-white);
-      box-shadow: 0 25px 50px -12px var(--color-gray-200);
+      box-shadow: var(--shadow-xl);
       transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
       z-index: 3;
     }

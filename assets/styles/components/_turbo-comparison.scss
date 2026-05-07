@@ -18,7 +18,7 @@
   &__table-wrapper {
     overflow-x: auto;
     border-radius: 14px;
-    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -41,7 +41,7 @@
   // ── Header ──────────────────────────────────────────────────────────
 
   &__head-row {
-    background-image: linear-gradient(176deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+    background-image: var(--gradient-turbo);
   }
 
   &__th {

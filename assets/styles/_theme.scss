@@ -94,4 +94,16 @@
 
   // Z-Index
   --z-index-header: 100;
+
+  // Shadows
+  --shadow-xs: 0 1px 2px var(--color-gray-100);
+  --shadow-sm: 0 1px 3px var(--color-gray-100), 0 1px 2px var(--color-gray-200);
+  --shadow-lg: 0 10px 15px -3px var(--color-gray-100), 0 4px 6px -4px var(--color-gray-200);
+  --shadow-xl: 0 25px 50px -12px var(--color-gray-200);
+
+  // Gradients
+  --gradient-section: linear-gradient(135deg, #F7F8F9 0%, #FAFAFB 33.33%, #FCFDFD 66.67%, #FFF 100%);
+  --gradient-hero: linear-gradient(105deg, rgba(249, 231, 249, 0.60) 0%, rgba(255, 240, 247, 0.60) 100%);
+  --gradient-turbo: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
+  --gradient-dark: linear-gradient(155deg, var(--color-gray-900) 0%, var(--color-gray-800) 100%);
 }
