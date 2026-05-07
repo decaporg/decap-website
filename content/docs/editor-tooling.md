@@ -12,16 +12,13 @@ If you want to lint your Markdown files as part of your development workflow thr
 
 Since Decap CMS uses `remark` internally for Markdown processing, using it in your development workflow will help avoid formatting/style differences between files edited through Decap and files edited locally.
 
-To set this up, you will need to install and set up both of these npm packages in your project:
+To start using it in your project, install both [`remark-cli`](https://github.com/remarkjs/remark/tree/main/packages/remark-cli) and [`remark-frontmatter`](https://github.com/remarkjs/remark-frontmatter):
 
-- remark-cli: https://github.com/remarkjs/remark/tree/main/packages/remark-cli
-- remark-frontmatter: https://github.com/remarkjs/remark-frontmatter
+```sh
+npm install --save-dev remark-cli remark-frontmatter
+```
 
-Example installation command:
-
-`npm install --save-dev remark-cli remark-frontmatter`
-
-Example remark setup in `package.json`:
+Then, add the following lines to your `package.json`:
 
 ```json
 {
@@ -34,6 +31,8 @@ Example remark setup in `package.json`:
   }
 }
 ```
+
+Now, you can use `npm run remark:check` to lint your Markdown files and `npm run remark:write` to format them.
 
 ## Custom Formatters
 
