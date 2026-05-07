@@ -7,6 +7,7 @@ date: 2026-04-16T08:00:00.000Z
 aliases:
   - /blog/2026/04/richtext-widget-replaces-markdown-widget/
 ---
+
 We are introducing a new `richtext` widget in Decap CMS as a replacement for the `markdown` widget. The `markdown` widget is still available for existing projects, but it is now deprecated and will not be actively maintained.
 
 This is great news for everyone who experienced problems with the markdown widget. Your experience will now be much smoother.
@@ -29,7 +30,7 @@ For full configuration options and examples, see the [Richtext Widget documentat
 
 **How we did it**
 
-The feature was introduced in [this pull request](https://github.com/decaporg/decap-cms/pull/7162). The new widget is built on top of the [Plate editor](https://plate.dev/), which provides a solid foundation for rich text editing and allows us to support a wide range of content types and formatting options.
+The feature was introduced in [this pull request](https://github.com/decaporg/decap-cms/pull/7162). The new widget is built on top of the [Plate editor](https://platejs.org/), which provides a solid foundation for rich text editing and allows us to support a wide range of content types and formatting options.
 
 **Thanks!**
 
