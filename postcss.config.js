@@ -19,7 +19,7 @@ export default {
         standard: [],
         deep: [
           /highlight/,
-          /home-services/,
+          /services/,
           /carbon/,
           /table/,
           /code/,

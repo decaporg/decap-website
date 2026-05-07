@@ -142,20 +142,20 @@ awards:
 
 # Services Section
 services:
-  title: "Need implementation support?"
-  description: "Decap Turbo is the main path for premium support and team workflows. Services remain available for onboarding and training, custom Decap feature development, priority bug fixes, and website delivery."
+  title: "Need expert support?"
+  description: "Decap maintainers and our partners offer a range of professional services to help you get the most out of Decap CMS."
   button:
     href: "/services/"
-    text: "View services"
+    text: "View all services"
   features:
     - title: "Custom Features Development"
       className: "development"
       image: "development.png"
-      description: "Sponsor custom Decap features and priority bug fixes delivered by Decap maintainers."
+      description: "Sponsor custom Decap features and priority bug fixes."
     - title: "Onboarding"
       className: "onboarding"
       image: "onboarding.png"
-      description: "Decap partners can get up to speed quickly with onboarding and training tailored to your team and project."
+      description: "Decap partners can get you up to speed quickly with onboarding and training tailored to your team and project."
     - title: "Website Delivery"
       className: "support"
       image: "support.png"

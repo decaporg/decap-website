@@ -2,12 +2,31 @@
 <div class="page">
   {{ partial "page-hero" . }}
   {{ $features := .RegularPages.ByWeight }}
-  {{ $personaContext := partial "features/persona-context" (dict "features" $features) }}
+  {{ $personasPage := site.GetPage "/personas" }}
+  {{ $featurePersonas := slice }}
+  {{ $personaLabels := dict }}
+  {{ range $features }}
+    {{ range .Params.personas }}
+      {{ if not (in $featurePersonas .) }}
+        {{ $featurePersonas = $featurePersonas | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $personaOrderByWeight := slice }}
+  {{ with $personasPage }}
+    {{ range .Pages.ByWeight }}
+      {{ $slug := .Params.slug | default .File.ContentBaseName }}
+      {{ if in $featurePersonas $slug }}
+        {{ $personaOrderByWeight = $personaOrderByWeight | append $slug }}
+        {{ $personaLabels = merge $personaLabels (dict $slug .LinkTitle) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 
   <div class="container size-lg">
     {{ partial "features-prioritizer" (dict
-      "personaOrderByWeight" $personaContext.personaOrderByWeight
-      "personaLabels" $personaContext.personaLabels
+      "personaOrderByWeight" $personaOrderByWeight
+      "personaLabels" $personaLabels
       "ariaLabel" "Feature prioritization"
     ) }}
 

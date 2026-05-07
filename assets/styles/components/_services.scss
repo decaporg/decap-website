@@ -1,5 +1,6 @@
-.home-services {
-  margin: var(--space-fluid-5-9) 0;
+.services {
+  margin-top: var(--space-fluid-5-9);
+  margin-bottom: var(--space-fluid-5-9);
 
   &__title {
     transform: rotate(-0.4deg);
@@ -27,7 +28,7 @@
     }
 
     @include breakpoint-up(lg) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
@@ -46,12 +47,7 @@
       grid-column: span 1;
     }
 
-    &--support,
-    &--onboarding {
-      background: var(--color-shade-blue);
-    }
-
-    &--development {
+    &--features {
       background: var(--color-gray-700);
       color: var(--color-white);
     }
@@ -66,7 +62,7 @@
       flex-direction: row-reverse;
       text-align: left;
 
-      .home-services__item-image {
+      .services__item-image {
         padding-bottom: var(--space-fluid-4-5);
       }
     }

@@ -1,37 +1,32 @@
-<section class="home-services">
-  {{ $button := .button }}
-  {{ if not $button }}
-    {{ with index .features 0 }}
-      {{ $button = .button }}
-    {{ end }}
-  {{ end }}
+<section class="services">
+  <div class="container size-lg">
+    <h2 class="services__title">{{ .title }}</h2>
+    <p class="services__description">{{ .description }}</p>
 
-  <div class="container">
-    <h2 class="home-services__title">{{ .title }}</h2>
-    <p class="home-services__description">{{ .description }}</p>
-
-    <div class="home-services__grid">
-      {{ range .features }}
-        <div class="home-services__item home-services__item--{{ .className }}">
-          <div class="home-services__item-layout">
-            <div class="home-services__item-content">
-              <h3 class="home-services__item-title">{{ .title }}</h3>
-              <p class="home-services__item-description">{{ .description }}</p>
-            </div>
-
-            {{ if .image }}
-              <div class="home-services__item-image">
-                <img src="{{ printf "img/%s" .image | relURL }}" alt="{{ .title }}" loading="lazy" decoding="async" />
+    {{ with site.GetPage "/services" }}
+      <div class="services__grid">
+        {{ range .RegularPages }}
+          <div class="services__item services__item--{{ .Params.class }}">
+            <div class="services__item-layout">
+              <div class="services__item-content">
+                <h3 class="services__item-title">{{ .Title }}</h3>
+                <p class="services__item-description">{{ .Description }}</p>
               </div>
-            {{ end }}
-          </div>
-        </div>
-      {{ end }}
-    </div>
 
-    {{ with $button }}
-      <div class="home-services__button">
-        <a href="{{ .href }}" class="button button--secondary">{{ .text }}</a>
+              {{ if .Params.image }}
+                <div class="services__item-image">
+                  <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy" decoding="async" />
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    {{ with .button }}
+      <div class="services__button">
+        <a href="{{ .href }}" class="button button--primary">{{ .text }}</a>
       </div>
     {{ end }}
   </div>

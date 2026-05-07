@@ -1,0 +1,54 @@
+{{ define "main" }}
+  <div class="page">
+    {{ partial "page-hero" . }}
+
+    <section class="container size-lg services">
+      <div class="services__grid">
+        {{ range .RegularPages.ByWeight }}
+
+          <article class="services__item">
+            <div class="services__item-layout">
+              <div class="services__item-content">
+                <h2 class="services__item-title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+
+                {{ with .Description }}
+                  <p class="services__item-description services__item-description--extended">{{ . }}</p>
+                {{ end }}
+
+                {{ with .Params.bestFor }}
+                  <p class="services__item-best-for"><strong>Best for:</strong> {{ . }}</p>
+                {{ end }}
+
+                {{ with .Params.highlights }}
+                  <ul class="services__item-highlights">
+                    {{ range . }}
+                      <li>{{ . }}</li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+
+                <a href="#{{ .Title | urlize }}" class="button button--secondary">View details</a>
+              </div>
+
+              {{ with .Params.image }}
+                <div class="services__item-image">
+                  <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+                </div>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+
+    <div class="container size-sm">
+      {{ with .Content }}
+        <section class="markdown">
+          {{ . }}
+        </section>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
