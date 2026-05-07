@@ -5,12 +5,14 @@
     <section class="container size-lg services">
       <div class="services__grid">
         {{ range .RegularPages.ByWeight }}
+          {{ $anchor := or .Slug .File.ContentBaseName }}
+          {{ $servicePage := . }}
 
-          <article class="services__item">
+          <article class="services__item services__item--{{ .Params.class }}">
             <div class="services__item-layout">
               <div class="services__item-content">
                 <h2 class="services__item-title">
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  <a href="#{{ $anchor }}">{{ .Title }}</a>
                 </h2>
 
                 {{ with .Description }}
@@ -29,12 +31,12 @@
                   </ul>
                 {{ end }}
 
-                <a href="#{{ .Title | urlize }}" class="button button--secondary">View details</a>
+                <a href="#{{ $anchor }}" class="button button--secondary">View details</a>
               </div>
 
               {{ with .Params.image }}
                 <div class="services__item-image">
-                  <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+                  <img src="{{ . | relURL }}" alt="{{ $servicePage.Title }}" loading="lazy" decoding="async" />
                 </div>
               {{ end }}
             </div>
@@ -43,12 +45,18 @@
       </div>
     </section>
 
-    <div class="container size-sm">
-      {{ with .Content }}
-        <section class="markdown">
-          {{ . }}
-        </section>
-      {{ end }}
-    </div>
+    {{ range .RegularPages.ByWeight }}
+      {{ $anchor := or .Slug .File.ContentBaseName }}
+      <section id="{{ $anchor }}" class="container services__detail markdown">
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+      </section>
+    {{ end }}
+
+    {{ with .Content }}
+      <div class="container size-sm markdown">
+        {{ . }}
+      </div>
+    {{ end }}
   </div>
 {{ end }}

@@ -5,7 +5,7 @@
 
     {{ with site.GetPage "/services" }}
       <div class="services__grid">
-        {{ range .RegularPages }}
+        {{ range .RegularPages.ByWeight }}
           <div class="services__item services__item--{{ .Params.class }}">
             <div class="services__item-layout">
               <div class="services__item-content">

@@ -147,19 +147,6 @@ services:
   button:
     href: "/services/"
     text: "View all services"
-  features:
-    - title: "Custom Features Development"
-      className: "development"
-      image: "development.png"
-      description: "Sponsor custom Decap features and priority bug fixes."
-    - title: "Onboarding"
-      className: "onboarding"
-      image: "onboarding.png"
-      description: "Decap partners can get you up to speed quickly with onboarding and training tailored to your team and project."
-    - title: "Website Delivery"
-      className: "support"
-      image: "support.png"
-      description: "Work with our partners on building, launching, and maintaining websites with Decap CMS and other Jamstack technologies."
 
 # Support Section
 support:
