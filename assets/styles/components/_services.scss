@@ -101,21 +101,6 @@
     margin-bottom: var(--space-fixed-4);
   }
 
-  &__item-best-for {
-    margin: 0 0 var(--space-fixed-4);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-max);
-    text-align: left;
-  }
-
-  &__item-highlights {
-    margin: 0 0 var(--space-fixed-5);
-    padding-left: var(--space-fixed-5);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-max);
-    text-align: left;
-  }
-
   &__item-image {
     flex: 1;
     display: flex;

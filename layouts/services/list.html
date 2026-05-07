@@ -19,18 +19,6 @@
                   <p class="services__item-description services__item-description--extended">{{ . }}</p>
                 {{ end }}
 
-                {{ with .Params.bestFor }}
-                  <p class="services__item-best-for"><strong>Best for:</strong> {{ . }}</p>
-                {{ end }}
-
-                {{ with .Params.highlights }}
-                  <ul class="services__item-highlights">
-                    {{ range . }}
-                      <li>{{ . }}</li>
-                    {{ end }}
-                  </ul>
-                {{ end }}
-
                 <a href="#{{ $anchor }}" class="button button--secondary">View details</a>
               </div>
 
@@ -46,11 +34,7 @@
     </section>
 
     {{ range .RegularPages.ByWeight }}
-      {{ $anchor := or .Slug .File.ContentBaseName }}
-      <section id="{{ $anchor }}" class="container services__detail markdown">
-        <h2>{{ .Title }}</h2>
-        {{ .Content }}
-      </section>
+        {{ partial "service-detail" . }}
     {{ end }}
 
     {{ with .Content }}
