@@ -19,7 +19,7 @@
                   <p class="services__item-description services__item-description--extended">{{ . }}</p>
                 {{ end }}
 
-                <a href="#{{ $anchor }}" class="button button--secondary">View details</a>
+                <a href="#{{ $anchor }}" class="button button--secondary-white-bg button--icon">View details {{ partial "icon" "arrow-down" }}</a>
               </div>
 
               {{ with .Params.image }}
