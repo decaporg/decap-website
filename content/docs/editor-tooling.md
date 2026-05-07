@@ -6,7 +6,7 @@ aliases:
   - custom-formatters
 ---
 
-## Linting via remark
+## Linting
 
 If you want to lint your Markdown files as part of your development workflow through your code editor, pre-commit hooks, and/or CI, we recommend using the Remark ecosystem.
 
