@@ -65,8 +65,8 @@
     font-size: var(--font-size-md);
     line-height: 1.6;
 
-    @include breakpoint-up('xs') {
-    font-size: var(--font-size-lg);
+    @include breakpoint-up(xs) {
+      font-size: var(--font-size-lg);
     }
 
     @include breakpoint-up(md) {

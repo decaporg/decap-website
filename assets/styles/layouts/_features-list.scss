@@ -13,7 +13,7 @@
   }
 
   &--home {
-    @include breakpoint-up('lg') {
+    @include breakpoint-up(lg) {
       text-align: center;
       
       .features-prioritizer__controls {

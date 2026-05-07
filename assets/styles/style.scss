@@ -2,7 +2,6 @@
 // Import all partial SCSS files
 
 // Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import 'base';
@@ -20,7 +19,6 @@
 @import 'layouts/docs-single';
 @import 'layouts/docs-list';
 @import 'layouts/features-list';
-@import 'layouts/home';
 @import 'layouts/community';
 @import 'layouts/turbo';
 
@@ -33,7 +31,6 @@
 @import 'components/page-hero';
 @import 'components/pagination-nav';
 @import 'components/version-tag';
-@import 'components/page-layout';
 @import 'components/community';
 @import 'components/docs-nav';
 @import 'components/edit-link';
