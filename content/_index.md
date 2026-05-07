@@ -143,23 +143,23 @@ awards:
 # Services Section
 services:
   title: "Need implementation support?"
-  description: "Decap Turbo is the main path for advanced support and team workflows. Services remain available for onboarding, custom feature development, delivery work, and implementation help."
+  description: "Decap Turbo is the main path for premium support and team workflows. Services remain available for onboarding and training, custom Decap feature development, priority bug fixes, and website delivery."
   button:
     href: "/services/"
     text: "View services"
   features:
-    - title: "Onboarding"
-      className: "onboarding"
-      image: "onboarding.png"
-      description: "Get up to speed quickly with a customized onboarding program tailored to your team and project."
     - title: "Custom Features Development"
       className: "development"
       image: "development.png"
-      description: "Sponsor the development of custom features or integrations to meet your specific needs."
+      description: "Sponsor custom Decap features and priority bug fixes delivered by Decap maintainers."
+    - title: "Onboarding"
+      className: "onboarding"
+      image: "onboarding.png"
+      description: "Decap partners can get up to speed quickly with onboarding and training tailored to your team and project."
     - title: "Website Delivery"
       className: "support"
       image: "support.png"
-      description: "Work with a partner that can build, launch, and maintain your Decap CMS implementation."
+      description: "Work with our partners on building, launching, and maintaining websites with Decap CMS and other Jamstack technologies."
 
 # Support Section
 support:
@@ -191,7 +191,7 @@ support:
 backers:
   partner:
     title: "Main partner"
-    text: "PM, poslovni mediji"
+    text: "PM d.o.o."
     href: "https://p-m.si"
     logo: "/img/pm_logo.png"
   backers:
