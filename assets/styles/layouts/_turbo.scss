@@ -104,14 +104,18 @@
 
   h2 {
     color: var(--color-white);
-    margin-bottom: var(--space-fixed-4);
+    margin: 0 0 var(--space-fluid-3-4);
   }
 
   &__description {
-    margin: 0 auto var(--space-fixed-5);
+    margin: 0 auto var(--space-fluid-3-4);
     max-width: 640px;
     opacity: 0.9;
     font-size: var(--font-size-lg);
+  }
+
+  a {
+    margin-top: var(--space-fluid-4-5);
   }
 }
 

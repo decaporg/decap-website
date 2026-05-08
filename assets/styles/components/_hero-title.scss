@@ -8,7 +8,7 @@
     font-size: var(--font-size-3xl);
   }
 
-  @include breakpoint-up(md) {
+  @include breakpoint-up(xl) {
     font-size: var(--font-size-4xl);
   }
 }
