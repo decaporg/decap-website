@@ -31,10 +31,10 @@
     <div class="container size-sm">
       <h2>{{ .title }}</h2>
       {{ range .items }}
-      <details class="turbo-faq__item">
-        <summary class="turbo-faq__question">
+      <details>
+        <summary>
           <span>{{ .q }}</span>
-          {{ partial "icon" "arrow-down" }}
+          {{ partial "icon" "caret-up" }}
         </summary>
         <div class="turbo-faq__answer">{{ .a | markdownify }}</div>
       </details>

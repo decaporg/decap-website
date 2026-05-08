@@ -67,26 +67,37 @@
     margin-bottom: var(--space-fluid-5-7);
   }
 
-  &__item {
+  details {
     border: 1px solid var(--color-gray-300);
     border-radius: var(--radius-lg);
     margin-bottom: var(--space-fixed-4);
     background: var(--color-background);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-  }
+  
+    summary {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-fixed-2);
+      padding: var(--space-fixed-5);
+      font-family: var(--font-family-secondary);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-md);
+      color: var(--color-gray-900);
+      cursor: pointer;
+      list-style: none;
 
-  &__question {
-    display: block;
-    padding: var(--space-fixed-5);
-    font-family: var(--font-family-secondary);
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-md);
-    color: var(--color-gray-900);
-    cursor: pointer;
-    list-style: none;
+      svg {
+        rotate: 180deg;
+        transition: rotate 0.3s ease;
+      }
+  
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
 
-    &::-webkit-details-marker {
-      display: none;
+    &[open] summary svg {
+      rotate: 360deg;
     }
   }
 
