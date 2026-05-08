@@ -85,6 +85,13 @@ a {
   margin-bottom: var(--space-fluid-2-5);
 }
 
+.heading-display {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
 // Markdown - long-form content styles (blog posts, documentation)
 // Overrides base typography with appropriate spacing for readability
 .markdown {

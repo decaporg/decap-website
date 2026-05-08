@@ -1,4 +1,5 @@
 .hero-title {
+  @extend .heading-display;
   font-size: var(--font-size-2xl);
   margin-bottom: var(--space-fluid-4-5);
   letter-spacing: -0.92px;

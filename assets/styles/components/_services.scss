@@ -3,12 +3,7 @@
   margin-bottom: var(--space-fluid-5-9);
 
   &__title {
-    transform: rotate(-0.4deg);
     text-align: center;
-    font-size: clamp(32px, 5vw, 64px);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.92px;
     margin: var(--space-fluid-5-6) 0 var(--space-fluid-3-4);
   }
 
@@ -80,11 +75,6 @@
   }
 
   &__item-title {
-    font-family: var(--font-family-secondary);
-    font-size: clamp(22px, 2.1vw, 30px);
-    font-weight: 800;
-    line-height: 1.4;
-    letter-spacing: -0.72px;
     margin: 0 0 var(--space-fixed-4);
 
     a {
