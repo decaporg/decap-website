@@ -32,7 +32,10 @@
       <h2>{{ .title }}</h2>
       {{ range .items }}
       <details class="turbo-faq__item">
-        <summary class="turbo-faq__question">{{ .q }}</summary>
+        <summary class="turbo-faq__question">
+          <span>{{ .q }}</span>
+          {{ partial "icon" "arrow-down" }}
+        </summary>
         <div class="turbo-faq__answer">{{ .a | markdownify }}</div>
       </details>
       {{ end }}
