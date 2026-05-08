@@ -63,8 +63,8 @@ collections:
         widget: string
 ```
 
-clicking the following link: `/#/collections/posts/new?author=first&author=second`
+clicking the following link: `/#/collections/posts/new?authors=first&authors=second`
 
-will open the editor for a new post with the `author` field populated with any pre-existing authors whose names match `first` and `second`.
+will open the editor for a new post with the `authors` field populated with any pre-existing authors whose names match `first` and `second`.
 
 **Note:** URL Encoding might be required for certain values (e.g. in the previous example the value for `body` is URL encoded).
