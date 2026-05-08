@@ -41,14 +41,11 @@ const setupFeaturesFilter = () => {
           }
         : undefined,
       breakpoints: {
-        576: {
+        768: {
           slidesPerView: 2,
         },
-        992: {
-          slidesPerView: 3,
-        },
         1200: {
-          slidesPerView: 4,
+          slidesPerView: 3,
         },
       },
     })
