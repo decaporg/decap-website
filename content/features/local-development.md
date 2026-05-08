@@ -8,6 +8,6 @@ homepage: false
 description: |-
   Use `npx decap-server` for local testing and rapid iteration on content models and editor behavior before pushing to remote environments.
 visual: Show local CMS, local content changes, and local preview loop.
-image: configure.png
+image: /img/configure.png
 imageAlt: Local development setup concept
 ---

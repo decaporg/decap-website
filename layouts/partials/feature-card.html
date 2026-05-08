@@ -43,7 +43,7 @@
   
     {{ with $feature.image }}
       <div class="feature-card__image">
-        <img src="/img/{{ . }}" alt="{{ or $feature.imageAlt $feature.title }}" class="feature-card__image-media" loading="lazy" decoding="async" />
+        <img src="{{ . }}" alt="{{ or $feature.imageAlt $feature.title }}" class="feature-card__image-media" loading="lazy" decoding="async" />
       </div>
     {{ end }}
   </div>

@@ -8,6 +8,6 @@ homepage: true
 description: |-
   Define collections, nested structures, relation fields, and slug behavior so your content model matches your project rather than forcing a rigid schema.
 visual: Show linked entries and repeatable structured blocks.
-image: widget-relation.png
+image: /img/widget-relation.png
 imageAlt: Relation widget example
 ---

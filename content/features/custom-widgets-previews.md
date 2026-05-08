@@ -9,6 +9,6 @@ homepage: true
 description: |-
   Extend editorial UX with custom widgets, preview templates, and plugins when default behavior is not enough for your product requirements.
 visual: Show modular extension components attached to the CMS interface.
-image: widget-object.png
+image: /img/widget-object.png
 imageAlt: Structured widget customization
 ---
