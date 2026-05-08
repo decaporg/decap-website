@@ -8,22 +8,22 @@
           {{ $anchor := or .Slug .File.ContentBaseName }}
           {{ $servicePage := . }}
 
-          <article class="services__item services__item--{{ .Params.class }}">
-            <div class="services__item-layout">
-              <div class="services__item-content">
-                <h2 class="services__item-title">
+          <article class="service-container">
+            <div class="service service--{{ .Params.class }}">
+              <div class="service__content">
+                <h2 class="service__title">
                   <a href="#{{ $anchor }}">{{ .Title }}</a>
                 </h2>
 
                 {{ with .Description }}
-                  <p class="services__item-description services__item-description--extended">{{ . }}</p>
+                  <p class="service__description service__description--extended">{{ . }}</p>
                 {{ end }}
 
                 <a href="#{{ $anchor }}" class="button button--secondary-white-bg button--icon">View details {{ partial "icon" "arrow-down" }}</a>
               </div>
 
               {{ with .Params.image }}
-                <div class="services__item-image">
+                <div class="service__image">
                   <img src="{{ . | relURL }}" alt="{{ $servicePage.Title }}" loading="lazy" decoding="async" />
                 </div>
               {{ end }}
@@ -36,6 +36,12 @@
     {{ range .RegularPages.ByWeight }}
         {{ partial "service-detail" . }}
     {{ end }}
+
+    <div class="container">
+      <br>
+      <br>
+      <hr>
+    </div>
 
     {{ with .Content }}
       <div class="container size-sm markdown">

@@ -6,15 +6,15 @@
     {{ with site.GetPage "/services" }}
       <div class="services__grid">
         {{ range .RegularPages.ByWeight }}
-          <div class="services__item services__item--{{ .Params.class }}">
-            <div class="services__item-layout">
-              <div class="services__item-content">
-                <h3 class="services__item-title">{{ .Title }}</h3>
-                <p class="services__item-description">{{ .Description }}</p>
+          <div class="service-container">
+            <div class="service service--{{ .Params.class }}">
+              <div class="service__content">
+                <h3 class="service__title">{{ .Title }}</h3>
+                <p class="service__description">{{ .Description }}</p>
               </div>
 
               {{ if .Params.image }}
-                <div class="services__item-image">
+                <div class="service__image">
                   <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy" decoding="async" />
                 </div>
               {{ end }}
