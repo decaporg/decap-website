@@ -16,7 +16,8 @@
     }
   }
 
-  &.is-deprioritized {
+  &.is-deprioritized,
+  .is-deprioritized & {
     opacity: 0.78;
   }
 

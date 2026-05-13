@@ -23,12 +23,9 @@
       <div class="swiper-wrapper" data-features-grid>
         {{ range $index, $feature := $homeFeatures }}
           {{ $personas := delimit $feature.Params.personas "," }}
-          {{ partial "feature-card" (dict
-            "feature" $feature.Params
-            "dataPersonas" $personas
-            "dataDefaultOrder" $index
-            "class" "swiper-slide"
-          ) }}
+          <div class="swiper-slide" data-personas="{{ $personas }}" data-default-order="{{ $index }}">
+            {{ partial "feature-card" (dict "feature" $feature.Params) }}
+          </div>
         {{ end }}
       </div>
       <div class="home-features__controls">
