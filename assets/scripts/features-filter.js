@@ -56,10 +56,12 @@ const setupFeaturesFilter = () => {
     if (activeButton && activeButton !== button) {
       activeButton.classList.remove('button--primary', 'button--active')
       activeButton.classList.add('button--grey')
+      activeButton.setAttribute('aria-pressed', 'false')
     }
 
     button.classList.remove('button--grey')
     button.classList.add('button--primary', 'button--active')
+    button.setAttribute('aria-pressed', 'true')
     activeButton = button
   }
 
