@@ -65,7 +65,7 @@ plans:
       description: For small teams
       price_monthly: "$112"
       price_yearly: "$89"
-      yearly_total: "$1.068 / year"
+      yearly_total: "$1,068 / year"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=team'
       features:
@@ -82,7 +82,7 @@ plans:
       description: For agencies and larger teams
       price_monthly: "$374"
       price_yearly: "$299"
-      yearly_total: "$3.588 / year"
+      yearly_total: "$3,588 / year"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=business'
       features:
