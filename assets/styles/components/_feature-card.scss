@@ -93,19 +93,19 @@
   }
 
   &__image {
-    margin-top: auto;
-
     @container (min-width: 700px) {
       flex: 0 0 auto;
       width: 50%;
+      display: flex;
+      align-items: center;
     }
-  }
 
-  &__image-media {
-    // border-radius: var(--radius-sm);
-    display: block;
-    height: auto;
-    object-fit: contain;
-    width: 100%;
+    img {
+      border-radius: var(--radius-sm);
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 }

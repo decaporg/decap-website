@@ -27,4 +27,12 @@
 .features-grid {
   display: grid;
   gap: var(--space-fluid-4-7);
+
+  @include breakpoint-up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    > .feature-card:not(.feature-card--no-image) {
+      grid-column: 1 / -1;
+    }
+  }
 }

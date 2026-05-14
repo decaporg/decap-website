@@ -10,6 +10,6 @@ homepage: false
 description: |-
   **Decap Turbo optional feature.** Centralize user management, roles, and authentication for larger organizations that need controlled editorial access.
 visual: Show a team member list with permission levels and role badges.
-image: /icons/turbo-shield.svg
-imageAlt: Access control and roles
+# image: /icons/turbo-shield.svg
+# imageAlt: Access control and roles
 ---

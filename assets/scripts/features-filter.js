@@ -50,7 +50,7 @@ const setupFeaturesFilter = () => {
       },
     })
     : null
-  let activeButton = null
+  let activeButton = buttons.find((button) => button.getAttribute('aria-pressed') === 'true') || null
 
   const setActiveButton = (button) => {
     if (activeButton && activeButton !== button) {
