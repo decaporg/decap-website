@@ -14,7 +14,7 @@
   {{ with .Params.features }}
   <section class="turbo-features">
     <div class="container size-md">
-      <h2>{{ .title }}</h2>
+      <h2 class="heading-display">{{ .title }}</h2>
       <div class="grid cols-2">
         {{ range .items }}
           {{ partial "icon-card" (merge . (dict "class" "icon-card--turbo")) }}

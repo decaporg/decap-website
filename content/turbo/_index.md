@@ -101,7 +101,7 @@ faq:
     - q: What is Decap Turbo?
       a: "Decap Turbo is an official extension for Decap CMS. It is designed for advanced use cases where teams need centralized authentication and role management, better performance on large content sets, collaboration visibility, and premium support options."
     - q: Can I upgrade or downgrade my plan later?
-      a: "Yes. Once Turbo is generally available, you will be able to upgrade or downgrade between plans at any time. Changes will be prorated and reflected in your next billing cycle. You can also switch back to free Decap CMS at any time."
+      a: "Yes. Once Turbo is generally available, you will be able to upgrade or downgrade between plans at any time. Changes will be prorated and reflected in your next billing cycle. You can also switch back to free Decap CMS at any time. You always remain the owner of your content. Decap Turbo just adds a layer of features and support on top of your existing CMS."
     - q: When will Decap Turbo be available?
       a: "Decap Turbo has just been announced and is currently in preview preparation. Users joining early access now will be first in line when the preview version becomes available."
     - q: How does real-time editing visibility work?
@@ -123,7 +123,7 @@ cta_section:
   button_href: '/turbo/join-early-access/'
 comparison:
   title: Feature comparison
-  description: "Decap CMS is and will always remain free. Core Decap CMS includes Open source CMS, Git-based workflow and editorial workflow. You can always downgrade from Decap Turbo plans back to the free version."
+  description: "These are all Decap Turbo features based on premium plans. The core Decap CMS is and will always remain free. You can always unsubscribe from Decap Turbo and your CMS will continue to function as usual."
   columns:
     - name: Starter
       price: "$37"
@@ -148,8 +148,8 @@ comparison:
           values: [true, true, true]
     - title: "Users & collaboration"
       rows:
-        - feature: User seats
-          tooltip: "User seats define how many people can be managed directly within Decap CMS. With Decap Turbo, users and roles can be managed inside the CMS instead through external providers."
+        - feature: User seats (per team)
+          tooltip: "User seats define how many people can be managed within Decap Turbo. With Decap Turbo, users and roles can be managed centrally instead of through external providers."
           values: ["Up to 3", "Up to 9", "Up to 30"]
         - feature: Additional user seat
           values: ["€9/seat/month", "€9/seat/month", "€9/seat/month"]

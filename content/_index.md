@@ -25,7 +25,7 @@ hero:
 turboBanner:
   label: "NEW"
   title: "Introducing Decap Turbo"
-  description: "Decap CMS stays free and open source forever. Decap Turbo is an optional extension for advanced teams that need faster CMS performance, centralized access control, and additional collaboration and support capabilities."
+  description: "Decap Turbo is an extension for teams that need faster CMS performance, centralized access control, and additional collaboration and support capabilities."
   benefits:
     - text: "Faster CMS performance with a database proxy"
       icon: "turbo-speed"
@@ -53,8 +53,8 @@ turboBanner:
         - initials: "+5"
           tone: "rose"
     collaboration:
-      title: "Real-time editing visibility"
-      description: "See who is currently editing and coordinate to avoid conflicts"
+      title: "Centralized user management"
+      description: "Manage users, roles, and permissions for all your sites from a single interface."
     performance:
       title: "CMS performance"
       value: "Up to 60% faster"
@@ -63,9 +63,9 @@ turboBanner:
 
 # Homepage Comparison
 comparison:
-  title: "Choose the setup that fits your team"
+  title: "Choose the setup that fits you"
   options:
-    - title: "Decap CMS - free forever"
+    - title: "Decap CMS"
       description: "Best for teams that want an open-source, self-hosted CMS with full control over their workflow and infrastructure."
       theme: "core"
       button:
@@ -90,7 +90,7 @@ comparison:
         - "Centralized authentication handling"
         - "User roles and permissions (Team and above)"
         - "Real-time editing visibility (Team and above)"
-        - "Priority support on Business plan"
+        - "Priority support (Business)"
 
 # Homepage Features
 features:
@@ -151,7 +151,7 @@ services:
 # Support Section
 support:
   title: "Support our mission"
-  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation. Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
+  description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation. Decap CMS is independently maintained by open-source enthusiasts. Every contribution helps us dedicate more time to improving the project."
   options:
     - title: "GitHub Sponsors"
       icon: "github-sponsors"

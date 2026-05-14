@@ -30,13 +30,9 @@
     gap: var(--space-fixed-3);
     margin-bottom: var(--space-fluid-4-5);
 
-    @include breakpoint-up(xs) {
-      grid-template-columns: repeat(2, 1fr);
+    @include breakpoint-up(sm) {
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-fluid-4-5);
-    }
-
-    @include breakpoint-up(lg) {
-      grid-template-columns: repeat(4, 1fr);
     }
   }
 
