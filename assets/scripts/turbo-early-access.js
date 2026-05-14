@@ -103,15 +103,6 @@ if (turboJoinRoot) {
     return Boolean(otherReason)
   }
 
-  const syncFeedbackLimit = () => {
-    const selectedCount = selectedFeedbackChoices().length
-    const atLimit = selectedCount >= maxFeedbackChoices
-
-    feedbackChoices.forEach((choice) => {
-      choice.disabled = atLimit && !choice.checked
-    })
-  }
-
   const validateFeedbackSelection = () => {
     if (feedbackChoices.length === 0) {
       return true
@@ -173,7 +164,6 @@ if (turboJoinRoot) {
   feedbackChoices.forEach((choice) => {
     choice.addEventListener('change', () => {
       syncOtherReasonField()
-      syncFeedbackLimit()
       setError(stepTwoError, '')
       validateFeedbackSelection()
     })
@@ -274,6 +264,5 @@ if (turboJoinRoot) {
   }
 
   syncOtherReasonField()
-  syncFeedbackLimit()
   validateFeedbackSelection()
 }
