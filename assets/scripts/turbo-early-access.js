@@ -15,6 +15,7 @@ if (turboJoinRoot) {
   const stepTwoSubmit = turboJoinRoot.querySelector('[data-step-two-submit]')
   const stepTwoSkip = turboJoinRoot.querySelector('[data-step-two-skip]')
   const emailTarget = turboJoinRoot.querySelector('[data-user-email]')
+  const planIntentInput = turboJoinRoot.querySelector('input[name="PLAN_INTENT"]')
 
   const feedbackChoices = Array.from(turboJoinRoot.querySelectorAll('input[name="reasons"]'))
   const maxFeedbackChoices = 2
@@ -25,6 +26,10 @@ if (turboJoinRoot) {
     numberOfSeats: '',
     numberOfProjects: '',
     planIntent: queryParams.get('plan') || '',
+  }
+
+  if (planIntentInput) {
+    planIntentInput.value = state.planIntent
   }
 
   const setStep = (nextStep) => {
@@ -150,6 +155,7 @@ if (turboJoinRoot) {
       const email = String(formData.get('email') || '').trim().toLowerCase()
       const numberOfSeats = String(formData.get('NUMBER_OF_SEATS') || '').trim()
       const numberOfProjects = String(formData.get('NUMBER_OF_PROJECTS') || '').trim()
+      const planIntent = String(formData.get('PLAN_INTENT') || '').trim()
 
       setButtonLoading(stepOneSubmit, true, 'Submitting...')
 
@@ -159,12 +165,13 @@ if (turboJoinRoot) {
           email,
           numberOfSeats,
           numberOfProjects,
-          planIntent: state.planIntent,
+          planIntent,
         })
 
         state.email = email
         state.numberOfSeats = numberOfSeats
         state.numberOfProjects = numberOfProjects
+        state.planIntent = planIntent
         saveSessionState()
         initializeStepTwo()
         setStep(2)
