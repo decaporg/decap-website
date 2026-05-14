@@ -5,7 +5,7 @@ personas:
   - team
   - agency
   - developer
-weight: 9
+weight: 20
 homepage: false
 description: |-
   **Decap Turbo optional feature.** Centralize user management, roles, and authentication for larger organizations that need controlled editorial access.

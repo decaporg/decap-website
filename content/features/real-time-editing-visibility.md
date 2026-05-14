@@ -4,8 +4,7 @@ product: turbo
 personas: 
   - team
   - editor
-  - agency
-weight: 11
+weight: 21
 homepage: false
 description: |-
   **Decap Turbo optional feature.** See who is editing to avoid collisions and help distributed teams coordinate content work.

@@ -1,9 +1,9 @@
 ---
 title: Secrets storage for advanced workflows
 product: turbo
-personas: 
+personas:
   - developer
-weight: 12
+weight: 23
 homepage: false
 description: |-
   **Decap Turbo optional feature.** Store and manage sensitive integration settings for more advanced publishing and operational workflows.

@@ -8,13 +8,13 @@ hero:
   subhead: "Use Decap CMS with any static site generator for faster, more flexible web projects."
   benefits:
     - "Built for static sites and modern frontend workflows"
-    - "Open source and self-hosted"
-    - "The core CMS is free forever"
+    - "Open source, free and self-hosted"
+    - "Supports all major Git providers"
   buttons:
     - text: "Go to Docs"
       href: "/docs/"
       class: "button--primary"
-    - text: "Try the demo"
+    - text: "Try the interactive demo"
       href: "https://demo.decapcms.org"
       class: "button--secondary"
   image: "/img/hero-scheme.svg"
@@ -94,8 +94,8 @@ comparison:
 
 # Homepage Features
 features:
-  title: "Why teams choose Decap CMS"
-  description: "Decap CMS is strongest when you want a friendly editorial experience, a Git-native implementation, and content that stays in your own stack. These are the capabilities most likely to decide whether Decap is the right fit."
+  title: "Why people choose Decap CMS"
+  description: "Decap CMS is strongest if you want an efficient developer and editorial experience, a Git-native implementation, ownership over your content, and a flexible, extensible platform. Below are the standout features."
   button:
     text: "All Decap CMS Features"
     href: "/features/"
@@ -116,7 +116,7 @@ templateBanner:
 # Values Section
 values:
   title: "Built on principles that matter"
-  description: "Decap CMS is an independent open-source project. We are maintained in the EU with the help of contributors from around the world."
+  description: "Decap CMS is an independent open-source project. Our values guide our work and our commitment to the community."
   items:
     - title: "Free & Open Source, Forever"
       description: "Decap CMS is MIT-licensed. It is free today and will remain free for everyone, always."
@@ -124,8 +124,8 @@ values:
     - title: "Own Your Content"
       description: "Your content lives in your own Git repository — not locked to any provider's database. You are always in control."
       icon: "book"
-    - title: "Independent & EU-Maintained"
-      description: "No big tech ownership. Decap is maintained in the EU with contributors from across the world."
+    - title: "Independent & EU-Regulated"
+      description: "No big tech ownership. Decap is independently maintained in the European Union with contributors from across the world."
       icon: "pin"
     - title: "Privacy & the Open Web"
       description: "We believe in privacy, democracy, and the open internet. We build tools that help editors and publishers launch and maintain their independent platforms."

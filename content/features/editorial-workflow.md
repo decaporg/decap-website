@@ -2,7 +2,6 @@
 title: Editorial workflow for draft, review, and publish
 product: core
 personas:
-  - editor
   - team
   - agency
 weight: 2
@@ -12,4 +11,5 @@ description: |-
 visual: Show a single entry moving from draft to review to publish.
 image: /img/screenshot-editorial.png
 imageAlt: Editorial workflow view
+docs_link: /docs/editorial-workflows/
 ---

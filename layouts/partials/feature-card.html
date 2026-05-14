@@ -28,6 +28,12 @@
       <div class="markdown">
         {{ $feature.description | markdownify }}
       </div>
+
+      {{ with $feature.docs_link }}
+        <p class="feature-card__docs">
+          <a href="{{ . }}">Read docs</a>
+        </p>
+      {{ end }}
   
       {{ if $showPersonas }}
         {{ with $feature.personas }}

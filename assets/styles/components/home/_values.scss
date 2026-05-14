@@ -21,7 +21,7 @@
 
   &__grid {
     display: grid;
-    gap: var(--space-fixed-5);
+    gap: var(--space-fluid-4-5);
     margin-top: var(--space-fluid-5-7);
 
     @include breakpoint-up(md) {

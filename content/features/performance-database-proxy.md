@@ -5,7 +5,7 @@ personas:
   - team
   - developer
   - agency
-weight: 10
+weight: 22
 homepage: false
 description: |-
   **Decap Turbo optional feature.** Improve CMS responsiveness on larger repositories by using Turbo's database proxy layer.

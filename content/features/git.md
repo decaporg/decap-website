@@ -1,9 +1,11 @@
 ---
 title: Git-native history and ownership
 product: core
-personas: 
+personas:
   - developer
-weight: 6
+  - team
+  - agency
+weight: 4
 homepage: true
 description: |-
   Content stays in your repository with full version history, branch workflows, and deployment checks in the same system your team already uses.
