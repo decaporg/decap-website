@@ -4,7 +4,6 @@
     {{ $widgets = $widgets | append . }}
   {{ end }}
 {{ end }}
-{{ $widgets = sort $widgets ".Params.label" }}
 
 <nav class="widgets-nav">
   {{ range $widgets }}
