@@ -1,0 +1,151 @@
+.services {
+  margin-top: var(--space-fluid-5-9);
+  margin-bottom: var(--space-fluid-5-9);
+
+  &__title {
+    text-align: center;
+    margin: var(--space-fluid-5-6) 0 var(--space-fluid-3-4);
+  }
+
+  &__description {
+    font-size: var(--font-size-base);
+    text-align: center;
+    margin-bottom: var(--space-fluid-4-6);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-fluid-4-5);
+
+    @include breakpoint-up(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(xl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__button {
+    margin-top: var(--space-fluid-4-6);
+    text-align: center;
+  }
+
+  &__detail {
+    scroll-margin-top: calc(var(--space-fluid-6-8) + 80px);
+    margin-top: var(--space-fluid-6-8);
+
+    &:first-of-type {
+      margin-top: var(--space-fluid-5-7);
+    }
+  }
+}
+
+.service-container {
+  container-type: inline-size;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px var(--color-gray-200);
+  height: 100%;
+
+  &__content {
+    padding: var(--space-fixed-5) var(--space-fluid-4-5);
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0 0 var(--space-fixed-4);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .button {
+    margin-top: var(--space-fixed-4);
+  }
+
+  &__image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-fluid-4-5);
+    padding-bottom: 0;
+
+    img {
+      max-width: 180px;
+      max-height: 150px;
+      object-fit: contain;
+    }
+  }
+
+  &--features {
+    color: var(--color-white);
+    background: linear-gradient(180deg, #6027CD 0%, #5A25BF 7.14%, #5323B1 14.29%, #4D21A4 21.43%, #471F96 28.57%, #411D89 35.71%, #3B1B7C 42.86%, #361970 50%, #301763 57.14%, #2B1557 64.29%, #25124B 71.43%, #201040 78.57%, #1B0D34 85.71%, #160B2A 92.86%, #11081F 100%);
+  }
+
+  &--onboarding {
+    background: linear-gradient(
+      180deg, 
+      rgb(238, 85, 223) 0%, 
+      rgb(255, 146, 202) 35%,
+      #fff 95%
+    );
+  }
+
+  &--websites {
+    color: var(--color-white);
+    background: linear-gradient(135deg, #00D4FF 0%, #02CDFC 7.14%, #04C6F9 14.29%, #05C0F6 21.43%, #08B9F3 28.57%, #0AB2EF 35.71%, #0CACEC 42.86%, #0EA5E9 50%, #0C9CDE 57.14%, #0A93D4 64.29%, #088BCA 71.43%, #0782BF 78.57%, #057AB5 85.71%, #0471AB 92.86%, #0369A1 100%);
+  }
+
+  &--support {
+    background: linear-gradient(
+      180deg, 
+      #5620C8 0%, 
+      #D2B8F9 35%,
+      #fff 95%
+    );
+  }
+
+  @container (min-width: 550px) {
+    flex-direction: row-reverse;
+    text-align: left;
+    align-items: center;
+
+    .service__image {
+      padding-bottom: var(--space-fluid-4-5);
+    }
+
+    &.service--onboarding {
+      background: linear-gradient(
+        90deg, 
+        rgb(238, 85, 223) 0%, 
+        rgb(255, 146, 202) 35%,
+        #fff 95%
+      );
+    }
+
+    &.service--support {
+      background: linear-gradient(
+        90deg, 
+        #5620C8 0%, 
+        #D2B8F9 35%,
+        #fff 95%
+      );
+    }
+  }
+}

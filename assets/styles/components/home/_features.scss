@@ -1,0 +1,119 @@
+.home-features {
+  --swiper-theme-color: var(--color-primary-light);
+  --swiper-pagination-bottom: 0;
+
+  position: relative;
+
+  &__intro {
+    margin: var(--space-fluid-6-9) auto var(--space-fluid-5-7);
+    
+    @include breakpoint-up(lg) {
+      text-align: center;
+    }
+
+    h2,
+    .lead {
+      max-width: 62ch;
+
+      @include breakpoint-up(lg) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__cards {
+    overflow: clip !important;
+    overflow-clip-margin: 12px;
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    .feature-card {
+      box-sizing: border-box;
+      height: 100%;
+      margin: 0;
+    }
+  }
+
+  &__controls {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-fixed-4);
+    position: relative;
+    min-height: 28px;
+
+    @include breakpoint-up(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__pagination {
+    position: static;
+    text-align: center;
+
+    .swiper-pagination-bullet {
+      background: var(--color-gray-400);
+      height: 8px;
+      opacity: 1;
+      width: 8px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--color-primary-light);
+    }
+  }
+
+  &__nav {
+    display: none;
+    z-index: 20;
+
+    @include breakpoint-up(md) {
+      align-items: center;
+      display: flex;
+      flex-shrink: 0;
+      gap: var(--space-fixed-2);
+    }
+  }
+
+  &__nav-btn {
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-pill);
+    color: var(--color-gray-700);
+    cursor: pointer;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    transition: color 0.15s;
+    width: 36px;
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+      height: 20px;
+      pointer-events: none;
+      width: 20px;
+    }
+
+    &:hover:not(:disabled):not(.swiper-button-disabled) {
+      color: var(--color-primary-light);
+    }
+
+    &:disabled,
+    &.swiper-button-disabled {
+      cursor: default;
+      opacity: 0.3;
+    }
+  }
+
+  &__button {
+    text-align: center;
+    margin: var(--space-fluid-5-7) auto;
+  }
+}

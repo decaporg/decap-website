@@ -1,0 +1,40 @@
+{{ $hasDate := not .Date.IsZero }}
+
+<section class="page-hero {{ if .Params.image }}page-hero--with-image{{ end }}">
+  <div class="container">
+    <div class="page-hero__inner{{ if .Params.image }} page-hero__inner--with-image{{ end }}">
+    <div class="page-hero__content">
+      {{ if not .IsSection }}
+        <p class="page-hero__eyebrow">{{ .Section | humanize }}</p>
+      {{ end }}
+
+      {{ if or .Params.author $hasDate }}
+        <p class="page-hero__meta">
+          {{ with .Params.author }}
+            <span>{{ . }}</span>
+          {{ end }}
+          {{ if and .Params.author $hasDate }}
+            <span aria-hidden="true">/</span>
+          {{ end }}
+          {{ if $hasDate }}
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ end }}
+        </p>
+      {{ end }}
+  
+      <h1 class="page-hero__title">{{ .Title }}</h1>
+  
+      {{ with .Description }}
+        <p class="page-hero__description lead">{{ . }}</p>
+      {{ end }}
+    </div>
+  
+    {{ with .Params.image }}
+      <div class="page-hero__media">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" />
+      </div>
+    {{ end }}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<section class="home-values">
+  <div class="container size-lg">
+    <div class="home-values__intro">
+      <h2 class="heading-display">{{ .title }}</h2>
+
+      {{ with .description }}
+        <p>{{ . | markdownify }}</p>
+      {{ end }}
+    </div>
+
+    <div class="home-values__grid">
+      {{ range .items }}
+        {{ partial "icon-card" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>

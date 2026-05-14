@@ -4,20 +4,28 @@
     {{ partial "home/hero" . }}
   {{ end }}
 
-  {{ with .Params.developers }}
-    {{ partial "home/developers" . }}
+  {{ with .Params.features }}
+    {{ partial "home/features" . }}
+  {{ end }}
+
+  {{ with .Params.values }}
+    {{ partial "home/values" . }}
   {{ end }}
 
   {{ with .Params.templateBanner }}
     {{ partial "home/template-banner" . }}
   {{ end }}
 
-  {{ with .Params.editors }}
-    {{ partial "home/editors" . }}
+  {{ with .Params.turboBanner }}
+    {{ partial "home/turbo-banner" . }}
   {{ end }}
 
   {{ with .Params.services }}
     {{ partial "home/services" . }}
+  {{ end }}
+
+  {{ with .Params.comparison }}
+    {{ partial "home/comparison" . }}
   {{ end }}
 
   {{ with .Params.support }}
@@ -28,17 +36,12 @@
     {{ partial "home/backers" . }}
   {{ end }}
 
-  <div class="home-dark-section-wrapper">
-    <div class="home-dark-section__border"></div>
-    <div class="home-dark-section">
-      {{ with .Params.blog }}
-        {{ partial "home/blog" . }}
-      {{ end }}
+{{ end }}
 
-      {{ with .Params.community }}
-        {{ partial "home/community" . }}
-      {{ end }}
-    </div>
-  </div>
-
+{{ define "scripts" }}
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  {{ $featuresFilter := resources.Get "/scripts/features-filter.js" | js.Build (dict "minify" true) }}
+  <script defer src="{{ $featuresFilter.RelPermalink }}"></script>
 {{ end }}

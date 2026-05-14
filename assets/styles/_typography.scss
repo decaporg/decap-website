@@ -1,6 +1,6 @@
 // Body text
 body {
-  color: var(--color-gray);
+  color: var(--color-gray-800);
   font-family: var(--font-family-primary);
   font-optical-sizing: auto;
   font-style: normal;
@@ -24,15 +24,19 @@ h6 {
 
 h1 {
   margin-top: 0.25em;
-  font-size: 36px;
+  font-size: var(--font-size-3xl);
 }
 
 h2 {
-  font-size: 28px;
+  font-size: var(--font-size-2xl);
 }
 
 h3 {
-  font-size: 24px;
+  font-size: var(--font-size-xl);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
 }
 
 // Paragraphs
@@ -44,8 +48,8 @@ p {
 // Lists
 ol,
 ul {
-  margin: var(--space-1) 0;
-  padding-left: var(--space-4);
+  margin: var(--space-fixed-1) 0;
+  padding-left: var(--space-fixed-5);
 }
 
 // Links
@@ -53,6 +57,15 @@ a {
   color: var(--color-primary-light);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
+
+  &.external:not(.hide-external)::after {
+    content: "↗";
+    margin-left: 0.4em;
+    font-size: 0.9em;
+    position: relative;
+    font-family: system-ui;
+    opacity: 0.7;
+  }
 
   &:hover {
     text-decoration: underline;
@@ -62,19 +75,21 @@ a {
 // Meta Info - small metadata text
 .meta-info {
   font-size: var(--font-size-sm);
-  margin-bottom: var(--space-4);
-  color: var(--color-gray);
+  margin-bottom: var(--space-fixed-5);
+  color: var(--color-gray-800);
 }
 
 // Lead - larger intro paragraph
 .lead {
   font-size: var(--font-size-lg);
-  margin-bottom: var(--space-2);
-  
-  @include breakpoint-up(md) {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-5);
-  }
+  margin-bottom: var(--space-fluid-2-5);
+}
+
+.heading-display {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 // Markdown - long-form content styles (blog posts, documentation)

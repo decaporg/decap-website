@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>{{ with .Title }}{{ . }} | {{ end }}{{ site.Title }}</title>
   <meta name="description" content="{{ .Description | default site.Params.description }}">
   <link rel="icon" href="{{ "img/favicon/favicon-32x32.png" | relURL }}">
@@ -32,6 +34,8 @@
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQFP7W4H"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -39,7 +43,7 @@
 
   {{ partial "header" . }}
 
-  <main>
+  <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
 

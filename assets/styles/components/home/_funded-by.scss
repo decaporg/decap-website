@@ -1,0 +1,28 @@
+.home-funded-by {
+  margin-top: var(--space-fixed-8);
+  text-align: center;
+
+  p {
+    max-width: 56ch;
+    margin: 0 auto;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-fluid-3-5) var(--space-fluid-5-7);
+    padding: 0;
+    margin: var(--space-fluid-5-7) 0;
+
+    img {
+      width: 200px;
+      height: 50px;
+      object-position: center;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.feature-card {
+  background: var(--color-white);
+  padding: var(--space-fluid-4-6);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 12px var(--color-gray-100);
+  container-type: inline-size;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-fluid-4-7);
+  
+    @container (min-width: 700px) {
+      flex-direction: row;
+    }
+  }
+
+  &.is-deprioritized,
+  .is-deprioritized & {
+    opacity: 0.78;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-fixed-3);
+
+    @container (min-width: 700px) {
+      justify-content: center;
+    }
+  }
+
+  &__header {
+    align-items: flex-start;
+    display: flex;
+    gap: var(--space-fluid-3-5);
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: var(--font-size-lg);
+    margin: var(--space-fixed-1) 0;
+  }
+
+  &__visual {
+    border-left: 3px solid var(--color-primary-light);
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+    margin: 0;
+    padding-left: var(--space-fixed-3);
+  }
+
+  &__badges {
+    flex-shrink: 0;
+  }
+
+  &__badge {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-pill);
+    color: var(--color-gray-700);
+    display: inline-block;
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    text-transform: uppercase;
+
+    &--turbo {
+      background: #f4ecff;
+      color: #5d2f98;
+    }
+  }
+
+  &__personas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-fixed-2);
+    list-style: none;
+    padding: 0;
+
+    li {
+      background: var(--color-background);
+      border-radius: var(--radius-pill);
+      color: var(--color-gray-700);
+      font-size: var(--font-size-2xs);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__image {
+    @container (min-width: 700px) {
+      flex: 0 0 auto;
+      width: 50%;
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      border-radius: var(--radius-sm);
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{{ define "main" }}
+  {{ partial "turbo/hero" . }}
+
+  {{/* Intro */}}
+  {{ with .Params.intro }}
+  <section class="turbo-intro">
+    <div class="container size-md">
+      <p class="turbo-intro__text">{{ . }}</p>
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Features */}}
+  {{ with .Params.features }}
+  <section class="turbo-features">
+    <div class="container size-md">
+      <h2 class="heading-display">{{ .title }}</h2>
+      <div class="grid cols-2">
+        {{ range .items }}
+          {{ partial "icon-card" (merge . (dict "class" "icon-card--turbo")) }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "turbo/plans" . }}
+
+  {{/* FAQ */}}
+  {{ with .Params.faq }}
+  <section class="turbo-faq">
+    <div class="container size-sm">
+      <h2>{{ .title }}</h2>
+      {{ range .items }}
+      <details>
+        <summary>
+          <span>{{ .q }}</span>
+          {{ partial "icon" "caret-up" }}
+        </summary>
+        <div class="turbo-faq__answer">{{ .a | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "turbo/feature-comparison" . }}
+
+  {{/* CTA */}}
+  {{ with .Params.cta_section }}
+  <section class="turbo-cta" id="early-access">
+    <div class="container size-sm">
+      <h2 class="heading-display">{{ .title }}</h2>
+      <p>{{ .description }}</p>
+      <a href="{{ .button_href }}" class="button button--secondary-white-bg">{{ .button_text }}</a>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+
+{{ define "scripts" }}
+  {{ $turboPlans := resources.Get "/scripts/turbo-plans.js" | js.Build (dict "minify" true) }}
+  <script defer src="{{ $turboPlans.RelPermalink }}"></script>
+{{ end }}

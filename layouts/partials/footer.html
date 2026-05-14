@@ -1,24 +1,27 @@
 {{ $footer := .Site.Data.footer }}
 
 <footer class="footer">
-  <div class="container">
+  <div class="container size-lg">
     <div class="footer__content">
       <div class="footer__branding">
         <img src="{{ $footer.logo | relURL }}" alt="Decap CMS">
         <p>{{ $footer.maintained | markdownify }}</p>
       </div>
 
-      <div class="footer__links">
-        {{ range $footer.links }}
-          <a href="{{ .href }}">{{ .text }}</a>
+      {{ range $footer.sections }}
+        <div class="footer__section">
+          <h4>{{ .title }}</h4>
+          <ul class="footer__links">
+            {{ range .links }}
+              <li><a href="{{ .href }}" {{ if in .href "http" }}target="_blank" rel="noreferrer"{{ end }}>{{ .text }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
         {{ end }}
-      </div>
+    </div>
 
-      <div class="footer__links">
-        {{ range $footer.socials }}
-          <a href="{{ .href }}" target="_blank" rel="noreferrer">{{ .text }}</a>
-        {{ end }}
-      </div>
+    <div class="footer__bottom">
+      <p>{{ $footer.copyright }}</p>
     </div>
   </div>
 </footer>

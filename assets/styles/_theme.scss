@@ -1,18 +1,25 @@
 :root {
   // Colors
-  --color-white: #fff;
-  --color-black: #000;
-  --color-lightest-gray: #E6E6E6;
-  --color-light-gray: #F6F6F6;
-  --color-lightish-gray: #D9D9D9;
-  --color-gray: #313D3E;
-  --color-dark-gray: #2F3132;
-  --color-darker-gray: #11081F;
+  --color-white: #FFF;
+  --color-gray-100: #F5F7F8;
+  --color-gray-200: #E3E7EA;
+  --color-gray-300: #CCD4DA;
+  --color-gray-500: #96A2AC;
+  --color-gray-700: #5C6975;
+  --color-gray-800: #3F4B55;
+  --color-gray-900: #27323B;
+  --color-black: #0E1419;
   --color-darker-green: #628013;
   --color-shade-blue: #EFF0F4;
   --color-blue: #3A69C7;
-  --color-primary-light: #ff0080;
-  --color-primary-dark: #683bab;
+  --color-accent-pink: #FF0080;
+  --color-accent-purple: #683BAB;
+  --color-light-pink: #fff0f7e6;
+  --color-light-purple: #f3e9f9e6;
+  --color-dark-pink: #E60073;
+  --color-dark-purple: #683BAB;
+  --color-primary-light: var(--color-accent-pink);
+  --color-primary-dark: var(--color-accent-purple);
 
   // Font Weights
   --font-weight-thin: 100;
@@ -29,33 +36,55 @@
 
   // Color Aliases
   --color-primary: var(--color-primary-light);
+  --color-turbo-gradient-start: var(--color-accent-pink);
+  --color-turbo-gradient-end: var(--color-accent-purple);
 
   // Font Sizes
   --font-size-2xs: 10px;
   --font-size-xs: 12px;
   --font-size-sm: 14px;
   --font-size-md: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 24px;
-  --font-size-2xl: 32px;
-  --font-size-3xl: 42px;
-  --font-size-4xl: 64px;
+  --font-size-lg: clamp(18px, 1.05rem + 0.2vw, 20px);
+  --font-size-xl: clamp(20px, 1.175rem + 0.3vw, 22px);
+  --font-size-2xl: clamp(24px, 1.35rem + 0.5vw, 28px);
+  --font-size-3xl: clamp(32px, 1.85rem + 0.7vw, 36px);
+  --font-size-4xl: clamp(40px, 2.2rem + 0.9vw, 48px);
 
   // Line Heights
   --line-height-min: 1;
   --line-height-mid: 1.3;
   --line-height-max: 1.7;
 
-  // Spacing Scale
-  --space-0: 0;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 40px;
-  --space-6: 64px;
-  --space-7: 96px;
-  --space-8: 144px;
+  // Spacing Scale: fixed (viewport-independent)
+  --space-fixed-0: 0;
+  --space-fixed-1: 4px;
+  --space-fixed-2: 8px;
+  --space-fixed-3: 12px;
+  --space-fixed-4: 16px;
+  --space-fixed-5: 24px;
+  --space-fixed-6: 32px;
+  --space-fixed-7: 48px;
+  --space-fixed-8: 64px;
+  --space-fixed-9: 96px;
+
+  // Spacing Scale: fluid (clamp-based)
+  --space-fluid-1-2: clamp(var(--space-fixed-1), 0.5vw, var(--space-fixed-2));
+  --space-fluid-2-3: clamp(var(--space-fixed-2), 1.1vw, var(--space-fixed-3));
+  --space-fluid-2-4: clamp(var(--space-fixed-2), 1.5vw, var(--space-fixed-4));
+  --space-fluid-2-5: clamp(var(--space-fixed-2), 2vw, var(--space-fixed-5));
+  --space-fluid-3-4: clamp(var(--space-fixed-3), 1.4vw, var(--space-fixed-4));
+  --space-fluid-3-5: clamp(var(--space-fixed-3), 1.8vw, var(--space-fixed-5));
+  --space-fluid-4-5: clamp(var(--space-fixed-4), 2vw, var(--space-fixed-5));
+  --space-fluid-4-6: clamp(var(--space-fixed-4), 2.4vw, var(--space-fixed-6));
+  --space-fluid-4-7: clamp(var(--space-fixed-4), 5vw, var(--space-fixed-7));
+  --space-fluid-4-8: clamp(var(--space-fixed-4), 6vw, var(--space-fixed-8));
+  --space-fluid-5-6: clamp(var(--space-fixed-5), 2.6vw, var(--space-fixed-6));
+  --space-fluid-5-7: clamp(var(--space-fixed-5), 3.2vw, var(--space-fixed-7));
+  --space-fluid-5-8: clamp(var(--space-fixed-5), 4.2vw, var(--space-fixed-8));
+  --space-fluid-5-9: clamp(var(--space-fixed-5), 5.6vw, var(--space-fixed-9));
+  --space-fluid-6-8: clamp(var(--space-fixed-6), 4.6vw, var(--space-fixed-8));
+  --space-fluid-6-9: clamp(var(--space-fixed-6), 5.2vw, var(--space-fixed-9));
+  --space-fluid-7-9: clamp(var(--space-fixed-7), 5.8vw, var(--space-fixed-9));
 
   // Border Radius
   --radius-none: 0;
@@ -66,4 +95,16 @@
 
   // Z-Index
   --z-index-header: 100;
+
+  // Shadows
+  --shadow-xs: 0 1px 2px var(--color-gray-100);
+  --shadow-sm: 0 1px 3px var(--color-gray-100), 0 1px 2px var(--color-gray-200);
+  --shadow-lg: 0 10px 15px -3px var(--color-gray-100), 0 4px 6px -4px var(--color-gray-200);
+  --shadow-xl: 0 25px 50px -12px var(--color-gray-200);
+
+  // Gradients
+  --gradient-section: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-100) 100%);
+  --gradient-hero: linear-gradient(105deg, rgba(249, 231, 249, 0.60) 0%, rgba(255, 255, 255, 0.6) 100%);
+  --gradient-turbo: linear-gradient(135deg, var(--color-turbo-gradient-start) 0%, var(--color-turbo-gradient-end) 100%);
+  --gradient-dark: linear-gradient(155deg, var(--color-gray-900) 0%, var(--color-gray-800) 100%);
 }

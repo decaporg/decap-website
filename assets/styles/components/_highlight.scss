@@ -1,12 +1,12 @@
 .highlight {
-  margin: var(--space-4) 0;
+  margin: var(--space-fixed-5) 0;
   
   pre {
     border-radius: 8px;
     margin: 0;
     width: 100%;
     height: 100%;
-    padding: var(--space-3);
+    padding: var(--space-fixed-4);
     overflow-x: auto;
     font-size: var(--font-size-sm);
  }

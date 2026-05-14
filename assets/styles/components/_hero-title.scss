@@ -1,9 +1,14 @@
 .hero-title {
+  @extend .heading-display;
   font-size: var(--font-size-2xl);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-fluid-4-5);
+  letter-spacing: -0.92px;
 
-  @include breakpoint-up(md) {
+  @include breakpoint-up(xs) {
     font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-4);
+  }
+
+  @include breakpoint-up(xl) {
+    font-size: var(--font-size-4xl);
   }
 }

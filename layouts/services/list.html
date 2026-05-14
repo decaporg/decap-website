@@ -1,0 +1,52 @@
+{{ define "main" }}
+  <div class="page">
+    {{ partial "page-hero" . }}
+
+    <section class="container size-lg services">
+      <div class="services__grid">
+        {{ range .RegularPages.ByWeight }}
+          {{ $anchor := or .Slug .File.ContentBaseName }}
+          {{ $servicePage := . }}
+
+          <article class="service-container">
+            <div class="service service--{{ .Params.class }}">
+              <div class="service__content">
+                <h2 class="service__title">
+                  <a href="#{{ $anchor }}">{{ .Title }}</a>
+                </h2>
+
+                {{ with .Description }}
+                  <p class="service__description service__description--extended">{{ . }}</p>
+                {{ end }}
+
+                <a href="#{{ $anchor }}" class="button button--secondary-white-bg button--icon">View details {{ partial "icon" "arrow-down" }}</a>
+              </div>
+
+              {{ with .Params.image }}
+                <div class="service__image">
+                  <img src="{{ . | relURL }}" alt="{{ $servicePage.Title }}" loading="lazy" decoding="async" />
+                </div>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+
+    {{ range .RegularPages.ByWeight }}
+        {{ partial "service-detail" . }}
+    {{ end }}
+
+    <div class="container">
+      <br>
+      <br>
+      <hr>
+    </div>
+
+    {{ with .Content }}
+      <div class="container size-sm markdown">
+        {{ . }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

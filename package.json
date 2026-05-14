@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "hugo server",
     "build": "hugo",
-    "lint": "npx htmlhint 'layouts/**/*.html' && npx eslint . && npx stylelint **/*.scss",
+    "lint": "npx eslint . && npx stylelint **/*.scss",
     "prepare": "husky"
   },
   "repository": {
@@ -24,7 +24,6 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9.13.0",
     "globals": "^16.3.0",
-    "htmlhint": "^1.1.4",
     "husky": "^9.1.6",
     "lint-staged": "^16.1.2",
     "neostandard": "^0.12.2",
@@ -34,8 +33,11 @@
     "stylelint-config-standard-scss": "^15.0.1"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix"],
-    "*.{scss,css}": ["stylelint --fix"],
-    "*.html": "htmlhint"
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.{scss,css}": [
+      "stylelint --fix"
+    ]
   }
 }

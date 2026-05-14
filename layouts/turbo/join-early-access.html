@@ -1,0 +1,119 @@
+{{ define "main" }}
+  {{ partial "turbo/hero" . }}
+
+  <section class="container size-sm turbo-join" data-turbo-join>
+    <div data-step="1" class="turbo-join__card">
+      <form class="form" data-step-one-form>
+        <input type="hidden" id="plan-intent" name="PLAN_INTENT" value="">
+
+        <label class="form-field">
+          <span class="form-label">Email address</span>
+          <input
+            id="early-access-email"
+            name="email"
+            class="form-input"
+            type="email"
+            autocomplete="email"
+            placeholder="your@email.com"
+            required
+          >
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">How many seats do you need?</span>
+          <select id="number-of-seats" name="NUMBER_OF_SEATS" class="form-select" required>
+            <option value="" selected disabled>Select number of seats</option>
+            <option value="Just me">Just me</option>
+            <option value="2-5 people">2-5 people</option>
+            <option value="6-20 people">6-20 people</option>
+            <option value="20+ people">20+ people</option>
+          </select>
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">How many projects do you need?</span>
+          <select id="number-of-projects" name="NUMBER_OF_PROJECTS" class="form-select" required>
+            <option value="" selected disabled>Select number of projects</option>
+            <option value="1 project">1 project</option>
+            <option value="2-3 projects">2-3 projects</option>
+            <option value="4-10 projects">4-10 projects</option>
+            <option value="10+ projects">10+ projects</option>
+          </select>
+        </label>
+
+        <p class="form-error" aria-live="polite" data-step-one-error></p>
+
+        <div class="form-actions">
+          <button type="submit" class="button button--turbo" data-step-one-submit>Submit</button>
+        </div>
+        <p class="form-note">No spam, we promise. Unsubscribe anytime.</p>
+      </form>
+    </div>
+
+    <div data-step="2" hidden>
+      <h2>You're on the list</h2>
+      <p class="turbo-join__lead">Thank you for signing up! We'll send you an email at <strong data-user-email></strong> as soon as Decap Turbo is ready.</p>
+
+      <h3>Help us build Turbo</h3>
+      <p>Your feedback will help us prioritize the most important features and improvements. This is completely optional, but we'd love to hear from you!</p>
+
+      <form class="form" data-step-two-form>
+        <fieldset class="form-fieldset">
+          <legend>What would be the main reason for you to use Decap Turbo? <small>(Select up to 2 options)</small></legend>
+          <label class="form-choice">
+            <input type="checkbox" name="reasons" value="Faster CMS performance">
+            <span>Faster CMS performance</span>
+          </label>
+          <label class="form-choice">
+            <input type="checkbox" name="reasons" value="Real-time collaboration with team members">
+            <span>Real-time collaboration with team members</span>
+          </label>
+          <label class="form-choice">
+            <input type="checkbox" name="reasons" value="Built-in user management inside Decap CMS">
+            <span>Built-in user management inside Decap CMS</span>
+          </label>
+          <label class="form-choice">
+            <input type="checkbox" name="reasons" value="User roles and permission management">
+            <span>User roles and permission management</span>
+          </label>
+          <label class="form-choice">
+            <input type="checkbox" name="reasons" value="Other">
+            <span>Other</span>
+          </label>
+
+          <label class="form-field" data-other-reason-field hidden style="display:none;">
+            <span class="form-label">What is the other reason?</span>
+            <textarea
+              id="other-reason"
+              name="otherReason"
+              class="form-input"
+              placeholder="Tell us what you'd like to use Turbo for"
+              maxlength="400"
+              rows="4"
+              data-other-reason-input
+              disabled
+            ></textarea>
+          </label>
+        </fieldset>
+
+        <p class="form-error" aria-live="polite" data-step-two-error></p>
+
+        <div class="form-actions">
+          <button type="submit" class="button button--turbo" data-step-two-submit>Submit feedback</button>
+          <button type="button" class="button" data-step-two-skip>Skip</button>
+        </div>
+      </form>
+    </div>
+
+    <div data-step="3" hidden class="markdown">
+      <h2>Thank you for your feedback</h2>
+      <p>We appreciate it and will consider it as part of our future development plans.</p>
+      <p><a href="/turbo/" class="button button--turbo">Learn more about Decap Turbo</a></p>
+    </div>
+  </section>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ $turboEarlyAccess := resources.Get "/scripts/turbo-early-access.js" | js.Build (dict "minify" true) }}
+  <script defer src="{{ $turboEarlyAccess.RelPermalink }}"></script>
+{{ end }}

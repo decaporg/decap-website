@@ -1,16 +1,75 @@
 # Main navigation menu
 main:
-  - name: Docs
-    url: /docs/intro
+  - name: Resources
+    identifier: resources
     weight: 10
-  - name: Community
-    url: /community/
-    weight: 20
+  - name: Documentation
+    url: /docs/intro
+    parent: resources
+    weight: 11
   - name: Blog
     url: /blog/
-    weight: 30
-  - name: Pro Help
+    parent: resources
+    weight: 12
+  - name: What's New
+    url: https://github.com/decaporg/decap-cms/releases
+    parent: resources
+    weight: 13
+  - name: About
+    url: /about/
+    parent: resources
+    weight: 14
+  - name: Support
+    identifier: support
+    weight: 20
+  - name: Expert Services
     url: /services/
+    parent: support
+    weight: 21
+  - name: Community
+    url: /community/
+    parent: support
+    weight: 22
+  - name: Contact Support
+    url: /contact/
+    parent: support
+    weight: 23
+    params:
+      href: /contact/?topic=support
+  - name: Features
+    url: /features/
+    identifier: features
+    weight: 5
+  - name: For Developers
+    url: /features/
+    params:
+      href: /features/?persona=developer
+    parent: features
+    weight: 31
+  - name: For Editors
+    url: /features/
+    params:
+      href: /features/?persona=editor
+    parent: features
+    weight: 32
+  - name: For Teams
+    url: /features/
+    params:
+      href: /features/?persona=team
+    parent: features
+    weight: 33
+  - name: For Agencies
+    url: /features/
+    params:
+      href: /features/?persona=agency
+    parent: features
+    weight: 34
+  - name: All Features
+    url: /features/
+    parent: features
+    weight: 35
+  - name: Decap Turbo
+    url: /turbo/
     weight: 40
 
 # Docs navigation menu

@@ -62,8 +62,12 @@ npx decap-server
 **CMS Architecture:**
 - **CDN-based**: No JavaScript bundling required
 - **Configuration**: `static/admin/config.yml`
-- **Collections**: Docs (organized by section), Blog, Community, Widgets
+- **Collections**: Docs (organized by section), Docs widgets, Blog, Community, Features, Personas, Settings (docs sections)
 - **Local backend**: Edit content without Git commits during development
+
+**Current content ownership notes:**
+- CMS-editable: docs, widget docs, blog, community, features, personas, docs section settings
+- Git-managed: homepage (`content/_index.md`), about (`content/about.md`), services (`content/services.md`), turbo landing (`content/turbo/_index.md`), footer data (`data/footer.json`)
 
 ## Styling Architecture
 
@@ -76,11 +80,16 @@ npx decap-server
 
 ### Design System
 **Color Palette:**
-- Primary: `#ff0080` (hot pink) - `var(--color-primary-light)`
-- Primary Dark: `#683bab` (purple) - `var(--color-primary-dark)`
+- Accent Pink: `#ff0080` - `var(--color-primary-light)`
+- Accent Purple: `#683bab` - `var(--color-primary-dark)`
 - Blue: `#3A69C7` - `var(--color-blue)`
 - Background: `#fafafa` - `var(--color-background)`
-- Dark: `#313d3e` - `var(--color-dark)`
+- Dark: `#27323b` - `var(--color-gray-900)`
+
+**Color Usage Rules:**
+- For regular Decap pages, use neutral backgrounds and surfaces.
+- Use pink/purple primarily for accents (highlights, small emphasis, selective CTAs).
+- Reserve pink-purple gradients for Turbo pages, sections, and campaign assets.
 
 **Typography:**
 - Body: IBM Plex Sans (400, 500, 600 weights)
@@ -104,7 +113,7 @@ npx decap-server
 ### Key Style Patterns
 - **Responsive containers**: `.container` with size variants (`.size-sm`, `.size-md`, `.size-lg`)
 - **Grid system**: `.grid.cols-2`, `.grid.cols-3` with `@include breakpoint-up(md)`
-- **Button variants**: `.button.primary`, `.button.secondary`, `.button.outline`, `.button.block`
+- **Button variants**: `.button--primary`, `.button--secondary`, `.button--outline`, `.button--block`
 - **BEM components**: `.component__element--modifier` pattern throughout
 
 ## Content Management

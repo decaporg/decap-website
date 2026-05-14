@@ -1,0 +1,57 @@
+{{ $feature := .feature }}
+{{ $extraClass := .class | default "" }}
+{{ $showBadge := .showBadge | default false }}
+{{ $showPersonas := .showPersonas | default false }}
+{{ $showVisual := .showVisual | default false }}
+
+<article
+  class="feature-card{{ if not $feature.image }} feature-card--no-image{{ end }}{{ if $extraClass }} {{ $extraClass }}{{ end }}"
+  {{ with .dataPersonas }}data-personas="{{ . }}"{{ end }}
+  {{ with .dataDefaultOrder }}data-default-order="{{ . }}"{{ end }}
+>
+  <div class="feature-card__inner">
+    <div class="feature-card__body">
+      <header class="feature-card__header">
+        <h3 class="feature-card__title">{{ $feature.title }}</h3>
+  
+        {{ if $showBadge }}
+          <div class="feature-card__badges">
+            {{ if eq $feature.product "turbo" }}
+              <span class="feature-card__badge feature-card__badge--turbo">Decap Turbo</span>
+              <span class="feature-card__badge feature-card__badge--soon">Coming soon</span>
+            {{ else }}
+              <span class="feature-card__badge">Decap CMS</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </header>
+  
+      <div class="markdown">
+        {{ $feature.description | markdownify }}
+      </div>
+
+      {{ with $feature.docs_link }}
+        <p class="feature-card__docs">
+          <a href="{{ . }}">Read docs</a>
+        </p>
+      {{ end }}
+  
+      {{ if $showPersonas }}
+        {{ with $feature.personas }}
+          <ul class="feature-card__personas" aria-label="Relevant for personas">
+            {{ range . }}
+              {{ $term := site.GetPage (printf "/personas/%s" .) }}
+              <li>{{ if $term }}{{ $term.LinkTitle }}{{ else }}{{ humanize . }}{{ end }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      {{ end }}
+    </div>
+  
+    {{ with $feature.image }}
+      <div class="feature-card__image">
+        <img src="{{ . }}" alt="{{ or $feature.imageAlt $feature.title }}" loading="lazy" decoding="async" />
+      </div>
+    {{ end }}
+  </div>
+</article>

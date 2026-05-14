@@ -4,7 +4,7 @@ description: >-
   We've migrated the Decap CMS website from Gatsby to Hugo, improving build times and maintainability while keeping the same experience.
 date: 2025-10-06T10:00:00.000Z
 author: Martin Jagodic
-image: /img/hugo-migration.png
+image: /img/hugo.svg
 ---
 
 Decap CMS website has been migrated from Gatsby to Hugo. This migration brings significant improvements to our build process and developer experience while maintaining the same look and feel of our docs.

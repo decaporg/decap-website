@@ -6,7 +6,7 @@
 
   a {
     background: none;
-    border: 2px solid var(--color-gray);
+    border: 2px solid var(--color-gray-800);
 
     &:hover,
     &:focus {
@@ -16,7 +16,7 @@
   }
 
   &__sublabel {
-    color: var(--color-gray);
+    color: var(--color-gray-800);
     font-size: var(--font-size-xs);
   }
 
