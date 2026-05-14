@@ -6,23 +6,6 @@ This is the **Decap CMS website** built with **Hugo 0.148.1**.
 
 - **Production**: Hugo implementation (root directory)
 
-## Current Campaign Context
-
-### Decap Turbo Positioning
-- **Decap CMS** remains the open source, self-installed product.
-- **Decap Turbo** is a SaaS upgrade for advanced Decap users.
-- Turbo messaging should focus on:
-  - Authentication handling
-  - User roles and permissions
-  - Database proxy performance improvements for a faster CMS experience
-
-### Visual Direction For Turbo Campaign
-- Pink and purple gradients are reserved for **Turbo-related content and visuals only**.
-- Non-Turbo Decap content should avoid pink-purple gradients.
-- Default Decap pages should be mostly neutral in tone.
-- Pink and purple should appear as accent colors on non-Turbo pages, not as dominant backgrounds.
-- When adding new styles, prefer neutral foundations first, then add accent usage intentionally.
-
 ## Development Workflows
 
 ### Initial Setup
