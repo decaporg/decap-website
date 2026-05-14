@@ -62,6 +62,13 @@
           <li>{{ partial "icon" "check-circle" }} {{ . }}</li>
           {{ end }}
         </ul>
+
+        {{ if and (not $isFree) .additional_seat_price .additional_project_price }}
+        <div class="turbo-plan__additional-pricing">
+          <p class="turbo-plan__additional-item">{{ .additional_seat_price }}/additional seat</p>
+          <p class="turbo-plan__additional-item">{{ .additional_project_price }}/additional project</p>
+        </div>
+        {{ end }}
       </article>
       {{ end }}
     </div>

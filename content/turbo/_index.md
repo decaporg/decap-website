@@ -45,11 +45,13 @@ plans:
     - id: starter
       icon: rocket
       name: Starter
-      description: For freelancers and small projects
+      description: For one project and small teams
       price: "$37"
       price_monthly: "$37"
       price_yearly: "$29"
       yearly_total: "$348 / year"
+      additional_seat_price: "$9"
+      additional_project_price: "$19"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=starter'
       features:
@@ -64,10 +66,12 @@ plans:
       name: Team
       featured: true
       price: "$112"
-      description: For small teams
+      description: For advanced teams
       price_monthly: "$112"
       price_yearly: "$89"
       yearly_total: "$1,068 / year"
+      additional_seat_price: "$9"
+      additional_project_price: "$19"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=team'
       features:
@@ -81,10 +85,12 @@ plans:
       icon: business
       name: Business
       price: "$374"
-      description: For agencies and larger teams
+      description: For agencies and enterprises
       price_monthly: "$374"
       price_yearly: "$299"
       yearly_total: "$3,588 / year"
+      additional_seat_price: "$9"
+      additional_project_price: "$19"
       cta_text: Join early access
       cta_href: '/turbo/join-early-access/?plan=business'
       features:
