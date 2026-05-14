@@ -1,6 +1,8 @@
 const turboJoinRoot = document.querySelector('[data-turbo-join]')
 
 if (turboJoinRoot) {
+  const maxOtherReasonLength = 400
+
   const stepPanels = {
     1: turboJoinRoot.querySelector('[data-step="1"]'),
     2: turboJoinRoot.querySelector('[data-step="2"]'),
@@ -80,6 +82,7 @@ if (turboJoinRoot) {
 
     const isOtherSelected = otherReasonChoice.checked
     otherReasonField.hidden = !isOtherSelected
+    otherReasonField.style.display = isOtherSelected ? '' : 'none'
     otherReasonInput.disabled = !isOtherSelected
 
     if (!isOtherSelected) {
@@ -99,7 +102,17 @@ if (turboJoinRoot) {
     }
 
     const otherReason = otherReasonInput.value.trim()
-    otherReasonInput.setCustomValidity(otherReason ? '' : 'Please tell us your other reason.')
+    if (!otherReason) {
+      otherReasonInput.setCustomValidity('Please tell us your other reason.')
+      return false
+    }
+
+    if (otherReason.length > maxOtherReasonLength) {
+      otherReasonInput.setCustomValidity('Other feedback must be 400 characters or less.')
+      return false
+    }
+
+    otherReasonInput.setCustomValidity('')
     return Boolean(otherReason)
   }
 

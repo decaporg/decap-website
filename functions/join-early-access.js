@@ -2,7 +2,7 @@
 
 const BREVO_API_BASE = 'https://api.brevo.com/v3'
 const OTHER_REASON_PREFIX = 'Other:'
-const MAX_OTHER_REASON_LENGTH = 200
+const MAX_OTHER_REASON_LENGTH = 400
 const ALLOWED_FEEDBACK_REASONS = new Set([
   'Faster CMS performance',
   'Real-time collaboration with team members',
@@ -83,7 +83,7 @@ const normalizeFeedbackReasons = (value) => {
     }
 
     if (otherReasonText.length > MAX_OTHER_REASON_LENGTH) {
-      throw new Error('Other feedback must be 200 characters or less.')
+      throw new Error('Other feedback must be 400 characters or less.')
     }
 
     return `${OTHER_REASON_PREFIX} ${otherReasonText}`
