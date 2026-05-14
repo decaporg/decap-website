@@ -1,5 +1,5 @@
 ---
-title: Priority Support
+title: Priority support
 description: Start with Decap Turbo for priority support and team workflows, or contact us if you need to discuss premium support outside Turbo.
 weight: 40
 image: "/img/support.png"

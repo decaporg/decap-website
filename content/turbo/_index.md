@@ -9,21 +9,23 @@ hero:
     href: '#plans'
 intro: "Decap Turbo is an optional extension for Decap CMS, built for advanced use cases. Decap CMS remains free and open source forever. Turbo adds centralized authentication and user management, a database proxy for faster CMS loading on larger projects, and additional team features and support options."
 features:
-  - title: Faster CMS performance
-    icon: lightning
-    description: A Turbo database proxy sits between the editor and your Git provider API to reduce bottlenecks and improve loading speed.
-  - title: Centralized authentication and roles
-    icon: shield
-    description: Manage access and authentication in one place without setting up separate provider-specific auth apps. User roles and permissions are available from the Team plan.
-  - title: Real-time editing visibility
-    icon: users
-    description: See who is editing at the same time so teams can avoid conflicts. Available on Team and above.
-  - title: Secrets storage
-    icon: lock
-    description: Store API keys and integration credentials inside Decap CMS instead of exposing them in environment files or your codebase. Available on Team and above.
+  title: What you get
+  items:
+    - title: Faster CMS performance
+      icon: lightning
+      description: A Turbo database proxy sits between the editor and your Git provider API to reduce bottlenecks and improve loading speed.
+    - title: Centralized authentication and roles
+      icon: shield
+      description: Manage access and authentication in one place without setting up separate provider-specific auth apps. User roles and permissions are available from the Team plan.
+    - title: Real-time editing visibility
+      icon: users
+      description: See who is editing at the same time so teams can avoid conflicts. Available on Team and above.
+    - title: Secrets storage
+      icon: lock
+      description: Store API keys and integration credentials inside Decap CMS instead of exposing them in environment files or your codebase. Available on Team and above.
 pricing_disclaimer: "No payment is required now. Selecting a plan reserves your spot on the early access waitlist. Prices shown are part of an early validation and may be adjusted based on feedback before launch."
 plans:
-  title: Choose Your Plan
+  title: Choose your plan
   description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional extension for advanced teams. Choose the plan that best fits your team so we can prioritize early access and preview rollout." 
   items:
     - id: free
@@ -92,7 +94,7 @@ plans:
         - Dedicated account manager
         - Everything in Team
 faq:
-  title: Frequently Asked Questions
+  title: Frequently asked questions
   items:
     - q: Will Decap CMS remain free and open source?
       a: "Absolutely! Core Decap CMS will always remain 100% free and open source. Turbo is an optional premium add-on for teams that need advanced collaboration features, enhanced performance, and priority support."
@@ -120,7 +122,7 @@ cta_section:
   button_text: Join early access waitlist
   button_href: '/turbo/join-early-access/'
 comparison:
-  title: Feature Comparison
+  title: Feature comparison
   description: "Decap CMS is and will always remain free. Core Decap CMS includes Open source CMS, Git-based workflow and editorial workflow. You can always downgrade from Decap Turbo plans back to the free version."
   columns:
     - name: Starter
@@ -137,14 +139,14 @@ comparison:
           values: [true, true, true]
         - feature: Editorial workflow
           values: [true, true, true]
-    - title: PERFORMANCE
+    - title: Performance
       rows:
         - feature: Enhanced speed
           tooltip: "Projects with many entries require multiple GitHub API requests, which can slow down loading. Decap Turbo optimizes these requests for faster content loading and smoother editing."
           values: [true, true, true]
         - feature: Optimized infrastructure
           values: [true, true, true]
-    - title: "USERS & COLLABORATION"
+    - title: "Users & collaboration"
       rows:
         - feature: User seats
           tooltip: "User seats define how many people can be managed directly within Decap CMS. With Decap Turbo, users and roles can be managed inside the CMS instead through external providers."
@@ -156,14 +158,14 @@ comparison:
         - feature: Real-time editing visibility
           tooltip: "See who is currently active in the CMS to avoid working on the same content at the same time. This is a presence indicator — you will not see others' changes in real time."
           values: [false, true, true]
-    - title: PROJECTS
+    - title: Projects
       rows:
         - feature: Number of projects
           tooltip: "Each plan includes a limited number of projects. Additional projects can be added for an extra monthly fee per project."
           values: ["1", "Up to 3", "Up to 10"]
         - feature: Additional project
           values: ["€19/project/month", "€19/project/month", "€19/project/month"]
-    - title: SUPPORT
+    - title: Support
       rows:
         - feature: Community support
           values: [true, true, true]

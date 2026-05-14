@@ -10,9 +10,9 @@ form:
     placeholder: Select inquiry topic
     options:
       - value: support
-        label: Priority Support
+        label: Priority support
       - value: services
-        label: Custom Features Development
+        label: Custom features development
       - value: partner
         label: Partnership, sponsorship, donations
       - value: general

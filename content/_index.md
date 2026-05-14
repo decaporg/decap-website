@@ -11,7 +11,7 @@ hero:
     - "Open source, free and self-hosted"
     - "Supports all major Git providers"
   buttons:
-    - text: "Go to Docs"
+    - text: "Go to docs"
       href: "/docs/"
       class: "button--primary"
     - text: "Try the interactive demo"
@@ -97,7 +97,7 @@ features:
   title: "Why people choose Decap CMS"
   description: "Decap CMS is strongest if you want an efficient developer and editorial experience, a Git-native implementation, ownership over your content, and a flexible, extensible platform. Below are the standout features."
   button:
-    text: "All Decap CMS Features"
+    text: "All Decap CMS features"
     href: "/features/"
     class: "button--primary"
 
@@ -106,7 +106,7 @@ templateBanner:
   title: "Getting started is simple and free"
   description: "Start with a template or add Decap CMS to an existing project. It's a flexible way to bring content editing into modern web workflows without changing the foundations of your site."
   buttons:
-    - text: "Go to Docs"
+    - text: "Go to docs"
       href: "/docs/"
       class: "button--primary"
     - text: "Start with a template"
@@ -118,16 +118,16 @@ values:
   title: "Built on principles that matter"
   description: "Decap CMS is an independent open-source project. Our values guide our work and our commitment to the community."
   items:
-    - title: "Free & Open Source, Forever"
+    - title: "Free & open source, forever"
       description: "Decap CMS is MIT-licensed. It is free today and will remain free for everyone, always."
       icon: "heart-outline"
-    - title: "Own Your Content"
+    - title: "Own your content"
       description: "Your content lives in your own Git repository — not locked to any provider's database. You are always in control."
       icon: "book"
-    - title: "Independent & EU-Regulated"
+    - title: "Independent & EU-maintained"
       description: "No big tech ownership. Decap is independently maintained in the European Union with contributors from across the world."
       icon: "pin"
-    - title: "Privacy & the Open Web"
+    - title: "Privacy & the open web"
       description: "We believe in privacy, democracy, and the open internet. We build tools that help editors and publishers launch and maintain their independent platforms."
       icon: "world-mesh"
 
@@ -150,7 +150,7 @@ services:
 
 # Support Section
 support:
-  title: "Support Our Mission"
+  title: "Support our mission"
   description: "Help us maintain and improve Decap CMS for the entire community. Your support enables us to keep developing new features, fixing bugs, and providing documentation. Decap CMS is maintained by volunteers in their free time. Every contribution helps us dedicate more time to improving the project."
   options:
     - title: "GitHub Sponsors"
@@ -171,7 +171,7 @@ support:
       icon: "partnership"
       description: "We are looking for a strategic partner to help us take Decap CMS to the next level"
       button:
-        text: "Contact Us"
+        text: "Contact us"
         href: "/contact/?topic=partner"
         class: "button--secondary"
 

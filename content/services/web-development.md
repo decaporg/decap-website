@@ -1,5 +1,5 @@
 ---
-title: Website Delivery
+title: Website delivery
 description: Work with Decap partners on end-to-end website delivery, from design and implementation through launch and handoff.
 weight: 30
 image: "/img/webdev.png"

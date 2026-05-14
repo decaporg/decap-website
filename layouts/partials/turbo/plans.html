@@ -6,7 +6,7 @@
 
     <div class="turbo-plans__toggle" role="group" aria-label="Billing cycle">
       <button data-billing-cycle="monthly" aria-pressed="false">Monthly</button>
-      <button class="active" data-billing-cycle="yearly" aria-pressed="true">Yearly (Save 20%)</button>
+      <button class="active" data-billing-cycle="yearly" aria-pressed="true">Yearly (save 20%)</button>
     </div>
 
     <div class="turbo-plans__grid">
@@ -17,7 +17,7 @@
       {{ $yearlyTotal := .yearly_total }}
       <article class="turbo-plan {{ if .featured }}turbo-plan--featured{{ end }} {{ if $isFree }}turbo-plan--free{{ end }}" data-plan-card>
         {{ if .featured }}
-        <p class="turbo-plan__badge">Most Popular</p>
+        <p class="turbo-plan__badge">Most popular</p>
         {{ end }}
 
         <header class="turbo-plan__header">
@@ -49,7 +49,13 @@
           {{ end }}
         </header>
 
-        <a href="{{ .cta_href }}" class="button button--block{{ if not $isFree }} button--turbo{{ end }}">{{ .cta_text }}</a>
+        <a
+          href="{{ .cta_href }}"
+          class="button button--block{{ if not $isFree }} button--turbo{{ end }}"
+          data-plan-cta
+          data-plan-id="{{ .id }}"
+          data-plan-name="{{ .name }}"
+        >{{ .cta_text }}</a>
 
         <ul class="turbo-plan__features">
           {{ range .features }}
