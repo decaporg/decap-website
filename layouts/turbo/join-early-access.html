@@ -80,6 +80,20 @@
             <input type="checkbox" name="reasons" value="Other">
             <span>Other</span>
           </label>
+
+          <label class="form-field" data-other-reason-field hidden>
+            <span class="form-label">What is the other reason?</span>
+            <input
+              id="other-reason"
+              name="otherReason"
+              class="form-input"
+              type="text"
+              placeholder="Tell us what you'd like to use Turbo for"
+              maxlength="200"
+              data-other-reason-input
+              disabled
+            >
+          </label>
         </fieldset>
 
         <p class="form-error" aria-live="polite" data-step-two-error></p>

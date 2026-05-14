@@ -1,6 +1,14 @@
 /* global process */
 
 const BREVO_API_BASE = 'https://api.brevo.com/v3'
+const OTHER_REASON_PREFIX = 'Other:'
+const MAX_OTHER_REASON_LENGTH = 200
+const ALLOWED_FEEDBACK_REASONS = new Set([
+  'Faster CMS performance',
+  'Real-time collaboration with team members',
+  'Built-in user management inside Decap CMS',
+  'User roles and permission management',
+])
 
 const jsonResponse = (statusCode, payload) => ({
   statusCode,
@@ -45,6 +53,40 @@ const upsertContact = async (apiKey, listId, email, attributes) => {
     listIds: [listId],
     updateEnabled: true,
     attributes,
+  })
+}
+
+const normalizeFeedbackReasons = (value) => {
+  const reasons = Array.isArray(value)
+    ? value.filter((reason) => typeof reason === 'string' && reason.trim().length > 0)
+    : []
+
+  if (reasons.length === 0 || reasons.length > 2) {
+    throw new Error('Please provide 1 to 2 feedback options.')
+  }
+
+  return reasons.map((reason) => {
+    const trimmedReason = reason.trim()
+
+    if (ALLOWED_FEEDBACK_REASONS.has(trimmedReason)) {
+      return trimmedReason
+    }
+
+    if (!trimmedReason.startsWith(OTHER_REASON_PREFIX)) {
+      throw new Error('Invalid feedback option provided.')
+    }
+
+    const otherReasonText = trimmedReason.slice(OTHER_REASON_PREFIX.length).trim()
+
+    if (!otherReasonText) {
+      throw new Error('Please include details after "Other:".')
+    }
+
+    if (otherReasonText.length > MAX_OTHER_REASON_LENGTH) {
+      throw new Error('Other feedback must be 200 characters or less.')
+    }
+
+    return `${OTHER_REASON_PREFIX} ${otherReasonText}`
   })
 }
 
@@ -102,12 +144,12 @@ export const handler = async (event) => {
     }
 
     if (action === 'feedback') {
-      const reasons = Array.isArray(payload.reasons)
-        ? payload.reasons.filter((reason) => typeof reason === 'string' && reason.trim().length > 0)
-        : []
+      let reasons
 
-      if (reasons.length === 0 || reasons.length > 2) {
-        return jsonResponse(400, { error: 'Please provide 1 to 2 feedback options.' })
+      try {
+        reasons = normalizeFeedbackReasons(payload.reasons)
+      } catch (error) {
+        return jsonResponse(400, { error: error.message })
       }
 
       await upsertContact(config.apiKey, config.listId, email, {

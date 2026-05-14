@@ -16,6 +16,9 @@ if (turboJoinRoot) {
   const stepTwoSkip = turboJoinRoot.querySelector('[data-step-two-skip]')
   const emailTarget = turboJoinRoot.querySelector('[data-user-email]')
   const planIntentInput = turboJoinRoot.querySelector('input[name="PLAN_INTENT"]')
+  const otherReasonChoice = turboJoinRoot.querySelector('input[name="reasons"][value="Other"]')
+  const otherReasonField = turboJoinRoot.querySelector('[data-other-reason-field]')
+  const otherReasonInput = turboJoinRoot.querySelector('[data-other-reason-input]')
 
   const feedbackChoices = Array.from(turboJoinRoot.querySelectorAll('input[name="reasons"]'))
   const maxFeedbackChoices = 2
@@ -57,12 +60,51 @@ if (turboJoinRoot) {
     button.textContent = isLoading ? loadingLabel : button.dataset.defaultLabel
   }
 
-  const selectedFeedbackReasons = () => feedbackChoices
+  const selectedFeedbackChoices = () => feedbackChoices
     .filter((choice) => choice.checked)
-    .map((choice) => choice.value)
+
+  const selectedFeedbackReasons = () => selectedFeedbackChoices()
+    .map((choice) => {
+      if (choice.value !== 'Other') {
+        return choice.value
+      }
+
+      const otherReason = otherReasonInput ? otherReasonInput.value.trim() : ''
+      return otherReason ? `Other: ${otherReason}` : 'Other'
+    })
+
+  const syncOtherReasonField = () => {
+    if (!otherReasonChoice || !otherReasonField || !otherReasonInput) {
+      return
+    }
+
+    const isOtherSelected = otherReasonChoice.checked
+    otherReasonField.hidden = !isOtherSelected
+    otherReasonInput.disabled = !isOtherSelected
+
+    if (!isOtherSelected) {
+      otherReasonInput.value = ''
+      otherReasonInput.setCustomValidity('')
+    }
+  }
+
+  const validateOtherReason = () => {
+    if (!otherReasonChoice || !otherReasonInput) {
+      return true
+    }
+
+    if (!otherReasonChoice.checked) {
+      otherReasonInput.setCustomValidity('')
+      return true
+    }
+
+    const otherReason = otherReasonInput.value.trim()
+    otherReasonInput.setCustomValidity(otherReason ? '' : 'Please tell us your other reason.')
+    return Boolean(otherReason)
+  }
 
   const syncFeedbackLimit = () => {
-    const selectedCount = selectedFeedbackReasons().length
+    const selectedCount = selectedFeedbackChoices().length
     const atLimit = selectedCount >= maxFeedbackChoices
 
     feedbackChoices.forEach((choice) => {
@@ -75,14 +117,15 @@ if (turboJoinRoot) {
       return true
     }
 
-    const selectedCount = selectedFeedbackReasons().length
+    const selectedCount = selectedFeedbackChoices().length
     const validationTarget = feedbackChoices[0]
 
     validationTarget.setCustomValidity(
       selectedCount === 0 ? 'Select at least one option or click Skip.' : ''
     )
 
-    return selectedCount > 0 && selectedCount <= maxFeedbackChoices
+    const hasValidSelection = selectedCount > 0 && selectedCount <= maxFeedbackChoices
+    return hasValidSelection && validateOtherReason()
   }
 
   const saveSessionState = () => {
@@ -129,11 +172,19 @@ if (turboJoinRoot) {
 
   feedbackChoices.forEach((choice) => {
     choice.addEventListener('change', () => {
+      syncOtherReasonField()
       syncFeedbackLimit()
       setError(stepTwoError, '')
       validateFeedbackSelection()
     })
   })
+
+  if (otherReasonInput) {
+    otherReasonInput.addEventListener('input', () => {
+      setError(stepTwoError, '')
+      validateOtherReason()
+    })
+  }
 
   if (stepTwoSkip) {
     stepTwoSkip.addEventListener('click', () => {
@@ -222,6 +273,7 @@ if (turboJoinRoot) {
     setStep(1)
   }
 
+  syncOtherReasonField()
   syncFeedbackLimit()
   validateFeedbackSelection()
 }
