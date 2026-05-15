@@ -31,7 +31,9 @@ backend:
 
 ## Options
 
-By default, the proxy server runs on port `8081` and allows CORS requests from any origin. You can customize these settings with these options.
+By default, the proxy server runs on port `8081` and allows CORS requests only from local development origins that match `/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/`. You can customize these settings with these options.
+
+This default was introduced in decap-server@3.8.0 as a security hardening measure. Before, the default was `*`.
 
 #### Environment Variables
 
@@ -39,7 +41,7 @@ By default, the proxy server runs on port `8081` and allows CORS requests from a
 
 * **`BIND_HOST`** variable allows binding to 127.0.0.1 rather than all IP addresses. Running `BIND_HOST=localhost npm run start` allows connecting to `http://localhost:8081/` but connections to `http://<public_ip>:8081/` are no longer possible. <span class="version-tag">3.9</span>
 
-* **`ORIGIN`** allows restricting CORS responses to a specific origin rather than allowing the API to be accessed from any server. Running `ORIGIN=https://example.com npm run start` changes the HTTP header in responses to `Access-Content-Allow-Origin: https://example.com`. The server can no longer be accessed by arbitrary websites. <span class="version-tag">3.9</span>
+* **`ORIGIN`** allows overriding the default local-only CORS origin pattern (`/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/`) with a specific origin. Running `ORIGIN=https://example.com npm run start` changes the HTTP header in responses to `Access-Content-Allow-Origin: https://example.com`. The server can no longer be accessed by arbitrary websites. <span class="version-tag">3.9</span>
 
 You can define them in 2 ways:
 
