@@ -158,7 +158,7 @@ comparison:
           tooltip: "User seats define how many people can be managed within Decap Turbo. With Decap Turbo, users and roles can be managed centrally instead of through external providers."
           values: ["Up to 3", "Up to 9", "Up to 30"]
         - feature: Additional user seat
-          values: ["€9/seat/month", "€9/seat/month", "€9/seat/month"]
+          values: ["$9/seat/month", "$9/seat/month", "$9/seat/month"]
         - feature: "User roles & permissions"
           values: [false, true, true]
         - feature: Real-time editing visibility
@@ -170,7 +170,7 @@ comparison:
           tooltip: "Each plan includes a limited number of projects. Additional projects can be added for an extra monthly fee per project."
           values: ["1", "Up to 3", "Up to 10"]
         - feature: Additional project
-          values: ["€19/project/month", "€19/project/month", "€19/project/month"]
+          values: ["$19/project/month", "$19/project/month", "$19/project/month"]
     - title: Support
       rows:
         - feature: Community support
