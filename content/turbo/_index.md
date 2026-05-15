@@ -23,7 +23,7 @@ features:
     - title: Secrets storage
       icon: lock
       description: Store API keys and integration credentials inside Decap CMS instead of exposing them in environment files or your codebase. Available on Team and above.
-pricing_disclaimer: "No payment is required now. Selecting a plan reserves your spot on the early access waitlist. Prices shown are part of an early validation and may be adjusted based on feedback before launch."
+pricing_disclaimer: "No payment is required now. Selecting a plan reserves your spot on the early access waitlist and includes a free trial when Turbo launches. Prices shown are part of an early validation and may be adjusted based on feedback before launch."
 plans:
   title: Choose your plan
   description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional extension for advanced teams. Choose the plan that best fits your team so we can prioritize early access and preview rollout." 
@@ -110,6 +110,8 @@ faq:
       a: "Yes. Once Turbo is generally available, you will be able to upgrade or downgrade between plans at any time. Changes will be prorated and reflected in your next billing cycle. You can also switch back to free Decap CMS at any time. You always remain the owner of your content. Decap Turbo just adds a layer of features and support on top of your existing CMS."
     - q: When will Decap Turbo be available?
       a: "Decap Turbo has just been announced and is currently in preview preparation. Users joining early access now will be first in line when the preview version becomes available."
+    - q: Will there be a free trial?
+      a: "Yes! Everyone who joins the early access waitlist will receive a free trial when Decap Turbo launches, regardless of which plan they select."
     - q: How does real-time editing visibility work?
       a: "Real-time editing visibility (available in Team and Business plans) shows which team members are currently active in the CMS so you can coordinate and avoid working on the same entry at the same time. This is a presence indicator — you will not see others' changes in real time like in a shared editor such as Google Docs."
     - q: Why does Decap Turbo offer better performance?
@@ -123,9 +125,9 @@ faq:
     - q: What happens if I exceed my user or project limit?
       a: "For Starter and Team plans, you can add additional seats and additional projects (pricing based on seat/project). Alternatively, you can upgrade to a higher tier plan for better per-user pricing and additional features."
 cta_section:
-  title: Join the Decap Turbo early-access waitlist
-  description: Pick the plan that fits your team and join early access. Early users help us prioritize rollout and will be first to access preview releases.
-  button_text: Join early access waitlist
+  title: Join the Decap Turbo early-access waitlist 
+  description: Early users get a free trial when it launches and will be first to access preview releases.
+  button_text: Join the waitlist
   button_href: '/turbo/join-early-access/'
 comparison:
   title: Feature comparison
