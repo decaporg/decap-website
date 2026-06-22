@@ -102,6 +102,25 @@ Based on the settings above, if a user used an image widget field called `avatar
 
 This setting can be set to an absolute URL e.g. `https://netlify.com/media` should you wish, however in general this is not advisable as content should have relative paths to other content.
 
+### Media Processing
+
+The `media_processing` option transforms supported image uploads before they are saved. It can convert images to JPEG or WebP, adjust quality, strip metadata, resize images, and crop uploads to an aspect ratio.
+
+```yaml
+media_processing:
+  enabled: true
+  format:
+    enabled: true
+    default: webp
+  quality: 80
+  strip_metadata: true
+  width: 1600
+  height: null
+  aspect_ratio: 16x9
+```
+
+You can set this globally or on an individual field. See [Image Transformations](/docs/image-transformations/) for the full option reference.
+
 ## Media Library
 
 Media library integrations are configured via the `media_library` property, and its value should be an object with at least a `name` property. A `config` property can also be used for options that should be passed to the library in use.
