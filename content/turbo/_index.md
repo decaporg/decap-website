@@ -48,7 +48,7 @@ plans:
       name: Pro
       featured: true
       description: For single-site teams
-      price: "€19"
+      price: €19
       price_monthly: "€19"
       additional_seat_price: "€6"
       additional_project_price: "€10"
