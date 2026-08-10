@@ -1,6 +1,6 @@
 ---
 title: Contact Decap CMS
-description: Reach the Decap maintainers for services, partnerships, and support inquiries.
+description: Reach the Decap maintainers for partnerships, and custom feature development inquiries.
 form:
   email:
     label: Email
@@ -9,14 +9,10 @@ form:
     label: Topic
     placeholder: Select inquiry topic
     options:
-      - value: support
-        label: Priority support
       - value: services
         label: Custom features development
       - value: partner
         label: Partnership, sponsorship, donations
-      - value: general
-        label: General
   message:
     label: Message
     placeholder: How can we help?
