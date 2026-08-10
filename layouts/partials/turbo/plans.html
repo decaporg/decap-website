@@ -1,20 +1,13 @@
 {{ with .Params.plans }}
-<section class="turbo-plans" id="plans" data-turbo-plans data-billing-cycle="yearly">
+<section class="turbo-plans" id="plans" data-turbo-plans>
   <div class="container size-lg">
     <h2 class="turbo-plans__title heading-display">{{ .title }}</h2>
     <p class="turbo-plans__description">{{ .description }}</p>
 
-    <div class="turbo-plans__toggle" role="group" aria-label="Billing cycle">
-      <button data-billing-cycle="monthly" aria-pressed="false">Monthly</button>
-      <button class="active" data-billing-cycle="yearly" aria-pressed="true">Yearly (save 20%)</button>
-    </div>
-
     <div class="turbo-plans__grid">
       {{ range .items }}
       {{ $isFree := .free }}
-      {{ $monthly := .price_monthly | default .price }}
-      {{ $yearly := .price_yearly | default .price }}
-      {{ $yearlyTotal := .yearly_total }}
+      {{ $hasPrice := .price_monthly | default .price }}
       <article class="turbo-plan {{ if .featured }}turbo-plan--featured{{ end }} {{ if $isFree }}turbo-plan--free{{ end }}" data-plan-card>
         {{ if .featured }}
         <p class="turbo-plan__badge">Most popular</p>
@@ -30,23 +23,15 @@
           {{ with .description }}<p class="turbo-plan__summary">{{ . }}</p>{{ end }}
 
           <div class="turbo-plan__price">
-            {{ if $isFree }}
-            <span class="turbo-plan__amount">{{ .price_label }}</span>
-            {{ else }}
-            <span class="turbo-plan__amount" data-price-monthly>{{ $monthly }}</span>
-            <span class="turbo-plan__amount" data-price-yearly hidden>{{ $yearly }}</span>
+            {{ if $hasPrice }}
+            <span class="turbo-plan__amount">{{ $hasPrice }}</span>
             <span class="turbo-plan__period">/ month</span>
+            {{ else }}
+            <span class="turbo-plan__amount">{{ .price_label }}</span>
             {{ end }}
           </div>
 
-          {{ if and (not $isFree) $yearlyTotal }}
-          <p class="turbo-plan__billing-note" data-billing-note hidden>
-            {{ $yearlyTotal }}
-            <span>billed yearly</span>
-          </p>
-          {{ else }}
           {{ with .subtext }}<p class="turbo-plan__billing-note">{{ . }}</p>{{ end }}
-          {{ end }}
         </header>
 
         <a
@@ -63,18 +48,18 @@
           {{ end }}
         </ul>
 
-        {{ if and (not $isFree) .additional_seat_price .additional_project_price }}
+        {{ if and .additional_seat_price .additional_project_price }}
         <div class="turbo-plan__additional-pricing">
           <p class="turbo-plan__additional-item">{{ .additional_seat_price }}/additional seat</p>
-          <p class="turbo-plan__additional-item">{{ .additional_project_price }}/additional project</p>
+          <p class="turbo-plan__additional-item">{{ .additional_project_price }}/additional site</p>
         </div>
         {{ end }}
       </article>
       {{ end }}
     </div>
 
-    {{ with $.Params.pricing_disclaimer }}
-    <p class="turbo-plans__disclaimer">{{ . }}</p>
+    {{ with $.Params.billing_note }}
+    <p class="turbo-plans__disclaimer">{{ . | markdownify }}</p>
     {{ end }}
   </div>
 </section>
