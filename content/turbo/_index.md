@@ -3,10 +3,10 @@ linkTitle: Decap Turbo
 title: Decap Turbo — managed hosting for Decap CMS
 description: Managed hosting for Decap CMS — hosted auth, GitHub rate-limit shielding, a database-backed content store, roles, and secrets storage.
 hero:
-  badge: Decap Turbo
+  badge: Decap Turbo — closed beta
   cta:
-    text: See pricing
-    href: '#plans'
+    text: Join the waitlist
+    href: '/turbo/join-early-access/'
 intro: "Decap CMS is a free, open-source, Git-based content management system — you can self-host it yourself, for free, forever. Decap Turbo is a paid layer on top of it: we run the infrastructure for you."
 features:
   title: What you get
@@ -28,7 +28,7 @@ features:
       description: Store API credentials your site config needs, without committing them to the repo.
 plans:
   title: Choose your plan
-  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them."
+  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. We're in closed beta — join the waitlist and we'll invite you when a spot opens up."
   items:
     - id: free
       icon: check-circle
@@ -36,8 +36,8 @@ plans:
       description: Try the real product before paying anything
       price_label: "€0"
       subtext: Free forever
-      cta_text: Get started free
-      cta_href: 'https://turbo.decapcms.org/signup'
+      cta_text: Join the waitlist
+      cta_href: '/turbo/join-early-access/?plan=free'
       free: true
       features:
         - 1 site
@@ -52,8 +52,8 @@ plans:
       price_monthly: "€19"
       additional_seat_price: "€6"
       additional_project_price: "€10"
-      cta_text: Start Pro — €19/mo
-      cta_href: 'https://turbo.decapcms.org/signup'
+      cta_text: Join the waitlist
+      cta_href: '/turbo/join-early-access/?plan=pro'
       features:
         - 1 site, 3 seats included
         - GitHub request shielding
@@ -90,9 +90,9 @@ faq:
       a: "No. Custom feature development remains a separate offering. Turbo plans include product features and support tiers, while custom builds are handled independently through our services offering."
 cta_section:
   title: Ready to get started?
-  description: Spin up a managed Decap CMS site in minutes — no infrastructure to run yourself.
-  button_text: Get started free
-  button_href: 'https://turbo.decapcms.org/signup'
+  description: Decap Turbo is in closed beta. Join the waitlist and we'll invite you as we open up capacity.
+  button_text: Join the waitlist
+  button_href: '/turbo/join-early-access/'
 comparison:
   title: Compare plans
   description: "All add-ons are included at no extra cost on Enterprise."
