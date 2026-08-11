@@ -90,7 +90,7 @@ faq:
       a: "No. Custom feature development remains a separate offering. Turbo plans include product features and support tiers, while custom builds are handled independently through our services offering."
 cta_section:
   title: Ready to get started?
-  description: Decap Turbo is in closed beta. Join the waitlist and we'll invite you as we open up capacity.
+  description: Decap Turbo is in closed beta. Join the waitlist and we'll invite you as we open up capacity. Already have access? Read the [setup docs](/docs/turbo-overview/).
   button_text: Join the waitlist
   button_href: '/turbo/join-early-access/'
 comparison:

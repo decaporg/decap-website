@@ -107,3 +107,6 @@ docs:
   - name: Community
     identifier: Contributing
     weight: 110
+  - name: Decap Turbo
+    identifier: Turbo
+    weight: 120
