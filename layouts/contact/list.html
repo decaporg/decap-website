@@ -12,6 +12,7 @@
           method="POST"
           action="/contact/"
           data-netlify="true"
+          data-netlify-recaptcha="true"
           netlify-honeypot="bot-field"
           data-contact-form
         >
@@ -74,6 +75,8 @@
               </span>
             </label>
           {{ end }}
+
+          <div data-netlify-recaptcha="true"></div>
 
           <p class="form-status" aria-live="polite" data-contact-status></p>
 
