@@ -1,7 +1,8 @@
 ---
 group: Accounts
 weight: 1
-title: Overview
+linkTitle: Overview
+title: Backends overview
 ---
 
 A backend is JavaScript code that allows Decap CMS to communicate with a service that stores content - typically a Git host like GitHub or GitLab. It provides functions that Decap CMS can use to do things like read and update files using APIs provided by the service.

@@ -1,5 +1,6 @@
 ---
-title: Overview
+title: Decap Turbo overview
+linkTitle: Overview
 group: Turbo
 weight: 10
 ---
