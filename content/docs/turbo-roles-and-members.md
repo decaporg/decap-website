@@ -15,26 +15,26 @@ Every person in an organization is either an **owner** or a **member**:
 
 An organization needs at least one owner at all times — you can't remove or demote the last one, and you can't leave an organization if you're its only owner while other members remain (promote someone else first).
 
+## Managing a site is an owner thing
+
+Only organization **owners** can manage a site's settings, members, roles, and variables, or reach its Danger Zone — there's no separate "site admin" role. Site membership itself is entirely about content access: being added to a site determines what you can do in the CMS there, not whether you can manage the site.
+
+Being an organization member doesn't automatically give you access to any site — an owner has to explicitly add you to each site you need. This is deliberate: someone can be a paid seat in your organization without having editing access to every site you run.
+
 ## Site roles
 
-Access to a specific site is separate from organization role, and comes in two levels:
+Every site member is assigned a **site role**, which controls what they can do in the CMS on that specific site:
 
-- **Site admin** — can manage that site's settings, members, and variables.
-- **Site editor** — can use the CMS on that site, but can't change its settings or membership.
+- **Full access** — the built-in default role. Can use the CMS across every collection, with no restrictions.
+- **Custom roles** — named roles you create yourself (for example, "Blog Writer"), each scoped to specific collections as edit / view-only / no-access. A member with a custom role only sees and can act on the collections it grants.
 
-A site always needs at least one admin — the last one can't be demoted or removed.
+Restrictions are enforced on Turbo's servers, not just hidden in the CMS UI (see [How it works](../turbo-how-it-works/#permission-enforcement-isnt-just-a-ui-filter)).
 
-Being an organization member doesn't automatically give you access to any site — an org owner or site admin has to explicitly add you to each site you need. This is deliberate: someone can be a paid seat in your organization without having editing access to every site you run.
-
-## Per-collection permissions (advanced roles)
-
-On top of the admin/editor split, you can restrict a specific site member to certain collections only — for example, an editor who should only touch the `blog` collection and not `settings`. This is configured per member, per collection, as edit / view-only / no-access, and it's enforced on Turbo's servers, not just hidden in the CMS UI (see [How it works](../turbo-how-it-works/#permission-enforcement-isnt-just-a-ui-filter)).
-
-This is available as the **advanced/custom roles** add-on — see the [Turbo plans](/turbo/#plans) for pricing. Without it, site members simply have full access to whatever their admin/editor role allows.
+Creating, editing, or deleting custom roles is available as the **advanced/custom roles** add-on — see the [Turbo plans](/turbo/#plans) for pricing. Without it, every site member is on the built-in Full access role. Deleting a custom role resets anyone assigned to it back to Full access.
 
 ## Inviting people
 
-From your organization's Members page (owners only), invite by email and optionally grant access to specific sites at the same time — you don't need a separate step afterward. The invite is a link that's valid for a limited time; if it expires or you need to send it again, you can resend or revoke it from the same page.
+From your organization's Members page (owners only), invite by email and optionally grant access to specific sites — with a chosen role for each — at the same time, so you don't need a separate step afterward. The invite is a link that's valid for a limited time; if it expires or you need to send it again, you can resend or revoke it from the same page.
 
 The person you invite doesn't need an existing Decap Turbo account — accepting the invite walks them through creating one if needed. If they're only being given site access (not organization membership), they'll land on their [profile page](../turbo-getting-started/#your-profile) with a direct link to open the CMS on their site(s), without needing to touch anything org-level.
 

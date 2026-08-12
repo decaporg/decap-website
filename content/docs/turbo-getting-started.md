@@ -10,7 +10,7 @@ Decap Turbo is invite-only during closed beta. This walks through accepting an i
 
 If someone invited you to their organization, you'll get an email with an accept link. Opening it takes you to an accept-invitation page:
 
-- If you don't have a Decap Turbo account yet, you'll be walked through creating one (email/password or Google) right there.
+- If you don't have a Decap Turbo account yet, you'll be walked through creating one (email/password, or one of the sign-in providers your organization has enabled, e.g. Google or GitHub) right there.
 - If you already have an account, you just confirm and accept while signed in.
 
 Accepting adds you to the inviting organization — and to any specific sites the invite included — immediately. You don't create your own organization in this path; you land directly on the sites and content the owner scoped you into. If you were only invited to specific sites (a pure editor invite), your [profile page](#your-profile) is really all you need — see below.
