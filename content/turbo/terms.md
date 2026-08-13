@@ -9,7 +9,7 @@ Decap Turbo is operated by **PM d.o.o.**, a company registered in Slovenia (regi
 2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana,
 Slovenia ("we", "us", "our"). By creating an account or using Decap Turbo ("the Service"), you're
 contracting with PM d.o.o. for the Service itself, separately from your payment relationship
-with Paddle described in section 4.
+with Paddle described in section 6.
 
 ## 2. Acceptance of terms
 
@@ -23,14 +23,26 @@ provides hosted authentication, a GitHub API request proxy, a database-backed co
 role-based access control, and site variable/secret storage. Decap CMS itself remains free and
 open source and can always be self-hosted independently of this Service.
 
-## 4. Accounts and organizations
+Decap Turbo is currently in closed beta. Beta features may change, break, or be removed without
+notice, and we don't guarantee the same stability or support level for beta features as for
+generally available ones. We'll try to give reasonable notice before removing a beta feature
+you're actively relying on.
+
+## 4. Third-party services we depend on
+
+The Service depends on third-party infrastructure we don't control, including GitHub's API, our
+hosting providers, [Supabase](https://supabase.com), and [Paddle](https://www.paddle.com). We're
+not responsible for outages, rate limits, API changes, or service interruptions caused by these
+third parties, though we'll work to minimize their impact on you where we reasonably can.
+
+## 5. Accounts and organizations
 
 You're responsible for the accuracy of your account information and for maintaining the
 security of your credentials. Organizations ("orgs") may have multiple members with different
 roles (owner, admin, member); the org owner is responsible for managing membership and access
 to connected sites and repositories.
 
-## 5. Billing
+## 6. Billing
 
 Paid plans are billed monthly. Payments are processed by [Paddle.com](https://www.paddle.com),
 who acts as our reseller and merchant of record. That means Paddle — not us — is the seller of
@@ -39,7 +51,7 @@ counterparty for the payment under [Paddle's Buyer Terms](https://www.paddle.com
 These Terms & Conditions instead govern your separate relationship with us regarding use of
 the Service itself. See our [Refund Policy](/turbo/refunds/) for cancellation and refund terms.
 
-## 6. Acceptable use
+## 7. Acceptable use
 
 You agree not to use the Service to:
 
@@ -50,7 +62,7 @@ You agree not to use the Service to:
   (including the GitHub API proxy), or attempt to bypass its rate limits or access controls;
 - introduce malware or otherwise compromise the security of the Service.
 
-## 7. Intellectual property
+## 8. Intellectual property
 
 We (PM d.o.o.) own and retain all right, title, and interest in and to the Service and its
 underlying software, infrastructure, documentation, and branding, excluding the open-source
@@ -58,26 +70,57 @@ Decap CMS codebase itself, which remains separately licensed under the MIT Licen
 all rights to your own content and site data. Using the Service doesn't grant you any ownership
 interest in the Service beyond the limited right to use it as described in these terms.
 
-## 8. Service level
+## 9. Service level
 
 We aim to keep the Service available and reliable, but we don't guarantee uninterrupted or
 error-free performance. The Service may be unavailable from time to time for maintenance,
 upgrades, or issues outside our reasonable control.
 
-## 9. Termination
+## 10. Termination
 
 You may cancel your account at any time. We may suspend or terminate accounts that materially
 breach these terms, that fail to pay applicable fees, that we reasonably believe pose a
 security or fraud risk to the Service, or that repeatedly or seriously violate our acceptable
 use policy.
 
-## 10. Limitation of liability
+If your account is suspended or terminated, we'll give you a reasonable opportunity to export
+your site content, configuration, and org data before deletion, except where we terminate for
+fraud, security risk, or unlawful use, in which case we may restrict access immediately. Your
+site's underlying Git repository is unaffected either way — Decap Turbo is a layer on top of it,
+not a replacement for it.
+
+## 11. Indemnification
+
+You agree to indemnify and hold us harmless from any claims, damages, or expenses (including
+reasonable legal fees) arising from your content, your breach of these terms, or your misuse of
+the Service, including misuse of the GitHub API proxy that causes GitHub or another third party
+to bring a claim against us.
+
+## 12. Limitation of liability
 
 The Service is provided "as is" without warranties of any kind. To the maximum extent
 permitted by law, we are not liable for indirect, incidental, or consequential damages arising
-from your use of the Service.
+from your use of the Service, including loss of data, profits, or business opportunity.
 
-## 11. Governing law
+Where liability can't be excluded, our total liability for direct damages arising from these
+terms or your use of the Service is limited to the total fees you paid us in the 12 months
+before the claim arose. This limitation doesn't apply to liability that can't be limited under
+applicable law (for example, liability for our gross negligence, willful misconduct, or death
+or personal injury we cause).
+
+## 13. Changes to these terms
+
+We may update these Terms & Conditions from time to time. If we make a material change, we'll
+notify you by email or through the Service before it takes effect. Continuing to use the
+Service after a change takes effect means you accept the updated terms.
+
+## 14. Force majeure
+
+Neither party is liable for delays or failures to perform caused by events beyond its
+reasonable control, including internet or infrastructure outages, natural disasters, war, or
+governmental action.
+
+## 15. Governing law
 
 These Terms & Conditions are governed by the laws of the Republic of Slovenia, and any
 dispute arising from them is subject to the exclusive jurisdiction of the courts of Ljubljana,
@@ -88,7 +131,7 @@ This is separate from the governing law that applies to the payment transaction 
 is handled by Paddle as merchant of record under [Paddle's Buyer Terms](https://www.paddle.com/legal/buyer-terms)
 (generally the law of England, unless a country-specific variant applies to you).
 
-## 12. Contact
+## 16. Contact
 
 Questions about these terms? [Contact us](/turbo/contact/), or write to us at the registered
 office address in section 1.

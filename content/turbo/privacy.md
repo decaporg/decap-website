@@ -9,7 +9,7 @@ Decap Turbo is operated by **PM d.o.o.**, a company registered in Slovenia (regi
 2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana,
 Slovenia ("we", "us", "our"). We are the controller for the personal data we collect about
 users of Decap Turbo, as described in this policy. For privacy questions or data requests,
-[contact us](/turbo/contact/) — see section 8.
+[contact us](/turbo/contact/) — see section 12.
 
 ## 2. What we collect and why
 
@@ -71,7 +71,23 @@ We use appropriate technical and organizational measures to protect your data, i
 encryption in transit, access controls limiting who can view account and site data, and
 credential storage designed so that secrets you store with us aren't exposed to other users.
 
-## 8. Your rights
+If we become aware of a personal data breach that's likely to pose a risk to your rights or
+freedoms, we'll notify the relevant supervisory authority within the timeframe required by law,
+and notify affected users directly where the breach is likely to result in a high risk to them.
+
+## 8. Children's privacy
+
+The Service isn't directed to children, and we don't knowingly collect personal data from
+anyone under 16. If you believe a child has provided us with personal data, contact us and
+we'll delete it.
+
+## 9. Third-party links
+
+Our site and the Service may link to third-party websites (for example, GitHub or Paddle). We
+aren't responsible for the privacy practices or content of those third-party sites — review
+their own privacy policies before providing them with personal data.
+
+## 10. Your rights
 
 If you're in the UK or EEA, or otherwise entitled to these rights under the law of your
 country of residence, you have the right to:
@@ -89,7 +105,13 @@ country of residence, you have the right to:
 To exercise any of these rights, [contact us](/turbo/contact/). We'll respond within one
 month, extendable where permitted by law for complex requests.
 
-## 9. Contact
+## 11. Changes to this policy
+
+We may update this Privacy Policy from time to time. If we make a material change, we'll notify
+you by email or through the Service before it takes effect. The "last updated" date at the top
+of this page reflects the latest version.
+
+## 12. Contact
 
 Questions about this policy or a data request? [Contact us](/turbo/contact/), or write to us
 at the registered office address in section 1.
