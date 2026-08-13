@@ -1,8 +1,7 @@
 ---
 title: Decap Turbo — Refund Policy
-description: "Last updated: this is placeholder copy pending legal review."
+description: "Last updated: 2026-08-13."
 ---
-<!-- PLACEHOLDER LEGAL COPY — replace with reviewed Refund Policy before launch. -->
 
 ## 1. Free plan
 
@@ -22,7 +21,9 @@ merchant of record.
 ## 4. How to request a refund
 
 Email us via [our contact page](/turbo/contact/?topic=billing) with your account email and the
-charge you're asking about.
+charge you're asking about. You can also manage your subscription and request a refund
+directly through [Paddle.net](https://paddle.net), which handles the transaction as merchant
+of record.
 
 ## 5. Downgrades and cancellations
 

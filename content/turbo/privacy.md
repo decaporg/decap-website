@@ -1,39 +1,95 @@
 ---
 title: Decap Turbo — Privacy Policy
-description: "Last updated: this is placeholder copy pending legal review."
+description: "Last updated: 2026-08-13."
 ---
-<!-- PLACEHOLDER LEGAL COPY — replace with reviewed Privacy Policy before launch. -->
 
-## 1. What we collect
+## 1. Who we are
 
-We collect the information needed to run your account and connected sites: your email address,
-organization and site metadata, membership/role assignments, and — for the GitHub request
-proxy and site configuration features — GitHub access tokens and site variables/secrets you
-choose to store with us.
+Decap Turbo is operated by **PM d.o.o.**, a company registered in Slovenia (registration number
+2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana,
+Slovenia ("we", "us", "our"). We are the controller for the personal data we collect about
+users of Decap Turbo, as described in this policy. For privacy questions or data requests,
+[contact us](/turbo/contact/) — see section 8.
 
-## 2. Sub-processors
+## 2. What we collect and why
 
-We use [Supabase](https://supabase.com) for authentication and data storage, and
-[Paddle](https://www.paddle.com) as our billing processor and merchant of record. Each
-processes data on our behalf under their own privacy and security terms.
+| Category | Examples | Purpose | Legal basis |
+|---|---|---|---|
+| Account data | Email address, name | Creating and securing your account | Performance of a contract |
+| Organization & role data | Org/site metadata, membership and role assignments | Running multi-user orgs and access control | Performance of a contract |
+| GitHub credentials | GitHub access tokens (proxied, not shown to other users) | Operating the GitHub API request proxy | Performance of a contract |
+| Site configuration | Site variables and secrets you choose to store with us | Providing site variable/secret storage | Performance of a contract |
+| Support communications | Messages sent via our contact form | Responding to inquiries and support requests | Legitimate interest (providing support) |
+| Security/technical logs | IP address, request logs, device/browser identifiers | Fraud prevention, abuse detection, and keeping the Service secure | Legitimate interest (security) and legal obligation, where applicable |
 
-## 3. Cookies
+We do not collect payment card details ourselves — see section 3.
+
+## 3. Sub-processors and recipients
+
+We share data with the following categories of recipients:
+
+- **Service providers / sub-processors** — [Supabase](https://supabase.com) for
+  authentication and data storage. Supabase processes data on our behalf under its own
+  security and privacy terms.
+- **Merchant of record** — [Paddle](https://www.paddle.com), for the sale of Decap Turbo
+  subscriptions, payment collection, subscription management, tax compliance, and invoicing.
+  Paddle acts as an independent controller of your payment and billing data under its own
+  [privacy policy](https://www.paddle.com/legal/privacy) — see also our
+  [Terms & Conditions](/turbo/terms/).
+- **Professional advisers** — lawyers, accountants, or auditors, where necessary.
+- **Authorities** — where required by law, or to protect our rights, safety, or property, or
+  that of our users.
+
+We don't sell your personal data, and we don't use third-party advertising or tracking
+services.
+
+## 4. International transfers
+
+We and our sub-processors may process personal data outside the EU/EEA and UK — for example,
+on infrastructure operated by Supabase or Paddle in other jurisdictions. Where this happens, we
+rely on appropriate safeguards recognized under EU/UK data protection law, such as Standard
+Contractual Clauses or an applicable adequacy decision, to ensure your data receives an
+equivalent level of protection.
+
+## 5. Cookies
 
 We use a session cookie to keep you signed in, and an `active_org_id` cookie to remember which
-organization you're currently working in. We don't use third-party advertising or tracking
-cookies.
+organization you're currently working in. Both are strictly necessary for the Service to
+function and are set without requiring consent. We don't use analytics, advertising, or
+third-party tracking cookies.
 
-## 4. Data retention and deletion
+## 6. Data retention and deletion
 
 We retain account and org data for as long as your account is active. If you close your
 account, we delete your account data within a reasonable period, except where we're required
-to retain billing records for legal or tax purposes.
+to retain billing or transaction records for legal or tax purposes, or need to retain limited
+data to resolve disputes or enforce our agreements.
 
-## 5. Your rights
+## 7. Security
 
-You can request a copy of your data or request deletion at any time by
-[contacting us](/turbo/contact/).
+We use appropriate technical and organizational measures to protect your data, including
+encryption in transit, access controls limiting who can view account and site data, and
+credential storage designed so that secrets you store with us aren't exposed to other users.
 
-## 6. Contact
+## 8. Your rights
 
-Questions about this policy or a data request? [Contact us](/turbo/contact/).
+If you're in the UK or EEA, or otherwise entitled to these rights under the law of your
+country of residence, you have the right to:
+
+- **Access** the personal data we hold about you;
+- **Rectify** inaccurate or incomplete data;
+- **Erase** your data ("right to be forgotten"), subject to our retention obligations in
+  section 6;
+- **Restrict** or **object** to certain processing;
+- **Port** your data to another service in a structured, machine-readable format;
+- **Withdraw consent** at any time, where processing is based on consent;
+- **Complain** to your local data protection authority (in Slovenia, the
+  [Information Commissioner](https://www.ip-rs.si/)) if you believe we've mishandled your data.
+
+To exercise any of these rights, [contact us](/turbo/contact/). We'll respond within one
+month, extendable where permitted by law for complex requests.
+
+## 9. Contact
+
+Questions about this policy or a data request? [Contact us](/turbo/contact/), or write to us
+at the registered office address in section 1.
