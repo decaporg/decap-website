@@ -50,4 +50,4 @@ If you use per-collection permissions (see [Roles and members](../turbo-roles-an
 
 ## Want the implementation-level detail?
 
-This page intentionally stays conceptual. If you're integrating deeply or just curious about the actual mechanics — the config resolution hook, the database schema behind the content cache, token refresh internals — the [`decap-cms-backend-turbo` README](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo) on GitHub is the source of truth.
+This page intentionally stays conceptual. If you're integrating deeply or just curious about the actual mechanics — the config resolution hook, the database schema behind the content cache, token refresh internals — the [`decap-cms-backend-turbo-github`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-github) or [`decap-cms-backend-turbo-gitlab`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-gitlab) README on GitHub is the source of truth.

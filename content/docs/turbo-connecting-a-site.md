@@ -4,19 +4,19 @@ group: Turbo
 weight: 30
 ---
 
-Once you've [created a site in Decap Turbo](../turbo-getting-started/#creating-your-first-site), point your Decap CMS `config.yml` at it by switching your backend to `decap-turbo`.
+Once you've [created a site in Decap Turbo](../turbo-getting-started/#creating-your-first-site), point your Decap CMS `config.yml` at it by switching your backend to `turbo-github` (or `turbo-gitlab` if your site's repo lives on GitLab).
 
 ## Minimal configuration
 
 ```yaml
 backend:
-  name: decap-turbo
+  name: turbo-github
   repo: owner/repo
   branch: main
   turbo_site_id: your-site-id
 ```
 
-`turbo_site_id` is the UUID shown on your site's detail page in Decap Turbo — it's the only Turbo-specific value you need to set by hand. Everything else the backend needs (which Supabase project to talk to, which endpoint to proxy GitHub calls through) is resolved automatically at load time, based on that ID.
+`turbo_site_id` is the UUID shown on your site's detail page in Decap Turbo — it's the only Turbo-specific value you need to set by hand. Everything else the backend needs (which Supabase project to talk to, which endpoint to proxy Git calls through) is resolved automatically at load time, based on that ID.
 
 This means:
 
@@ -25,7 +25,7 @@ This means:
 
 ## Logging in
 
-With `backend: decap-turbo` set, your Decap CMS login screen shows a **"Login with Turbo"** button instead of the usual Git provider login. Clicking it opens a popup:
+With `backend: turbo-github` (or `turbo-gitlab`) set, your Decap CMS login screen shows a **"Login with Turbo"** button instead of the usual Git provider login. Clicking it opens a popup:
 
 - If you're not already signed in to Decap Turbo, you'll log in there (same account you use for the Turbo dashboard).
 - If you're already signed in, the popup completes and closes automatically.
@@ -54,7 +54,7 @@ For local or offline CMS development against a different Supabase project, you c
 
 ```yaml
 backend:
-  name: decap-turbo
+  name: turbo-github
   repo: owner/repo
   branch: main
   turbo_site_id: your-site-id
@@ -64,4 +64,4 @@ backend:
   supabase_anon_key: your-supabase-anon-key
 ```
 
-Whatever you set explicitly always wins over what would otherwise be fetched automatically. This is an advanced/self-hosting path — most sites never need it. If you're running your own Supabase project rather than the shared Decap Turbo one, see the [`decap-cms-backend-turbo` README](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo) for the schema and setup it expects.
+Whatever you set explicitly always wins over what would otherwise be fetched automatically. This is an advanced/self-hosting path — most sites never need it. If you're running your own Supabase project rather than the shared Decap Turbo one, see the [`decap-cms-backend-turbo-github`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-github) or [`decap-cms-backend-turbo-gitlab`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-gitlab) README for the schema and setup it expects.
