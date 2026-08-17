@@ -6,6 +6,18 @@ weight: 30
 
 Once you've [created a site in Decap Turbo](../turbo-getting-started/#creating-your-first-site), point your Decap CMS `config.yml` at it by switching your backend to `turbo-github` (or `turbo-gitlab` if your site's repo lives on GitLab).
 
+## Use the beta build
+
+Turbo backends aren't in the npm `decap-cms` release yet — they only exist on the beta build. If you install Decap CMS via `npm install decap-cms` (or `decap-cms-app`), **`turbo-github` and `turbo-gitlab` won't be available**, and your CMS will fail to load with an unrecognized-backend error.
+
+Replace your CMS script tag with the beta build instead:
+
+```html
+<script src="https://decap-turbo.cdn.decapcms.org/decap-cms.js"></script>
+```
+
+This will be unnecessary once turbo backends ship in a stable npm release.
+
 ## Minimal configuration
 
 ```yaml
