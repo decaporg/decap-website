@@ -6,6 +6,12 @@ weight: 70
 
 Common errors and questions when setting up or running Decap Turbo.
 
+## Reporting a bug or leaving feedback
+
+Organization owners can report issues via the Feedback page. Use it for bugs, rough edges, or feature requests about Decap Turbo itself — the admin app, not your own site's content or CMS setup. If someone else already reported the same problem, your submission is added as a comment on their existing report instead of opening a duplicate, and you can follow its status and add follow-up comments from the same page.
+
+For issues with your own site's content, contact whoever manages that site directly — the Turbo team has no visibility into what you publish.
+
 ## Errors when loading the CMS
 
 **"Unknown site_id"**
