@@ -9,4 +9,4 @@ highlights:
   - Decap Turbo is the only support channel for Decap CMS
   - Priority support and team-oriented upgrades are handled through Turbo
 ---
-For support, [use Decap Turbo](https://turbo.decapcms.org). Turbo is the only support channel for Decap CMS.
+For support, [use Decap Turbo](/turbo/). Turbo is the only support channel for Decap CMS.

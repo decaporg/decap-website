@@ -66,7 +66,7 @@ plans:
       description: Agencies and orgs running many sites
       price_label: Custom
       cta_text: Talk to us
-      cta_href: 'https://decapcms.org/turbo/contact/?topic=enterprise'
+      cta_href: '/contact/?topic=enterprise'
       features:
         - Fair-use "unlimited" sites & seats
         - Custom/granular roles
