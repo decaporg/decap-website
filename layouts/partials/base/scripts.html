@@ -2,8 +2,9 @@
 {{ $header := resources.Get "/scripts/header.js" }}
 {{ $docsNav := resources.Get "/scripts/docs-nav.js" }}
 {{ $externalLinks := resources.Get "/scripts/external-links.js" }}
+{{ $cookieConsent := resources.Get "/scripts/cookie-consent.js" }}
 
-{{ $bundleItems := slice $search $header $docsNav $externalLinks }}
+{{ $bundleItems := slice $search $header $docsNav $externalLinks $cookieConsent }}
 
 {{ $options := dict
   "sourcemap" "inline"
