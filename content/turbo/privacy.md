@@ -18,7 +18,7 @@ users of Decap Turbo, as described in this policy. For privacy questions or data
 | Account data | Email address, name | Creating and securing your account | Performance of a contract |
 | Organization & role data | Org/site metadata, membership and role assignments | Running multi-user orgs and access control | Performance of a contract |
 | GitHub credentials | GitHub access tokens (proxied, not shown to other users) | Operating the GitHub API request proxy | Performance of a contract |
-| Site configuration | Site variables and secrets you choose to store with us | Providing site variable/secret storage | Performance of a contract |
+| Site configuration | Site variables you choose to store with us | Providing site variable storage | Performance of a contract |
 | Support communications | Messages sent via our contact form | Responding to inquiries and support requests | Legitimate interest (providing support) |
 | Security/technical logs | IP address, request logs, device/browser identifiers | Fraud prevention, abuse detection, and keeping the Service secure | Legitimate interest (security) and legal obligation, where applicable |
 | Beta usage data *(closed beta only)* | Feature usage events (e.g. pages visited, actions taken, errors encountered), tied to your account | Understanding how beta testers use the Service, so we can improve it before general availability | Legitimate interest (product improvement during closed beta) |
@@ -36,7 +36,7 @@ We share data with the following categories of recipients:
   subscriptions, payment collection, subscription management, tax compliance, and invoicing.
   Paddle acts as an independent controller of your payment and billing data under its own
   [privacy policy](https://www.paddle.com/legal/privacy) — see also our
-  [Terms & Conditions](/turbo/terms/).
+  [Terms of Service](/turbo/terms/).
 - **Professional advisers** — lawyers, accountants, or auditors, where necessary.
 - **Authorities** — where required by law, or to protect our rights, safety, or property, or
   that of our users.

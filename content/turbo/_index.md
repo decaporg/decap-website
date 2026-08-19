@@ -1,7 +1,7 @@
 ---
 linkTitle: Decap Turbo
 title: Decap Turbo — managed hosting for Decap CMS
-description: Managed hosting for Decap CMS — hosted auth, GitHub rate-limit shielding, a database-backed content store, roles, and secrets storage.
+description: Managed hosting for Decap CMS — hosted auth, GitHub rate-limit shielding, a database-backed content store, roles, and site variables.
 hero:
   badge: Decap Turbo — closed beta
   cta:
@@ -23,9 +23,9 @@ features:
     - title: Role-based access control
       icon: check-circle
       description: Org-level owner/member roles and per-site admin/editor roles.
-    - title: Site variables & secrets
+    - title: Site variables
       icon: lock
-      description: Store API credentials your site config needs, without committing them to the repo.
+      description: Store API credentials your site config needs, without committing them to the repo. Mark sensitive ones as secret to encrypt them at rest and mask them in the dashboard.
 plans:
   title: Choose your plan
   description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. We're in closed beta — join the waitlist and we'll invite you when a spot opens up."
@@ -72,12 +72,12 @@ plans:
         - Custom/granular roles
         - SSO/SAML
         - Dedicated support & SLA
-billing_note: "All prices are in EUR, billed monthly, tax included. There's no yearly self-serve option — Free and Pro are both month-to-month. Payments are processed by [Paddle.com](https://www.paddle.com), our reseller and merchant of record. See our [Terms](/turbo/terms/), [Privacy Policy](/turbo/privacy/), and [Refund Policy](/turbo/refunds/)."
+billing_note: "All prices are in EUR, billed monthly, tax included. There's no yearly self-serve option — Free and Pro are both month-to-month. Payments are processed by [Paddle.com](https://www.paddle.com), our reseller and merchant of record. See our [Terms of Service](/turbo/terms/), [Privacy Policy](/turbo/privacy/), and [Refund Policy](/turbo/refunds/)."
 faq:
   title: Frequently asked questions
   items:
     - q: How is this different from self-hosting Decap CMS?
-      a: "Decap CMS is free and open source — you self-host it with your own Git backend and auth. Decap Turbo is a managed layer on top: we run the infrastructure (auth, request proxying, content store, roles, secrets) so you don't have to."
+      a: "Decap CMS is free and open source — you self-host it with your own Git backend and auth. Decap Turbo is a managed layer on top: we run the infrastructure (auth, request proxying, content store, roles, site variables) so you don't have to."
     - q: Does Turbo replace Decap CMS?
       a: "No — Turbo runs alongside Decap CMS, it doesn't fork or replace it. You still get the same open-source editing experience; Turbo just removes the operational burden of hosting the supporting infrastructure."
     - q: Is the Free plan actually free, or is it a trial?

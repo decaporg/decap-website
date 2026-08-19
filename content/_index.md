@@ -33,7 +33,7 @@ turboBanner:
       icon: "turbo-shield"
     - text: "Real-time editing visibility"
       icon: "turbo-collaboration"
-    - text: "Secrets storage for advanced workflows"
+    - text: "Site variables for advanced workflows"
       icon: "turbo-shield"
   button:
     text: "Learn more about Turbo"

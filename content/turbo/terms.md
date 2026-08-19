@@ -1,5 +1,5 @@
 ---
-title: Decap Turbo — Terms & Conditions
+title: Decap Turbo — Terms of Service
 description: "Last updated: 2026-08-13."
 ---
 
@@ -13,14 +13,14 @@ with Paddle described in section 6.
 
 ## 2. Acceptance of terms
 
-By creating an account or using the Service, you agree to be bound by these Terms & Conditions.
+By creating an account or using the Service, you agree to be bound by these Terms of Service.
 If you don't agree, don't use the Service.
 
 ## 3. What the Service is
 
 Decap Turbo is a managed hosting layer built on top of the open-source Decap CMS project. It
 provides hosted authentication, a GitHub API request proxy, a database-backed content store,
-role-based access control, and site variable/secret storage. Decap CMS itself remains free and
+role-based access control, and site variable storage. Decap CMS itself remains free and
 open source and can always be self-hosted independently of this Service.
 
 Decap Turbo is currently in closed beta. Beta features may change, break, or be removed without
@@ -48,7 +48,7 @@ Paid plans are billed monthly. Payments are processed by [Paddle.com](https://ww
 who acts as our reseller and merchant of record. That means Paddle — not us — is the seller of
 record for the transaction itself, handles payment collection, tax, and is your contractual
 counterparty for the payment under [Paddle's Buyer Terms](https://www.paddle.com/legal/buyer-terms).
-These Terms & Conditions instead govern your separate relationship with us regarding use of
+These Terms of Service instead govern your separate relationship with us regarding use of
 the Service itself. See our [Refund Policy](/turbo/refunds/) for cancellation and refund terms.
 
 ## 7. Acceptable use
@@ -110,7 +110,7 @@ or personal injury we cause).
 
 ## 13. Changes to these terms
 
-We may update these Terms & Conditions from time to time. If we make a material change, we'll
+We may update these Terms of Service from time to time. If we make a material change, we'll
 notify you by email or through the Service before it takes effect. Continuing to use the
 Service after a change takes effect means you accept the updated terms.
 
@@ -122,7 +122,7 @@ governmental action.
 
 ## 15. Governing law
 
-These Terms & Conditions are governed by the laws of the Republic of Slovenia, and any
+These Terms of Service are governed by the laws of the Republic of Slovenia, and any
 dispute arising from them is subject to the exclusive jurisdiction of the courts of Ljubljana,
 Slovenia, without prejudice to any mandatory consumer-protection rights you may have under the
 law of your own country of residence if you are a consumer in the EU/EEA.

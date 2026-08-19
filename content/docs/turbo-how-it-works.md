@@ -47,7 +47,3 @@ The security-critical part of this flow is that the CMS only accepts that sessio
 ## Permission enforcement isn't just a UI filter
 
 If you use per-collection permissions (see [Roles and members](../turbo-roles-and-members/)), a collection an editor can't access is hidden from their CMS UI — but that's a convenience, not the actual security boundary. The real enforcement happens on Turbo's servers: every read and write is checked there regardless of what the CMS UI shows, so hiding a collection client-side is a UX nicety layered on top of server-side access control, not a substitute for it.
-
-## Want the implementation-level detail?
-
-This page intentionally stays conceptual. If you're integrating deeply or just curious about the actual mechanics — the config resolution hook, the database schema behind the content cache, token refresh internals — the [`decap-cms-backend-turbo-github`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-github) or [`decap-cms-backend-turbo-gitlab`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-gitlab) README on GitHub is the source of truth.

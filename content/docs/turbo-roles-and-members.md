@@ -44,7 +44,7 @@ You can also add someone who *already* has a Decap Turbo account directly, witho
 
 Each site has its own key/value store, available under that site's **Variables** tab (site admins only). This is meant for values your site's configuration or integrations need — for example, credentials for an optional CDN/media proxy add-on.
 
-Marking a variable as **secret** masks its value in the Turbo UI, but doesn't encrypt it — treat this as "hidden from casual viewing," not as a vault. Don't rely on it for anything where encryption at rest is a hard requirement.
+Marking a variable as **secret** encrypts its value at rest before it's stored, and masks it in the Turbo UI. Non-secret variables are stored as plain text and shown as-is. Use the secret flag for anything sensitive, like API keys or tokens.
 
 ## Site locking
 

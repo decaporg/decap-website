@@ -59,21 +59,3 @@ If your setup is different, use whatever path your build actually serves the CMS
 ## Multiple environments
 
 If you list more than one **admin interface URL** on the site (e.g. one line for production, one for staging), the same `turbo_site_id` and login flow work from either — useful if you preview content changes on staging before they go live.
-
-## Advanced: skipping the automatic lookup
-
-For local or offline CMS development against a different Supabase project, you can bypass the automatic config lookup entirely by specifying the underlying values yourself:
-
-```yaml
-backend:
-  name: turbo-github
-  repo: owner/repo
-  branch: main
-  turbo_site_id: your-site-id
-  base_url: https://your-project-ref.supabase.co
-  api_root: https://your-project-ref.supabase.co/functions/v1/gh
-  supabase_app_id: your-project-ref
-  supabase_anon_key: your-supabase-anon-key
-```
-
-Whatever you set explicitly always wins over what would otherwise be fetched automatically. This is an advanced/self-hosting path — most sites never need it. If you're running your own Supabase project rather than the shared Decap Turbo one, see the [`decap-cms-backend-turbo-github`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-github) or [`decap-cms-backend-turbo-gitlab`](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-turbo-gitlab) README for the schema and setup it expects.

@@ -20,7 +20,7 @@ merchant of record.
 
 ## 4. How to request a refund
 
-Email us via [our contact page](/turbo/contact/?topic=billing) with your account email and the
+Email us via [our contact page](/contact/?topic=billing) with your account email and the
 charge you're asking about. You can also manage your subscription and request a refund
 directly through [Paddle.net](https://paddle.net), which handles the transaction as merchant
 of record.
@@ -33,4 +33,4 @@ the current period unless it qualifies under the eligibility window above.
 
 ## 6. Contact
 
-Questions about a charge or this policy? [Contact us](/turbo/contact/?topic=billing).
+Questions about a charge or this policy? [Contact us](/contact/?topic=billing).
