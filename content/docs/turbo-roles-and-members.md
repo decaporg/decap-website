@@ -36,19 +36,19 @@ Creating, editing, or deleting custom roles is available as the **advanced/custo
 
 From your organization's Members page (owners only), invite by email and optionally grant access to specific sites — with a chosen role for each — at the same time, so you don't need a separate step afterward. The invite is a link that's valid for a limited time; if it expires or you need to send it again, you can resend or revoke it from the same page.
 
-The person you invite doesn't need an existing Decap Turbo account — accepting the invite walks them through creating one if needed. If they're only being given site access (not organization membership), they'll land on their [profile page](../turbo-getting-started/#your-profile) with a direct link to open the CMS on their site(s), without needing to touch anything org-level.
+The person you invite doesn't need an existing Decap Turbo account — accepting the invite walks them through creating one if needed. Accepting always adds them to your organization as a member, even if the invite's only purpose was to give them access to specific sites; if that's the case, they'll land on their [profile page](../turbo-getting-started/#your-profile) with a direct link to open the CMS on their site(s), without needing to touch anything org-level.
 
 You can also add someone who *already* has a Decap Turbo account directly, without sending an invite email, from the same Members page or from a specific site's Members tab.
 
 ## Site variables
 
-Each site has its own key/value store, available under that site's **Variables** tab (site admins only). This is meant for values your site's configuration or integrations need — for example, credentials for an optional CDN/media proxy add-on.
+Each site has its own key/value store, available under that site's **Variables** tab (organization owners only) — a place to keep config and credentials scoped to that site.
 
 Marking a variable as **secret** encrypts its value at rest before it's stored, and masks it in the Turbo UI. Non-secret variables are stored as plain text and shown as-is. Use the secret flag for anything sensitive, like API keys or tokens.
 
 ## Site locking
 
-A site can become **locked**, meaning it's read-only for everyone, including its own admins, until an organization owner unlocks it. This happens either:
+A site can become **locked**, meaning it's read-only for everyone, including its own members, until an organization owner unlocks it. This happens either:
 
 - **Automatically**, if your organization is downgraded or a subscription is canceled and you have more sites than your new plan allows (one site is retained and stays active; the rest lock).
 - **Manually**, if an owner locks a site on purpose — for example, to free up a site slot on your plan without deleting it.
@@ -57,7 +57,7 @@ A locked site doesn't count against your plan's site limit, so unlocking one req
 
 ## Transferring a site
 
-An owner or site admin can move a site to a different organization they belong to, from that site's Danger Zone. Members, variables, and access scoping move with it — anyone who wasn't already a member of the destination organization loses their site access as part of the move, since site access requires an org seat in that same organization.
+An owner can move a site to a different organization they belong to, from that site's Danger Zone. Members, variables, and access scoping move with it — anyone who wasn't already a member of the destination organization loses their site access as part of the move, since site access requires an org seat in that same organization.
 
 ## Leaving or deleting an organization
 

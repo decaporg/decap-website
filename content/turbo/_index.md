@@ -22,7 +22,7 @@ features:
       description: Faster admin loading than reading straight from Git on every request.
     - title: Role-based access control
       icon: check-circle
-      description: Org-level owner/member roles and per-site admin/editor roles.
+      description: Org-level owner/member roles, plus per-site Full access and custom roles.
     - title: Site variables
       icon: lock
       description: Store API credentials your site config needs, without committing them to the repo. Mark sensitive ones as secret to encrypt them at rest and mask them in the dashboard.

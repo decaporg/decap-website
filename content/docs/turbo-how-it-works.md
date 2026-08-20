@@ -13,7 +13,7 @@ An **organization** is the billing and ownership unit — think "your company" o
 People get access at two levels:
 
 - **Organization membership** — owner or member of the org itself. This is the paid seat.
-- **Site membership** — admin or editor on a specific site, layered on top of an org seat. You can't grant someone access to a site without them already being a member of the org that owns it.
+- **Site membership** — a site role (Full access, or a custom role) on a specific site, layered on top of an org seat. Accepting an invite always grants org membership, even if the invite's only purpose was to give you access to one site.
 
 This is why billing is per-org-seat rather than per-site-grant: once someone has a seat in your organization, you can give them access to as many of your sites as you like at no extra cost. See [Organizations, sites, and roles](../turbo-roles-and-members/) for the practical side of this.
 
@@ -23,7 +23,7 @@ Turbo doesn't replace your Git repository as the source of truth. Every save sti
 
 ## Editors never see a GitHub token
 
-Normally, Decap CMS's GitHub backend needs each editor to authenticate directly with GitHub (OAuth or a personal token), and that editor needs real write access to your repo. With Turbo, editors authenticate with their Decap Turbo account instead. GitHub API calls are made server-side, on the editor's behalf, using Turbo's own GitHub App installation — not the editor's own GitHub identity.
+Normally, Decap CMS's GitHub backend needs each editor to authenticate directly with GitHub (OAuth or a personal token), and that editor needs real write access to your repo. With Turbo, editors authenticate with their Decap Turbo account instead. GitHub API calls are made server-side, on the site member's behalf, using Turbo's own GitHub App installation — not their own GitHub identity.
 
 Practically, this means:
 
@@ -46,4 +46,4 @@ The security-critical part of this flow is that the CMS only accepts that sessio
 
 ## Permission enforcement isn't just a UI filter
 
-If you use per-collection permissions (see [Roles and members](../turbo-roles-and-members/)), a collection an editor can't access is hidden from their CMS UI — but that's a convenience, not the actual security boundary. The real enforcement happens on Turbo's servers: every read and write is checked there regardless of what the CMS UI shows, so hiding a collection client-side is a UX nicety layered on top of server-side access control, not a substitute for it.
+If you use per-collection permissions (see [Roles and members](../turbo-roles-and-members/)), a collection a site member can't access is hidden from their CMS UI — but that's a convenience, not the actual security boundary. The real enforcement happens on Turbo's servers: every read and write is checked there regardless of what the CMS UI shows, so hiding a collection client-side is a UX nicety layered on top of server-side access control, not a substitute for it.

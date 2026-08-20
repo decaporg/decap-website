@@ -38,7 +38,7 @@ The Usage tab shows your current site and seat counts against your plan's limits
 
 ## Fair use, not metered billing
 
-Decap Turbo doesn't bill based on request volume or storage — your invoice is the same every month regardless of usage, aside from add-ons you've added or removed. Instead, each plan has fair-use limits stated in the [Terms of Use](/turbo/terms/); going over them doesn't trigger an automatic charge, it triggers a manual review. In practice this only matters for genuinely unusual traffic patterns (e.g. bot/scraper behavior against your site) — normal editorial use on any plan isn't something you need to watch a meter for.
+Decap Turbo doesn't bill based on request volume or storage — your invoice is the same every month regardless of usage, aside from add-ons you've added or removed. Instead, every plan is subject to fair use as described in the "Fair use" section of the [Terms of Service](/turbo/terms/); going over it doesn't trigger an automatic charge, it triggers a manual review. In practice this only matters for genuinely unusual traffic patterns — normal editorial use on any plan isn't something you need to watch a meter for.
 
 ## Enterprise
 

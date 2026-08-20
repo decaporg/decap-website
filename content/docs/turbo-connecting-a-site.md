@@ -28,7 +28,17 @@ backend:
   turbo_site_id: your-site-id
 ```
 
-`turbo_site_id` is the UUID shown on your site's detail page in Decap Turbo — it's the only Turbo-specific value you need to set by hand. Everything else the backend needs (which Supabase project to talk to, which endpoint to proxy Git calls through) is resolved automatically at load time, based on that ID.
+Or, for a GitLab-hosted repo:
+
+```yaml
+backend:
+  name: turbo-gitlab
+  repo: owner/repo
+  branch: main
+  turbo_site_id: your-site-id
+```
+
+Both backends take the same fields — only `name` and which Git host `repo` points at differ. `turbo_site_id` is the UUID shown on your site's detail page in Decap Turbo — it's the only Turbo-specific value you need to set by hand. Everything else the backend needs (which Supabase project to talk to, which endpoint to proxy Git calls through) is resolved automatically at load time, based on that ID.
 
 This means:
 
@@ -42,7 +52,7 @@ With `backend: turbo-github` (or `turbo-gitlab`) set, your Decap CMS login scree
 - If you're not already signed in to Decap Turbo, you'll log in there (same account you use for the Turbo dashboard).
 - If you're already signed in, the popup completes and closes automatically.
 
-You're then editing as yourself — commits made through the CMS are attributed to your real name/email, not a shared bot account, and your session refreshes automatically in the background so you don't get logged out mid-edit. You'll need to already have [access to this specific site](../turbo-roles-and-members/) (as an admin or editor) for this to work — being able to log in to Decap Turbo isn't enough on its own if you haven't been added to the site.
+You're then editing as yourself — commits made through the CMS are attributed to your real name/email, not a shared bot account, and your session refreshes automatically in the background so you don't get logged out mid-edit. You'll need to already have [access to this specific site](../turbo-roles-and-members/) for this to work — being able to log in to Decap Turbo isn't enough on its own if you haven't been added to the site.
 
 ## The config path field
 
