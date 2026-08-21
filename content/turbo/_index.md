@@ -116,6 +116,8 @@ comparison:
           values: [false, true, true]
         - feature: Database-backed content store
           values: [false, true, true]
+        - feature: Media/asset proxy (S3-compatible, incl. Bunny & R2)
+          values: [true, true, true]
     - title: Access control
       rows:
         - feature: Basic roles
@@ -142,6 +144,4 @@ comparison:
           values: [false, "€6/seat/mo", "Included"]
         - feature: Advanced/custom roles
           values: [false, "€19/mo per org", "Included"]
-        - feature: Media/asset proxy
-          values: [false, "€9/mo per org", "Included"]
 ---

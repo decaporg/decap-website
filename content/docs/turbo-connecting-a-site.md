@@ -69,3 +69,7 @@ If your setup is different, use whatever path your build actually serves the CMS
 ## Multiple environments
 
 If you list more than one **admin interface URL** on the site (e.g. one line for production, one for staging), the same `turbo_site_id` and login flow work from either — useful if you preview content changes on staging before they go live.
+
+## Media library
+
+Want editors to upload images/files through Decap CMS instead of committing them to your repo? See [Media library (S3-compatible)](../turbo-media-proxy/) — available on all plans.
