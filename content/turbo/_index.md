@@ -1,7 +1,7 @@
 ---
 linkTitle: Decap Turbo
 title: Decap Turbo — managed hosting for Decap CMS
-description: Managed hosting for Decap CMS — hosted auth, GitHub rate-limit shielding, a database-backed content store, roles, and site variables.
+description: Managed hosting for Decap CMS — hosted auth, Git host rate-limit shielding, a database-backed content store, roles, and site variables.
 hero:
   badge: Decap Turbo — closed beta
   cta:
@@ -14,9 +14,9 @@ features:
     - title: Hosted auth & user management
       icon: shield
       description: Invite editors, manage roles, no auth server to run yourself.
-    - title: GitHub rate-limit shielding
+    - title: Git host rate-limit shielding
       icon: lightning
-      description: A request proxy between your editors and GitHub's API.
+      description: A request proxy between your editors and your GitHub or GitLab API.
     - title: Database-backed content store
       icon: database
       description: Faster admin loading than reading straight from Git on every request.
@@ -56,7 +56,7 @@ plans:
       cta_href: '/turbo/join-early-access/?plan=pro'
       features:
         - 1 site, 3 seats included
-        - GitHub request shielding
+        - Git host request shielding
         - Database-backed content store
         - Basic roles, site variables
         - Standard email support
@@ -112,7 +112,7 @@ comparison:
           values: ["1", "3", "Unlimited (fair use)"]
         - feature: Hosted auth & user management
           values: [true, true, true]
-        - feature: GitHub rate-limit shielding
+        - feature: Git host rate-limit shielding
           values: [false, true, true]
         - feature: Database-backed content store
           values: [false, true, true]

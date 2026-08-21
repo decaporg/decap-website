@@ -39,16 +39,16 @@ You're at your plan's included sites or seats. Either free up a slot (delete or 
 ## Frequently asked questions
 
 **Does using Decap Turbo change how my content is stored?**
-No — your content is still committed to your GitHub repository exactly as it would be with the standard GitHub backend. See [How it works](../turbo-how-it-works/#your-content-still-lives-in-git).
+No — your content is still committed to your GitHub or GitLab repository exactly as it would be with the standard GitHub/GitLab backend. See [How it works](../turbo-how-it-works/#your-content-still-lives-in-git).
 
 **Can I move a site off Turbo later?**
-Yes. Since your content already lives in your GitHub repo, switching back to a standard backend (like the plain [GitHub backend](../github-backend/)) is just a `config.yml` change — nothing about your content is locked into Turbo.
+Yes. Since your content already lives in your Git repo, switching back to a standard backend (like the plain [GitHub backend](../github-backend/) or [GitLab backend](../gitlab-backend/)) is just a `config.yml` change — nothing about your content is locked into Turbo.
 
 **Can I self-host instead of using Turbo at all?**
-Yes — Decap CMS itself is free and open source regardless of whether you use Turbo. Self-hosting means running your own auth (a Git provider's OAuth, [Git Gateway](../git-gateway-backend/), etc.) instead of Turbo's hosted auth and GitHub proxy. See the [Decap Turbo product page](/turbo/) for how the two compare.
+Yes — Decap CMS itself is free and open source regardless of whether you use Turbo. Self-hosting means running your own auth (a Git provider's OAuth, [Git Gateway](../git-gateway-backend/), etc.) instead of Turbo's hosted auth and Git hosting proxy. See the [Decap Turbo product page](/turbo/) for how the two compare.
 
-**Do my editors need GitHub accounts?**
-No. Editors authenticate with their Decap Turbo account only — see [How it works](../turbo-how-it-works/#editors-never-see-a-github-token).
+**Do my editors need GitHub or GitLab accounts?**
+No. Editors authenticate with their Decap Turbo account only — see [How it works](../turbo-how-it-works/#editors-never-see-a-git-hosting-token).
 
 **How do I get access if I don't have an account yet?**
 Decap Turbo is currently invite-only. [Join the waitlist](/turbo/join-early-access/) and you'll be invited as capacity opens up.

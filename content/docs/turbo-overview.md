@@ -13,7 +13,7 @@ Decap Turbo is currently in closed beta. If you don't have access yet, [join the
 
 - **[Getting started](../turbo-getting-started/)** — accept your invite, create your organization, create your first site.
 - **[Connecting a site](../turbo-connecting-a-site/)** — point an existing Decap CMS `config.yml` at Turbo.
-- **[How Decap Turbo works](../turbo-how-it-works/)** — the org/site model, the GitHub proxy, and the login flow, explained conceptually.
+- **[How Decap Turbo works](../turbo-how-it-works/)** — the org/site model, the Git hosting proxy, and the login flow, explained conceptually.
 - **[Organizations, sites, and roles](../turbo-roles-and-members/)** — who can do what, and how to invite people.
 - **[Billing and plans](../turbo-billing/)** — upgrading, downgrading, invoices, and payment methods.
 - **[Troubleshooting & FAQ](../turbo-troubleshooting-faq/)** — common errors and their fixes.

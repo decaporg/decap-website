@@ -31,7 +31,7 @@ From your organization's Sites page, start a new site and fill in:
 
 - **Site name** — anything descriptive; this is just a label in Turbo, not used in your CMS config.
 - **Admin interface URL(s)** *(optional)* — the URL(s) where your Decap CMS admin actually loads, one per line if you have more than one (e.g. production and staging). This is used later to validate the login flow, so it's worth filling in even though it's optional at creation time.
-- **Repo** *(optional)* — your GitHub repo in `owner/name` format.
+- **Repo** *(optional)* — your hosted repo in `owner/name` format.
 - **Branch** — defaults to `main`.
 - **Config path** — the repo-relative path to your site's `config.yml`, defaulting to `admin/config.yml`. This varies by site generator: Hugo sites often serve it from `static/admin/config.yml`, Next.js from `public/admin/config.yml`. Turbo reads your collections from this file to support per-collection permissions later, so it needs to point at the real file.
 
@@ -41,7 +41,7 @@ Submitting creates the site and gives you **Full access** on it, then takes you 
 
 This is where you'll spend most of your time managing a given site:
 
-- **Overview** — the fields you just set (editable), plus cache stats (which repo/branches/collections are currently cached, how many files) and a **Clear site cache** action if you ever need to force a re-sync from GitHub.
+- **Overview** — the fields you just set (editable), plus cache stats (which repo/branches/collections are currently cached, how many files) and a **Clear site cache** action if you ever need to force a re-sync from your Git host.
 - **Site members** *(organization owners only)* — who has access to this specific site and at what role.
 - **Variables** *(organization owners only)* — a key/value store for anything your site config needs at runtime (see [Roles and members](../turbo-roles-and-members/#site-variables)).
 - **Danger zone** — transfer the site to another organization, lock it, or delete it.

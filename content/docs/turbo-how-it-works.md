@@ -19,21 +19,21 @@ This is why billing is per-org-seat rather than per-site-grant: once someone has
 
 ## Your content still lives in Git
 
-Turbo doesn't replace your Git repository as the source of truth. Every save still becomes a real commit in your GitHub repo, on the branch you configured — exactly like the standard Decap CMS GitHub backend, because that's what it's built on. Turbo changes *how* the CMS talks to GitHub and *how* editors authenticate, not where your content lives.
+Turbo doesn't replace your Git repository as the source of truth. Every save still becomes a real commit in your GitHub or GitLab repo, on the branch you configured — exactly like the standard Decap CMS GitHub/GitLab backends, because that's what it's built on. Turbo changes *how* the CMS talks to your Git host and *how* editors authenticate, not where your content lives.
 
-## Editors never see a GitHub token
+## Editors never see a Git hosting token
 
-Normally, Decap CMS's GitHub backend needs each editor to authenticate directly with GitHub (OAuth or a personal token), and that editor needs real write access to your repo. With Turbo, editors authenticate with their Decap Turbo account instead. GitHub API calls are made server-side, on the site member's behalf, using Turbo's own GitHub App installation — not their own GitHub identity.
+Normally, Decap CMS's GitHub/GitLab backends need each editor to authenticate directly with that Git host (OAuth or a personal token), and that editor needs real write access to your repo. With Turbo, editors authenticate with their Decap Turbo account instead. API calls to your Git hosting platform are made server-side, on the site member's behalf, using Turbo's own app/token installation — not their own Git hosting identity.
 
 Practically, this means:
 
-- Editors don't need a GitHub account at all.
+- Editors don't need an account on your Git hosting platform at all.
 - You don't need to manage repo collaborator access for every editor.
 - Access is controlled entirely through Turbo's org/site membership instead.
 
 ## Why large collections load faster
 
-Reading a folder collection with hundreds or thousands of entries directly from the GitHub API means listing the folder and then fetching every file — one request per file, against GitHub's rate limits. Turbo mirrors your repository's content into its own database and keeps that mirror in sync as files change, so the CMS can read a large collection back in a handful of queries instead of hundreds of GitHub calls. A save is reflected in that mirror immediately, so you're never looking at stale content right after editing.
+Reading a folder collection with hundreds or thousands of entries directly from your Git host's API means listing the folder and then fetching every file — one request per file, against that platform's rate limits. Turbo mirrors your repository's content into its own database and keeps that mirror in sync as files change, so the CMS can read a large collection back in a handful of queries instead of hundreds of API calls. A save is reflected in that mirror immediately, so you're never looking at stale content right after editing.
 
 ## The login flow, end to end
 
