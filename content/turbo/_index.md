@@ -1,186 +1,147 @@
 ---
 linkTitle: Decap Turbo
-title: Decap Turbo — made for content teams
-description: Advanced capabilities for Decap CMS teams that need more speed, control, and support.
+title: Decap Turbo — managed hosting for Decap CMS
+description: Managed hosting for Decap CMS — hosted auth, Git host rate-limit shielding, a database-backed content store, roles, and site variables.
 hero:
-  badge: Just announced
+  badge: Decap Turbo — closed beta
   cta:
-    text: Check plans
-    href: '#plans'
-intro: "Decap Turbo is an optional extension for Decap CMS, built for advanced use cases. Decap CMS remains free and open source forever. Turbo adds centralized authentication and user management, a database proxy for faster CMS loading on larger projects, and additional team features and support options."
+    text: Join the waitlist
+    href: '/turbo/join-early-access/'
+intro: "Decap CMS is a free, open-source, Git-based content management system — you can self-host it yourself, for free, forever. Decap Turbo is a paid layer on top of it: we run the infrastructure for you."
 features:
   title: What you get
   items:
-    - title: Faster CMS performance
-      icon: lightning
-      description: A Turbo database proxy sits between the editor and your Git provider API to reduce bottlenecks and improve loading speed.
-    - title: Centralized authentication and roles
+    - title: Hosted auth & user management
       icon: shield
-      description: Manage access and authentication in one place without setting up separate provider-specific auth apps. User roles and permissions are available from the Team plan.
-    - title: Real-time editing visibility
-      icon: users
-      description: See who is editing at the same time so teams can avoid conflicts. Available on Team and above.
-    - title: Secrets storage
+      description: Invite editors, manage roles, no auth server to run yourself.
+    - title: Git host rate-limit shielding
+      icon: lightning
+      description: A request proxy between your editors and your GitHub or GitLab API.
+    - title: Database-backed content store
+      icon: database
+      description: Faster admin loading than reading straight from Git on every request.
+    - title: Role-based access control
+      icon: check-circle
+      description: Org-level owner/member roles, plus per-site Full access and custom roles.
+    - title: Site variables
       icon: lock
-      description: Store API keys and integration credentials inside Decap CMS instead of exposing them in environment files or your codebase. Available on Team and above.
-pricing_disclaimer: "No payment is required now. Selecting a plan reserves your spot on the early access waitlist and includes a free trial when Turbo launches. Prices shown are part of an early validation and may be adjusted based on feedback before launch."
+      description: Store API credentials your site config needs, without committing them to the repo. Mark sensitive ones as secret to encrypt them at rest and mask them in the dashboard.
 plans:
   title: Choose your plan
-  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional extension for advanced teams. Choose the plan that best fits your team so we can prioritize early access and preview rollout." 
+  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. We're in closed beta — join the waitlist and we'll invite you when a spot opens up."
   items:
     - id: free
       icon: check-circle
-      name: Decap CMS
-      description: The current Decap CMS
-      price_label: Free
+      name: Free
+      description: Try the real product before paying anything
+      price_label: "€0"
       subtext: Free forever
-      cta_text: Get started
-      cta_href: /docs/intro/
+      cta_text: Join the waitlist
+      cta_href: '/turbo/join-early-access/?plan=free'
       free: true
       features:
-        - Open source CMS
-        - Git-based workflow
-        - Editorial workflow
+        - 1 site
+        - 1 seat
         - Community support
-    - id: starter
+    - id: pro
       icon: rocket
-      name: Starter
-      description: For one project and small teams
-      price: "$37"
-      price_monthly: "$37"
-      price_yearly: "$29"
-      yearly_total: "$348 / year"
-      additional_seat_price: "$9"
-      additional_project_price: "$19"
-      cta_text: Join early access
-      cta_href: '/turbo/join-early-access/?plan=starter'
-      features:
-        - Up to 3 users
-        - 1 project
-        - Database-proxy performance boost
-        - Centralized authentication
-        - Community support
-        - Expedited bug triage
-    - id: team
-      icon: users
-      name: Team
+      name: Pro
       featured: true
-      price: "$112"
-      description: For advanced teams
-      price_monthly: "$112"
-      price_yearly: "$89"
-      yearly_total: "$1,068 / year"
-      additional_seat_price: "$9"
-      additional_project_price: "$19"
-      cta_text: Join early access
-      cta_href: '/turbo/join-early-access/?plan=team'
+      description: For single-site teams
+      price: €19
+      price_monthly: "€19"
+      additional_seat_price: "€6"
+      additional_project_price: "€10"
+      cta_text: Join the waitlist
+      cta_href: '/turbo/join-early-access/?plan=pro'
       features:
-        - Up to 9 users
-        - Up to 3 projects
-        - User roles & permissions
-        - Real-time editing visibility
-        - Secrets storage
-        - Everything in Starter
-    - id: business
+        - 1 site, 3 seats included
+        - Git host request shielding
+        - Database-backed content store
+        - Basic roles, site variables
+        - Standard email support
+    - id: enterprise
       icon: business
-      name: Business
-      price: "$374"
-      description: For agencies and enterprises
-      price_monthly: "$374"
-      price_yearly: "$299"
-      yearly_total: "$3,588 / year"
-      additional_seat_price: "$9"
-      additional_project_price: "$19"
-      cta_text: Join early access
-      cta_href: '/turbo/join-early-access/?plan=business'
+      name: Enterprise
+      description: Agencies and orgs running many sites
+      price_label: Custom
+      cta_text: Talk to us
+      cta_href: '/contact/?topic=enterprise'
       features:
-        - Up to 30 users
-        - Up to 10 projects
-        - Priority support with fastest response targets
-        - Dedicated account manager
-        - Everything in Team
+        - Fair-use "unlimited" sites & seats
+        - Custom/granular roles
+        - SSO/SAML
+        - Dedicated support & SLA
+billing_note: "All prices are in EUR, billed monthly, tax included. There's no yearly self-serve option — Free and Pro are both month-to-month. Payments are processed by [Paddle.com](https://www.paddle.com), our reseller and merchant of record. See our [Terms of Service](/turbo/terms/), [Privacy Policy](/turbo/privacy/), and [Refund Policy](/turbo/refunds/)."
 faq:
   title: Frequently asked questions
   items:
-    - q: Will Decap CMS remain free and open source?
-      a: "Absolutely! Core Decap CMS will always remain 100% free and open source. Turbo is an optional premium add-on for teams that need advanced collaboration features, enhanced performance, and priority support."
-    - q: What is Decap Turbo?
-      a: "Decap Turbo is an official extension for Decap CMS. It is designed for advanced use cases where teams need centralized authentication and role management, better performance on large content sets, collaboration visibility, and premium support options."
-    - q: Can I upgrade or downgrade my plan later?
-      a: "Yes. Once Turbo is generally available, you will be able to upgrade or downgrade between plans at any time. Changes will be prorated and reflected in your next billing cycle. You can also switch back to free Decap CMS at any time. You always remain the owner of your content. Decap Turbo just adds a layer of features and support on top of your existing CMS."
-    - q: When will Decap Turbo be available?
-      a: "Decap Turbo has just been announced and is currently in preview preparation. Users joining early access now will be first in line when the preview version becomes available."
-    - q: Will there be a free trial?
-      a: "Yes! Everyone who joins the early access waitlist will receive a free trial when Decap Turbo launches, regardless of which plan they select."
-    - q: How does real-time editing visibility work?
-      a: "Real-time editing visibility (available in Team and Business plans) shows which team members are currently active in the CMS so you can coordinate and avoid working on the same entry at the same time. This is a presence indicator — you will not see others' changes in real time like in a shared editor such as Google Docs."
-    - q: Why does Decap Turbo offer better performance?
-      a: "When a project contains many entries, direct calls from the editor to a Git provider API can become a bottleneck. Decap Turbo introduces a database proxy between the editor and the provider API, which reduces request overhead and speeds up collection loading for larger projects."
-    - q: Does Decap Turbo replace Decap CMS?
-      a: "No. Decap CMS remains a complete free and open-source product. Decap Turbo is an optional extension for teams that need advanced capabilities."
+    - q: How is this different from self-hosting Decap CMS?
+      a: "Decap CMS is free and open source — you self-host it with your own Git backend and auth. Decap Turbo is a managed layer on top: we run the infrastructure (auth, request proxying, content store, roles, site variables) so you don't have to."
+    - q: Does Turbo replace Decap CMS?
+      a: "No — Turbo runs alongside Decap CMS, it doesn't fork or replace it. You still get the same open-source editing experience; Turbo just removes the operational burden of hosting the supporting infrastructure."
+    - q: Is the Free plan actually free, or is it a trial?
+      a: "It's free, not a trial. Self-hosted Decap CMS is free because it's open source — you bring your own Git backend and auth, and run the infrastructure yourself. The Decap Turbo Free plan is free because we run the managed infrastructure for you, capped to one site and one seat. Neither one is a trial of the other, and paying for Decap Turbo never means paying for Decap CMS itself."
+    - q: How does billing work?
+      a: "Plans are billed monthly with no long-term commitment. Payments are processed by Paddle.com, our reseller and merchant of record."
+    - q: Can I add more sites or seats without upgrading plans?
+      a: "Yes, on Pro you can add extra sites and seats beyond what's included for a per-unit monthly fee. Enterprise includes fair-use \"unlimited\" sites and seats."
     - q: Is custom feature development included in Decap Turbo plans?
       a: "No. Custom feature development remains a separate offering. Turbo plans include product features and support tiers, while custom builds are handled independently through our services offering."
-    - q: What about standalone monthly support?
-      a: "Decap Turbo is the primary path for ongoing monthly support and advanced team capabilities. Our services page remains available for onboarding, custom feature development, implementation work, and partner-led delivery."
-    - q: What happens if I exceed my user or project limit?
-      a: "For Starter and Team plans, you can add additional seats and additional projects (pricing based on seat/project). Alternatively, you can upgrade to a higher tier plan for better per-user pricing and additional features."
 cta_section:
-  title: Join the Decap Turbo early-access waitlist 
-  description: Early users get a free trial when it launches and will be first to access preview releases.
+  title: Ready to get started?
+  description: Decap Turbo is in closed beta. Join the waitlist and we'll invite you as we open up capacity. Already have access? Read the [setup docs](/docs/turbo-overview/).
   button_text: Join the waitlist
   button_href: '/turbo/join-early-access/'
 comparison:
-  title: Feature comparison
-  description: "These are all Decap Turbo features based on premium plans. The core Decap CMS is and will always remain free. You can always unsubscribe from Decap Turbo and your CMS will continue to function as usual."
+  title: Compare plans
+  description: "All add-ons are included at no extra cost on Enterprise."
   columns:
-    - name: Starter
-      price: "$37"
-    - name: Team
-      price: "$112"
-    - name: Business
-      price: "$374"
+    - name: Free
+      price: "€0/mo"
+    - name: Pro
+      price: "€19/mo"
+    - name: Enterprise
+      price: Custom
   sections:
-    - rows:
-        - feature: Open source CMS
-          values: [true, true, true]
-        - feature: Git-based workflow
-          values: [true, true, true]
-        - feature: Editorial workflow
-          values: [true, true, true]
-    - title: Performance
+    - title: Core
       rows:
-        - feature: Enhanced speed
-          tooltip: "Projects with many entries require multiple GitHub API requests, which can slow down loading. Decap Turbo optimizes these requests for faster content loading and smoother editing."
+        - feature: Sites included
+          values: ["1", "1", "Unlimited (fair use)"]
+        - feature: Seats included
+          values: ["1", "3", "Unlimited (fair use)"]
+        - feature: Hosted auth & user management
           values: [true, true, true]
-        - feature: Optimized infrastructure
-          values: [true, true, true]
-    - title: "Users & collaboration"
-      rows:
-        - feature: User seats (per team)
-          tooltip: "User seats define how many people can be managed within Decap Turbo. With Decap Turbo, users and roles can be managed centrally instead of through external providers."
-          values: ["Up to 3", "Up to 9", "Up to 30"]
-        - feature: Additional user seat
-          values: ["$9/seat/month", "$9/seat/month", "$9/seat/month"]
-        - feature: "User roles & permissions"
+        - feature: Git host rate-limit shielding
           values: [false, true, true]
-        - feature: Real-time editing visibility
-          tooltip: "See who is currently active in the CMS to avoid working on the same content at the same time. This is a presence indicator — you will not see others' changes in real time."
+        - feature: Database-backed content store
           values: [false, true, true]
-    - title: Projects
+        - feature: Media/asset proxy (S3-compatible, incl. Bunny & R2)
+          values: [true, true, true]
+    - title: Access control
       rows:
-        - feature: Number of projects
-          tooltip: "Each plan includes a limited number of projects. Additional projects can be added for an extra monthly fee per project."
-          values: ["1", "Up to 3", "Up to 10"]
-        - feature: Additional project
-          values: ["$19/project/month", "$19/project/month", "$19/project/month"]
+        - feature: Basic roles
+          values: [false, true, true]
+        - feature: Custom/granular roles
+          values: [false, false, true]
+        - feature: SSO/SAML
+          values: [false, false, true]
     - title: Support
       rows:
         - feature: Community support
           values: [true, true, true]
-        - feature: Priority bug fixes
-          values: [true, true, true]
-        - feature: Priority support
+        - feature: Standard email support
+          values: [false, true, true]
+        - feature: Dedicated support & SLA
           values: [false, false, true]
-        - feature: Dedicated account manager
-          values: [false, false, true]
+        - feature: Priority support add-on
+          values: [false, "€99/mo per org", "Included"]
+    - title: Add-ons
+      rows:
+        - feature: Extra site
+          values: [false, "€10/site/mo", "Included"]
+        - feature: Extra seat
+          values: [false, "€6/seat/mo", "Included"]
+        - feature: Advanced/custom roles
+          values: [false, "€19/mo per org", "Included"]
 ---

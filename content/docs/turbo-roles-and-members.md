@@ -1,0 +1,69 @@
+---
+title: Organizations, sites, and roles
+group: Turbo
+weight: 50
+---
+
+How access works across your organization and its sites, and how to invite people.
+
+## Organization roles
+
+Every person in an organization is either an **owner** or a **member**:
+
+- **Owners** can create and delete sites, invite and remove organization members, manage billing, and do everything a member can.
+- **Members** can be given access to individual sites but can't create sites, manage other members, or touch billing.
+
+An organization needs at least one owner at all times — you can't remove or demote the last one, and you can't leave an organization if you're its only owner while other members remain (promote someone else first).
+
+## Managing a site is an owner thing
+
+Only organization **owners** can manage a site's settings, members, roles, and variables, or reach its Danger Zone — there's no separate "site admin" role. Site membership itself is entirely about content access: being added to a site determines what you can do in the CMS there, not whether you can manage the site.
+
+Being an organization member doesn't automatically give you access to any site — an owner has to explicitly add you to each site you need. This is deliberate: someone can be a paid seat in your organization without having editing access to every site you run.
+
+## Site roles
+
+Every site member is assigned a **site role**, which controls what they can do in the CMS on that specific site:
+
+- **Full access** — the built-in default role. Can use the CMS across every collection, with no restrictions.
+- **Custom roles** — named roles you create yourself (for example, "Blog Writer"), each scoped to specific collections as edit / view-only / no-access. A member with a custom role only sees and can act on the collections it grants.
+
+Restrictions are enforced on Turbo's servers, not just hidden in the CMS UI (see [How it works](../turbo-how-it-works/#permission-enforcement-isnt-just-a-ui-filter)).
+
+Creating, editing, or deleting custom roles is available as the **advanced/custom roles** add-on — see the [Turbo plans](/turbo/#plans) for pricing. Without it, every site member is on the built-in Full access role. Deleting a custom role resets anyone assigned to it back to Full access.
+
+## Inviting people
+
+From your organization's Members page (owners only), invite by email and optionally grant access to specific sites — with a chosen role for each — at the same time, so you don't need a separate step afterward. The invite is a link that's valid for a limited time; if it expires or you need to send it again, you can resend or revoke it from the same page.
+
+The person you invite doesn't need an existing Decap Turbo account — accepting the invite walks them through creating one if needed. Accepting always adds them to your organization as a member, even if the invite's only purpose was to give them access to specific sites; if that's the case, they'll land on their [profile page](../turbo-getting-started/#your-profile) with a direct link to open the CMS on their site(s), without needing to touch anything org-level.
+
+You can also add someone who *already* has a Decap Turbo account directly, without sending an invite email, from the same Members page or from a specific site's Members tab.
+
+## Site variables
+
+Each site has its own key/value store, available under that site's **Variables** tab (organization owners only) — a place to keep config and credentials scoped to that site.
+
+Marking a variable as **secret** encrypts its value at rest before it's stored, and masks it in the Turbo UI. Non-secret variables are stored as plain text and shown as-is. Use the secret flag for anything sensitive, like API keys or tokens.
+
+## Site locking
+
+A site can become **locked**, meaning it's read-only for everyone, including its own members, until an organization owner unlocks it. This happens either:
+
+- **Automatically**, if your organization is downgraded or a subscription is canceled and you have more sites than your new plan allows (one site is retained and stays active; the rest lock).
+- **Manually**, if an owner locks a site on purpose — for example, to free up a site slot on your plan without deleting it.
+
+A locked site doesn't count against your plan's site limit, so unlocking one requires having a free slot (either by locking/deleting another site first, or upgrading).
+
+## Transferring a site
+
+An owner can move a site to a different organization they belong to, from that site's Danger Zone. Members, variables, and access scoping move with it — anyone who wasn't already a member of the destination organization loses their site access as part of the move, since site access requires an org seat in that same organization.
+
+## Leaving or deleting an organization
+
+Both live in your organization's settings, under Danger Zone:
+
+- **Leave** removes only your own membership. Blocked if you're the only member (delete the org instead) or the last owner while others remain (promote someone first).
+- **Delete** permanently removes the organization along with every site it owns, and all of those sites' content cache, variables, and memberships. This can't be undone — the confirmation shows how many sites are affected before you commit.
+
+Belonging to zero organizations is a perfectly normal state — you'll land on your profile with a prompt to create a new one whenever you're ready.

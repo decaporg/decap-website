@@ -48,10 +48,10 @@
 
   {{/* CTA */}}
   {{ with .Params.cta_section }}
-  <section class="turbo-cta" id="early-access">
+  <section class="turbo-cta" id="get-started">
     <div class="container size-sm">
       <h2 class="heading-display">{{ .title }}</h2>
-      <p>{{ .description }}</p>
+      <p>{{ .description | markdownify }}</p>
       <a href="{{ .button_href }}" class="button button--secondary-white-bg">{{ .button_text }}</a>
     </div>
   </section>

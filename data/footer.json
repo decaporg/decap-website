@@ -3,15 +3,11 @@
   "maintained": "Maintained in Europe, shaped by contributors from around the world.",
   "sections": [
     {
-      "title": "Product",
+      "title": "Decap CMS",
       "links": [
         {
           "text": "All features",
           "href": "/features/"
-        },
-        {
-          "text": "Decap Turbo",
-          "href": "/turbo/"
         },
         {
           "text": "About",
@@ -20,6 +16,31 @@
         {
           "text": "Releases",
           "href": "https://github.com/decaporg/decap-cms/releases/"
+        },
+        {
+          "text": "Privacy & Cookies",
+          "href": "/privacy/"
+        }
+      ]
+    },
+    {
+      "title": "Decap Turbo",
+      "links": [
+        {
+          "text": "Overview",
+          "href": "/turbo/"
+        },
+        {
+          "text": "Terms of Service",
+          "href": "/turbo/terms/"
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "/turbo/privacy/"
+        },
+        {
+          "text": "Refund Policy",
+          "href": "/turbo/refunds/"
         }
       ]
     },

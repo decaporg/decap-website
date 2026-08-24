@@ -1,5 +1,7 @@
 ---
-title: Join Decap Turbo Early Access
-description: Sign up to be the first to know when Decap Turbo launches. We'll notify you as soon as it's available.
+title: Join the Decap Turbo waitlist
+description: Decap Turbo is in closed beta. Join the waitlist and we'll invite you as we open up capacity.
 layout: join-early-access
+hero:
+  badge: Decap Turbo
 ---
