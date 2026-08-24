@@ -9,7 +9,7 @@ pages. It doesn't cover Decap Turbo, our optional paid hosting product, which ha
 
 ## 1. Who we are
 
-This website is operated by **PM d.o.o.**, a company registered in Slovenia (registration number
+This website is operated by PM, poslovni mediji d.o.o., a company registered in Slovenia (registration number
 2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana,
 Slovenia ("we", "us", "our"). We are the controller for the personal data described in this
 policy. Decap CMS itself is free, open-source software maintained by contributors from around the

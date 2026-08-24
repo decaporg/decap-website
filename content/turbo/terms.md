@@ -5,7 +5,7 @@ description: "Last updated: 2026-08-21."
 
 ## 1. Who you're contracting with
 
-Decap Turbo is operated by **PM d.o.o.**, a company registered in Slovenia (registration number 2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana, Slovenia ("we", "us", "our"). By creating an account or using Decap Turbo ("the Service"), you're contracting with PM d.o.o. for the Service itself, separately from your payment relationship with Paddle described in section 6.
+Decap Turbo is operated by PM, poslovni mediji d.o.o., a company registered in Slovenia (registration number 2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana, Slovenia ("we", "us", "our"). By creating an account or using Decap Turbo ("the Service"), you're contracting with PM, poslovni mediji d.o.o. for the Service itself, separately from your payment relationship with Paddle described in section 6.
 
 ## 2. Acceptance of terms
 
@@ -45,7 +45,7 @@ You agree not to use the Service to:
 
 ## 9. Intellectual property
 
-We (PM d.o.o.) own and retain all right, title, and interest in and to the Service and its underlying software, infrastructure, documentation, and branding, excluding the open-source Decap CMS codebase itself, which remains separately licensed under the MIT License. You retain all rights to your own content and site data. Using the Service doesn't grant you any ownership interest in the Service beyond the limited right to use it as described in these terms.
+We (PM, poslovni mediji d.o.o.) own and retain all right, title, and interest in and to the Service and its underlying software, infrastructure, documentation, and branding, excluding the open-source Decap CMS codebase itself, which remains separately licensed under the MIT License. You retain all rights to your own content and site data. Using the Service doesn't grant you any ownership interest in the Service beyond the limited right to use it as described in these terms.
 
 ## 10. Service level
 

@@ -5,7 +5,7 @@ description: "Last updated: 2026-08-13."
 
 ## 1. Who we are
 
-Decap Turbo is operated by **PM d.o.o.**, a company registered in Slovenia (registration number 2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana, Slovenia ("we", "us", "our"). We are the controller for the personal data we collect about users of Decap Turbo, as described in this policy. For privacy questions or data requests, [contact us](/contact/) — see section 12.
+Decap Turbo is operated by PM, poslovni mediji d.o.o., a company registered in Slovenia (registration number 2146215000, VAT ID SI27901181), with its registered office at Igriška ulica 5, 1000 Ljubljana, Slovenia ("we", "us", "our"). We are the controller for the personal data we collect about users of Decap Turbo, as described in this policy. For privacy questions or data requests, [contact us](/contact/) — see section 12.
 
 ## 2. What we collect and why
 
