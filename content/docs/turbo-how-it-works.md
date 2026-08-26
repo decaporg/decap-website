@@ -33,7 +33,17 @@ Practically, this means:
 
 ## Why large collections load faster
 
-Reading a folder collection with hundreds or thousands of entries directly from your Git host's API means listing the folder and then fetching every file — one request per file, against that platform's rate limits. Turbo mirrors your repository's content into its own database and keeps that mirror in sync as files change, so the CMS can read a large collection back in a handful of queries instead of hundreds of API calls. A save is reflected in that mirror immediately, so you're never looking at stale content right after editing.
+Reading a folder collection with hundreds or thousands of entries directly from your Git host's API means listing the folder and then fetching every file — one request per file, against that platform's rate limits. A collection of a thousand entries is a thousand-odd requests, every time someone opens it on a new device.
+
+Turbo mirrors your repository's content into its own database and reads the collection back from there in a handful of queries. Three things make that mirror cheap to keep current:
+
+- **Files are stored by content, not by location.** Every file in Git has an identifier derived from its contents, so Turbo stores each distinct version once. Switching branches, or opening two collections that overlap, costs nothing extra — Turbo already has those bytes.
+- **Only what changed is fetched.** Turbo compares the repository's current file listing against what it already holds and downloads just the differences. A typical edit means fetching one file, not the collection.
+- **Nothing is served without checking.** Before returning a collection, Turbo asks your Git host whether the branch has moved. That check is free — it doesn't count against your rate limits — and it's what lets the mirror be fast without ever being stale.
+
+Saving works the same way in reverse: the commit goes to your repo, and the mirror is brought up to date against it immediately, so you're never looking at stale content right after editing. If someone commits outside the CMS — a `git push`, a build script, another tool — Turbo is notified and refreshes as well.
+
+The content-addressed mirror described above currently applies to GitHub-backed sites. GitLab-backed sites are mirrored too, but without the incremental fetching, so a first load of a very large collection is slower.
 
 ## The login flow, end to end
 
