@@ -22,10 +22,11 @@ main:
   - name: Support
     identifier: support
     weight: 20
-  - name: Expert Services
-    url: /services/
-    parent: support
-    weight: 21
+  # Paused while under Paddle AUP review (2026-08-27) — uncomment to relink.
+  # - name: Expert Services
+  #   url: /services/
+  #   parent: support
+  #   weight: 21
   - name: Community
     url: /community/
     parent: support

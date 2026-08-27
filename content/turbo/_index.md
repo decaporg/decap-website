@@ -87,7 +87,7 @@ faq:
     - q: Can I add more sites or seats without upgrading plans?
       a: "Yes, on Pro you can add extra sites and seats beyond what's included for a per-unit monthly fee. Enterprise includes fair-use \"unlimited\" sites and seats."
     - q: Is custom feature development included in Decap Turbo plans?
-      a: "No. Custom feature development remains a separate offering. Turbo plans include product features and support tiers, while custom builds are handled independently through our services offering."
+      a: "No. Turbo plans cover the managed platform itself — hosted auth, Git host request shielding, the database-backed content store, roles, and site variables. They don't include bespoke development work on your site or on Decap CMS."
 cta_section:
   title: Ready to get started?
   description: Decap Turbo is in closed beta. Join the waitlist and we'll invite you as we open up capacity. Already have access? Read the [setup docs](/docs/turbo-overview/).

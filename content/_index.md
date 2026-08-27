@@ -141,12 +141,13 @@ awards:
       image: "/img/sr-gold_medal-2023.png"
 
 # Services Section
-services:
-  title: "Need expert support?"
-  description: "Decap maintainers and our partners offer a range of professional services to help you get the most out of Decap CMS."
-  button:
-    href: "/services/"
-    text: "View all services"
+# Paused while under Paddle AUP review (2026-08-27) — uncomment to re-publish.
+# services:
+#   title: "Need expert support?"
+#   description: "Decap maintainers and our partners offer a range of professional services to help you get the most out of Decap CMS."
+#   button:
+#     href: "/services/"
+#     text: "View all services"
 
 # Support Section
 support:

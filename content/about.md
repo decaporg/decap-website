@@ -35,4 +35,6 @@ Decap CMS is used by teams that want a Git-based workflow without giving up edit
 - Sponsor the project on [GitHub Sponsors](https://github.com/sponsors/decaporg)
 - Support transparent funding on [Open Collective](https://opencollective.com/decap)
 
+<!-- Paused while under Paddle AUP review (2026-08-27) — uncomment to relink.
 If your team needs implementation help, onboarding, or custom feature development, visit the [Services](/services/) page.
+-->

@@ -3,7 +3,9 @@ title: Expert Services
 description: Custom features development, onboarding, implementation, and support for teams building with Decap CMS.
 layout: services
 build:
-  render: always
+  # Human-services offerings paused while under Paddle AUP review (2026-08-27).
+  # Flip back to `always` to re-publish /services/ and its child pages.
+  render: never
 cascade:
   build:
     render: never
