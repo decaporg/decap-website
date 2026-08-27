@@ -39,11 +39,10 @@ Turbo mirrors your repository's content into its own database and reads the coll
 
 - **Files are stored by content, not by location.** Every file in Git has an identifier derived from its contents, so Turbo stores each distinct version once. Switching branches, or opening two collections that overlap, costs nothing extra — Turbo already has those bytes.
 - **Only what changed is fetched.** Turbo compares the repository's current file listing against what it already holds and downloads just the differences. A typical edit means fetching one file, not the collection.
-- **Nothing is served without checking.** Before returning a collection, Turbo asks your Git host whether the branch has moved. That check is free — it doesn't count against your rate limits — and it's what lets the mirror be fast without ever being stale.
+- **Nothing is served without checking.** Before returning a collection, Turbo asks your Git host whether the branch has moved. That is a single lightweight request no matter how large the collection is, and it's what lets the mirror be fast without ever being stale.
 
 Saving works the same way in reverse: the commit goes to your repo, and the mirror is brought up to date against it immediately, so you're never looking at stale content right after editing. If someone commits outside the CMS — a `git push`, a build script, another tool — Turbo is notified and refreshes as well.
 
-The content-addressed mirror described above currently applies to GitHub-backed sites. GitLab-backed sites are mirrored too, but without the incremental fetching, so a first load of a very large collection is slower.
 
 ## The login flow, end to end
 
