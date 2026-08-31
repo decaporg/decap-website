@@ -75,6 +75,43 @@ collections:
       - {label: "Contenido", name: "body", widget: "markdown"}
 ```
 
+### Index Files
+
+Folder collections can also include the `index_file` configuration, letting you define separate fields and editor settings for entries matching a given pattern that differs from the regular entries in a collection.
+
+This is particularly helpful when you want to mix regular content and shared information about the entire collection. For example, a list of blog posts and their shared category name and description.
+
+The `index_file` option accepts an object with the following properties:
+
+* `pattern` (**required**): A regular expression string used to identify the index files by their slug.
+* `fields`: An optional list of fields to use for entries that match the pattern. When omitted, index file entries use the same fields as regular entries.
+* `editor`: An optional editor configuration object. Supports a `preview` boolean to enable or disable the preview pane for index file entries independently from the rest of the collection.
+
+Example:
+
+```yaml
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts"
+    create: true
+    index_file:
+      pattern: _index
+      editor:
+        preview: false
+      fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+```
+
+In this example, entries with a slug matching `_index` (e.g. `_index.md`) will use a simplified set of fields with just a title and body, and will have the editor preview disabled. All other entries in the collection use the regular fields list.
+
+**Limitation:** Currently, you cannot convert an index file into a content file or vice versa. To workaround this, remove the file and add a new one with the desired slug and contents.
 
 ### Folder Collections Path
 
