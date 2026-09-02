@@ -36,6 +36,16 @@ Site creation is an owner-only action. Ask an owner of the organization to creat
 **"This organization has reached its site limit" / "...seat limit"**
 You're at your plan's included sites or seats. Either free up a slot (delete or lock an existing site, remove a member) or add capacity from [Billing](../turbo-billing/) — extra sites/seats as an add-on, or upgrade plans.
 
+## Editors are never told when their change is live
+
+Deploy status only works if something reports your builds to Decap. Most hosts
+do this automatically through the Decap GitHub App — **Netlify does not**, for
+branch or production deploys, and no Netlify setting changes that.
+
+Open your site's **Deploys** tab in the dashboard. If nothing has been
+recorded, add the deploy webhook; the full walkthrough and the other causes are
+in [Deploy status](../turbo-deploy-status/).
+
 ## Frequently asked questions
 
 **Does using Decap Turbo change how my content is stored?**

@@ -30,6 +30,9 @@ features:
     - title: Site variables
       icon: lock
       description: Store API credentials your site config needs, without committing them to the repo. Mark sensitive ones as secret to encrypt them at rest and mask them in the dashboard.
+    - title: Know when it's live
+      icon: rocket
+      description: Saving commits a change; it doesn't put it on the site. Decap watches the deploy and tells the editor when their change is actually live, wherever they are in the CMS — plus a Deploys page showing what shipped, where it went, and why a build failed.
 plans:
   title: Choose your plan
   description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. We're in public preview and free to use until October 19, 2026 — no credit card required."
