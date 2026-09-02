@@ -51,7 +51,7 @@ Yes — Decap CMS itself is free and open source regardless of whether you use T
 No. Editors authenticate with their Decap Turbo account only — see [How it works](../turbo-how-it-works/#editors-never-see-a-git-hosting-token).
 
 **How do I get access if I don't have an account yet?**
-Decap Turbo is currently invite-only. [Join the waitlist](/turbo/join-early-access/) and you'll be invited as capacity opens up.
+Decap Turbo is in public preview — [sign up](https://turbo.decapcms.org/signup) directly, no invite required.
 
 **How do I ask about Enterprise or dedicated infrastructure?**
 Contact us from the [Turbo plans page](/turbo/#plans) or your organization's Billing page — Enterprise is a custom-quoted plan handled outside self-serve signup.

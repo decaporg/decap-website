@@ -4,7 +4,7 @@ group: Turbo
 weight: 20
 ---
 
-Decap Turbo is invite-only during closed beta. This walks through accepting an invite (or signing up directly, once that opens up), creating your organization, and creating your first site.
+Decap Turbo is in public preview — anyone can sign up directly. This walks through accepting an invite (or signing up directly), creating your organization, and creating your first site.
 
 ## Accepting an invite
 

@@ -24,9 +24,17 @@
     margin: 0 auto var(--space-fluid-4-5);
     max-width: 56ch;
 
-    &:not(:has(+ .button)) {
+    &:not(:has(+ .turbo-hero__actions)) {
       margin-bottom: 0;
     }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-fixed-4);
   }
 }
 
@@ -129,7 +137,12 @@
     font-size: var(--font-size-lg);
   }
 
-  a {
+  &__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-fixed-4);
     margin-top: var(--space-fluid-4-5);
   }
 }

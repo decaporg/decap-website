@@ -17,7 +17,7 @@ Decap Turbo is operated by PM, poslovni mediji d.o.o., a company registered in S
 | Site configuration | Site variables you choose to store with us | Providing site variable storage | Performance of a contract |
 | Support communications | Messages sent via our contact form | Responding to inquiries and support requests | Legitimate interest (providing support) |
 | Security/technical logs | IP address, request logs, device/browser identifiers | Fraud prevention, abuse detection, and keeping the Service secure | Legitimate interest (security) and legal obligation, where applicable |
-| Beta usage data *(closed beta only)* | Feature usage events (e.g. pages visited, actions taken, errors encountered), tied to your account | Understanding how beta testers use the Service, so we can improve it before general availability | Legitimate interest (product improvement during closed beta) |
+| Usage data *(during public preview)* | Feature usage events (e.g. pages visited, actions taken, errors encountered), tied to your account | Understanding how preview users use the Service, so we can improve it before general availability | Legitimate interest (product improvement during public preview) |
 
 We do not collect payment card details ourselves — see section 3.
 
@@ -30,7 +30,7 @@ We share data with the following categories of recipients:
 - **Professional advisers** — lawyers, accountants, or auditors, where necessary.
 - **Authorities** — where required by law, or to protect our rights, safety, or property, or that of our users.
 
-We don't sell your personal data, and we don't use third-party advertising or tracking services. During the closed beta, we collect basic product-usage data ourselves, stored only in our own Supabase database — never sent to a third-party analytics provider — to understand how the Service is used; see the table in section 2 and how to opt out in section 5.
+We don't sell your personal data, and we don't use third-party advertising or tracking services. During the public preview, we collect basic product-usage data ourselves, stored only in our own Supabase database — never sent to a third-party analytics provider — to understand how the Service is used; see the table in section 2 and how to opt out in section 5.
 
 ## 4. International transfers
 
@@ -40,7 +40,7 @@ We and our sub-processors may process personal data outside the EU/EEA and UK �
 
 We use a session cookie to keep you signed in, and an `active_org_id` cookie to remember which organization you're currently working in. Both are strictly necessary for the Service to function and are set without requiring consent. We don't use analytics, advertising, or third-party tracking cookies.
 
-**Beta usage data.** While Decap Turbo is in closed beta, we record basic product-usage events (e.g. which features you use, page navigation, and errors you encounter) under your account, to help us improve the Service before general release. This data is stored only in our own database (see section 3) and is never shared with third parties or used for advertising. You can turn this off at any time under "Beta usage data" in your profile settings within the Service. This collection will stop, or be re-disclosed under updated terms, before or at general availability.
+**Usage data.** While Decap Turbo is in public preview, we record basic product-usage events (e.g. which features you use, page navigation, and errors you encounter) under your account, to help us improve the Service before general release. This data is stored only in our own database (see section 3) and is never shared with third parties or used for advertising. You can turn this off at any time under "Beta usage data" in your profile settings within the Service. This collection will stop, or be re-disclosed under updated terms, before or at general availability.
 
 ## 6. Data retention and deletion
 

@@ -3,10 +3,14 @@ linkTitle: Decap Turbo
 title: Decap Turbo — managed hosting for Decap CMS
 description: Managed hosting for Decap CMS — hosted auth, Git host rate-limit shielding, a database-backed content store, roles, and site variables.
 hero:
-  badge: Decap Turbo — closed beta
+  badge: Decap Turbo — public preview
   cta:
-    text: Join the waitlist
-    href: '/turbo/join-early-access/'
+    primary:
+      text: Sign up
+      href: 'https://turbo.decapcms.org/signup'
+    secondary:
+      text: Log in
+      href: 'https://turbo.decapcms.org/login'
 intro: "Decap CMS is a free, open-source, Git-based content management system — you can self-host it yourself, for free, forever. Decap Turbo is a paid layer on top of it: we run the infrastructure for you."
 features:
   title: What you get
@@ -28,7 +32,7 @@ features:
       description: Store API credentials your site config needs, without committing them to the repo. Mark sensitive ones as secret to encrypt them at rest and mask them in the dashboard.
 plans:
   title: Choose your plan
-  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. We're in closed beta — join the waitlist and we'll invite you when a spot opens up."
+  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. We're in public preview and free to use until October 19, 2026 — no credit card required."
   items:
     - id: free
       icon: check-circle
@@ -36,8 +40,8 @@ plans:
       description: Try the real product before paying anything
       price_label: "€0"
       subtext: Free forever
-      cta_text: Join the waitlist
-      cta_href: '/turbo/join-early-access/?plan=free'
+      cta_text: Sign up
+      cta_href: 'https://turbo.decapcms.org/signup'
       free: true
       features:
         - 1 site
@@ -52,8 +56,8 @@ plans:
       price_monthly: "€19"
       additional_seat_price: "€6"
       additional_project_price: "€10"
-      cta_text: Join the waitlist
-      cta_href: '/turbo/join-early-access/?plan=pro'
+      cta_text: Sign up
+      cta_href: 'https://turbo.decapcms.org/signup'
       features:
         - 1 site, 3 seats included
         - Git host request shielding
@@ -82,6 +86,8 @@ faq:
       a: "No — Turbo runs alongside Decap CMS, it doesn't fork or replace it. You still get the same open-source editing experience; Turbo just removes the operational burden of hosting the supporting infrastructure."
     - q: Is the Free plan actually free, or is it a trial?
       a: "It's free, not a trial. Self-hosted Decap CMS is free because it's open source — you bring your own Git backend and auth, and run the infrastructure yourself. The Decap Turbo Free plan is free because we run the managed infrastructure for you, capped to one site and one seat. Neither one is a trial of the other, and paying for Decap Turbo never means paying for Decap CMS itself."
+    - q: Is Decap Turbo really free right now?
+      a: "Yes — during the public preview, every plan's features are available at no cost until October 19, 2026, and no credit card is required to sign up. After that date, accounts move onto our normal Free, Pro, and Enterprise plans."
     - q: How does billing work?
       a: "Plans are billed monthly with no long-term commitment. Payments are processed by Paddle.com, our reseller and merchant of record."
     - q: Can I add more sites or seats without upgrading plans?
@@ -90,9 +96,14 @@ faq:
       a: "No. Turbo plans cover the managed platform itself — hosted auth, Git host request shielding, the database-backed content store, roles, and site variables. They don't include bespoke development work on your site or on Decap CMS."
 cta_section:
   title: Ready to get started?
-  description: Decap Turbo is in closed beta. Join the waitlist and we'll invite you as we open up capacity. Already have access? Read the [setup docs](/docs/turbo-overview/).
-  button_text: Join the waitlist
-  button_href: '/turbo/join-early-access/'
+  description: Decap Turbo is in public preview and free until October 19, 2026 — no credit card required. Already have an account? Read the [setup docs](/docs/turbo-overview/).
+  buttons:
+    primary:
+      text: Sign up
+      href: 'https://turbo.decapcms.org/signup'
+    secondary:
+      text: Sign in
+      href: 'https://turbo.decapcms.org/login'
 comparison:
   title: Compare plans
   description: "All add-ons are included at no extra cost on Enterprise."

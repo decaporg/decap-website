@@ -15,7 +15,7 @@ By creating an account or using the Service, you agree to be bound by these Term
 
 Decap Turbo is a managed hosting layer built on top of the open-source Decap CMS project. It provides hosted authentication, a Git hosting API request proxy, a database-backed content store, role-based access control, and site variable storage. Decap CMS itself remains free and open source and can always be self-hosted independently of this Service.
 
-Decap Turbo is currently in closed beta. Beta features may change, break, or be removed without notice, and we don't guarantee the same stability or support level for beta features as for generally available ones. We'll try to give reasonable notice before removing a beta feature you're actively relying on.
+Decap Turbo is currently in public preview. Preview features may change, break, or be removed without notice, and we don't guarantee the same stability or support level for preview features as for generally available ones. We'll try to give reasonable notice before removing a preview feature you're actively relying on.
 
 ## 4. Third-party services we depend on
 

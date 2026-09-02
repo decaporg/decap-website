@@ -7,7 +7,7 @@ weight: 10
 
 Decap Turbo is a managed hosting layer for Decap CMS — see [the Turbo product page](/turbo/) for what it does and what it costs. This section covers how to actually use it once you have access: setting up your organization, connecting a Decap CMS install, managing roles and members, billing, and troubleshooting.
 
-Decap Turbo is currently in closed beta. If you don't have access yet, [join the waitlist](/turbo/join-early-access/).
+Decap Turbo is currently in public preview. If you don't have an account yet, [sign up](https://turbo.decapcms.org/signup).
 
 ## In this section
 

@@ -52,7 +52,14 @@
     <div class="container size-sm">
       <h2 class="heading-display">{{ .title }}</h2>
       <p>{{ .description | markdownify }}</p>
-      <a href="{{ .button_href }}" class="button button--secondary-white-bg">{{ .button_text }}</a>
+      <div class="turbo-cta__actions">
+        {{ with .buttons.primary }}
+          <a href="{{ .href }}" class="button button--secondary-white-bg">{{ .text }}</a>
+        {{ end }}
+        {{ with .buttons.secondary }}
+          <a href="{{ .href }}" class="button button--text-white">{{ .text }}</a>
+        {{ end }}
+      </div>
     </div>
   </section>
   {{ end }}
