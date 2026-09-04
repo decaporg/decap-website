@@ -27,12 +27,18 @@ dot at rest, amber while a save is still publishing, red after a failed build.
 It opens a page listing recent deploys, which refreshes itself while you have
 it open, so a build finishing is visible without reloading.
 
-On that page, only the most recent successful deploy **of the branch your site
-publishes from** is marked **Live** — that is the one being served. Every other
-success is marked **Deployed**: earlier ones were live and have since been
-superseded, and a build of some other branch was never the live site in the
-first place. That second case is the common one under editorial workflow, where
-your host will happily branch-deploy every `cms/…` branch the CMS creates.
+On that page, each branch's most recent successful deploy is marked **Live** —
+that is what that branch's URL is currently serving. Earlier successes on the
+same branch are marked **Deployed**: they were live once and have since been
+superseded.
+
+Expect more than one **Live** if you use editorial workflow, because your host
+will branch-deploy every `cms/…` branch the CMS creates and each of those has
+its own URL. Only the one on the branch your site publishes from is the
+published site — hover it and the others will tell you so. The sentence at the
+top of the page is the one that answers "is my change live", and it never
+speaks for anything but your site's own branch.
+
 Commit ids link to the commit on your git host, and the state links to the
 deploy itself: the site for a success, the build log for a failure.
 
@@ -44,6 +50,28 @@ Two things the entry column cannot show: a commit that did not come from the
 CMS (a git push, a CI job) has no entry behind it, and where a host batches
 several commits into one build, the row names the entry of the commit it
 built. Both appear as a dash.
+
+### Finding a deploy
+
+The table is filtered by **reported by**, **state** and **branch**, and every
+column sorts — click its heading, click again to reverse. The state filter
+offers exactly the words in the column, so "Live" narrows it to what each branch
+is serving right now.
+
+It shows 20 rows at a time, or 50 or 100 if you would rather scroll; the page
+works over the most recent 200 deploys, and your host's own dashboard is the
+place to go further back than that.
+
+### "Unknown"
+
+A build still marked as running half an hour after anything last mentioned it
+is shown as **Unknown** rather than left spinning. It has not failed as far as
+Decap knows — nobody said anything more about it, and that is a different claim.
+
+The usual cause is a deploy preview whose branch was deleted mid-build. Merging
+an editorial-workflow entry removes its `cms/…` branch while the preview for it
+is still building, and some hosts then abandon that build without ever reporting
+a result. Nothing is wrong with your site; the published deploy is unaffected.
 
 ## Does my site need setting up?
 
@@ -137,6 +165,22 @@ curl -X POST "$DECAP_DEPLOY_HOOK_URL" \
 
 Send `Content-Type: application/json` — a form content type is rejected before
 it reaches the handler.
+
+## Rotating or removing the webhook
+
+Both live on the site's **Deploys** tab in the Turbo dashboard.
+
+**Generate a new secret** replaces the secret immediately. The old one stops
+being accepted the moment you click it, and your host keeps signing with it —
+so every report is rejected until you paste the new secret into your host. On
+Netlify that means updating **all three** notifications, not just one.
+
+**Disable the webhook** stops Decap accepting reports at that URL at all.
+Deploys already recorded stay on the Deploys page; nothing new is added.
+Re-enabling issues a fresh URL and secret, so the host has to be updated again.
+
+Neither is needed for a host that reports through your git provider — those
+never had a webhook to begin with.
 
 ## Editorial workflow
 
