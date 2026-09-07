@@ -31,34 +31,21 @@ turboBanner:
       icon: "turbo-speed"
     - text: "Centralized authentication, user management, and roles"
       icon: "turbo-shield"
-    - text: "Real-time editing visibility"
-      icon: "turbo-collaboration"
+    - text: "Editors told when their change is actually live"
+      icon: "rocket"
     - text: "Site variables for advanced workflows"
       icon: "turbo-shield"
   button:
     text: "Learn more about Turbo"
     href: "/turbo/"
   preview:
-    editors:
-      title: "Active editors"
-      status: "8 team members online"
-      icon: "turbo-team"
-      avatars:
-        - initials: "JD"
-          tone: "pink"
-        - initials: "SM"
-          tone: "purple"
-        - initials: "AL"
-          tone: "blue"
-        - initials: "+5"
-          tone: "rose"
     collaboration:
       title: "Centralized user management"
       description: "Manage users, roles, and permissions for all your sites from a single interface."
     performance:
       title: "CMS performance"
-      value: "Up to 60% faster"
-      description: "vs. standard Decap CMS"
+      value: "205 entries in 0.3s"
+      description: "Read from Turbo's database instead of one Git API call per file (measured Sept 2026)"
       icon: "turbo-performance"
 
 # Homepage Comparison
@@ -88,9 +75,9 @@ comparison:
       features:
         - "Database proxy for faster CMS performance"
         - "Centralized authentication handling"
-        - "User roles and permissions (Team and above)"
-        - "Real-time editing visibility (Team and above)"
-        - "Priority support (Business)"
+        - "User roles and permissions, with custom roles as a Pro add-on"
+        - "Site variables, with secrets encrypted at rest"
+        - "Priority support as a Pro add-on, included on Enterprise"
 
 # Homepage Features
 features:

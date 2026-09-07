@@ -33,23 +33,6 @@
 
       {{ with .preview }}
         <div class="turbo-banner__preview" aria-hidden="true">
-          {{ with .editors }}
-            <div class="turbo-banner__card turbo-banner__card--editors">
-              <div class="turbo-banner__card-header">
-                <span>{{ .title }}</span>
-                <span class="turbo-banner__card-header-icon">{{ partial "icon" .icon }}</span>
-              </div>
-
-              <div class="turbo-banner__avatars">
-                {{ range .avatars }}
-                  <span class="turbo-banner__avatar turbo-banner__avatar--{{ .tone }}">{{ .initials }}</span>
-                {{ end }}
-              </div>
-
-              <p class="turbo-banner__card-note">{{ .status }}</p>
-            </div>
-          {{ end }}
-
           {{ with .collaboration }}
             <div class="turbo-banner__card turbo-banner__card--collaboration">
               <div class="turbo-banner__live-label">

@@ -162,45 +162,6 @@
     font-size: var(--font-size-sm);
   }
 
-  &__avatars {
-    display: flex;
-    margin-bottom: var(--space-fixed-4);
-  }
-
-  &__avatar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin-left: -8px;
-    border: 2px solid var(--color-white);
-    border-radius: 50%;
-    font-family: var(--font-family-secondary);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &--pink {
-      background: var(--color-primary-light);
-    }
-
-    &--purple {
-      background: var(--color-primary-dark);
-    }
-
-    &--blue {
-      background: var(--color-blue);
-    }
-
-    &--rose {
-      background: #d081bb;
-    }
-  }
-
   &__live-label {
     display: inline-flex;
     align-items: center;
