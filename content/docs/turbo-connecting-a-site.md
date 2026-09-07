@@ -52,7 +52,41 @@ With `backend: turbo-github` (or `turbo-gitlab`) set, your Decap CMS login scree
 - If you're not already signed in to Decap Turbo, you'll log in there (same account you use for the Turbo dashboard).
 - If you're already signed in, the popup completes and closes automatically.
 
-You're then editing as yourself — commits made through the CMS are attributed to your real name/email, not a shared bot account, and your session refreshes automatically in the background so you don't get logged out mid-edit. You'll need to already have [access to this specific site](../turbo-roles-and-members/) for this to work — being able to log in to Decap Turbo isn't enough on its own if you haven't been added to the site.
+You're then editing as yourself, and your session refreshes automatically in the background so you don't get logged out mid-edit. You'll need to already have [access to this specific site](../turbo-roles-and-members/) for this to work — being able to log in to Decap Turbo isn't enough on its own if you haven't been added to the site.
+
+### How commits are attributed
+
+This differs between the two backends, so check it against your own `git log`
+before assuming either.
+
+**On GitLab (`turbo-gitlab`)**, commits are authored by you: your Turbo display
+name and account email are sent as GitLab's `author_name` and `author_email`.
+The organization's group token appears as the committer.
+
+**On GitHub (`turbo-github`)**, the **App is the commit author** and you are
+credited on a `Co-authored-by:` trailer:
+
+```
+Author: decap-turbo[bot] <...>
+
+    Update post "my first post"
+
+    Co-authored-by: Your Name <you@example.com>
+```
+
+Turbo commits with the organization's App installation token, and GitHub's
+`createCommitOnBranch` authors a commit as whoever holds the token, with no
+override available. GitHub reads the trailer, renders co-author avatars on the
+commit and counts it toward your contributions, so the person behind a change
+is still visible in the UI and in `git log` — on the trailer rather than in the
+author field.
+
+That is a deliberate trade rather than an oversight: controlling the author
+field on GitHub means dropping back to the multi-step REST commit sequence,
+which costs three extra round trips to GitHub on every save, on the one action
+editors perform most. If tooling of yours reads the author field specifically —
+release notes that map commits to people, contributor stats built from
+`git log --author` — point it at the trailer instead.
 
 ## The config path field
 

@@ -15,7 +15,7 @@ If someone invited you to their organization, you'll get an email with an accept
 
 Accepting adds you to the inviting organization — and to any specific sites the invite included — immediately; there's no way to get site access without becoming an org member too. You don't create your own organization in this path; you land directly on the sites and content the owner scoped you into. If the invite's only purpose was to give you access to one or more sites, your [profile page](#your-profile) is really all you need — see below.
 
-If you were invited as a beta participant without an organization attached, you'll go through account creation and then create your own organization (below).
+If your invite didn't have an organization attached, you'll go through account creation and then create your own organization (below) — the same path as signing up directly.
 
 ## Creating your organization
 
