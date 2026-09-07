@@ -6,7 +6,11 @@
 
   <div class="docs-nav__content" id="docs-nav-content">
     {{ $currentPage := . }}
-    {{ $docsPages := where .Site.RegularPages "Section" "docs" }}
+    {{/* .Pages rather than .RegularPages so a section index (e.g. Help) can
+         stand in for its children, which stay out of the nav. /help/ is its
+         own top-level section so its URLs stay short and stable, but it is
+         still docs content, so it belongs in this nav. */}}
+    {{ $docsPages := where .Site.Pages "Section" "in" (slice "docs" "help") }}
     {{ $docsMenu := .Site.Menus.docs }}
     
     {{/* Loop through Hugo menu to maintain order and proper titles */}}
@@ -21,7 +25,8 @@
         <ul class="docs-nav__section-list">
           {{ range $groupPages.ByWeight }}
           <li class="docs-nav__item">
-            <a href="{{ .RelPermalink }}" class="docs-nav__link{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{end}}">
+            {{ $isActive := or (eq $currentPage.RelPermalink .RelPermalink) (and .IsSection (hasPrefix $currentPage.RelPermalink .RelPermalink)) }}
+            <a href="{{ .RelPermalink }}" class="docs-nav__link{{ if $isActive }} active{{end}}">
               {{ .Title }}
             </a>
             
