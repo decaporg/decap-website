@@ -41,6 +41,10 @@
         {
           "text": "Refund Policy",
           "href": "/turbo/refunds/"
+        },
+        {
+          "text": "Data Processing Agreement",
+          "href": "/turbo/dpa/"
         }
       ]
     },
