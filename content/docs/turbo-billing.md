@@ -46,7 +46,7 @@ When the downgrade actually takes effect (or if a subscription is canceled for p
 - Every organization member other than the owner is locked out.
 - Any pending invitations are revoked.
 
-Nothing is deleted — locked sites and memberships come back as soon as you upgrade again and have room under the new plan's limits. If you're planning to downgrade, it's worth deciding in advance which site you want to keep active, since the rest become read-only until you either upgrade again or manually manage slots (see [site locking](../turbo-roles-and-members/#site-locking)).
+Nothing is deleted. Upgrading again unlocks sites and memberships automatically, oldest first, as far as the new plan's limits reach — so an organization that had three sites and dropped to Free gets one back on Pro's included site, and the other two stay read-only until you add extra sites or free up slots yourself (see [site locking](../turbo-roles-and-members/#site-locking)). Revoked invitations aren't restored; send them again. If you're planning to downgrade, it's worth deciding in advance which site you want to keep active.
 
 ## Invoices and payment method
 

@@ -53,7 +53,7 @@ A site can become **locked**, meaning it's read-only for everyone, including its
 - **Automatically**, if your organization is downgraded or a subscription is canceled and you have more sites than your new plan allows (one site is retained and stays active; the rest lock).
 - **Manually**, if an owner locks a site on purpose — for example, to free up a site slot on your plan without deleting it.
 
-A locked site doesn't count against your plan's site limit, so unlocking one requires having a free slot (either by locking/deleting another site first, or upgrading).
+A locked site doesn't count against your plan's site limit, so unlocking one requires having a free slot (either by locking/deleting another site first, or upgrading). Upgrading unlocks sites for you, oldest first, for as many slots as the new plan has — anything that doesn't fit stays locked for you to unlock by hand once you've made room.
 
 ## Transferring a site
 
