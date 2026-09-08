@@ -78,7 +78,6 @@ plans:
       features:
         - Fair-use "unlimited" sites & seats
         - Custom/granular roles
-        - SSO/SAML
         - Dedicated support & SLA
 billing_note: "All prices are in EUR, billed monthly, tax included. There's no yearly self-serve option — Free and Pro are both month-to-month. Payments are processed by [Paddle.com](https://www.paddle.com), our reseller and merchant of record. See our [Terms of Service](/turbo/terms/), [Privacy Policy](/turbo/privacy/), and [Refund Policy](/turbo/refunds/)."
 faq:
@@ -140,8 +139,6 @@ comparison:
         - feature: Basic roles
           values: [true, true, true]
         - feature: Custom/granular roles
-          values: [false, false, true]
-        - feature: SSO/SAML
           values: [false, false, true]
     - title: Support
       rows:
