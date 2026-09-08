@@ -1,0 +1,50 @@
+<section class="home-features" id="{{ .id }}">
+  {{ $featuresSection := site.GetPage "section" "features" }}
+  {{ $homeFeatures := where $featuresSection.RegularPages "Params.homepage" true }}
+  {{ $personaContext := partial "features/persona-context" (dict "features" $homeFeatures) }}
+
+  <div class="container size-lg">
+    <div class="home-features__intro">
+      <h2 class="heading-display">{{ .title }}</h2>
+
+      {{ with .description }}
+        <div class="lead">{{ . | markdownify }}</div>
+      {{ end }}
+    </div>
+
+    {{ partial "features-prioritizer" (dict
+      "personaOrderByWeight" $personaContext.personaOrderByWeight
+      "personaLabels" $personaContext.personaLabels
+      "ariaLabel" "Homepage feature prioritization"
+      "class" "features-prioritizer--home"
+    ) }}
+
+    <div class="home-features__cards swiper" data-features-swiper>
+      <div class="swiper-wrapper" data-features-grid>
+        {{ range $index, $feature := $homeFeatures }}
+          {{ $personas := delimit $feature.Params.personas "," }}
+          <div class="swiper-slide" data-personas="{{ $personas }}" data-default-order="{{ $index }}">
+            {{ partial "feature-card" (dict "feature" $feature.Params) }}
+          </div>
+        {{ end }}
+      </div>
+      <div class="home-features__controls">
+        <div class="home-features__pagination swiper-pagination"></div>
+        <div class="home-features__nav">
+            <button class="home-features__nav-btn home-features__nav-btn--prev" aria-label="Previous">
+              {{ partial "icon" "arrow-left" }}
+            </button>
+            <button class="home-features__nav-btn home-features__nav-btn--next" aria-label="Next">
+              {{ partial "icon" "arrow-right" }}
+            </button>
+        </div>
+    </div>
+    </div>
+
+    {{ with .button }}
+      <div class="home-features__button">
+        <a href="{{ .href }}" class="button {{ .class | default "button--primary" }}">{{ .text }}</a>
+      </div>
+    {{ end }}
+  </div>
+</section>

@@ -16,6 +16,8 @@ You need Hugo installed on your machine: <https://gohugo.io/getting-started/quic
 
 This repository is set up to be developed with [Visual Studio Code](https://code.visualstudio.com/) editor. Please install reccommended extensions listed in [extensions.json](.vscode/extensions.json)
 
+Use `npm install` to install project dependencies before running local development commands.
+
 If this is your first time running the project, run
 
 `npx husky init`
@@ -34,16 +36,14 @@ We follow the standard Javascript style.
 
 ### Linters
 
-There are 3 linters set up:
+There are 2 linters currently configured in the npm scripts:
 - [stylelint](https://stylelint.io/) for CSS/SCSS
 - [eslint](https://eslint.org/) for JavaScript
-- [htmlhint](https://htmlhint.com/) for HTML
 
 #### Linter Configuration Files
 
 - `stylelint.config.js` - Stylelint configuration using ES modules
 - `eslint.config.js` - ESLint configuration using ES modules  
-- `.htmlhintrc` - HTMLHint configuration
 
 #### Running Linters
 
@@ -54,7 +54,6 @@ npm run lint
 # Run individual linters
 npx stylelint "**/*.scss"
 npx eslint .
-npx htmlhint 'layouts/**/*.html'
 ```
 
 #### Auto-fixing
@@ -78,6 +77,20 @@ The hook configuration is in `.husky/pre-commit` and runs `npx lint-staged`, whi
 * [Hugo](https://gohugo.io/)
 * [Decap CMS](https://decapcms.org/)
 * [Netlify](https://www.netlify.com)
+
+## Content Management
+
+Decap CMS admin is available at `/admin/` when the local server is running.
+
+### Local CMS workflow
+
+```bash
+hugo server
+# Open http://localhost:1313/admin/
+
+# Optional local backend mode
+npx decap-server
+```
 
 ## Dependencies
 

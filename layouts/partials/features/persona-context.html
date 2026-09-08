@@ -1,0 +1,28 @@
+{{ $features := .features }}
+{{ $personasPage := site.GetPage "/personas" }}
+{{ $featurePersonas := slice }}
+{{ $personaOrderByWeight := slice }}
+{{ $personaLabels := dict }}
+
+{{ range $features }}
+  {{ range .Params.personas }}
+    {{ if not (in $featurePersonas .) }}
+      {{ $featurePersonas = $featurePersonas | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $personasPage }}
+  {{ range .Pages.ByWeight }}
+    {{ $slug := .Params.slug | default .File.ContentBaseName }}
+    {{ if in $featurePersonas $slug }}
+      {{ $personaOrderByWeight = $personaOrderByWeight | append $slug }}
+      {{ $personaLabels = merge $personaLabels (dict $slug .LinkTitle) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return (dict
+  "personaOrderByWeight" $personaOrderByWeight
+  "personaLabels" $personaLabels
+) }}

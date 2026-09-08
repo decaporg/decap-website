@@ -1,5 +1,6 @@
 ---
-title: Overview
+linkTitle: Overview
+title: Decap CMS overview
 group: Intro
 weight: 1
 aliases:

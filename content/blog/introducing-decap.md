@@ -20,4 +20,4 @@ We understand that there may be some growing pains as we transition to being the
 
 We would like to thank Netlify for entrusting us with the Netlify CMS project. We are excited and grateful for this opportunity.
 
-Team of maintainers at [PM](https://techhub.p-m.si/)
+Decap maintainers, with sponsorship from [PM d.o.o.](https://p-m.si/).

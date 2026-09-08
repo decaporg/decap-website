@@ -1,0 +1,35 @@
+.home-values {
+  padding: var(--space-fluid-7-9) 0;
+  background: var(--gradient-section);
+
+  &__intro {
+    margin: 0 auto;
+    max-width: 768px;
+    text-align: center;
+  
+    h2 {
+      margin: 0 0 var(--space-fixed-5);
+    }
+  
+    p {
+      color: var(--color-gray-700);
+      font-size: var(--font-size-xl);
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-fluid-4-5);
+    margin-top: var(--space-fluid-5-7);
+
+    @include breakpoint-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

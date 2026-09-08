@@ -1,0 +1,28 @@
+<section class="home-comparison">
+  <div class="container">
+    <h2 class="home-comparison__title heading-display">{{ .title }}</h2>
+
+    <div class="home-comparison__grid">
+      {{ range .options }}
+        <article class="home-comparison__card home-comparison__card--{{ .theme }}">
+          <div class="home-comparison__card-content">
+            <h3 class="home-comparison__card-title">{{ .title }}</h3>
+            <p class="home-comparison__card-description">{{ .description }}</p>
+
+            {{ with .features }}
+              <ul class="home-comparison__features" role="list">
+                {{ range . }}
+                  <li class="home-comparison__feature">{{ . }}</li>
+                {{ end }}
+              </ul>
+            {{ end }}
+
+            {{ with .button }}
+              <a href="{{ .href }}" class="button {{ .class | default "button--secondary" }}">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -13,6 +13,22 @@ body {
   margin: 0;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-fixed-3);
+  z-index: 1000;
+  padding: var(--space-fixed-2) var(--space-fixed-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+
+  &:focus {
+    top: var(--space-fixed-3);
+  }
+}
+
 img {
   max-width: 100%;
 }

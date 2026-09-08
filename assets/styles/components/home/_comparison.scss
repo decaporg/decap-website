@@ -1,0 +1,104 @@
+.home-comparison {
+  margin: var(--space-fluid-6-9) 0 var(--space-fluid-5-8);
+
+  &__title {
+    @extend .heading-display;
+
+    text-align: center;
+    margin: 0 0 var(--space-fluid-4-6);
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-fluid-4-5);
+
+    @include breakpoint-up(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__card {
+    border-radius: var(--radius-lg);
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &--core {
+      background:
+        linear-gradient(180deg, #fff 0%, #fff7fb 100%);
+      border: 1px solid #f2d7e5;
+      box-shadow: var(--shadow-lg);
+      color: var(--color-gray-900);
+
+      .home-comparison__feature::before {
+        background: var(--color-primary-light);
+        box-shadow: 0 0 0 4px #fff0f7;
+      }
+    }
+
+    &--turbo {
+      background: var(--gradient-turbo);
+      box-shadow: var(--shadow-lg);
+      color: var(--color-white);
+
+      .home-comparison__feature::before {
+        background: var(--color-white);
+        box-shadow: 0 0 0 4px #ffffff26;
+      }
+    }
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-fixed-4);
+    height: 100%;
+    padding: var(--space-fluid-5-7);
+  }
+
+  &__card-title {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  &__card-description {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 34ch;
+  }
+
+  &__features {
+    display: grid;
+    gap: var(--space-fixed-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__feature {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size-sm);
+    gap: var(--space-fixed-3);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &__feature::before {
+    border-radius: 999px;
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    height: 10px;
+    width: 10px;
+  }
+
+  .button {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+}

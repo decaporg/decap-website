@@ -1,0 +1,27 @@
+<section id="{{ or .Slug .File.ContentBaseName }}" class="container service-detail">
+  <h2 class="heading-display">{{ .Title }}</h2>
+
+  {{ if or .Params.bestFor .Params.highlights }}
+    <div class="service-detail__item">
+      {{ with .Params.bestFor }}
+        <section class="service-detail__card service-detail__card--best-for">
+          <h3 class="service-detail__title">Best for</h3>
+          <p class="service-detail__text">{{ . }}</p>
+        </section>
+      {{ end }}
+
+      {{ with .Params.highlights }}
+        <section class="service-detail__card service-detail__card--highlights">
+          <h3 class="service-detail__title">Highlights</h3>
+          <ul class="service-detail__list">
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{ .Content }}
+</section>

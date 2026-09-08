@@ -181,3 +181,72 @@ collections:
                     fields:
                       - { name: href, label: URL }
                       - { name: text, label: Link Text }
+
+  - name: personas
+    label: Personas
+    label_singular: Persona
+    folder: content/personas
+    create: true
+    path: '{{slug}}/_index'
+    nested:
+      depth: 2
+    summary: '{{title}} ({{slug}})'
+    sortable_fields: ['weight', 'title', 'slug']
+    editor:
+      preview: false
+    fields:
+      - { label: Name, name: title, widget: string }
+      - { label: Order (weight), name: weight, widget: number, value_type: int }
+      - { label: Slug, name: slug, widget: string, hint: 'Taxonomy value used by features, e.g. editor, developer, team, agency' }
+
+  - name: features
+    label: Features
+    label_singular: Feature
+    folder: content/features
+    create: true
+    filter:
+      field: build
+      pattern: '.*'
+    summary: '{{weight}}. {{title}} ({{product}})'
+    sortable_fields: ['weight', 'title', 'product']
+    editor:
+      preview: false
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Product
+        name: product
+        widget: select
+        options:
+          - { label: 'Decap CMS (core)', value: core }
+          - { label: 'Decap Turbo', value: turbo }
+      - label: Order (weight)
+        name: weight
+        widget: number
+        value_type: int
+      - label: Show on Homepage
+        name: homepage
+        widget: boolean
+        default: false
+      - label: Description
+        name: description
+        widget: text
+      - label: Personas
+        name: personas
+        widget: relation
+        multiple: true
+        collection: personas
+        search_fields: ['title', 'slug']
+        display_fields: ['title']
+        value_field: slug
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Image Alt Text
+        name: imageAlt
+        widget: string
+        required: false
+      - label: Visual Direction Note
+        name: visual
+        widget: string
+        required: false

@@ -1,0 +1,14 @@
+<div class="icon-card__container">
+  <div class="icon-card {{ .class }}">
+    {{ with .icon }}
+      <span class="icon-card__icon" aria-hidden="true">
+        {{ partial "icon" . }}
+      </span>
+    {{ end }}
+
+    <div class="icon-card__text">
+      <h3>{{ .title }}</h3>
+      <p>{{ .description }}</p>
+    </div>
+  </div>
+</div>

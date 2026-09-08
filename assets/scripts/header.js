@@ -4,9 +4,23 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn')
 const mobileSearchBtn = document.getElementById('mobile-search-btn')
 const headerMenu = document.getElementById('header-menu')
 const headerSearch = document.getElementById('header-search')
+const menuItemsWithChildren = document.querySelectorAll('.header__menu-item.has-children')
 
 let scrolled = false
 let ticking = false
+
+function closeSubmenus (exceptItem = null) {
+  menuItemsWithChildren.forEach((item) => {
+    if (item === exceptItem) return
+
+    item.classList.remove('submenu-open')
+
+    const trigger = item.querySelector('.header__menu-trigger')
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', 'false')
+    }
+  })
+}
 
 // Toggle menu
 function toggleMenu () {
@@ -19,12 +33,13 @@ function toggleMenu () {
   const closeIcon = mobileMenuBtn.querySelector('.close-icon')
 
   if (isOpen) {
-    menuIcon.style.display = 'inline'
+    menuIcon.style.display = 'inline-block'
     closeIcon.style.display = 'none'
     mobileMenuBtn.setAttribute('aria-expanded', 'false')
+    closeSubmenus()
   } else {
     menuIcon.style.display = 'none'
-    closeIcon.style.display = 'inline'
+    closeIcon.style.display = 'inline-block'
     mobileMenuBtn.setAttribute('aria-expanded', 'true')
 
     // Close search and reset its button
@@ -75,6 +90,7 @@ function toggleSearch () {
     // Close menu and reset its button
     headerMenu.classList.remove('open')
     resetMenuButton()
+    closeSubmenus()
 
     const searchInput = headerSearch.querySelector('input[type="search"], .search-input')
     if (searchInput) setTimeout(() => searchInput.focus(), 100)
@@ -110,6 +126,32 @@ if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu)
 if (mobileSearchBtn) mobileSearchBtn.addEventListener('click', toggleSearch)
 window.addEventListener('scroll', onScroll)
 
+menuItemsWithChildren.forEach((item) => {
+  const trigger = item.querySelector('.header__menu-trigger')
+
+  if (!trigger) return
+
+  trigger.addEventListener('click', () => {
+    const isDesktop = window.matchMedia('(min-width: 1200px)').matches
+    const isExpanded = trigger.getAttribute('aria-expanded') === 'true'
+
+    if (isDesktop) {
+      closeSubmenus(isExpanded ? null : item)
+    }
+
+    item.classList.toggle('submenu-open', !isExpanded)
+    trigger.setAttribute('aria-expanded', String(!isExpanded))
+  })
+
+  trigger.addEventListener('focus', () => {
+    if (window.matchMedia('(min-width: 1200px)').matches) {
+      closeSubmenus(item)
+      item.classList.add('submenu-open')
+      trigger.setAttribute('aria-expanded', 'true')
+    }
+  })
+})
+
 // Close on outside click
 document.addEventListener('click', (e) => {
   if (header && !header.contains(e.target)) {
@@ -121,6 +163,7 @@ document.addEventListener('click', (e) => {
       headerSearch.classList.remove('open')
       resetSearchButton()
     }
+    closeSubmenus()
   }
 })
 
@@ -135,5 +178,6 @@ document.addEventListener('keydown', (e) => {
       headerSearch.classList.remove('open')
       resetSearchButton()
     }
+    closeSubmenus()
   }
 })

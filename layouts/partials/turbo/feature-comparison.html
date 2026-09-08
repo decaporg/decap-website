@@ -1,0 +1,65 @@
+{{ with .Params.comparison }}
+{{ $c := . }}
+<section class="turbo-comparison" id="feature-comparison">
+  <div class="container size-lg">
+    {{ with .title }}<h2 class="turbo-comparison__title">{{ . }}</h2>{{ end }}
+    {{ with .description }}<p class="turbo-comparison__description">{{ . }}</p>{{ end }}
+    <div class="turbo-comparison__table-wrapper">
+      <table class="turbo-comparison-table">
+        <colgroup>
+          <col class="turbo-comparison-table__col--feature">
+          {{ range .columns }}<col class="turbo-comparison-table__col--plan">{{ end }}
+        </colgroup>
+        <thead>
+          <tr class="turbo-comparison-table__head-row">
+            <th class="turbo-comparison-table__th turbo-comparison-table__th--feature" scope="col">Feature</th>
+            {{ range .columns }}
+            <th class="turbo-comparison-table__th turbo-comparison-table__th--plan" scope="col">
+              <span class="turbo-comparison-table__plan-name">{{ .name }}</span>
+              <span class="turbo-comparison-table__plan-price"><strong>{{ .price }}</strong>&nbsp;/ month</span>
+            </th>
+            {{ end }}
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .sections }}
+          {{ $totalCols := add 1 (len $c.columns) }}
+          {{ with .title }}
+          <tr class="turbo-comparison-table__group-header">
+            <th colspan="{{ $totalCols }}" scope="colgroup">{{ . }}</th>
+          </tr>
+          {{ end }}
+          {{ range .rows }}
+          {{ $feature := .feature }}
+          <tr class="turbo-comparison-table__row">
+            <th class="turbo-comparison-table__td" scope="row">
+              {{ $feature }}
+              {{ with .tooltip }}
+              <span class="turbo-comparison-table__info-wrap">
+                <button class="turbo-comparison-table__info-btn" type="button" aria-label="More info about {{ $feature | lower }}">
+                  {{ partial "icon" "info" }}
+                </button>
+                <span class="turbo-comparison-table__tooltip" role="tooltip">{{ . }}</span>
+              </span>
+              {{ end }}
+            </th>
+            {{ range .values }}
+            <td class="turbo-comparison-table__td turbo-comparison-table__td--center">
+              {{ if eq . true }}
+                {{ partial "icon" "check-circle" }}
+              {{ else if eq . false }}
+                <span class="turbo-comparison-table__unavailable" aria-label="Not included">—</span>
+              {{ else }}
+                {{ . }}
+              {{ end }}
+            </td>
+            {{ end }}
+          </tr>
+          {{ end }}
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,9 +1,9 @@
 .blog-list {
   &__item {
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-fluid-5-7);
 
     h2 {
-      margin-bottom: var(--space-2);
+      margin-bottom: var(--space-fixed-2);
       
       a {
         text-decoration: none;

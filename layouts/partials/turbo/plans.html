@@ -1,0 +1,66 @@
+{{ with .Params.plans }}
+<section class="turbo-plans" id="plans" data-turbo-plans>
+  <div class="container size-lg">
+    <h2 class="turbo-plans__title heading-display">{{ .title }}</h2>
+    <p class="turbo-plans__description">{{ .description }}</p>
+
+    <div class="turbo-plans__grid">
+      {{ range .items }}
+      {{ $isFree := .free }}
+      {{ $hasPrice := .price_monthly | default .price }}
+      <article class="turbo-plan {{ if .featured }}turbo-plan--featured{{ end }} {{ if $isFree }}turbo-plan--free{{ end }}" data-plan-card>
+        {{ if .featured }}
+        <p class="turbo-plan__badge">Most popular</p>
+        {{ end }}
+
+        <header class="turbo-plan__header">
+          <div class="turbo-plan__title-row">
+            <span class="turbo-plan__icon" aria-hidden="true">
+              {{ partial "icon" .icon }}
+            </span>
+            <h3 class="turbo-plan__name">{{ .name }}</h3>
+          </div>
+          {{ with .description }}<p class="turbo-plan__summary">{{ . }}</p>{{ end }}
+
+          <div class="turbo-plan__price">
+            {{ if $hasPrice }}
+            <span class="turbo-plan__amount">{{ $hasPrice }}</span>
+            <span class="turbo-plan__period">/ month</span>
+            {{ else }}
+            <span class="turbo-plan__amount">{{ .price_label }}</span>
+            {{ end }}
+          </div>
+
+          {{ with .subtext }}<p class="turbo-plan__billing-note">{{ . }}</p>{{ end }}
+        </header>
+
+        <a
+          href="{{ .cta_href }}"
+          class="button button--block{{ if not $isFree }} button--turbo{{ end }}"
+          data-plan-cta
+          data-plan-id="{{ .id }}"
+          data-plan-name="{{ .name }}"
+        >{{ .cta_text }}</a>
+
+        <ul class="turbo-plan__features">
+          {{ range .features }}
+          <li>{{ partial "icon" "check-circle" }} {{ . }}</li>
+          {{ end }}
+        </ul>
+
+        {{ if and .additional_seat_price .additional_project_price }}
+        <div class="turbo-plan__additional-pricing">
+          <p class="turbo-plan__additional-item">{{ .additional_seat_price }}/additional seat</p>
+          <p class="turbo-plan__additional-item">{{ .additional_project_price }}/additional site</p>
+        </div>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+
+    {{ with $.Params.billing_note }}
+    <p class="turbo-plans__disclaimer">{{ . | markdownify }}</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
