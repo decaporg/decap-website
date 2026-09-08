@@ -49,7 +49,7 @@ The entries for any folder collection can be filtered based on the value of a si
 The `filter` option requires two fields:
 
 * `field`: The name of the collection field to filter on.
-* `value`: The desired field value.
+* `value`: The desired field value or values. This may be a single string, or a list of values.
 
 The example below creates two collections in the same folder, filtered by the `language` field. The first collection includes posts with `language: en`, and the second, with `language: es`.
 
@@ -69,6 +69,30 @@ collections:
     folder: "_posts"
     create: true
     filter: {field: "language", value: "es"}
+    fields:
+      - {label: "Lenguaje", name: "language", widget: "select", options: ["en", "es"]}
+      - {label: "Titulo", name: "title", widget: "string"}
+      - {label: "Contenido", name: "body", widget: "markdown"}
+```
+
+The example below creates one collection including posts with  "en", "en-US" or "en-GB" in the "language" field; and nother with "es", "es-ES" or "es-MX" as the language.
+
+```yaml
+collections:
+  - label: "Blog in English"
+    name: "english_posts"
+    folder: "_posts"
+    create: true
+    filter: {field: "language", value: ["en", "en-US", "en-GB"]}
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - label: "Blog en Español"
+    name: "spanish_posts"
+    folder: "_posts"
+    create: true
+    filter: {field: "language", value: ["es", "es-ES", "es-MX"]}
     fields:
       - {label: "Lenguaje", name: "language", widget: "select", options: ["en", "es"]}
       - {label: "Titulo", name: "title", widget: "string"}
