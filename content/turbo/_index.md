@@ -27,13 +27,13 @@ features:
       description: A request proxy between your editors and your GitHub or GitLab API, so large collections stop hitting rate limits.
     - title: S3-compatible media library
       icon: database
-      description: Upload and browse assets in your own bucket — AWS S3, Cloudflare R2, Bunny, or any S3-compatible provider.
+      description: Upload and browse assets in your own bucket — AWS S3, Cloudflare R2, Bunny, or any S3-compatible provider. Available on Pro and above.
     - title: Role-based access control
       icon: shield
       description: Org-level owner and member roles, plus per-site Full access and custom roles for larger teams.
     - title: Site variables
       icon: lock
-      description: Store credentials your site needs outside config.yml — mark sensitive ones as secret to encrypt them at rest.
+      description: Store credentials your site needs outside config.yml — mark sensitive ones as secret to encrypt them at rest. Available on Pro and above.
     - title: Know when it's live
       icon: check-circle
       description: Editors are told the moment their saved change is actually live, not just committed — available today for GitHub-hosted sites.
@@ -141,7 +141,10 @@ comparison:
         - feature: Database-backed content store
           values: [true, true, true]
         - feature: Media/asset proxy (S3-compatible, incl. Bunny & R2)
-          values: [true, true, true]
+          values: [false, true, true]
+        - feature: Site variables and secrets
+          values: [false, true, true]
+          tooltip: "Store credentials your site needs outside config.yml. Values marked secret are encrypted at rest."
         - feature: Deploy notifications
           values: [true, true, true]
           tooltip: "Currently available for GitHub-hosted sites. GitLab support is on the roadmap."
