@@ -60,6 +60,28 @@ The Usage tab shows your current site and seat counts against your plan's limits
 
 Decap Turbo doesn't bill based on request volume or storage — your invoice is the same every month regardless of usage, aside from add-ons you've added or removed. Instead, every plan is subject to fair use as described in the "Fair use" section of the [Terms of Service](/turbo/terms/); going over it doesn't trigger an automatic charge, it triggers a manual review. In practice this only matters for genuinely unusual traffic patterns — normal editorial use on any plan isn't something you need to watch a meter for.
 
+### Daily request ceilings
+
+Fair use has one enforced number behind it: a **daily ceiling on requests through Turbo's Git proxy**, counted per organization.
+
+| Plan | Requests per day |
+|---|---|
+| **Free** | 2,500 |
+| **Pro** | 20,000 — plus another 20,000 for **each extra-site add-on** you buy |
+| **Enterprise** | 100,000 |
+
+So a Pro organization with two extra sites (three sites in total) has 60,000 a day. An organization **on the Pro trial** runs on Pro's base ceiling of 20,000, even though the trial itself allows 5 sites — the extra-site add-ons that raise the ceiling are things you buy, and a trial hasn't bought any.
+
+**What counts.** Every request your editors' CMS sessions make through Turbo's Git proxy — reading a collection, opening an entry, saving, publishing, and fetching media that lives in the repository. It includes requests Turbo answers from its own content store instead of passing on to GitHub or GitLab, because the ceiling is counted at the proxy's front door rather than at the Git host's. What does **not** count: the Decap Turbo admin app itself (signing in, managing members, billing), and media served through a connected media library such as Bunny or S3, which doesn't go through the Git proxy at all.
+
+**What it's for.** It is a burst backstop, not a meter. It is sized so that one compromised account or one runaway script can't exhaust the capacity your whole organization shares, and it sits well above what editorial work produces — an ordinary day of writing and publishing, on any plan, is orders of magnitude below the ceiling. The case it is really sized for is a first-time sync of a very large repository, which is the one legitimate thing that can produce thousands of proxy requests in an afternoon.
+
+**What you see if you hit it.** The proxy answers **HTTP 429** with `{"error": "This organization has hit its daily GitHub request limit."}` (or `...GitLab...`), plus a `Retry-After` header saying how many seconds remain. In the CMS this surfaces as saves and loads failing. Nothing is charged, nothing is locked, and nothing is deleted — the counter resets on a 24-hour boundary and the organization carries on. If you're hitting it repeatedly during genuine editorial work, that's worth telling us about rather than working around.
+
+There is also a per-person burst limit of 10,000 requests per minute, which exists purely to stop a runaway loop and which ordinary use does not come near.
+
+The ceilings live here rather than in the Terms of Service so they can be raised without amending your contract. The Terms commit us to giving notice before **lowering** one — see [Plans, limits and fair use](/turbo/terms/#7-plans-limits-and-fair-use).
+
 ## Enterprise
 
 Enterprise is a custom-quoted plan handled outside self-serve checkout — contact us (link on the Billing page, or via the [Turbo plans page](/turbo/#plans)) rather than trying to select it from the plan cards.

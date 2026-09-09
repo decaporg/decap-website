@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Terms of Service
-description: "Last updated: 2026-09-07."
+description: "Last updated: 2026-09-09."
 ---
 
 ## 1. Who you're contracting with
@@ -53,7 +53,11 @@ Enterprise organizations are not metered against a published number. They are su
 
 Plans aren't metered — your invoice doesn't change based on request volume or storage. Beyond the site and seat limits above, each plan is subject to fair use: normal editorial use of the Service, at the scale implied by your plan's limits, is never a problem.
 
-Traffic patterns clearly outside normal editorial use — for example sustained automated scraping, bot traffic against the Git hosting API proxy, or request rates no human editorial team could produce — may trigger a **manual review** rather than an automatic charge. We'll contact you before taking any action on your account. We may apply technical rate limits to protect the Service and other customers, and we may suspend an organization whose traffic threatens either; section 12 governs suspension.
+Traffic patterns clearly outside normal editorial use — for example sustained automated scraping, bot traffic against the Git hosting API proxy, or request rates no human editorial team could produce — may trigger a **manual review** rather than an automatic charge. We'll contact you before taking any action on your account. We may suspend an organization whose traffic threatens the Service or other customers; section 12 governs suspension.
+
+**How fair use is enforced.** Every organization has a **daily ceiling on requests through the Git hosting API proxy**, set by its plan. It is a backstop against bursts, sized well above what editorial work produces: it exists so that one compromised account or one runaway script cannot exhaust the capacity the rest of your organization is sharing. Past the ceiling, further proxy requests are refused for the remainder of the day and resume automatically. Nothing is charged for going over, and nothing is deleted. We apply short-window rate limits to individual accounts on the same basis and for the same reason, and we may add technical limits of that kind where they are needed to protect the Service and other customers.
+
+**The current ceilings are published in [our documentation](/docs/turbo-billing/#daily-request-ceilings), not here.** That is deliberate — keeping the numbers in the docs means we can raise one without amending your contract. It has to cut both ways to be fair, so: **we will give notice before lowering a ceiling**, on the same footing as any other materially adverse change to these terms (section 15).
 
 Creating Free organizations at scale in order to multiply free sites or seats is outside fair use, and we may consolidate or suspend such organizations after contacting you.
 
@@ -142,7 +146,7 @@ Any availability commitment we make to an Enterprise customer is the one written
 
 ## 12. Termination, suspension and dormant organizations
 
-You may cancel your account at any time. We may suspend or terminate accounts that materially breach these terms, that fail to pay applicable fees, that we reasonably believe pose a security or fraud risk to the Service, or that repeatedly or seriously violate our acceptable use policy.
+You may cancel your account at any time. Deleting an organization ends its subscription **immediately** rather than at the end of the billing period — section 5 of our [Refund Policy](/turbo/refunds/#5-downgrades-add-on-changes-and-cancellations) explains why, and what we do about the part of the period you had already paid for. We may suspend or terminate accounts that materially breach these terms, that fail to pay applicable fees, that we reasonably believe pose a security or fraud risk to the Service, or that repeatedly or seriously violate our acceptable use policy.
 
 If your account is suspended or terminated, we'll give you a reasonable opportunity to export your site content, configuration, and org data before deletion, except where we terminate for fraud, security risk, or unlawful use, in which case we may restrict access immediately. Your site's underlying Git repository is unaffected either way — Decap Turbo is a layer on top of it, not a replacement for it.
 
@@ -156,7 +160,9 @@ Deletion removes the organization and everything we hold for it — its sites, m
 
 **Your Git repository is not affected.** Your content, its history and your repository stay with GitHub or GitLab under your own account. What we delete is our copy and our configuration. This is why we are comfortable applying the rule to a free, unused organization: the cost of keeping it running indefinitely is real, and the content itself does not live only with us.
 
-This applies to organizations on any plan. **Paying for an organization is not by itself activity** — if nobody signs in and nothing changes for 12 months, the warning emails are what stand between a paid organization and deletion, so please act on them rather than relying on the subscription to keep the organization alive.
+**A paying organization is never deleted for dormancy.** An organization on a paid plan, or one that still has a live subscription with our payment provider, is exempt from this rule outright — not "counted as recently active", but excluded from the sweep before it is even looked at. We are not going to delete something we are still charging you for, and no warning email should ever be the only thing standing between a paid organization and deletion.
+
+**If you stop paying, the twelve months start when the billing relationship ended** — not from whenever somebody last happened to sign in. An organization that ran on Pro for two years and then lapsed gets a full twelve months from the lapse, however long it had been since anyone logged in during it. This is the point of measuring from the end of billing rather than from the last sign-in: otherwise a former customer's deletion date could already be in the past on the day they stopped being a customer.
 
 Our [Privacy Policy](/turbo/privacy/) describes the same rule as a retention period, with the other retention periods alongside it.
 
@@ -167,6 +173,10 @@ Our [Privacy Policy](/turbo/privacy/) describes the same rule as a retention per
 If you are a business customer, you agree to indemnify and hold us harmless from any claims, damages, or expenses (including reasonable legal fees) arising from your content, your breach of these terms, or your misuse of the Service, including misuse of the Git hosting API proxy that causes GitHub, GitLab, or another third party to bring a claim against us.
 
 That indemnity does not extend to claims arising from our own breach of these terms, our negligence, or our failure to provide the Service as described.
+
+An indemnity is only fair if the person who has to pay for a defence is the person who gets to run it. So three conditions come with this one. If a claim covered by this section is brought against us, we will **tell you promptly**, and in enough detail for you to judge it for yourself; we will **let you take control of the defence**, with counsel of your choosing; and we will **not settle without your consent**. We will cooperate with you in defending the claim.
+
+Those are not housekeeping we could skip when it suited us. They are what stops this section from being a blank cheque — so if we fail to give you prompt notice, or fail to hand you the defence, and that failure costs you money, the difference is ours and not yours.
 
 ## 14. Warranties and limitation of liability
 
@@ -184,11 +194,17 @@ Subject to section 14.1, and to the maximum extent permitted by law, the Service
 
 Subject to section 14.1, and to the maximum extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from your use of the Service, including loss of data, profits, or business opportunity.
 
-Where liability can't be excluded, our total liability for direct damages arising from these terms or your use of the Service is limited to the total fees you paid us in the 12 months before the claim arose. This limitation doesn't apply to liability that can't be limited under applicable law — for example liability for our gross negligence, willful misconduct, death or personal injury we cause, or, for consumers, the statutory rights described in section 14.1.
+Where liability can't be excluded, our total liability for direct damages arising from these terms or your use of the Service is limited to **the greater of: the total fees you paid us in the 12 months before the claim arose, or €100**. The floor is there because "what you paid us" is no cap at all on a Free organization — it would be zero, and a cap of zero is not a limitation of liability, it is the absence of one. This limitation doesn't apply to liability that can't be limited under applicable law — for example liability for our gross negligence, willful misconduct, death or personal injury we cause, or, for consumers, the statutory rights described in section 14.1.
 
 ## 15. Changes to these terms
 
-We may update these Terms of Service from time to time. If we make a material change, we'll notify you by email or through the Service before it takes effect. Continuing to use the Service after a change takes effect means you accept the updated terms.
+We may update these Terms of Service from time to time. Every version is published on this page carrying the date it was last updated, and the published version is the current one. That is how a change reaches you, and it is a commitment we can keep for every change we ever make.
+
+**Where a change is materially adverse to you** — it takes something away, it costs you more, or it narrows what you may do — we will also tell you before it takes effect, by email to the address on your account or through the Service. We have deliberately not promised an email for every edit: a corrected typo and a price rise are not the same event, and a promise we would quietly break on the small ones is worth less to you than a narrower one we actually keep on the ones that matter.
+
+**If you don't accept a material change, you can leave before it takes effect.** Cancel from your organization's billing page, or delete the organization, at any time before the effective date. **You will not be charged for a period you did not want:** if a change takes effect part-way through a period you have already paid for and you leave because of it, tell us and we will refund the unused remainder through Paddle — the same route as section 5 of our [Refund Policy](/turbo/refunds/#5-downgrades-add-on-changes-and-cancellations).
+
+Continuing to use the Service after a material change takes effect means you accept the updated terms.
 
 ## 16. Force majeure
 

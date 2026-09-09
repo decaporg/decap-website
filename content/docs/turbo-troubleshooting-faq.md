@@ -20,6 +20,9 @@ The `turbo_site_id` in your `config.yml` doesn't match any site in your Decap Tu
 **"This site has been locked"**
 The site's organization is over its plan's site limit, usually because of a downgrade or a canceled subscription. Log in to Decap Turbo and check the organization's [Billing](../turbo-billing/) page — either upgrade, or unlock this site if you have a free slot (see [site locking](../turbo-roles-and-members/#site-locking)).
 
+**"This organization has hit its daily GitHub request limit" / "...GitLab..."**
+The organization has used up its plan's daily ceiling on Git-proxy requests. The response carries a `Retry-After` header with the seconds left; the counter resets on a 24-hour boundary and everything resumes on its own. Nothing is charged or locked. See [daily request ceilings](../turbo-billing/#daily-request-ceilings) for the numbers per plan — and tell us if you're hitting it during ordinary editorial work.
+
 ## Errors during login
 
 **The login popup closes but nothing happens / "origin not allowed"**
