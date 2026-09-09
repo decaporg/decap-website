@@ -7,6 +7,8 @@ weight: 130
 
 The relation widget allows you to reference items from another collection. It provides a search input with a list of entries from the collection you're referencing, and the list automatically updates with matched entries based on what you've typed.
 
+**Note:** On large collections, populating this dropdown means fetching many entries from your Git host's API, which can be slow or hit rate limits. [Decap Turbo](/turbo/) serves collection data from a database cache instead, so large relation lists load quickly without spending your API rate limit.
+
 **Name:** `relation`
 
 **UI:** text input with search result dropdown

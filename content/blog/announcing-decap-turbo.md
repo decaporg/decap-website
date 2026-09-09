@@ -38,7 +38,7 @@ Turbo provides managed authentication so teams can stop maintaining custom auth 
 
 ### 2. Roles and permissions built for real teams
 
-Define who can access which collection, so writers, editors, and admins each get the right level of control.
+Define who can access which collection, so writers, editors, and admins each get the right level of control. Every plan includes a built-in Full-access role; custom, per-collection roles are available as a Pro add-on and included on Enterprise.
 
 ### 3. A faster CMS experience
 

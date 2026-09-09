@@ -5,6 +5,8 @@ title: Netlify Large Media
 ---
 **Note:** Netlify Large Media is deprecated as of September 1, 2023. Please refer to the deprecation notice in [Netlify's Support Forums](https://docs.netlify.com/large-media/overview/) (see deprecation notice).
 
+If you're choosing a media strategy for a new site, [Decap Turbo's S3-compatible media library](/docs/turbo-media-proxy/) is a current alternative — it stores assets in your own S3-compatible bucket and doesn't depend on Git LFS or Netlify Identity.
+
 [Netlify Large Media](https://www.netlify.com/features/large-media/) is a [Git LFS](https://git-lfs.github.com/) implementation for repositories connected to Netlify sites. This means that you can use Git to work with large asset files like images, audio, and video, without bloating your repository. It does this by replacing the asset files in your repository with text pointer files, then uploading the assets to the Netlify Large Media storage service.
 
 If you have a Netlify site with Large Media enabled, Decap CMS (version 2.6.0 and above) will handle Large Media asset files seamlessly, in the same way as files stored directly in the repository.

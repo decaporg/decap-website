@@ -32,7 +32,10 @@ features:
       description: Store API credentials your site config needs, without committing them to the repo. Mark sensitive ones as secret to encrypt them at rest and mask them in the dashboard.
     - title: Know when it's live
       icon: rocket
-      description: Saving commits a change; it doesn't put it on the site. Decap watches the deploy and tells the editor when their change is actually live, wherever they are in the CMS — plus a Deploys page showing what shipped, where it went, and why a build failed.
+      description: Saving commits a change; it doesn't put it on the site. Decap watches the deploy and tells the editor when their change is actually live, wherever they are in the CMS — plus a Deploys page showing what shipped, where it went, and why a build failed. Available today for GitHub-hosted sites; GitLab support is on the roadmap.
+    - title: Activity log
+      icon: calendar
+      description: See who changed what, in which collection, and when — visible to your organization's owners.
 plans:
   title: Choose your plan
   description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. Signing up puts you on Free, with no credit card. During the public preview an organization owner can also turn Pro on free until 15 October 2026 — still no card, capped at 5 sites and 25 users."
@@ -133,6 +136,11 @@ comparison:
         - feature: Database-backed content store
           values: [true, true, true]
         - feature: Media/asset proxy (S3-compatible, incl. Bunny & R2)
+          values: [true, true, true]
+        - feature: Deploy notifications
+          values: [true, true, true]
+          tooltip: "Currently available for GitHub-hosted sites. GitLab support is on the roadmap."
+        - feature: Activity log
           values: [true, true, true]
     - title: Access control
       rows:

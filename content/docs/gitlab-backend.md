@@ -8,6 +8,8 @@ For repositories stored on [GitLab](https://gitlab.com), the `gitlab` backend al
 
 **Note:** GitLab default branch is protected by default, thus typically requires `maintainer` permissions in order for users to have push access.
 
+**Looking for less setup?** [Decap Turbo](/turbo/) handles GitLab authentication and API rate-limit shielding for you, so you don't need to register an OAuth application or choose between the flows below.
+
 The GitLab API allows for three types of OAuth2 flows:
 
 * [Authorization Code Flow](https://docs.gitlab.com/ce/api/oauth2.html#authorization-code-flow), which works much like the GitHub OAuth flow described above.

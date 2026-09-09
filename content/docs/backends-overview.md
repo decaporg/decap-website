@@ -39,3 +39,5 @@ Your proxy should handle the following request paths:
 1. `/callback` - when the user finishes the authorization flow, Github will callback to your OAuth handler with an authorization code that is sent to the Decap caller window from the pop-up using `window.postMessage`.
 
 For more detailed instructions and example code see this [Cloudflare Worker template](https://github.com/sterlingwes/decap-proxy).
+
+Alternatively, [Decap Turbo](/turbo/) runs this proxy for you and also shields your GitHub or GitLab API from rate limits — no server to deploy or maintain.
