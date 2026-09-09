@@ -14,31 +14,35 @@ hero:
 intro: "Decap CMS is a free, open-source, Git-based content management system — you can self-host it yourself, for free, forever. Decap Turbo is a paid layer on top of it: we run the infrastructure for you."
 features:
   title: What you get
+  roadmap_note: "More is on the way. Turbo ships new features on a rolling basis — see what's shipped, in beta, and on the roadmap on the [features page](/features/)."
   items:
+    - title: Faster CMS performance
+      icon: turbo-speed
+      description: A database proxy serves your collections in a fraction of a second, instead of one Git API call per file.
     - title: Hosted auth & user management
-      icon: shield
-      description: Invite editors, manage roles, no auth server to run yourself.
+      icon: users
+      description: Invite editors and manage roles — no auth server or OAuth app for you to run.
     - title: Git host rate-limit shielding
       icon: lightning
-      description: A request proxy between your editors and your GitHub or GitLab API.
-    - title: Database-backed content store
+      description: A request proxy between your editors and your GitHub or GitLab API, so large collections stop hitting rate limits.
+    - title: S3-compatible media library
       icon: database
-      description: Faster admin loading than reading straight from Git on every request.
+      description: Upload and browse assets in your own bucket — AWS S3, Cloudflare R2, Bunny, or any S3-compatible provider.
     - title: Role-based access control
-      icon: check-circle
-      description: Org-level owner/member roles, plus per-site Full access and custom roles.
+      icon: shield
+      description: Org-level owner and member roles, plus per-site Full access and custom roles for larger teams.
     - title: Site variables
       icon: lock
-      description: Store API credentials your site config needs, without committing them to the repo. Mark sensitive ones as secret to encrypt them at rest and mask them in the dashboard.
+      description: Store credentials your site needs outside config.yml — mark sensitive ones as secret to encrypt them at rest.
     - title: Know when it's live
-      icon: rocket
-      description: Saving commits a change; it doesn't put it on the site. Decap watches the deploy and tells the editor when their change is actually live, wherever they are in the CMS — plus a Deploys page showing what shipped, where it went, and why a build failed. Available today for GitHub-hosted sites; GitLab support is on the roadmap.
+      icon: check-circle
+      description: Editors are told the moment their saved change is actually live, not just committed — available today for GitHub-hosted sites.
     - title: Activity log
       icon: calendar
       description: See who changed what, in which collection, and when — visible to your organization's owners.
 plans:
   title: Choose your plan
-  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional managed layer for teams that want us to run the infrastructure for them. Signing up puts you on Free, with no credit card. During the public preview an organization owner can also turn Pro on free until 15 October 2026 — still no card, capped at 5 sites and 25 users."
+  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional upgeade for teams that need more features. Signing up puts you on the Free plan, no credit card required. When you're ready test out Pro with 14-day free trial."
   items:
     - id: free
       icon: check-circle
@@ -53,28 +57,29 @@ plans:
         - 1 site
         - 1 seat
         - Community support
+        - Git host request shielding
+        - Faster CMS
+        - activity log
     - id: pro
       icon: rocket
       name: Pro
       featured: true
-      description: For single-site teams
-      price: €19
-      price_monthly: "€19"
-      subtext: Free to try until 15 October 2026 — no card
+      description: Pay as you go
+      price: from €19
+      price_monthly: "from €19"
+      subtext: Free until 15 October 2026, or a 14-day free trial
       additional_seat_price: "€6"
       additional_project_price: "€10"
       cta_text: Sign up
       cta_href: 'https://turbo.decapcms.org/signup'
       features:
         - 1 site, 5 seats included
-        - Git host request shielding
-        - Database-backed content store
-        - Basic roles, site variables
-        - Standard email support
+        - Site variables and secrets
+        - Support addon available
     - id: enterprise
       icon: business
       name: Enterprise
-      description: Agencies and orgs running many sites
+      description: For large teams and agencies
       price_label: Custom
       cta_text: Talk to us
       cta_href: '/contact/?topic=enterprise'
