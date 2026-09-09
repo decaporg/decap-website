@@ -4,19 +4,12 @@
 
 .turbo-banner {
   position: relative;
-  display: grid;
-  gap: var(--space-fluid-4-5);
   padding: var(--space-fluid-5-6);
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--gradient-turbo);
   box-shadow: var(--shadow-xl);
   color: var(--color-white);
-
-  @include breakpoint-up(lg) {
-    grid-template-columns: minmax(0, 1.35fr) minmax(340px, 448px);
-    align-items: center;
-  }
 
   &::before {
     content: '';
@@ -40,14 +33,10 @@
     filter: blur(8px);
   }
 
-  &__content,
-  &__preview {
+  &__intro {
     position: relative;
     z-index: 1;
-  }
-
-  &__content {
-    max-width: 560px;
+    max-width: 640px;
   }
 
   &__eyebrow {
@@ -65,9 +54,9 @@
 
   &__eyebrow-icon,
   &__benefit-icon,
-  &__cta-icon,
-  &__card-header-icon {
+  &__stat-icon {
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
 
@@ -82,7 +71,6 @@
   }
 
   &__description {
-    margin-bottom: var(--space-fluid-5-7);
     font-size: var(--font-size-lg);
 
     p {
@@ -90,30 +78,95 @@
     }
   }
 
-  &__benefits {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-fixed-4);
-    margin: 0 0 var(--space-fluid-5-7);
-    list-style: none;
-    padding: 0;
-  }
-
-  &__benefit {
-    display: flex;
+  &__stat {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
     align-items: center;
     gap: var(--space-fixed-3);
+    margin-top: var(--space-fluid-4-5);
+    padding: var(--space-fixed-3) var(--space-fixed-4);
+    border: 1px solid #fff3;
+    border-radius: var(--radius-lg);
+    background: #ffffff1a;
+    backdrop-filter: blur(12px);
   }
 
-  &__benefit-icon {
-    flex-shrink: 0;
+  &__stat-icon {
     width: 36px;
     height: 36px;
     border-radius: 10px;
     background: #ffffff2e;
   }
 
+  &__stat-text {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    color: #fffc;
+
+    strong {
+      font-family: var(--font-family-secondary);
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-white);
+    }
+  }
+
+  &__benefits {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-fixed-5) var(--space-fluid-4-6);
+    margin: var(--space-fluid-6-8) 0 var(--space-fluid-5-7);
+    list-style: none;
+    padding: 0;
+
+    @include breakpoint-up(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-fixed-3);
+  }
+
+  &__benefit-icon {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    color: #ffffffc0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__benefit-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__benefit-title {
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  &__benefit-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.45;
+    color: #fffc;
+  }
+
   &__cta {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     gap: var(--space-fixed-3);
@@ -133,66 +186,6 @@
       transform: translateY(-1px);
       box-shadow: 0 18px 40px var(--color-gray-200);
       text-decoration: none;
-    }
-  }
-
-  &__preview {
-    display: grid;
-    gap: var(--space-fluid-3-5);
-    padding: var(--space-fluid-4-6) var(--space-fluid-3-5);
-    border: 1px solid #fff3;
-    border-radius: var(--radius-xl);
-    background: #ffffff1a;
-    backdrop-filter: blur(12px);
-  }
-
-  &__card {
-    padding: var(--space-fluid-3-5);
-    border-radius: var(--radius-lg);
-    background: #ffffff1a;
-  }
-
-  &__card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-fixed-3);
-    margin-bottom: var(--space-fixed-4);
-    color: #fffc;
-    font-size: var(--font-size-sm);
-  }
-
-  &__live-label {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-fixed-2);
-    margin-bottom: var(--space-fixed-3);
-    font-size: var(--font-size-md);
-  }
-
-  &__live-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #05df72;
-    box-shadow: 0 0 0 8px #05df722e;
-  }
-
-  &__metric {
-    margin: 0 0 var(--space-fixed-2);
-    font-family: var(--font-family-secondary);
-    font-size: clamp(26px, 4vw, 32px);
-    font-weight: var(--font-weight-bold);
-    line-height: 1.2;
-  }
-
-  &__card-note {
-    margin: 0;
-    font-size: var(--font-size-md);
-    line-height: 1.5;
-
-    &--muted {
-      color: #fffc;
     }
   }
 }

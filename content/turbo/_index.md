@@ -3,7 +3,7 @@ linkTitle: Decap Turbo
 title: Decap Turbo — managed hosting for Decap CMS
 description: Managed hosting for Decap CMS — hosted auth, Git host rate-limit shielding, a database-backed content store, roles, and site variables.
 hero:
-  badge: Decap Turbo — public preview
+  badge: Now in public preview
   cta:
     primary:
       text: Sign up
