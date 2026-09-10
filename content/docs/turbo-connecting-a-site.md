@@ -6,17 +6,30 @@ weight: 30
 
 Once you've [created a site in Decap Turbo](../turbo-getting-started/#creating-your-first-site), point your Decap CMS `config.yml` at it by switching your backend to `turbo-github` (or `turbo-gitlab` if your site's repo lives on GitLab).
 
-## Use the beta build
+## Use the beta release
 
-Turbo backends aren't in the npm `decap-cms` release yet — they only exist on the beta build. If you install Decap CMS via `npm install decap-cms` (or `decap-cms-app`), **`turbo-github` and `turbo-gitlab` won't be available**, and your CMS will fail to load with an unrecognized-backend error.
+Turbo backends aren't in the stable Decap CMS release yet. They ship on npm under the `beta` dist-tag, so you need a to install decap cms differently.
 
-Replace your CMS script tag with the beta build instead:
+If you load Decap CMS from a script tag, point it at the beta. Track the tag to pick up each new beta automatically:
 
 ```html
-<script src="https://decap-turbo.cdn.decapcms.org/decap-cms.js"></script>
+<script src="https://unpkg.com/decap-cms@beta/dist/decap-cms.js"></script>
 ```
 
-This will be unnecessary once turbo backends ship in a stable npm release.
+Or pin an exact version, so a new beta never changes your site until you change this line:
+
+```html
+<script src="https://unpkg.com/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
+```
+
+Tracking `@beta` is the easier way to stay current during the preview, and pinning is the safer option - beta can ship with braking changes in minor versions.
+
+If you bundle Decap CMS yourself, the same choice applies:
+
+```sh
+npm install decap-cms-app@beta      # follows the tag
+npm install decap-cms-app@3.17.0-beta.0   # pinned
+```
 
 ## Minimal configuration
 
