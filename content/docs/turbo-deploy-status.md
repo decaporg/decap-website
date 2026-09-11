@@ -73,6 +73,14 @@ an editorial-workflow entry removes its `cms/…` branch while the preview for i
 is still building, and some hosts then abandon that build without ever reporting
 a result. Nothing is wrong with your site; the published deploy is unaffected.
 
+### "Nothing has been reported since your change of…"
+
+The sibling of **Unknown**, for the build that never reported at all rather than the one that stopped part way. When half an hour has passed since a save and nothing whatsoever has been reported in that time, the page stops claiming anything about what the site is serving and says so, instead of leaving the last success sitting there marked **Live**.
+
+It is not, by itself, proof that anything is broken — it says only that nobody has told Decap anything for a while. But the usual cause is a build failing before the step that reports the deploy, which is worth ruling out first: check your build logs, and see [reporting your failures](#github-actions-report-your-failures-too) if the site builds in GitHub Actions.
+
+Deploys that have simply never been reported for this site do not produce this message — a site whose host says nothing at all gets the empty page, which is a different problem with a different answer.
+
 ## Does my site need setting up?
 
 It depends entirely on whether your host reports deploys back to your git
@@ -83,7 +91,7 @@ provider. Most do. **Netlify does not.**
 | Vercel | Nothing |
 | Cloudflare Pages | Nothing |
 | GitHub Pages | Nothing |
-| GitHub Actions (any host, using an environment) | Nothing |
+| GitHub Actions (any host, using an environment) | **Report your failures** — one workflow step, or one setting — see below |
 | **Netlify** | **Add the deploy webhook** — see below |
 | Anything else | Add the deploy webhook, or send it yourself |
 
@@ -99,6 +107,69 @@ Two caveats worth knowing:
 - **Cloudflare Pages does not report a build it skips** — for CI Skip, build
   watch paths, or branch deployment controls. Those deploys are simply absent
   rather than wrong.
+
+## GitHub Actions: report your failures too
+
+If your workflow builds the site itself and then hands the output to a deploy action — `cloudflare/pages-action`, `actions/deploy-pages`, a Vercel or S3 action — that action is what creates the deployment record, and it only runs when the build before it succeeded. A failing build stops the workflow before it, no deployment is ever created, and Decap is told nothing at all.
+
+That gap is worse than silence, because it is one-sided. Editors get told when a publish works and nothing when it doesn't, so a broken build is indistinguishable from a slow one: the Deploys page goes on showing the last success as **Live**, the header goes on saying a save is still publishing, and the site quietly stops changing. It can run for days before someone connects the two.
+
+The failed workflow run is not a substitute for this. Decap ignores check runs from `github-actions`, on purpose — an org-wide installation can see every job in every repository it has access to, and a green test suite must never be able to tell an editor their change is live.
+
+So a workflow that builds its own site has to say when it failed. One step does it:
+
+```yaml
+# The job needs this permission; most deploy workflows already have it.
+permissions:
+  deployments: write
+
+steps:
+  # ... checkout, build, deploy ...
+
+  - name: Report a failed build to Decap
+    if: failure()
+    uses: actions/github-script@v7
+    env:
+      DEPLOY_ENVIRONMENT: production
+    with:
+      script: |
+        const deployment = await github.rest.repos.createDeployment({
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          ref: context.sha,
+          environment: process.env.DEPLOY_ENVIRONMENT,
+          auto_merge: false,
+          required_contexts: [],
+        });
+        await github.rest.repos.createDeploymentStatus({
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          deployment_id: deployment.data.id,
+          state: 'failure',
+          log_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+        });
+```
+
+`if: failure()` is the whole point of the step, so put it last and leave the rest of the workflow alone. It records the failed attempt as its own deployment, which is what it was, and `log_url` is what the editor clicks to see why.
+
+Two details worth getting right:
+
+- **Don't create a deployment on the success path as well.** Your deploy action already does, and a second one puts two rows on the same commit. This step fires only on failure, so the two never collide.
+- **Cancelled runs are not failures.** `if: failure()` already excludes them — `if: always()` does not, and would report every superseded run as a broken build.
+
+If you would rather show the build while it is still running, open the deployment *before* the build instead, with a `state: 'in_progress'` status, and close it with `success` or `failure` at the end. Editors then see the build as running rather than only hearing about it once it has finished. Drop `gitHubToken` from your deploy action if it has one, so it stops creating a competing record of its own.
+
+### The shortcut, if you cannot change the workflow
+
+In the [Turbo dashboard](https://turbo.decapcms.org/sites), a site's **Deploys** tab has **Record failed CI runs as failed deploys**. With it on, a GitHub Actions check run that fails on the branch your site publishes from is recorded as a failed deploy, with no change to your workflow at all.
+
+It is off by default, and deliberately narrow:
+
+- **Failures only.** A successful run is never taken from CI, on any setting, so this cannot make a change look live when it is not. That is the whole reason the setting is safe enough to offer — the worst it can do is send you to a build log that turns out to be fine.
+- **Leave it off if that branch also runs tests.** Decap cannot tell a failing deploy from a failing test suite, so on a repo that runs both, every flaky test run would show up as a broken deploy.
+- **It is per site.** One repo backing several sites reports a failure to whichever of them asked for it, and to none of the others.
+
+The step above is still the better answer where you can add it — it reports the failure as a deploy of a known environment, with a log link, and the same pattern extends to showing the build while it runs. This is the one to reach for when the workflow is not yours to edit.
 
 ## Netlify: adding the deploy webhook
 
@@ -261,14 +332,15 @@ Work through these in order — the Deploys page answers most of it directly.
 1. **Open the Deploys page.** If it says nothing has been recorded, your host
    is not reporting to Decap at all. On Netlify, that is expected until you add
    the webhook above.
-2. **Check the branch.** Only deploys of the branch the site publishes from are
+2. **Are the successes there but the failures missing?** If the newest row is an old success and nothing has appeared since, and your site builds in GitHub Actions, the build is failing before the step that reports the deploy. That is the one case where the page is confidently wrong rather than empty — see [reporting your failures](#github-actions-report-your-failures-too).
+3. **Check the branch.** Only deploys of the branch the site publishes from are
    recorded. A site configured for `main` hears nothing about `develop`.
-3. **Check the GitHub App permissions.** If Decap's GitHub App was installed
+4. **Check the GitHub App permissions.** If Decap's GitHub App was installed
    before deploy status shipped, it needs the new read permissions approved by
    an organization owner. Until then, transport-1 hosts report nothing.
-4. **Rotated the secret?** The old one stops working immediately, and Netlify
+5. **Rotated the secret?** The old one stops working immediately, and Netlify
    will keep sending with it. Update all three notifications.
-5. **Deploy Previews only?** Preview deploys are deliberately ignored here.
+6. **Deploy Previews only?** Preview deploys are deliberately ignored here.
    For unpublished editorial-workflow entries you want
    [deploy preview links](../deploy-preview-links/), which are a different
    feature: previews answer "what would this look like", deploy status answers
