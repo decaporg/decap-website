@@ -42,50 +42,54 @@ features:
       description: See who changed what, in which collection, and when — visible to your organization's owners.
 plans:
   title: Choose your plan
-  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional upgeade for teams that need more features. Signing up puts you on the Free plan, no credit card required. When you're ready test out Pro with 14-day free trial."
+  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional upgrade for teams that need more features. Signing up puts you on the Free plan, no credit card required. When you're ready, you can turn Pro on free until 15 October 2026 — after the public preview that becomes a 14-day free trial."
   items:
     - id: free
       icon: check-circle
       name: Free
       description: Try the real product before paying anything
       price_label: "€0"
+      includes: 1 site + 1 seat
       subtext: Free forever
       cta_text: Sign up
       cta_href: 'https://turbo.decapcms.org/signup'
       free: true
       features:
-        - 1 site
-        - 1 seat
-        - Community support
-        - Git host request shielding
         - Faster CMS
-        - activity log
+        - Git host request shielding
+        - Activity log
+        - Deploy notifications
+        - Community support
     - id: pro
       icon: rocket
       name: Pro
       featured: true
-      description: Pay as you go
-      price: from €19
-      price_monthly: "from €19"
-      subtext: Free until 15 October 2026, or a 14-day free trial
+      description: For growing teams
+      price: "€19"
+      price_monthly: "€19"
+      includes: 1 site + 5 seats
       additional_seat_price: "€6"
       additional_project_price: "€10"
+      subtext: Free until 15 October 2026, or a 14-day free trial
       cta_text: Sign up
       cta_href: 'https://turbo.decapcms.org/signup'
       features:
-        - 1 site, 5 seats included
+        - Everything in Free
         - Site variables and secrets
-        - Support addon available
+        - S3-compatible media library
+        - Custom roles & priority support add-ons
     - id: enterprise
       icon: business
       name: Enterprise
       description: For large teams and agencies
       price_label: Custom
+      includes: Unlimited sites & seats
       cta_text: Talk to us
       cta_href: '/contact/?topic=enterprise'
       features:
-        - Fair-use "unlimited" sites & seats
-        - Custom/granular roles
+        - Everything in Pro
+        - Unlimited usage
+        - Custom/granular roles included
         - Dedicated support & SLA
 billing_note: "All prices are in EUR, billed monthly, tax included. There's no yearly self-serve option — Free and Pro are both month-to-month. Payments are processed by [Paddle.com](https://www.paddle.com), our reseller and merchant of record. See our [Terms of Service](/turbo/terms/), [Privacy Policy](/turbo/privacy/), and [Refund Policy](/turbo/refunds/)."
 faq:
@@ -109,7 +113,7 @@ faq:
       a: "No. Turbo plans cover the managed platform itself — hosted auth, Git host request shielding, the database-backed content store, roles, and site variables. They don't include bespoke development work on your site or on Decap CMS."
 cta_section:
   title: Ready to get started?
-  description: Sign up free — 1 site, 1 seat, no credit card. During the public preview you can turn Pro on free until 15 October 2026, capped at 5 sites and 25 users. Already have an account? Read the [setup docs](/docs/turbo-overview/).
+  description: Sign up free — 1 site, 1 seat, no credit card. During the public preview you can turn Pro on free until 15 October 2026, capped at 5 sites and 25 users.
   buttons:
     primary:
       text: Sign up
@@ -117,14 +121,19 @@ cta_section:
     secondary:
       text: Sign in
       href: 'https://turbo.decapcms.org/login'
+    docs:
+      text: Turbo docs
+      href: '/docs/turbo-overview/'
 comparison:
   title: Compare plans
-  description: "All add-ons are included at no extra cost on Enterprise."
+  description: "Pro starts at €19/month and grows by the unit — every add-on is included at no extra cost on Enterprise."
   columns:
     - name: Free
-      price: "€0/mo"
+      price: "€0"
+      period: "/ month"
     - name: Pro
-      price: "€19/mo"
+      price: "€19"
+      period: "/ month"
     - name: Enterprise
       price: Custom
   sections:
@@ -132,8 +141,12 @@ comparison:
       rows:
         - feature: Sites included
           values: ["1", "1", "Unlimited (fair use)"]
+        - feature: Extra sites
+          values: [false, "€10/site/mo", "Included"]
         - feature: Seats included
           values: ["1", "5", "Unlimited (fair use)"]
+        - feature: Extra seats
+          values: [false, "€6/seat/mo", "Included"]
         - feature: Hosted auth & user management
           values: [true, true, true]
         - feature: Git host rate-limit shielding
@@ -152,10 +165,12 @@ comparison:
           values: [true, true, true]
     - title: Access control
       rows:
-        - feature: Basic roles
+        - feature: Roles & permissions
           values: [true, true, true]
+          tooltip: "Org-level owner and member roles, plus each site's built-in Full access role. Assigning them is free on every plan."
         - feature: Custom/granular roles
-          values: [false, false, true]
+          values: [false, "€19/mo add-on", "Included"]
+          tooltip: "Define named per-collection roles, or a per-member custom override."
     - title: Support
       rows:
         - feature: Community support
@@ -166,12 +181,4 @@ comparison:
           values: [false, false, true]
         - feature: Priority support add-on
           values: [false, "€99/mo per org", "Included"]
-    - title: Add-ons
-      rows:
-        - feature: Extra site
-          values: [false, "€10/site/mo", "Included"]
-        - feature: Extra seat
-          values: [false, "€6/seat/mo", "Included"]
-        - feature: Advanced/custom roles
-          values: [false, "€19/mo per org", "Included"]
 ---

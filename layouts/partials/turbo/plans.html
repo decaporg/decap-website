@@ -31,6 +31,12 @@
             {{ end }}
           </div>
 
+          {{ with .includes }}<p class="turbo-plan__includes">{{ . }}</p>{{ end }}
+
+          {{ if and .additional_seat_price .additional_project_price }}
+          <p class="turbo-plan__scaling">then {{ .additional_project_price }}/site &middot; {{ .additional_seat_price }}/seat per month</p>
+          {{ end }}
+
           {{ with .subtext }}<p class="turbo-plan__billing-note">{{ . }}</p>{{ end }}
         </header>
 
@@ -47,13 +53,6 @@
           <li>{{ partial "icon" "check-circle" }} {{ . }}</li>
           {{ end }}
         </ul>
-
-        {{ if and .additional_seat_price .additional_project_price }}
-        <div class="turbo-plan__additional-pricing">
-          <p class="turbo-plan__additional-item">{{ .additional_seat_price }}/additional seat</p>
-          <p class="turbo-plan__additional-item">{{ .additional_project_price }}/additional site</p>
-        </div>
-        {{ end }}
       </article>
       {{ end }}
     </div>

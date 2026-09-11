@@ -65,6 +65,9 @@
         {{ with .buttons.secondary }}
           <a href="{{ .href }}" class="button button--text-white">{{ .text }}</a>
         {{ end }}
+        {{ with .buttons.docs }}
+          <a href="{{ .href }}" class="button button--text-white">{{ .text }}</a>
+        {{ end }}
       </div>
     </div>
   </section>
