@@ -74,5 +74,5 @@ https://www.example.com/path-to-cms/#/edit/posts/test
 ```
 
 * **`collectionName`**: the name of the collection as entered in the CMS config.
-* **`entryName`** *(for [file collections](/docs/collection-types/#file-collections)*: the `name` of the entry from the CMS config.
-* **`entryName`** *(for [folder collections](/docs/collection-types/#folder-collections)*: the filename, sans extension (the slug).
+* **`entryName`** *(for [file collections](/docs/collection-file/)*: the `name` of the entry from the CMS config.
+* **`entryName`** *(for [folder collections](/docs/collection-folder/)*: the filename, sans extension (the slug).
