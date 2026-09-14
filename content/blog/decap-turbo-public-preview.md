@@ -8,7 +8,7 @@ date: 2026-09-14T08:00:00.000Z
 
 [Decap Turbo](/turbo/) is open. Signups no longer need an invitation, and there is a Free plan, so you can put a real site on it without a credit card.
 
-When we [announced Turbo](/blog/announcing-decap-turbo/) we described three things: hosted auth, roles and permissions, and a database proxy that makes large collections load fast. Those are all avaiable today, plus a few other really useful features.
+When we [announced Turbo](/blog/announcing-decap-turbo/) we described three things: hosted auth, roles and permissions, and a database proxy that makes large collections load fast. Those are all available today, plus a few other really useful features.
 
 ## Know when your change is live
 

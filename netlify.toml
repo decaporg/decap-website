@@ -9,7 +9,3 @@
 
 [dev]
   framework = "hugo"
-
-[functions]
-  directory = "functions/"
-  node_bundler = "esbuild"

@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Terms of Service
-description: "Last updated: 2026-09-09."
+description: "Last updated: 2026-09-14."
 ---
 
 ## 1. Who you're contracting with
@@ -94,9 +94,9 @@ A trialing organization gets Pro, more generously than paid Pro:
 |---|---|---|
 | Sites | **5** | 1, plus extra-site add-ons |
 | Seats | **25** | 5, plus extra-seat add-ons |
-| Add-ons | **All included**, at no cost | Bought individually |
+| Add-ons | **Advanced roles** included, at no cost | Bought individually |
 
-Advanced roles and priority support are both switched on for the duration. The trial is deliberately roomier than paid Pro so that a real multi-site, multi-editor setup can be evaluated properly.
+Advanced roles is switched on for the duration, and an owner can turn it off and on again freely for as long as the trial runs. **Priority support is not included in a trial.** It is a response-time commitment backed by people rather than a feature, so switching it on needs a payment method on file, and it bills from your first invoice. The trial is deliberately roomier than paid Pro on sites and seats so that a real multi-site, multi-editor setup can be evaluated properly.
 
 Add-ons included with a trial are included *for the trial*. If you subscribe, you get what you buy: the paid plan's allowance plus whatever add-ons you choose. Custom roles you configured during the trial remain stored, but you will need the advanced-roles add-on to keep editing them.
 

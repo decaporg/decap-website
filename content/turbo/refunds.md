@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Refund Policy
-description: "Last updated: 2026-09-09."
+description: "Last updated: 2026-09-14."
 ---
 
 ## 1. Free plan
@@ -34,6 +34,8 @@ Request a refund directly through [Paddle.net](https://paddle.net) or by contact
 There is one exception to that, and it is not this section's to give: if you are leaving because **we** changed the terms in a way that is materially adverse to you, section 15 of the [Terms of Service](/turbo/terms/#15-changes-to-these-terms) says you will not be charged for a period you did not want, and the unused remainder is refunded. The rule above is about a cancellation you chose while the deal stayed the same.
 
 **Changing an add-on quantity** — adding or removing an extra site, extra seat, advanced roles, or priority support — works differently: it takes effect **immediately** and is **prorated immediately**. Adding one mid-cycle charges you only for the part of the period that remains. Removing one credits you for the part you no longer use, applied by Paddle against your account. Your billing page previews the exact amount before you confirm it, and the amount previewed is the amount charged.
+
+**While a trial is running, there is nothing to prorate against.** A trial is not on a billing cycle, so an add-on changed during one takes effect immediately and costs nothing at the time; it is then billed in full on your first invoice after the trial ends. The paragraph above describes a subscription that has already started billing.
 
 **Deleting an organization** is a third case, and it behaves like neither of the two above: it ends the subscription **immediately**, not at the end of the period. The organization itself is being destroyed — its sites, its content, its members and its settings all go with it — so there is no remainder of the period left to serve, and nothing there to keep billing for.
 
