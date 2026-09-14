@@ -1,44 +1,35 @@
 ---
-title: Media library (S3-compatible)
+title: Media library
 group: Turbo
-weight: 35
+weight: 55
 ---
 
-**This feature is in beta**
+**Pro and above.** In beta.
 
-Decap Turbo can proxy media uploads through any S3-compatible object storage — AWS S3, Cloudflare R2, Bunny Storage (via its S3-compatible API), or another S3-compatible provider — so your editors can browse and upload assets without your storage credentials ever reaching the browser. This is available on every plan, including Free — there's no separate add-on to buy.
+Turbo proxies media uploads to any S3-compatible bucket — AWS S3, Cloudflare R2, Bunny Storage, others — so editors browse and upload without your storage credentials reaching the browser. Credentials live in [site variables](../turbo-roles-and-members/#site-variables), not in `config.yml`; the CMS calls a Turbo edge function, which reads them server-side and forwards the request.
 
-## How it works
+## Configure
 
-Your storage credentials are stored as [site variables](../turbo-connecting-a-site/) on your site, not in `config.yml`. When an editor opens the media library, Decap CMS calls a Turbo edge function that looks up your site's credentials server-side and forwards the request — your access keys never appear in the page source or browser network tab.
+On the site's **Variables** tab:
 
-## S3-compatible storage (AWS S3, Cloudflare R2, Bunny, others)
+| Key | Value | Secret |
+|---|---|---|
+| `s3_endpoint` | S3 API endpoint — `https://<account-id>.r2.cloudflarestorage.com` (R2), `https://s3.<region>.amazonaws.com` (AWS), `https://<region>-s3.storage.bunnycdn.com` (Bunny) | No |
+| `s3_region` | Region to sign for. `auto` for R2; for Bunny, the storage zone's region code | No |
+| `s3_bucket` | Bucket name — for Bunny, the Storage Zone name | No |
+| `s3_access_key_id` | Access key ID — for Bunny, the Storage Zone name again | No |
+| `s3_secret_access_key` | Secret access key — for Bunny, the Storage Zone password | **Yes** |
+| `s3_force_path_style` | `true` for most providers including R2 and Bunny; `false` usually works on AWS | No |
 
-1. On your site's **Variables** tab, add:
+Then in `config.yml`:
 
-   | Key | Value | Secret? |
-   |---|---|---|
-   | `s3_endpoint` | Your provider's S3 API endpoint (e.g. `https://<account-id>.r2.cloudflarestorage.com` for R2, `https://s3.<region>.amazonaws.com` for AWS, or `https://<region>-s3.storage.bunnycdn.com` for Bunny) | No |
-   | `s3_region` | The region to sign requests for. R2 doesn't use real regions — set this to `auto`; for Bunny, use the region code shown on your storage zone | No |
-   | `s3_bucket` | Your bucket name (for Bunny, this is your Storage Zone name) | No |
-   | `s3_access_key_id` | Access key ID (for Bunny, this is also your Storage Zone name) | No |
-   | `s3_secret_access_key` | Secret access key (for Bunny, this is your Storage Zone password — the "FTP & API Access" password from Bunny's dashboard) | **Yes** |
-   | `s3_force_path_style` | `true` or `false` — most S3-compatible providers (including R2 and Bunny) need `true`; real AWS S3 usually works with `false` | No |
+```yaml
+media_library:
+  name: s3
+```
 
-2. In `config.yml`, set the media library to `s3`:
+Reload the CMS. A missing key returns a "missing storage configuration" error rather than failing silently.
 
-   ```yaml
-   media_library:
-     name: s3
-   ```
+## Bunny Storage
 
-3. Reload the CMS — uploads and browsing now go through your bucket.
-
-### Using Bunny Storage
-
-Bunny now offers an S3-compatible API on its storage zones, so Bunny is configured the same way as any other S3-compatible provider above — there's no separate Bunny-specific integration anymore. One important limitation: **Bunny's S3 compatibility can only be turned on when you create a new storage zone** — it can't be enabled on a zone you're already using. If you're setting up Bunny for the first time, create the zone with S3 compatibility enabled and use the settings above.
-
-## Notes
-
-- This integration requires the credential keys above to already be set before the media library will work — a missing key returns a clear "missing storage configuration" error rather than failing silently.
-- Non-secret values (endpoint, bucket, region, path-style flag) are visible in the Variables tab as plain text; anything marked secret is masked and can't be read back once saved, only replaced.
+Bunny's S3-compatible API means there's no Bunny-specific integration any more — configure it as above. **S3 compatibility can only be enabled when a storage zone is created**, never on an existing one, so an existing zone has to be recreated.

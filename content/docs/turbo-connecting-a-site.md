@@ -4,80 +4,58 @@ group: Turbo
 weight: 30
 ---
 
-Once you've [created a site in Decap Turbo](../turbo-getting-started/#creating-your-first-site), point your Decap CMS `config.yml` at it by switching your backend to `turbo-github` (or `turbo-gitlab` if your site's repo lives on GitLab).
+Once you've [created a site](../turbo-getting-started/#create-a-site), switch your backend to `turbo-github`, or `turbo-gitlab` if the repo is on GitLab.
 
-## Use the beta release
+## Install the beta release
 
-Turbo backends aren't in the stable Decap CMS release yet. They ship on npm under the `beta` dist-tag, so you need a to install decap cms differently.
-
-If you load Decap CMS from a script tag, point it at the beta. Track the tag to pick up each new beta automatically:
+The Turbo backends aren't in the stable release yet. They ship on npm under the `beta` dist-tag.
 
 ```html
+<!-- track the tag -->
 <script src="https://unpkg.com/decap-cms@beta/dist/decap-cms.js"></script>
-```
 
-Or pin an exact version, so a new beta never changes your site until you change this line:
-
-```html
+<!-- or pin a version -->
 <script src="https://unpkg.com/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
 ```
 
-Tracking `@beta` is the easier way to stay current during the preview, and pinning is the safer option - beta can ship with braking changes in minor versions.
-
-If you bundle Decap CMS yourself, the same choice applies:
-
 ```sh
-npm install decap-cms-app@beta      # follows the tag
+npm install decap-cms-app@beta            # tracks the tag
 npm install decap-cms-app@3.17.0-beta.0   # pinned
 ```
 
-## Minimal configuration
+Tracking `@beta` keeps you current; pinning is safer, since a beta can ship breaking changes in a minor version.
+
+## Configuration
 
 ```yaml
 backend:
-  name: turbo-github
-  repo: owner/repo
-  branch: main
+  name: turbo-github # or turbo-gitlab
   turbo_site_id: your-site-id
+  branch: main # optional
 ```
 
-Or, for a GitLab-hosted repo:
+`turbo_site_id` is the UUID on the site's Overview tab, and the only value you have to set by hand. Everything else the backend needs — the Supabase project, the proxy endpoint, the repo — is fetched from the control plane at load time, keyed on that ID. Infrastructure changes on Turbo's side never require a `config.yml` edit.
 
-```yaml
-backend:
-  name: turbo-gitlab
-  repo: owner/repo
-  branch: main
-  turbo_site_id: your-site-id
-```
+### `repo` and `branch`
 
-Both backends take the same fields — only `name` and which Git host `repo` points at differ. `turbo_site_id` is the UUID shown on your site's detail page in Decap Turbo — it's the only Turbo-specific value you need to set by hand. Everything else the backend needs (which Supabase project to talk to, which endpoint to proxy Git calls through) is resolved automatically at load time, based on that ID.
+These behave differently from every other backend, and differently from each other:
 
-This means:
-
-- Rotating credentials or infrastructure changes on Turbo's side never require touching your `config.yml`.
-- If the config lookup ever fails, the CMS shows a clear error before you even reach the login screen rather than failing partway through — see [Troubleshooting](../turbo-troubleshooting-faq/) for what those errors mean.
+- **`repo` is ignored.** The value on the site row wins. The proxy resolves permissions from it, so a stale local copy is exactly what produces `requested repo does not match`. Change the repo in the dashboard, not here.
+- **`branch` wins if you set it**, and falls back to the site row if you don't. That is deliberate: one Turbo site can back several deploys of the same repo, each editing its own branch — production on `main`, staging on `develop` — with the same `turbo_site_id` in both configs.
 
 ## Logging in
 
-With `backend: turbo-github` (or `turbo-gitlab`) set, your Decap CMS login screen shows a **"Login with Turbo"** button instead of the usual Git provider login. Clicking it opens a popup:
+The login screen shows **Login with Turbo** and opens a popup. You need [access to that specific site](../turbo-roles-and-members/) — a Turbo account alone isn't enough.
 
-- If you're not already signed in to Decap Turbo, you'll log in there (same account you use for the Turbo dashboard).
-- If you're already signed in, the popup completes and closes automatically.
+Sessions refresh in the background, so editors aren't logged out mid-edit.
 
-You're then editing as yourself, and your session refreshes automatically in the background so you don't get logged out mid-edit. You'll need to already have [access to this specific site](../turbo-roles-and-members/) for this to work — being able to log in to Decap Turbo isn't enough on its own if you haven't been added to the site.
+## Commit attribution
 
-### How commits are attributed
+Different on each backend — check your own `git log` before assuming.
 
-This differs between the two backends, so check it against your own `git log`
-before assuming either.
+**GitLab** sends your Turbo display name and account email as `author_name` and `author_email`, so you are the commit author. The committer is the GitLab account that authorized the [Git connection](../turbo-getting-started/#connect-your-git-provider).
 
-**On GitLab (`turbo-gitlab`)**, commits are authored by you: your Turbo display
-name and account email are sent as GitLab's `author_name` and `author_email`.
-The organization's group token appears as the committer.
-
-**On GitHub (`turbo-github`)**, the **App is the commit author** and you are
-credited on a `Co-authored-by:` trailer:
+**GitHub** makes the App the author and credits you on a trailer:
 
 ```
 Author: decap-turbo[bot] <...>
@@ -87,36 +65,18 @@ Author: decap-turbo[bot] <...>
     Co-authored-by: Your Name <you@example.com>
 ```
 
-Turbo commits with the organization's App installation token, and GitHub's
-`createCommitOnBranch` authors a commit as whoever holds the token, with no
-override available. GitHub reads the trailer, renders co-author avatars on the
-commit and counts it toward your contributions, so the person behind a change
-is still visible in the UI and in `git log` — on the trailer rather than in the
-author field.
+GitHub's `createCommitOnBranch` authors as whoever holds the token, with no override. The alternative is the multi-step REST sequence, which costs three extra round trips on every save. GitHub renders co-author avatars and counts the commit toward your contributions, so attribution is still visible — on the trailer rather than the author field. Point any tooling that reads `git log --author` at the trailer instead.
 
-That is a deliberate trade rather than an oversight: controlling the author
-field on GitHub means dropping back to the multi-step REST commit sequence,
-which costs three extra round trips to GitHub on every save, on the one action
-editors perform most. If tooling of yours reads the author field specifically —
-release notes that map commits to people, contributor stats built from
-`git log --author` — point it at the trailer instead.
+## Config path
 
-## The config path field
+Turbo reads your collections from the file at the site's **config path** to support [per-collection permissions](../turbo-roles-and-members/#site-roles).
 
-The **config path** you set when creating the site (default `admin/config.yml`) needs to point at the actual file in your repo, because Turbo reads your collections from it to support per-collection permissions (see [Roles and members](../turbo-roles-and-members/)). Common conventions by generator:
-
-| Generator | Typical config path |
+| Generator | Typical path |
 |---|---|
 | Plain static site / Jekyll | `admin/config.yml` |
 | Hugo | `static/admin/config.yml` |
 | Next.js | `public/admin/config.yml` |
 
-If your setup is different, use whatever path your build actually serves the CMS files from.
+## Media uploads
 
-## Multiple environments
-
-If you list more than one **admin interface URL** on the site (e.g. one line for production, one for staging), the same `turbo_site_id` and login flow work from either — useful if you preview content changes on staging before they go live.
-
-## Media library
-
-Want editors to upload images/files through Decap CMS instead of committing them to your repo? See [Media library (S3-compatible)](../turbo-media-proxy/) — available on all plans.
+To keep uploads out of your repo, see [Media library](../turbo-media-proxy/). Pro and above.

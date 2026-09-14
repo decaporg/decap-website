@@ -4,67 +4,59 @@ group: Turbo
 weight: 70
 ---
 
-Common errors and questions when setting up or running Decap Turbo.
+## Loading the CMS
 
-## Reporting a bug or leaving feedback
+**"Unknown site_id"** — `turbo_site_id` doesn't match a site in your organization. Check it against the Overview tab; it's easy to copy the wrong one when you manage several.
 
-Organization owners can report issues via the Feedback page. Use it for bugs, rough edges, or feature requests about Decap Turbo itself — the admin app, not your own site's content or CMS setup. If someone else already reported the same problem, your submission is added as a comment on their existing report instead of opening a duplicate, and you can follow its status and add follow-up comments from the same page.
+**"This site has been locked"** — the organization is over its site limit, usually after a downgrade or cancellation. Upgrade, or unlock the site if you have a free slot. See [site locking](../turbo-roles-and-members/#site-locking).
 
-For issues with your own site's content, contact whoever manages that site directly — the Turbo team has no visibility into what you publish.
+**"This organization has hit its daily GitHub request limit"** (or GitLab) — you've used the plan's [daily ceiling](../turbo-billing/#daily-request-ceilings). The response carries `Retry-After`; the counter resets on a 24-hour boundary. Nothing is charged or locked. Tell us if you hit it during ordinary editorial work.
 
-## Errors when loading the CMS
+**`requested repo does not match`** — the `repo` in `config.yml` disagrees with the site row, and the site row is authoritative. Change it in the dashboard; see [`repo` and `branch`](../turbo-connecting-a-site/#repo-and-branch).
 
-**"Unknown site_id"**
-The `turbo_site_id` in your `config.yml` doesn't match any site in your Decap Turbo organization. Double-check it against the ID shown on the site's detail page — it's easy to copy the wrong site's ID if you manage several.
+**`use_graphql: true` is rejected on `turbo-gitlab`** — GraphQL requests would bypass per-site scoping, so the backend refuses to start. Remove it; the plain `gitlab` backend supports it, `turbo-gitlab` doesn't.
 
-**"This site has been locked"**
-The site's organization is over its plan's site limit, usually because of a downgrade or a canceled subscription. Log in to Decap Turbo and check the organization's [Billing](../turbo-billing/) page — either upgrade, or unlock this site if you have a free slot (see [site locking](../turbo-roles-and-members/#site-locking)).
+## Logging in
 
-**"This organization has hit its daily GitHub request limit" / "...GitLab..."**
-The organization has used up its plan's daily ceiling on Git-proxy requests. The response carries a `Retry-After` header with the seconds left; the counter resets on a 24-hour boundary and everything resumes on its own. Nothing is charged or locked. See [daily request ceilings](../turbo-billing/#daily-request-ceilings) for the numbers per plan — and tell us if you're hitting it during ordinary editorial work.
+**The popup closes and nothing happens / "origin not allowed"** — the site's admin interface URL must match where your CMS is actually served from, exactly: protocol, host and path. Check the Overview tab, including any staging domains.
 
-## Errors during login
+**"Session expired. Please log in again."** — the refresh token expired or was invalidated. Log in again. A brief pause with no error is a refresh retry succeeding in the background, not a problem.
 
-**The login popup closes but nothing happens / "origin not allowed"**
-The admin interface URL configured on the site in Decap Turbo needs to *exactly* match the URL your Decap CMS is actually served from (protocol, host, and path) — this is a deliberate security check, not a bug. Go to the site's Overview tab in Decap Turbo and make sure the admin interface URL matches where you're actually loading `/admin` from, including for any staging/preview domains you use.
+## Managing organizations and sites
 
-**"Session expired. Please log in again."**
-Your session's refresh failed in a way that can't be recovered automatically (for example, the refresh token itself expired or was invalidated) — just log in again. If instead you occasionally notice a brief pause with no error and everything keeps working, that's a transient refresh retry succeeding in the background, not a problem.
+**"Only organization owners can create new sites"** — ask an owner to create it, or to promote you.
 
-## Errors managing organizations and sites
+**"This organization has no GitHub connection yet"** — connect the provider before creating sites. See [Connect your Git provider](../turbo-getting-started/#connect-your-git-provider).
 
-**"Only organization owners can create new sites"**
-Site creation is an owner-only action. Ask an owner of the organization to create the site, or to promote you to owner if that's the intended long-term setup.
+**"This organization has reached its site limit" / "…seat limit"** — free up a slot, or add capacity from [Billing](../turbo-billing/).
 
-**"This organization has reached its site limit" / "...seat limit"**
-You're at your plan's included sites or seats. Either free up a slot (delete or lock an existing site, remove a member) or add capacity from [Billing](../turbo-billing/) — extra sites/seats as an add-on, or upgrade plans.
+## Editors are never told when a change is live
 
-## Editors are never told when their change is live
+Deploy status needs something reporting your builds. Most hosts do it through the Decap GitHub App; **Netlify doesn't**, for branch or production deploys, and no Netlify setting changes that. Open the site's Deploys tab — if nothing is recorded, [add the webhook](../turbo-deploy-status-setup/#netlify). Other causes are in [Deploy status](../turbo-deploy-status/#nothing-arrives).
 
-Deploy status only works if something reports your builds to Decap. Most hosts
-do this automatically through the Decap GitHub App — **Netlify does not**, for
-branch or production deploys, and no Netlify setting changes that.
+## Reporting a bug
 
-Open your site's **Deploys** tab in the dashboard. If nothing has been
-recorded, add the deploy webhook; the full walkthrough and the other causes are
-in [Deploy status](../turbo-deploy-status/).
+Organization owners can report issues from the **Feedback** page — bugs and feature requests about Turbo itself, not your site's content. A duplicate is added as a comment on the existing report rather than opening a second one, and you can follow status and reply from the same page.
 
-## Frequently asked questions
+## FAQ
 
-**Does using Decap Turbo change how my content is stored?**
-No — your content is still committed to your GitHub or GitLab repository exactly as it would be with the standard GitHub/GitLab backend. See [How it works](../turbo-how-it-works/#your-content-still-lives-in-git).
+**Does Turbo change how my content is stored?**
+No. Content is committed to your repository exactly as the standard backends do. See [How it works](../turbo-how-it-works/#content-stays-in-git).
 
-**Can I move a site off Turbo later?**
-Yes. Since your content already lives in your Git repo, switching back to a standard backend (like the plain [GitHub backend](../github-backend/) or [GitLab backend](../gitlab-backend/)) is just a `config.yml` change — nothing about your content is locked into Turbo.
+**Can I move off Turbo later?**
+Yes — your content is already in Git, so switching to the plain [GitHub](../github-backend/) or [GitLab](../gitlab-backend/) backend is a `config.yml` change.
 
-**Can I self-host instead of using Turbo at all?**
-Yes — Decap CMS itself is free and open source regardless of whether you use Turbo. Self-hosting means running your own auth (a Git provider's OAuth, [Git Gateway](../git-gateway-backend/), etc.) instead of Turbo's hosted auth and Git hosting proxy. See the [Decap Turbo product page](/turbo/) for how the two compare.
+**Can I self-host instead?**
+Yes. Decap CMS is free and open source either way; self-hosting means running your own auth — a Git provider's OAuth, [Git Gateway](../git-gateway-backend/), or [decap-proxy](../decap-proxy/) — instead of Turbo's hosted auth and proxy.
 
-**Do my editors need GitHub or GitLab accounts?**
-No. Editors authenticate with their Decap Turbo account only — see [How it works](../turbo-how-it-works/#editors-never-see-a-git-hosting-token).
+**Do editors need GitHub or GitLab accounts?**
+No. See [How it works](../turbo-how-it-works/#editors-dont-need-a-git-host-account).
 
-**How do I get access if I don't have an account yet?**
-Decap Turbo is in public preview — [sign up](https://turbo.decapcms.org/signup) directly, no invite required.
+**Can editors sign in with Google or GitHub?**
+Not yet — email and password today. Other providers will be added during the preview.
 
-**How do I ask about Enterprise or dedicated infrastructure?**
-Contact us from the [Turbo plans page](/turbo/#plans) or your organization's Billing page — Enterprise is a custom-quoted plan handled outside self-serve signup.
+**Is deploy status available on GitLab?**
+Not yet. It's `turbo-github` only.
+
+**How do I ask about Enterprise?**
+From the [plans page](/turbo/#plans) or your organization's Billing page. It's custom-quoted and handled outside self-serve checkout.

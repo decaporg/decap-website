@@ -26,6 +26,23 @@ The `backend` option specifies how to access the content for your site, includin
 
 **Note**: no matter where you access Decap CMS — whether running locally, in a staging environment, or in your published site — it will always fetch and commit files in your hosted repository (for example, on GitHub), on the branch you configured in your Decap CMS config.yml file. This means that content fetched in the admin UI will match the content in the repository, which may be different from your locally running site. It also means that content saved using the admin UI will save directly to the hosted repository, even if you're running the UI locally or in staging. If you want to have your local CMS write to a local repository, try the `local_backend` setting, [currently in beta](/docs/working-with-a-local-git-repository/).
 
+### Decap Turbo options
+
+The `turbo-github` and `turbo-gitlab` backends take one required option plus a few of their own. See [Connecting a site](/docs/turbo-connecting-a-site/).
+
+```yaml
+backend:
+  name: turbo-github # or turbo-gitlab
+  turbo_site_id: your-site-id
+  branch: main # optional; overrides the branch on the site row
+  deploy_status: false # optional; turbo-github only
+```
+
+- `turbo_site_id` **(required)** — the site's UUID from the Turbo dashboard. Everything else the backend needs is fetched from the control plane at load time.
+- `branch` — optional. Overrides the branch configured on the site, so several deploys of one repo can each edit their own.
+- `repo` — **ignored**. The value on the site row is authoritative.
+- `deploy_status` — `turbo-github` only. `false` disables [deploy status](/docs/turbo-deploy-status/); an object with `notifications` and `page` disables either surface; `primary_target` names the host allowed to notify.
+
 ### Commit Message Templates
 
 You can customize the templates used by Decap CMS to generate commit messages by setting the `commit_messages` option under `backend` in your Decap CMS `config.yml`.

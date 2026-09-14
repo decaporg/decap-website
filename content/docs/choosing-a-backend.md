@@ -9,6 +9,8 @@ To follow this guide, you need a [Netlify](https://app.netlify.com) account. If 
 
 You can learn about other authentication options in the [Backends](/docs/backends-overview) doc.
 
+If you'd rather not run auth yourself and want your editors to skip Git host accounts entirely, [Decap Turbo](/docs/turbo-overview/) is a hosted backend that also proxies and caches your Git host's API. It's a paid service with a free tier, and doesn't need Netlify.
+
 ## Setup on Netlify
 
 Netlify offers a built-in authentication service called [Identity](https://docs.netlify.com/security/secure-access-to-sites/identity/). In order to use it, connect your site repo with Netlify. Netlify has published a general [Step-by-Step Guide](https://www.netlify.com/blog/2016/10/27/a-step-by-step-guide-deploying-a-static-site-or-single-page-app/) for this, along with detailed guides for many popular static site generators.
