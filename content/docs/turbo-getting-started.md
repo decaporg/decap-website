@@ -4,56 +4,57 @@ group: Turbo
 weight: 20
 ---
 
-Decap Turbo is invite-only during closed beta. This walks through accepting an invite (or signing up directly, once that opens up), creating your organization, and creating your first site.
+Three steps before your `config.yml` can point at Turbo: create an organization, connect your Git provider, create a site.
 
-## Accepting an invite
+## Create an organization
 
-If someone invited you to their organization, you'll get an email with an accept link. Opening it takes you to an accept-invitation page:
+[Sign up](https://turbo.decapcms.org/signup) with an email and password, or accept an invitation someone sent you. Every organization starts on the **Free** plan — one site, one seat, no payment step.
 
-- If you don't have a Decap Turbo account yet, you'll be walked through creating one (email/password, or one of the sign-in providers your organization has enabled, e.g. Google or GitHub) right there.
-- If you already have an account, you just confirm and accept while signed in.
+An organization is the billing and ownership unit. It owns sites and holds the seats people occupy. You can belong to several, and create more at any time from your profile.
 
-Accepting adds you to the inviting organization — and to any specific sites the invite included — immediately; there's no way to get site access without becoming an org member too. You don't create your own organization in this path; you land directly on the sites and content the owner scoped you into. If the invite's only purpose was to give you access to one or more sites, your [profile page](#your-profile) is really all you need — see below.
+Sign-in is email and password today. Other providers will be added during the preview.
 
-If you were invited as a beta participant without an organization attached, you'll go through account creation and then create your own organization (below).
+If you accepted an invitation, you are already in someone else's organization and can skip to whatever they gave you access to — see [your profile](#your-profile).
 
-## Creating your organization
+## Connect your Git provider
 
-Every organization starts on the **Free** plan (1 site, 1 seat) — no payment step required to get going. From your profile, use **"+ Add organization"**, or go directly to the new-organization page. The only field is a name, pre-filled with a suggestion based on your email but fully editable. Submitting makes you the **owner** of a new organization and takes you into it.
+**Do this before creating a site.** Site creation is refused until the organization has a connection for the provider you pick, because the proxy uses it to reach your repository. It is one-time and per organization, not per site.
 
-You can belong to more than one organization (for example, one per client if you run an agency), and you can create additional ones later the same way.
+Go to **Git connection** in the organization nav.
 
-## Creating your first site
+![The Git connection page, showing a connected GitHub installation and a connected GitLab account](/img/turbo-git-connection.png)
 
-A "site" in Decap Turbo corresponds to one Decap CMS install — one repo, one `config.yml`. Only organization **owners** can create sites, and only up to your plan's site limit.
+**GitHub** — install the Turbo GitHub App on the GitHub account or organization that owns your repositories, choosing all repositories or a subset. Return to this page afterwards to change that selection.
 
-From your organization's Sites page, start a new site and fill in:
+**GitLab** — authorize Turbo against your GitLab account over OAuth.
 
-- **Site name** — anything descriptive; this is just a label in Turbo, not used in your CMS config.
-- **Admin interface URL(s)** *(optional)* — the URL(s) where your Decap CMS admin actually loads, one per line if you have more than one (e.g. production and staging). This is used later to validate the login flow, so it's worth filling in even though it's optional at creation time.
-- **Repo** *(optional)* — your hosted repo in `owner/name` format.
-- **Branch** — defaults to `main`.
-- **Config path** — the repo-relative path to your site's `config.yml`, defaulting to `admin/config.yml`. This varies by site generator: Hugo sites often serve it from `static/admin/config.yml`, Next.js from `public/admin/config.yml`. Turbo reads your collections from this file to support per-collection permissions later, so it needs to point at the real file.
+> GitLab.com gates group and project access tokens behind Premium, so Turbo authenticates as the GitLab **user** who authorizes the connection. That token can reach every project that account can reach, not just this organization's. Set **Turbo-side repo scope** to *Only selected projects* and list them if that matters to you — it is the only limit available on GitLab Free.
 
-Submitting creates the site and gives you **Full access** on it, then takes you to the site's detail page.
+**Turbo-side repo scope** narrows what Turbo will proxy, on top of whatever the provider already allows. On GitHub the App installation is the outer limit and this is an extra check; on GitLab it is the only one.
 
-## The site detail page
+## Create a site
 
-This is where you'll spend most of your time managing a given site:
+A site is one Decap CMS install — one repo, one `config.yml`. Owners only, up to the plan's site limit.
 
-- **Overview** — the fields you just set (editable), plus cache stats (which repo/branches/collections are currently cached, how many files) and a **Clear site cache** action if you ever need to force a re-sync from your Git host.
-- **Site members** *(organization owners only)* — who has access to this specific site and at what role.
-- **Variables** *(organization owners only)* — a key/value store for anything your site config needs at runtime (see [Roles and members](../turbo-roles-and-members/#site-variables)).
-- **Danger zone** — transfer the site to another organization, lock it, or delete it.
+From **Sites**, create one and fill in:
 
-Once the site exists, the next step is pointing your actual Decap CMS `config.yml` at it — covered in [Connecting a site](../turbo-connecting-a-site/).
+| Field | |
+|---|---|
+| **Site name** | A label in Turbo. Not used in your CMS config. |
+| **Git provider** | GitHub or GitLab. Must match a connection from the step above. |
+| **Repo** | `owner/name` on GitHub; `group/project` on GitLab, subgroups allowed. |
+| **Branch** | Defaults to `main`. |
+| **Config path** | Repo-relative path to `config.yml`, default `admin/config.yml`. Turbo reads your collections from it for per-collection permissions, so it has to resolve. |
+| **Admin interface URL(s)** | Where your CMS is served from, one per line. Checked during login, so fill it in. |
+
+Submitting gives you Full access on the site and opens its detail page, where the **Overview** tab shows the **Site ID** you need next.
+
+![A site's Overview tab, with the Site ID and its copy button](/img/turbo-site-id.png)
+
+Next: [connect your `config.yml`](../turbo-connecting-a-site/).
 
 ## Your profile
 
-Your profile page is your personal home in Decap Turbo — reachable any time from the nav, and where you land automatically if you belong to no organization. It shows:
+Your profile lists the organizations you belong to, the sites you can open, and account settings — password, usage-data collection, and account deletion. It is where you land if you belong to no organization, which is a valid state.
 
-- Every organization you're a member of, and lets you switch your active one or create a new one.
-- Every site you have direct access to, each with a link straight to that site's admin interface — useful if you never need to touch organization-level settings at all.
-- Account settings: changing your password and deleting your account.
-
-If you were invited for site access only, this page — not the organization dashboard — is where you'll come back to each time you want to open the CMS.
+Someone invited only for site access never needs an organization page: their profile links straight to each site's admin interface.

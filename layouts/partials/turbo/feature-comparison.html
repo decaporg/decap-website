@@ -16,7 +16,7 @@
             {{ range .columns }}
             <th class="turbo-comparison-table__th turbo-comparison-table__th--plan" scope="col">
               <span class="turbo-comparison-table__plan-name">{{ .name }}</span>
-              <span class="turbo-comparison-table__plan-price"><strong>{{ .price }}</strong>&nbsp;/ month</span>
+              <span class="turbo-comparison-table__plan-price"><strong>{{ .price }}</strong>{{ with .period }}&nbsp;{{ . }}{{ end }}</span>
             </th>
             {{ end }}
           </tr>

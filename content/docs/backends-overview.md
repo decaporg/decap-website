@@ -7,6 +7,8 @@ title: Backends overview
 
 A backend is JavaScript code that allows Decap CMS to communicate with a service that stores content - typically a Git host like GitHub or GitLab. It provides functions that Decap CMS can use to do things like read and update files using APIs provided by the service.
 
+Decap ships backends for [GitHub](/docs/github-backend/), [GitLab](/docs/gitlab-backend/), [Gitea](/docs/gitea-backend/), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/) and [Git Gateway](/docs/git-gateway-backend/), plus the hosted [Decap Turbo](/docs/turbo-overview/) backends (`turbo-github` and `turbo-gitlab`), which add server-side auth and a caching proxy in front of your Git host.
+
 ## Backend Configuration
 
 Individual backends should provide their own configuration documentation, but there are some configuration options that are common to multiple backends. A full reference is below. Note that these are properties of the `backend` field, and should be nested under that field.
@@ -39,3 +41,5 @@ Your proxy should handle the following request paths:
 1. `/callback` - when the user finishes the authorization flow, Github will callback to your OAuth handler with an authorization code that is sent to the Decap caller window from the pop-up using `window.postMessage`.
 
 For more detailed instructions and example code see this [Cloudflare Worker template](https://github.com/sterlingwes/decap-proxy).
+
+Alternatively, [Decap Turbo](/turbo/) runs this proxy for you and also shields your GitHub or GitLab API from rate limits — no server to deploy or maintain.

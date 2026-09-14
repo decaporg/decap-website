@@ -1,7 +1,7 @@
 ---
 title: "Announcing Decap Turbo"
 description: >-
-  Decap Turbo is our new SaaS upgrade for teams using Decap CMS, focused on CMS performance, centralized authentication, and granular permissions. You can sign up for early access today.
+  Decap Turbo is our new SaaS upgrade for teams using Decap CMS, focused on CMS performance, centralized authentication, and granular permissions. You can sign up today.
 date: 2026-05-05T06:00:00.000Z
 author: Martin Jagodic
 image: /img/turbo-speed.svg
@@ -38,7 +38,7 @@ Turbo provides managed authentication so teams can stop maintaining custom auth 
 
 ### 2. Roles and permissions built for real teams
 
-Define who can access which collection, so writers, editors, and admins each get the right level of control.
+Define who can access which collection, so writers, editors, and admins each get the right level of control. Every plan includes a built-in Full-access role; custom, per-collection roles are available as a Pro add-on and included on Enterprise.
 
 ### 3. A faster CMS experience
 
@@ -46,4 +46,4 @@ The APIs of Git providers are not built for high-performance CMS workflows. Turb
 
 ## Get started
 
-Currently, we are collecting interest from teams who want to be the first to try Decap Turbo. If you want to be part of the early access program, sign up on our [Turbo page](/turbo).
+Decap Turbo is in public preview. Sign up directly on our [Turbo page](/turbo).

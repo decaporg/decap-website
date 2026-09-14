@@ -26,40 +26,28 @@ turboBanner:
   label: "NEW"
   title: "Introducing Decap Turbo"
   description: "Decap Turbo is an extension for teams that need faster CMS performance, centralized access control, and additional collaboration and support capabilities."
+  stat:
+    value: "205 entries in 0.3s"
+    description: "Read from Turbo's database instead of one Git API call per file (measured Sept 2026)"
+    icon: "turbo-performance"
   benefits:
-    - text: "Faster CMS performance with a database proxy"
-      icon: "turbo-speed"
-    - text: "Centralized authentication, user management, and roles"
-      icon: "turbo-shield"
-    - text: "Real-time editing visibility"
-      icon: "turbo-collaboration"
-    - text: "Site variables for advanced workflows"
-      icon: "turbo-shield"
+    - title: "Hosted authentication & roles"
+      description: "Invite editors and manage permissions — no auth server or OAuth app for you to run."
+    - title: "Faster CMS performance"
+      description: "A database proxy serves collections in a fraction of a second instead of one Git API call per file."
+    - title: "Rate-limit shielding"
+      description: "A request proxy between your editors and GitHub or GitLab, so large collections stop hitting API limits."
+    - title: "S3-compatible media library"
+      description: "Upload and browse assets in your own bucket — AWS S3, R2, Bunny, or any S3-compatible provider."
+    - title: "Deploy notifications"
+      description: "Editors are told when their saved change is actually live, not just committed."
+    - title: "Activity log"
+      description: "See who changed what, in which collection, and when."
+    - title: "Site variables"
+      description: "Store credentials your site needs outside config.yml, with secrets encrypted at rest."
   button:
     text: "Learn more about Turbo"
     href: "/turbo/"
-  preview:
-    editors:
-      title: "Active editors"
-      status: "8 team members online"
-      icon: "turbo-team"
-      avatars:
-        - initials: "JD"
-          tone: "pink"
-        - initials: "SM"
-          tone: "purple"
-        - initials: "AL"
-          tone: "blue"
-        - initials: "+5"
-          tone: "rose"
-    collaboration:
-      title: "Centralized user management"
-      description: "Manage users, roles, and permissions for all your sites from a single interface."
-    performance:
-      title: "CMS performance"
-      value: "Up to 60% faster"
-      description: "vs. standard Decap CMS"
-      icon: "turbo-performance"
 
 # Homepage Comparison
 comparison:
@@ -88,9 +76,9 @@ comparison:
       features:
         - "Database proxy for faster CMS performance"
         - "Centralized authentication handling"
-        - "User roles and permissions (Team and above)"
-        - "Real-time editing visibility (Team and above)"
-        - "Priority support (Business)"
+        - "User roles and permissions, with custom roles as a Pro add-on"
+        - "Site variables, with secrets encrypted at rest"
+        - "Priority support as a Pro add-on, included on Enterprise"
 
 # Homepage Features
 features:

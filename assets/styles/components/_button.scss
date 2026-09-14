@@ -100,6 +100,18 @@
     }
   }
 
+  &--text-white {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-white);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: transparent;
+      color: var(--color-white);
+    }
+  }
+
   &--block {
     display: block;
     width: 100%;

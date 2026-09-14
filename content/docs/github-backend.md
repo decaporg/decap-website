@@ -7,6 +7,8 @@ For repositories stored on [GitHub](https://github.com), the `github` backend al
 
 Because GitHub [requires a server](https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723) for authentication, Netlify facilitates basic GitHub authentication.
 
+If you'd rather not run an auth server or manage an OAuth app at all, [Decap Turbo](/turbo/) provides hosted GitHub authentication along with a request proxy that shields your GitHub API rate limit.
+
 To enable basic GitHub authentication:
 
 1. Follow the authentication provider setup steps in the [Netlify docs](https://www.netlify.com/docs/authentication-providers/#using-an-authentication-provider).

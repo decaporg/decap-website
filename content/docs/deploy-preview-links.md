@@ -29,6 +29,8 @@ functionality.
 **Note:** If you're using a custom backend (one that is not included with Decap CMS), please check the
 documentation for that backend for more information about enabling deploy preview links.
 
+**Not the same as deploy status.** Preview links answer "what would this unpublished change look like"; [deploy status](../turbo-deploy-status/) — available on Decap Turbo — answers "has the change I published actually shipped to the live site". They use different signals and can be used together.
+
 Deploy preview links are provided in the editor toolbar, near the publishing controls:
 
 ![Deploy preview link for unpublished content](/img/preview-link-unpublished.png)

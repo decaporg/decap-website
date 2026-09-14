@@ -120,6 +120,12 @@ collections:
     filter:
       field: group
       value: Contributing
+  - <<: *docs_collection
+    name: docs_turbo
+    label: 'Docs: Decap Turbo'
+    filter:
+      field: group
+      value: Turbo
   
   - name: widget_docs
     label: 'Docs: Widgets'

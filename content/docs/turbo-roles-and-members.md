@@ -4,66 +4,74 @@ group: Turbo
 weight: 50
 ---
 
-How access works across your organization and its sites, and how to invite people.
+Access control across an organization and its sites.
 
 ## Organization roles
 
-Every person in an organization is either an **owner** or a **member**:
+- **Owners** create and delete sites, invite and remove members, manage billing, and everything a member can do.
+- **Members** can be given access to individual sites. Nothing else.
 
-- **Owners** can create and delete sites, invite and remove organization members, manage billing, and do everything a member can.
-- **Members** can be given access to individual sites but can't create sites, manage other members, or touch billing.
+An organization always needs at least one owner: you can't demote or remove the last one, or leave while you're the only owner and other members remain.
 
-An organization needs at least one owner at all times — you can't remove or demote the last one, and you can't leave an organization if you're its only owner while other members remain (promote someone else first).
+Managing a site — its settings, members, roles, variables and Danger Zone — is owner-only. There is no separate site-admin role. Site membership governs content access in the CMS, nothing more.
 
-## Managing a site is an owner thing
-
-Only organization **owners** can manage a site's settings, members, roles, and variables, or reach its Danger Zone — there's no separate "site admin" role. Site membership itself is entirely about content access: being added to a site determines what you can do in the CMS there, not whether you can manage the site.
-
-Being an organization member doesn't automatically give you access to any site — an owner has to explicitly add you to each site you need. This is deliberate: someone can be a paid seat in your organization without having editing access to every site you run.
+Being an org member grants no site access on its own; an owner adds you to each site you need. That's deliberate — someone can hold a seat without being able to edit every site you run.
 
 ## Site roles
 
-Every site member is assigned a **site role**, which controls what they can do in the CMS on that specific site:
+Each site member gets a role on that site:
 
-- **Full access** — the built-in default role. Can use the CMS across every collection, with no restrictions.
-- **Custom roles** — named roles you create yourself (for example, "Blog Writer"), each scoped to specific collections as edit / view-only / no-access. A member with a custom role only sees and can act on the collections it grants.
+- **Full access** — the built-in default. Every collection, no restrictions.
+- **Custom roles** — named roles you define, each collection set to edit, view or none.
 
-Restrictions are enforced on Turbo's servers, not just hidden in the CMS UI (see [How it works](../turbo-how-it-works/#permission-enforcement-isnt-just-a-ui-filter)).
+![Editing a custom role, with per-collection access](/img/turbo-custom-role.png)
 
-Creating, editing, or deleting custom roles is available as the **advanced/custom roles** add-on — see the [Turbo plans](/turbo/#plans) for pricing. Without it, every site member is on the built-in Full access role. Deleting a custom role resets anyone assigned to it back to Full access.
+Restrictions are [enforced server-side](../turbo-how-it-works/#permissions-are-enforced-server-side), not just hidden in the UI.
+
+Creating and editing custom roles requires the **advanced roles** add-on ([plans](/turbo/#plans)). Without it every member is on Full access. Deleting a custom role puts anyone holding it back on Full access.
 
 ## Inviting people
 
-From your organization's Members page (owners only), invite by email and optionally grant access to specific sites — with a chosen role for each — at the same time, so you don't need a separate step afterward. The invite is a link that's valid for a limited time; if it expires or you need to send it again, you can resend or revoke it from the same page.
+From the organization's **Members** page, invite by email and optionally grant site access with a role for each site in the same step. Invitations expire; resend or revoke them from the same page.
 
-The person you invite doesn't need an existing Decap Turbo account — accepting the invite walks them through creating one if needed. Accepting always adds them to your organization as a member, even if the invite's only purpose was to give them access to specific sites; if that's the case, they'll land on their [profile page](../turbo-getting-started/#your-profile) with a direct link to open the CMS on their site(s), without needing to touch anything org-level.
+Invitees don't need an existing account — accepting walks them through creating one. Accepting always adds them to the organization, even for a site-only invitation; if that's all they got, their profile links straight to the CMS.
 
-You can also add someone who *already* has a Decap Turbo account directly, without sending an invite email, from the same Members page or from a specific site's Members tab.
+Someone who already has a Turbo account can be added directly, with no invitation email, from the same page or from a site's Members tab.
 
 ## Site variables
 
-Each site has its own key/value store, available under that site's **Variables** tab (organization owners only) — a place to keep config and credentials scoped to that site.
+**Pro and above.** Each site has a key/value store on its **Variables** tab, owner-only — config and credentials scoped to that site, including the [media library](../turbo-media-proxy/) credentials.
 
-Marking a variable as **secret** encrypts its value at rest before it's stored, and masks it in the Turbo UI. Non-secret variables are stored as plain text and shown as-is. Use the secret flag for anything sensitive, like API keys or tokens.
+Marking a variable **secret** encrypts it at rest and masks it in the UI; it can be replaced but never read back. Non-secret values are stored and displayed as plain text.
 
 ## Site locking
 
-A site can become **locked**, meaning it's read-only for everyone, including its own members, until an organization owner unlocks it. This happens either:
+A locked site is read-only for everyone until an owner unlocks it. It happens either automatically — a downgrade or cancelled subscription leaves the organization over its site limit, so one site stays active and the rest lock — or manually, to free a site slot without deleting anything.
 
-- **Automatically**, if your organization is downgraded or a subscription is canceled and you have more sites than your new plan allows (one site is retained and stays active; the rest lock).
-- **Manually**, if an owner locks a site on purpose — for example, to free up a site slot on your plan without deleting it.
-
-A locked site doesn't count against your plan's site limit, so unlocking one requires having a free slot (either by locking/deleting another site first, or upgrading).
+Locked sites don't count against the limit, so unlocking one needs a free slot. Upgrading unlocks automatically, oldest first, as far as the new plan reaches.
 
 ## Transferring a site
 
-An owner can move a site to a different organization they belong to, from that site's Danger Zone. Members, variables, and access scoping move with it — anyone who wasn't already a member of the destination organization loses their site access as part of the move, since site access requires an org seat in that same organization.
+An owner can move a site to another organization they belong to, from its Danger Zone. Members, variables and scoping move with it. Anyone who isn't already a member of the destination organization loses access, since site access requires a seat there.
+
+## Usage data
+
+Turbo records product-usage events — features used, pages visited — to guide development. Two independent opt-outs:
+
+- **Per account**, on your profile, covering everything recorded under your user.
+- **Per organization**, in organization settings, covering everyone in it. This is the lever for an organization acting on behalf of the editors it invites.
+
+Neither affects the [activity log](#activity-log), which is a record of the service you're paying for rather than analytics.
+
+## Activity log
+
+The organization's **Activity** page lists who saved which entry, in which collection, on which site, and when — drawn from the same events the dashboard summarizes. Use it to answer "who changed this" without going to `git log`.
 
 ## Leaving or deleting an organization
 
-Both live in your organization's settings, under Danger Zone:
+Both in organization settings, under Danger Zone.
 
-- **Leave** removes only your own membership. Blocked if you're the only member (delete the org instead) or the last owner while others remain (promote someone first).
-- **Delete** permanently removes the organization along with every site it owns, and all of those sites' content cache, variables, and memberships. This can't be undone — the confirmation shows how many sites are affected before you commit.
+- **Leave** removes your membership only. Blocked if you're the only member, or the last owner with others remaining.
+- **Delete** removes the organization and every site it owns, with their cached content, variables and memberships. The confirmation names the site count. It can't be undone.
 
-Belonging to zero organizations is a perfectly normal state — you'll land on your profile with a prompt to create a new one whenever you're ready.
+Belonging to no organization is a normal state — you land on your profile with a prompt to create one.
