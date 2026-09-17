@@ -40,6 +40,24 @@
     }
   }
 
+  &__social {
+    display: flex;
+    gap: var(--space-fixed-3);
+    list-style: none;
+    padding: 0;
+    margin: var(--space-fixed-4) -3px 0;
+
+    a {
+      display: flex;
+      padding: 3px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
   &__section h4 {
     margin-top: 0;
   }

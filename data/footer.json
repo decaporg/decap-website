@@ -1,6 +1,33 @@
 {
   "logo": "/img/decap-logo-white.svg",
   "maintained": "Maintained in Europe, shaped by contributors from around the world.",
+  "social": [
+    {
+      "icon": "github",
+      "label": "GitHub",
+      "href": "https://github.com/decaporg/decap-cms/"
+    },
+    {
+      "icon": "discord",
+      "label": "Discord",
+      "href": "https://decapcms.org/chat"
+    },
+    {
+      "icon": "bluesky",
+      "label": "Bluesky",
+      "href": "https://bsky.app/profile/decapcms.org"
+    },
+    {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/company/decap-cms/"
+    },
+    {
+      "icon": "x",
+      "label": "X",
+      "href": "https://x.com/Decap_CMS"
+    }
+  ],
   "sections": [
     {
       "title": "Decap CMS",

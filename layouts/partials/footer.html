@@ -6,6 +6,16 @@
       <div class="footer__branding">
         <img src="{{ $footer.logo | relURL }}" alt="Decap CMS">
         <p>{{ $footer.maintained | markdownify }}</p>
+
+        <ul class="footer__social">
+          {{ range $footer.social }}
+            <li>
+              <a href="{{ .href }}" target="_blank" rel="noreferrer" aria-label="{{ .label }}" class="hide-external">
+                {{ partial "icon" .icon }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
       </div>
 
       {{ range $footer.sections }}
