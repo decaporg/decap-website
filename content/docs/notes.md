@@ -6,11 +6,11 @@ title: Notes
 
 <span class="version-tag">3.15.0</span>
 
-Notes let editors leave comments on an entry without touching its content. A *note* is a short message attached to an entry, shown in a pane next to the editor, and stored in your repository host rather than in the entry file. Use notes to ask a colleague for a second opinion, record why a wording was chosen, or leave a reminder for whoever picks the draft up next.
+Notes let editors leave comments on an entry without touching its content. A *note* is a short message attached to an entry, shown in a pane next to the editor, and stored in your repository host as issues rather than in the entry file. Use notes to ask a colleague for a second opinion, record why a wording was chosen, or leave a reminder for whoever picks the draft up next.
 
 ## Requirements
 
-* Using the [GitHub backend](/docs/github-backend/), the [GitLab backend](/docs/gitlab-backend/), or [Decap Turbo](/docs/turbo-overview/). All three store notes the same way. Other backends do not store notes — the pane stays empty and adding a note fails.
+* Using the [GitHub backend](/docs/github-backend/), the [GitLab backend](/docs/gitlab-backend/), or [Decap Turbo](/docs/turbo-overview/).
 * Using the [editorial workflow](/docs/editorial-workflows/).
 * The entry has been saved at least once. Notes are not available while creating a new entry.
 * Permission to read and write issues on the repository: the signed-in user on the GitHub and GitLab backends, or the Decap Turbo GitHub App on Turbo.
@@ -21,35 +21,15 @@ Notes let editors leave comments on an entry without touching its content. A *no
 Notes are off by default. Set `notes` to true under the [`editor`](/docs/configuration-options/#editor) option:
 
 ```yaml
+# on root: enables notes for all collections
 editor:
-  notes: true
-```
+  notes: true 
 
-Set as a top level option, this enables notes for every collection. To enable notes for a single collection, or for a single file in a files collection, set the option there instead:
-
-```yaml
 collections:
   - name: blog
-    label: Blog
     folder: content/blog
     editor:
-      notes: true
-    fields:
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
-```
-
-A collection or file setting overrides the top level one, so you can enable notes everywhere and turn them off for a collection that does not need them:
-
-```yaml
-editor:
-  notes: true
-
-collections:
-  - name: settings
-    label: Settings
-    editor:
-      notes: false
+      notes: true # toggles notes per-collection
 ```
 
 ## Using the notes pane
