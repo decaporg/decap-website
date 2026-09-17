@@ -506,17 +506,15 @@ fields:
 
 ### `editor`
 
-This setting changes options for the editor view of a collection or a file inside a files collection. It has the following options:
+This setting changes options for the editor view of a collection or a file inside a files collection. It has one option so far:
 
 * `preview`: set to `false` to disable the preview pane for this collection or file; defaults to `true`
-* `notes`: set to `true` to enable the [notes](/docs/notes/) pane for this collection or file; defaults to `false`
 
 **Example:**
 
 ```yaml
   editor:
      preview: false
-     notes: true
 ```
 
 **Note**: Setting this as a top level configuration will set the default for all collections
