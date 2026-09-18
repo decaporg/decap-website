@@ -6,6 +6,8 @@ weight: 30
 
 Once you've [created a site](../turbo-getting-started/#create-a-site), switch your backend to `turbo-github`, or `turbo-gitlab` if the repo is on GitLab.
 
+<div style="position:relative;padding-top:56.25%;"><iframe src="https://player.mediadelivery.net/embed/756464/b3030891-23dc-4cf0-852c-7660eb538859?autoplay=false&loop=false&muted=false&preload=false&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe></div>
+
 ## Install the beta release
 
 The Turbo backends aren't in the stable release yet. They ship on npm under the `beta` dist-tag.
