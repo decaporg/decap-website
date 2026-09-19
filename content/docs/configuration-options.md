@@ -353,6 +353,7 @@ The `collections` setting is the heart of your Decap CMS configuration, as it de
 * `format`: see detailed description below
 * `frontmatter_delimiter`: see detailed description under `format`
 * `slug`: see detailed description below
+* `slug_collision`: see detailed description below
 * `preview_path`: see detailed description below
 * `preview_path_date_field`: see detailed description below
 * `fields` (required): see detailed description below
@@ -431,6 +432,30 @@ slug: "{{year}}-{{month}}-{{day}}_{{title}}_{{some_other_field}}"
 
 ```yaml
 slug: "{{year}}-{{month}}-{{day}}_{{fields.slug}}"
+```
+
+### `slug_collision`
+
+For folder collections that allow new entries, `slug_collision` controls what
+happens when a generated slug resolves to an existing entry:
+
+* `suffix` (default): append an incrementing number until the slug is unique
+* `reject`: stop the save and display an error asking the editor to choose a
+  different entry identifier or path
+
+Collision detection uses the generated, sanitized slug. Two different field
+values may therefore collide if they produce the same slug.
+
+**Example:**
+
+```yaml
+collections:
+  - name: posts
+    folder: content/posts
+    create: true
+    slug_collision: reject
+    fields:
+      - { label: Title, name: title, widget: string }
 ```
 
 ### `preview_path`
