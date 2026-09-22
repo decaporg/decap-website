@@ -29,7 +29,7 @@ CMS.registerPreviewStyle(file);
 
 ```html
 // index.html
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 <script>
   CMS.registerPreviewStyle("/example.css");
 </script>
@@ -84,7 +84,7 @@ Registers a template for a folder collection or an individual file in a file col
     **Example:**
 
     ```html
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       var PostPreview = createClass({
         render: function() {
@@ -109,7 +109,7 @@ Registers a template for a folder collection or an individual file in a file col
 
     **Example:**
     ```html
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       var PostPreview = createClass({
         render: function() {

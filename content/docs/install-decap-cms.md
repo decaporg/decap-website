@@ -50,12 +50,12 @@ In this example, we pull the `admin/index.html` file from a public CDN.
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
 ```
 
-In the code above, the `script` is loaded from the `unpkg` CDN. Should there be any issue, `jsDelivr` can be used as an alternative source. Simply set the `src` to `https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js`
+In the code above, the `script` is loaded from the `jsDelivr` CDN. Should there be any issue, `unpkg` can be used as an alternative source. Simply set the `src` to `https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js`
 
 ### Installing with npm
 
