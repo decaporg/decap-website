@@ -41,7 +41,7 @@ CMS.registerWidget(name, control, [preview], [schema]);
 `admin/index.html`
 
 ```html
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 <script>
 var CategoriesControl = createClass({
   handleChange: function(e) {
@@ -116,7 +116,7 @@ CMS.registerEditorComponent(definition)
 ### Example
 
 ```html
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 <script>
 CMS.registerEditorComponent({
   // Internal id of the component

@@ -17,7 +17,7 @@ Decap on NPM: https://www.npmjs.com/package/decap-cms
 Via script tag in admin.html:
 
 ```html
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 ```
 
 or via NPM:

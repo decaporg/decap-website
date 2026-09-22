@@ -14,10 +14,10 @@ The Turbo backends aren't in the stable release yet. They ship on npm under the 
 
 ```html
 <!-- track the tag -->
-<script src="https://unpkg.com/decap-cms@beta/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@beta/dist/decap-cms.js"></script>
 
 <!-- or pin a version -->
-<script src="https://unpkg.com/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
 ```
 
 ```sh

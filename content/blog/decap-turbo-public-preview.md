@@ -51,7 +51,7 @@ One caveat worth knowing before you connect: GitLab.com puts group and project a
 The Turbo backends are not in the stable Decap CMS release yet. They ship on npm under the `beta` tag:
 
 ```html
-<script src="https://unpkg.com/decap-cms@beta/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@beta/dist/decap-cms.js"></script>
 ```
 
 Then switch your backend to `turbo-github` or `turbo-gitlab` and add your site ID. The full walkthrough is in [Connecting a site](/docs/turbo-connecting-a-site/).

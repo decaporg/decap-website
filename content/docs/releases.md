@@ -38,7 +38,7 @@ yarn upgrade decap-cms-app
 If you're using a CDN link in `/admin/index.html`, updates depend on the version range in your URL:
 
 ```html
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 ```
 
 ## Version Range Syntax
@@ -55,7 +55,7 @@ Recommended for most users.
 
 ```html
 <!-- CDN -->
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 ```
 
 **Allows:**
@@ -78,7 +78,7 @@ A more conservative approach.
 
 ```html
 <!-- CDN -->
-<script src="https://unpkg.com/decap-cms@~3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@~3.0.0/dist/decap-cms.js"></script>
 ```
 
 **Allows:**
@@ -100,7 +100,7 @@ A more conservative approach.
 
 ```html
 <!-- CDN -->
-<script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.0/dist/decap-cms.js"></script>
 ```
 
 **Use when:** You need complete control and want to test each update manually.
