@@ -6,7 +6,7 @@ weight: 40
 
 For repositories stored on [GitLab](https://gitlab.com), the `gitlab` backend allows CMS users to log in directly with their GitLab account. Decap CMS lets them in according to the role GitLab gives them on the project, whether they are members of the project, of one of its groups, or of a group invited to either:
 
-* With the [editorial workflow](/docs/editorial-workflows/), the `developer` role is enough, even when the branch is protected: Decap CMS pushes its own branches and opens merge requests. Publishing merges them, which GitLab may reserve to maintainers on a protected branch.
+* With the [editorial workflow](/docs/editorial-workflows/), the `developer` role is enough to log in and save entries, even when the branch is protected: each entry gets its own branch and merge request. Publishing merges it into the branch, and media library uploads and deletions, as well as deleting a published entry, also write to it, which a protected branch may reserve to maintainers.
 * Without it, entries are committed to the configured branch, so users must be allowed to push to it. GitLab protects the default branch by default, which then typically requires the `maintainer` role.
 
 **Looking for less setup?** [Decap Turbo](/turbo/) handles GitLab authentication and API rate-limit shielding for you, so you don't need to register an OAuth application or choose between the flows below.
