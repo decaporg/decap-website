@@ -19,7 +19,7 @@ backend:
   name: git-gateway
 ```
 
-3. Run `npx decap-server` from the root directory of the above repository.
+3. Run `npx decap dev` from the root directory of the above repository. (This used to be `npx decap-server`, which still works and runs the same server.)
 
   * If the default port (8081) is in use, the proxy server won't start, and you will see an error message. In this case, configure the port number.
 
@@ -27,11 +27,24 @@ backend:
 
 5. Open `http://localhost:<port>/admin` to verify that you can administer your content locally. Replace `<port>` with the port of your local development server. For example, Gatsby's default port is `8000`.
 
-**Limitation:** `editorial_workflow` is not supported in this environment.
+**Editorial workflow:** not supported in the default mode, which writes files directly. Run `npx decap dev --mode git` to have changes committed to the local repository instead, with `editorial_workflow` supported.
 
 ## Options
 
-By default, the proxy server runs on port `8081` and allows CORS requests only from local development origins that match `/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/`. You can customize these settings with these options.
+By default, the proxy server runs on port `8081` and allows CORS requests only from local development origins that match `/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/`. You can customize these settings with flags or environment variables.
+
+#### Flags
+
+`npx decap dev --help` lists them. Each overrides the matching environment variable below:
+
+| Flag | Variable | Default |
+|---|---|---|
+| `--port <n>` | `PORT` | `8081` |
+| `--host <address>` | `BIND_HOST` | all addresses |
+| `--origin <url>` | `ORIGIN` | localhost origins |
+| `--mode <fs\|git>` | `MODE` | `fs` |
+| `--dir <path>` | `GIT_REPO_DIRECTORY` | the current directory |
+| `--log-level <level>` | `LOG_LEVEL` | `info` |
 
 This default was introduced in decap-server@3.8.0 as a security hardening measure. Before, the default was `*`.
 
@@ -56,7 +69,7 @@ ORIGIN=https://my-local-site.com
 2. Set these variables before the shell command, for example:
 
 ```bash
-PORT=8082 npx decap-server
+PORT=8082 npx decap dev
 ```
 
 ### Custom Port and Host for the Backend URL

@@ -20,6 +20,7 @@ Decap Turbo is in public preview. [Sign up](https://turbo.decapcms.org/signup) t
 - **[Deploy status setup](../turbo-deploy-status-setup/)** — the webhook, for hosts that don't report to GitHub.
 - **[Organizations, sites, and roles](../turbo-roles-and-members/)** — access control and invitations.
 - **[Media library](../turbo-media-proxy/)** — S3-compatible storage for uploads. Pro and above.
+- **[CLI and AI agents](../turbo-cli-and-agents/)** — the `decap` command line, API tokens, and connecting Claude, Cursor or Codex to edit with you.
 - **[Billing and plans](../turbo-billing/)** — upgrading, downgrading, invoices, and request limits.
 - **[Troubleshooting & FAQ](../turbo-troubleshooting-faq/)** — common errors.
 
