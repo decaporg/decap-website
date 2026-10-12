@@ -14,7 +14,7 @@ New organizations start on Free. From **Plan & add-ons** you can switch Pro on w
 
 It unlocks every Pro feature except **priority support**, which needs a payment method on file. Priority support is a service rather than a feature — a response-time commitment backed by people — so it isn't given away with a trial.
 
-During the public preview this is open to every organization you own. Afterwards it becomes a 14-day trial, once per customer, on their first organization.
+It's a 14-day trial, once per customer, on their first organization.
 
 If no payment method is added before it ends, you get a week's grace at full access, then the organization moves to Free — see [Downgrading](#downgrading-and-cancelling). Owners (or your billing address, if set) are emailed before the trial ends and during the grace week. Nothing is deleted.
 

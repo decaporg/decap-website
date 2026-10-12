@@ -8,24 +8,23 @@ Once you've [created a site](../turbo-getting-started/#create-a-site), switch yo
 
 <div style="position:relative;padding-top:56.25%;"><iframe src="https://player.mediadelivery.net/embed/756464/b3030891-23dc-4cf0-852c-7660eb538859?autoplay=false&loop=false&muted=false&preload=false&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe></div>
 
-## Install the beta release
+## Install
 
-The Turbo backends aren't in the stable release yet. They ship on npm under the `beta` dist-tag.
+The Turbo backends are part of Decap CMS from 3.17.0 onward, in the stable release.
 
 ```html
-<!-- track the tag -->
-<script src="https://cdn.jsdelivr.net/npm/decap-cms@beta/dist/decap-cms.js"></script>
-
-<!-- or pin a version -->
-<script src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 ```
+
+The standard script tag above already loads them.
 
 ```sh
-npm install decap-cms-app@beta            # tracks the tag
-npm install decap-cms-app@3.17.0-beta.0   # pinned
+npm install decap-cms-app
 ```
 
-Tracking `@beta` keeps you current; pinning is safer, since a beta can ship breaking changes in a minor version.
+With npm, installing `decap-cms-app` registers both Turbo backends, so there's nothing extra to import.
+
+If your site loads `decap-cms@beta` or a version pinned to a `-beta` build, switch it to the stable release.
 
 ## Configuration
 

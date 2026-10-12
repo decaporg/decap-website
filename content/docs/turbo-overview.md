@@ -9,7 +9,7 @@ weight: 10
 
 Your content stays in your own Git repository. Every save is still a commit on the branch you configure.
 
-Decap Turbo is in public preview. [Sign up](https://turbo.decapcms.org/signup) to get an account.
+[Sign up](https://turbo.decapcms.org/signup) to get an account.
 
 ## In this section
 

@@ -12,7 +12,7 @@ Three steps before your `config.yml` can point at Turbo: create an organization,
 
 An organization is the billing and ownership unit. It owns sites and holds the seats people occupy. You can belong to several, and create more at any time from your profile.
 
-Sign-in is email and password today. Other providers will be added during the preview.
+Sign-in is email and password today. Other providers are planned.
 
 If you accepted an invitation, you are already in someone else's organization and can skip to whatever they gave you access to — see [your profile](#your-profile).
 
