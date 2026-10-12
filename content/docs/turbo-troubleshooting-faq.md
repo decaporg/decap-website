@@ -14,7 +14,7 @@ weight: 70
 
 **`requested repo does not match`** — the `repo` in `config.yml` disagrees with the site row, and the site row is authoritative. Change it in the dashboard; see [`repo` and `branch`](../turbo-connecting-a-site/#repo-and-branch).
 
-**`use_graphql: true` is rejected on `turbo-gitlab`** — GraphQL requests would bypass per-site scoping, so the backend refuses to start. Remove it; the plain `gitlab` backend supports it, `turbo-gitlab` doesn't.
+**`use_graphql: true` throws** — on both `turbo-github` and `turbo-gitlab`. GraphQL requests would bypass per-site scoping, so the backend refuses to start. Remove it; the plain `github` and `gitlab` backends support it, the Turbo backends don't.
 
 ## Logging in
 
@@ -53,7 +53,7 @@ Yes. Decap CMS is free and open source either way; self-hosting means running yo
 No. See [How it works](../turbo-how-it-works/#editors-dont-need-a-git-host-account).
 
 **Can editors sign in with Google or GitHub?**
-Not yet — email and password today. Other providers will be added during the preview.
+Sign-in is email and password today. Other providers are planned.
 
 **Is deploy status available on GitLab?**
 Not yet. It's `turbo-github` only.

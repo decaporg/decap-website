@@ -3,7 +3,6 @@ linkTitle: Decap Turbo
 title: Decap Turbo — managed hosting for Decap CMS
 description: Managed hosting for Decap CMS — hosted auth, Git host rate-limit shielding, a database-backed content store, roles, and site variables.
 hero:
-  badge: Now in public preview
   cta:
     primary:
       text: Sign up
@@ -42,7 +41,7 @@ features:
       description: See who changed what, in which collection, and when — visible to your organization's owners.
 plans:
   title: Choose your plan
-  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional upgrade for teams that need more features. Signing up puts you on the Free plan, no credit card required. When you're ready, you can turn Pro on free until 15 October 2026 — after the public preview that becomes a 14-day free trial."
+  description: "Decap CMS is and will remain free and open source. Decap Turbo is an optional upgrade for teams that need more features. Signing up puts you on the Free plan, no credit card required. When you're ready, you can try Pro free for 14 days, no credit card required."
   items:
     - id: free
       icon: check-circle
@@ -70,7 +69,7 @@ plans:
       includes: 1 site + 5 seats
       additional_seat_price: "€6"
       additional_project_price: "€10"
-      subtext: Free until 15 October 2026, or a 14-day free trial
+      subtext: 14-day free trial
       cta_text: Sign up
       cta_href: 'https://turbo.decapcms.org/signup'
       features:
@@ -102,7 +101,7 @@ faq:
     - q: Is the Free plan actually free, or is it a trial?
       a: "It's free, not a trial. Self-hosted Decap CMS is free because it's open source — you bring your own Git backend and auth, and run the infrastructure yourself. The Decap Turbo Free plan is free because we run the managed infrastructure for you, capped to one site and one seat. Neither one is a trial of the other, and paying for Decap Turbo never means paying for Decap CMS itself."
     - q: Is Decap Turbo really free right now?
-      a: "Free, yes — but it's worth being precise about what. Signing up puts your organization on the **Free** plan: 1 site, 1 seat, no credit card, and it stays free indefinitely. Separately, during the public preview an organization owner can **opt in** to a Pro trial from the organization's Billing page, which unlocks every Pro feature except priority support free until 15 October 2026, again with no card, capped at **5 sites and 25 users**. Those caps are the trial's own — they are not Enterprise's fair-use \"unlimited\". Nothing is switched on for you: skip the opt-in and you simply stay on Free."
+      a: "Free, yes — but it's worth being precise about what. Signing up puts your organization on the **Free** plan: 1 site, 1 seat, no credit card, and it stays free indefinitely. Separately, an organization owner can **opt in** to a 14-day Pro trial from the organization's Billing page, which unlocks every Pro feature except priority support, again with no card, capped at **5 sites and 25 users**. Those caps are the trial's own — they are not Enterprise's fair-use \"unlimited\". Nothing is switched on for you: skip the opt-in and you simply stay on Free."
     - q: What happens when the Pro trial ends?
       a: "If you haven't added a payment method by then, you keep a week's grace at full Pro access — we email owners before the trial ends and again during the grace week. After that the organization moves to Free: one site stays editable, every other site becomes read-only, members other than the owner lose access, and pending invitations are revoked. **Nothing is deleted.** Adding a payment method unlocks it all again, oldest sites first, as far as your plan's limits reach. See [Billing and plans](/docs/turbo-billing/) for the detail."
     - q: How does billing work?
@@ -113,7 +112,7 @@ faq:
       a: "No. Turbo plans cover the managed platform itself — hosted auth, Git host request shielding, the database-backed content store, roles, and site variables. They don't include bespoke development work on your site or on Decap CMS."
 cta_section:
   title: Ready to get started?
-  description: Sign up free — 1 site, 1 seat, no credit card. During the public preview you can turn Pro on free until 15 October 2026, capped at 5 sites and 25 users.
+  description: Sign up free — 1 site, 1 seat, no credit card. Try Pro free for 14 days, capped at 5 sites and 25 users.
   buttons:
     primary:
       text: Sign up

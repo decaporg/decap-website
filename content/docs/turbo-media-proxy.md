@@ -4,7 +4,7 @@ group: Turbo
 weight: 55
 ---
 
-**Pro and above.** In beta.
+**Pro and above.** Beta: the configuration may change, and the media library will be rebuilt inside Decap CMS. Your files stay in your bucket either way.
 
 Turbo proxies media uploads to any S3-compatible bucket — AWS S3, Cloudflare R2, Bunny Storage, others — so editors browse and upload without your storage credentials reaching the browser. Credentials live in [site variables](../turbo-roles-and-members/#site-variables), not in `config.yml`; the CMS calls a Turbo edge function, which reads them server-side and forwards the request.
 
@@ -21,11 +21,24 @@ On the site's **Variables** tab:
 | `s3_secret_access_key` | Secret access key — for Bunny, the Storage Zone password | **Yes** |
 | `s3_force_path_style` | `true` for most providers including R2 and Bunny; `false` usually works on AWS | No |
 
+The bucket needs a public address — public read access, a custom domain, or a CDN in front of it — because the URLs the media library inserts into entries point straight at it.
+
 Then in `config.yml`:
 
 ```yaml
 media_library:
   name: s3
+  config:
+    public_url_prefix: https://media.example.com
+```
+
+The script-tag build of Decap CMS already includes the media library. With `decap-cms-app`, register it yourself:
+
+```js
+import CMS from 'decap-cms-app';
+import S3MediaLibrary from 'decap-cms-media-library-s3';
+
+CMS.registerMediaLibrary(S3MediaLibrary);
 ```
 
 Reload the CMS. A missing key returns a "missing storage configuration" error rather than failing silently.

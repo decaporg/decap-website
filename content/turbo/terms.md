@@ -69,20 +69,9 @@ An organization's owner can turn on a **Pro trial** from the organization's bill
 
 ### 8.2 How long it lasts
 
-A trial runs until **the later of two dates**: **15 October 2026** (the end of our public-preview promotion) and **14 days** from the day you turn it on.
-
-In practice that means:
-
-- **Start well before 15 October 2026** and your trial runs until that date — which is more than 14 days, and the earlier you start the longer you get.
-- **Start close to it, or after it**, and your trial runs a full **14 days** from the day you started. Nobody gets a one-day trial for opting in on the last day of the promotion.
-
-Once 15 October 2026 has passed, only the 14-day rule is left, and that is the ordinary trial from then on.
-
-We may extend the promotional end date. If we do, trials already running are extended with it — you will never get less time than you had.
+A trial runs for **14 days** from the day you turn it on.
 
 ### 8.3 How many you get
-
-**During the promotional period, every organization you own can turn Pro on free** — there is no per-customer limit, and a second or third organization is as welcome to it as the first. This is deliberate: a public preview exists to be tried.
 
 **Once the promotional period ends**, the trial becomes **one per customer, ever**: a single 14-day trial per person, keyed to your account email address, on the **first** organization you own. An organization you create after that starts on Free, and reaching Pro means subscribing.
 
