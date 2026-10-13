@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Privacy Policy
-description: "Last updated: 2026-09-09."
+description: "Last updated: 2026-10-13."
 ---
 
 ## 1. Who we are
@@ -35,9 +35,12 @@ Where we are a processor we still have direct obligations of our own — securit
 | Security/technical logs | IP address, request logs, device/browser identifiers, records of failed and errored requests | Fraud prevention, abuse detection, and keeping the Service secure | Legitimate interest (security) and legal obligation, where applicable |
 | Organization activity records | Who saved which entry, in which collection and site, and when — including the editor's email address | Showing an organization's owners what happened in their own organization (the Activity log), and supporting our own operations | Performance of a contract |
 | Product-usage data | Feature usage events (pages visited, actions taken), tied to your account | Understanding how the Service is used so we can improve it | Legitimate interest (product improvement) |
+| Product email | Your email address, and account facts we already hold: when you signed up, whether you created your own organization, your plan and trial dates, whether you have connected a site or saved content, when you last signed in, and milestones such as starting a trial or subscribing | Sending occasional emails about getting started with and using the Service, timed to where you are in it | Legitimate interest (helping customers make use of the Service they signed up for) |
 | Error diagnostics | Records of application errors: the error message and stack, the request path it happened on (stored in templated form — see section 6), and the account, organization or site involved | Finding and fixing faults in the Service | Legitimate interest (keeping the Service working) |
 
 We do not collect payment card details ourselves — see section 4.
+
+**About product email.** If you sign up for the Service, we may send you a small number of emails about getting started and about the plan you are on — for example tips while you set up your first site, or a note during a trial. They come from a person at Decap, and every one has an unsubscribe link that stops them immediately. Unsubscribing does not stop the emails your account needs, such as invitations, trial and billing notices, and invoices. We do not send newsletters, and we do not email you about other companies' products. If you were invited into someone else's organization, you do not receive the getting-started emails.
 
 **About the Activity log.** The same records that tell us how the Service is used also power the Activity log on an organization's dashboard. If you are an editor in someone's organization, that organization's owners can see **your email address alongside the entries you saved, the collection and site you saved them in, and the time you did it**. This is deliberate: an organization needs to know who changed its content. We are telling you plainly because it is not obvious from the Service itself, and because it means your activity in an organization is not private from that organization's owners.
 
@@ -52,7 +55,7 @@ We use the following sub-processors. Each one processes personal data on our beh
 | [Supabase](https://supabase.com) | Authentication and the application database: account data, organizations, sites, cached content, site variables, activity and usage records | Database hosted in the **EU (Ireland)**; vendor support operations may access it from elsewhere |
 | [Netlify](https://www.netlify.com) | Hosts the Decap Turbo application. Sees every request to it — IP addresses, session cookies, request logs | US company, global edge network |
 | [Cloudflare](https://www.cloudflare.com) | Turnstile bot protection on the signup form: the IP address and browser signals of everyone who loads that page (see section 6) | US company, global edge network |
-| [Brevo](https://www.brevo.com) | Transactional email: recipient email addresses and names, organization names, and billing details where an email concerns billing | EU (France-based provider) |
+| [Brevo](https://www.brevo.com) | Email. Transactional email: recipient email addresses and names, organization names, and billing details where an email concerns billing. Product email: your email address and the account facts listed under "Product email" in section 3, used to decide which emails to send and when | EU (France-based provider) |
 | [GitHub](https://github.com) / [GitLab](https://gitlab.com) | Your repository content, and the access tokens we proxy on your behalf, for whichever host your site is connected to | Per your own account with that host |
 | [Paddle](https://www.paddle.com) | Sale of subscriptions, payment collection, subscription management, tax compliance, invoicing | UK company, processing globally; see Paddle's own policy |
 
@@ -108,6 +111,7 @@ We keep personal data only as long as we have a reason to, and the reason differ
 | Error and security logs | **180 days**, then deleted automatically. |
 | Billing and transaction records | Up to **10 years**, as Slovenian tax and accounting law requires. This is the exception that survives account closure and the dormancy rule. |
 | Support communications | Up to 2 years after the conversation ends. |
+| Product email data held in Brevo | Until you delete your account. Within minutes of deletion we remove you from our list in Brevo and erase the account facts we stored there, and delete the contact itself unless the same address is held there for an unrelated purpose. |
 
 **Deleting your account does not delete your organizations.** They are separate objects, and an organization may have other members, its own content, and a live subscription. If you own an organization and want it gone, delete the organization first, from its settings — then delete your account. If you delete only your account, the organization remains, and — unless it is on a paid plan, which exempts it — it will be deleted under the dormancy rule below once it has been inactive for 12 months.
 
@@ -146,7 +150,7 @@ If you're in the UK or EEA, or otherwise entitled to these rights under the law 
 - **Access** the personal data we hold about you;
 - **Rectify** inaccurate or incomplete data;
 - **Erase** your data ("right to be forgotten"), subject to our retention obligations in section 7;
-- **Restrict** or **object** to certain processing;
+- **Restrict** or **object** to certain processing — for product email, the unsubscribe link in every one does this immediately;
 - **Port** your data to another service in a structured, machine-readable format;
 - **Withdraw consent** at any time, where processing is based on consent;
 - **Complain** to your local data protection authority (in Slovenia, the [Information Commissioner](https://www.ip-rs.si/)) if you believe we've mishandled your data.
