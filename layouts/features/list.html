@@ -1,47 +1,77 @@
 {{ define "main" }}
 <div class="page">
   {{ partial "page-hero" . }}
-  {{ $features := .RegularPages.ByWeight }}
-  {{ $personasPage := site.GetPage "/personas" }}
-  {{ $featurePersonas := slice }}
-  {{ $personaLabels := dict }}
-  {{ range $features }}
-    {{ range .Params.personas }}
-      {{ if not (in $featurePersonas .) }}
-        {{ $featurePersonas = $featurePersonas | append . }}
-      {{ end }}
+  {{ $all := .RegularPages.ByWeight }}
+  {{ $featureData := site.Data.features }}
+  {{ $available := where $all "Params.stage" "eq" nil }}
+  {{ $roadmap := slice }}
+  {{ range $featureData.stages }}
+    {{ if .roadmap }}
+      {{ $roadmap = $roadmap | append (where $all "Params.stage" .id) }}
+    {{ else }}
+      {{ $available = $available | append (where $all "Params.stage" .id) }}
     {{ end }}
   {{ end }}
-  {{ $personaOrderByWeight := slice }}
-  {{ with $personasPage }}
-    {{ range .Pages.ByWeight }}
-      {{ $slug := .Params.slug | default .File.ContentBaseName }}
-      {{ if in $featurePersonas $slug }}
-        {{ $personaOrderByWeight = $personaOrderByWeight | append $slug }}
-        {{ $personaLabels = merge $personaLabels (dict $slug .LinkTitle) }}
+
+  {{ range $page := $all }}
+    {{ with .Params.stage }}
+      {{ if not (where $featureData.stages "id" .) }}
+        {{ warnf "%s: unknown stage %q, add it to data/features.yaml" $page.File.Path . }}
       {{ end }}
     {{ end }}
+    {{ with .Params.plan }}
+      {{ if not (where $featureData.plans "id" .) }}
+        {{ warnf "%s: unknown plan %q, add it to data/features.yaml" $page.File.Path . }}
+      {{ end }}
+    {{ end }}
+    {{ if and (eq .Params.product "turbo") (not .Params.stage) (not .Params.plan) }}
+      {{ warnf "%s: available Turbo feature without a plan" .File.Path }}
+    {{ end }}
   {{ end }}
+
+  {{ $personaContext := partial "features/persona-context" (dict "features" ($available | append $roadmap)) }}
 
   <div class="container size-lg">
     {{ partial "features-prioritizer" (dict
-      "personaOrderByWeight" $personaOrderByWeight
-      "personaLabels" $personaLabels
-      "ariaLabel" "Feature prioritization"
+      "personaOrderByWeight" $personaContext.personaOrderByWeight
+      "personaLabels" $personaContext.personaLabels
+      "mode" "filter"
+      "ariaLabel" "Filter features by role"
     ) }}
 
-    <section class="features-grid" data-features-grid>
-      {{ range $index, $feature := $features }}
-        {{ $personas := delimit $feature.Params.personas "," }}
-        {{ partial "feature-card" (dict
-          "feature" $feature.Params
-          "dataPersonas" $personas
-          "dataDefaultOrder" $index
-          "showBadge" true
-          "showPersonas" true
-        ) }}
-      {{ end }}
+    <section class="features-section" data-features-section aria-label="Available features">
+      <div class="features-grid" data-features-grid>
+        {{ range $available }}
+          {{ partial "feature-card" (dict
+            "feature" .Params
+            "dataPersonas" (delimit .Params.personas ",")
+            "showBadge" true
+          ) }}
+        {{ end }}
+      </div>
     </section>
+
+    {{ with $roadmap }}
+      <section class="features-section features-section--roadmap" id="roadmap" data-features-section aria-labelledby="roadmap-title">
+        <header class="features-section__header">
+          <h2 class="heading-display" id="roadmap-title">Roadmap</h2>
+          <p class="lead">
+            Not built yet, and not available on any plan, including Enterprise. <em>On the roadmap</em> means we have decided to build it; <em>Under consideration</em> is an idea we have not committed to.
+          </p>
+        </header>
+
+        <div class="features-grid features-grid--roadmap" data-features-grid>
+          {{ range . }}
+            {{ partial "feature-card" (dict
+              "feature" .Params
+              "dataPersonas" (delimit .Params.personas ",")
+              "showBadge" true
+              "class" "feature-card--roadmap"
+            ) }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
   </div>
 </div>
 {{ end }}

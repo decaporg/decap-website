@@ -2,7 +2,7 @@
 title: Deploy previews
 product: core
 personas:
-  - developer
+  - editor
   - team
 weight: 11
 homepage: false

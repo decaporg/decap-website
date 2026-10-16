@@ -1,13 +1,16 @@
 ---
-title: Site variables for advanced workflows
+title: Site variables and secrets
 product: turbo
+plan: pro
 personas:
   - developer
-weight: 23
+  - agency
+weight: 36
 homepage: false
 description: |-
-  Store and manage integration settings for more advanced publishing and operational workflows, with an option to mark sensitive values as secret — secrets are encrypted at rest, not just hidden in the dashboard.
-visual: Show site variables panel connected to automation workflows, with a masked secret value and a lock/encrypted badge.
+  Each site gets a key/value store for the settings and credentials it needs, kept out of `config.yml` and out of your repository. Values marked secret are encrypted at rest and can be replaced, never read back. Today they hold the media library's storage credentials.
+visual: Show a site variables panel with a masked secret value and a lock badge.
+docs_link: /docs/turbo-roles-and-members/#site-variables
 # image: /icons/turbo-speed.svg
 # imageAlt: Secure settings and integrations
 ---

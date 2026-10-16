@@ -214,7 +214,7 @@ collections:
       field: build
       pattern: '.*'
     summary: '{{weight}}. {{title}} ({{product}})'
-    sortable_fields: ['weight', 'title', 'product']
+    sortable_fields: ['weight', 'title', 'product', 'stage']
     editor:
       preview: false
     fields:
@@ -225,6 +225,25 @@ collections:
         options:
           - { label: 'Decap CMS (core)', value: core }
           - { label: 'Decap Turbo', value: turbo }
+      - label: Plan
+        name: plan
+        widget: select
+        required: false
+        hint: 'Decap Turbo features only: the cheapest plan that includes it. Leave empty for core and roadmap features.'
+        options:
+          - { label: 'All plans', value: free }
+          - { label: 'Pro and above', value: pro }
+          - { label: 'Pro add-on (included on Enterprise)', value: pro-addon }
+          - { label: 'Enterprise', value: enterprise }
+      - label: Stage
+        name: stage
+        widget: select
+        required: false
+        hint: 'Leave empty when the feature is available.'
+        options:
+          - { label: 'Beta', value: beta }
+          - { label: 'On the roadmap (decided)', value: planned }
+          - { label: 'Under consideration (not committed)', value: proposed }
       - label: Order (weight)
         name: weight
         widget: number
@@ -244,6 +263,11 @@ collections:
         search_fields: ['title', 'slug']
         display_fields: ['title']
         value_field: slug
+      - label: Docs link
+        name: docs_link
+        widget: string
+        required: false
+        hint: 'Site-relative path, e.g. /docs/turbo-overview/'
       - label: Image
         name: image
         widget: image

@@ -1,13 +1,14 @@
 ---
 title: Real-time editing visibility
 product: turbo
-personas: 
+stage: proposed
+personas:
   - team
   - editor
-weight: 25
+weight: 40
 homepage: false
 description: |-
-  **Not built — on the Decap Turbo roadmap, with no release date.** The intent is to show who else has an entry open, so distributed teams can avoid collisions. No Decap Turbo plan does this today, and it is not something you can buy.
+  Show who else has an entry open, so distributed teams can avoid overwriting each other's work.
 visual: Show active editors with presence indicators on a shared entry.
 # image: /icons/turbo-team.svg
 # imageAlt: Active editors indicator

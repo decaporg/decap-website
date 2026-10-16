@@ -6,6 +6,10 @@
   box-shadow: 0 4px 12px var(--color-gray-100);
   container-type: inline-size;
 
+  &[hidden] {
+    display: none;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -53,7 +57,12 @@
   }
 
   &__badges {
+    display: flex;
     flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: var(--space-fixed-1);
+    justify-content: flex-end;
+    max-width: 50%;
   }
 
   &__badge {
@@ -71,24 +80,23 @@
       background: #f4ecff;
       color: #5d2f98;
     }
-  }
 
-  &__personas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-fixed-2);
-    list-style: none;
-    padding: 0;
+    &--plan {
+      background: var(--color-white);
+      box-shadow: inset 0 0 0 1px var(--color-gray-300);
+    }
 
-    li {
-      background: var(--color-background);
-      border-radius: var(--radius-pill);
-      color: var(--color-gray-700);
-      font-size: var(--font-size-2xs);
-      font-weight: var(--font-weight-semibold);
-      letter-spacing: 0.04em;
-      padding: 4px 10px;
-      text-transform: uppercase;
+    &--beta {
+      background: #fff4d6;
+      color: #8a5a00;
+    }
+
+    &--planned,
+    &--proposed {
+      background: var(--color-white);
+      box-shadow: inset 0 0 0 1px var(--color-gray-300);
+      color: var(--color-gray-500);
+      font-style: italic;
     }
   }
 
@@ -106,6 +114,26 @@
       width: 100%;
       height: auto;
       object-fit: contain;
+    }
+  }
+
+  &--roadmap {
+    border: 1px dashed var(--color-gray-300);
+    box-shadow: none;
+    padding: var(--space-fluid-3-5);
+
+    .feature-card__header {
+      flex-direction: column-reverse;
+      gap: var(--space-fixed-2);
+    }
+
+    .feature-card__badges {
+      justify-content: flex-start;
+      max-width: none;
+    }
+
+    .feature-card__title {
+      font-size: var(--font-size-md);
     }
   }
 }

@@ -17,7 +17,7 @@ features:
   items:
     - title: Faster CMS performance
       icon: turbo-speed
-      description: A database proxy serves your collections in a fraction of a second, instead of one Git API call per file.
+      description: A database proxy serves collections much faster than a Git API call for each file.
     - title: Hosted auth & user management
       icon: users
       description: Invite editors and manage roles — no auth server or OAuth app for you to run.

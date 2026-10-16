@@ -1,0 +1,28 @@
+# Labels and order for the `plan` and `stage` fields of content/features.
+# List order is display order: the features page shows available features
+# first, then each stage in the order below. Stages marked `roadmap` are not
+# built yet and are listed in the separate Roadmap section.
+
+plans:
+  - id: free
+    label: All plans
+  - id: pro
+    label: Pro and above
+  - id: pro-addon
+    label: Pro add-on
+    tooltip: Available as an add-on on Pro, included on Enterprise
+  - id: enterprise
+    label: Enterprise
+
+stages:
+  - id: beta
+    label: Beta
+    tooltip: Shipped, but may still change
+  - id: planned
+    label: On the roadmap
+    tooltip: We have decided to build it. Not available yet
+    roadmap: true
+  - id: proposed
+    label: Under consideration
+    tooltip: An idea we have not committed to. Not available yet
+    roadmap: true

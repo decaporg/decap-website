@@ -1,7 +1,7 @@
 ---
 title: Friendly editor UI with real-time preview
 product: core
-personas: 
+personas:
   - editor
 weight: 1
 homepage: true

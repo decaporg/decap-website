@@ -13,6 +13,10 @@
     justify-content: center;
   }
 
+  &--filter &__controls {
+    margin-top: 0;
+  }
+
   &--home {
     @include breakpoint-up(lg) {
       text-align: center;
@@ -20,6 +24,26 @@
       .features-prioritizer__controls {
         justify-content: center;
       }
+    }
+  }
+}
+
+.features-section {
+  &[hidden] {
+    display: none;
+  }
+
+  & + & {
+    margin-top: var(--space-fluid-6-9);
+  }
+
+  &__header {
+    margin-bottom: var(--space-fluid-4-7);
+    max-width: 48rem;
+
+    .lead {
+      color: var(--color-gray-700);
+      margin: var(--space-fixed-3) 0 0;
     }
   }
 }
@@ -34,5 +58,13 @@
     > .feature-card:not(.feature-card--no-image) {
       grid-column: 1 / -1;
     }
+  }
+}
+
+.features-grid--roadmap {
+  gap: var(--space-fluid-3-5);
+
+  @include breakpoint-up(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

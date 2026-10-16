@@ -4,7 +4,6 @@ product: core
 personas:
   - developer
   - team
-  - agency
 weight: 4
 homepage: true
 description: |-

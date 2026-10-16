@@ -2,8 +2,8 @@
 title: Editorial workflow for draft, review, and publish
 product: core
 personas:
+  - editor
   - team
-  - agency
 weight: 2
 homepage: true
 description: |-

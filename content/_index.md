@@ -34,7 +34,7 @@ turboBanner:
     - title: "Hosted authentication & roles"
       description: "Invite editors and manage permissions — no auth server or OAuth app for you to run."
     - title: "Faster CMS performance"
-      description: "A database proxy serves collections in a fraction of a second instead of one Git API call per file."
+      description: "A database proxy serves collections much faster than a Git API call for each file."
     - title: "Rate-limit shielding"
       description: "A request proxy between your editors and GitHub or GitLab, so large collections stop hitting API limits."
     - title: "S3-compatible media library"

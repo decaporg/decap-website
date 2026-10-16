@@ -3,7 +3,6 @@ title: Authentication and login
 product: core
 personas:
   - developer
-  - team
 weight: 6
 homepage: false
 description: |-

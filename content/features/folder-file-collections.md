@@ -3,7 +3,6 @@ title: Folder and file collections
 product: core
 personas:
   - developer
-  - editor
 weight: 13
 homepage: false
 description: |-

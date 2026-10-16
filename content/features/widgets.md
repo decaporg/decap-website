@@ -1,6 +1,5 @@
 ---
 title: A wide selection of ready-made widgets and field controls
-draft: true
 product: core
 personas:
   - developer

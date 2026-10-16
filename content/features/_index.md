@@ -1,6 +1,6 @@
 ---
 title: Product features
-description: One complete Decap feature map for evaluation. Use the role filter to bring the most relevant capabilities to the top.
+description: Everything Decap CMS and Decap Turbo can do today, and what is on the roadmap. Pick a role to see only the features that matter to you.
 build:
   render: always
 cascade:

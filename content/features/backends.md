@@ -3,7 +3,6 @@ title: Multiple backend integrations
 product: core
 personas:
   - developer
-  - agency
 weight: 5
 homepage: false
 description: |-

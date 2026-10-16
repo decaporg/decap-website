@@ -1,8 +1,7 @@
 ---
 title: Built-in media library plus external integrations
 product: core
-personas: 
-  - developer
+personas:
   - editor
 weight: 3
 homepage: false

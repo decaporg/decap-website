@@ -1,13 +1,13 @@
 {{ $feature := .feature }}
 {{ $extraClass := .class | default "" }}
 {{ $showBadge := .showBadge | default false }}
-{{ $showPersonas := .showPersonas | default false }}
 {{ $showVisual := .showVisual | default false }}
 
 <article
   class="feature-card{{ if not $feature.image }} feature-card--no-image{{ end }}{{ if $extraClass }} {{ $extraClass }}{{ end }}"
   {{ with .dataPersonas }}data-personas="{{ . }}"{{ end }}
   {{ with .dataDefaultOrder }}data-default-order="{{ . }}"{{ end }}
+  data-stage="{{ $feature.stage | default "available" }}"
 >
   <div class="feature-card__inner">
     <div class="feature-card__body">
@@ -21,6 +21,16 @@
             {{ else }}
               <span class="feature-card__badge">Decap CMS</span>
             {{ end }}
+            {{ with $feature.plan }}
+              {{ range first 1 (where site.Data.features.plans "id" .) }}
+                <span class="feature-card__badge feature-card__badge--plan"{{ with .tooltip }} title="{{ . }}"{{ end }}>{{ .label }}</span>
+              {{ end }}
+            {{ end }}
+            {{ with $feature.stage }}
+              {{ range first 1 (where site.Data.features.stages "id" .) }}
+                <span class="feature-card__badge feature-card__badge--{{ .id }}"{{ with .tooltip }} title="{{ . }}"{{ end }}>{{ .label }}</span>
+              {{ end }}
+            {{ end }}
           </div>
         {{ end }}
       </header>
@@ -33,17 +43,6 @@
         <p class="feature-card__docs">
           <a href="{{ . }}">Read docs</a>
         </p>
-      {{ end }}
-  
-      {{ if $showPersonas }}
-        {{ with $feature.personas }}
-          <ul class="feature-card__personas" aria-label="Relevant for personas">
-            {{ range . }}
-              {{ $term := site.GetPage (printf "/personas/%s" .) }}
-              <li>{{ if $term }}{{ $term.LinkTitle }}{{ else }}{{ humanize . }}{{ end }}</li>
-            {{ end }}
-          </ul>
-        {{ end }}
       {{ end }}
     </div>
   
