@@ -45,7 +45,7 @@ From **Sites**, create one and fill in:
 | **Repo** | `owner/name` on GitHub; `group/project` on GitLab, subgroups allowed. |
 | **Branch** | Defaults to `main`. |
 | **Config path** | Repo-relative path to `config.yml`, default `admin/config.yml`. Turbo reads your collections from it for per-collection permissions, so it has to resolve. |
-| **Admin interface URL(s)** | Where your CMS is served from, one per line. Checked during login, so fill it in. |
+| **Admin interface URL(s)** | Where your CMS is served from, one per line. Checked during login, so fill it in. Deploy previews can use a wildcard — see [admin URLs](../turbo-connecting-a-site/#admin-urls-deploy-previews-and-branch-deploys). |
 
 Submitting gives you Full access on the site and opens its detail page, where the **Overview** tab shows the **Site ID** you need next.
 

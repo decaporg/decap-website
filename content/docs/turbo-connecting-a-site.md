@@ -50,6 +50,26 @@ The login screen shows **Login with Turbo** and opens a popup. You need [access 
 
 Sessions refresh in the background, so editors aren't logged out mid-edit.
 
+## Admin URLs, deploy previews and branch deploys
+
+Turbo only hands a login to a CMS served from one of the site's **admin interface URLs**, set on the site's Overview tab. Only the origin counts — protocol, host and port — so the path doesn't have to match. Add one URL per line for every place the CMS runs: production, a staging domain, `http://localhost:1313` for local development.
+
+Deploy previews and branch deploys get a new hostname for every build, so list them with a wildcard:
+
+```
+https://example.com/admin/
+https://*--your-site.netlify.app/admin/
+```
+
+The rules:
+
+- **One `*` per URL, in the leftmost part of the hostname only.** `https://*--your-site.netlify.app` and `https://*.example.com` work; `https://preview.*.example.com` doesn't.
+- **No bare wildcard on a shared hosting domain.** `https://*.netlify.app`, `https://*.vercel.app` or `https://*.pages.dev` would match every customer of that host, so Turbo refuses them. Anchor the wildcard to your own site's name, the way your host names its previews — for example `*--your-site.netlify.app` on Netlify.
+- **The `*` never spans a dot.** `*.example.com` matches `preview.example.com` but not `a.b.example.com`.
+- **Put your main admin URL first.** The organization dashboard links to the first URL in the list.
+
+Each origin keeps its own login, so an editor opening a deploy preview logs in once there too. They still need [access to the site](../turbo-roles-and-members/); a matching URL doesn't grant it.
+
 ## Commit attribution
 
 Different on each backend — check your own `git log` before assuming.

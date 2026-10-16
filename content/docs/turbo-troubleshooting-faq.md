@@ -18,7 +18,7 @@ weight: 70
 
 ## Logging in
 
-**The popup closes and nothing happens / "origin not allowed"** — the site's admin interface URL must match where your CMS is actually served from, exactly: protocol, host and path. Check the Overview tab, including any staging domains.
+**The popup closes and nothing happens / "origin not allowed"** — the CMS is served from an origin (protocol, host and port) that none of the site's admin interface URLs match, or you aren't a member of that site. Check the Overview tab, including staging domains, and use a wildcard for deploy previews — see [Admin URLs, deploy previews and branch deploys](../turbo-connecting-a-site/#admin-urls-deploy-previews-and-branch-deploys).
 
 **"Session expired. Please log in again."** — the refresh token expired or was invalidated. Log in again. A brief pause with no error is a refresh retry succeeding in the background, not a problem.
 
