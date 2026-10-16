@@ -2,7 +2,7 @@
 title: Decap Turbo Is Generally Available
 author: Martin Jagodic
 description: Decap Turbo is out of public preview and part of the stable Decap CMS release from 3.17.0. Editors can sign in without a Git or a Netlify Identity account, large collections load faster, roles, S3 media library, and more.
-image: /img/turbo-custom-role.png
+image: /img/turbo-ga.jpg
 date: 2026-10-16T08:00:00.000Z
 ---
 
