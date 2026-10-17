@@ -415,6 +415,8 @@ The slug template can also reference a field value by name, eg. `{{title}}`. If 
 * `{{minute}}`: 2-digit minute of the file creation date
 * `{{second}}`: 2-digit second of the file creation date
 
+With [i18n](/docs/i18n/#localized-slugs), the `localize` filter fills a tag with each locale's own value, eg. `{{title | localize}}`.
+
 **Example:**
 
 ```yaml
