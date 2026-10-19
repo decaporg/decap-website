@@ -1,6 +1,6 @@
 ---
 title: Privacy & Cookies Policy
-description: "Last updated: 2026-08-19."
+description: "Last updated: 2026-10-19."
 ---
 
 This policy covers decapcms.org — the Decap CMS project website, its documentation, and marketing
@@ -20,7 +20,8 @@ world; this policy is about the website, not the software project's governance.
 | Category | Examples | Purpose | Legal basis |
 |---|---|---|---|
 | Contact form submissions | Name, email address, message content | Responding to inquiries | Legitimate interest (responding to your request) |
-| Analytics data *(only if you accept cookies)* | Pages visited, referrer, approximate location, device/browser type | Understanding how visitors use the site, so we can improve it | Consent |
+| Visitor statistics | Page visited, referring site, campaign tags in the link, country, device and browser type — counted without cookies and without storing your IP address (see section 3) | Counting visits and learning which pages and sources bring people to the site | Legitimate interest (understanding the use of our own website) |
+| Google Analytics *(only if you accept cookies)* | Pages visited, referrer, approximate location, device/browser type | Understanding how visitors use the site, so we can improve it | Consent |
 
 We don't require an account to browse this site, and we don't collect payment information here
 (that only happens on Decap Turbo, under its own policy).
@@ -40,10 +41,13 @@ consent choice is stored, and no analytics cookies are set. You can change your 
 by clearing your browser's local storage for this site and reloading the page, which will show
 the prompt again.
 
+**Visitor statistics without cookies.** We count visits with [Plausible Analytics](https://plausible.io/data-policy), which sets no cookies and uses no local storage or other device storage. It recognises a visitor only within a single day, by a code calculated from your IP address, browser, our domain and a random value that is deleted every 24 hours; your IP address and browser string are never stored. It can't follow you from one day to the next or across other websites. Its script and requests are served from our own domain. Because nothing is stored on your device and the result can't identify you, it runs whether or not you accept cookies. The same statistics cover the signed-out pages of Decap Turbo (sign in, sign up, password reset), under the [Decap Turbo Privacy Policy](/turbo/privacy/).
+
 We don't use advertising cookies or third-party tracking pixels on this site.
 
 ### Sub-processors
 
+- **[Plausible Insights OÜ](https://plausible.io/data-policy)** (Estonia) — visitor statistics, as described above. Data is processed and stored in the EU.
 - **[Google](https://policies.google.com/privacy)** — Tag Manager and Analytics, only after you
   consent.
 
@@ -55,9 +59,7 @@ Clauses or an applicable adequacy decision.
 
 ## 5. Data retention
 
-Contact form submissions are retained only as long as needed to handle your inquiry. Analytics
-data, where you've consented to it, is retained according to Google Analytics' default retention
-settings.
+Contact form submissions are retained only as long as needed to handle your inquiry. Visitor statistics are kept as aggregate counts (visits per page, source, country and device type), which don't identify anyone. Analytics data, where you've consented to it, is retained according to Google Analytics' default retention settings.
 
 ## 6. Your rights
 

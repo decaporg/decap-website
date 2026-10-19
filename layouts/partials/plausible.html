@@ -1,0 +1,14 @@
+{{- /*
+  Plausible: cookieless, EU-hosted, no consent needed, so it loads for every
+  visitor — unlike GA, which only loads after Accept (cookie-consent.js).
+  Script and events are proxied through this domain (static/_redirects) so
+  blockers that match plausible.io don't drop developers' visits. Production
+  builds only (LOAD_PLAUSIBLE in netlify.toml), so deploy previews stay out.
+*/ -}}
+{{- if eq (getenv "LOAD_PLAUSIBLE") "true" }}
+<script async src="/_dc/js/script.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({ endpoint: "/_dc/api/event" })
+</script>
+{{- end }}

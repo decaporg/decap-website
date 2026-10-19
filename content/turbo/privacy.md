@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Privacy Policy
-description: "Last updated: 2026-10-13."
+description: "Last updated: 2026-10-19."
 ---
 
 ## 1. Who we are
@@ -35,6 +35,7 @@ Where we are a processor we still have direct obligations of our own — securit
 | Security/technical logs | IP address, request logs, device/browser identifiers, records of failed and errored requests | Fraud prevention, abuse detection, and keeping the Service secure | Legitimate interest (security) and legal obligation, where applicable |
 | Organization activity records | Who saved which entry, in which collection and site, and when — including the editor's email address | Showing an organization's owners what happened in their own organization (the Activity log), and supporting our own operations | Performance of a contract |
 | Product-usage data | Feature usage events (pages visited, actions taken), tied to your account | Understanding how the Service is used so we can improve it | Legitimate interest (product improvement) |
+| Visitor statistics on signed-out pages | On the sign-in, sign-up and password-reset pages only: page address, referring site, campaign tags in the link, country, device and browser type — without cookies, and not linked to any account (see section 6) | Learning how people find and start using the Service | Legitimate interest (understanding how the Service is found) |
 | Product email | Your email address, and account facts we already hold: when you signed up, whether you created your own organization, your plan and trial dates, whether you have connected a site or saved content, when you last signed in, and milestones such as starting a trial or subscribing | Sending occasional emails about getting started with and using the Service, timed to where you are in it | Legitimate interest (helping customers make use of the Service they signed up for) |
 | Error diagnostics | Records of application errors: the error message and stack, the request path it happened on (stored in templated form — see section 6), and the account, organization or site involved | Finding and fixing faults in the Service | Legitimate interest (keeping the Service working) |
 
@@ -59,13 +60,15 @@ We use the following sub-processors. Each one processes personal data on our beh
 | [GitHub](https://github.com) / [GitLab](https://gitlab.com) | Your repository content, and the access tokens we proxy on your behalf, for whichever host your site is connected to | Per your own account with that host |
 | [Paddle](https://www.paddle.com) | Sale of subscriptions, payment collection, subscription management, tax compliance, invoicing | UK company, processing globally; see Paddle's own policy |
 
+**Visitor statistics, for our own purposes.** [Plausible Insights OÜ](https://plausible.io/data-policy) (Estonia; data processed and stored in the EU) provides the cookieless visitor statistics on the signed-out sign-in, sign-up and password-reset pages described in section 6. It works for us alone: it never receives account, email address or organization data, and processes nothing on a customer organization's behalf, so it is not a sub-processor under our Data Processing Agreement and is not part of the list above.
+
 Paddle is different from the others: it is our reseller and **merchant of record**, and acts as an **independent controller** of your payment and billing data under its own [privacy policy](https://www.paddle.com/legal/privacy), not as our processor. See also our [Terms of Service](/turbo/terms/).
 
 GitHub and GitLab are also partly independent of us: your repository is *your* account with *them*, governed by your agreement with that host. We process it on your behalf when you use the Service, but we did not put it there and we do not control what else they do with it.
 
 We also share data with **professional advisers** (lawyers, accountants, auditors) where necessary, and with **authorities** where required by law or to protect our rights, safety, or property, or that of our users.
 
-We don't sell your personal data, and we don't use third-party advertising or tracking services. Product-usage data is collected by us, stored only in our own database, and never sent to a third-party analytics provider.
+We don't sell your personal data, and we don't use third-party advertising or cross-site tracking services. Product-usage data is collected by us, stored only in our own database, and never sent to a third-party analytics provider; the cookieless visitor statistics on the signed-out pages (section 6) are separate from it and contain no account data.
 
 **Changes to this list.** This table is the authoritative sub-processor list for both this policy and our [Data Processing Agreement](/turbo/dpa/) — there is one list, not two. If we add or replace a sub-processor, we will update this table and notify organization owners by email at least **30 days** before the change takes effect, so that a customer who objects has time to raise it with us. The DPA explains what happens if you object.
 
@@ -79,7 +82,9 @@ We and our sub-processors may process personal data outside the EU/EEA and UK �
 
 **Cloudflare Turnstile on the signup page.** Our signup form is protected against automated abuse by Cloudflare Turnstile. When you load the signup page, Turnstile loads a widget from Cloudflare, and that widget stores its own short-lived state in your browser (a cookie or equivalent local storage, set by Cloudflare) and reads browser and device signals in order to tell a person from a bot. We treat this as **strictly necessary**: open signup without bot protection is an abuse and cost problem, and Turnstile is what stands between the signup form and automated account creation. It is used for that purpose alone. Turnstile appears on the signup page only, not elsewhere in the Service, and Cloudflare states that it does not use Turnstile data to profile or track individuals across sites.
 
-**What we don't use.** We don't use advertising cookies, and we don't embed third-party analytics or tracking services — no Google Analytics, no advertising pixels, no cross-site tracking. Aside from Turnstile on the signup page, the only cookies the Service sets are the two of our own described above.
+**What we don't use.** We don't use advertising cookies — no Google Analytics, no advertising pixels, no cross-site tracking. Aside from Turnstile on the signup page, the only cookies the Service sets are the two of our own described above.
+
+**Visitor statistics on the signed-out pages.** The sign-in, sign-up and password-reset pages — and only those, never a page you see once signed in — load [Plausible Analytics](https://plausible.io/data-policy), the same visitor statistics we use on decapcms.org. It sets no cookies and uses no local storage or other device storage. It recognises a visitor only within a single day, by a code calculated from the IP address, browser, our domain and a random value that is deleted every 24 hours; the IP address and browser string are never stored. It receives the page address, the referring site and any campaign tags in the link, the country, and the device and browser type, plus one event when a sign-up form is submitted. It never receives your account, your email address or anything about your organizations, and pages opened from an invitation link don't load it at all. Its script and requests are served from decapcms.org. Because it stores nothing on your device and can't identify you, it is not a consent question.
 
 **Product-usage data.** We record product-usage events (which features you use and which pages you visit) under your account, to help us improve the Service. This data is stored only in our own database (see section 4), is never shared with third parties, and is never used for advertising. It is not collected using cookies or device storage — it is recorded server-side against your authenticated account — so it is not a consent question, but you can still turn it off.
 
