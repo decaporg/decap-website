@@ -10,7 +10,7 @@
     <p class="lead">{{ .Description }}</p>
 
     {{ with $hero.cta }}
-      <div class="turbo-hero__actions">
+      <div class="turbo-hero__actions" data-cta-placement="hero">
         {{ with .primary }}
           <a href="{{ .href }}" class="button button--secondary-white-bg">{{ .text }}</a>
         {{ end }}
