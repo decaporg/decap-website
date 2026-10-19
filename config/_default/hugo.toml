@@ -18,7 +18,7 @@ title = 'Decap CMS | Open-Source Content Management System'
 
 [security]
   [security.funcs]
-    getenv = ["^GITHUB_TOKEN$", "^HUGO_"]
+    getenv = ["^GITHUB_TOKEN$", "^HUGO_", "^LOAD_PLAUSIBLE$"]
 
 [params]
   description = 'Open source content management for your Git workflow'
