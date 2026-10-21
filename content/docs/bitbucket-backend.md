@@ -19,18 +19,4 @@ To enable it:
 
 ### Client-Side Implicit Grant (Bitbucket)
 
-With Bitbucket's Implicit Grant, users can authenticate with Bitbucket directly from the client. To do this:
-
-1. Follow the [Atlassian docs](https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html) to create an OAuth consumer. Make sure you allow `Account/Read` and `Repository/Write` permissions. To use the [Editorial Workflow](https://www.decapcms.org/docs/configuration-options/#publish-mode), allow `PullRequests/Write` permissions. For the **Callback URL**, enter the address where you access Decap CMS, for example, `https://www.mysite.com/admin/`.
-2. Bitbucket gives you a **Key**. Copy this Key and enter it in your Decap CMS `config.yml` file, along with the following settings:
-
-   ```yaml
-   backend:
-     name: bitbucket
-     repo: owner-name/repo-name
-     branch: default
-     auth_type: implicit
-     app_id: # The Key from your Bitbucket settings
-   ```
-
-**Warning:** With Bitbucket implicit grant, the authentication is valid for 1 hour only. After that, the user has to log in again, **which can lead to data loss** if the expiration occurs while content is being edited.
+Bitbucket [stopped supporting the OAuth implicit grant](https://community.developer.atlassian.com/t/deprecation-notice-oauth-1-0-and-implicit-grant-flows-for-bitbucket-cloud/97520) on February 27, 2026, so `auth_type: implicit` no longer works. Use the authentication provider setup above instead.
