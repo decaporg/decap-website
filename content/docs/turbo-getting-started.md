@@ -30,7 +30,7 @@ Go to **Git connection** in the organization nav.
 
 > GitLab.com gates group and project access tokens behind Premium, so Turbo authenticates as the GitLab **user** who authorizes the connection. That token can reach every project that account can reach, not just this organization's. Set **Turbo-side repo scope** to *Only selected projects* and list them if that matters to you — it is the only limit available on GitLab Free.
 
-**Turbo-side repo scope** narrows what Turbo will proxy, on top of whatever the provider already allows. On GitHub the App installation is the outer limit and this is an extra check; on GitLab it is the only one.
+**Turbo-side repo scope** narrows what Turbo will proxy, on top of whatever the provider already allows. On GitHub the App installation is the outer limit and this is an extra check; on GitLab it is the only one. Listing a repository here never grants access to it — on GitHub, only the App installation does.
 
 ## Create a site
 

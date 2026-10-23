@@ -12,6 +12,8 @@ weight: 70
 
 **"This organization has hit its daily GitHub request limit"** (or GitLab) — you've used the plan's [daily ceiling](../turbo-billing/#daily-request-ceilings). The response carries `Retry-After`; the counter resets on a 24-hour boundary. Nothing is charged or locked. Tell us if you hit it during ordinary editorial work.
 
+**"The Decap Turbo GitHub App cannot see owner/repo"** — either the repo on the site's Overview tab isn't the exact `owner/name` (copy it from the repository's URL), or the App is installed on a different account than the one that owns the repo, or without that repo selected. Check under Settings → Applications → Decap Turbo → Configure on GitHub. "Connected" on the Git connection page only means an installation is linked, not that it covers your repo.
+
 **`requested repo does not match`** — the `repo` in `config.yml` disagrees with the site row, and the site row is authoritative. Change it in the dashboard; see [`repo` and `branch`](../turbo-connecting-a-site/#repo-and-branch).
 
 **`use_graphql: true` throws** — on both `turbo-github` and `turbo-gitlab`. GraphQL requests would bypass per-site scoping, so the backend refuses to start. Remove it; the plain `github` and `gitlab` backends support it, the Turbo backends don't.
