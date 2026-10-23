@@ -102,29 +102,42 @@ Registers a template for a folder collection or an individual file in a file col
       CMS.registerPreviewTemplate("posts", PostPreview);
     </script>
     ```
-  * getCollection: Returns a promise that resolves with the entries in a collection
+  * getCollection: Returns a promise that resolves with the published entries in a collection. Without a slug, it resolves with an array of entries; with a slug, it resolves with that one entry. Each entry is an Immutable Map with `data`, `slug` and `path` keys, and `data` is a plain object.
     **Params:**
     * collection: The name of the collection - required
     * slug: The slug of the entry - optional: if not supplied all entries will be returned
+
+    `render` can't wait for a promise, so load the entries when the component mounts and keep them in its state.
 
     **Example:**
     ```html
     <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      var PostPreview = createClass({
-        render: function() {
-          var posts = await getCollection('posts');
-          var arr = [];
-          posts.forEach((t) => {
-            const getingData = t.get('data');
-            console.log(getingData);
+      var HomePreview = createClass({
+        getInitialState: function() {
+          return { posts: [] };
+        },
+        componentDidMount: function() {
+          var self = this;
+          this.props.getCollection('posts').then(function(posts) {
+            self.setState({ posts: posts });
           });
-          return null;
+        },
+        render: function() {
+          return h('div', {},
+            h('h1', {}, this.props.entry.getIn(['data', 'title'])),
+            h('ul', {},
+              this.state.posts.map(function(post) {
+                return h('li', { key: post.get('slug') }, post.get('data').title);
+              })
+            )
+          );
         }
       });
 
-      CMS.registerPreviewTemplate("posts", PostPreview);
+      CMS.registerPreviewTemplate("home", HomePreview);
     </script>
+    ```
   * document: The preview pane iframe's [document instance](https://github.com/ryanseddon/react-frame-component/tree/9f8f06e1d3fc40da7122f0a57c62f7dec306e6cb#accessing-the-iframes-window-and-document).
   * window: The preview pane iframe's [window instance](https://github.com/ryanseddon/react-frame-component/tree/9f8f06e1d3fc40da7122f0a57c62f7dec306e6cb#accessing-the-iframes-window-and-document).
 
@@ -208,11 +221,15 @@ Registers a template for a folder collection or an individual file in a file col
     ```
     ### Accessing Metadata
     Preview Components also receive an additional prop: `fieldsMetaData`. It contains additional information (besides the plain textual value of each field) that can be useful for preview purposes. For example, the Relation widget passes the whole selected relation data in `fieldsMetaData`.
+
+    For a relation field, look up the related entry's data by the relation field's name, the related collection's name, and the value saved in the field. For a relation field inside an object or list field, start the path with the name of that object or list field. `fieldsMetaData` stays empty until the relation widget has loaded the related entry, so check for the value before using it.
+
+    The example below uses a relation field named `author` that points to the `authors` collection:
     ```js
     export default class ArticlePreview extends React.Component {
       render() {
         const {entry, fieldsMetaData} = this.props;
-        const author = fieldsMetaData.getIn(['authors', data.author]);
+        const author = fieldsMetaData.getIn(['author', 'authors', entry.getIn(['data', 'author'])]);
 
         return <article><h2>{ entry.getIn(['data', 'title']) }</h2>
           {author &&<AuthorBio author={author.toJS()}/>}
