@@ -269,6 +269,8 @@ CMS.registerLocale('de', de);
 
 When a translation for the selected locale is missing the English one will be used.
 
+The available locales are `bg`, `ca`, `cs`, `da`, `de`, `en`, `es`, `fa`, `fr`, `gr`, `he`, `hr`, `hu`, `it`, `ja`, `ko`, `lt`, `mk`, `nb_no`, `nl`, `nn_no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr_Cyrl`, `sv`, `th`, `tr`, `ua`, `uk`, `vi`, `zh_Hans` and `zh_Hant`. To translate the CMS into another language, register your own phrases with `CMS.registerLocale`, using the [English locale](https://github.com/decaporg/decap-cms/blob/main/packages/decap-cms-locales/src/en/index.js) as a template.
+
 > When importing `decap-cms` all locales are registered by default (so you only need to update your `config.yml`).
 
 ## Show Preview Links
@@ -346,6 +348,7 @@ The `collections` setting is the heart of your Decap CMS configuration, as it de
 * `files` or `folder` (requires one of these): specifies the collection type and location; details in [File Collections](https://decapcms.org/docs/collection-file) and [Folder Collections](https://decapcms.org/docs/collection-folder)
 * `filter`: optional filter for `folder` collections; details in [Folder Collections](https://decapcms.org/docs/collection-folder)
 * `create`: for `folder` collections only; `true` allows users to create new items in the collection; defaults to `false`
+* `limit`: for `folder` collections only; the maximum number of entries in the collection, counting unpublished entries in the editorial workflow. Once the collection has that many entries, saving a new one fails and the CMS hides the buttons for creating entries. No limit by default. <span class="version-tag">3.15</span>
 * `publish`: for `publish_mode: editorial_workflow` only; `false` hides UI publishing controls for a collection; defaults to `true`
 * `hide`: `true` hides a collection in the CMS UI; defaults to `false`. Useful when using the relation widget to hide referenced collections.
 * `delete`: `false` prevents users from deleting items in a collection; defaults to `true`
@@ -355,6 +358,7 @@ The `collections` setting is the heart of your Decap CMS configuration, as it de
 * `slug`: see detailed description below
 * `preview_path`: see detailed description below
 * `preview_path_date_field`: see detailed description below
+* `preview_path_preserve_slashes`: see detailed description below
 * `fields` (required): see detailed description below
 * `editor`: see detailed description below
 * `summary`: see detailed description below
@@ -394,13 +398,15 @@ You may also specify a custom `extension` not included in the list above, as lon
 * `toml-frontmatter`: same as the `frontmatter` format above, except frontmatter will be both parsed and saved only as TOML, followed by unparsed body text. The default delimiter for this option is  `+++`.
 * `json-frontmatter`: same as the `frontmatter` format above, except frontmatter will be both parsed and saved as JSON, followed by unparsed body text. The default delimiter for this option is  `{` `}`.
 
+JavaScript front matter, which opens with `---js` or `---javascript`, isn't supported by any format. Decap CMS doesn't run it: such a file loads with empty fields, including the body, and the error is logged to the browser console. Saving it from the CMS replaces the whole file, so convert its front matter to YAML, TOML or JSON first. <span class="version-tag">3.17.2</span>
+
 ### `frontmatter_delimiter`
 
 If you have an explicit frontmatter format declared, this option allows you to specify a custom delimiter like `~~~`. If you need different beginning and ending delimiters, you can use an array like `["(", ")"]`.
 
 ### `slug`
 
-For folder collections where users can create new items, the `slug` option specifies a template for generating new filenames based on a file's creation date and `title` field. (This means that all collections with `create: true` must have a `title` field (a different field can be used via [`identifier_field`](#identifier_field)).
+For folder collections where users can create new items, the `slug` option specifies a template for generating new filenames based on the entry's date and `title` field. (This means that all collections with `create: true` must have a `title` field (a different field can be used via [`identifier_field`](#identifier_field)).
 
 The slug template can also reference a field value by name, eg. `{{title}}`. If a field name conflicts with a built in template tag name - for example, if you have a field named `slug`, and would like to reference that field via `{{slug}}`, you can do so by adding the explicit `fields.` prefix, eg. `{{fields.slug}}`.
 
@@ -408,12 +414,18 @@ The slug template can also reference a field value by name, eg. `{{title}}`. If 
 
 * Any field can be referenced by wrapping the field name in double curly braces, eg. `{{author}}`
 * `{{slug}}`: a url-safe version of the `title` field (or identifier field) for the file
-* `{{year}}`: 4-digit year of the file creation date
-* `{{month}}`: 2-digit month of the file creation date
-* `{{day}}`: 2-digit day of the month of the file creation date
-* `{{hour}}`: 2-digit hour of the file creation date
-* `{{minute}}`: 2-digit minute of the file creation date
-* `{{second}}`: 2-digit second of the file creation date
+* `{{year}}`: 4-digit year of the entry date
+* `{{month}}`: 2-digit month of the entry date
+* `{{day}}`: 2-digit day of the month of the entry date
+* `{{hour}}`: 2-digit hour of the entry date
+* `{{minute}}`: 2-digit minute of the entry date
+* `{{second}}`: 2-digit second of the entry date
+
+The entry date comes from the entry's date field: the first field with the `datetime` widget named `date`, `publishDate` or `publish_date`. If the collection has no such field, or the field is empty, the date and time of the first save is used instead. The date tags are in UTC. The same date is used for the collection's `path` template. <span class="version-tag">3.10</span>
+
+The filename is generated when the entry is first saved. Changing the date or title later doesn't rename the file. Generated slugs are shortened to at most 200 bytes, or fewer when the collection name is long, so that the editorial workflow's branch name stays valid. <span class="version-tag">3.17</span>
+
+Template tags in `slug` accept the same [transformations](/docs/summary-strings/) as summary strings. For example, `{{title | truncate(50)}}` keeps only the first 50 characters of the title. <span class="version-tag">3.13</span>
 
 **Example:**
 
@@ -433,6 +445,12 @@ slug: "{{year}}-{{month}}-{{day}}_{{title}}_{{some_other_field}}"
 slug: "{{year}}-{{month}}-{{day}}_{{fields.slug}}"
 ```
 
+**Example shortening long titles:**
+
+```yaml
+slug: "{{year}}-{{month}}-{{day}}_{{title | truncate(50)}}"
+```
+
 ### `preview_path`
 
 A string representing the path where content in this collection can be found on the live site. This allows deploy preview links to direct to a specific piece of content rather than the site root of a deploy preview.
@@ -442,7 +460,7 @@ A string representing the path where content in this collection can be found on 
 Template tags are the same as those for [slug](#slug), with the following exceptions:
 
 * `{{slug}}` is the entire slug for the current entry (not just the url-safe identifier, as is the case with [`slug` configuration](#slug))
-* The date based template tags, such as `{{year}}` and `{{month}}`, are pulled from a date field in your entry, and may require additional configuration - see [`preview_path_date_field`](#preview_path_date_field) for details. If a date template tag is used and no date can be found, `preview_path` will be ignored.
+* The date based template tags, such as `{{year}}` and `{{month}}`, can be pulled from a different date field in your entry - see [`preview_path_date_field`](#preview_path_date_field) for details. If a date template tag is used and no date can be found, `preview_path` will be ignored.
 * `{{dirname}}` The path to the file's parent directory, relative to the collection's `folder`.
 * `{{filename}}` The file name without the extension part.
 * `{{extension}}` The file extension.
@@ -471,6 +489,24 @@ The name of a date field for parsing date-based template tags from `preview_path
 collections:
   - name: posts
     preview_path_date_field: "updated_on"
+```
+
+### `preview_path_preserve_slashes`
+
+<span class="version-tag">3.12.2</span>
+
+Values inserted into `preview_path`, such as `{{slug}}` or `{{fields.permalink}}`, are made URL-safe the same way as [slugs](#slug), which replaces a `/` with the [`sanitize_replacement`](#slug-type) character. Set `preview_path_preserve_slashes` to `true` to keep slashes inside a value, so a `permalink` field holding `guides/getting-started` produces a link to `/guides/getting-started` instead of `/guides-getting-started`. Leading and trailing slashes are still removed.
+
+Defaults to `true` for [nested collections](/docs/collection-nested/) and `false` for all other collections. It's set on the collection, and applies to the files of a files collection too; setting it on an individual file has no effect.
+
+**Example:**
+
+```yaml
+collections:
+  - name: pages
+    folder: content/pages
+    preview_path: "{{fields.permalink}}"
+    preview_path_preserve_slashes: true
 ```
 
 ### `fields`
@@ -506,18 +542,28 @@ fields:
 
 ### `editor`
 
-This setting changes options for the editor view of a collection or a file inside a files collection. It has one option so far:
+This setting changes options for the editor view of a collection or a file inside a files collection. It has the following options:
 
 * `preview`: set to `false` to disable the preview pane for this collection or file; defaults to `true`
+* `notes`: set to `true` to enable the [notes](/docs/notes/) pane for this collection or file; defaults to `false`
+* `visualEditing`: set to `true` to let editors click on content in the preview pane to jump to the field that holds it. This works for the default preview as well as for custom preview templates. Scroll sync is turned off while visual editing is on, so the two don't interfere. Only works when set on a collection, not at the top level or on a file inside a files collection; defaults to `false` <span class="version-tag">3.6</span>
 
 **Example:**
 
 ```yaml
   editor:
      preview: false
+     notes: true
 ```
 
-**Note**: Setting this as a top level configuration will set the default for all collections
+```yaml
+  editor:
+     visualEditing: true
+```
+
+To keep a single `string` or `text` field out of visual editing, set `visualEditing: false` on that field. <span class="version-tag">3.7</span>
+
+**Note**: Setting `preview` or `notes` as a top level configuration will set the default for all collections.
 
 ### `summary`
 
@@ -553,6 +599,25 @@ When the `author` field can't be inferred, the commit author will be used.
     # use dot notation for nested fields
     sortable_fields: ['commit_date', 'title', 'commit_author', 'language.en']
 ```
+
+Each item can also be an object with these properties: <span class="version-tag">3.10</span>
+
+* `field` (required): the name of the field to sort by
+* `label`: the text shown in the sort menu; defaults to the field's `label`
+* `default_sort`: sorts the collection by this field when it's opened; `asc` (or `true`) for ascending, `desc` for descending. Only one field can have `default_sort`.
+
+**Example**
+
+```yaml
+    sortable_fields:
+      - title
+      - field: date
+        label: Publish date
+        default_sort: desc
+      - commit_date
+```
+
+The browser remembers the last sort used for each collection, including the default one, so a changed `default_sort` doesn't apply to editors who have already opened the collection.
 
 ### `view_filters`
 

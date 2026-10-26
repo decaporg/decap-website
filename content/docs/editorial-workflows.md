@@ -20,7 +20,7 @@ From a technical perspective, the workflow translates editor UI actions into com
 | Edit draft                | Pushes another commit to the draft branch/pull request                                                            |
 | Approve and publish draft | Merges pull request and deletes branch                                                                            |
 
-**Note:** Editorial workflow works with GitHub repositories, and supports [GitLab](/docs/gitlab-backend/) and [Bitbucket](/docs/bitbucket-backend/).
+**Note:** Editorial workflow works with GitHub repositories, and supports [GitLab](/docs/gitlab-backend/), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/), [Forgejo](/docs/gitea-backend/#forgejo-backend), [Git Gateway](/docs/git-gateway-backend/) and [Decap Turbo](/docs/turbo-overview/). The `gitea` backend doesn't support it.
 
 
 ### Bitbucket Support
@@ -33,6 +33,18 @@ In order to track unpublished entries statuses, the Bitbucket implementation use
 In order to track unpublished entries statuses, the GitLab implementation uses
 [merge requests labels](https://docs.gitlab.com/ee/user/project/labels.html).
 
+### Forgejo Support
+
+Editorial workflow on Forgejo needs the [`forgejo` backend](/docs/gitea-backend/#forgejo-backend). In order to track unpublished entries statuses, the Forgejo implementation uses pull request labels, which it creates when they're missing.
+
+
+## Unpublished entries in collections
+
+<span class="version-tag">3.8</span>
+
+Besides the Workflow page, unpublished entries also appear in their collection. Each entry with unpublished changes, including a published entry that is being edited, shows a badge with its status: **Draft**, **In review** or **Ready**.
+
+Entries that haven't been published yet are listed below the published ones, under an **Unpublished Entries** heading, and sorted like the rest of the collection. When the collection is [grouped](/docs/configuration-options/#view_groups), they're listed once, below all the groups. [View filters](/docs/configuration-options/#view_filters) don't apply to them. <span class="version-tag">3.15</span>
 
 ## Squash merge GitHub pull requests
 

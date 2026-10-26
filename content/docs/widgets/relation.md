@@ -27,7 +27,7 @@ The relation widget allows you to reference items from another collection. It pr
 - `min`: minimum number of items; ignored if **multiple** is  `false`
 - `max`: maximum number of items; ignored if **multiple** is  `false`
 - `options_length`: accepts integer to override number of options presented to user. Defaults to `20`.
-- `filters`: <span class="version-tag">3.1.5</span> allows adding filters by which the available options are filtered. You can add filters which are a pair of `field` and the allowed `values`, where the widget will only show options (collection items) that satisfy all the filters. A collection item satisfies a filter if the value of `field` is one of the values in `values`.
+- `filters`: <span class="version-tag">3.1.5</span> allows adding filters by which the available options are filtered. You can add filters which are a pair of `field` and the allowed `values`, where the widget will only show options (collection items) that satisfy all the filters. A collection item satisfies a filter if the value of `field` is one of the values in `values`. If `field` holds a list, such as a `select` field with `multiple: true`, the item satisfies the filter when any of the list's values is in `values`. <span class="version-tag">3.17.2</span>
 - **Referencing a folder collection example** (assuming a separate "authors" collection with "name" and "twitterHandle" fields with subfields "first" and "last" for the "name" field):
 
 ```yaml

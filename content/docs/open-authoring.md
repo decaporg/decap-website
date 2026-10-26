@@ -4,13 +4,13 @@ weight: 20
 title: Open Authoring
 ---
 
-When using the [GitHub backend](/docs/github-backend), you can use Decap CMS to accept contributions from GitHub users without giving them access to your repository. When they make changes in the CMS, the CMS forks your repository for them behind the scenes, and all the changes are made to the fork. When the contributor is ready to submit their changes, they can set their draft as ready for review in the CMS. This triggers a pull request to your repository, which you can merge using the GitHub UI.
+When using the [GitHub backend](/docs/github-backend) or the [Forgejo backend](/docs/gitea-backend/#forgejo-backend), you can use Decap CMS to accept contributions from users without giving them access to your repository. When they make changes in the CMS, the CMS forks your repository for them behind the scenes, and all the changes are made to the fork. When the contributor is ready to submit their changes, they can set their draft as ready for review in the CMS. This triggers a pull request to your repository, which you can merge on GitHub or Forgejo.
 
 At the same time, any contributors who *do* have write access to the repository can continue to use Decap CMS normally.
 
 ## Requirements
 
-* You must use [the GitHub backend](/docs/github-backend).
+* You must use [the GitHub backend](/docs/github-backend) or, from version 3.15, [the Forgejo backend](/docs/gitea-backend/#forgejo-backend). The examples on this page use GitHub. For Forgejo, set `name: forgejo` and the options from its page.
 
   **Note that the [Git Gateway backend](/docs/git-gateway-backend/#git-gateway-with-netlify-identity) does *not* support Open Authoring, even when the underlying repo is on GitHub.**
 * For private GitHub repos the user must have `read` access on the repo, and you must explicitly set the auth_scope to `repo`, for example:
