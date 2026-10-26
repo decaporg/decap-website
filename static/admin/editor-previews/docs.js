@@ -4,10 +4,12 @@ CMS.registerPreviewStyle('/styles/style.min.css')
 
 const DocsPreview = createClass({
   render: function () {
-    const { widgetFor } = this.props
+    const { entry, widgetFor } = this.props
+    const data = entry.getIn(['data']).toJS()
+    const { title } = data
     return h('div', { className: 'container size-lg' },
       h('div', { className: 'page' },
-        h('h1', {}, widgetFor('title')),
+        h('h1', {}, title),
         h('div', { className: 'markdown' },
           h('div', {}, widgetFor('body'))
         )
@@ -20,10 +22,10 @@ const BlogPreview = createClass({
   render: function () {
     const { entry, widgetFor } = this.props
     const data = entry.getIn(['data']).toJS()
-    const { author, date } = data
+    const { title, author, date } = data
     return h('div', { className: 'container size-sm' },
       h('div', { className: 'page' },
-        h('h1', {}, widgetFor('title')),
+        h('h1', {}, title),
         h('p', { className: 'meta-info' },
           `By ${author} on ${date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`
         ),

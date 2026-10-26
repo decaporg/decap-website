@@ -4,7 +4,7 @@ weight: 30
 title: Notes
 ---
 
-<span class="version-tag">3.16.3</span>
+<span class="version-tag">3.15</span> GitHub · <span class="version-tag">3.16.3</span> GitLab · <span class="version-tag">3.17</span> Decap Turbo
 
 Notes let editors leave comments on an entry without touching its content. A *note* is a short message attached to an entry, shown in a pane next to the editor, and stored on your repository host as comments on an issue rather than in the entry file. Use notes to ask a colleague for a second opinion, record why a wording was chosen, or leave a reminder for whoever picks the draft up next.
 
@@ -38,7 +38,7 @@ collections:
 
 The notes pane shares one space with the preview and [i18n](/docs/i18n/) panes, so opening one closes whichever was open, and selecting the pane already showing closes it. Decap CMS remembers the choice for the next entry you open.
 
-The pane header counts unresolved notes — or every note, once none are left unresolved — and links to the entry's issue on your repository host.
+The pane header counts unresolved notes — or every note, once none are left unresolved — and, once the entry has notes, links to its issue on your repository host.
 
 A note is saved the moment you add it, independently of the entry: you do not need to save the entry for a note to persist.
 
@@ -57,9 +57,9 @@ The first time a note is added to an entry, Decap CMS opens an issue in the repo
 Should this section mention the new pricing?
 ```
 
-The author is recorded in the note because the account that writes the comment is not always the person who wrote it. On Decap Turbo every comment is posted with the organization's shared credential, so the host attributes each note to that account rather than to the editor who wrote it. `authorId` is what the CMS compares to decide whose notes you can act on; it is an opaque identifier, not an email address.
+The author is recorded in the note because the account that writes the comment is not always the person who wrote it. On Decap Turbo every comment is posted with the organization's shared credential, so the host attributes each note to that account rather than to the editor who wrote it. On Decap Turbo, `authorId` is what the CMS compares to decide whose notes you can act on; it is an opaque identifier, not an email address. `author` is the editor's display name, or their email address if they haven't set a name, so on a public repository that email is public too.
 
-The GitHub and GitLab backends record neither `author` nor `authorId`, because the account that posts a note is the editor who wrote it. A note with no recorded author — including a comment written directly on the issue — is attributed to the account that posted it.
+The GitHub and GitLab backends record neither `author` nor `authorId`, because the account that posts a note is the editor who wrote it; the CMS compares that account with the signed-in user. A note with no recorded author — including a comment written directly on the issue — is attributed to the account that posted it.
 
 The issue follows the entry through the editorial workflow:
 

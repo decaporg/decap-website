@@ -49,4 +49,4 @@ Bunny's S3-compatible API means there's no Bunny-specific integration any more â
 
 ## Neon Object Storage
 
-Configure [Neon Object Storage](https://neon.com/docs/storage/overview) as above, using the branch's storage endpoint and `s3_force_path_style: true`. Use a `public_read` bucket and a credential with both `storage:read` and `storage:write`, since a write-only credential can't list the bucket. Set `public_url_prefix` to the endpoint followed by the bucket name, for example `https://<branch-id>.storage.c-<N>.us-east-2.aws.neon.tech/<bucket>`.
+Configure [Neon Object Storage](https://neon.com/docs/storage/overview) as above, using the branch's storage endpoint and `s3_force_path_style: true`. Use a `public_read` bucket and a credential with the `storage:write` scope, which also allows reading and listing the bucket. In `config.yml`, set `public_url_prefix` to the endpoint followed by the bucket name, for example `https://<branch-id>.storage.c-<N>.us-east-2.aws.neon.tech/<bucket>`.

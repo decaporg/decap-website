@@ -561,7 +561,7 @@ This setting changes options for the editor view of a collection or a file insid
      visualEditing: true
 ```
 
-To keep a single `string` or `text` field out of visual editing, set `visualEditing: false` on that field.
+To keep a single `string` or `text` field out of visual editing, set `visualEditing: false` on that field. <span class="version-tag">3.7</span>
 
 **Note**: Setting `preview` or `notes` as a top level configuration will set the default for all collections.
 
