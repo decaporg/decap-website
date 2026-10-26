@@ -25,3 +25,14 @@ CMS.registerEventListener({
   },
 });
 ```
+
+The handler can return either the entry's new `data`, as above, or the whole entry. Return the whole entry to change something outside `data`, such as a translation when the collection uses [i18n](/docs/i18n/): <span class="version-tag">3.17.2</span>
+
+```javascript
+CMS.registerEventListener({
+  name: 'preSave',
+  handler: ({ entry }) => {
+    return entry.setIn(['i18n', 'de', 'data', 'title'], 'neuer Titel');
+  },
+});
+```
