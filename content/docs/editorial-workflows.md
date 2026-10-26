@@ -42,9 +42,9 @@ Editorial workflow on Forgejo needs the [`forgejo` backend](/docs/gitea-backend/
 
 <span class="version-tag">3.8</span>
 
-Besides the Workflow page, unpublished entries also appear in their collection. Entries that haven't been published yet are listed below the published ones, under an **Unpublished Entries** heading, and sorted like the rest of the collection. Each entry with unpublished changes, including a published entry that is being edited, shows a badge with its status: **Draft**, **In review** or **Ready**.
+Besides the Workflow page, unpublished entries also appear in their collection. Each entry with unpublished changes, including a published entry that is being edited, shows a badge with its status: **Draft**, **In review** or **Ready**.
 
-Unpublished entries aren't listed when the collection is [grouped](/docs/configuration-options/#view_groups).
+Entries that haven't been published yet are listed below the published ones, under an **Unpublished Entries** heading, and sorted like the rest of the collection. When the collection is [grouped](/docs/configuration-options/#view_groups), they're listed once, below all the groups. [View filters](/docs/configuration-options/#view_filters) don't apply to them. <span class="version-tag">3.15</span>
 
 ## Squash merge GitHub pull requests
 

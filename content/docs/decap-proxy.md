@@ -39,7 +39,7 @@ The proxy server has no authentication: anyone who can reach it can read and wri
 
 * **`PORT`** defines the port you'd like the proxy server to use. Running `PORT=8082 npx decap-server` starts the server on port `8082` rather than the default `8081`.
 
-* **`BIND_HOST`** sets the network address the proxy server listens on. By default it listens on `127.0.0.1` and `::1`, so only the computer it runs on can connect. Set it to `0.0.0.0` to accept connections from other devices, but only on a network you trust, such as inside a container. <span class="version-tag">3.9</span>
+* **`BIND_HOST`** sets the network address the proxy server listens on. By default it listens on `127.0.0.1` and `::1`, so only the computer it runs on can connect. Set it to `0.0.0.0` to accept connections from other devices, but only on a network you trust, such as inside a container. <span class="version-tag">3.9</span> The local-only default arrived in decap-server@3.11.6; before, the server listened on every address.
 
 * **`ORIGIN`** allows overriding the default local-only CORS origin pattern (`/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/`) with a specific origin. Running `ORIGIN=https://example.com npx decap-server` changes the HTTP header in responses to `Access-Control-Allow-Origin: https://example.com`, and the server refuses requests that browsers send from any other origin. <span class="version-tag">3.9</span>
 
@@ -65,6 +65,8 @@ ORIGIN=http://my-site.test:1313
 PORT=8082 npx decap-server
 ```
 
+If the site runs on a host name other than `localhost` or `127.0.0.1`, as in the `.env` example above, also add it to `allowed_hosts` in `local_backend`, as shown [below](#custom-port-and-host-for-the-backend-url).
+
 ### Custom Port and Host for the Backend URL
 
 Update the `local_backend` object in `config.yml` and specify a `url` property to use your custom port number.
@@ -85,3 +87,5 @@ The proxy server only accepts connections from the computer it runs on. To open 
 ```bash
 BIND_HOST=0.0.0.0 ORIGIN=http://192.168.0.1:1313 npx decap-server
 ```
+
+`ORIGIN` allows a single origin, so open the CMS through `http://192.168.0.1:1313` on this computer too.

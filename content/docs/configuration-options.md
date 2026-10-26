@@ -495,9 +495,9 @@ collections:
 
 <span class="version-tag">3.12.2</span>
 
-Values inserted into `preview_path`, such as `{{slug}}` or `{{fields.permalink}}`, are made URL-safe the same way as [slugs](#slug), which replaces a `/` with the [`sanitize_replacement`](#slug-type) character. Set `preview_path_preserve_slashes` to `true` to keep slashes inside a value, so a `permalink` field holding `guides/getting-started` produces a link to `/guides/getting-started` instead of `/guides-getting-started`. Leading and trailing slashes are still replaced.
+Values inserted into `preview_path`, such as `{{slug}}` or `{{fields.permalink}}`, are made URL-safe the same way as [slugs](#slug), which replaces a `/` with the [`sanitize_replacement`](#slug-type) character. Set `preview_path_preserve_slashes` to `true` to keep slashes inside a value, so a `permalink` field holding `guides/getting-started` produces a link to `/guides/getting-started` instead of `/guides-getting-started`. Leading and trailing slashes are still removed.
 
-Defaults to `true` for [nested collections](/docs/collection-nested/) and `false` for all other collections. It's set on the collection, and applies to the files of a files collection too.
+Defaults to `true` for [nested collections](/docs/collection-nested/) and `false` for all other collections. It's set on the collection, and applies to the files of a files collection too; setting it on an individual file has no effect.
 
 **Example:**
 

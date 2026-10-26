@@ -194,7 +194,7 @@ An inline component has no form. Instead, it takes these properties:
 * `pattern`: a regular expression that matches the component inside a paragraph. Don't use the multiline flag (`m`), and prefer non-greedy groups such as `(.*?)`, so that a pattern doesn't swallow the rest of the line.
 * `fromInline`: given the match, returns the component's data as an object
 * `toInline`: given the data, returns the markdown to save
-* `trigger` (optional): the text the syntax always starts with, such as `[[` or `@`. Decap CMS only tries the pattern where the trigger appears, which makes long documents faster to parse.
+* `trigger` (optional): the text the syntax always starts with, such as `[[` or `@`. Decap CMS then finds candidates with a plain text search for the trigger instead of running the pattern over the rest of the paragraph, which makes long documents faster to parse.
 * `onInsert` (optional): called when an editor adds the component from the toolbar, with `{ selectedText }`. Return a promise for the component's data, or for `null` to cancel. The component replaces the selected text. Without `onInsert`, the component is inserted with empty data.
 * `onEdit` (optional): called when an editor clicks the component, with `{ data }`. Return a promise for the new data, or for `null` to leave the component unchanged.
 
