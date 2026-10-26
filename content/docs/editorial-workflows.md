@@ -20,7 +20,7 @@ From a technical perspective, the workflow translates editor UI actions into com
 | Edit draft                | Pushes another commit to the draft branch/pull request                                                            |
 | Approve and publish draft | Merges pull request and deletes branch                                                                            |
 
-**Note:** Editorial workflow works with GitHub repositories, and supports [GitLab](/docs/gitlab-backend/), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/) and [Forgejo](/docs/gitea-backend/#forgejo-backend). The `gitea` backend doesn't support it.
+**Note:** Editorial workflow works with GitHub repositories, and supports [GitLab](/docs/gitlab-backend/), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/), [Forgejo](/docs/gitea-backend/#forgejo-backend), [Git Gateway](/docs/git-gateway-backend/) and [Decap Turbo](/docs/turbo-overview/). The `gitea` backend doesn't support it.
 
 
 ### Bitbucket Support

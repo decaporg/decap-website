@@ -423,7 +423,7 @@ The slug template can also reference a field value by name, eg. `{{title}}`. If 
 
 The entry date comes from the entry's date field: the first field with the `datetime` widget named `date`, `publishDate` or `publish_date`. If the collection has no such field, or the field is empty, the date and time of the first save is used instead. The date tags are in UTC. The same date is used for the collection's `path` template. <span class="version-tag">3.10</span>
 
-The filename is generated when the entry is first saved. Changing the date or title later doesn't rename the file. Generated slugs are shortened to fit in 200 bytes. <span class="version-tag">3.17</span>
+The filename is generated when the entry is first saved. Changing the date or title later doesn't rename the file. Generated slugs are shortened to at most 200 bytes, or fewer when the collection name is long, so that the editorial workflow's branch name stays valid. <span class="version-tag">3.17</span>
 
 Template tags in `slug` accept the same [transformations](/docs/summary-strings/) as summary strings. For example, `{{title | truncate(50)}}` keeps only the first 50 characters of the title. <span class="version-tag">3.13</span>
 

@@ -40,6 +40,8 @@ The `gitea` backend doesn't support the [editorial workflow](/docs/editorial-wor
 
 <span class="version-tag">3.15</span>
 
+Use Decap CMS 3.16.2 or later for the editorial workflow: with some Forgejo versions, earlier releases don't list new entries. For open authoring with a contributor fork that has a different name than the repository, use 3.17.2 or later.
+
 The `forgejo` backend supports the [editorial workflow](/docs/editorial-workflows/) and [open authoring](/docs/open-authoring/) on Forgejo instances. Create the OAuth2 application as described in [Authentication](#authentication), then use a configuration similar to the following:
 
 ```yaml
@@ -58,7 +60,7 @@ It differs from the `gitea` backend in a few ways:
 
 * `api_root` is required. Decap CMS builds the login URLs from it, so `base_url` and `auth_endpoint` aren't used.
 * `branch` defaults to `main`.
-* With the editorial workflow, Decap CMS tracks entry statuses with pull request labels (`decap-cms/draft`, `decap-cms/pending_review` and `decap-cms/pending_publish`) and creates them when they're missing. To change the `decap-cms/` prefix, set `cms_label_prefix`.
+* With the editorial workflow, Decap CMS tracks entry statuses with pull request labels (`decap-cms/draft`, `decap-cms/pending_review` and `decap-cms/pending_publish`) and creates them when they're missing. To change the `decap-cms/` prefix, set `cms_label_prefix`. With open authoring, contributors can't set labels, so no labels are used.
 * Publishing an entry merges its pull request with a merge commit. `squash_merges` isn't supported.
 * [Deploy preview links](/docs/deploy-preview-links/) aren't supported.
 
