@@ -38,6 +38,14 @@ In order to track unpublished entries statuses, the GitLab implementation uses
 Editorial workflow on Forgejo needs the [`forgejo` backend](/docs/gitea-backend/#forgejo-backend). In order to track unpublished entries statuses, the Forgejo implementation uses pull request labels, which it creates when they're missing.
 
 
+## Unpublished entries in collections
+
+<span class="version-tag">3.8</span>
+
+Besides the Workflow page, unpublished entries also appear in their collection. Entries that haven't been published yet are listed below the published ones, under an **Unpublished Entries** heading, and sorted like the rest of the collection. Each entry with unpublished changes, including a published entry that is being edited, shows a badge with its status: **Draft**, **In review** or **Ready**.
+
+Unpublished entries aren't listed when the collection is [grouped](/docs/configuration-options/#view_groups).
+
 ## Squash merge GitHub pull requests
 
 When using the **Editorial Workflow** with the `github` or GitHub-connected `git-gateway` backends, Decap CMS creates a pull request for each unpublished entry. Every time the unpublished entry is changed and saved, a new commit is added to the pull request. When the entry is published, the pull request is merged, and all of those commits are added to your project commit history in a merge commit.
