@@ -6,7 +6,7 @@ title: Creating Custom Widgets
 Decap CMS exposes a `window.CMS` global object that you can use to register custom widgets, previews, and editor plugins. The same object is also the default export if you import Decap CMS as an npm module. The available widget extension methods are:
 
 * **registerWidget:** registers a custom widget.
-* **registerEditorComponent:** adds a block component to the Markdown editor.
+* **registerEditorComponent:** adds a block or inline component to the Markdown editor.
 
 ### Writing React Components inline
 
@@ -177,6 +177,52 @@ CMS.registerEditorComponent({
 </details>
 `;
   }
+});
+</script>
+```
+
+### Inline components
+
+<span class="version-tag">3.16.2</span>
+
+Components are block level by default: each one takes up its own paragraph. Add `type: 'inline'` to register a component that sits inside a line of text instead, such as a wikilink, a mention or a Hugo `ref` shortcode. Inline components work in the [markdown widget](/docs/widgets/markdown/), not in the [richtext widget](/docs/widgets/richtext/).
+
+An inline component has no form. Instead, it takes these properties:
+
+* `id`, `label` and `toPreview`: as for block components. `toPreview` renders the component both inside the editor and in the preview pane.
+* `type`: `'inline'`
+* `pattern`: a regular expression that matches the component inside a paragraph. Don't use the multiline flag (`m`), and prefer non-greedy groups such as `(.*?)`, so that a pattern doesn't swallow the rest of the line.
+* `fromInline`: given the match, returns the component's data as an object
+* `toInline`: given the data, returns the markdown to save
+* `trigger` (optional): the text the syntax always starts with, such as `[[` or `@`. Decap CMS only tries the pattern where the trigger appears, which makes long documents faster to parse.
+* `onInsert` (optional): called when an editor adds the component from the toolbar, with `{ selectedText }`. Return a promise for the component's data, or for `null` to cancel. The component replaces the selected text. Without `onInsert`, the component is inserted with empty data.
+* `onEdit` (optional): called when an editor clicks the component, with `{ data }`. Return a promise for the new data, or for `null` to leave the component unchanged.
+
+```html
+<script>
+CMS.registerEditorComponent({
+  id: "wikilink",
+  label: "Wikilink",
+  type: "inline",
+  trigger: "[[",
+  pattern: /\[\[(.*?)\]\]/,
+  fromInline: function(match) {
+    return { page: match[1] };
+  },
+  toInline: function(data) {
+    return `[[${data.page}]]`;
+  },
+  toPreview: function(data) {
+    return h('a', { href: '#' }, data.page);
+  },
+  onInsert: async function({ selectedText }) {
+    const page = window.prompt('Page to link to', selectedText);
+    return page ? { page: page } : null;
+  },
+  onEdit: async function({ data }) {
+    const page = window.prompt('Page to link to', data.page);
+    return page ? { page: page } : null;
+  },
 });
 </script>
 ```
