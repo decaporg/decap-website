@@ -356,6 +356,7 @@ The `collections` setting is the heart of your Decap CMS configuration, as it de
 * `slug`: see detailed description below
 * `preview_path`: see detailed description below
 * `preview_path_date_field`: see detailed description below
+* `preview_path_preserve_slashes`: see detailed description below
 * `fields` (required): see detailed description below
 * `editor`: see detailed description below
 * `summary`: see detailed description below
@@ -484,6 +485,24 @@ The name of a date field for parsing date-based template tags from `preview_path
 collections:
   - name: posts
     preview_path_date_field: "updated_on"
+```
+
+### `preview_path_preserve_slashes`
+
+<span class="version-tag">3.12.2</span>
+
+Values inserted into `preview_path`, such as `{{slug}}` or `{{fields.permalink}}`, are made URL-safe the same way as [slugs](#slug), which replaces a `/` with the [`sanitize_replacement`](#slug-type) character. Set `preview_path_preserve_slashes` to `true` to keep slashes inside a value, so a `permalink` field holding `guides/getting-started` produces a link to `/guides/getting-started` instead of `/guides-getting-started`. Leading and trailing slashes are still replaced.
+
+Defaults to `true` for [nested collections](/docs/collection-nested/) and `false` for all other collections. It's set on the collection, and applies to the files of a files collection too.
+
+**Example:**
+
+```yaml
+collections:
+  - name: pages
+    folder: content/pages
+    preview_path: "{{fields.permalink}}"
+    preview_path_preserve_slashes: true
 ```
 
 ### `fields`
