@@ -269,6 +269,8 @@ CMS.registerLocale('de', de);
 
 When a translation for the selected locale is missing the English one will be used.
 
+The available locales are `bg`, `ca`, `cs`, `da`, `de`, `en`, `es`, `fa`, `fr`, `gr`, `he`, `hr`, `hu`, `it`, `ja`, `ko`, `lt`, `mk`, `nb_no`, `nl`, `nn_no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr_Cyrl`, `sv`, `th`, `tr`, `ua`, `uk`, `vi`, `zh_Hans` and `zh_Hant`. To translate the CMS into another language, register your own phrases with `CMS.registerLocale`, using the [English locale](https://github.com/decaporg/decap-cms/blob/main/packages/decap-cms-locales/src/en/index.js) as a template.
+
 > When importing `decap-cms` all locales are registered by default (so you only need to update your `config.yml`).
 
 ## Show Preview Links
