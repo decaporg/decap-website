@@ -523,6 +523,7 @@ This setting changes options for the editor view of a collection or a file insid
 
 * `preview`: set to `false` to disable the preview pane for this collection or file; defaults to `true`
 * `notes`: set to `true` to enable the [notes](/docs/notes/) pane for this collection or file; defaults to `false`
+* `visualEditing`: set to `true` to let editors click on content in the preview pane to jump to the field that holds it. This works for the default preview as well as for custom preview templates. Scroll sync is turned off while visual editing is on, so the two don't interfere. Only works when set on a collection, not at the top level or on a file inside a files collection; defaults to `false` <span class="version-tag">3.6</span>
 
 **Example:**
 
@@ -532,7 +533,14 @@ This setting changes options for the editor view of a collection or a file insid
      notes: true
 ```
 
-**Note**: Setting this as a top level configuration will set the default for all collections
+```yaml
+  editor:
+     visualEditing: true
+```
+
+To keep a single `string` or `text` field out of visual editing, set `visualEditing: false` on that field.
+
+**Note**: Setting `preview` or `notes` as a top level configuration will set the default for all collections.
 
 ### `summary`
 

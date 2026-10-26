@@ -20,6 +20,8 @@ docs_collection: &docs_collection
   summary: '{{weight}} - {{title}}'
   preview_path: 'docs/{{slug}}'
   sortable_fields: ['weight', 'title', 'group']
+  editor:
+    visualEditing: true
   fields:
     - { label: Title, name: title, widget: string }
     - label: Section
