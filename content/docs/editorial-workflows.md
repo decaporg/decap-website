@@ -20,7 +20,7 @@ From a technical perspective, the workflow translates editor UI actions into com
 | Edit draft                | Pushes another commit to the draft branch/pull request                                                            |
 | Approve and publish draft | Merges pull request and deletes branch                                                                            |
 
-**Note:** Editorial workflow works with GitHub repositories, and supports [GitLab](/docs/gitlab-backend/) and [Bitbucket](/docs/bitbucket-backend/).
+**Note:** Editorial workflow works with GitHub repositories, and supports [GitLab](/docs/gitlab-backend/), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/) and [Forgejo](/docs/gitea-backend/#forgejo-backend). The `gitea` backend doesn't support it.
 
 
 ### Bitbucket Support
@@ -32,6 +32,10 @@ In order to track unpublished entries statuses, the Bitbucket implementation use
 
 In order to track unpublished entries statuses, the GitLab implementation uses
 [merge requests labels](https://docs.gitlab.com/ee/user/project/labels.html).
+
+### Forgejo Support
+
+Editorial workflow on Forgejo needs the [`forgejo` backend](/docs/gitea-backend/#forgejo-backend). In order to track unpublished entries statuses, the Forgejo implementation uses pull request labels, which it creates when they're missing.
 
 
 ## Squash merge GitHub pull requests

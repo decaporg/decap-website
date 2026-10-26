@@ -138,6 +138,38 @@ collections:
       - { label: "Language", name: "language" }
 ```
 
+### Complete example
+
+Put together, the sections above make a complete `admin/config.yml`:
+
+```yaml
+backend:
+  name: git-gateway
+  branch: main
+
+# Only used on localhost, while `npx decap-server` is running
+local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
+```
+
+`local_backend: true` lets you try the configuration on your computer before you set up authentication. Run `npx decap-server` in the root of your repository, start your site's development server, and open its `/admin/` page. Decap CMS then reads and writes the files in your local repository. On your live site, it uses the `backend` above. See [Decap Proxy](/docs/decap-proxy/) for details.
+
 {{< pagination-nav 
   prevUrl="/docs/choosing-a-backend/" 
   prevLabel="2. Choosing A Backend"

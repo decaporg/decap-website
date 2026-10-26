@@ -22,3 +22,5 @@ collections:
 
 The above config will transform the title field to uppercase and format the date field using `YYYY-MM-DD` format.
 Available transformations are `upper`, `lower`, `date('<format>')`, `default('defaultValue')`, `ternary('valueForTrue','valueForFalse')` and `truncate(<number>)`/`truncate(<number>, '<string>')`  
+
+The same transformations also work in the collection [`slug`](/docs/configuration-options/#slug) template. <span class="version-tag">3.13</span>

@@ -7,7 +7,7 @@ title: Backends overview
 
 A backend is JavaScript code that allows Decap CMS to communicate with a service that stores content - typically a Git host like GitHub or GitLab. It provides functions that Decap CMS can use to do things like read and update files using APIs provided by the service.
 
-Decap ships backends for [GitHub](/docs/github-backend/), [GitLab](/docs/gitlab-backend/), [Gitea](/docs/gitea-backend/), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/) and [Git Gateway](/docs/git-gateway-backend/), plus the hosted [Decap Turbo](/docs/turbo-overview/) backends (`turbo-github` and `turbo-gitlab`), which add server-side auth and a caching proxy in front of your Git host.
+Decap ships backends for [GitHub](/docs/github-backend/), [GitLab](/docs/gitlab-backend/), [Gitea](/docs/gitea-backend/), [Forgejo](/docs/gitea-backend/#forgejo-backend), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/) and [Git Gateway](/docs/git-gateway-backend/), plus the hosted [Decap Turbo](/docs/turbo-overview/) backends (`turbo-github` and `turbo-gitlab`), which add server-side auth and a caching proxy in front of your Git host.
 
 ## Backend Configuration
 
@@ -15,13 +15,14 @@ Individual backends should provide their own configuration documentation, but th
 
 | Field           | Default                                                        | Description                                                                                                                                          |
 | --------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `repo`          | none                                                           | **Required** for `github`, `gitlab`, `azure`, `gitea` and `bitbucket` backends; ignored by `git-gateway`. Follows the pattern `[org-or-username]/[repo-name]`.                                    |
+| `repo`          | none                                                           | **Required** for `github`, `gitlab`, `azure`, `gitea`, `forgejo` and `bitbucket` backends; ignored by `git-gateway`. Follows the pattern `[org-or-username]/[repo-name]`.                                    |
 | `branch`        | `master`                                                       | The branch where published content is stored. All CMS commits and PRs are made to this branch.                                                       |
 | `api_root`      | `https://api.github.com` (GitHub), `https://gitlab.com/api/v4` (GitLab), `https://try.gitea.io/api/v1` (Gitea) or `https://api.bitbucket.org/2.0` (Bitbucket)  | The API endpoint. Only necessary in certain cases, like with GitHub Enterprise or self-hosted GitLab/Gitea.                                                                      |
 | `site_domain`   | `location.hostname` (or `cms.netlify.com` when on `localhost`) | Sets the `site_id` query param sent to the API endpoint. Non-Netlify auth setups will often need to set this for local development to work properly. |
 | `base_url`      | `https://api.netlify.com` (GitHub, Bitbucket), `https://gitlab.com` (GitLab) or `https://try.gitea.io` (Gitea)         | OAuth client hostname (just the base domain, no path). **Required** when using an external OAuth server or self-hosted GitLab/Gitea.                               |
 | `auth_endpoint` | `auth` (GitHub, Bitbucket) or `oauth/authorize` (GitLab)                  | Path to append to `base_url` for authentication requests. Optional.                                                                                  |
 | `cms_label_prefix` | `decap-cms/` | Pull (or Merge) Requests label prefix when using editorial workflow. Optional. |
+| `preview_context` | none | The exact name of the build status that provides [deploy preview links](/docs/deploy-preview-links/) for unpublished entries: the status "context" on GitHub and Azure, its "name" on GitLab, and its "key" on Bitbucket. Without it, Decap CMS uses the first status whose name contains `deploy`. Supported by the `github`, `gitlab`, `bitbucket`, `azure` and `git-gateway` backends. Optional. |
 
 ## Creating a New Backend
 

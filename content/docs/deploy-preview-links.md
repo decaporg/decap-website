@@ -15,7 +15,7 @@ Deploy preview links will work without configuration when all of the following r
 * Decap CMS version is 2.4.0+ for GitHub support and 2.10.6+ for GitLab/Bitbucket support
 * Using editorial workflow
 * Have a continuous deployment platform that builds every commit and provides statuses to your repo
-  * The build status must include the word "deploy"
+  * The build status must include the word "deploy". To use a status with another name, set [`preview_context`](/docs/backends-overview/#backend-configuration) in `backend` to its exact name.
   * Backends implement specific methodd for finding statuses
     * GitHub: commit status
     * Azure/Bitbucket/GitLab: Pull Request status
