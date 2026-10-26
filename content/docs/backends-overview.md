@@ -23,6 +23,7 @@ Individual backends should provide their own configuration documentation, but th
 | `auth_endpoint` | `auth` (GitHub, Bitbucket) or `oauth/authorize` (GitLab)                  | Path to append to `base_url` for authentication requests. Optional.                                                                                  |
 | `cms_label_prefix` | `decap-cms/` | Pull (or Merge) Requests label prefix when using editorial workflow. Optional. |
 | `preview_context` | none | The exact name of the build status that provides [deploy preview links](/docs/deploy-preview-links/) for unpublished entries: the status "context" on GitHub and Azure, its "name" on GitLab, and its "key" on Bitbucket. Without it, Decap CMS uses the first status whose name contains `deploy`. Supported by the `github`, `gitlab`, `bitbucket`, `azure` and `git-gateway` backends. Optional. |
+| `signoff_commits` | `false` | Adds a `Signed-off-by: Name <email>` trailer to every commit message, using the signed-in user's name and email, for repositories that require a [Developer Certificate of Origin](https://developercertificate.org/) sign-off. When the Git host doesn't share the user's email (on GitHub, the user has no public email), the trailer is left out and a warning is logged to the browser console. Optional. <span class="version-tag">3.12</span> |
 
 ## Creating a New Backend
 
