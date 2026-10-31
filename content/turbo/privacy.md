@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Privacy Policy
-description: "Last updated: 2026-10-19."
+description: "Last updated: 2026-10-28."
 ---
 
 ## 1. Who we are
@@ -26,7 +26,8 @@ Where we are a processor we still have direct obligations of our own — securit
 
 | Category | Examples | Purpose | Legal basis |
 |---|---|---|---|
-| Account data | Email address, name | Creating and securing your account | Performance of a contract |
+| Account data | Email address, name; if you sign in with Google or GitHub, the account identifier, name, profile picture address and (for GitHub) username that provider sends us | Creating and securing your account, and letting you sign in with that provider | Performance of a contract |
+| Record of accepting the Terms | When you accepted which version of our Terms, whether you signed up by email, Google or GitHub, and which wording of the sign-up notice you were shown | Being able to show what was agreed, and when, if it is ever disputed | Legitimate interest (establishing and defending our contract with you) |
 | Organization & role data | Org/site metadata, membership and role assignments | Running multi-user orgs and access control | Performance of a contract |
 | Billing profile | Billing email, company name, VAT ID | Invoicing and tax compliance | Performance of a contract and legal obligation |
 | Git hosting credentials | GitHub/GitLab access tokens (proxied, not shown to other users) | Operating the Git hosting API request proxy | Performance of a contract |
@@ -66,6 +67,8 @@ We use the following sub-processors. Each one processes personal data on our beh
 Paddle is different from the others: it is our reseller and **merchant of record**, and acts as an **independent controller** of your payment and billing data under its own [privacy policy](https://www.paddle.com/legal/privacy), not as our processor. See also our [Terms of Service](/turbo/terms/).
 
 GitHub and GitLab are also partly independent of us: your repository is *your* account with *them*, governed by your agreement with that host. We process it on your behalf when you use the Service, but we did not put it there and we do not control what else they do with it.
+
+**Signing in with Google or GitHub.** If you choose to sign in with Google (Google Ireland Limited) or GitHub (GitHub, Inc.), that provider confirms who you are and sends us the details listed under "Account data" in section 3. Each is an independent controller of your account with them, under its own privacy policy ([Google](https://policies.google.com/privacy), [GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)), and learns that you signed in to Decap Turbo. Signing in this way gives us no access to your Google data or to your GitHub repositories: connecting repositories is the separate GitHub App installation described above. You can disconnect a provider from the sign-in methods in your profile settings, as long as another way to sign in remains.
 
 We also share data with **professional advisers** (lawyers, accountants, auditors) where necessary, and with **authorities** where required by law or to protect our rights, safety, or property, or that of our users.
 
@@ -115,6 +118,7 @@ We keep personal data only as long as we have a reason to, and the reason differ
 | Site content and cached repository content | For as long as the organization holds the site. Deleted with the organization, or when the site is removed from it. Your Git repository is unaffected — see below. |
 | Organization activity records and product-usage data | **180 days**, then deleted automatically. |
 | Error and security logs | **180 days**, then deleted automatically. |
+| Record of accepting the Terms | Until you delete your account. It is part of the account, and goes with it. |
 | Signup source | **180 days** after you sign up, then deleted automatically — or with your account, if that is sooner. |
 | Billing and transaction records | Up to **10 years**, as Slovenian tax and accounting law requires. This is the exception that survives account closure and the dormancy rule. |
 | Support communications | Up to 2 years after the conversation ends. |
