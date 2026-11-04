@@ -1,0 +1,11 @@
+{{- /* Copy, view or ask an AI assistant about the Markdown copy of a docs page. See /docs/working-with-ai/. */ -}}
+{{- with .OutputFormats.Get "markdown" }}
+  {{- $prompt := printf "Read %s so I can ask questions about it." .Permalink }}
+  <div class="page-actions">
+    <button type="button" class="page-actions__copy" data-markdown-url="{{ .RelPermalink }}" aria-live="polite">Copy as Markdown</button>
+    <a href="{{ .RelPermalink }}" type="text/markdown">View as Markdown</a>
+    <a href="https://chatgpt.com/?q={{ $prompt | urlquery }}" target="_blank">Open in ChatGPT</a>
+    <a href="https://claude.ai/new?q={{ $prompt | urlquery }}" target="_blank">Open in Claude</a>
+    <a href="/docs/working-with-ai/" class="page-actions__help" title="About these options" aria-label="About these options">?</a>
+  </div>
+{{- end }}

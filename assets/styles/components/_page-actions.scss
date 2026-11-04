@@ -1,0 +1,53 @@
+.docs-single__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-fixed-1) var(--space-fixed-4);
+  margin-bottom: var(--space-fixed-2);
+
+  .edit-link {
+    margin-bottom: 0;
+  }
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-fixed-1) var(--space-fixed-3);
+
+  a,
+  &__copy {
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-sm);
+  }
+
+  &__copy {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+    color: var(--color-primary-light);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__help {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid currentcolor;
+    border-radius: 50%;
+    line-height: 1;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -12,6 +12,7 @@ AI assistants and coding agents can add Decap CMS to a site and write its `confi
 - **[/llms.txt](/llms.txt)**: an index of the documentation with a one-line summary of each page, following the [llms.txt](https://llmstxt.org/) convention.
 - **[/llms-full.txt](/llms-full.txt)**: the complete documentation in one Markdown file. Large; best for agents that can read files from a URL.
 - **Any docs page as Markdown:** replace the trailing slash with `.md`. For example, [/docs/configuration-options/](/docs/configuration-options/) is also [/docs/configuration-options.md](/docs/configuration-options.md).
+- **On every docs page**, above the title: **Copy as Markdown** puts the page on your clipboard to paste into a chat, **View as Markdown** opens that copy, and **Open in ChatGPT** and **Open in Claude** start a chat that reads the page for you.
 
 ## Giving your agent the docs
 
