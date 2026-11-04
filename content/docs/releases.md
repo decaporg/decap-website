@@ -32,7 +32,7 @@ npm update decap-cms-app
 yarn upgrade decap-cms-app
 ```
 
-[View on npm →](https://www.npmjs.com/package/decap-cms-app)
+[View on npm](https://www.npmjs.com/package/decap-cms-app)
 
 ### CDN
 
