@@ -1,0 +1,8 @@
+{{- /* The widget subpages listed on the Widgets docs page, as in partials/widgets.html. */ -}}
+{{- $widgets := slice -}}
+{{- range where site.Pages "Section" "docs" -}}
+  {{- if and .File (strings.Contains .File.Path "widgets/") (ne .File.LogicalName "widgets.md") -}}
+    {{- $widgets = $widgets | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $widgets -}}

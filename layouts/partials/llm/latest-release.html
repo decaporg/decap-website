@@ -1,0 +1,9 @@
+{{- /* Returns dict "version" "date" for the latest decap-cms release, or nothing when GitHub can't be reached. */ -}}
+{{- $release := dict -}}
+{{- with try (resources.GetRemote "https://api.github.com/repos/decaporg/decap-cms/releases/latest") -}}
+  {{- with .Value -}}
+    {{- $data := . | transform.Unmarshal -}}
+    {{- $release = dict "version" (strings.TrimPrefix "decap-cms@" $data.tag_name) "date" $data.published_at -}}
+  {{- end -}}
+{{- end -}}
+{{- return $release -}}

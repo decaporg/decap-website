@@ -1,0 +1,5 @@
+{{- /* A Markdown link to a page's Markdown copy when it has one, its HTML otherwise. */ -}}
+{{- $url := .Permalink -}}
+{{- with .OutputFormats.Get "markdown" }}{{ $url = .Permalink }}{{ end -}}
+{{- $summary := partial "llm/summary.html" . -}}
+{{- return printf "- [%s](%s)%s" .Title $url (cond (eq $summary "") "" (printf ": %s" $summary)) -}}

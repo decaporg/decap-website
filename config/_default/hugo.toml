@@ -1,8 +1,38 @@
 baseURL = 'https://decapcms.org'
 disableFastRender = true
-languageCode = 'en-us'
+locale = 'en-US'
 defaultContentLanguage = 'en'
 title = 'Decap CMS | Open-Source Content Management System'
+enableRobotsTXT = true
+
+# Machine-readable copies for LLMs and coding agents: /llms.txt, /llms-full.txt
+# and a Markdown version of every docs page next to its HTML (/docs/<page>.md).
+[outputFormats]
+  [outputFormats.markdown]
+    mediaType = 'text/markdown'
+    baseName = 'index'
+    isPlainText = true
+    rel = 'alternate'
+    ugly = true
+  [outputFormats.llms]
+    mediaType = 'text/plain'
+    baseName = 'llms'
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.llmsfull]
+    mediaType = 'text/plain'
+    baseName = 'llms-full'
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ['html', 'rss', 'llms', 'llmsfull']
+
+[[cascade]]
+  outputs = ['html', 'markdown']
+  [cascade.target]
+    kind = 'page'
+    path = '{/docs/**}'
 
 [markup]
   [markup.goldmark]
@@ -15,6 +45,13 @@ title = 'Decap CMS | Open-Source Content Management System'
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 2
+
+# Remote data (latest release, backers) is fetched at build time. Hugo caches it
+# forever by default and Netlify keeps that cache between builds, which kept the
+# docs showing a release from weeks earlier.
+[caches]
+  [caches.getresource]
+    maxAge = '1h'
 
 [security]
   [security.funcs]

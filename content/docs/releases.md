@@ -2,6 +2,7 @@
 group: Intro
 weight: 4
 title: Releases and Updating
+description: The latest Decap CMS release, supported Node.js versions, and how to update.
 ---
 ## Latest release
 
@@ -31,7 +32,7 @@ npm update decap-cms-app
 yarn upgrade decap-cms-app
 ```
 
-[View on npm →](https://www.npmjs.com/package/decap-cms-app)
+[View on npm](https://www.npmjs.com/package/decap-cms-app)
 
 ### CDN
 

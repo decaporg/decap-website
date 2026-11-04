@@ -14,7 +14,7 @@
 
 {{ with $personasPage }}
   {{ range .Pages.ByWeight }}
-    {{ $slug := .Params.slug | default .File.ContentBaseName }}
+    {{ $slug := .Slug | default .File.ContentBaseName }}
     {{ if in $featurePersonas $slug }}
       {{ $personaOrderByWeight = $personaOrderByWeight | append $slug }}
       {{ $personaLabels = merge $personaLabels (dict $slug .LinkTitle) }}

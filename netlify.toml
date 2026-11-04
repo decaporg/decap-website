@@ -1,9 +1,17 @@
 [build]
   publish = "public"
-  command = "hugo --gc --minify"
+  # Hugo compiles the SCSS with Dart Sass, which the build image doesn't have.
+  command = """\
+    curl -sLJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+    mkdir -p ${HOME}/.local && \
+    tar -C ${HOME}/.local -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+    rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+    export PATH=${HOME}/.local/dart-sass:${PATH} && \
+    hugo --gc --minify"""
 
 [build.environment]
-  HUGO_VERSION = "0.148.1"
+  HUGO_VERSION = "0.169.0"
+  DART_SASS_VERSION = "1.107.1"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
 
@@ -12,3 +20,14 @@
 
 [dev]
   framework = "hugo"
+
+# Machine-readable docs for LLMs and coding agents (see config/_default/hugo.toml)
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/llms*.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"

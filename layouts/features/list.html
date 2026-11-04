@@ -2,7 +2,7 @@
 <div class="page">
   {{ partial "page-hero" . }}
   {{ $all := .RegularPages.ByWeight }}
-  {{ $featureData := site.Data.features }}
+  {{ $featureData := hugo.Data.features }}
   {{ $available := where $all "Params.stage" "eq" nil }}
   {{ $roadmap := slice }}
   {{ range $featureData.stages }}
