@@ -2,6 +2,7 @@
 group: Intro
 weight: 4
 title: Releases and Updating
+description: The latest Decap CMS release, supported Node.js versions, and how to update.
 ---
 ## Latest release
 

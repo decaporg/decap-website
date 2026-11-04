@@ -1,0 +1,18 @@
+# AI crawlers and assistants are welcome: the docs are meant to be read by them too.
+# Machine-readable docs: {{ absURL "/llms.txt" }} and {{ absURL "/llms-full.txt" }}
+User-agent: *
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+
+Sitemap: {{ absURL "sitemap.xml" }}

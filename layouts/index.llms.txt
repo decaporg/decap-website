@@ -1,0 +1,23 @@
+{{- partial "llm/intro.html" . }}
+## Docs
+{{ $docs := where site.RegularPages "Section" "docs" -}}
+{{- range site.Menus.docs }}
+### {{ .Name }}
+{{ range (where $docs "Params.group" .Identifier).ByWeight -}}
+{{ partial "llm/link.html" . }}
+{{ end -}}
+{{- end }}
+### Widgets
+{{ range (where $docs "Params.group" "Widgets").ByWeight -}}
+{{ partial "llm/link.html" . }}
+{{ end }}
+## Project
+{{ with site.GetPage "/about" }}{{ partial "llm/link.html" . }}
+{{ end -}}
+- [Releases](https://github.com/decaporg/decap-cms/releases): release notes for every version
+- [Source code](https://github.com/decaporg/decap-cms): the decaporg/decap-cms repository
+
+## Optional
+{{ range first 10 (where site.RegularPages "Section" "blog").ByDate.Reverse -}}
+- [{{ .Title }}]({{ .Permalink }}) ({{ .Date.Format "2006-01-02" }})
+{{ end -}}

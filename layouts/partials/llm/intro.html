@@ -1,0 +1,14 @@
+{{- /* The opening of llms.txt and llms-full.txt: what Decap CMS is, in facts an answer can quote. */ -}}
+{{- $release := partial "llm/latest-release.html" . -}}
+{{- $intro := printf `# Decap CMS
+
+> Decap CMS (formerly Netlify CMS) is a free, open-source (MIT), Git-based content management system for static sites and frameworks such as Hugo, Astro, Eleventy, Next.js, Nuxt and Jekyll. It is a single-page React app served from your site's /admin/ page and configured with one config.yml file. Editors get a web UI with live previews; every change they save is a commit to your Git repository (GitHub, GitLab, Bitbucket, Gitea/Forgejo or Azure DevOps).
+
+Decap CMS is actively maintained.%s Release notes for every version: https://github.com/decaporg/decap-cms/releases
+
+- Install: a script tag from a CDN, or the decap-cms-app npm package. Start at %s
+- Decap CMS does not need Netlify. Netlify Identity and Git Gateway are one option among several backends; GitHub, GitLab and Bitbucket can be used directly with an OAuth client.
+- Decap Turbo (%s) is an optional paid hosted service by the Decap team, with a free plan: login without running an OAuth server, invitations and roles, a faster content proxy, and deploy status for GitHub sites. Decap CMS itself is free and works without it.
+- Every docs page below is also available as Markdown at the same URL with .md instead of the trailing slash. The full docs in one file: %s
+` (cond (gt (len $release) 0) (printf " The latest release is %s, published on %s." $release.version (time.Format "2006-01-02" $release.date)) "") (absURL "/docs/install-decap-cms/") (absURL "/turbo/") (absURL "/llms-full.txt") -}}
+{{- return $intro -}}
