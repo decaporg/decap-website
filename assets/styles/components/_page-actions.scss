@@ -1,53 +1,44 @@
-.docs-single__toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-fixed-1) var(--space-fixed-4);
-  margin-bottom: var(--space-fixed-2);
-
-  .edit-link {
-    margin-bottom: 0;
-  }
-}
-
+// The row above a docs page title: "Edit this page", "Copy as Markdown", "View as Markdown".
+// Grey, because these are used rarely and shouldn't compete with the content.
 .page-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-fixed-1) var(--space-fixed-3);
-
-  a,
-  &__copy {
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-sm);
-  }
+  gap: var(--space-fixed-1) var(--space-fixed-4);
+  margin-bottom: var(--space-fixed-4);
 
   &__copy {
     padding: 0;
     border: 0;
     background: none;
-    font-family: inherit;
-    color: var(--color-primary-light);
     cursor: pointer;
+  }
+
+  a,
+  &__copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700);
+    text-decoration: none;
 
     &:hover {
+      color: var(--color-gray-900);
       text-decoration: underline;
     }
   }
 
-  &__help {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.4em;
-    height: 1.4em;
-    border: 1px solid currentcolor;
-    border-radius: 50%;
-    line-height: 1;
-
-    &:hover {
-      text-decoration: none;
-    }
+  svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 }

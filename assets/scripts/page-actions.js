@@ -5,11 +5,12 @@ function initPageActions () {
       return
     }
 
-    const label = button.textContent
+    const label = button.querySelector('span')
+    const text = label.textContent
 
-    const showResult = (text) => {
-      button.textContent = text
-      setTimeout(() => { button.textContent = label }, 2000)
+    const showResult = (result) => {
+      label.textContent = result
+      setTimeout(() => { label.textContent = text }, 2000)
     }
 
     button.addEventListener('click', () => {
