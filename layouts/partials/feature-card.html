@@ -22,12 +22,12 @@
               <span class="feature-card__badge">Decap CMS</span>
             {{ end }}
             {{ with $feature.plan }}
-              {{ range first 1 (where site.Data.features.plans "id" .) }}
+              {{ range first 1 (where hugo.Data.features.plans "id" .) }}
                 <span class="feature-card__badge feature-card__badge--plan"{{ with .tooltip }} title="{{ . }}"{{ end }}>{{ .label }}</span>
               {{ end }}
             {{ end }}
             {{ with $feature.stage }}
-              {{ range first 1 (where site.Data.features.stages "id" .) }}
+              {{ range first 1 (where hugo.Data.features.stages "id" .) }}
                 <span class="feature-card__badge feature-card__badge--{{ .id }}"{{ with .tooltip }} title="{{ . }}"{{ end }}>{{ .label }}</span>
               {{ end }}
             {{ end }}

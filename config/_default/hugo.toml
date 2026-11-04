@@ -1,6 +1,6 @@
 baseURL = 'https://decapcms.org'
 disableFastRender = true
-languageCode = 'en-us'
+locale = 'en-US'
 defaultContentLanguage = 'en'
 title = 'Decap CMS | Open-Source Content Management System'
 
