@@ -16,6 +16,13 @@ title = 'Decap CMS | Open-Source Content Management System'
     startLevel = 2
     endLevel = 2
 
+# Remote data (latest release, backers) is fetched at build time. Hugo caches it
+# forever by default and Netlify keeps that cache between builds, which kept the
+# docs showing a release from weeks earlier.
+[caches]
+  [caches.getresource]
+    maxAge = '1h'
+
 [security]
   [security.funcs]
     getenv = ["^GITHUB_TOKEN$", "^HUGO_", "^LOAD_PLAUSIBLE$"]
