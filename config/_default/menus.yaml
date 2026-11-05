@@ -19,6 +19,10 @@ main:
     url: /about/
     parent: resources
     weight: 14
+  - name: State of Decap
+    url: /state-of-decap/
+    parent: resources
+    weight: 15
   - name: Support
     identifier: support
     weight: 20

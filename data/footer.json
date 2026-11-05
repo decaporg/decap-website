@@ -41,6 +41,10 @@
           "href": "/about/"
         },
         {
+          "text": "State of Decap",
+          "href": "/state-of-decap/"
+        },
+        {
           "text": "Releases",
           "href": "https://github.com/decaporg/decap-cms/releases/"
         },

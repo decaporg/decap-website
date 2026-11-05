@@ -34,7 +34,7 @@ enableGitInfo = true
   outputs = ['html', 'markdown']
   [cascade.target]
     kind = 'page'
-    path = '{/docs/**}'
+    path = '{/docs/**,/state-of-decap}'
 
 [markup]
   [markup.goldmark]
