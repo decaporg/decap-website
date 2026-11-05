@@ -8,11 +8,11 @@ Three steps before your `config.yml` can point at Turbo: create an organization,
 
 ## Create an organization
 
-[Sign up](https://turbo.decapcms.org/signup) with an email and password, or accept an invitation someone sent you. Every organization starts on the **Free** plan — one site, one seat, no payment step.
+[Sign up](https://turbo.decapcms.org/signup) with Google, GitHub, or an email and password, or accept an invitation someone sent you. Every organization starts on the **Free** plan — one site, one seat, no payment step.
 
 An organization is the billing and ownership unit. It owns sites and holds the seats people occupy. You can belong to several, and create more at any time from your profile.
 
-Sign-in is email and password today. Other providers are planned.
+You can sign in with any of the three. To use more than one on the same account, sign in with Google or GitHub using your account's email address, or add a password; the **Sign-in methods** card on [your profile](#your-profile) shows which are connected and lets you disconnect one, as long as another way in remains.
 
 If you accepted an invitation, you are already in someone else's organization and can skip to whatever they gave you access to — see [your profile](#your-profile).
 
@@ -55,6 +55,6 @@ Next: [connect your `config.yml`](../turbo-connecting-a-site/).
 
 ## Your profile
 
-Your profile lists the organizations you belong to, the sites you can open, and account settings — password, usage-data collection, and account deletion. It is where you land if you belong to no organization, which is a valid state.
+Your profile lists the organizations you belong to, the sites you can open, and account settings — sign-in methods (Google, GitHub, password), usage-data collection, and account deletion. It is where you land if you belong to no organization, which is a valid state.
 
 Someone invited only for site access never needs an organization page: their profile links straight to each site's admin interface.

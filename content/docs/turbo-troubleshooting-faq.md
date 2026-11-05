@@ -55,7 +55,7 @@ Yes. Decap CMS is free and open source either way; self-hosting means running yo
 No. See [How it works](../turbo-how-it-works/#editors-dont-need-a-git-host-account).
 
 **Can editors sign in with Google or GitHub?**
-Sign-in is email and password today. Other providers are planned.
+Yes. Turbo accounts can sign in with Google, GitHub, or an email and password, and an editor can connect more than one from the **Sign-in methods** card on their profile. Signing in with GitHub is only a way into the Turbo account: it doesn't need or grant access to your repositories.
 
 **Is deploy status available on GitLab?**
 Not yet. It's `turbo-github` only.
