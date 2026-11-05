@@ -1,0 +1,22 @@
+{{- /* GET a GitHub API URL and return the decoded JSON, or nothing (with a
+  warning) when it fails. With "withHeaders" true, returns dict "body" "headers". */ -}}
+{{- $result := "" -}}
+{{- $opts := dict "headers" .headers -}}
+{{- if .withHeaders -}}
+  {{- $opts = merge $opts (dict "responseHeaders" (slice "Link")) -}}
+{{- end -}}
+{{- with try (resources.GetRemote .url $opts) -}}
+  {{- with .Err -}}
+    {{- warnf "GitHub stats: %s" . -}}
+  {{- else with .Value -}}
+    {{- /* transform.Unmarshal can't detect the format of a bare "[]" (a repo with no releases). */ -}}
+    {{- $body := slice -}}
+    {{- if ne (trim .Content " \n") "[]" -}}
+      {{- with try (transform.Unmarshal .Content) -}}
+        {{- with .Err -}}{{- warnf "GitHub stats: %s" . -}}{{- else -}}{{- $body = .Value -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $result = cond $.withHeaders (dict "body" $body "headers" .Data.Headers) $body -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}

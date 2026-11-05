@@ -1,4 +1,12 @@
 {{ $hasDate := not .Date.IsZero }}
+{{/* Like a newspaper: a regular page shows when it was last changed (its last
+  Git commit, see enableGitInfo), unless that's the day it was published. */}}
+{{ $updated := "" }}
+{{ if and .IsPage (not .Lastmod.IsZero) }}
+  {{ if or (not $hasDate) (gt (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}
+    {{ $updated = .Lastmod }}
+  {{ end }}
+{{ end }}
 
 <section class="page-hero {{ if .Params.image }}page-hero--with-image{{ end }}">
   <div class="container">
@@ -8,7 +16,7 @@
         <p class="page-hero__eyebrow">{{ .Section | humanize }}</p>
       {{ end }}
 
-      {{ if or .Params.author $hasDate }}
+      {{ if or .Params.author $hasDate $updated }}
         <p class="page-hero__meta">
           {{ with .Params.author }}
             <span>{{ . }}</span>
@@ -18,6 +26,12 @@
           {{ end }}
           {{ if $hasDate }}
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ end }}
+          {{ with $updated }}
+            {{ if or $.Params.author $hasDate }}
+              <span aria-hidden="true">/</span>
+            {{ end }}
+            <span>Updated <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time></span>
           {{ end }}
         </p>
       {{ end }}

@@ -1,0 +1,46 @@
+{{- /* One number about an npm package, fetched at build time. Call it cached:
+    partialCached "stats/npm.html" (dict "package" "decap-cms-app" "metric" "weekly-downloads") "decap-cms-app" "weekly-downloads"
+  Metrics:
+    weekly-downloads  average downloads a week over the period (stats/period.html)
+    downloads         total downloads in the period
+    releases          stable versions published in the period
+    latest            the version tagged latest
+  Download counts include automated installs and miss script-tag (CDN) installs.
+  Returns nothing when npm can't be reached. */ -}}
+{{- $package := .package -}}
+{{- $metric := .metric -}}
+{{- $period := partialCached "stats/period.html" . "period" -}}
+{{- $result := "" -}}
+
+{{- if in (slice "weekly-downloads" "downloads") $metric -}}
+  {{- $url := printf "https://api.npmjs.org/downloads/point/%s:%s/%s" ($period.start.Format "2006-01-02") ($period.last.Format "2006-01-02") $package -}}
+  {{- with partial "stats/npm-get.html" $url -}}
+    {{- with .downloads -}}
+      {{- $days := div (sub $period.end.Unix $period.start.Unix) 86400 -}}
+      {{- $result = cond (eq $metric "downloads") . (math.Round (div (mul (float .) 7) $days)) -}}
+    {{- end -}}
+  {{- end -}}
+
+{{- else if in (slice "releases" "latest") $metric -}}
+  {{- with partial "stats/npm-get.html" (printf "https://registry.npmjs.org/%s" $package) -}}
+    {{- if eq $metric "latest" -}}
+      {{- $result = index . "dist-tags" "latest" -}}
+    {{- else -}}
+      {{- $count := 0 -}}
+      {{- range $version, $published := .time -}}
+        {{- if and (not (in (slice "created" "modified") $version)) (not (strings.Contains $version "-")) (ne $version "0.0.0") -}}
+          {{- $t := time.AsTime $published -}}
+          {{- if and (ge $t.Unix $period.start.Unix) (lt $t.Unix $period.end.Unix) -}}
+            {{- $count = add $count 1 -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $result = $count -}}
+    {{- end -}}
+  {{- end -}}
+
+{{- else -}}
+  {{- errorf "stats/npm.html: unknown metric %q" $metric -}}
+{{- end -}}
+
+{{- return $result -}}

@@ -1,0 +1,128 @@
+{{- /* One number (or string) about a GitHub repository, fetched at build time.
+  Call it cached, once per repo and metric:
+    partialCached "stats/github.html" (dict "repo" "decaporg/decap-cms" "metric" "stars") "decaporg/decap-cms" "stars"
+  Metrics:
+    stars, forks, open-issues          now
+    latest-release, latest-release-date, latest-release-url
+    releases       stable releases published in the period (stats/period.html)
+    commits        commits to the default branch in the period
+    prs-merged     pull requests merged in the period
+    issues-closed  issues closed in the period
+    contributors   people (not bots) with a pull request merged in the period
+    advisories     security advisories published in the period
+  Returns nothing when GitHub can't be reached; the caller decides what to show.
+  Set GITHUB_TOKEN to avoid the unauthenticated rate limits (60 requests an
+  hour, 10 searches a minute). */ -}}
+{{- $repo := .repo -}}
+{{- $metric := .metric -}}
+{{- $period := partialCached "stats/period.html" . "period" -}}
+{{- $range := printf "%s..%s" ($period.start.Format "2006-01-02") ($period.last.Format "2006-01-02") -}}
+{{- $api := "https://api.github.com" -}}
+{{- $headers := dict "Accept" "application/vnd.github+json" "User-Agent" "DecapCMS-Website" -}}
+{{- with getenv "GITHUB_TOKEN" -}}
+  {{- $headers = merge $headers (dict "Authorization" (printf "Bearer %s" .)) -}}
+{{- end -}}
+{{- $result := "" -}}
+
+{{- if in (slice "stars" "forks") $metric -}}
+  {{- with partial "stats/github-get.html" (dict "url" (printf "%s/repos/%s" $api $repo) "headers" $headers) -}}
+    {{- $result = cond (eq $metric "stars") .stargazers_count .forks_count -}}
+  {{- end -}}
+
+{{- else if hasPrefix $metric "latest-release" -}}
+  {{- with partial "stats/github-get.html" (dict "url" (printf "%s/repos/%s/releases/latest" $api $repo) "headers" $headers) -}}
+    {{- if eq $metric "latest-release" -}}
+      {{- /* "decap-cms@3.17.3", "v6.75.0", "wp-graphql/v2.26.1" → the bare version */ -}}
+      {{- $result = replaceRE `^(?:.*[@/])?v?(\d)` "$1" .tag_name -}}
+    {{- else if eq $metric "latest-release-date" -}}
+      {{- $result = time.AsTime .published_at -}}
+    {{- else -}}
+      {{- $result = .html_url -}}
+    {{- end -}}
+  {{- end -}}
+
+{{- else if eq $metric "releases" -}}
+  {{- /* Newest first; stop at the first page that reaches back before the period. */ -}}
+  {{- $count := 0 -}}
+  {{- $done := false -}}
+  {{- range $page := seq 10 -}}
+    {{- if not $done -}}
+      {{- $items := partial "stats/github-get.html" (dict "url" (printf "%s/repos/%s/releases?per_page=100&page=%d" $api $repo $page) "headers" $headers) -}}
+      {{- if not $items -}}
+        {{- $done = true -}}
+      {{- else -}}
+        {{- range $items -}}
+          {{- $published := time.AsTime (.published_at | default .created_at) -}}
+          {{- if and (not .draft) (not .prerelease) (ge $published.Unix $period.start.Unix) (lt $published.Unix $period.end.Unix) -}}
+            {{- $count = add $count 1 -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $oldest := time.AsTime ((index (last 1 $items) 0).published_at | default (index (last 1 $items) 0).created_at) -}}
+        {{- if or (lt (len $items) 100) (lt $oldest.Unix $period.start.Unix) -}}
+          {{- $done = true -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $result = $count -}}
+
+{{- else if eq $metric "commits" -}}
+  {{- /* One commit per page, so the "last" page number in the Link header is the count. */ -}}
+  {{- $url := printf "%s/repos/%s/commits?since=%s&until=%s&per_page=1" $api $repo ($period.start.Format "2006-01-02T15:04:05Z") ($period.end.Format "2006-01-02T15:04:05Z") -}}
+  {{- with partial "stats/github-get.html" (dict "url" $url "headers" $headers "withHeaders" true) -}}
+    {{- $last := findRESubmatch `[?&]page=(\d+)>; rel="last"` (delimit (.headers.Link | default slice) ",") 1 -}}
+    {{- $result = cond (gt (len $last) 0) (int (index (index $last 0) 1)) (len .body) -}}
+  {{- end -}}
+
+{{- else if in (slice "open-issues" "prs-merged" "issues-closed") $metric -}}
+  {{- $q := printf "repo:%s is:issue is:open" $repo -}}
+  {{- if eq $metric "prs-merged" -}}
+    {{- $q = printf "repo:%s is:pr is:merged merged:%s" $repo $range -}}
+  {{- else if eq $metric "issues-closed" -}}
+    {{- $q = printf "repo:%s is:issue is:closed closed:%s" $repo $range -}}
+  {{- end -}}
+  {{- with partial "stats/github-get.html" (dict "url" (printf "%s/search/issues?q=%s&per_page=1" $api (urlquery $q)) "headers" $headers) -}}
+    {{- $result = .total_count -}}
+  {{- end -}}
+
+{{- else if eq $metric "contributors" -}}
+  {{- $q := printf "repo:%s is:pr is:merged merged:%s" $repo $range -}}
+  {{- $people := slice -}}
+  {{- $failed := false -}}
+  {{- range $page := seq 10 -}}
+    {{- if not $failed -}}
+      {{- with partial "stats/github-get.html" (dict "url" (printf "%s/search/issues?q=%s&per_page=100&page=%d" $api (urlquery $q) $page) "headers" $headers) -}}
+        {{- range .items -}}
+          {{- if not (hasSuffix .user.login "[bot]") -}}
+            {{- $people = $people | append .user.login -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if lt (len .items) 100 -}}
+          {{- $failed = true -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $failed = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $people -}}
+    {{- $result = len (uniq .) -}}
+  {{- end -}}
+
+{{- else if eq $metric "advisories" -}}
+  {{- with partial "stats/github-get.html" (dict "url" (printf "%s/repos/%s/security-advisories?state=published&per_page=100" $api $repo) "headers" $headers) -}}
+    {{- $count := 0 -}}
+    {{- range . -}}
+      {{- $published := time.AsTime .published_at -}}
+      {{- if and (ge $published.Unix $period.start.Unix) (lt $published.Unix $period.end.Unix) -}}
+        {{- $count = add $count 1 -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $result = $count -}}
+  {{- end -}}
+
+{{- else -}}
+  {{- errorf "stats/github.html: unknown metric %q" $metric -}}
+{{- end -}}
+
+{{- return $result -}}

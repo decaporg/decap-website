@@ -114,5 +114,5 @@
       ]
     }
   ],
-  "copyright": "© 2026 Decap CMS. Open-source content management for your Git workflow."
+  "copyright": "© {year} Decap CMS. Open-source content management for your Git workflow."
 }
