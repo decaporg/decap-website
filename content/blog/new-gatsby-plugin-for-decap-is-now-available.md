@@ -14,7 +14,7 @@ The deprecated [gatsby-plugin-netlify-cms](https://www.npmjs.com/package/gatsby-
 To migrate you Gatsby site from Netlify CMS 2 to Decap CMS 3:
 
 1. uninstall gatsby-plugin-netlify-cms and netlify-cms-app
-2. install gatsby-plugin-netlify-cms and decap-cms-app
+2. install gatsby-plugin-decap-cms and decap-cms-app
 3. replace the import `import CMS from "netlify-cms-app"` with `import CMS from "decap-cms-app"`
 4. in gatsby config replace `resolve: "gatsby-plugin-netlify-cms"` with `resolve: "gatsby-plugin-decap-cms"`
 

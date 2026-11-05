@@ -5,7 +5,7 @@ weight: 10
 ---
 This guide will help you get started using Decap CMS and Gatsby.
 
-To get up and running with Gatsby, you’ll need to have [Node.js](https://nodejs.org/) installed on your computer. *Note: Gatsby's minimum supported Node.js version is Node 8.*
+To get up and running with Gatsby, you’ll need to have [Node.js](https://nodejs.org/) installed on your computer. *Note: Gatsby 5 needs Node.js 18 or newer.*
 
 ## Create a new Gatsby site
 
@@ -38,10 +38,10 @@ We can see above that each blog post has a title, a date, a description and a bo
 
 ## Add Decap CMS to your site
 
-First let's install some dependencies. We'll need `decap-cms-app` and `gatsby-plugin-netlify-cms`. Run the following command in the terminal at the root of your site:
+First let's install some dependencies. We'll need `decap-cms-app` and [`gatsby-plugin-decap-cms`](https://www.npmjs.com/package/gatsby-plugin-decap-cms), which generates the `/admin/` page for you. Run the following command in the terminal at the root of your site:
 
 ```bash
-npm install --save decap-cms-app gatsby-plugin-netlify-cms
+npm install --save decap-cms-app gatsby-plugin-decap-cms
 ```
 
 ### Configuration
@@ -100,8 +100,10 @@ content/
 Finally, add the plugin to your `gatsby-config.js`.
 
 ```javascript
-plugins: [`gatsby-plugin-netlify-cms`]
+plugins: [`gatsby-plugin-decap-cms`]
 ```
+
+To register custom widgets or preview templates, point the plugin's `modulePath` option at a JavaScript file that imports `decap-cms-app`; the [plugin's README](https://github.com/decaporg/gatsby-plugin-decap-cms#readme) shows how. If you used the old `gatsby-plugin-netlify-cms`, which is deprecated, see [the switch to the Decap plugin](/blog/new-gatsby-plugin-for-decap-is-now-available/).
 
 ### Push to GitHub
 
