@@ -91,7 +91,16 @@ By default, all entries created or edited in the Decap CMS are committed directl
 publish_mode: editorial_workflow
 ```
 
-Allowed values for `publish_mode` are: `simple`, `editorial_workflow` or empty string (same as 'simple')
+To save drafts without the Editorial Workflow board or review stages, use `simple_draft`:
+
+```yaml
+# /admin/config.yml (top-level setting)
+publish_mode: simple_draft
+```
+
+In Simple Draft mode, drafts appear in the normal collection views. Save an entry as a draft, then publish it directly from Draft when it is ready. There are no In Review or Ready stages in this mode.
+
+Allowed values for `publish_mode` are: `simple`, `simple_draft`, `editorial_workflow` or empty string (same as 'simple')
 
 ## Media and Public Folders
 
