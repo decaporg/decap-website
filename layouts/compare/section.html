@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="page">
+  {{ partial "page-hero" . }}
+
+  <div class="container size-lg">
+    {{ with .Content }}
+      <section class="markdown">
+        {{ . }}
+      </section>
+    {{ end }}
+
+    {{ $groups := slice
+      (dict "id" "overview" "title" "Start here")
+      (dict "id" "git-based" "title" "Decap CMS vs other Git-based CMSs")
+      (dict "id" "other" "title" "Decap CMS vs other kinds of CMS")
+    }}
+    {{ range $group := $groups }}
+      {{ with (where $.RegularPages "Params.group" $group.id).ByWeight }}
+        <section class="compare-group">
+          <h2>{{ $group.title }}</h2>
+          <div class="grid cols-2">
+            {{ range . }}
+              <article class="card">
+                <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+                {{ with .Description }}
+                  <p>{{ . }}</p>
+                {{ end }}
+              </article>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -23,6 +23,10 @@ main:
     url: /state-of-decap/
     parent: resources
     weight: 15
+  - name: Compare
+    url: /compare/
+    parent: resources
+    weight: 16
   - name: Support
     identifier: support
     weight: 20

@@ -11,6 +11,10 @@
 {{ range (where $docs "Params.group" "Widgets").ByWeight -}}
 {{ partial "llm/link.html" . }}
 {{ end }}
+## Compare
+{{ range (where site.RegularPages "Section" "compare").ByWeight -}}
+{{ partial "llm/link.html" . }}
+{{ end }}
 ## Project
 {{ with site.GetPage "/state-of-decap" }}{{ partial "llm/link.html" . }}
 {{ end -}}

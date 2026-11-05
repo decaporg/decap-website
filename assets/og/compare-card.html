@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- Background of the social preview image for /compare/ pages. Hugo draws the
+     title on top (layouts/partials/og-image.html). Re-render after a change:
+     Chrome --headless --force-device-scale-factor=2 --window-size=1200,630
+     --screenshot=compare-base.png compare-card.html -->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{background:#14121b;color:#fff;font-family:'IBM Plex Sans',sans-serif;position:relative;
+ background-image:radial-gradient(900px 500px at 105% -10%, rgba(110,60,190,.55), transparent 60%),
+ radial-gradient(700px 420px at -10% 115%, rgba(160,20,80,.45), transparent 60%);}
+.kicker{position:absolute;left:72px;top:64px;font-family:Montserrat;font-weight:700;letter-spacing:.2em;color:#FF0082;font-size:19px;text-transform:uppercase}
+.foot{position:absolute;left:72px;right:72px;bottom:52px;display:flex;justify-content:space-between;align-items:center}
+.url{color:#c9c3d6;font-size:20px}
+.logo{height:40px;width:auto}
+</style></head><body>
+<div class="kicker">Decap CMS · Compare</div>
+<div class="foot"><span class="url">decapcms.org/compare</span><img class="logo" src="../../static/img/decap-logo-white.svg" alt=""></div>
+</body></html>
