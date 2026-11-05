@@ -1,0 +1,27 @@
+{{- /* The social preview image URL for a page. A page's `image` param wins;
+  /compare/ pages get a card with their title drawn on assets/og/compare-base.png
+  (rendered from assets/og/compare-card.html); everything else uses the default. */ -}}
+{{- $url := "img/og-image.jpg" | absURL -}}
+{{- with .Params.image -}}
+  {{- $url = . | absURL -}}
+{{- else -}}
+  {{- if and (eq .Section "compare") .IsPage -}}
+    {{- $bold := resources.Get "og/Montserrat-ExtraBold.ttf" -}}
+    {{- $regular := resources.Get "og/IBMPlexSans-Regular.ttf" -}}
+    {{- $title := .LinkTitle -}}
+    {{- $filters := slice -}}
+    {{- if hasPrefix $title "Decap CMS vs " -}}
+      {{- $filters = $filters | append (images.Text "Decap CMS vs" (dict "font" $bold "color" "#ffffff" "size" 120 "x" 144 "y" 330)) -}}
+      {{- $filters = $filters | append (images.Text (strings.TrimPrefix "Decap CMS vs " $title) (dict "font" $bold "color" "#ff0082" "size" 150 "x" 144 "y" 480 "linespacing" 10)) -}}
+    {{- else -}}
+      {{- $filters = $filters | append (images.Text $title (dict "font" $bold "color" "#ffffff" "size" 120 "x" 144 "y" 330 "linespacing" 10)) -}}
+    {{- end -}}
+    {{- $date := (.Lastmod | default .Date).Format "2 January 2006" -}}
+    {{- $filters = $filters | append (images.Text (printf "Honest comparison, updated %s" $date) (dict "font" $regular "color" "#c9c3d6" "size" 48 "x" 144 "y" 860)) -}}
+    {{- $img := (resources.Get "og/compare-base.png") | images.Filter $filters -}}
+    {{- $img = $img.Process "jpg q85" -}}
+    {{- $img = $img | resources.Copy (printf "img/og/%s.jpg" (.File.ContentBaseName | default "compare")) -}}
+    {{- $url = $img.Permalink -}}
+  {{- end -}}
+{{- end -}}
+{{- return $url -}}
