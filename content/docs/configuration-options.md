@@ -427,6 +427,8 @@ The filename is generated when the entry is first saved. Changing the date or ti
 
 Template tags in `slug` accept the same [transformations](/docs/summary-strings/) as summary strings. For example, `{{title | truncate(50)}}` keeps only the first 50 characters of the title. <span class="version-tag">3.13</span>
 
+With [i18n](/docs/i18n/#localized-slugs), the `localize` filter fills a tag with each locale's own value, eg. `{{title | localize}}`.
+
 **Example:**
 
 ```yaml
