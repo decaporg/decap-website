@@ -12,6 +12,8 @@
 {{ partial "llm/link.html" . }}
 {{ end }}
 ## Project
+{{ with site.GetPage "/state-of-decap" }}{{ partial "llm/link.html" . }}
+{{ end -}}
 {{ with site.GetPage "/about" }}{{ partial "llm/link.html" . }}
 {{ end -}}
 - [Releases](https://github.com/decaporg/decap-cms/releases): release notes for every version

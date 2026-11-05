@@ -41,6 +41,10 @@
           "href": "/about/"
         },
         {
+          "text": "State of Decap",
+          "href": "/state-of-decap/"
+        },
+        {
           "text": "Releases",
           "href": "https://github.com/decaporg/decap-cms/releases/"
         },
@@ -114,5 +118,5 @@
       ]
     }
   ],
-  "copyright": "© 2026 Decap CMS. Open-source content management for your Git workflow."
+  "copyright": "© {year} Decap CMS. Open-source content management for your Git workflow."
 }

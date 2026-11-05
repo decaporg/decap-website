@@ -4,6 +4,8 @@ locale = 'en-US'
 defaultContentLanguage = 'en'
 title = 'Decap CMS | Open-Source Content Management System'
 enableRobotsTXT = true
+# A page's lastmod is its last commit; don't set lastmod in front matter.
+enableGitInfo = true
 
 # Machine-readable copies for LLMs and coding agents: /llms.txt, /llms-full.txt
 # and a Markdown version of every docs page next to its HTML (/docs/<page>.md).
@@ -32,7 +34,7 @@ enableRobotsTXT = true
   outputs = ['html', 'markdown']
   [cascade.target]
     kind = 'page'
-    path = '{/docs/**}'
+    path = '{/docs/**,/state-of-decap}'
 
 [markup]
   [markup.goldmark]

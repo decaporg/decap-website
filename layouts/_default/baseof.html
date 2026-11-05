@@ -23,6 +23,9 @@
   <meta property="og:title" content="{{ .Title | default site.Title }}">
   <meta property="og:description" content="{{ .Description | default site.Params.description }}">
   <meta property="og:image" content="{{ (.Params.image | default "img/og-image.jpg") | absURL }}">
+  {{- if and .IsPage (not .Lastmod.IsZero) }}
+  <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- end }}
 
   {{ partial "base/styles" . }}
 </head>

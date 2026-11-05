@@ -1,0 +1,19 @@
+{{- /* The reporting period for activity numbers: the last four completed
+  calendar quarters before the build. Built on 5 November 2026, that is
+  Q4 2025–Q3 2026, from 1 October 2025 up to (not including) 1 October 2026.
+  Returns dict: start, end (exclusive), last (the period's last day), label. */ -}}
+{{- $now := now -}}
+{{- $year := $now.Year -}}
+{{- $quarter := add (div (sub (int $now.Month) 1) 3) 1 -}}
+{{- $month := add (mul (sub $quarter 1) 3) 1 -}}
+{{- $end := time.AsTime (printf "%d-%02d-01T00:00:00Z" $year $month) -}}
+{{- $start := time.AsTime (printf "%d-%02d-01T00:00:00Z" (sub $year 1) $month) -}}
+{{- $endQuarter := cond (eq $quarter 1) 4 (sub $quarter 1) -}}
+{{- $endYear := cond (eq $quarter 1) (sub $year 1) $year -}}
+{{- $label := printf "Q%d %d–Q%d %d" $quarter (sub $year 1) $endQuarter $endYear -}}
+{{- return dict
+  "start" $start
+  "end" $end
+  "last" ($end.AddDate 0 0 -1)
+  "label" $label
+-}}

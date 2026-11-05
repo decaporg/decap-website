@@ -31,7 +31,7 @@
     </div>
 
     <div class="footer__bottom">
-      <p>{{ $footer.copyright }}</p>
+      <p>{{ replace $footer.copyright "{year}" (string now.Year) }}</p>
     </div>
   </div>
 </footer>

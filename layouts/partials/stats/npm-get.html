@@ -1,0 +1,12 @@
+{{- /* GET an npm API URL and return the decoded JSON, or nothing (with a warning). */ -}}
+{{- $result := "" -}}
+{{- with try (resources.GetRemote . (dict "headers" (dict "User-Agent" "DecapCMS-Website"))) -}}
+  {{- with .Err -}}
+    {{- warnf "npm stats: %s" . -}}
+  {{- else with .Value -}}
+    {{- with try (transform.Unmarshal .Content) -}}
+      {{- with .Err -}}{{- warnf "npm stats: %s" . -}}{{- else -}}{{- $result = .Value -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}

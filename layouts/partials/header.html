@@ -1,18 +1,11 @@
 {{ $githubStars := "" }}
-{{ with try (resources.GetRemote "https://api.github.com/repos/decaporg/decap-cms") }}
-  {{ with .Err }}
-    {{ warnf "%s" . }}
-  {{ else with .Value }}
-    {{ $githubData := . | transform.Unmarshal }}
-    {{ with $githubData.stargazers_count }}
-      {{ $stars := float . }}
-      {{ if ge $stars 1000.0 }}
-        {{ $formattedStars := printf "%.1fk" (div $stars 1000.0) }}
-        {{ $githubStars = replaceRE "\\.0k$" "k" $formattedStars }}
-      {{ else }}
-        {{ $githubStars = printf "%.0f" $stars }}
-      {{ end }}
-    {{ end }}
+{{ with partialCached "stats/github.html" (dict "repo" "decaporg/decap-cms" "metric" "stars") "decaporg/decap-cms" "stars" }}
+  {{ $stars := float . }}
+  {{ if ge $stars 1000.0 }}
+    {{ $formattedStars := printf "%.1fk" (div $stars 1000.0) }}
+    {{ $githubStars = replaceRE "\\.0k$" "k" $formattedStars }}
+  {{ else }}
+    {{ $githubStars = printf "%.0f" $stars }}
   {{ end }}
 {{ end }}
 
