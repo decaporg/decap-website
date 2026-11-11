@@ -1,0 +1,1 @@
+{{- partial "stats/shortcode.html" . -}}

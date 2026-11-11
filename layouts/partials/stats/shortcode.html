@@ -1,0 +1,35 @@
+{{- /* Body of the stat and period shortcodes, shared by every output format.
+  {{< stat github="decaporg/decap-cms" metric="stars" >}}         19,460
+  {{< stat npm="decap-cms-app" metric="weekly-downloads" >}}      25,706
+  {{< stat github="decaporg/decap-cms" metric="latest-release-date" >}}  26 October 2026
+  {{< period >}}               Q4 2025–Q3 2026
+  {{< period format="long" >}} 1 October 2025 to 30 September 2026
+  Metrics are listed in stats/github.html and stats/npm.html. */ -}}
+{{- $period := partialCached "stats/period.html" . "period" -}}
+{{- if eq .Name "period" -}}
+  {{- if eq (.Get "format") "long" -}}
+    {{- printf "%s to %s" ($period.start.Format "2 January 2006") ($period.last.Format "2 January 2006") -}}
+  {{- else -}}
+    {{- $period.label -}}
+  {{- end -}}
+{{- else -}}
+  {{- $metric := .Get "metric" -}}
+  {{- $value := "" -}}
+  {{- with .Get "github" -}}
+    {{- $value = partialCached "stats/github.html" (dict "repo" . "metric" $metric) . $metric -}}
+  {{- else with .Get "npm" -}}
+    {{- $value = partialCached "stats/npm.html" (dict "package" . "metric" $metric) . $metric -}}
+  {{- else -}}
+    {{- errorf "%s: the stat shortcode needs github= or npm=" .Position -}}
+  {{- end -}}
+  {{- if eq (printf "%T" $value) "time.Time" -}}
+    {{- $value.Format "2 January 2006" -}}
+  {{- else if and (ne (printf "%v" $value) "") (or (eq (printf "%T" $value) "int") (eq (printf "%T" $value) "float64") (eq (printf "%T" $value) "int64")) -}}
+    {{- lang.FormatNumber 0 $value -}}
+  {{- else if ne (printf "%v" $value) "" -}}
+    {{- $value -}}
+  {{- else -}}
+    {{- warnf "%s: no value for %s %s" .Position (or (.Get "github") (.Get "npm")) $metric -}}
+    —
+  {{- end -}}
+{{- end -}}

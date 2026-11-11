@@ -1,0 +1,22 @@
+{{- partial "llm/intro.html" . }}
+{{ $docs := where site.RegularPages "Section" "docs" -}}
+{{- range site.Menus.docs }}
+{{- range (where $docs "Params.group" .Identifier).ByWeight }}
+---
+
+# {{ .Title }}
+
+Source: {{ .Permalink }}
+
+{{ partial "llm/markdown.html" . }}
+{{ end -}}
+{{- end }}
+{{- range (where $docs "Params.group" "Widgets").ByWeight }}
+---
+
+# Widget: {{ .Title }}
+
+Source: {{ .Permalink }}
+
+{{ partial "llm/markdown.html" . }}
+{{ end -}}

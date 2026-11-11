@@ -7,9 +7,12 @@
     </aside>
 
     <article class="docs-single__content" data-docs-content>
-      {{ if .Params.group }}
-        {{ partial "edit-link" . }}
-      {{ end }}
+      <div class="page-actions">
+        {{ if .Params.group }}
+          {{ partial "edit-link" . }}
+        {{ end }}
+        {{ partial "page-actions" . }}
+      </div>
 
       <h1>{{ .Title }}</h1>
       

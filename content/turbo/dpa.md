@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Data Processing Agreement
-description: "Last updated: 2026-09-07."
+description: "Last updated: 2026-11-05."
 ---
 
 This Data Processing Agreement ("DPA") applies where we process personal data **on your behalf** — as your processor, under Article 28 of the GDPR. It forms part of the [Terms of Service](/turbo/terms/) between you and PM, poslovni mediji d.o.o., and it takes effect when you accept those terms.
@@ -84,7 +84,7 @@ The measures below are what the Service actually does today, not an aspiration. 
 - Git host credentials are proxied on your behalf and never exposed to your members or to other customers.
 - Administrative access to production systems is limited to named personnel and uses separate credentials from any customer account.
 
-**Authentication.** Sign-in is by email address and password. **We do not currently offer multi-factor authentication, single sign-on, or SAML.** If your own security policy requires MFA on services holding your data, take that into account before storing sensitive content here — we would rather tell you plainly than let you assume otherwise.
+**Authentication.** Members sign in with an email address and password, or with Google or GitHub. When a member chooses Google or GitHub, that provider confirms who they are, as described in [section 4 of our Privacy Policy](/turbo/privacy/#4-sub-processors-and-recipients); it gets no access to your content, and signing in with GitHub gives us no access to that member's repositories. **We do not currently offer multi-factor authentication of our own, single sign-on for your organization, or SAML.** If your own security policy requires MFA on services holding your data, take that into account before storing sensitive content here — we would rather tell you plainly than let you assume otherwise.
 
 **Resilience and recovery.** The database is backed up by our provider on its managed schedule, and the Service's infrastructure is redundant at the provider level. We do not currently offer a contractual recovery-time or recovery-point objective.
 

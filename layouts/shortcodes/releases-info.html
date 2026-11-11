@@ -1,56 +1,32 @@
-{{- $githubRelease := dict -}}
-{{- $npmRelease := dict -}}
+{{- $repo := "decaporg/decap-cms" -}}
+{{- $version := partialCached "stats/npm.html" (dict "package" "decap-cms-app" "metric" "latest") "decap-cms-app" "latest" -}}
+{{- $tag := partialCached "stats/github.html" (dict "repo" $repo "metric" "latest-release") $repo "latest-release" -}}
+{{- $date := partialCached "stats/github.html" (dict "repo" $repo "metric" "latest-release-date") $repo "latest-release-date" -}}
+{{- $url := partialCached "stats/github.html" (dict "repo" $repo "metric" "latest-release-url") $repo "latest-release-url" -}}
 
-{{- /* Fetch GitHub latest release */ -}}
-{{- $githubResource := try (resources.GetRemote "https://api.github.com/repos/decaporg/decap-cms/releases/latest") -}}
-{{- with $githubResource -}}
-  {{- with .Value -}}
-    {{- $data := . | transform.Unmarshal -}}
-    <script>console.log(JSON.parse({{ $data | jsonify }}))</script>
-    {{- $githubRelease = $data -}}
-  {{- end -}} 
-{{- else -}}
-  {{- warnf "Failed to fetch GitHub release data" -}}
-{{- end -}}
-
-{{- /* Fetch npm latest version */ -}}
-{{- $npmResource := try (resources.GetRemote "https://registry.npmjs.org/decap-cms-app/latest") -}}
-{{- with $npmResource -}}
-  {{- with .Value -}}
-    {{- $data := . | transform.Unmarshal -}}
-    {{- $npmRelease = $data -}}
-  {{- end -}}
-{{- else -}}
-  {{- warnf "Failed to fetch npm version data" -}}
-{{- end -}}
-
-{{- if or $githubRelease $npmRelease -}}
+{{- with $version | default $tag -}}
   <div class="releases-info">
     <p>
-      Our latest release is {{ $npmRelease.version | default $githubRelease.tag_name }}
-      {{ with $githubRelease.published_at }}
-        published on {{ . | time.Format "January 2, 2006" }}.
+      Our latest release is {{ . }}
+      {{ with $date }}
+        published on {{ .Format "January 2, 2006" }}.
       {{ end }}
     </p>
 
     <ul>
-      {{- with $githubRelease -}}
+      {{- with $url -}}
         <li>
-          <a href="{{ .html_url }}" target="_blank" rel="noopener noreferrer">
-            {{ .tag_name }}
-          </a> on GitHub
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $tag }}</a> on GitHub
         </li>
       {{- end -}}
-  
-      {{- with $npmRelease -}}
+
+      {{- with $version -}}
         <li>
-          <a href="https://www.npmjs.com/package/decap-cms/v/{{ .version }}" target="_blank" rel="noopener noreferrer">
-            {{ .version }}
-          </a> on npm
+          <a href="https://www.npmjs.com/package/decap-cms/v/{{ . }}" target="_blank" rel="noopener noreferrer">{{ . }}</a> on npm
         </li>
       {{- end -}}
     </ul>
   </div>
 {{- end -}}
-  
+
 <p>Check <a href="https://github.com/decaporg/decap-cms/releases">GitHub Releases</a> or the <a href="https://www.npmjs.com/package/decap-cms">npm package</a> for info on all releases.</p>

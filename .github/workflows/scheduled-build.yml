@@ -1,0 +1,30 @@
+# Rebuilds decapcms.org every day, so numbers fetched at build time (GitHub
+# stars, latest release, npm downloads, the reporting period) stay current
+# without a commit. See layouts/partials/stats/.
+#
+# Needs the repository secret NETLIFY_BUILD_HOOK: a build hook for the
+# production branch, from Netlify > Project configuration > Build & deploy >
+# Build hooks.
+name: Scheduled build
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the Netlify build hook
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: |
+          if [ -z "$NETLIFY_BUILD_HOOK" ]; then
+            echo "::error::The NETLIFY_BUILD_HOOK secret is not set."
+            exit 1
+          fi
+          curl --fail --silent --show-error -X POST -d '{}' \
+            "$NETLIFY_BUILD_HOOK?trigger_title=Scheduled+daily+build"

@@ -9,7 +9,7 @@ Decap CMS exists to give publishers, editors, and developers a content system th
 
 ## How the project is maintained
 
-Decap CMS is a free and open-source project maintained in the EU with contributors from around the world. Core maintenance and long-term product direction are led by independent Decap maintainers, with community contributors helping improve the CMS, documentation, and ecosystem.
+Decap CMS is a free and open-source project actively maintained in the EU with contributors from around the world. Core maintenance and long-term product direction are led by independent Decap maintainers, with community contributors helping improve the CMS, documentation, and ecosystem.
 
 We keep governance lightweight and practical: discussion happens in the open, source code lives on GitHub, and the public roadmap is shaped by community feedback, maintenance priorities, and partner-backed investment in the project.
 

@@ -1,0 +1,10 @@
+{{- /*
+  A page's Markdown with shortcodes rendered and links made absolute,
+  so the text still works outside the page: in /docs/<page>.md and /llms-full.txt.
+*/ -}}
+{{- $body := .RenderShortcodes -}}
+{{- $parent := absURL (printf "%s/" (path.Dir (strings.TrimSuffix "/" .RelPermalink))) -}}
+{{- $body = replace $body "](../" (printf "](%s" $parent) -}}
+{{- $body = replaceRE `\]\(/([^/])` (printf "](%s$1" (absURL "/")) $body -}}
+{{- $body = replace $body "](#" (printf "](%s#" .Permalink) -}}
+{{- return $body -}}

@@ -1,0 +1,4 @@
+{{- /* One line describing a page, for link lists in llms.txt. */ -}}
+{{- $text := .Description | default .Summary | plainify | htmlUnescape -}}
+{{- $text = replaceRE `\s+` " " $text | strings.TrimSpace | truncate 180 -}}
+{{- return $text -}}
