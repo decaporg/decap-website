@@ -454,15 +454,14 @@ slug: "{{year}}-{{month}}-{{day}}_{{title | truncate(50)}}"
 
 ### `slug_collision`
 
-For folder collections that allow new entries, `slug_collision` controls what
-happens when a generated slug resolves to an existing entry:
+For folder collections that allow new entries, `slug_collision` controls what happens when a generated slug resolves to an existing entry: <span class="version-tag">3.18</span>
 
 * `suffix` (default): append an incrementing number until the slug is unique
-* `reject`: stop the save and display an error asking the editor to choose a
-  different entry identifier or path
+* `reject`: stop the save and display an error asking the editor to choose a different entry identifier or path
 
-Collision detection uses the generated, sanitized slug. Two different field
-values may therefore collide if they produce the same slug.
+Collision detection uses the generated, sanitized slug. Two different field values may therefore collide if they produce the same slug.
+
+In a [nested collection](/docs/collection-nested/), `reject` also stops an existing entry from being moved to a path another entry already uses.
 
 **Example:**
 
