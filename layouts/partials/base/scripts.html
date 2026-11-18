@@ -3,10 +3,9 @@
 {{ $docsNav := resources.Get "/scripts/docs-nav.js" }}
 {{ $externalLinks := resources.Get "/scripts/external-links.js" }}
 {{ $turboLinks := resources.Get "/scripts/turbo-links.js" }}
-{{ $cookieConsent := resources.Get "/scripts/cookie-consent.js" }}
 {{ $pageActions := resources.Get "/scripts/page-actions.js" }}
 
-{{ $bundleItems := slice $search $header $docsNav $externalLinks $turboLinks $cookieConsent $pageActions }}
+{{ $bundleItems := slice $search $header $docsNav $externalLinks $turboLinks $pageActions }}
 
 {{ $options := dict
   "sourcemap" "inline"

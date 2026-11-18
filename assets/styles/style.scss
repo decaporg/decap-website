@@ -1,8 +1,8 @@
 // Main SCSS file for Decap CMS Hugo site
 // Import all partial SCSS files
 
-// Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+// Self-hosted fonts (no Google Fonts request)
+@import 'fonts';
 
 @import 'base';
 @import 'breakpoints';
@@ -43,7 +43,6 @@
 @import 'components/turbo-comparison';
 @import 'components/services';
 @import 'components/service-detail';
-@import 'components/cookie-consent';
 @import 'components/compare';
 
 @import 'components/home/hero';
