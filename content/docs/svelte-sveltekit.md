@@ -56,7 +56,7 @@ touch src/routes/blog/+page.js               # Fetch list of posts
 touch src/routes/blog/+page.svelte           # Render post list
 
 mkdir -p 'src/routes/blog/[slug]'
-touch 'src/routes/blog/[slug]/+page.js'.     # Fetch each post's data
+touch 'src/routes/blog/[slug]/+page.js'      # Fetch each post's data
 touch 'src/routes/blog/[slug]/+page.svelte'  # Render each post
 ```
 
@@ -188,7 +188,7 @@ description: "This is an example post"
 
 Welcome to my awesome web site.
 
-This page is built with Svelte/SvelteKit, and content woud be managed in Decap CMS.
+This page is built with Svelte/SvelteKit, and content would be managed in Decap CMS.
 ```
 
 At this point, you've set up a minimal static site with Svelte/SvelteKit that renders Markdown blog posts.
@@ -220,7 +220,6 @@ Paste the HTML that loads and runs Decap CMS into `static/admin/index.html`.
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
@@ -235,11 +234,12 @@ Paste the blog location and front matter settings from the previous section into
 ```yml
 # static/admin/config.yml
 backend:
-  name: git-gateway
+  name: github
+  repo: your-github-user/your-repo # replace with your repository
   branch: main
 local_backend: true
-media_folder: static
-public_folder: ''
+media_folder: static/images/uploads
+public_folder: /images/uploads
 collections:
   - name: 'blog'
     label: 'Blog'
@@ -249,7 +249,7 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Bofy', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 ```
 
 That completes the Decap CMS setup.
@@ -257,7 +257,7 @@ To verify it works, start the proxy server that lets Decap CMS edit local files 
 If the dev server is stopped, start it again with `npm run dev`, then open `http://localhost:5173/admin/index.html`.
 You'll see the Decap CMS login screen. Since the local proxy is running, you can enter the CMS by clicking the Log in button.
 
-### Another way to install DecapCMS by npm
+### Another way to install Decap CMS by npm
 
 You can also use Decap CMS as an npm module.
 
@@ -272,7 +272,7 @@ Then initialize it on client-side.
 `src/routes/admin/+page.svelte`
 
 ```html
-<script lang="ts">
+<script>
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
@@ -287,14 +287,14 @@ Then initialize it on client-side.
 </svelte:head>
 ```
 
-`src/routes/admin/+page.ts`
+`src/routes/admin/+page.js`
 
-```typescript
+```js
 export const prerender = false;
 export const ssr = false;
 ```
 
-Also, you shold set client-side redering fallback:
+Also, you should set a client-side rendering fallback:
 e.g.
 
 - Cloudflare: add `adapter: adapter({ fallback: '200.html'}),` to `svelte.config.js`
