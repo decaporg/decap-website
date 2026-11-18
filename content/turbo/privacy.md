@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Privacy Policy
-description: "Last updated: 2026-10-28."
+description: "Last updated: 2026-11-18."
 ---
 
 ## 1. Who we are
@@ -62,7 +62,7 @@ We use the following sub-processors. Each one processes personal data on our beh
 | [GitHub](https://github.com) / [GitLab](https://gitlab.com) | Your repository content, and the access tokens we proxy on your behalf, for whichever host your site is connected to | Per your own account with that host |
 | [Paddle](https://www.paddle.com) | Sale of subscriptions, payment collection, subscription management, tax compliance, invoicing | UK company, processing globally; see Paddle's own policy |
 
-**Visitor statistics, for our own purposes.** [Plausible Insights OÜ](https://plausible.io/data-policy) (Estonia; data processed and stored in the EU) provides the cookieless visitor statistics on the signed-out sign-in, sign-up and password-reset pages described in section 6. It works for us alone: it never receives account, email address or organization data, and processes nothing on a customer organization's behalf, so it is not a sub-processor under our Data Processing Agreement and is not part of the list above.
+**Visitor statistics, for our own purposes.** The cookieless visitor statistics on the signed-out sign-in, sign-up and password-reset pages described in section 6 run on our own server, hosted by [Hetzner Online GmbH](https://www.hetzner.com/legal/privacy-policy/) (Germany; data processed and stored in Germany). They work for us alone: it never receives account, email address or organization data, and processes nothing on a customer organization's behalf, so it is not a sub-processor under our Data Processing Agreement and is not part of the list above.
 
 Paddle is different from the others: it is our reseller and **merchant of record**, and acts as an **independent controller** of your payment and billing data under its own [privacy policy](https://www.paddle.com/legal/privacy), not as our processor. See also our [Terms of Service](/turbo/terms/).
 
@@ -88,7 +88,7 @@ We and our sub-processors may process personal data outside the EU/EEA and UK �
 
 **What we don't use.** We don't use advertising cookies — no Google Analytics, no advertising pixels, no cross-site tracking. Aside from Turnstile on the signup page, the only cookies the Service sets are the two of our own described above.
 
-**Visitor statistics on the signed-out pages.** The sign-in, sign-up and password-reset pages — and only those, never a page you see once signed in — load [Plausible Analytics](https://plausible.io/data-policy), the same visitor statistics we use on decapcms.org. It sets no cookies and uses no local storage or other device storage. It recognises a visitor only within a single day, by a code calculated from the IP address, browser, our domain and a random value that is deleted every 24 hours; the IP address and browser string are never stored. It receives the page address, the referring site and any campaign tags in the link, the country, and the device and browser type, plus one event when a sign-up form is submitted. It never receives your account, your email address or anything about your organizations, and pages opened from an invitation link don't load it at all. Its script and requests are served from decapcms.org. Because it stores nothing on your device and can't identify you, it is not a consent question.
+**Visitor statistics on the signed-out pages.** The sign-in, sign-up and password-reset pages — and only those, never a page you see once signed in — load [Plausible Analytics](https://plausible.io/data-policy), the same visitor statistics we use on decapcms.org: open-source software we run ourselves on our own server in Germany, so no analytics company receives the data. It sets no cookies and uses no local storage or other device storage. It recognises a visitor only within a single day, by a code calculated from the IP address, browser, our domain and a random value that is deleted every 24 hours; the IP address and browser string are never stored. It receives the page address, the referring site and any campaign tags in the link, the country, and the device and browser type, plus one event when a sign-up form is submitted. It never receives your account, your email address or anything about your organizations, and pages opened from an invitation link don't load it at all. Its script and requests are served from decapcms.org. Because it stores nothing on your device and can't identify you, it is not a consent question.
 
 **Product-usage data.** We record product-usage events (which features you use and which pages you visit) under your account, to help us improve the Service. This data is stored only in our own database (see section 4), is never shared with third parties, and is never used for advertising. It is not collected using cookies or device storage — it is recorded server-side against your authenticated account — so it is not a consent question, but you can still turn it off.
 
