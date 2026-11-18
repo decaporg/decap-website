@@ -27,7 +27,7 @@ The relation widget allows you to reference items from another collection. It pr
 - `min`: minimum number of items; ignored if **multiple** is  `false`
 - `max`: maximum number of items; ignored if **multiple** is  `false`
 - `options_length`: accepts integer to override number of options presented to user. Defaults to `20`.
-- `filters`: <span class="version-tag">3.1.5</span> allows adding filters by which the available options are filtered. You can add filters which are a pair of `field` and the allowed `values`, where the widget will only show options (collection items) that satisfy all the filters. A collection item satisfies a filter if the value of `field` is one of the values in `values`. If `field` holds a list, such as a `select` field with `multiple: true`, the item satisfies the filter when any of the list's values is in `values`. <span class="version-tag">3.17.2</span>
+- `filters`: <span class="version-tag">3.1.5</span> allows adding filters by which the available options are filtered. You can add filters which are a pair of `field` and the allowed `values`, where the widget will only show options (collection items) that satisfy all the filters. A collection item satisfies a filter if the value of `field` is one of the values in `values`. If `field` holds a list, such as a `select` field with `multiple: true`, the item satisfies the filter when any of the list's values is in `values`. <span class="version-tag">3.17.2</span> A value can also be a reference to another field of the entry being edited, such as `'{{fields.category}}'`, so the options follow what the editor picked there. <span class="version-tag">3.18.0</span> See the "Filters that follow another field" example below.
 - **Referencing a folder collection example** (assuming a separate "authors" collection with "name" and "twitterHandle" fields with subfields "first" and "last" for the "name" field):
 
 ```yaml
@@ -104,6 +104,33 @@ filters:
 ```
 
 In this case only the posts with `draft` set to `false` and a title that is either 'posts about cats' or 'post about dogs' will be options seen in the relation widget.
+
+**Filters that follow another field** <span class="version-tag">3.18.0</span>
+
+A filter value that is exactly `{{fields.<name>}}` is replaced by the current value of that field in the entry being edited:
+
+```yaml
+- { label: Category, name: category, widget: select, options: [sports, music] }
+- label: Related post
+  name: related_post
+  widget: relation
+  collection: posts
+  search_fields: [title]
+  value_field: '{{slug}}'
+  filters:
+    - field: category
+      values: ['{{fields.category}}']
+```
+
+Here the relation only offers posts whose `category` matches the category picked in this entry.
+
+- While the referenced field is empty, the relation is disabled and shows "Select Category first."
+- When the referenced field changes, selected values that no longer match are removed. Opening a saved entry never changes its values.
+- If the referenced field holds a list, an option matches when it matches any of the list's values.
+- Fixed values and references can be mixed, e.g. `values: [news, '{{fields.category}}']`.
+- Use a dotted path to reference a field inside an object, e.g. `{{fields.meta.category}}`. A path always starts at the top of the entry, so a field inside a list item can't reference another field of the same item.
+
+A relation to its own collection never offers the entry being edited.
 
 **Result**
 
