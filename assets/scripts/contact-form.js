@@ -56,13 +56,6 @@ if (contactPageRoot) {
         return
       }
 
-      const recaptchaResponse = form.querySelector('[name="g-recaptcha-response"]')
-
-      if (recaptchaResponse && !recaptchaResponse.value) {
-        setStatus('Please complete the reCAPTCHA challenge before submitting.', 'is-error')
-        return
-      }
-
       setStatus('')
       setButtonLoading(true)
 

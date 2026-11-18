@@ -1,5 +1,5 @@
 ---
-title: Privacy & Cookies Policy
+title: Privacy Policy
 description: "Last updated: 2026-11-18."
 ---
 
@@ -19,47 +19,34 @@ world; this policy is about the website, not the software project's governance.
 
 | Category | Examples | Purpose | Legal basis |
 |---|---|---|---|
-| Contact form submissions | Name, email address, message content | Responding to inquiries | Legitimate interest (responding to your request) |
+| Contact form submissions | Email address, topic, message content | Responding to inquiries | Legitimate interest (responding to your request) |
 | Visitor statistics | Page visited, referring site, campaign tags in the link, country, device and browser type — counted without cookies and without storing your IP address (see section 3) | Counting visits and learning which pages and sources bring people to the site | Legitimate interest (understanding the use of our own website) |
-| Google Analytics *(only if you accept cookies)* | Pages visited, referrer, approximate location, device/browser type | Understanding how visitors use the site, so we can improve it | Consent |
+| Technical data | IP address, browser type and the address requested, as received by the services that deliver this site and its search, scripts, badges and videos (see section 4) | Delivering the pages and features you ask for, and keeping the site secure | Legitimate interest (operating the website) |
 
 We don't require an account to browse this site, and we don't collect payment information here
 (that only happens on Decap Turbo, under its own policy).
 
-## 3. Cookies
+## 3. Cookies and device storage
 
-We use cookies and similar technologies as follows:
+This site sets no cookies and stores nothing in your browser's local storage or other device storage, so there is no cookie banner. We don't use advertising cookies, third-party analytics or tracking pixels.
 
-| Name | Provider | Purpose | Duration | Requires consent? |
-|---|---|---|---|---|
-| `decap_cookie_consent` | This site (stored in your browser's local storage, not a cookie) | Remembers your cookie choice | Until you clear browser storage | No — strictly necessary |
-| GTM/GA cookies (e.g. `_ga`, `_ga_*`) | Google (via Google Tag Manager) | Analytics — understanding site usage | Up to 2 years | Yes |
+**Visitor statistics without cookies.** We count visits with [Plausible Analytics](https://plausible.io/data-policy), open-source software that we run ourselves on our own server in Germany, so no analytics company receives the data. It sets no cookies and uses no local storage or other device storage. It recognises a visitor only within a single day, by a code calculated from your IP address, browser, our domain and a random value that is deleted every 24 hours; your IP address and browser string are never stored. It can't follow you from one day to the next or across other websites. Its script and requests are served from our own domain. Because nothing is stored on your device and the result can't identify you, it doesn't need your consent. It also counts clicks on links to Decap Turbo, with where on the page they were. Those links tell Decap Turbo which of our pages and buttons you came from and, if another website sent you to ours, that website's name — never the address of the page; nothing is stored on your device for this either. The same statistics cover the signed-out pages of Decap Turbo (sign in, sign up, password reset), under the [Decap Turbo Privacy Policy](/turbo/privacy/).
 
-Google Tag Manager itself is a tag-loading container, not a tracker — no analytics or advertising
-tags fire until you accept. If you reject or dismiss the prompt without accepting, only your
-consent choice is stored, and no analytics cookies are set. You can change your mind at any time
-by clearing your browser's local storage for this site and reloading the page, which will show
-the prompt again.
+**Fonts** are served from our own domain, not from Google Fonts.
 
-**Visitor statistics without cookies.** We count visits with [Plausible Analytics](https://plausible.io/data-policy), open-source software that we run ourselves on our own server in Germany, so no analytics company receives the data. It sets no cookies and uses no local storage or other device storage. It recognises a visitor only within a single day, by a code calculated from your IP address, browser, our domain and a random value that is deleted every 24 hours; your IP address and browser string are never stored. It can't follow you from one day to the next or across other websites. Its script and requests are served from our own domain. Because nothing is stored on your device and the result can't identify you, it runs whether or not you accept cookies. It also counts clicks on links to Decap Turbo, with where on the page they were. Those links tell Decap Turbo which of our pages and buttons you came from and, if another website sent you to ours, that website's name — never the address of the page; nothing is stored on your device for this either. The same statistics cover the signed-out pages of Decap Turbo (sign in, sign up, password reset), under the [Decap Turbo Privacy Policy](/turbo/privacy/).
+## 4. Services that receive data
 
-We don't use advertising cookies or third-party tracking pixels on this site.
+- **[Netlify](https://www.netlify.com/privacy/)** (USA) — hosts this website and receives every request to it, and stores contact form submissions.
+- **[Akismet](https://automattic.com/privacy/)** (Automattic, USA) — checks contact form submissions for spam, on Netlify's behalf.
+- **[Hetzner Online GmbH](https://www.hetzner.com/legal/privacy-policy/)** (Germany) — hosts the server our visitor statistics run on, as described in section 3. Data is processed and stored in Germany.
+- **[Algolia](https://www.algolia.com/policies/privacy/)** — powers the documentation search. When you use the search box, what you type is sent to Algolia, along with your IP address.
+- **Content delivery services** — a few files on some pages load from other services: the search library and the home page carousel from jsDelivr, the badges on the templates page from Shields.io, and the video in the Decap Turbo documentation from bunny.net. Like any web server, they see your IP address and browser details when your browser fetches those files.
 
-### Sub-processors
-
-- **[Hetzner Online GmbH](https://www.hetzner.com/legal/privacy-policy/)** (Germany) — hosts the server our visitor statistics run on, as described above. Data is processed and stored in Germany.
-- **[Google](https://policies.google.com/privacy)** — Tag Manager and Analytics, only after you
-  consent.
-
-## 4. International transfers
-
-Where analytics data is processed outside the EU/EEA and UK (for example, by Google), we rely on
-appropriate safeguards recognized under EU/UK data protection law, such as Standard Contractual
-Clauses or an applicable adequacy decision.
+Where one of these services processes data outside the EU/EEA and UK (for example, Netlify and Akismet in the USA), we rely on appropriate safeguards recognized under EU/UK data protection law, such as Standard Contractual Clauses or an applicable adequacy decision such as the EU-U.S. Data Privacy Framework.
 
 ## 5. Data retention
 
-Contact form submissions are retained only as long as needed to handle your inquiry. Visitor statistics are kept as aggregate counts (visits per page, source, country and device type), which don't identify anyone. Analytics data, where you've consented to it, is retained according to Google Analytics' default retention settings.
+Contact form submissions are retained only as long as needed to handle your inquiry. Visitor statistics are kept as aggregate counts (visits per page, source, country and device type), which don't identify anyone. Technical data received by the services in section 4 is kept according to their own retention policies.
 
 ## 6. Your rights
 
@@ -70,8 +57,6 @@ residence, you have the right to:
 - **Rectify** inaccurate or incomplete data;
 - **Erase** your data ("right to be forgotten");
 - **Restrict** or **object** to certain processing;
-- **Withdraw consent** at any time — for cookies, by clearing your browser's local storage for
-  this site;
 - **Complain** to your local data protection authority (in Slovenia, the
   [Information Commissioner](https://www.ip-rs.si/)) if you believe we've mishandled your data.
 

@@ -74,7 +74,3 @@
   {{ end }}
 {{ end }}
 
-{{ define "scripts" }}
-  {{ $turboPlans := resources.Get "/scripts/turbo-plans.js" | js.Build (dict "minify" true) }}
-  <script defer src="{{ $turboPlans.RelPermalink }}"></script>
-{{ end }}

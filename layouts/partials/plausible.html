@@ -1,6 +1,6 @@
 {{- /*
-  Plausible: cookieless, EU-hosted, no consent needed, so it loads for every
-  visitor — unlike GA, which only loads after Accept (cookie-consent.js).
+  Plausible: cookieless and self-hosted (stats.decapcms.org), no consent
+  needed, so it loads for every visitor. It is the site's only analytics.
   Script and events are proxied through this domain (static/_redirects) so
   blockers that match plausible.io don't drop developers' visits. Production
   builds only (LOAD_PLAUSIBLE in netlify.toml), so deploy previews stay out.

@@ -11,8 +11,8 @@
 //   most common path being search -> /turbo/ -> Sign up. Host only.
 // - A Plausible "Turbo CTA" event with the placement, on click.
 //
-// It reads and sets no cookies or storage, so it runs for every visitor,
-// whatever they chose in the cookie banner. Utm values already on a link win.
+// It reads and sets no cookies or storage, so it runs for every visitor.
+// Utm values already on a link win.
 
 const TURBO_HOST = 'turbo.decapcms.org'
 
