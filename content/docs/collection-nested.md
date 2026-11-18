@@ -23,7 +23,7 @@ To enable it:
 
     Without `index_file`, new entries are saved in their path as a file named after their `title` field, and existing entries keep their file name. An entry titled "Hello World" with the path `posts` is saved as `content/pages/posts/hello-world.md`. This fits `subfolders: false`. <span class="version-tag">3.13</span>
 
-  * `required`: *(default: true)* set to `false` to allow saving an entry with an empty path. A new entry with an empty path is saved using the collection's own `path` or `slug`, and an existing entry keeps its current location.
+  * `required`: *(default: true)* set to `false` to allow saving an entry with an empty path. A new entry with an empty path is saved using the collection's own `path` or `slug`, and an existing entry keeps its current location. <span class="version-tag">3.18</span>
 
   Moving an existing entry will move the entire subtree of the entry to the new location. With `subfolders: false`, only the entry's own file moves.
 
