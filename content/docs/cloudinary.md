@@ -5,7 +5,7 @@ weight: 10
 ---
 Cloudinary is a digital asset management platform with a broad feature set, including support for responsive image generation and URL-based image transformation. They also provide a powerful media library UI for managing assets, and tools for organizing your assets into a hierarchy.
 
-The Cloudinary media library integration for Decap CMS uses Cloudinary's own media library interface within Decap CMS. To get started, you'll need a Cloudinary account and Decap CMS 2.3.0 or greater.
+The Cloudinary media library integration for Decap CMS uses Cloudinary's own media library interface within Decap CMS. To get started, you'll need a Cloudinary account.
 
 ## Creating a Cloudinary Account
 
