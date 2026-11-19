@@ -33,7 +33,8 @@ init()
 init({
   config: {
     backend: {
-      name: 'git-gateway',
+      name: 'github',
+      repo: 'owner-name/repo-name',
     },
   },
 })
@@ -49,7 +50,8 @@ init({
 init({
   config: {
     backend: {
-      name: 'git-gateway',
+      name: 'github',
+      repo: 'owner-name/repo-name',
     },
     load_config_file: false,
     media_folder: "static/images/uploads",

@@ -12,7 +12,7 @@ At the same time, any contributors who *do* have write access to the repository 
 
 * You must use [the GitHub backend](/docs/github-backend) or, from version 3.15, [the Forgejo backend](/docs/gitea-backend/#forgejo-backend). The examples on this page use GitHub. For Forgejo, set `name: forgejo` and the options from its page.
 
-  **Note that the [Git Gateway backend](/docs/git-gateway-backend/#git-gateway-with-netlify-identity) does *not* support Open Authoring, even when the underlying repo is on GitHub.**
+  **Note that the [Git Gateway backend](/docs/git-gateway-backend/#git-gateway-with-netlify) does *not* support Open Authoring, even when the underlying repo is on GitHub.**
 * For private GitHub repos the user must have `read` access on the repo, and you must explicitly set the auth_scope to `repo`, for example:
 
 ```yaml

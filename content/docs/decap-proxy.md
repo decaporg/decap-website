@@ -2,11 +2,16 @@
 group: Accounts
 weight: 70
 title: "Decap Proxy: Work With a Local Repository"
+description: "Edit content on your computer without logging in: set local_backend: true and run npx decap-server, a local server that reads and writes your repository's files."
 slug: decap-proxy
 aliases:
   - /docs/working-with-a-local-git-repository
 ---
 You can connect Decap CMS to a local directory, instead of working with a remote Git repository.
+
+`decap-server` is a small Node.js server, published on npm, that runs on your computer and reads and writes the files in your repository on behalf of Decap CMS. With `local_backend` set, Decap CMS on `localhost` talks to it instead of your Git host, so you can edit content without logging in. It's meant for development only.
+
+`local_backend` doesn't replace `backend`. Your `config.yml` still needs a `backend` block, which Decap CMS uses on your live site and whenever `decap-server` isn't running.
 
 1. Navigate to a local directory configured with the CMS.
 2. Add the top-level property `local_backend` configuration to your `config.yml`:
@@ -16,7 +21,8 @@ You can connect Decap CMS to a local directory, instead of working with a remote
 local_backend: true
 
 backend:
-  name: git-gateway
+  name: github
+  repo: owner-name/repo-name
 ```
 
 3. Run `npx decap-server` from the root directory of the above repository. It needs Node.js 20 or later.
@@ -73,7 +79,8 @@ Update the `local_backend` object in `config.yml` and specify a `url` property t
 
 ```yaml
 backend:
-  name: git-gateway
+  name: github
+  repo: owner-name/repo-name
 
 local_backend:
   # when using a custom proxy server port

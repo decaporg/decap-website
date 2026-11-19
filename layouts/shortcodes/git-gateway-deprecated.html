@@ -1,0 +1,4 @@
+{{- /* The Git Gateway deprecation notice. Text lives in partials/git-gateway-deprecated.html. */ -}}
+<div class="callout" role="note">
+{{ partial "git-gateway-deprecated.html" . | .Page.RenderString (dict "display" "block") }}
+</div>

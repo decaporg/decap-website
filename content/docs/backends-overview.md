@@ -3,11 +3,12 @@ group: Accounts
 weight: 1
 linkTitle: Overview
 title: Backends overview
+description: "What a Decap CMS backend is, the backends that ship with it (GitHub, GitLab, Gitea, Forgejo, Bitbucket, Azure, Decap Turbo), and the backend options they share."
 ---
 
 A backend is JavaScript code that allows Decap CMS to communicate with a service that stores content - typically a Git host like GitHub or GitLab. It provides functions that Decap CMS can use to do things like read and update files using APIs provided by the service.
 
-Decap ships backends for [GitHub](/docs/github-backend/), [GitLab](/docs/gitlab-backend/), [Gitea](/docs/gitea-backend/), [Forgejo](/docs/gitea-backend/#forgejo-backend), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/) and [Git Gateway](/docs/git-gateway-backend/), plus the hosted [Decap Turbo](/docs/turbo-overview/) backends (`turbo-github` and `turbo-gitlab`), which add server-side auth and a caching proxy in front of your Git host.
+Decap ships backends for [GitHub](/docs/github-backend/), [GitLab](/docs/gitlab-backend/), [Gitea](/docs/gitea-backend/), [Forgejo](/docs/gitea-backend/#forgejo-backend), [Bitbucket](/docs/bitbucket-backend/), [Azure](/docs/azure-backend/) and the deprecated [Git Gateway](/docs/git-gateway-backend/), plus the hosted [Decap Turbo](/docs/turbo-overview/) backends (`turbo-github` and `turbo-gitlab`), which add server-side auth and a caching proxy in front of your Git host. To pick one, see [Choosing a Backend](/docs/choosing-a-backend/).
 
 ## Backend Configuration
 
@@ -27,7 +28,7 @@ Individual backends should provide their own configuration documentation, but th
 
 ## Creating a New Backend
 
-Anyone can write a backend, but we don't yet have a finalized and documented API. If you would like to write your own backend for a service that does not have one currently, we recommend using the [GitHub backend](https://github.com/decaporg/decap-cms/tree/master/packages/decap-cms-backend-github) as a reference for API and best practices.
+Anyone can write a backend, but we don't yet have a finalized and documented API. If you would like to write your own backend for a service that does not have one currently, we recommend using the [GitHub backend](https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-github) as a reference for API and best practices.
 
 ## Using Github with an OAuth Proxy
 
@@ -44,4 +45,4 @@ Your proxy should handle the following request paths:
 
 For more detailed instructions and example code see this [Cloudflare Worker template](https://github.com/sterlingwes/decap-proxy).
 
-Alternatively, [Decap Turbo](/turbo/) runs this proxy for you and also shields your GitHub or GitLab API from rate limits — no server to deploy or maintain.
+Alternatively, [Decap Turbo](/docs/turbo-overview/) handles login for you and also shields your GitHub or GitLab API from rate limits, with no server to deploy or maintain.
