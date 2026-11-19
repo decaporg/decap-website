@@ -1,6 +1,6 @@
 ---
 title: Decap Turbo — Privacy Policy
-description: "Last updated: 2026-11-18."
+description: "Last updated: 2026-11-19."
 ---
 
 ## 1. Who we are
@@ -32,12 +32,12 @@ Where we are a processor we still have direct obligations of our own — securit
 | Billing profile | Billing email, company name, VAT ID | Invoicing and tax compliance | Performance of a contract and legal obligation |
 | Git hosting credentials | GitHub/GitLab access tokens (proxied, not shown to other users) | Operating the Git hosting API request proxy | Performance of a contract |
 | Site content and configuration | Entries you save through the CMS, cached repository content, site variables you choose to store with us | Providing the content store and site variable storage | Performance of a contract (as processor for the organization — see section 2) |
-| Support communications | Messages sent via our contact form | Responding to inquiries and support requests | Legitimate interest (providing support) |
+| Support communications | Messages sent via our contact form or by email, including replies to emails from us | Responding to inquiries and support requests | Legitimate interest (providing support) |
 | Security/technical logs | IP address, request logs, device/browser identifiers, records of failed and errored requests | Fraud prevention, abuse detection, and keeping the Service secure | Legitimate interest (security) and legal obligation, where applicable |
 | Organization activity records | Who saved which entry, in which collection and site, and when — including the editor's email address | Showing an organization's owners what happened in their own organization (the Activity log), and supporting our own operations | Performance of a contract |
 | Product-usage data | Feature usage events (pages visited, actions taken), tied to your account | Understanding how the Service is used so we can improve it | Legitimate interest (product improvement) |
 | Visitor statistics on signed-out pages | On the sign-in, sign-up and password-reset pages only: page address, referring site, campaign tags in the link, country, device and browser type — without cookies, and not linked to any account (see section 6) | Learning how people find and start using the Service | Legitimate interest (understanding how the Service is found) |
-| Signup source | When the link you followed to sign up carries them: its campaign tags (source, medium, campaign, content, term), the name of the website that referred you — never the address of the page — and whether the link offered the Free plan or a Pro trial. Stored with your new account | Learning which pages and channels bring people to the Service | Legitimate interest (understanding how the Service is found) |
+| Signup source | When the link you followed to sign up carries them: its campaign tags (source, medium, campaign, content, term), the name of the website that referred you — never the address of the page — and whether the link offered the Free plan or a Pro trial. If you choose to answer it, how you heard about Decap Turbo, picked from a list (and, for an AI assistant or social media, which one). Stored with your new account | Learning which pages and channels bring people to the Service | Legitimate interest (understanding how the Service is found) |
 | Product email | Your email address, and account facts we already hold: when you signed up, whether you created your own organization, your plan and trial dates, whether you have connected a site or saved content, when you last signed in, and milestones such as starting a trial or subscribing | Sending occasional emails about getting started with and using the Service, timed to where you are in it | Legitimate interest (helping customers make use of the Service they signed up for) |
 | Error diagnostics | Records of application errors: the error message and stack, the request path it happened on (stored in templated form — see section 6), and the account, organization or site involved | Finding and fixing faults in the Service | Legitimate interest (keeping the Service working) |
 
@@ -60,6 +60,7 @@ We use the following sub-processors. Each one processes personal data on our beh
 | [Cloudflare](https://www.cloudflare.com) | Turnstile bot protection on the signup form: the IP address and browser signals of everyone who loads that page (see section 6) | US company, global edge network |
 | [Brevo](https://www.brevo.com) | Email. Transactional email: recipient email addresses and names, organization names, and billing details where an email concerns billing. Product email: your email address and the account facts listed under "Product email" in section 3, used to decide which emails to send and when | EU (France-based provider) |
 | [GitHub](https://github.com) / [GitLab](https://gitlab.com) | Your repository content, and the access tokens we proxy on your behalf, for whichever host your site is connected to | Per your own account with that host |
+| [Anthropic](https://www.anthropic.com) | Claude, the AI assistant we use in our own work: emails you send us and our replies to them, and the account, organization and usage data we look up to answer you, support you, or understand how the Service is used. We use it under Anthropic's commercial terms (a paid Claude Team plan), and **Anthropic does not use this data to train its models** | US company |
 | [Paddle](https://www.paddle.com) | Sale of subscriptions, payment collection, subscription management, tax compliance, invoicing | UK company, processing globally; see Paddle's own policy |
 
 **Visitor statistics, for our own purposes.** The cookieless visitor statistics on the signed-out sign-in, sign-up and password-reset pages described in section 6 run on our own server, hosted by [Hetzner Online GmbH](https://www.hetzner.com/legal/privacy-policy/) (Germany; data processed and stored in Germany). They work for us alone: it never receives account, email address or organization data, and processes nothing on a customer organization's behalf, so it is not a sub-processor under our Data Processing Agreement and is not part of the list above.
@@ -78,7 +79,7 @@ We don't sell your personal data, and we don't use third-party advertising or cr
 
 ## 5. International transfers
 
-We and our sub-processors may process personal data outside the EU/EEA and UK — Netlify, Cloudflare, GitHub and GitLab are US companies, Paddle is a UK company, and Supabase's and Brevo's support operations may reach data that itself sits inside the EU. Where personal data leaves the EU/EEA or UK, we rely on safeguards recognized under EU/UK data protection law: the European Commission's **Standard Contractual Clauses** (with the UK Addendum where relevant), or an applicable **adequacy decision** — for US recipients, certification under the EU-US Data Privacy Framework where the recipient holds it. We keep copies of the relevant transfer terms and will describe the basis for a specific sub-processor on request.
+We and our sub-processors may process personal data outside the EU/EEA and UK — Netlify, Cloudflare, Anthropic, GitHub and GitLab are US companies, Paddle is a UK company, and Supabase's and Brevo's support operations may reach data that itself sits inside the EU. Where personal data leaves the EU/EEA or UK, we rely on safeguards recognized under EU/UK data protection law: the European Commission's **Standard Contractual Clauses** (with the UK Addendum where relevant), or an applicable **adequacy decision** — for US recipients, certification under the EU-US Data Privacy Framework where the recipient holds it. We keep copies of the relevant transfer terms and will describe the basis for a specific sub-processor on request.
 
 ## 6. Cookies and similar technologies
 
