@@ -8,7 +8,8 @@
 //   turbo-plan-pro, docs-turbo-getting-started, ...).
 // - intent=pro|free on the plan cards, so Turbo knows what the button promised.
 // - ref=<host> when the visitor arrived on this page from another site, the
-//   most common path being search -> /turbo/ -> Sign up. Host only.
+//   most common path being search -> /turbo/ -> Sign up. Host only. A
+//   utm_source on this page's own URL counts too (ChatGPT sends no referrer).
 // - A Plausible "Turbo CTA" event with the placement, on click.
 //
 // It reads and sets no cookies or storage, so it runs for every visitor.
@@ -30,6 +31,14 @@ function externalReferrerHost () {
   }
 }
 
+// ChatGPT strips the referrer but tags its links with utm_source=chatgpt.com,
+// so that tag is the only trace of it. Host-shaped values only, as Turbo keeps.
+function arrivalSource () {
+  const utm = new URLSearchParams(window.location.search).get('utm_source')
+  if (utm && utm.includes('.') && utm !== 'decapcms.org') return utm
+  return externalReferrerHost()
+}
+
 function placementOf (link) {
   const section = link.dataset.planId
     ? `plan-${link.dataset.planId}`
@@ -38,7 +47,7 @@ function placementOf (link) {
 }
 
 function tagTurboLinks () {
-  const ref = externalReferrerHost()
+  const ref = arrivalSource()
 
   Array.from(document.links)
     .filter((link) => link.hostname === TURBO_HOST)
