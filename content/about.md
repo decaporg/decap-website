@@ -9,6 +9,8 @@ Decap CMS exists to give publishers, editors, and developers a content system th
 
 ## How the project is maintained
 
+Decap CMS began in 2016 as Netlify CMS and was renamed Decap CMS in 2023. Since then, it has been independently maintained by [PM d.o.o.](https://p-m.si). Throughout, it has been built by a community of contributors, from the first Netlify CMS commits to today's releases.
+
 Decap CMS is a free and open-source project actively maintained in the EU with contributors from around the world. Core maintenance and long-term product direction are led by independent Decap maintainers, with community contributors helping improve the CMS, documentation, and ecosystem.
 
 We keep governance lightweight and practical: discussion happens in the open, source code lives on GitHub, and the public roadmap is shaped by community feedback, maintenance priorities, and partner-backed investment in the project.
