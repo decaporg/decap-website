@@ -1,4 +1,12 @@
-{{- /* One line describing a page, for link lists in llms.txt. */ -}}
-{{- $text := .Description | default .Summary | plainify | htmlUnescape -}}
-{{- $text = replaceRE `\s+` " " $text | strings.TrimSpace | truncate 180 -}}
+{{- /*
+  One line describing a page, for link lists in llms.txt.
+  A hand-written front-matter description wins and is used whole; otherwise
+  the page's first paragraph is cut to 180 characters.
+*/ -}}
+{{- $text := "" -}}
+{{- with .Description -}}
+  {{- $text = . | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- else -}}
+  {{- $text = .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 180 -}}
+{{- end -}}
 {{- return $text -}}
