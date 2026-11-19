@@ -27,8 +27,21 @@ enableGitInfo = true
     isPlainText = true
     notAlternative = true
 
+  # Netlify _headers: labels each generated .md file text/markdown by its exact
+  # path, so a missing .md gets the plain HTML 404 instead of a page labelled
+  # text/markdown, which a /*.md rule in netlify.toml can't avoid.
+  [outputFormats.headers]
+    mediaType = 'text/netlify'
+    baseName = '_headers'
+    isPlainText = true
+    notAlternative = true
+
+[mediaTypes]
+  [mediaTypes.'text/netlify']
+    delimiter = ''
+
 [outputs]
-  home = ['html', 'rss', 'llms', 'llmsfull']
+  home = ['html', 'rss', 'llms', 'llmsfull', 'headers']
 
 [[cascade]]
   outputs = ['html', 'markdown']

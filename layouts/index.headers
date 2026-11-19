@@ -1,0 +1,8 @@
+{{- /* Netlify _headers (see the headers output format in config/_default/hugo.toml). */ -}}
+# The Markdown copy of each page, for LLMs and coding agents
+{{ range site.Pages -}}
+{{ with .OutputFormats.Get "markdown" -}}
+{{ .RelPermalink }}
+  Content-Type: text/markdown; charset=utf-8
+{{ end -}}
+{{ end -}}

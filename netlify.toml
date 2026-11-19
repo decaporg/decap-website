@@ -21,12 +21,9 @@
 [dev]
   framework = "hugo"
 
-# Machine-readable docs for LLMs and coding agents (see config/_default/hugo.toml)
-[[headers]]
-  for = "/*.md"
-  [headers.values]
-    Content-Type = "text/markdown; charset=utf-8"
-
+# Machine-readable docs for LLMs and coding agents (see config/_default/hugo.toml).
+# The .md copies get their Content-Type from the generated public/_headers, one
+# rule per file: a "/*.md" rule here also labelled the HTML 404 page as Markdown.
 [[headers]]
   for = "/llms*.txt"
   [headers.values]
