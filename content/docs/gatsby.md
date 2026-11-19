@@ -1,5 +1,6 @@
 ---
 title: Gatsby
+description: "Add Decap CMS to a Gatsby blog with gatsby-plugin-decap-cms: a config.yml with the GitHub backend, local editing with decap-server, and deployment."
 group: Guides
 weight: 10
 ---
@@ -46,7 +47,7 @@ npm install --save decap-cms-app gatsby-plugin-decap-cms
 
 ### Configuration
 
-For the purpose of this guide we will deploy to Netlify from a GitHub repository which requires the minimum configuration.
+This guide uses a GitHub repository with the `github` backend.
 
 Create a `config.yml` file in the directory structure you see below:
 
@@ -60,8 +61,11 @@ In your `config.yml` file paste the following configuration:
 
 ```yml
 backend:
-  name: git-gateway
+  name: github
+  repo: your-name/your-repo # Path to your GitHub repository
   branch: main # Branch to update (optional; defaults to master)
+  base_url: https://auth.example.com # Your OAuth client, see below
+local_backend: true # Edit local files while `npx decap-server` runs
 
 media_folder: static/img
 public_folder: /img
@@ -97,10 +101,19 @@ content/
         └── post-image.jpg
 ```
 
-Finally, add the plugin to your `gatsby-config.js`.
+Replace `your-name/your-repo` with the GitHub repository you'll push the site to.
+
+Finally, add the plugin to your `gatsby-config.js`. The plugin loads the Netlify Identity widget unless you turn it off, and this guide doesn't use it:
 
 ```javascript
-plugins: [`gatsby-plugin-decap-cms`]
+plugins: [
+  {
+    resolve: `gatsby-plugin-decap-cms`,
+    options: {
+      enableIdentityWidget: false,
+    },
+  },
+]
 ```
 
 To register custom widgets or preview templates, point the plugin's `modulePath` option at a JavaScript file that imports `decap-cms-app`; the [plugin's README](https://github.com/decaporg/gatsby-plugin-decap-cms#readme) shows how. If you used the old `gatsby-plugin-netlify-cms`, which is deprecated, see [the switch to the Decap plugin](/blog/new-gatsby-plugin-for-decap-is-now-available/).
@@ -116,24 +129,33 @@ git remote add origin https://github.com/YOUR_USERNAME/NEW_REPO_NAME.git
 git push -u origin main
 ```
 
-### Add your repo to Netlify
+### Editing content locally
 
-Go to Netlify and select 'New Site from Git'. Select GitHub and the repository you just pushed to. Click Configure Netlify on GitHub and give access to your repository. Finish the setup by clicking Deploy Site. Netlify will begin reading your repository and starting building your project.
+To edit content on your computer, keep `npm run develop` running and start the Decap CMS proxy server in a second terminal, in the root of your project:
 
-### Enable Identity and Git Gateway
+```bash
+npx decap-server
+```
 
-Netlify's Identity and Git Gateway services allow you to manage CMS admin users for your site without requiring them to have an account with your Git host or commit access on your repo. From your site dashboard on Netlify:
+Open `http://localhost:8000/admin/`. Because of `local_backend: true`, Decap CMS reads and writes the files in your project directly, with no login.
 
-1. Go to **Settings > Identity**, and select **Enable Identity service**.
-2. Under **Registration preferences**, select **Open** or **Invite only**. In most cases, you want only invited users to access your CMS, but if you're just experimenting, you can leave it open for convenience.
-3. If you'd like to allow one-click login with services like Google and GitHub, check the boxes next to the services you'd like to use, under **External providers**.
-4. Scroll down to **Services > Git Gateway**, and click **Enable Git Gateway**. This authenticates with your Git host and generates an API access token. In this case, we're leaving the **Roles** field blank, which means any logged in user may access the CMS. For information on changing this, check the [Netlify Identity documentation](https://www.netlify.com/docs/identity/).
+### Deploying and logging in
+
+Deploy the site from your repository with your hosting provider of choice. The build command is `npm run build` and the publish directory is `public`. Decap CMS is a static page in your site, so any static hosting provider works.
+
+On your live site, editors log in with the `github` backend. GitHub's login needs a small server, an OAuth client: deploy one of the [external OAuth clients](/docs/external-oauth-clients/) and set `base_url` in `config.yml` to its address. If you'd rather not run one, or want editors to log in without a GitHub account, switch the `backend` to [Decap Turbo](/docs/turbo-overview/), the optional hosted backend by the Decap maintainers. For GitLab and other Git hosts, see [Choosing a Backend](/docs/choosing-a-backend/).
+
+Then open `/admin/` on your live site and log in.
+
+**Using Git Gateway?** Earlier versions of this guide used the `git-gateway` backend with Netlify Identity. Sites that already use it can keep that setup, described on the [Git Gateway](/docs/git-gateway-backend/) page.
+
+{{< git-gateway-deprecated >}}
 
 ## Start publishing
 
 It's time to create your first blog post. Login to your site's `/admin/` page and create a new post by clicking New Blog. Add a title, a date and some text. When you click Publish, a new commit will be created in your GitHub repo with this format `Create Blog “year-month-date-title”`. 
 
-Then Netlify will detect that there was a commit in your repo, and will start rebuilding your project. When your project is deployed you'll be able to see the post you created.
+If your hosting provider builds your site on every commit, it rebuilds your project now. When your project is deployed you'll be able to see the post you created.
 
 ### Cleanup
 

@@ -2,6 +2,7 @@
 group: Guides
 weight: 20
 title: Hugo
+description: "Add Decap CMS to a Hugo site: the admin files in static/admin, a config.yml with the GitHub backend, local editing with decap-server, and login on your live site."
 ---
 ## Introduction
 
@@ -71,8 +72,6 @@ In Hugo, static files that don't need to be processed by the build commands live
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <!-- Include the script that enables Netlify Identity on this page. -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
@@ -85,8 +84,11 @@ In the `config.yml` file, you can add this basic configuration — you can custo
 
 ```yaml
 backend:
-  name: git-gateway
+  name: github
+  repo: your-name/your-repo # Path to your GitHub repository
   branch: main # Branch to update (optional; defaults to master)
+  base_url: https://auth.example.com # Your OAuth client, see below
+local_backend: true # Edit local files while `npx decap-server` runs
 media_folder: static/img
 public_folder: /img
 collections:
@@ -104,26 +106,17 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
 ```
 
-**Note:** You won't be able to access the CMS just yet — you still need to deploy the project with **Netlify** and authenticate with **Netlify Identity**. You'll handle this in the next few steps of this guide.
+Replace `your-name/your-repo` with the GitHub repository you'll push the site to.
 
-### Configuring Netlify Build Settings
-To ensure consistent builds on Netlify, create a `netlify.toml` configuration file at your project's root with these settings:
+### Editing content locally
 
-```toml
-[build]
-  command = "hugo"
-  publish = "public"
-[context.production.environment]
-  HUGO_VERSION = "0.128.0"
+To edit content on your computer, keep `hugo server` running and start the Decap CMS proxy server in a second terminal, in the root of your project:
+
+```bash
+npx decap-server
 ```
 
-This configuration:
-
-1. Specifies the exact Hugo version Netlify should use (match this to your local Hugo version)
-2. Defines the build command that generates your site
-3. Sets the publish directory to Hugo's default output folder
-
-**Note:** Explicitly setting the Hugo version prevents unexpected build issues from version mismatches between your local environment and Netlify's auto-detected version.
+Open `http://localhost:1313/admin/`. Because of `local_backend: true`, Decap CMS reads and writes the files in your project directly, with no login. Create a blog post and publish it, and it shows up in your project at `content/blog/<slugified-blog-post-title>.md`.
 
 ### Pushing to GitHub
 
@@ -137,34 +130,17 @@ git remote add origin https://github.com/YOUR_USERNAME/NEW_REPO_NAME.git # Creat
 git push -u origin main # Push your changes
 ```
 
-### Deploying With Netlify
+### Deploying and logging in
 
-Now you can go ahead and deploy to Netlify. Go to your Netlify dashboard and click **[New site from Git](https://app.netlify.com/start)**. Select the repo you just created. Under **Basic build settings**, you can set the build command to `hugo` and the publish directory to `public`. Click **Deploy site** to get the process going.
+Deploy the site from your repository with your hosting provider of choice. The build command is `hugo` and the publish directory is `public`. Set the same Hugo version your computer uses, so builds match. Decap CMS is a static page in your site, so any static hosting provider works.
 
-### Authenticating with Netlify Identity
+On your live site, editors log in with the `github` backend. GitHub's login needs a small server, an OAuth client: deploy one of the [external OAuth clients](/docs/external-oauth-clients/) and set `base_url` in `config.yml` to its address. If you'd rather not run one, or want editors to log in without a GitHub account, switch the `backend` to [Decap Turbo](/docs/turbo-overview/), the optional hosted backend by the Decap maintainers. For GitLab and other Git hosts, see [Choosing a Backend](/docs/choosing-a-backend/).
 
-**Add the Netlify Identity Widget**
+Then open `/admin/` on your live site and log in.
 
-You've already added the Netlify Identity widget to our `admin/index.html`. The next thing to do is add the Netlify Identity widget to our site's index page. In `layouts/index.html`, we can add the following to the `<head>` tag on the page:
+**Using Git Gateway?** Earlier versions of this guide used the `git-gateway` backend with Netlify Identity. Sites that already use it can keep that setup, described on the [Git Gateway](/docs/git-gateway-backend/) page.
 
-```html
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-```
-
-Once you've added this, make sure to push your changes to GitHub!
-
-### Enable Identity & Git Gateway in Netlify
-
-Back in your [Netlify dashboard](https://app.netlify.com/):
-
-1. Go to **Configuration > Identity**, and select **Enable Identity service**.
-2. Once enabled, select **Settings and usage**, and scroll down to **Registration preferences**. You can set this to either **Open** or **Invite only**, but usually **Invite only** is your best bet for a personal site.
-3. If you don't want to create an account, or would like to use an external provider such as GitHub or Google, you can enable those services under **External providers**.
-4. Scroll down to **Services** and click **Enable Git Gateway**.
-
-### Accessing the CMS
-
-Once you've reached this point, you should be able to access the CMS in your browser at `http://localhost:1313/admin`. You'll be prompted to add the URL of your Netlify site. Once you've added that URL, you can log in with an Identity account or with one of the External Providers you enabled in step 3 above. For the sake of this tutorial, you can create a blog post in the CMS, and publish it! Once you `git pull` in your project, the blog post will show up in the project at `content/blog/<slugified-blog-post-title>.md`.
+{{< git-gateway-deprecated >}}
 
 And that's it! From this point on, it's just a matter of following [the Hugo documentation](https://gohugo.io/templates/) for outputting the content from your `content/` directory into templates! For more information on configuring Decap CMS, feel free to check out the [Decap CMS configuration options documentation](/docs/configuration-options/).
 

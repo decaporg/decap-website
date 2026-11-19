@@ -2,6 +2,7 @@
 group: Guides
 weight: 40
 title: NextJS
+description: "Add Decap CMS to a Next.js site that reads Markdown content: the admin files in public/admin, the GitHub backend, local editing with decap-server, and deployment."
 ---
 This guide will help you get started using Decap CMS with NextJS.
 
@@ -92,7 +93,6 @@ module.exports = {
 Almost there! The last thing we need to do is to add some content to our `pages/index.js` file. With a little help of our webpack loader, we can now easily import Markdown files:
 
 ```js
-import Head from "next/head"
 import { Component } from 'react'
 import { attributes, react as HomeContent } from '../content/home.md'
 
@@ -101,9 +101,6 @@ export default class Home extends Component {
     let { title, cats } = attributes
     return (
       <>
-        <Head>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        </Head>
         <article>
           <h1>{title}</h1>
           <HomeContent />
@@ -142,7 +139,7 @@ touch index.html
 touch config.yml
 ```
 
-Paste HTML for Decap CMS into your `public/admin/index.html` file (check out the [Add Decap To Your Site](https://www.decapcms.org/docs/add-to-your-site/) section for more information)
+Paste HTML for Decap CMS into your `public/admin/index.html` file (check out [Install Decap CMS](/docs/install-decap-cms/) for more information):
 
 ```html
 <!doctype html>
@@ -151,7 +148,6 @@ Paste HTML for Decap CMS into your `public/admin/index.html` file (check out the
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
@@ -160,14 +156,15 @@ Paste HTML for Decap CMS into your `public/admin/index.html` file (check out the
 </html>
 ```
 
-Notice that we also added the identity widget. This allows sign up when the project is hosted at Netlify.
-
 Paste the following configuration into your `public/admin/config.yml` file:
 
 ```yaml
 backend:
-  name: git-gateway
+  name: github
+  repo: your-name/your-repo # Path to your GitHub repository
   branch: main # Branch to update (optional; defaults to master)
+  base_url: https://auth.example.com # Your OAuth client, see below
+local_backend: true # Edit local files while `npx decap-server` runs
 media_folder: public/img
 public_folder: img
 collections:
@@ -189,11 +186,19 @@ collections:
             - { label: "Description", name: "description", widget: "text"}
 ```
 
-Awesome! Decap CMS should now be available at `localhost:3000/admin/index.html`. Unfortunately we can't edit our content just yet. First we need to move our code into a Git repository, and create a new Netlify site.
+Replace `your-name/your-repo` with the GitHub repository you'll push the project to.
 
-**Tip:** If you want to test changes made to your config.yml file locally, swap out "git-gateway" with "test-repo" and navigate to `localhost:3000/admin/index.html` to view Decap CMS locally (you can't make changes or read actual content from Git this way, but it's great to verify how things will look).
+### Editing content locally
 
-## Publishing to GitHub and Netlify
+To edit content on your computer, keep `npm run dev` running and start the Decap CMS proxy server in a second terminal, in the root of your project:
+
+```bash
+npx decap-server
+```
+
+Open `http://localhost:3000/admin/index.html`. Because of `local_backend: true`, Decap CMS reads and writes the files in your project directly, with no login. Edit the Home page, publish it, and the change is saved to `content/home.md`.
+
+## Publishing to GitHub
 
 Create a new repository at GitHub (or one of the other supported Git services) and follow the instructions on how to push existing files into your new repository.
 
@@ -207,28 +212,16 @@ node_modules/
 out/
 ```
 
-When your project is under version control, go to Netlify and select "New Site from Git". Select GitHub (or whatever service you used in the previous step), and the repository you just pushed to.
+## Deploying and logging in
 
-Under the final step (Build options, and deploy!), make sure you enter the following:
+When your project is under version control, deploy it from your repository with your hosting provider of choice. The build command is `npm run export` and the publish directory is `out`. Decap CMS is a static page in your site, so any static hosting provider works.
 
-| Field             | Value              |
-| ----------------- | ------------------ |
-| Build command     | **npm run export** |
-| Publish directory | **out**            |
+On your live site, editors log in with the `github` backend. GitHub's login needs a small server, an OAuth client: deploy one of the [external OAuth clients](/docs/external-oauth-clients/) and set `base_url` in `config.yml` to its address. If you'd rather not run one, or want editors to log in without a GitHub account, switch the `backend` to [Decap Turbo](/docs/turbo-overview/), the optional hosted backend by the Decap maintainers. For GitLab and other Git hosts, see [Choosing a Backend](/docs/choosing-a-backend/).
 
-### Enable Identity and Git Gateway
+Then open `/admin/` on your live site and log in.
 
-Netlify's Identity and Git Gateway services allow you to manage CMS admin users for your site without requiring them to have an account with your Git host or commit access on your repo. From your site dashboard on Netlify:
+**Using Git Gateway?** Earlier versions of this guide used the `git-gateway` backend with Netlify Identity. Sites that already use it can keep that setup, described on the [Git Gateway](/docs/git-gateway-backend/) page.
 
-1. Go to **Settings > Identity**, and select **Enable Identity service**.
-2. Under **Registration preferences**, select **Open** or **Invite only**. In most cases, you want only invited users to access your CMS, but if you're just experimenting, you can leave it open for convenience.
-3. If you'd like to allow one-click login with services like Google and GitHub, check the boxes next to the services you'd like to use, under **External providers**.
-4. Scroll down to **Services > Git Gateway**, and click **Enable Git Gateway**. This authenticates with your Git host and generates an API access token. In this case, we're leaving the **Roles** field blank, which means any logged in user may access the CMS. For information on changing this, check the [Netlify Identity documentation](https://www.netlify.com/docs/identity/).
-
-### Celebrate!
-
-Great job - you did it! Open your new page via the new Netlify URL, and navigate to `/admin`. If you did everything correct in the previous step, you should now be able to sign up for an account, and log in. 
-
-**Tip:** Signing up with an external provider is the easiest. If you want to sign up by email, you'll have to set up a redirect in your index.js page (which we won't be covering in this guide). For more information, have a look at the [Add To Your Site](https://www.decapcms.org/docs/add-to-your-site) section.
+{{< git-gateway-deprecated >}}
 
 Congratulations - you can finally manage your new list of cats!

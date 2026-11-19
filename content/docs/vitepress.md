@@ -2,9 +2,9 @@
 group: Guides
 weight: 90
 title: VitePress
+description: "Add Decap CMS to a VitePress site, by hand in the public folder or with vite-plugin-decap-cms, using the GitHub backend and decap-server for local editing."
 ---
 This guide will walk you through how to integrate Decap CMS with [VitePress](https://vitepress.dev).
-If you are using [VuePress](https://v2.vuepress.vuejs.org) you can also [the VuePress template](https://vuedn.netlify.app/). 
 
 To use the [`vite-plugin-decap-cms` plugin](https://vite-plugin-decap-cms.pages.dev), follow [the plugin setup](#vite-plugin) instructions. The plugin will simplify the configuration for you.
 
@@ -35,8 +35,6 @@ In the [public directory](https://vitepress.dev/guide/asset-handling#the-public-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <!-- Include the script that enables Netlify Identity on this page. -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
@@ -49,8 +47,11 @@ For your `config.yml` file, you can put in a starter config:
 
 ```yml
 backend:
-  name: git-gateway
+  name: github
+  repo: your-name/your-repo # Path to your GitHub repository
   branch: main # Branch to update (optional; defaults to master)
+  base_url: https://auth.example.com # Your OAuth client, see below
+local_backend: true # Edit local files while `npx decap-server` runs
 
 media_folder: public/img
 public_folder: /img
@@ -69,9 +70,19 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
 ```
 
-This example only includes the frontmatter included in all themes. You can visit the [default theme reference](https://vitepress.dev/reference/frontmatter-config) for all frontmatter keys for the default theme.
+Replace `your-name/your-repo` with the GitHub repository you'll push the site to. This example only includes the frontmatter included in all themes. You can visit the [default theme reference](https://vitepress.dev/reference/frontmatter-config) for all frontmatter keys for the default theme.
 
 For VitePress you will need to [add `{target="_self"}`](https://vitepress.dev/guide/routing#linking-to-non-vitepress-pages) to all admin links since the Decap CMS page is a non-VitePress page. 
+
+### Editing content locally
+
+To edit content on your computer, keep the VitePress development server running and start the Decap CMS proxy server in a second terminal, in the root of your project:
+
+```bash
+npx decap-server
+```
+
+Open `http://localhost:5173/admin/index.html`. Because of `local_backend: true`, Decap CMS reads and writes the files in your project directly, with no login.
 
 ### Pushing to GitHub
 
@@ -86,9 +97,17 @@ git remote add origin https://github.com/YOUR_USERNAME/NEW_REPO_NAME.git
 git push -u origin main
 ```
 
-### Deploying with Netlify
+### Deploying and logging in
 
-Go to Netlify and select 'New Site from Git'. Select GitHub and the repository you just pushed to. Click Configure Netlify on GitHub and give access to your repository. Finish the setup by clicking Deploy Site. Netlify will begin reading your repository and starting building your project.
+Deploy the site from your repository with your hosting provider of choice. Build it with `vitepress build`, which the setup wizard adds as an npm script, and publish the `.vitepress/dist` folder inside your VitePress root. Decap CMS is a static page in your site, so any static hosting provider works.
+
+On your live site, editors log in with the `github` backend. GitHub's login needs a small server, an OAuth client: deploy one of the [external OAuth clients](/docs/external-oauth-clients/) and set `base_url` in `config.yml` to its address. If you'd rather not run one, or want editors to log in without a GitHub account, switch the `backend` to [Decap Turbo](/docs/turbo-overview/), the optional hosted backend by the Decap maintainers. For GitLab and other Git hosts, see [Choosing a Backend](/docs/choosing-a-backend/).
+
+Then open `/admin/` on your live site and log in.
+
+**Using Git Gateway?** Earlier versions of this guide used the `git-gateway` backend with Netlify Identity. Sites that already use it can keep that setup, described on the [Git Gateway](/docs/git-gateway-backend/) page.
+
+{{< git-gateway-deprecated >}}
 
 ## Vite plugin
 
@@ -137,4 +156,4 @@ export default defineConfig({
 })
 ```
 
-After configuring the plugin, you can [push to GitHub](#pushing-to-github) and [deploy your site](#deploying-with-netlify).
+After configuring the plugin, you can [push to GitHub](#pushing-to-github) and [deploy your site](#deploying-and-logging-in).

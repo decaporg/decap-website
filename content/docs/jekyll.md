@@ -2,14 +2,13 @@
 group: Guides
 weight: 30
 title: Jekyll
+description: "Add Decap CMS to a Jekyll blog: the admin files, the GitHub backend, local editing with decap-server, and collections for posts, authors, pages and navigation."
 ---
 ## Introduction
 
 This section will help you integrate Decap CMS with a new or existing Jekyll project.
 
 [Jekyll](https://jekyllrb.com/) is a blog-aware static site generator built with Ruby. [GitHub Pages](https://pages.github.com/) are powered by Jekyll, making it a popular choice for developer blogs and project pages.
-
-If you're starting a new project, the fastest route to publishing on a Jekyll website with Decap CMS is to [deploy a template on Netlify](https://templates.netlify.com/).
 
 ## Setup
 
@@ -31,8 +30,6 @@ Create a file `admin/index.html` in the root of your repo - it should look like 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <!-- Include the identity widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" type="text/javascript"></script>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
@@ -49,8 +46,11 @@ Create a file `admin/config.yml` in the root of your repo - it should look like 
 # config.yml
 
 backend:
-  name: git-gateway
+  name: github
+  repo: your-name/your-repo # Path to your GitHub repository
   branch: main # Branch to update (optional; defaults to master)
+  base_url: https://auth.example.com # Your OAuth client, see below
+local_backend: true # Edit local files while `npx decap-server` runs
 media_folder: 'assets/uploads'
 collections:
   - name: 'blog'
@@ -60,11 +60,27 @@ collections:
       - { name: Title }
 ```
 
+Replace `your-name/your-repo` with your site's GitHub repository.
+
+### Editing content locally
+
+To edit content on your computer, keep `bundle exec jekyll serve` running and start the Decap CMS proxy server in a second terminal, in the root of your project:
+
+```bash
+npx decap-server
+```
+
+Open `http://localhost:4000/admin/`. Because of `local_backend: true`, Decap CMS reads and writes the files in your project directly, with no login.
+
 ### Enable authentication for CMS users
 
 Decap CMS stores content in your online Git repository. Therefore, to make content changes, users need to authenticate with the corresponding Git provider to prove that they have read and write access to that content.
 
-Follow the directions in the Introduction section to [enable Netlify Identity and Git Gateway services](https://www.decapcms.org/docs/add-to-your-site/#enable-identity-and-git-gateway) for the backend, then [add the Identity widget](https://www.decapcms.org/docs/add-to-your-site/#add-the-netlify-identity-widget) to render a login portal on the frontend.
+With the `github` backend, GitHub's login needs a small server, an OAuth client: deploy one of the [external OAuth clients](/docs/external-oauth-clients/) and set `base_url` in `config.yml` to its address. If you'd rather not run one, or want editors to log in without a GitHub account, switch the `backend` to [Decap Turbo](/docs/turbo-overview/), the optional hosted backend by the Decap maintainers. For GitLab and other Git hosts, see [Choosing a Backend](/docs/choosing-a-backend/).
+
+**Using Git Gateway?** Earlier versions of this guide used the `git-gateway` backend with Netlify Identity. Sites that already use it can keep that setup, described on the [Git Gateway](/docs/git-gateway-backend/) page.
+
+{{< git-gateway-deprecated >}}
 
 ## CMS Configuration
 
