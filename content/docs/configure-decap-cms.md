@@ -2,25 +2,29 @@
 group: Add
 weight: 4
 title: 3. Configure Decap CMS
+description: "Write a first config.yml: the backend, local_backend for development, media and public folders, and a folder collection for blog posts."
 ---
 
 Configuration is different for every site, so we'll break it down into parts. Add all the code snippets in this section to your `admin/config.yml` file.
 
 ### Backend
 
-We're using [Netlify](https://www.netlify.com) for our hosting and authentication in this tutorial, so backend configuration is fairly straightforward.
-
-For GitHub and GitLab repositories, you can start your Decap CMS `config.yml` file with these lines:
+The `backend` block tells Decap CMS where your repository is and how editors log in. This tutorial uses the [GitHub backend](/docs/github-backend/). For GitHub repositories, you can start your Decap CMS `config.yml` file with these lines:
 
 ```yaml
 backend:
-  name: git-gateway
+  name: github
+  repo: owner-name/repo-name # Path to your GitHub repository
   branch: main # Branch to update (optional; defaults to master)
+  base_url: https://auth.example.com # Your OAuth client, see Choosing a Backend
+
+# Only used on localhost, while `npx decap-server` is running
+local_backend: true
 ```
 
-_(For Bitbucket repositories, use the [Bitbucket backend](/docs/bitbucket-backend) instructions instead.)_
+For GitLab, Gitea, Forgejo, Bitbucket or Azure DevOps, or for Decap Turbo, use the `backend` settings from [Choosing a Backend](/docs/choosing-a-backend/) instead. If you leave out the `branch` declaration, it defaults to `master`.
 
-The configuration above specifies your backend protocol and your publication branch. Git Gateway is an open source API that acts as a proxy between authenticated users of your site and your site repo. (We'll get to the details of that in the [Authentication section](#authentication) below.) If you leave out the `branch` declaration, it defaults to `master`.
+`local_backend: true` lets you try the configuration on your computer before you set up login. Run `npx decap-server` in the root of your repository, start your site's development server, and open its `/admin/` page. Decap CMS then reads and writes the files in your local repository. On your live site, it uses `backend`. See [Decap Proxy](/docs/decap-proxy/) for details.
 
 ### Media and Public Folders
 
@@ -31,7 +35,7 @@ Decap CMS allows users to upload images directly within the editor. For this to 
 media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
 ```
 
-If you're creating a new folder for uploaded media, you'll need to know where your static site generator expects static files. You can refer to the paths outlined above in [App File Structure](#app-file-structure), and put your media folder in the same location where you put the `admin` folder.
+If you're creating a new folder for uploaded media, you'll need to know where your static site generator expects static files. You can refer to the paths listed in [Install Decap CMS](/docs/install-decap-cms/), and put your media folder in the same location where you put the `admin` folder.
 
 Note that the `media_folder` file path is relative to the project root, so the example above would work for Jekyll, GitBook, or any other generator that stores static files at the project root. However, it would not work for Hugo, Hexo, Middleman, or others that store static files in a subfolder. Here's an example that could work for a Hugo site:
 
@@ -144,8 +148,10 @@ Put together, the sections above make a complete `admin/config.yml`:
 
 ```yaml
 backend:
-  name: git-gateway
+  name: github
+  repo: owner-name/repo-name
   branch: main
+  base_url: https://auth.example.com
 
 # Only used on localhost, while `npx decap-server` is running
 local_backend: true
@@ -167,8 +173,6 @@ collections:
       - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
 ```
-
-`local_backend: true` lets you try the configuration on your computer before you set up authentication. Run `npx decap-server` in the root of your repository, start your site's development server, and open its `/admin/` page. Decap CMS then reads and writes the files in your local repository. On your live site, it uses the `backend` above. See [Decap Proxy](/docs/decap-proxy/) for details.
 
 {{< pagination-nav 
   prevUrl="/docs/choosing-a-backend/" 

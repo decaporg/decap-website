@@ -1,1 +1,1 @@
-- **{{ .Get "title" }}**{{ with .Get "repo" }}: [github.com/{{ . }}](https://github.com/{{ . }}), [deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/{{ . }}&stack=cms){{ end }}
+- **{{ .Get "title" }}**{{ with .Get "repo" }}: [github.com/{{ . }}](https://github.com/{{ . }}), [use this template](https://github.com/{{ . }}/generate){{ end }}

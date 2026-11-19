@@ -2,6 +2,7 @@
 group: Add
 weight: 2
 title: 1. Install Decap CMS
+description: "Add the admin folder with index.html and config.yml to your site, loading Decap CMS from a CDN script tag or from the decap-cms-app npm package."
 ---
 
 A static `admin` folder contains all Decap CMS files, stored at the root of your published site. Where you store this folder in the source files depends on your static site generator. Here's the static file location for a few of the most popular static site generators:
@@ -23,7 +24,7 @@ A static `admin` folder contains all Decap CMS files, stored at the root of your
 | MkDocs                                                  | `/site`               |
 | Lume                                                    | `/_site`              |
 
-If your generator isn't listed here, you can check its documentation, or as a shortcut, look in your project for a `css` or `images` folder. The contents of folders like that are usually processed as static files, so it's likely you can store your `admin` folder next to those. (When you've found the location, feel free to add it to these docs by [filing a pull request](https://github.com/decaporg/decap-cms/blob/master/CONTRIBUTING.md#pull-requests)!)
+If your generator isn't listed here, you can check its documentation, or as a shortcut, look in your project for a `css` or `images` folder. The contents of folders like that are usually processed as static files, so it's likely you can store your `admin` folder next to those. (When you've found the location, feel free to add it to these docs by [filing a pull request](https://github.com/decaporg/decap-cms/blob/main/CONTRIBUTING.md#pull-requests)!)
 
 Inside the `admin` folder, you'll create two files:
 

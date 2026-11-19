@@ -1,5 +1,6 @@
 ---
 title: GitLab
+description: "Connect Decap CMS to a GitLab repository with the gitlab backend, logging in from the browser with PKCE or through an OAuth client."
 group: Accounts
 weight: 40
 ---
