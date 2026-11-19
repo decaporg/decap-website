@@ -18,6 +18,13 @@ https://www.netlifycms.org/* https://decapcms.org/:splat 301!
 /docs/editorial-workflow                /docs/configuration/#publish-mode 301
 /docs/test-drive                        /docs/start-with-a-template 301
 /docs/quick-start                       /docs/add-to-your-site 301
+
+# Markdown copies of pages that moved, for LLMs and links like the decap-cms README's
+/docs/quick-start.md                    /docs/basic-steps.md 301
+/docs/add-to-your-site.md               /docs/basic-steps.md 301
+/docs/working-with-a-local-git-repository.md /docs/decap-proxy.md 301
+/docs/custom-formatters.md              /docs/editor-tooling.md 301
+/.well-known/llms.txt                   /llms.txt 200
 /chat                                   https://discord.gg/KZRDXmTm9v 301
 /docs/update-the-cms-version            /docs/releases 301
 /docs/beta-features/                    /docs/ 301

@@ -27,7 +27,8 @@ and put images in static/images/uploads.
 
 A few things worth telling the agent, because older material on the web gets them wrong:
 
-- **Decap CMS doesn't need Netlify.** Netlify Identity with Git Gateway is one backend option. See [Backends overview](/docs/backends-overview/) and [Choosing a backend](/docs/choosing-a-backend/).
+- **Decap CMS doesn't need Netlify.** Use a Git host backend such as `github` with an OAuth client, or Decap Turbo, and `local_backend: true` for development. Don't set up `git-gateway` for a new site: Netlify has deprecated Git Gateway. See [Choosing a backend](/docs/choosing-a-backend/).
+- **Moving from Netlify CMS** is mostly a package rename, and `config.yml` stays compatible. See [Migrating from Netlify CMS](/docs/migrating-from-netlify-cms/).
 - **The npm package is `decap-cms-app`**, and the script tag loads `decap-cms` from a CDN, as shown in [Install Decap CMS](/docs/install-decap-cms/). `netlify-cms` packages are the old name and no longer updated.
 - **Test the config locally** with the [local backend](/docs/decap-proxy/) before you push: the CMS reports configuration errors when it loads.
 

@@ -1,5 +1,6 @@
 ---
 title: Basic Steps
+description: "Add Decap CMS to an existing site in four steps: install the admin page, choose a backend, write config.yml, and open /admin/. All you need is a site whose source is in a Git repository."
 group: Add
 weight: 1
 aliases:
@@ -7,30 +8,24 @@ aliases:
   - /docs/quick-start/
 ---
 
-This tutorial guides you through the steps for adding Decap CMS to a site that's built with a common [static site generator](https://www.staticgen.com/), like Jekyll, Hugo, Hexo, or Gatsby.
-Alternatively, you can [start from a template](/docs/start-with-a-template) or dive right into [configuration options](/docs/configuration-options). The process for adding Decap CMS to a static site can be divided into four main steps:
+To add Decap CMS to a site, all you need is a site whose source files are in a Git repository on GitHub, GitLab, Gitea, Forgejo, Bitbucket or Azure DevOps. It works with any [static site generator](https://jamstack.org/generators/), such as Hugo, Astro, Eleventy, Jekyll, Next.js or Nuxt, and with any hosting provider. Decap CMS is a single page at `/admin/` on your site, and every change an editor saves becomes a commit in your repository.
+
+You can also [start from a template](/docs/start-with-a-template/), follow a [guide for your framework](/docs/hugo/), or go straight to the [configuration options](/docs/configuration-options/). Adding Decap CMS to a site takes four steps:
 
 **1. Install Decap CMS**
 
-This is a single page app available at the `/admin` route of your website.
-Check out the [general overview](/docs/intro/) to see what the installation process entails.
+Add an `admin` folder with two files, `index.html` and `config.yml`, to the folder your site generator copies as-is to the published site. The `index.html` loads Decap CMS from a CDN or from npm. See [Install Decap CMS](/docs/install-decap-cms/).
 
-**2. Choosing a Backend**
+**2. Choose a Backend**
 
-The most common backends are GitHub, GitLab, Bitbucket, and Azure. The backend serves two purposes: Secure access to your website's Decap CMS and allows it to read and update content files in your Git repo. More information about configuring the backend can be found [in the backends overview](/docs/backends-overview/).
-
-If you are experimenting with Decap CMS or developing, you can connect to it via a [local Git repository instead](/docs/working-with-a-local-git-repository/) of a remote backend.
+The backend connects Decap CMS to your repository and decides how editors log in. Use your Git host's backend with an [OAuth client](/docs/external-oauth-clients/), or [Decap Turbo](/docs/turbo-overview/), the optional hosted backend by the Decap maintainers. While you develop, `local_backend: true` with `npx decap-server` edits the files on your computer with no login. See [Choosing a Backend](/docs/choosing-a-backend/).
 
 **3. Configure Decap CMS**
 
-The basic configuration includes required information like Git backend provider, branch, and collections to save files to.
-It is recommended to start as simple as possible. Once you've gotten the hang of it, you can edit your `config.yml` file to
-build whatever collections and content modeling you want.
-
-Check out the [Configuration Options](/docs/configuration-options/) page for full details about all available options.
+The configuration in `config.yml` tells Decap CMS which backend and branch to use, where to store uploaded media, and which content to edit. Start as simple as possible and add collections as you go. See [Configure Decap CMS](/docs/configure-decap-cms/), and the [Configuration Options](/docs/configuration-options/) for every setting.
 
 **4. Access Your Content**
 
-Decap CMS manages your content and provides editorial and admin features via a webpage in a browser, but it doesn't deliver content. Decap CMS only makes your content available through an API. It is up to developers to determine how to build the raw content into something useful and delightful on the frontend within your static site generator.
+Open `/admin/` on your site, log in, and edit. Decap CMS commits each change to your repository, and your site's usual build turns that content into pages. See [Access Your Content](/docs/access-your-content/).
 
 {{< pagination-nav nextUrl="/docs/install-decap-cms/" nextLabel="1. Install Decap CMS" >}}

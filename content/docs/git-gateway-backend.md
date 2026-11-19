@@ -1,24 +1,57 @@
 ---
 title: Git Gateway
+description: The git-gateway backend, which Netlify has deprecated. How existing setups work, and how to move a site to a supported backend.
 weight: 10
 group: Accounts
 ---
 
-[Git Gateway](https://github.com/netlify/git-gateway) is a Netlify open source project that allows you to add editors to your site CMS without giving them direct write access to your GitHub or GitLab repository. (For Bitbucket repositories, use the [Bitbucket backend](../bitbucket-backend/) instead.)
+{{< git-gateway-deprecated >}}
+
+[Git Gateway](https://github.com/netlify/git-gateway) is an open source API, made by Netlify, that lets editors change your site's content without direct write access to your GitHub or GitLab repository. Decap CMS supports it through the `git-gateway` backend. (For Bitbucket repositories, use the [Bitbucket backend](../bitbucket-backend/) instead.)
+
+## Move to a supported backend
+
+Your content is already in Git, so moving off Git Gateway is a change to the `backend` block of your `config.yml`. Nothing in the repository has to move.
+
+* To keep editors logging in without a Git host account, use [Decap Turbo](/docs/turbo-overview/). See [Connecting a site](/docs/turbo-connecting-a-site/).
+* To have editors log in with their own GitHub or GitLab account, use the [GitHub](/docs/github-backend/) or [GitLab](/docs/gitlab-backend/) backend. Every editor then needs push access to the repository, and GitHub needs an [OAuth client](/docs/external-oauth-clients/).
+
+[Choosing a Backend](/docs/choosing-a-backend/) compares the options.
 
 ## Git Gateway with Netlify
 
-The [Netlify Identity](https://www.netlify.com/docs/identity/) service can handle the authentication and provides a simple interface for user management. The Decap CMS [featured templates](../start-with-a-template) are working examples of this backend.
-
-To use it in your own project stored on GitHub or GitLab, follow these steps:
-
-1. Head over to the [Netlify Identity docs](https://www.netlify.com/docs/identity) and follow the steps to get started.
-2. Add the following lines to your Decap CMS `config.yml` file:
+On sites that already use it, the [Netlify Identity](https://docs.netlify.com/manage/security/secure-access-to-sites/identity/) service handles authentication and user management, and Git Gateway is enabled in the same Netlify site settings. The `config.yml` needs only:
 
 ```yaml
 backend:
   name: git-gateway
 ```
+
+### The Netlify Identity widget
+
+Editors who accept an invitation or reset their password land on your site with a token in the URL. The Netlify Identity widget reads that token, so load it on your CMS page and, if editors register or are invited through your site's home page, there too:
+
+```html
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+```
+
+To send editors back to the CMS after they log in on the home page, add this before the closing `body` tag of that page:
+
+```html
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+```
+
+If you only invite editors from the Netlify dashboard, you can leave the widget off the home page and instead change the links in Netlify Identity's [email templates](https://docs.netlify.com/security/secure-access-to-sites/identity/identity-generated-emails/) from `{{ siteURL }}/#...` to `{{ siteURL }}/admin/#...`, so every link opens the CMS page.
 
 ## Reconnect after Changing Repository Permissions
 
@@ -28,7 +61,7 @@ If you change ownership on your repository, or convert a repository from public 
 
 You can use [Git Gateway](https://github.com/netlify/git-gateway) without Netlify by setting up your own Git Gateway server and connecting it with your own instance of [GoTrue](https://www.gotrueapi.org) (the open source microservice that powers Netlify Identity), or with any other identity service that can issue JSON Web Tokens (JWT).
 
-To configure in Decap CMS, use the same `backend` settings in your Decap CMS `config.yml` file as described in Step 2 of the [Git Gateway with Netlify](#git-gateway-with-netlify) instructions above.
+To configure in Decap CMS, use the same `backend` settings in your Decap CMS `config.yml` file as shown in [Git Gateway with Netlify](#git-gateway-with-netlify) above.
 
 ## PKCE with custom Git-Gateway
 

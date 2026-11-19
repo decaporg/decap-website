@@ -1,5 +1,6 @@
 ---
 title: Svelte/SvelteKit
+description: "Add Decap CMS to a SvelteKit site: the admin files in static/admin, the GitHub backend with local_backend for development, and installing from npm."
 group: Guides
 weight: 100
 ---

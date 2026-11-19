@@ -49,7 +49,7 @@ No. Content is committed to your repository exactly as the standard backends do.
 Yes — your content is already in Git, so switching to the plain [GitHub](../github-backend/) or [GitLab](../gitlab-backend/) backend is a `config.yml` change.
 
 **Can I self-host instead?**
-Yes. Decap CMS is free and open source either way; self-hosting means running your own auth — a Git provider's OAuth, [Git Gateway](../git-gateway-backend/), or [decap-proxy](../decap-proxy/) — instead of Turbo's hosted auth and proxy.
+Yes. Decap CMS is free and open source either way; self-hosting means running your own auth: a Git provider's OAuth through an [OAuth client](../external-oauth-clients/), or the deprecated [Git Gateway](../git-gateway-backend/) on existing sites — instead of Turbo's hosted auth and proxy.
 
 **Do editors need GitHub or GitLab accounts?**
 No. See [How it works](../turbo-how-it-works/#editors-dont-need-a-git-host-account).

@@ -1,5 +1,6 @@
 ---
 title: Docusaurus
+description: "Add Decap CMS to a Docusaurus site to edit its blog: the admin files in static/admin, a config.yml with the GitHub backend, and GitHub login."
 group: Guides
 weight: 80
 ---
@@ -8,7 +9,7 @@ This guide instructs you on how to integrate Decap CMS with Docusaurus.
 ### Before you begin
 
 * Sign up for [GitHub](https://www.github.com) and [Netlify](https://www.netlify.com).
-* Download [Node.js](https://nodejs.org/en/download/) version 14 or above.
+* Download the current LTS release of [Node.js](https://nodejs.org/en/download/). Docusaurus lists its minimum version in its [installation requirements](https://docusaurus.io/docs/installation#requirements).
 * Install the [GitHub CLI](https://cli.github.com/).
 * Install and authenticate the [Netlify CLI](https://docs.netlify.com/cli/get-started/).
 

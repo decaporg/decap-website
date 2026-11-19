@@ -2,17 +2,17 @@
 group: Accounts
 weight: 30
 title: GitHub
+description: "Connect Decap CMS to a GitHub repository with the github backend. Editors log in with GitHub through an OAuth client or Decap Turbo."
 ---
 For repositories stored on [GitHub](https://github.com), the `github` backend allows CMS users to log in directly with their GitHub account. Note that all users must have push access to your content repository for this to work.
 
-Because GitHub [requires a server](https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723) for authentication, Netlify facilitates basic GitHub authentication.
+Because GitHub [requires a server](https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723) for authentication, the `github` backend needs an OAuth client: a small server that completes GitHub's login. You can:
 
-If you'd rather not run an auth server or manage an OAuth app at all, [Decap Turbo](/turbo/) provides hosted GitHub authentication along with a request proxy that shields your GitHub API rate limit.
+* Deploy one of the [external OAuth clients](/docs/external-oauth-clients/), for example a Cloudflare Worker, and set `base_url` to its address.
+* Use [Decap Turbo](/docs/turbo-overview/), the optional hosted backend by the Decap maintainers, which handles login and shields your GitHub API rate limit. It uses the `turbo-github` backend instead.
+* If your site is hosted on Netlify, use Netlify's [authentication provider](https://docs.netlify.com/manage/security/secure-access-to-sites/oauth-provider-tokens/). It is the default `base_url`, so you don't need to set one.
 
-To enable basic GitHub authentication:
-
-1. Follow the authentication provider setup steps in the [Netlify docs](https://www.netlify.com/docs/authentication-providers/#using-an-authentication-provider).
-2. Add the following lines to your Decap CMS `config.yml` file:
+Then add the following lines to your Decap CMS `config.yml` file:
 
 ```yaml
 backend:
@@ -20,6 +20,8 @@ backend:
   repo: owner-name/repo-name # Path to your GitHub repository
   # optional, defaults to master
   # branch: main
+  # your OAuth client, if you deployed one
+  # base_url: https://auth.example.com
 ```
 
 ## Specifying a status for deploy previews

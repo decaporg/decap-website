@@ -1,6 +1,7 @@
 ---
 linkTitle: Overview
 title: Decap CMS overview
+description: "Decap CMS is a free, open-source, Git-based CMS for static sites. Editors get a web UI with previews, and every change is a commit in your repository. Works with any site generator and host."
 group: Intro
 weight: 1
 aliases:
@@ -18,17 +19,11 @@ At its core, Decap CMS is an open-source React app that acts as a wrapper for th
 * **Flexible content types:** Specify an unlimited number of content types with custom fields.
 * **Fully extensible:** Create custom-styled previews, UI widgets, and editor plugins.
 
-## Decap CMS vs. Netlify
+## Decap CMS and Netlify
 
-[Netlify.com](https://www.netlify.com/) is a platform you can use to automatically build, deploy, serve, and manage your frontend sites and web apps. It also provides a variety of other features like form processing, serverless functions, and split testing. Not all Netlify sites use Decap CMS, and not all sites using Decap CMS are on Netlify.
+Decap CMS started in 2016 as Netlify CMS, created at Netlify to fill a gap in the static site pipeline: an open source, extensible CMS that a community could build on. It was never tied to Netlify's hosting, despite the name. In February 2023 it was [renamed Decap CMS](/docs/migrating-from-netlify-cms/), and it has been independently maintained since.
 
-The folks at Netlify created Netlify CMS to fill a gap in the static site generation pipeline. There were some great proprietary headless CMS options, but no real contenders that were open source and extensible—that could turn into a community-built ecosystem like WordPress or Drupal. For that reason, Netlify CMS is _made_ to be community-driven, and has never been locked to the Netlify platform (despite the name). In February 2023 [Netlify CMS became Decap CMS](https://www.netlify.com/blog/netlify-cms-to-become-decap-cms/).
-
-With this in mind, you can:
-
-* Use Decap CMS without Netlify and deploy your site where you always have, hooking up your own CI, site hosting, CDN, etc.
-* Use Netlify without Decap CMS and edit your static site in your code editor.
-* Or, use them together and have a fully-working CMS-enabled site with [one click](../start-with-a-template/)!
+Decap CMS doesn't need a Netlify account. Deploy your site wherever you already do, with your own CI, hosting and CDN, and pick any [backend](/docs/choosing-a-backend/) for login.
 
 If you hook up Decap CMS to your website, you're basically adding a tool for content editors to make commits to your site repository without touching code or learning Git.
 
@@ -36,6 +31,7 @@ If you hook up Decap CMS to your website, you're basically adding a tool for con
 
 - Get a feel for the UI in the [demo site](https://demo.decapcms.org). (No login required. Click the login button to go straight to the CMS editor UI.)
 - [Start with a template](../start-with-a-template/) to make a Decap CMS-enabled site of your own.
+- Moving from Netlify CMS? See [Migrating from Netlify CMS](../migrating-from-netlify-cms/).
 - Configure your existing site by following a [tutorial](../basic-steps/) or checking [configuration options](../configuration-options).
 - Ask questions and share ideas in the Decap CMS [community chat](https://decapcms.org/chat).
 - Get involved in new developments and become a [contributor](../contributor-guide/).

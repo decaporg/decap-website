@@ -2,61 +2,66 @@
 group: Add
 weight: 3
 title: 2. Choosing a Backend
+description: "How editors log in and how Decap CMS reaches your Git repository. Use your Git host's backend with an OAuth client, the hosted Decap Turbo backend, or the local backend while developing."
 ---
-Now that you have your Decap CMS files in place and configured, all that's left is to enable authentication.
 
-To follow this guide, you need a [Netlify](https://app.netlify.com) account. If you don't have one, you can [sign up for free](https://app.netlify.com/signup).
+The backend connects Decap CMS to the Git repository that holds your content, and decides how editors log in. Decap CMS works with GitHub, GitLab, Gitea, Forgejo, Bitbucket and Azure DevOps, on any hosting provider. Most sites use one of three setups: your Git host's backend with an OAuth client, the hosted Decap Turbo backend, or the local backend while developing.
 
-You can learn about other authentication options in the [Backends](/docs/backends-overview) doc.
+You set the backend in the `backend` block of your `config.yml`. Your content stays in your repository whichever you choose, so you can switch later by editing that block.
 
-If you'd rather not run auth yourself and want your editors to skip Git host accounts entirely, [Decap Turbo](/docs/turbo-overview/) is a hosted backend that also proxies and caches your Git host's API. It's a paid service with a free tier, and doesn't need Netlify.
+## Your Git host, with an OAuth client
 
-## Setup on Netlify
+Decap CMS talks to your Git host's API directly from the browser. Editors log in with their own Git host account and need write access to the repository.
 
-Netlify offers a built-in authentication service called [Identity](https://docs.netlify.com/security/secure-access-to-sites/identity/). In order to use it, connect your site repo with Netlify. Netlify has published a general [Step-by-Step Guide](https://www.netlify.com/blog/2016/10/27/a-step-by-step-guide-deploying-a-static-site-or-single-page-app/) for this, along with detailed guides for many popular static site generators.
-
-If you will use Netlify only for authentication, you can skip the above mentioned deployment step.
-
-### Enable Identity and Git Gateway
-
-Netlify's Identity and Git Gateway services allow you to manage CMS admin users for your site without requiring them to have an account with your Git host or commit access on your repo. From your site dashboard on Netlify:
-
-1. Go to **Integrations > Identity > Netlify Identity - Enable**, click **Enable Identity**, and go to **Configuration and usage**. 
-2. Under **Registration**, select **Open** or **Invite only**. In most cases, you want only invited users to access your CMS, but if you're just experimenting, you can leave it open for convenience.
-3. If you'd like to allow one-click login with services like Google and GitHub, check the boxes next to the services you'd like to use, under **External providers**.
-4. Scroll down to **Services > Git Gateway**, and click **Enable Git Gateway**. This authenticates with your Git host and generates an API access token. In this case, we're leaving the **Roles** field blank, which means any logged in user may access the CMS. For information on changing this, check the [Netlify Identity documentation](https://www.netlify.com/docs/identity/).
-
-## Add the Netlify Identity Widget
-
-With the backend configured to handle authentication, now you need a frontend interface to connect to it. The open source Netlify Identity Widget is a drop-in widget made for just this purpose. To include the widget in your site, add the following script tag in one or two places, depending on the method you choose for user registration:
-
-```html
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+```yaml
+backend:
+  name: github
+  repo: owner-name/repo-name # Path to your GitHub repository
+  branch: main # Branch to update (optional; defaults to master)
+  base_url: https://auth.example.com # Where your OAuth client runs
 ```
 
-### Site-wide registration
+GitHub's login needs a small server, an OAuth client, that holds your OAuth app's secret and hands the token back to Decap CMS. Deploy one of the [external OAuth clients](/docs/external-oauth-clients/), for example a Cloudflare Worker, and set `base_url` to its address. GitLab, Gitea and Forgejo can log in from the browser with PKCE, so they don't need a server.
 
-Add the script to the `<head>` of your CMS index page at `/admin/index.html`, as well as the `<head>` of your site's main index page. Depending on how your site generator is set up, this may mean you need to add it to the default template, or to a "partial" or "include" template. If you can find where the site stylesheet is linked, that's probably the right place. Alternatively, you can include the script in your site using Netlify's [Script Injection](https://www.netlify.com/docs/inject-analytics-snippets/) feature.
+| Git host       | Backend                                                                            | Login                                                        |
+| -------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| GitHub         | [`github`](/docs/github-backend/)                                                  | An [OAuth client](/docs/external-oauth-clients/)             |
+| GitLab         | [`gitlab`](/docs/gitlab-backend/)                                                  | PKCE from the browser, or an OAuth client                    |
+| Gitea, Forgejo | [`gitea`](/docs/gitea-backend/), [`forgejo`](/docs/gitea-backend/#forgejo-backend) | PKCE from the browser                                        |
+| Bitbucket      | [`bitbucket`](/docs/bitbucket-backend/)                                            | An OAuth server, see the Bitbucket page                      |
+| Azure DevOps   | [`azure`](/docs/azure-backend/)                                                    | A Microsoft Entra ID application                             |
 
-When a user logs in with the Netlify Identity widget, an access token directs to the site homepage. In order to complete the login and get back to the CMS, redirect the user back to the `/admin/` path. To do this, add the following script before the closing `body` tag of your site's main index page:
+## Decap Turbo
 
-```html
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
+[Decap Turbo](/docs/turbo-overview/) is an optional hosted backend run by the Decap maintainers, for repositories on GitHub and GitLab. It handles login, so editors don't need a Git host account, adds invitations and roles, and proxies and caches requests to your Git host's API. It has a Free plan. Decap CMS itself is free and works without it.
+
+```yaml
+backend:
+  name: turbo-github # or turbo-gitlab
+  turbo_site_id: your-site-id
 ```
 
-### Admin-only registration
+Start with [Getting started](/docs/turbo-getting-started/), then follow [Connecting a site](/docs/turbo-connecting-a-site/).
 
-If you use the invite-only registration, you don't need to add the identity widget to the index page. Instead, you can invite users from the Netlify dashboard. To make this work you have to update email templates in the Netlify dashboard. Follow [this guide](https://docs.netlify.com/security/secure-access-to-sites/identity/identity-generated-emails/) to learn how to do it. The important part is to change the URLs from `{{ siteURL }}/#...` to `{{ siteURL }}/admin/#...`. That way all links in emails will point to the CMS page, which includes the identity widget. This method is good for performance of your frontend, because it doesn't load the identity widget on the main page.
+## Local backend, for development
+
+`local_backend: true` lets Decap CMS read and write the files in your local repository, with no login. Add it next to the `backend` you use on your live site, run `npx decap-server` in the root of your repository, and open your development server's `/admin/` page. Decap CMS uses it only on `localhost` and `127.0.0.1` while `decap-server` is running. Everywhere else, it uses `backend`.
+
+```yaml
+backend:
+  name: github
+  repo: owner-name/repo-name
+
+local_backend: true
+```
+
+See [Decap Proxy](/docs/decap-proxy/) for the options.
+
+## Git Gateway
+
+{{< git-gateway-deprecated >}}
+
+Sites that already use Git Gateway with Netlify Identity can find their setup on the [Git Gateway](/docs/git-gateway-backend/) page, along with how to move to one of the backends above.
 
 {{< pagination-nav 
   prevUrl="/docs/install-decap-cms/" 
