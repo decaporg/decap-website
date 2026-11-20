@@ -347,6 +347,7 @@ The `collections` setting is the heart of your Decap CMS configuration, as it de
 * `description`: optional text, displayed below the label when viewing a collection
 * `files` or `folder` (requires one of these): specifies the collection type and location; details in [File Collections](https://decapcms.org/docs/collection-file) and [Folder Collections](https://decapcms.org/docs/collection-folder)
 * `filter`: optional filter for `folder` collections; details in [Folder Collections](https://decapcms.org/docs/collection-folder)
+* `index_file`: optional configuration for `folder` collections to define separate fields and editor settings for entries matching a given pattern; details in [Folder Collections](https://decapcms.org/docs/collection-folder#index-files)
 * `create`: for `folder` collections only; `true` allows users to create new items in the collection; defaults to `false`
 * `limit`: for `folder` collections only; the maximum number of entries in the collection, counting unpublished entries in the editorial workflow. Once the collection has that many entries, saving a new one fails and the CMS hides the buttons for creating entries. No limit by default. <span class="version-tag">3.15</span>
 * `publish`: for `publish_mode: editorial_workflow` only; `false` hides UI publishing controls for a collection; defaults to `true`
